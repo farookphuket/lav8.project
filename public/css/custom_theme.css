@@ -1,0 +1,229 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : May 28, 2016, 12:12:13 PM
+    Author     : farook
+*/
+
+
+
+
+
+
+/*
+
+panel confix
+*/
+
+.panel_list{
+    height: 250px;
+    
+}
+/*
+End of panel
+
+*/
+
+  section {
+    padding: 8rem 0;
+  }
+
+  .section-heading {
+    margin-top: 0;
+  }
+
+/*-----Make your webpage responsive ---*/
+/*
+
+image responsive
+
+*/
+.responsive{
+    max-width: 100%; 
+    height: auto;
+    border: 2px solid #B98CC3;
+}
+
+/*
+    add this  line Sat 2 Jun 2018 to make an embeded youtube video responsive
+    from  https://avexdesigns.com/responsive-youtube-embed/
+*/
+
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+    }
+    
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+.sound-container {
+    position: relative;
+    padding-bottom: 8.4%;
+    padding-top: 6px; height: 0; overflow: hidden;
+    }
+    
+.sound-container iframe,
+.sound-container object,
+.sound-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*
+End of video section
+
+*/
+
+/*----Do Not remove all the above line this will make webpage responsive---*/
+
+
+
+.container .list-group-item{
+    color:black;
+}
+
+
+.tags li{
+    display:inline-block;
+    background-color:#007bff;
+    margin:5px;
+
+}
+.tags a{
+    text-decoration:none;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    padding:5px;
+}
+
+.tags a:hover{
+    text-decoration:none;
+    color:red;
+    
+}
+.tags span{
+    padding:5px;
+   background-color:#17a2b8;
+    font-size:16px;
+    color:white;
+    font-weight:bold;
+    border:1px dotted #ff0000;
+}
+.tags label{
+    padding:8px 4px;
+    font-size:12px;
+}
+
+.old_tag span{
+    padding:8px 16px;
+    background-color:#e7e7e7;
+}
+
+
+
+.pagination{
+	text-align:center;
+	text-decoration:none;
+	margin-top:3em;
+  font-size:larger;
+  font-weight:bold;
+	width:100%;
+
+}
+
+
+.pa .active{
+    color:red;
+    background-color:black;
+    padding:10px;
+}
+
+.pagination a{
+  color:blue;
+  padding:5px;
+  font-size:larger;
+  font-weight:bold;
+
+}
+.pagination a:hover{
+    color:red;
+    padding:10px;
+    text-decoration:none;
+    background-color:black;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 480px){
+
+    .pa .pagination{
+        display:block;
+    }
+    .pa li{
+        display:block;
+    }
+    .pa .active{
+        color:red;
+        background-color:black;
+    }
+    .pagination a{
+        color:blue;
+    }
+
+
+    .tags{
+        width:100%;
+    }
+    .tags span{
+        padding:8px 4px;
+        /*background-color:#0085A1;*/
+        font-size:16px;
+        display:block;
+    }
+    .tags label{
+        font-size:18px;
+        font-weight:bold;
+
+    }
+
+}
+
+
+
+
+/*tour program display start */
+/*add this style to display for the tour program 
+Adding this code on Thu 12 July 2018
+*/
+
+
+
+
+
+
+
+
+

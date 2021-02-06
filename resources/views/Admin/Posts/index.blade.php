@@ -1,0 +1,22 @@
+@extends('sidebar.sidebar')
+
+
+@section('meta_title',"Post Admin Section ".Auth::user()->name)
+
+@section('tag_in_head')
+
+<script>
+  var ownerName = "{!!Auth::user()->name!!}";
+  var ownerId = "{!!Auth::user()->id!!}";
+</script>
+
+@endsection
+
+
+@section('content')
+
+  <div id="app">
+    <Adminpost></Adminpost>
+  </div>
+
+@endsection

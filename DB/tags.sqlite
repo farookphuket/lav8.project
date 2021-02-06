@@ -1,0 +1,40 @@
+/* Tag 1 */
+INSERT INTO 'tags' ('id','tag_name','created_at','updated_at') VALUES (NULL,
+'Public Post',
+datetime('now ,localtime'),datetime('now,localtime'));
+
+
+
+/* Tag 2  */
+
+INSERT INTO 'tags' ('id','tag_name','created_at','updated_at') VALUES (NULL,
+'farook said',
+datetime('now ,localtime'),datetime('now,localtime'));
+
+/* Tag 3 Tag bug report */
+INSERT INTO 'tags' ('id','tag_name','created_at','updated_at') VALUES (NULL,
+'Bug Report',
+datetime('now','localtime'),
+datetime('now','localtime'));
+
+
+/* Tag 4 Tag How to  1 Feb 2021*/
+INSERT INTO 'tags' ('id','tag_name','created_at','updated_at') VALUES (NULL,
+'How to',
+datetime('now','localtime'),
+datetime('now','localtime'));
+
+
+/* Tag 5 Tag Manjaro  1 Feb 2021*/
+INSERT INTO 'tags' ('id','tag_name','created_at','updated_at') VALUES (NULL,
+'Manjaro',
+datetime('now','localtime'),
+datetime('now','localtime'));
+
+
+
+/* Tag 6 Tag Open Software  1 Feb 2021*/
+INSERT INTO 'tags' ('id','tag_name','created_at','updated_at') VALUES (NULL,
+'Open Software',
+datetime('now','localtime'),
+datetime('now','localtime'));
