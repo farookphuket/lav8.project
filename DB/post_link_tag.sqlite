@@ -14,22 +14,29 @@ Tag table
 |  How to            |        4     |
 |  Manjaro           |        5     |
 |  Open Software     |        6     |
+|  หนังสือนิยาย         |        7     |
 |                    |              |
 ------------------------------------
 
 
 please go to file "postList.sqlite" to the detail of post
 Post list
-1. get to know and how to use cmus in my 15 minute
-2. How can I add datetime to .sqlite for auto data
-3. How can I setup lamp server on Manjaro 20.2.2
-4. 
+1. How can I add datetime to .sqlite for auto data
+2. How can I setup lamp server on Manjaro 20.2.2 
+3. I am finally can get the keyboard layout now   
+4. get to know and how to use cmus in my 15 minute
 5. simple thing some time is not simple
+6. หนังสือนิยาย เพชรพระอุมา ตอน ไพรมหากาฬ 8 Feb 2021
 
 
 */
 
 
+/* post 6 has the tag 7 */
+INSERT INTO 'post_tag' ('id','post_id','tag_id','created_at','updated_at') 
+VALUES (NULL,'6','7',
+datetime('now','localtime'),
+datetime('now','localtime'));
 
 
 /* post 5 has the tag 2 */

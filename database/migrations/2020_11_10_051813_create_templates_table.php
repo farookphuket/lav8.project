@@ -16,12 +16,14 @@ class CreateTemplatesTable extends Migration
         Schema::create('templates', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
+            $table->string('section');
             $table->string('title');
             $table->text('excerpt');
             $table->text('body');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')
+                                      ->on('users')->onDelete('cascade');
         });
     }
 

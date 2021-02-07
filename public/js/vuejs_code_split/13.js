@@ -94,7 +94,7 @@ var render = function() {
         name: "send",
         id: "send",
         type: "submit",
-        value: "sent My request desre"
+        value: "sent Me reset link"
       },
       on: {
         click: function($event) {

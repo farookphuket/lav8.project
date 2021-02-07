@@ -47,9 +47,217 @@ now what else trick I learn today in (25-Jan-2021)
 */
 
 
+
+    /* หนังสือนิยาย เพชรพระอุมา ตอน ไพรมหากาฬ 8 Feb 2021  */
+    INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt","post_body","is_public","last_read_ip","last_read_date","read_count","created_at","updated_at") VALUES (6,
+
+            '1', /* USER ID */
+
+            'หนังสือนิยาย เพชรพระอุมา ตอน ไพรมหากาฬ ', /* TITLE */
+
+            'pet-pra-uma-book-1', /* SLUG */
+
+            /* EXCERPT START */
+            '
+            <div class="row">
+            <div class="col-lg-4">
+            <img src="https://lh3.googleusercontent.com/s2RNr270Kv4qx3ZsnLQcsl184NmadqcjGmSO8G5JVJyj_uZuLeHF8OD8O13RG8hnhs-QdbbnSZPEdFAjK3PYYzXB4FzV0_XP7iyHdb6b4GBMB9nbAQTzCnywcVQJdVRxzFLziBBJb7w=w2400" class="responsive">
+            <p class="pt-2 text-center">
+            ตอน ไพรมหากาฬ
+            </p>
+            </div>
+            <div class="col-lg-8">
+            <p>
+            ฟังนิยายเพชรพระอุมา ตอน ไพรมหากาฬ 
+            </p>
+    <p>
+    "เพชรพระอุมา"   เป็นบทประพันธ์ของ "พนมเทียน"   มีความยาวทั้งสิ้น 48 เล่ม
+    แบ่งออกเป็นสองภาค คือภาคแรกและภาคสมบูรณ์ ภาคละ 24 เล่ม เล่มละ 200 บาท
+    สั่งซื้อได้ตามร้านหนังสือทั่วไป
+    </p>
+    <p>
+    ห้องสมุดคอลฟิลด์เพื่อคนตาบอด  ของมูลนิธิช่วยคนตาบอดแห่งประเทศไทย
+    ในพระบรมราชินูปถัมภ์   ได้นำมาจัดทำเป็นหนังสือเสียงทั้งสองภาค
+    </p>
+    <p>
+    ภาคแรกมีอาสาสมัครช่วยกันอ่านสองท่าน  คือ คุณศศวรรณ   อรรถจรรยากุล
+    เริ่มอ่านจากตอนต้น ..ไพรมหากาฬ  ต่อด้วย..ดงมรณะไปถึงช่วงกลางๆ
+    จากนั้นคุณดวงวิภา  ยุทธสุริยพันธุ์ อ่านต่อในส่วนที่เหลือจนจบทั้งสองภาค
+    </p>
+
+    </div>
+    </div>
+
+
+    ',
+    /* END OF EXCERPT */
+
+    /* Body START */
+    '
+
+    <div class="container">
+    <h1 class="text-center">
+    ตอน ไพรมหากาฬ
+    </h1>
+    <p style="text-align:right;color:green;font-weight:bold;">
+    last edit 17 Sep 2020
+    </p>
+
+    <!-- copyright START -->
+    <div style="width:100%;background-color:#e7e7e7;
+border:1px dashed #ffe3f4;text-align:center;">
+<h2 style="text-align:center;padding:2px;
+margin-top:1em;color:red;">
+ใช้เพื่อฟังส่วนตัวเท่านั้น
+</h2>
+<p style="padding:2px;
+
+background-color:#ffffff;
+border:2px dotted #ff0000;">
+ไฟล์เสียงเหล่านี้ได้ถูกจัดทำขึ้นด้วยจุดประสงค์เพื่อใช้ในการรับฟังเพื่อความบันเทิง
+ส่วนตัวเท่านั้น ผู้นำเข้าได้มีการ อุดหนุนผลงานของผู้ประพันธ์ ที่ใช้นามปากกาว่า 
+"พนมเทียน" ครบทุกเล่มแล้ว ผู้นำเข้ามิได้มีเจตนาละเมิดลิขสิทธิ์แต่อย่างใด 
+ผู้นำเข้าไม่ได้มีผลประโยชน์ใดๆ ในด้านการค้า หรือกำไรจากการนำเข้า
+ไฟล์เสียงเหล่านี้
+มากไปกว่าการใช้งานเพื่อความบันเทิงโดยส่วนตัวและอยากเก็บผลงานเหล่านี้ไว้ 
+เพื่อเปิดฟังส่วนตัวเท่านั้นไม่ได้มีเจตนา แจก จ่าย แต่อย่างใด 
+ทั้งนี้เจ้าของสิขสิทธิ์สามารถเรียกร้องให้ลบไฟล์เสียงเหล่านี้ออกได้ หากผู้ที่อ้าง
+ว่าเป็นเจ้าของลิขสิทธิ์ สามารถพิสูจน์ได้ว่าเป็นเจ้าของลิขสิทธิ์ตัวจริงตามกฎหมาย 
+</p>
+<p style="padding:2px;background-color:#ffffff;
+border:2px dotted #ff0000;">
+หากเจ้าของสิขสิทธิ์(ที่สามารถยืนยันตัวจริงได้) ต้องการให้ลบไฟล์เหล่านี้ที่ท่านมองว่า
+มันเป็นการละเมิดลิขสิทธิ์ ผู้นำเข้ายินยอมที่จะลบไฟล์เสียงเหล่านี้ทันที 
+<br /> กรุณาติดต่อทาง<strong>e-mail :</strong> <i>
+<u>admin@farookphuket.com</u></i>  หรือ 
+<i><u>admin@see-southern.com</u></i>
+</div>
+<!-- Copyright END -->
+
+<!-- list of item START -->
+<ol class="list-group">
+<li class="list-group-item">
+<div class="container">
+<h1 class="text-center">Clip 001 to 011</h1>
+<div class="sound-container">
+<iframe src="https://archive.org/embed/clip_001_to_011" 
+width="500" height="140" frameborder="0" 
+webkitallowfullscreen="true" mozallowfullscreen="true" 
+allowfullscreen></iframe> 
+</div>
+<p class="pt-4 text-center">
+Last update from Desktop 8 Feb 2021 12:20 a.m.
+</p>
+</div>
+</li>
+
+
+<li class="list-group-item">
+<div class="container">
+<h1 class="text-center">
+Clip 012 to 018
+</h1>
+<div class="sound-container">
+<iframe src="https://archive.org/embed/clip_12_to_18" 
+width="500" height="30" frameborder="0" 
+webkitallowfullscreen="true" mozallowfullscreen="true" 
+allowfullscreen></iframe>
+</div>
+<p class="pt-4 text-center">
+Last update from Desktop 8 Feb 2021 12:20 a.m.
+</p>
+</div>
+</li>
+
+<li class="list-group-item">
+<div class="container">
+<h1 class="text-center">
+Clip 019 to 024
+</h1>
+<div class="sound-container">
+<iframe src="https://archive.org/embed/clip_019_to_024" 
+width="500" height="30" frameborder="0" 
+webkitallowfullscreen="true" 
+mozallowfullscreen="true" allowfullscreen></iframe>
+</div>
+<p class="pt-4 text-center">
+Last update from Desktop 17 Sep 2020 10:30 p.m.
+</p>
+</div>
+</li>
+
+<li class="list-group-item">
+<div class="container">
+<h1 class="text-center">
+Clip 025 to 029
+</h1>
+<div class="sound-container">
+<iframe src="https://archive.org/embed/clip_025_to_029" 
+width="500" height="30" frameborder="0" 
+webkitallowfullscreen="true" 
+mozallowfullscreen="true" 
+allowfullscreen></iframe>
+</div>
+<p class="pt-4 text-center">
+จบตอน "ไพรมหากาฬ" แล้วครับ ตอนต่อไป "ดงมรณะ"
+</p>
+</div>
+</li>
+
+</ol>
+<!-- list item END -->
+
+<p class="pt-2 mb-2">
+เป็นการอัพเดทอีกครั้งเพื่อรวมคลิปเสียงไว้เป็นแค่ 4 คลิปเพื่อความสะดวกในการฟัง 
+ท่านสามารถปิดหน้าจอมือถือได้โดยที่คลิปจะยังเล่นอยู่ หากต้องการหยุดให้กดปุ่มหยุดเอาไว้
+แต่อย่าปิดหน้าเวปเพราะว่าหากเปิดขึ้นมาใหม่จะเป็นการเริ่มเล่นใหม่ทั้งหมด
+</p>
+
+<div style="border:2px dashed #ff0000;
+background-color:black;padding:5px;">
+<h1 class="text-center" style="color:red;">คำเตือน!</h1>
+<p style="color:white;font-weight:bold;
+margin-top:1em;margin-bottom:1em;text-align:center;">
+นี่อาจจะเป็นครั้งสุดท้ายของท่านที่จะได้ฟังนิยายจากเวปนี้ "รู้อะไรไม่สู้ รู้แบบนี้" 
+เราเตือนคุณแล้ว เพราะฉะนั้นจัดการตัวเองซะ จงทำในสิ่งที่ต้องทำ 
+มันมีลิ้งค์อยู่ข้างล่างกดสิ "ฟาย"!
+</p>
+</div>
+
+<div class="clearfix">
+<div class="float-right">
+<a 
+href="https://archive.org/compress/clip_001_to_011/formats=VBR%20MP3&file=/clip_001_to_011.zip" class="btn btn-primary">ดาวน์โหลดคลิป 1 - 11</a>
+
+<a href="https://archive.org/compress/clip_12_to_18/formats=VBR%20MP3&file=/clip_12_to_18.zip" class="btn btn-primary">ดาวน์โหลดคลิป 22 - 18</a>
+
+<a href="https://archive.org/compress/clip_019_to_024" class="btn btn-primary">ดาวน์โหลดคลิป 19 - 24</a>
+
+<a href="https://archive.org/compress/clip_025_to_029/formats=VBR%20MP3&file=/clip_025_to_029.zip" class="btn btn-primary">ดาวน์โหลดคลิป 25 - 29</a>
+</div>
+</div>
+
+
+</div>
+', /* END OF BODY */
+
+    '1','','','0','2021-02-8 00:56:17' ,'2021-02-8 00:57:07');
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* got headache for 6 hours just a simple thing */
 
-INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt","post_body","is_public","last_read_ip","last_read_date","read_count","created_at","updated_at") VALUES (NULL,
+INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt","post_body","is_public","last_read_ip","last_read_date","read_count","created_at","updated_at") VALUES (5,
 '1',
 'beware simple thing is some time not simple',
 
@@ -99,7 +307,7 @@ come back to work as it use to
 /* cmus  START 27 jan 2021 */
 
 
-INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt","post_body","is_public","last_read_ip","last_read_date","read_count","created_at","updated_at") VALUES (NULL,
+INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt","post_body","is_public","last_read_ip","last_read_date","read_count","created_at","updated_at") VALUES (4,
 '1',
 'get to know and how to use cmus in my 15 minute',
 
@@ -319,7 +527,7 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt","post_bod
 
 
 
-INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt","post_body","is_public","last_read_ip","last_read_date","read_count","created_at","updated_at") VALUES (NULL,
+INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt","post_body","is_public","last_read_ip","last_read_date","read_count","created_at","updated_at") VALUES (1,
 '1',
 'How can I add datetime to .sqlite for auto data',
 
@@ -363,7 +571,7 @@ now what else trick I learn today in (25-Jan-2021)
 
 INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
 "post_body","is_public","last_read_ip","last_read_date","read_count",
-"created_at","updated_at") VALUES (NULL,
+"created_at","updated_at") VALUES (2,
 '1',/* user id */
 'How can I setup lamp server on Manjaro 20.2.2 ',/* title */
 'how-can-i-setup-lamp-server-on-manjaro-20-2-2', /* Slug */
@@ -433,7 +641,7 @@ suppose to be but any way you don''t have to read this too much
 
 INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
 "post_body","is_public","last_read_ip","last_read_date","read_count",
-"created_at","updated_at") VALUES (NULL,
+"created_at","updated_at") VALUES (3,
 '1',/* user id */
 'I am finally can get the language switcher to work in manjaro i3wm',/* title */
 'i-am-finally-can-get-the-language-switcher-to-work-in-manjaro-i3wm', /* Slug */
@@ -572,3 +780,10 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
 
 ',/* The post body */
 '1','','2021-01-25','0','2021-01-27 14:35:35','2021-01-27 14:37:35' );
+
+
+
+
+
+
+

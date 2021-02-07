@@ -1,7 +1,7 @@
 /* Tag 1 */
 INSERT INTO 'tags' ('id','tag_name','created_at','updated_at') VALUES (NULL,
 'Public Post',
-datetime('now ,localtime'),datetime('now,localtime'));
+datetime('now' ,'localtime'),datetime('now','localtime'));
 
 
 
@@ -9,7 +9,7 @@ datetime('now ,localtime'),datetime('now,localtime'));
 
 INSERT INTO 'tags' ('id','tag_name','created_at','updated_at') VALUES (NULL,
 'farook said',
-datetime('now ,localtime'),datetime('now,localtime'));
+datetime('now' ,'localtime'),datetime('now','localtime'));
 
 /* Tag 3 Tag bug report */
 INSERT INTO 'tags' ('id','tag_name','created_at','updated_at') VALUES (NULL,
@@ -36,5 +36,14 @@ datetime('now','localtime'));
 /* Tag 6 Tag Open Software  1 Feb 2021*/
 INSERT INTO 'tags' ('id','tag_name','created_at','updated_at') VALUES (NULL,
 'Open Software',
+datetime('now','localtime'),
+datetime('now','localtime'));
+
+
+
+
+/* Tag 7 Tag หนังสือนิยาย  8 Feb 2021 */
+INSERT INTO 'tags' ('id','tag_name','created_at','updated_at') VALUES (NULL,
+'หนังสือนิยาย',
 datetime('now','localtime'),
 datetime('now','localtime'));

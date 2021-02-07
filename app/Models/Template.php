@@ -11,6 +11,7 @@ class Template extends Model
 
     protected $fillable = [
         'user_id',
+        'section',
         'title',
         'excerpt',
         'body'

@@ -9,6 +9,14 @@
 
                     <div class="clearfix">
                         <div class="float-right">
+                        <span class="badge badge-danger"
+                        v-if="li.is_public != 1">
+                            Not public
+                        </span>
+                        <span class="badge badge-success" 
+                        v-else>
+                            Public
+                        </span>
                             By
                             <span class="badge badge-info">
                                 {{li.name}} 

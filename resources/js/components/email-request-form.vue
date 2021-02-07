@@ -7,7 +7,7 @@
             <input type="email" name="email" ref="email"  class="form-control" placeholder="Email address">
         </div>
         <p v-html='show'></p>
-        <input @click.prevent="getClick()" name="send" id="send" class="btn btn-block btn-info send-btn mb-4" type="submit" value="sent My request desre">
+        <input @click.prevent="getClick()" name="send" id="send" class="btn btn-block btn-info send-btn mb-4" type="submit" value="sent Me reset link">
 
         <a href="/"  style="color:white;font-weight:bold;" class="btn btn-primary btn-block  mb-4">
             Back Home

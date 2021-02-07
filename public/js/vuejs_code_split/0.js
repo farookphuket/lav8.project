@@ -483,6 +483,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1199,6 +1207,17 @@ var render = function() {
             [
               _c("div", { staticClass: "clearfix" }, [
                 _c("div", { staticClass: "float-right" }, [
+                  li.is_public != 1
+                    ? _c("span", { staticClass: "badge badge-danger" }, [
+                        _vm._v(
+                          "\n                        Not public\n                    "
+                        )
+                      ])
+                    : _c("span", { staticClass: "badge badge-success" }, [
+                        _vm._v(
+                          "\n                        Public\n                    "
+                        )
+                      ]),
                   _vm._v(
                     "\n                        By\n                        "
                   ),

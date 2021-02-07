@@ -1,6 +1,8 @@
 @extends('sidebar.sidebar')
 
 
+@section('meta_title',$whatnews->whatnews_title)
+
 @section('tag_in_head')
 
 

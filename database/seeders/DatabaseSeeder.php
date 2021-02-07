@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             WhatnewsTableSeeder::class,
             PostSeeder::class,
             TagTableSeeder::class,
+            TemplateSeeder::class,
         ]);
     }
 }
