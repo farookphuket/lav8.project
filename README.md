@@ -135,6 +135,24 @@ living in `/srv/http ` so my absolute path will be
 
 
 
+-   make sure that you are in "lav8.project" (or what if you have rename it 
+to something else it should be your project root folder ) now run 
+"composer install " or " composer update " (in my case I run "composer update")
+wait until the process has done now run "npm install " the command 
+"composer update" will create folder "vendor" and the command "npm install"
+will create folder " node_modules " in your project root directory
+
+
+-   now run command "php artisan key:generate " you should get the success 
+message 
+
+-   if you try to browse your web project now will be some permission denied
+so you have to run "sudo chmod 777 -R /path-to-your-project" in my case I have 
+my project in the path "/srv/http/la8.lap" so the command I run will be 
+"sudo chmod 777 -R /srv/http/lav8.lap"
+
+
+
 
 -   in your project folder if you run the command `php artisan migrate:status` 
 it should not be any error report shown and the table list will show.
