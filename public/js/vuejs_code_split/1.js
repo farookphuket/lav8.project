@@ -168,6 +168,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -182,6 +192,7 @@ __webpack_require__.r(__webpack_exports__);
       tag_with_content: [],
       tag_all: [],
       title: '',
+      slug: '',
       editId: 0,
       excerpt: '',
       body: '',
@@ -230,6 +241,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.get(url).then(function (res) {
         var rData = res.data.post;
         _this2.title = rData.post_title;
+        _this2.slug = rData.slug;
         _this2.editId = rData.id;
         _this2.body = rData.post_body;
         _this2.excerpt = rData.post_excerpt;
@@ -243,9 +255,8 @@ __webpack_require__.r(__webpack_exports__);
           _this2.is_public = false;
         }
 
-        _this2.$refs.title.focus();
+        _this2.$refs.title.focus(); //console.log(this.is_public)
 
-        console.log(_this2.is_public);
       });
     },
     savePost: function savePost(id) {
@@ -254,6 +265,7 @@ __webpack_require__.r(__webpack_exports__);
       var url = '';
       var data = {
         title: this.title,
+        slug: this.makeSlug(this.title),
         excerpt: this.excerpt,
         body: this.body,
         tags: this.user_select_tag,
@@ -280,17 +292,14 @@ __webpack_require__.r(__webpack_exports__);
           _this3.$refs["onOk"].show();
 
           _this3.error = 0;
-        })["catch"](function (error) {
-          _this3.res_status = "<span class=\"alert alert-danger\">\n                            Error! your input ".concat(error.response.message);
-          _this3.error = 1; //this.$refs["onOk"].show()
+        }, function (error) {
+          //console.log(error.response.data.message)
+          _this3.error = 1;
+          _this3.res_status = "<span class=\"alert alert-danger\">\n                           ".concat(error.response.data.message, "</span> ");
+
+          _this3.$refs["onOk"].show();
         });
       }
-
-      setTimeout(function () {
-        _this3.getPostList();
-
-        _this3.reNewFormData();
-      }, 2500);
     },
     readPost: function readPost(slug) {
       var url = "/member/posts/".concat(slug); //alert(url)
@@ -298,28 +307,56 @@ __webpack_require__.r(__webpack_exports__);
       location.href = url;
     },
     delPost: function delPost(id) {
-      alert("will delete post ".concat(id));
+      var _this4 = this;
+
+      var url = "/member/posts/".concat(id);
+      axios["delete"](url).then(function (res) {
+        _this4.res_status = res.data.msg;
+
+        _this4.$refs["onOk"].show();
+      });
     },
     reNewFormData: function reNewFormData() {
-      if (this.error === 1) {
-        this.res_status = this.custom_rule;
-        this.$refs['onOk'].show();
+      this.res_status = '';
+      this.title = '';
+      this.slug = '';
+      this.excerpt = '';
+      this.is_public = false;
+      this.body = '';
+      this.show_preview = '';
+      this.user_select_tag = [];
+      this.user_old_tag = '';
+      this.new_tag = '';
+    },
+    closeBox: function closeBox(error) {
+      if (error == 0) {
+        this.reNewFormData();
       } else {
-        this.res_status = '';
-        this.title = '';
-        this.excerpt = '';
-        this.is_public = false; //this.res_status = ''
-
-        this.body = '';
-        this.show_preview = '';
-        this.user_select_tag = [];
-        this.user_old_tag = '';
-        this.new_tag = '';
+        return;
       }
+
+      this.getPostList();
     },
     getPostsByTagId: function getPostsByTagId(tagName) {
       var url = "/member/getPostsByTagId?tag=".concat(tagName);
       location.href = url;
+    },
+    makeSlug: function makeSlug(title) {
+      //console.log(title)
+      this.slug = title.replace(/\s+/g, "-")
+      /* replace space with - */
+      .replace(/[^\u0E00-\u0E7F\w\-]+/g, "")
+      /* replace Thai letter */
+      .replace(/\-\-+/g, "-")
+      /* replace -- to - */
+      .replace(/^-+/, "")
+      /* I don''t know */
+      .replace(/_/g, "")
+      /* replace _ with null */
+      .toLowerCase();
+      /* convert to lowoer case */
+
+      return this.slug;
     }
   }
 });
@@ -596,11 +633,43 @@ var render = function() {
                 },
                 domProps: { value: _vm.title },
                 on: {
+                  keyup: function($event) {
+                    return _vm.makeSlug(_vm.title)
+                  },
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
                     _vm.title = $event.target.value
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.slug,
+                    expression: "slug"
+                  }
+                ],
+                ref: "slug",
+                staticClass: "form-control",
+                attrs: {
+                  placeholder: "leave this filed blank",
+                  type: "text",
+                  name: ""
+                },
+                domProps: { value: _vm.slug },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.slug = $event.target.value
                   }
                 }
               })
@@ -960,7 +1029,15 @@ var render = function() {
         _vm._v(" "),
         _c(
           "b-modal",
-          { ref: "onOk", attrs: { title: "Message Box", "ok-only": "" } },
+          {
+            ref: "onOk",
+            attrs: { title: "Message Box", "ok-only": "" },
+            on: {
+              ok: function($event) {
+                return _vm.closeBox(_vm.error)
+              }
+            }
+          },
           [
             _c("div", { domProps: { innerHTML: _vm._s(_vm.res_status) } }, [
               _vm._v(_vm._s(_vm.res_status))

@@ -194,8 +194,10 @@
 
 <script src="{{asset('cleanblog/js/bootstrap/bootstrap.bundle.js')}}"></script>
 <script src="{{asset('cleanblog/js/clean-blog.min.js')}}"></script>
-<script src="{{asset('cleanblog/js/scripts.js')}}"></script>
 
+<!--
+<script src="{{asset('cleanblog/js/scripts.js')}}"></script>
+-->
 
   <script src="{{asset('js/app.js')}}"></script>
 

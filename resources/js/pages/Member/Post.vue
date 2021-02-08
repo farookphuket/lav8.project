@@ -17,8 +17,16 @@
                 <form>
                     <div class="form-group">
                         <input v-model="title" 
-                               ref="title" class="form-control" 
-                                        placeholder="Enter the post title"
+                        ref="title" class="form-control" 
+                        v-on:keyup="makeSlug(title)"
+                        placeholder="Enter the post title"
+                        type="text" name="">
+                    </div><!-- end of title -->
+
+                    <div class="form-group">
+                        <input v-model="slug" 
+                            ref="slug" class="form-control" 
+                            placeholder="leave this filed blank"
                         type="text" name="">
                     </div><!-- end of title -->
 
@@ -129,7 +137,9 @@
             :tag_all="tag_all"
             :tag_with_content="tag_with_content"
             @getPostsByTagId="getPostsByTagId($event)"></Tagmember>
-            <b-modal ref="onOk" title="Message Box" ok-only>
+            <b-modal ref="onOk" 
+                @ok="closeBox(error)"
+                title="Message Box" ok-only>
                 <div v-html="res_status">{{res_status}}</div>
             </b-modal>
         </div><!-- end of .row -->
@@ -170,6 +180,7 @@ export default{
             tag_with_content:[],
             tag_all: [],
             title:'',
+            slug:'',
             editId: 0,
             excerpt: '',
             body:'',
@@ -225,6 +236,7 @@ please check your form again!
                 .then(res=>{
                     let rData = res.data.post
                     this.title = rData.post_title
+                    this.slug = rData.slug
                     this.editId = rData.id;
                     this.body = rData.post_body
                     this.excerpt = rData.post_excerpt
@@ -237,13 +249,14 @@ please check your form again!
                         this.is_public = false
                     }
                     this.$refs.title.focus()
-                    console.log(this.is_public)
+                    //console.log(this.is_public)
                 })
         },
         savePost(id){
             let url = '';
             let data = {
                 title:this.title,
+                slug:this.makeSlug(this.title),
                 excerpt:this.excerpt,
                 body:this.body,
                 tags:this.user_select_tag,
@@ -272,19 +285,17 @@ please check your form again!
                         this.res_status = res.data.msg
                         this.$refs["onOk"].show()
                         this.error = 0
-                    })
-                    .catch(error=>{
-                        this.res_status = `<span class="alert alert-danger">
-                            Error! your input ${error.response.message}`
+                    },error=>{
+                        //console.log(error.response.data.message)
                         this.error = 1;
-                            //this.$refs["onOk"].show()
+                        this.res_status = `<span class="alert alert-danger">
+                           ${error.response.data.message}</span> `
+                        this.$refs["onOk"].show()
                     })
+                
             }
 
-                setTimeout(()=>{
-                    this.getPostList()
-                    this.reNewFormData()
-                },2500)
+
             
         },
         readPost(slug){
@@ -292,28 +303,49 @@ please check your form again!
             //alert(url)
             location.href=url
         },delPost(id){
-            alert(`will delete post ${id}`)
+            let url = `/member/posts/${id}`
+            axios.delete(url)
+                .then(res=>{
+                    this.res_status = res.data.msg
+                    this.$refs["onOk"].show()
+                })
         },
         reNewFormData(){
-            if(this.error === 1){
-                this.res_status = this.custom_rule
-                this.$refs['onOk'].show()
-            }else{
                 this.res_status = ''
                 this.title = ''
+                this.slug = ''
                 this.excerpt = ''
                 this.is_public = false
-                //this.res_status = ''
                 this.body = ''
                 this.show_preview = ''
                 this.user_select_tag = []
                 this.user_old_tag = ''
                 this.new_tag = ''
+            
+        },
+        closeBox(error){
+            if(error == 0){
+                this.reNewFormData()
+
+            }else{
+                return;
             }
+            
+            this.getPostList()
         },
         getPostsByTagId(tagName){
             let url = `/member/getPostsByTagId?tag=${tagName}`
             location.href=url
+        },
+        makeSlug(title){
+            //console.log(title)
+            this.slug = title.replace(/\s+/g,"-") /* replace space with - */
+            .replace(/[^\u0E00-\u0E7F\w\-]+/g,"") /* replace Thai letter */
+            .replace(/\-\-+/g,"-") /* replace -- to - */
+            .replace(/^-+/,"") /* I don''t know */
+            .replace(/_/g,"") /* replace _ with null */
+            .toLowerCase() /* convert to lowoer case */
+            return this.slug
         },
     }
 }

@@ -124,7 +124,8 @@ class PostsController extends Controller
         $this->validPost(); 
         //
         //
-        $slug = Str::slug(request()->title);
+        //$slug = Str::slug(request()->title);
+        $slug = request()->slug;
         $is_public = !request()->is_public?0:1;
         $excerpt = xx_clean(request()->excerpt);
         $body = xx_clean(request()->body);
@@ -228,7 +229,8 @@ class PostsController extends Controller
     public function update(Post $post)
     {
         $this->validPost();
-        $slug = Str::slug(request()->title);
+        //$slug = Str::slug(request()->title);
+        $slug = request()->slug;
         $excerpt = xx_clean(request()->excerpt);
         $body = xx_clean(request()->body);
         $is_public = !request()->is_public?0:1;
@@ -263,6 +265,12 @@ class PostsController extends Controller
         $del->delete();
         $del->tags()->detach();
 
-        return redirect()->route('member.posts.index')->with(Session::flash('success','Your post has been deleted'));
+
+        $msg = "<span class=\"alert alert-success\">
+            Success data has been delete</span>";
+        return response()->json([
+            "msg" => $msg
+        ]);
+
     }
 }
