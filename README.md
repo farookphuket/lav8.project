@@ -413,6 +413,43 @@ app should be appear.
 
 ---
 
+#   Date 8 Feb 2021 make Thai slug 
+
+>   I've try to find "how can I make a Thai slug for post using javascript"
+>   so today I just copy the code from 
+>   `https://gist.github.com/silkyland/004e9c74ed9ed8b76d613bc2e4e48f52 ` 
+>   to make this work in the way I want it's seem to be good so far(but not 
+>   safe maybe in the long term so I have to find the way to encode it)
+>   well at least for now 
+
+``` 
+        //this.title  is the input text 
+        makeSlug(){
+            let make_slug = this.title.replace(/\s+/g,"-")
+            .replace(/[^\u0E00-\u0E7F\w\-]+/g,'')            
+            .replace(/\-\-+/g,'-')
+            .replace(/^-+/,'')
+            .toLowerCase()
+           return this.slug = make_slug
+        },
+
+
+
+```
+
+
+[output_thai-slug]:https://i.ibb.co/CVjyBVm/2021-02-08-thai-slug.png
+
+![output from thai slug][output_thai-slug]
+
+
+
+
+
+
+
+
+
 
 #   Date 6 Feb 2021 remove node_modules vendor folder
 

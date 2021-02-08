@@ -101,7 +101,7 @@ class PostsController extends Controller
         $this->validPost();
 
         //get the slug from post title
-        $slug = Str::slug(request('title'));
+        $slug = Str::slug(request('slug'));
         
         // save the new post return the post->id
         $nPost = new Post();
@@ -211,7 +211,8 @@ class PostsController extends Controller
         // $user_id 
         $user_id = $post->user_id;
         //get the slug from post title
-        $slug = Str::slug(request('title'));
+        //$slug = Str::slug(request('slug'));
+        $slug = request()->slug;
 
         if(!$slug):
             $slug = $post->id;

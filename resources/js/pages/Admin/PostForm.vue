@@ -6,8 +6,17 @@
                     <div class="form-group">
                         <input ref="title" class="form-control" 
                         type="text" 
+                        v-on:keyup="makeSlug()"
                         placeholder="Enter the post title"
                         v-model="title"
+                        required>
+                    </div>
+
+                    <div class="form-group">
+                        <input ref="slug" class="form-control" 
+                        type="text" 
+                        placeholder="Enter slug or leave blank"
+                        v-model="slug"
                         required>
                     </div>
                     <div class="form-group">
@@ -157,6 +166,7 @@ export default{
             tag_to_show: [],
             isSelectAll:false,
             title: '',
+            slug:'',
             excerpt: '',
             editId: '',
             body: '',
@@ -221,6 +231,7 @@ export default{
                 .then(res=>{
                     let postData = res.data.post;
                     this.title = postData.post_title;
+                    this.slug = postData.slug;
                     this.excerpt = postData.post_excerpt;
                     this.body = postData.post_body;
                     this.$refs.title.focus();
@@ -234,6 +245,7 @@ export default{
             let url ='';
             let data ={
                 title:this.title,
+                slug:this.makeSlug(),
                 excerpt:this.excerpt,
                 body: this.body,
                 is_public: this.is_public,
@@ -274,6 +286,7 @@ export default{
             this.user_select_tags = [];
             this.is_public = 0;
             this.title = "";
+            this.slug = ""
             this.excerpt = "";
             this.body = "";
             this.editId = 0;
@@ -299,7 +312,16 @@ export default{
         ,sendToPage(id){
             let url = `/admin/getPostsByTag?tag=${id}`
             location.href=url
-        }
+        },
+        makeSlug(){
+            let make_slug = this.title.replace(/\s+/g,"-")
+            .replace(/[^\u0E00-\u0E7F\w\-]+/g,'')            
+            .replace(/\-\-+/g,'-')
+            .replace(/^-+/,'')
+            .toLowerCase()
+           return this.slug = make_slug
+        },
+
     }
 
 }

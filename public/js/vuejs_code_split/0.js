@@ -189,6 +189,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -210,6 +219,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       tag_to_show: [],
       isSelectAll: false,
       title: '',
+      slug: '',
       excerpt: '',
       editId: '',
       body: '',
@@ -277,6 +287,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       axios.get(url).then(function (res) {
         var postData = res.data.post;
         _this2.title = postData.post_title;
+        _this2.slug = postData.slug;
         _this2.excerpt = postData.post_excerpt;
         _this2.body = postData.post_body;
 
@@ -293,6 +304,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       var url = '';
       var data = {
         title: this.title,
+        slug: this.makeSlug(),
         excerpt: this.excerpt,
         body: this.body,
         is_public: this.is_public,
@@ -328,6 +340,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       this.user_select_tags = [];
       this.is_public = 0;
       this.title = "";
+      this.slug = "";
       this.excerpt = "";
       this.body = "";
       this.editId = 0;
@@ -354,6 +367,10 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
     sendToPage: function sendToPage(id) {
       var url = "/admin/getPostsByTag?tag=".concat(id);
       location.href = url;
+    },
+    makeSlug: function makeSlug() {
+      var make_slug = this.title.replace(/\s+/g, "-").replace(/[^\u0E00-\u0E7F\w\-]+/g, '').replace(/\-\-+/g, '-').replace(/^-+/, '').toLowerCase();
+      return this.slug = make_slug;
     }
   }
 });
@@ -820,11 +837,43 @@ var render = function() {
             },
             domProps: { value: _vm.title },
             on: {
+              keyup: function($event) {
+                return _vm.makeSlug()
+              },
               input: function($event) {
                 if ($event.target.composing) {
                   return
                 }
                 _vm.title = $event.target.value
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.slug,
+                expression: "slug"
+              }
+            ],
+            ref: "slug",
+            staticClass: "form-control",
+            attrs: {
+              type: "text",
+              placeholder: "Enter slug or leave blank",
+              required: ""
+            },
+            domProps: { value: _vm.slug },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.slug = $event.target.value
               }
             }
           })

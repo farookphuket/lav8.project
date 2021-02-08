@@ -95,7 +95,7 @@ now what else trick I learn today in (25-Jan-2021)
     /* Body START */
     '
 
-    <div class="container">
+    <div>
     <h1 class="text-center">
     ตอน ไพรมหากาฬ
     </h1>
@@ -135,25 +135,23 @@ border:2px dotted #ff0000;">
 <!-- Copyright END -->
 
 <!-- list of item START -->
-<ol class="list-group">
-<li class="list-group-item">
-<div class="container">
-<h1 class="text-center">Clip 001 to 011</h1>
-<div class="sound-container">
-<iframe src="https://archive.org/embed/clip_001_to_011" 
-width="500" height="140" frameborder="0" 
-webkitallowfullscreen="true" mozallowfullscreen="true" 
-allowfullscreen></iframe> 
+<div class="pt-2 mb-2">
+    <h1 class="text-center">Clip 001 to 011</h1>
+    <div class="sound-container">
+        <iframe src="https://archive.org/embed/clip_001_to_011" 
+        width="500" height="140" frameborder="0" 
+        webkitallowfullscreen="true" mozallowfullscreen="true" 
+        allowfullscreen></iframe> 
+    </div>
+    <p class="pt-4 text-center">
+    Last update from Desktop 8 Feb 2021 12:20 a.m.
+    </p>
+
 </div>
-<p class="pt-4 text-center">
-Last update from Desktop 8 Feb 2021 12:20 a.m.
-</p>
-</div>
-</li>
 
 
-<li class="list-group-item">
-<div class="container">
+
+<div class="pt-2 mb-2">
 <h1 class="text-center">
 Clip 012 to 018
 </h1>
@@ -166,11 +164,12 @@ allowfullscreen></iframe>
 <p class="pt-4 text-center">
 Last update from Desktop 8 Feb 2021 12:20 a.m.
 </p>
-</div>
-</li>
 
-<li class="list-group-item">
-<div class="container">
+</div>
+
+
+
+<div class="pt-2 mb-2">
 <h1 class="text-center">
 Clip 019 to 024
 </h1>
@@ -183,11 +182,11 @@ mozallowfullscreen="true" allowfullscreen></iframe>
 <p class="pt-4 text-center">
 Last update from Desktop 17 Sep 2020 10:30 p.m.
 </p>
-</div>
-</li>
 
-<li class="list-group-item">
-<div class="container">
+</div>
+
+<div class="pt-2 mb-2">
+
 <h1 class="text-center">
 Clip 025 to 029
 </h1>
@@ -201,10 +200,10 @@ allowfullscreen></iframe>
 <p class="pt-4 text-center">
 จบตอน "ไพรมหากาฬ" แล้วครับ ตอนต่อไป "ดงมรณะ"
 </p>
-</div>
-</li>
 
-</ol>
+</div>
+
+
 <!-- list item END -->
 
 <p class="pt-2 mb-2">

@@ -9,7 +9,12 @@ INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body","is_publ
 '1',
 'I just delete the node_modules folder',
 '
-<p>due to the file size matter and the fact that we have nothing to do with node_modules folder and it''s content so I just delete and set the .gitignore for nodee_modules to just ignore it from looking and sync with the project code base on github now for new git pull please go to the root of your project foder then run "npm install" the node_modules folder will be back for you to start develop with any of the new vue components</p>
+<p>due to the file size matter and the fact that we have nothing to do with 
+node_modules folder and it''s content so I just delete and set the .gitignore 
+for nodee_modules to just ignore it from looking and sync with the project 
+code base on github now for new git pull please go to the root of your project 
+foder then run "npm install" the node_modules folder will be back for you to 
+start develop with any of the new vue components</p>
 
 ',
 '1','2021-01-31 16:45:15','2021-01-31 16:45:15' );
@@ -17,17 +22,24 @@ INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body","is_publ
 
 /* how can I add datetime to .sqlite */
 
-INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body","is_public","created_at","updated_at") VALUES (NULL,
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
 '1',
 'How can I add datetime to .sqlite for auto data',
 '
 
 Hi there today is 25 Jan 2021 I don''t know how can I add automatic datetime 
-to .sqlite file so I got it from here "https://www.sqlitetutorial.net/sqlite-date/"
-and now I want to escaping the single quote which is not accept by sql what I do is 
-I put two single quote('') to replace and it is working as I expected I got it from
-"https://stackoverflow.com/questions/603572/escape-single-quote-character-for-use-in-an-sqlite-query"
-now what else trick I learn today in (25-Jan-2021)
+to .sqlite file so I got it from 
+<a href="https://www.sqlitetutorial.net/sqlite-date/" 
+class="badge badge-info" target="_blank">
+here 
+</a>
+and now I want to escaping the single quote which is not accept by sql what 
+I do is I put two single quote('') to replace and it is working as I expected 
+I got it from
+<a href="https://stackoverflow.com/questions/603572/escape-single-quote-character-for-use-in-an-sqlite-query" target="_blank" class="badge badge-info">
+here
+</a> now what else trick I learn today in (25-Jan-2021)
 
 ',
 '1',datetime('now','localtime'),datetime('now','localtime'));
@@ -36,7 +48,8 @@ now what else trick I learn today in (25-Jan-2021)
 
 /* how do I install puddletag-snap on 26 Jan 2021 */
 
-INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body","is_public","created_at","updated_at") VALUES (NULL,
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
 '1',
 'How do I install puddletag on manjaro 20.2.2 26-Jan-2021',
 '
@@ -48,11 +61,12 @@ to that song Puddletag is not in pamac or pacman repo so tto install it
 I found it from here : "<a href="https://snapcraft.io/install/puddletag-snap/manjaro" target="blank" 
 >https://snapcraft.io/install/puddletag-snap/manjaro</a>"
 </p>
-<img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_819,h_512/https://dashboard.snapcraft.io/site_media/appmedia/2020/12/Bildschirmfoto_von_2020-12-06_17-02-23.png" class="responsive">
-<p>
-to install run the command :sudo snap install puddletag-snap make sure you have 
-snap install mostly if you use manjaro it is already installed so that you
-ready to go.
+<img 
+src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_819,h_512/https://dashboard.snapcraft.io/site_media/appmedia/2020/12/Bildschirmfoto_von_2020-12-06_17-02-23.png" class="responsive">
+<p> 
+to install run the command :sudo snap install puddletag-snap make sure 
+you have snap install mostly if you use manjaro it is already installed so 
+that you ready to go.
 </p>
 
 
@@ -69,7 +83,8 @@ https://i.ibb.co/dQHLJR3/2021-01-27-cmus-best-music-player.png
 
 ///////////////START OF TEMPLATE ///////////
 
-INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body","is_public","created_at","updated_at") VALUES (NULL,
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
 '1',
 '',
 '
@@ -90,20 +105,68 @@ INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body","is_publ
 ///////////////END OF TEMPLATE ///////////
 */
 
+
+/* Make thai slug javascript */
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
+'1',
+'make thai slug using javascript ',
+'
+<p>
+ I''ve finally found  "how to make thai slug by using javascript"
+  from 
+  <a href="https://gist.github.com/silkyland/004e9c74ed9ed8b76d613bc2e4e48f52"
+  target="_blank">here</a> so from now at least I will use this code 
+
+</p>
+<div class="line-numbers">
+ <pre>
+    <code class="language-javascript">
+        
+        makeSlug(){
+            let make_slug = this.title.replace(/\s+/g,"-")
+            .replace(/[^\u0E00-\u0E7F\w\-]+/g,"")            
+            .replace(/\-\-+/g,"-")
+            .replace(/^-+/,"")
+            .toLowerCase()
+           return this.slug = make_slug
+        },
+    </code>
+ </pre>
+</div>
+ <img src="https://i.ibb.co/CVjyBVm/2021-02-08-thai-slug.png" 
+ class="responsive">
+<p>
+    so now it seem to be working in the way that I want it''s to be.
+</p>
+
+
+',
+'1','2021-2-8 19:22:45','2021-2-8 19:23:15');
+
+
+
+
+
+
+
+
+
 /* cmus 27 jan 2021 */
 
 
-INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body","is_public","created_at","updated_at") VALUES (NULL,
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
 '1',
 'cmus is my best music player from now on ',
 '
 <p>
 today (25 jan 2021) I just re-install manjaro on my computer just right after
-the manjaro xfce which I try to config to use i3wm and it is end up with the system
-is crash all the time I don''t know what I did wrong with it the cpu fan spin like
-crazy so I have to re-install the new one this time I use manjaro-i3 20.2.2 so 
-thing is come out of the box and it is working very very well like I ever expected
-it to be 
+the manjaro xfce which I try to config to use i3wm and it is end up with 
+the system is crash all the time I don''t know what I did wrong with it the 
+cpu fan spin like crazy so I have to re-install the new one this time I use 
+manjaro-i3 20.2.2 so thing is come out of the box and it is working very 
+very well like I ever expected it to be 
 
 </p>
 
@@ -111,10 +174,10 @@ it to be
 once the install and update has complete I just try to find which music player
 is can be replace my ''rhythmbox'' my belove music player from all time but I 
 cannot use it now with th current version of rhythmbox I just don''t like the 
-lack of the interface when I change the song it is appear as it is crash(but it wasn''t)
-so that how the story come why I have to leave rhythmbox as I stil love it
-for me there is none music player out there can replace rhythmbox I did try many 
-  many of them but no no 
+lack of the interface when I change the song it is appear as it is 
+crash(but it wasn''t) so that how the story come why I have to leave 
+rhythmbox as I stil love it for me there is none music player out there 
+can replace rhythmbox I did try many many of them but no no 
 </p>
 
 <p> 
@@ -123,12 +186,15 @@ it has "M" as a music player so I just enter to it at the very first 15 minute
 was a big big confuse to me "how to I add music?" ,"how do I do?..." 
 and I even have the problem that cmus only run once and it throw error said 
 "error opening false internal error" so what I do to solved the problem was 
-one command "rm -rf .config/cmus/autosave" just after I read from "https://bbs.archlinux.org/viewtopic.php?id=223095"
-now thing was completely working good I love you manjaro-i3+cmus
+one command "rm -rf .config/cmus/autosave" just after I read from 
+<a href="https://bbs.archlinux.org/viewtopic.php?id=223095" target="_blank"
+class="badge badge-info">Here</a> now thing was completely working good I 
+love you manjaro-i3+cmus
 </p>
 
 
-<img src="https://i.ibb.co/dQHLJR3/2021-01-27-cmus-best-music-player.png" class="responsive">
+<img src="https://i.ibb.co/dQHLJR3/2021-01-27-cmus-best-music-player.png" 
+class="responsive">
 
 
 
