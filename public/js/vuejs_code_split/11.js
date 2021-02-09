@@ -180,6 +180,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 
@@ -192,6 +201,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       theHolder: '',
       excerpt: '',
       title: '',
+      section: '',
       body: '',
       show_preview: '',
       res_status: '',
@@ -213,6 +223,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       axios.get(url).then(function (res) {
         //console.log(res.data);
         _this.body = res.data.template.body;
+        _this.section = res.data.template.section;
         _this.title = res.data.template.title;
         _this.excerpt = res.data.template.excerpt;
         _this.editId = res.data.template.id;
@@ -238,6 +249,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       var url = '';
       var data = {
         title: this.title,
+        section: this.section,
         excerpt: this.excerpt,
         body: this.body
       };
@@ -260,8 +272,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
         });
       }
 
-      setTimeout(function () {
-        location.reload();
+      setTimeout(function () {//  location.reload();
       }, 2000);
     },
     goToPage: function goToPage(url) {
@@ -379,6 +390,33 @@ var render = function() {
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-lg-12" }, [
         _c("form", [
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "" } }, [_vm._v("section")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.section,
+                  expression: "section"
+                }
+              ],
+              ref: "section",
+              staticClass: "form-control",
+              attrs: { id: "", type: "text", placeholder: "Enter section" },
+              domProps: { value: _vm.section },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.section = $event.target.value
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
           _c("div", { staticClass: "form-group" }, [
             _c("label", { attrs: { for: "" } }, [_vm._v("title")]),
             _vm._v(" "),

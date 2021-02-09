@@ -12,6 +12,7 @@ use App\Http\Controllers\VisitorsController as PubVisit;
 use App\Http\Controllers\Member\WhatnewsController as WMN;
 use App\Http\Controllers\Member\PostsController as MemberPost;
 use App\Http\Controllers\Member\CommentsController as MCMT;
+use App\Http\Controllers\Member\TemplatesController as TPM;
 
 
 use App\Http\Controllers\Admin\WhatnewsController as WPAdmin;
@@ -75,6 +76,8 @@ Route::prefix('member')->name('member.')->middleware('auth')->group(function(){
     Route::get('/about',[MemberPost::class,"about"])->name('posts.about');
 
     Route::get('/getPostComment/{post_id}',[MCMT::class,'getPostComment'])->name('comments.getPostComment');
+
+    Route::resource("/templates",TPM::class);
 
     Route::resource("/comments",MCMT::class);
     Route::post('/replyComment',[MCMT::class,"replyComment"])->name("comments.replyComment");

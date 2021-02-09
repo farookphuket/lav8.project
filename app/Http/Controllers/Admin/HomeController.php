@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Whatnews;
+use App\Models\Template;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Auth;
@@ -22,7 +23,11 @@ class HomeController extends Controller
             return redirect('login');
         else:
             $wn = Whatnews::latest()->paginate(15);
-            return view('Admin.index')->with(["wnlist" => $wn]);
+            $template = Template::where("section","whatnews")->get();
+        return view('Admin.index')->with([
+            "wnlist" => $wn,
+            "template" => $template
+        ]);
 
         endif;
     }

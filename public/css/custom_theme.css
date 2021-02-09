@@ -155,19 +155,19 @@ End of video section
 .pa .active{
     color:red;
     background-color:black;
-    padding:10px;
+    padding:6px;
 }
 
 .pagination a{
-  color:blue;
+ /* color:blue; */
   padding:5px;
-  font-size:larger;
+  /*font-size:larger; */
   font-weight:bold;
 
 }
 .pagination a:hover{
     color:red;
-    padding:10px;
+    padding:6px;
     text-decoration:none;
     background-color:black;
 }
@@ -178,6 +178,15 @@ End of video section
 
 
 @media only screen and (max-width: 480px){
+
+    .post-preview h2{
+        color:blue;
+    }
+
+    .post-preview h3{
+        color:#868e96;
+        font-size:18px;
+    }
 
     .pa .pagination{
         display:block;

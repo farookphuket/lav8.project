@@ -25,7 +25,7 @@
   @endforeach
 
   <div id="app">
-    <postmember></postmember>
+    <postmember :template="{{$template}}"></postmember>
     <Visitors></Visitors>
   </div>
 

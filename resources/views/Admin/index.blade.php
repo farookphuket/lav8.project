@@ -15,6 +15,6 @@
 
 @section('content')
     <div id="app">
-        <adminwm></adminwm>
+        <adminwm :template="{{$template}}"></adminwm>
     </div>
 @endsection

@@ -16,6 +16,17 @@
                 
                 <form>
                     <div class="form-group">
+                        <select class="form-control" 
+                                ref="getTemplate"
+                                @change="setTemplate">
+                            <option value="0">--Select Template--</option>
+                            <option :value="li.id"
+                                    v-for="li in template">
+                                {{li.title}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <input v-model="title" 
                         ref="title" class="form-control" 
                         v-on:keyup="makeSlug(title)"
@@ -91,6 +102,10 @@
                                     @click.prevent="savePost(editId)">
                                     Save
                                 </button>
+
+                                <button class="btn btn-danger"
+                                        @click.prevent="closeBox(0)" 
+                                    >Cancel</button>
                             </div><!-- end of new_tag input-group-->
 
                         </div><!-- end div.float-right-->
@@ -169,7 +184,7 @@ import PostList from './PostList.vue'
 import Tagmember from './PostTag.vue'
 import JoditEditor from 'jodit-vue'
 export default{
-
+    props:["template"],
     components:{
         Tagmember,
         PostList,
@@ -180,6 +195,7 @@ export default{
             tag_with_content:[],
             tag_all: [],
             title:'',
+            getTemplate:'',
             slug:'',
             editId: 0,
             excerpt: '',
@@ -212,6 +228,17 @@ please check your form again!
         this.getPostList()
     }
     ,methods:{
+        setTemplate(){
+            let tmp = this.$refs.getTemplate.value
+            let url = `/member/templates/${tmp}`
+            axios.get(url)
+                .then(res=>{
+                    this.title = `you will use ${res.data.template.title}`
+                    this.excerpt = res.data.template.excerpt
+                    this.body = res.data.template.body
+                })
+
+        },
         getPostList(page){
             let url = '';
             if(page){
@@ -314,6 +341,7 @@ please check your form again!
                 this.res_status = ''
                 this.title = ''
                 this.slug = ''
+                this.$refs.getTemplate.value = 0
                 this.excerpt = ''
                 this.is_public = false
                 this.body = ''

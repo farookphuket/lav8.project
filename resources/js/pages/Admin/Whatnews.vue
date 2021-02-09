@@ -8,6 +8,19 @@
             <div class="form">
                 <form>
                     <div class="form-group">
+                        <select id="" 
+                            class="form-control"
+                            @change="setTemplate"
+                            ref="getTemplate">
+                            <option value="0">
+                            -- Select --
+                            </option>
+                            <option 
+                            v-for="li in template"
+                            :value="li.id">{{li.title}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <input v-model="title" 
                         ref="title"
                         class="form-control" type="text" 
@@ -90,7 +103,7 @@
 export default{
 
 
-    //props:["wnlist"],
+    props:["template"],
     name:"Adminwm",
     components:{
         WhatnewsList
@@ -112,6 +125,7 @@ export default{
         this.getWhatnewsList()
     },
     methods:{
+        
         getWhatnewsList(page){
             let url = ''
             if(page){
@@ -126,6 +140,15 @@ export default{
             axios.get(url)
                 .then(res=>{
                     this.wnlist = res.data.whatnews
+                })
+        },
+        setTemplate(){
+            let tmp = this.$refs.getTemplate.value
+            let url = `/admin/templates/${tmp}`
+            axios.get(url)
+                .then(res=>{
+                    this.title = res.data.template.title 
+                    this.body = res.data.template.excerpt
                 })
         },
         goRead(id){
@@ -201,6 +224,7 @@ export default{
             }else{
                 this.$refs["onOk"].hide()
                 this.editId = 0
+                this.$refs.getTemplate.value = 0
                 this.title = ''
                 this.body =''
                 this.res_status = ''

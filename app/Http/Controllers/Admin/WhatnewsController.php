@@ -24,6 +24,7 @@ class WhatnewsController extends Controller
 
         return response()->json([
             "whatnews" => $whatnews
+
         ],200);
     }
 

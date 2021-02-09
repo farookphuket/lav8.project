@@ -13,6 +13,15 @@
 
         <div class="col-lg-12">
             <form>
+                
+                <div class="form-group">
+                    <label for="">section</label>
+                    <input id="" class="form-control" 
+                    type="text" 
+                    ref="section"
+                    placeholder="Enter section"
+                    v-model="section">
+                </div>
                 <div class="form-group">
                     <label for="">title</label>
                     <input id="" class="form-control" 
@@ -183,6 +192,7 @@ export default{
             theHolder:'',
             excerpt:'',
             title:'',
+            section:'',
             body:'',
             show_preview:'',
             res_status: '',
@@ -206,6 +216,7 @@ export default{
                 .then(res=>{
                     //console.log(res.data);
                     this.body = res.data.template.body;
+                    this.section = res.data.template.section;
                     this.title = res.data.template.title;
                     this.excerpt = res.data.template.excerpt;
                     this.editId = res.data.template.id;
@@ -227,6 +238,7 @@ export default{
             let url = '';
             let data = {
                     title:this.title,
+                    section:this.section,
                     excerpt:this.excerpt,
                     body:this.body
                 };
@@ -262,7 +274,7 @@ export default{
             }
 
             setTimeout(()=>{
-                location.reload();
+              //  location.reload();
             },2000);
 
         },

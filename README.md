@@ -18,8 +18,8 @@
 >   maybe I am a way too stupid for this, 
 >   but the easier way that I can do to make this work is just gone around
 >   this way (before you upload your project to the share host make sure that 
->   1.you have a copy project folder 2.you have run `npm run prod` 
->   so this way we don't have to care about the `node_module`
+>   1.you have a copy project folder 2.you have run "npm run prod" 
+>   so this way we don't have to care about the "node_module"
 >   folder we have nothing to do with it)
 
 
@@ -27,15 +27,16 @@
 
 1.  for example I have my web root that I can access on the share host to 
 the folder www which allow me to create folder in here now I create new 
-folder call [lav8Sys] and I copy the file and folder from my project folder 
-EXCEPT [public] and [node_mpdule] to the folder [lav8Sys] that I have created 
+folder call "lav8Sys" and I copy the file and folder from my project folder 
+EXCEPT "public" and "node_mpdule" to the folder "lav8Sys" that I have created 
 
   
-2.  now copy everything inside of [public] folder to my web root(no 
-need public folder) I mean to my [public_html] folder 
+2.  now copy everything inside of "public" folder to my web root(no 
+need public folder) I mean to my "public_html" folder 
 
 
-3.  now edit the file [index.php] change the 2 lines as show below 
+
+3.  now edit the file "index.php" change the 2 lines as show below 
 
 
 
@@ -66,11 +67,11 @@ need public folder) I mean to my [public_html] folder
 
 
     FROM:
-    `DB_DATABASE=/srv/http/lav8.lap/DB/DB_SAMPLE.sqlitei`
+    DB_DATABASE=/srv/http/lav8.lap/DB/DB_SAMPLE.sqlite
 
     TO: (it must be the full path you can find absolute path from your FTP)
 
-    `DB_DATABASE=/var/www/lav8Sys/DB/DB_SAMPLE.sqlite`
+    DB_DATABASE=/var/www/lav8Sys/DB/DB_SAMPLE.sqlite
 
 
 
@@ -82,10 +83,10 @@ need public folder) I mean to my [public_html] folder
 
 
 
-# My word I am stupid programmer copy other people code
+# My word as I am stupid programmer copy other people code
 
 >   as I start this project from knowing nothing at all about laravel
->   until now I know just avery small piece of laravel and now I make 
+>   until now I know just a very small piece of laravel and now I make 
 >   the simple project using laravel&vue as the backend and I am now
 >   at this point the point that I am stuck within my messy ugly code
 >   I don't know how or if I can improving myself at all
@@ -111,22 +112,23 @@ need public folder) I mean to my [public_html] folder
 #   How to use?
 
 1.  open your terminal program type 
-`git clone https://github.com/farookphuket/lav8.project.git`
+" git clone https://github.com/farookphuket/lav8.project.git "
 
 
 
-2.  cd into the project directory `cd lav8.project` you have to create the 
+2.  cd into the project directory "cd lav8.project" you have to create the 
 config file by command `cp .env.example .env`
 
 
 
-3.  edit file '.env'
--   `DB_CONNECTION=sqlite` (if you use mysql so just leave this line un-touch 
+3.  edit file ".env"
+
+-   "DB_CONNECTION=sqlite" (if you use mysql so just leave this line un-touch 
 and provide you database credencials into this file).
 -   paste the absolute file path to your 'database.sqlite' file for example
-in my case I use manjaro and I name my project folder `lav8.project `
-living in `/srv/http ` so my absolute path will be
-`DB_DATABASE=/srv/http/lav8.project/DB/DB_SAMPLE.sqlite`
+in my case I use manjaro and I name my project folder "lav8.project "
+living in "/srv/http " so my absolute path will be
+"DB_DATABASE=/srv/http/lav8.project/DB/DB_SAMPLE.sqlite"
 
 [edit_env]:https://i.ibb.co/KqzfZKy/edit-env.png
 
@@ -408,6 +410,29 @@ app should be appear.
 >   base on the Auth user" let say if the user does not own the item so he won't
 >   be able to edit or delete that item.
 
+
+
+
+
+
+---
+
+#   Date 9 Feb 2021 upgrade to php 8.0
+
+>   yes! I know that the php 8 is already take place since last year(2020) but to me I just have ability to use it today just now and this can be something new for me so just a little bit of worries for instant after the update has done I just restart and found out that a ha "apache is not load!" so I just take a look of the error code it is because the config cannot find php 7 as it is already been replace with php 8 so to make it back again I have to edit the httpd.conf file by run this command `sudo vim /etc/httpd/conf/httpd.conf` and edit the include php file just like the code below 
+
+
+
+```
+    LoadModule php_module modules/libphp.so
+	AddHandler php-script .php
+	Include conf/extra/php_module.conf
+
+
+
+```
+
+> so now thing is back to work as it's use to be and that's it all update for today.
 
 
 

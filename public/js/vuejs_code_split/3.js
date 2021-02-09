@@ -94,10 +94,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  //props:["wnlist"],
+  props: ["template"],
   name: "Adminwm",
   components: {
     WhatnewsList: _WhatnewsList_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
@@ -139,31 +152,41 @@ __webpack_require__.r(__webpack_exports__);
         _this.wnlist = res.data.whatnews;
       });
     },
+    setTemplate: function setTemplate() {
+      var _this2 = this;
+
+      var tmp = this.$refs.getTemplate.value;
+      var url = "/admin/templates/".concat(tmp);
+      axios.get(url).then(function (res) {
+        _this2.title = res.data.template.title;
+        _this2.body = res.data.template.excerpt;
+      });
+    },
     goRead: function goRead(id) {
       var url = "/admin/whatnews/".concat(id);
       location.href = url;
     },
     goEdit: function goEdit(id) {
-      var _this2 = this;
+      var _this3 = this;
 
       var url = "/admin/whatnews/".concat(id, "/edit");
       axios.get(url).then(function (res) {
         //console.log(res.data.wm)
         var data = res.data.wm;
-        _this2.title = data.whatnews_title;
-        _this2.body = data.whatnews_body;
-        _this2.editId = data.id;
-        _this2.is_public = data.is_public;
+        _this3.title = data.whatnews_title;
+        _this3.body = data.whatnews_body;
+        _this3.editId = data.id;
+        _this3.is_public = data.is_public;
 
         if (data.is_public !== '1') {
-          _this2.is_public = false;
+          _this3.is_public = false;
         }
 
-        _this2.$refs.title.focus();
+        _this3.$refs.title.focus();
       });
     },
     saveWhat: function saveWhat(id) {
-      var _this3 = this;
+      var _this4 = this;
 
       var url = '';
       var data = {
@@ -175,30 +198,30 @@ __webpack_require__.r(__webpack_exports__);
       if (id) {
         url = "/admin/whatnews/".concat(id);
         axios.put(url, data).then(function (res) {
-          _this3.res_status = res.data.msg;
-          _this3.error = 0;
+          _this4.res_status = res.data.msg;
+          _this4.error = 0;
         })["catch"](function (err) {
-          _this3.error = 1;
-          _this3.error_msg = err.response.message;
-          _this3.res_status = _this3.error_msg;
+          _this4.error = 1;
+          _this4.error_msg = err.response.message;
+          _this4.res_status = _this4.error_msg;
         });
       } else {
         url = "/admin/whatnews";
         axios.post(url, data).then(function (res) {
-          _this3.res_status = res.data.msg;
-          _this3.error = 0;
+          _this4.res_status = res.data.msg;
+          _this4.error = 0;
         })["catch"](function (err) {
-          _this3.error = 1;
-          _this3.error_msg = err.message;
-          _this3.res_status = _this3.error_msg;
+          _this4.error = 1;
+          _this4.error_msg = err.message;
+          _this4.res_status = _this4.error_msg;
         });
       }
 
       this.showModal();
       setTimeout(function () {
-        _this3.getWhatnewsList();
+        _this4.getWhatnewsList();
 
-        _this3.reSetForm();
+        _this4.reSetForm();
       }, 2500);
     },
     showModal: function showModal() {
@@ -219,15 +242,15 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     goDel: function goDel(id) {
-      var _this4 = this;
+      var _this5 = this;
 
       var url = "/admin/whatnews/".concat(id);
       axios["delete"](url).then(function (res) {
-        _this4.res_status = res.data.msg;
+        _this5.res_status = res.data.msg;
       });
       this.showModal();
       setTimeout(function () {
-        _this4.getWhatnewsList();
+        _this5.getWhatnewsList();
       }, 2500);
     }
   }
@@ -528,6 +551,32 @@ var render = function() {
           { staticClass: "form" },
           [
             _c("form", [
+              _c("div", { staticClass: "form-group" }, [
+                _c(
+                  "select",
+                  {
+                    ref: "getTemplate",
+                    staticClass: "form-control",
+                    attrs: { id: "" },
+                    on: { change: _vm.setTemplate }
+                  },
+                  [
+                    _c("option", { attrs: { value: "0" } }, [
+                      _vm._v(
+                        "\n                        -- Select --\n                        "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _vm._l(_vm.template, function(li) {
+                      return _c("option", { domProps: { value: li.id } }, [
+                        _vm._v(_vm._s(li.title))
+                      ])
+                    })
+                  ],
+                  2
+                )
+              ]),
+              _vm._v(" "),
               _c("div", { staticClass: "form-group" }, [
                 _c("input", {
                   directives: [

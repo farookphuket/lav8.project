@@ -178,10 +178,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["template"],
   components: {
     Tagmember: _PostTag_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     PostList: _PostList_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
@@ -192,6 +208,7 @@ __webpack_require__.r(__webpack_exports__);
       tag_with_content: [],
       tag_all: [],
       title: '',
+      getTemplate: '',
       slug: '',
       editId: 0,
       excerpt: '',
@@ -212,8 +229,19 @@ __webpack_require__.r(__webpack_exports__);
     this.getPostList();
   },
   methods: {
-    getPostList: function getPostList(page) {
+    setTemplate: function setTemplate() {
       var _this = this;
+
+      var tmp = this.$refs.getTemplate.value;
+      var url = "/member/templates/".concat(tmp);
+      axios.get(url).then(function (res) {
+        _this.title = "you will use ".concat(res.data.template.title);
+        _this.excerpt = res.data.template.excerpt;
+        _this.body = res.data.template.body;
+      });
+    },
+    getPostList: function getPostList(page) {
+      var _this2 = this;
 
       var url = '';
 
@@ -229,38 +257,38 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       axios.get(url).then(function (res) {
-        _this.postlist = res.data.posts;
-        _this.tag_with_content = res.data.tag_with_content;
-        _this.tag_all = res.data.tag_all;
+        _this2.postlist = res.data.posts;
+        _this2.tag_with_content = res.data.tag_with_content;
+        _this2.tag_all = res.data.tag_all;
       });
     },
     editPost: function editPost(id) {
-      var _this2 = this;
+      var _this3 = this;
 
       var url = "/member/posts/".concat(id, "/edit");
       axios.get(url).then(function (res) {
         var rData = res.data.post;
-        _this2.title = rData.post_title;
-        _this2.slug = rData.slug;
-        _this2.editId = rData.id;
-        _this2.body = rData.post_body;
-        _this2.excerpt = rData.post_excerpt;
-        _this2.tags = rData.tags;
-        _this2.new_tag = '';
-        _this2.user_select_tag = [];
-        _this2.user_old_tag = rData.tags;
-        _this2.is_public = rData.is_public;
+        _this3.title = rData.post_title;
+        _this3.slug = rData.slug;
+        _this3.editId = rData.id;
+        _this3.body = rData.post_body;
+        _this3.excerpt = rData.post_excerpt;
+        _this3.tags = rData.tags;
+        _this3.new_tag = '';
+        _this3.user_select_tag = [];
+        _this3.user_old_tag = rData.tags;
+        _this3.is_public = rData.is_public;
 
-        if (_this2.is_public !== '1') {
-          _this2.is_public = false;
+        if (_this3.is_public !== '1') {
+          _this3.is_public = false;
         }
 
-        _this2.$refs.title.focus(); //console.log(this.is_public)
+        _this3.$refs.title.focus(); //console.log(this.is_public)
 
       });
     },
     savePost: function savePost(id) {
-      var _this3 = this;
+      var _this4 = this;
 
       var url = '';
       var data = {
@@ -276,28 +304,28 @@ __webpack_require__.r(__webpack_exports__);
       if (id) {
         url = "/member/posts/".concat(id);
         axios.put(url, data).then(function (res) {
-          _this3.$refs["onOk"].show();
+          _this4.$refs["onOk"].show();
 
-          _this3.res_status = res.data.msg;
-          _this3.error = 0;
+          _this4.res_status = res.data.msg;
+          _this4.error = 0;
         })["catch"](function (error) {
-          _this3.res_status = "<span class=\"alert alert-danger\">\n                            Error! your input ".concat(error.response.message);
-          _this3.error = 1; //this.$refs["onOk"].show()
+          _this4.res_status = "<span class=\"alert alert-danger\">\n                            Error! your input ".concat(error.response.message);
+          _this4.error = 1; //this.$refs["onOk"].show()
         });
       } else {
         url = "/member/posts";
         axios.post(url, data).then(function (res) {
-          _this3.res_status = res.data.msg;
+          _this4.res_status = res.data.msg;
 
-          _this3.$refs["onOk"].show();
+          _this4.$refs["onOk"].show();
 
-          _this3.error = 0;
+          _this4.error = 0;
         }, function (error) {
           //console.log(error.response.data.message)
-          _this3.error = 1;
-          _this3.res_status = "<span class=\"alert alert-danger\">\n                           ".concat(error.response.data.message, "</span> ");
+          _this4.error = 1;
+          _this4.res_status = "<span class=\"alert alert-danger\">\n                           ".concat(error.response.data.message, "</span> ");
 
-          _this3.$refs["onOk"].show();
+          _this4.$refs["onOk"].show();
         });
       }
     },
@@ -307,19 +335,20 @@ __webpack_require__.r(__webpack_exports__);
       location.href = url;
     },
     delPost: function delPost(id) {
-      var _this4 = this;
+      var _this5 = this;
 
       var url = "/member/posts/".concat(id);
       axios["delete"](url).then(function (res) {
-        _this4.res_status = res.data.msg;
+        _this5.res_status = res.data.msg;
 
-        _this4.$refs["onOk"].show();
+        _this5.$refs["onOk"].show();
       });
     },
     reNewFormData: function reNewFormData() {
       this.res_status = '';
       this.title = '';
       this.slug = '';
+      this.$refs.getTemplate.value = 0;
       this.excerpt = '';
       this.is_public = false;
       this.body = '';
@@ -615,6 +644,33 @@ var render = function() {
           _vm._v(" "),
           _c("form", [
             _c("div", { staticClass: "form-group" }, [
+              _c(
+                "select",
+                {
+                  ref: "getTemplate",
+                  staticClass: "form-control",
+                  on: { change: _vm.setTemplate }
+                },
+                [
+                  _c("option", { attrs: { value: "0" } }, [
+                    _vm._v("--Select Template--")
+                  ]),
+                  _vm._v(" "),
+                  _vm._l(_vm.template, function(li) {
+                    return _c("option", { domProps: { value: li.id } }, [
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(li.title) +
+                          "\n                        "
+                      )
+                    ])
+                  })
+                ],
+                2
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
               _c("input", {
                 directives: [
                   {
@@ -909,6 +965,20 @@ var render = function() {
                         "\n                                Save\n                            "
                       )
                     ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-danger",
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.closeBox(0)
+                        }
+                      }
+                    },
+                    [_vm._v("Cancel")]
                   )
                 ])
               ])

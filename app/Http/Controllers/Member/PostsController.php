@@ -8,6 +8,7 @@ use App\Models\Post;
 use Auth;
 use DB;
 use App\Models\Tag;
+use App\Models\Template;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -28,6 +29,7 @@ class PostsController extends Controller
                         ->paginate(15)->onEachSide(1);
         $tags = Tag::has('posts')->get();
         $tag_all = Tag::all();
+        $template = Template::where("section","post")->get();
 
         if(request('tag')):
             $posts = Tag::where('id',request('tag'))
@@ -40,7 +42,8 @@ class PostsController extends Controller
         return view('Member.Posts.index')->with([
             'posts' => $posts,
             'tags' => $tags,
-            'tag_all' => $tag_all
+            'tag_all' => $tag_all,
+            'template' => $template
         ]);
     }
 

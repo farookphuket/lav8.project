@@ -2,10 +2,66 @@
 
 
 
+
+/*  number 6 on date 9 Feb 2021 upgrade system to using php 8 */
+
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (6,
+'1',
+'',
+'
+<p>
+<b>Hi there</b> today 9 Feb 2021 I just update the system the size of update 
+is 1.8 GB but after update my website project is not working the problem is 
+apache not start because it''s cannot find php 7(as it''s has upgrade to php8 
+now) so the httpd.conf file has to be edit
+<span class="badge badge-info">
+"sudo vim /etc/httpd/conf/httpd.conf "
+</span>
+the full article is will be found 
+<a href="https://wiki.archlinux.org/index.php/Apache_HTTP_Server" target="_blank">here</a>
+</p>
+<p class="pt-2 mb-2">
+the image below is my recently use system before update
+</p>
+<p>
+    <img src="https://i.ibb.co/vV9qPLR/2021-02-09-php7-4.png" class="responsive">
+
+</p>
+<p>
+    <img src="https://i.ibb.co/JdpGfp7/2021-02-09-update-system.png" class="responsive">
+</p>
+<p>
+    <img src="https://i.ibb.co/3pgZ7jw/2021-02-09-httpd-conf.png" class="responsive">
+</p>
+<p class="pt-4 mb-4">this is the edit file /etc/httpd/conf/httpd.conf</p>
+<div class="line-numbers">
+    <pre>        
+        <code class="language-php">
+
+            LoadModule php_module modules/libphp.so
+            AddHandler php-script .php
+            Include conf/extra/php_module.conf
+
+        </code>
+    </pre>
+</div>
+<p>
+and now thing is back to work again
+</p>
+
+
+',
+'1',datetime('now','localtime'),datetime('now','localtime'));
+
+
+
+
 /* remove node_modules folder due to the file size matter */
 
 
-INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body","is_public","created_at","updated_at") VALUES (NULL,
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (5,
 '1',
 'I just delete the node_modules folder',
 '
@@ -23,7 +79,7 @@ start develop with any of the new vue components</p>
 /* how can I add datetime to .sqlite */
 
 INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
-"is_public","created_at","updated_at") VALUES (NULL,
+"is_public","created_at","updated_at") VALUES (4,
 '1',
 'How can I add datetime to .sqlite for auto data',
 '
@@ -49,7 +105,7 @@ here
 /* how do I install puddletag-snap on 26 Jan 2021 */
 
 INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
-"is_public","created_at","updated_at") VALUES (NULL,
+"is_public","created_at","updated_at") VALUES (3,
 '1',
 'How do I install puddletag on manjaro 20.2.2 26-Jan-2021',
 '
@@ -108,7 +164,7 @@ INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
 
 /* Make thai slug javascript */
 INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
-"is_public","created_at","updated_at") VALUES (NULL,
+"is_public","created_at","updated_at") VALUES (2,
 '1',
 'make thai slug using javascript ',
 '
@@ -156,7 +212,7 @@ INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
 
 
 INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
-"is_public","created_at","updated_at") VALUES (NULL,
+"is_public","created_at","updated_at") VALUES (1,
 '1',
 'cmus is my best music player from now on ',
 '

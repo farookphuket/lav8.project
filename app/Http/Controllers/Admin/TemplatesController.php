@@ -72,6 +72,7 @@ class TemplatesController extends Controller
             Template::create([
                 "user_id" => Auth::user()->id,
                 "title" => request()->title,
+                "section" => request()->section,
                 "excerpt" => xx_clean(request()->excerpt),
                 "body" => xx_clean(request()->body)
             ]); 
@@ -113,9 +114,10 @@ class TemplatesController extends Controller
      */
     public function show(Template $template)
     {
-        return view("Admin.Template.show")->with([
-            "template" => $template
-        ]);
+      //  return view("Admin.Template.show")->with([
+      //      "template" => $template
+      //  ]);
+        return response()->json(["template" => $template]);
     }
 
     /**
