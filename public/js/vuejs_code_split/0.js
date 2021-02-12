@@ -23,6 +23,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    template: {
+      type: Array
+    }
+  },
   components: {
     PostForm: _PostForm_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
@@ -198,6 +203,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -205,6 +222,11 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    template: {
+      type: Array
+    }
+  },
   components: {
     Postlist: _PostList_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     PostTags: _PostTags_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
@@ -258,8 +280,23 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
         this.isSelectAll = false;
       }
     },
-    getPostsList: function getPostsList(page) {
+    setTemplate: function setTemplate() {
       var _this = this;
+
+      var tmp = this.$refs.getTemplate.value;
+      var url = "/admin/templates/".concat(tmp);
+      axios.get(url).then(function (res) {
+        var get_tmp = res.data.template;
+        _this.title = "you are using ".concat(get_tmp.title);
+        _this.excerpt = get_tmp.excerpt;
+        _this.body = get_tmp.body;
+        setTimeout(function () {
+          _this.$refs.getTemplate.value = 0;
+        }, 2500);
+      });
+    },
+    getPostsList: function getPostsList(page) {
+      var _this2 = this;
 
       var url = '';
 
@@ -275,31 +312,31 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       }
 
       axios.get(url).then(function (res) {
-        _this.posts = res.data.posts;
-        _this.tag_has_content = res.data.tag_with_content;
-        _this.tag_all = res.data.tags;
+        _this2.posts = res.data.posts;
+        _this2.tag_has_content = res.data.tag_with_content;
+        _this2.tag_all = res.data.tags;
       });
     },
     editPost: function editPost(id) {
-      var _this2 = this;
+      var _this3 = this;
 
       var url = "/admin/post/".concat(id, "/edit");
       axios.get(url).then(function (res) {
         var postData = res.data.post;
-        _this2.title = postData.post_title;
-        _this2.slug = postData.slug;
-        _this2.excerpt = postData.post_excerpt;
-        _this2.body = postData.post_body;
+        _this3.title = postData.post_title;
+        _this3.slug = postData.slug;
+        _this3.excerpt = postData.post_excerpt;
+        _this3.body = postData.post_body;
 
-        _this2.$refs.title.focus();
+        _this3.$refs.title.focus();
 
-        _this2.editId = postData.id;
-        _this2.current_user_tag = postData.tags;
-        _this2.is_public = postData.is_public; //console.log(postData.is_public);
+        _this3.editId = postData.id;
+        _this3.current_user_tag = postData.tags;
+        _this3.is_public = postData.is_public; //console.log(postData.is_public);
       });
     },
     savePost: function savePost(id) {
-      var _this3 = this;
+      var _this4 = this;
 
       var url = '';
       var data = {
@@ -315,19 +352,19 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       if (id) {
         url = "/admin/post/".concat(id);
         axios.put(url, data).then(function (res) {
-          _this3.res_status = res.data.msg;
-          _this3.error = 0;
+          _this4.res_status = res.data.msg;
+          _this4.error = 0;
         })["catch"](function (err) {
-          _this3.error = 1;
-          _this3.res_status = "<span class=\"alert alert-danger\">\n                           Error! check your input</span> ";
+          _this4.error = 1;
+          _this4.res_status = "<span class=\"alert alert-danger\">\n                           Error! check your input</span> ";
         });
       } else {
         url = "/admin/post";
         axios.post(url, data).then(function (res) {
-          _this3.res_status = res.data.msg;
+          _this4.res_status = res.data.msg;
         })["catch"](function (err) {
-          _this3.error = 1;
-          _this3.res_status = "<span class=\"alert alert-danger\">\n                           Error! check your input</span> ";
+          _this4.error = 1;
+          _this4.res_status = "<span class=\"alert alert-danger\">\n                           Error! check your input</span> ";
         });
       }
 
@@ -355,13 +392,13 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       }
     },
     delPost: function delPost(id) {
-      var _this4 = this;
+      var _this5 = this;
 
       var url = "/admin/post/".concat(id);
       axios["delete"](url).then(function (res) {
-        _this4.res_status = res.data.msg;
+        _this5.res_status = res.data.msg;
 
-        _this4.$refs["onOk"].show();
+        _this5.$refs["onOk"].show();
       });
     },
     sendToPage: function sendToPage(id) {
@@ -786,7 +823,7 @@ var render = function() {
         _vm._v(_vm._s(_vm.msg))
       ]),
       _vm._v(" "),
-      _c("post-form")
+      _c("post-form", { attrs: { template: _vm.template } })
     ],
     1
   )
@@ -818,6 +855,27 @@ var render = function() {
     { staticClass: "container" },
     [
       _c("form", [
+        _c("div", { staticClass: "form-group" }, [
+          _c(
+            "select",
+            {
+              ref: "getTemplate",
+              staticClass: "form-control",
+              on: { change: _vm.setTemplate }
+            },
+            [
+              _c("option", { attrs: { value: "0" } }, [_vm._v("--Select --")]),
+              _vm._v(" "),
+              _vm._l(_vm.template, function(li) {
+                return _c("option", { domProps: { value: li.id } }, [
+                  _vm._v(_vm._s(li.title))
+                ])
+              })
+            ],
+            2
+          )
+        ]),
+        _vm._v(" "),
         _c("div", { staticClass: "form-group" }, [
           _c("input", {
             directives: [
@@ -1164,6 +1222,20 @@ var render = function() {
                       "\n                                    Save\n                                "
                     )
                   ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-danger",
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.makeResetForm($event)
+                      }
+                    }
+                  },
+                  [_vm._v("\n                                    Clear")]
                 )
               ])
             ])

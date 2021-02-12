@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
+use App\Models\Template;
 use App\Models\Tag;
 use App\Models\User;
 
@@ -22,7 +23,8 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return view("Admin.Posts.index");
+        $template = Template::where("section","post")->get();
+        return view("Admin.Posts.index")->with(["template" => $template]);
     }
 
     public function about(){

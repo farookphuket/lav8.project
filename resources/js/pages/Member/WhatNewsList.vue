@@ -1,124 +1,134 @@
 <template>
-  <div class="container">
-        <article class="post-preview"
-          v-for="wn in wnlist.data">
+  <div>
+
+    <article class="post-preview"
+             v-for="li in whatnews.data">
           <a href=""
-            @click.prevent="goRead(wn.id)">
+            @click.prevent="showSample(li.id)">
             <h2 class="post-title">
-              {{wn.whatnews_title}}
+              {{li.whatnews_title}}
             </h2>
+
           </a>
           <p class="post-meta">Posted by
             
-          {{wn.user.name}}
-            
+          {{li.user.name}}
             on
-            {{moment(wn.created_at)}} &middot; 
+            {{moment(li.created_at)}}  &middot; 
             <span class="reading-time" title="Estimated read time">
-              {{moment(wn.created_at).fromNow()}}
+              {{moment(li.created_at).fromNow()}}
             </span>
             
           </p>
-          <!-- div.clearfix-->
+
           <div class="clearfix">
-            <div class="float-left">
-              By <span class="badge badge-info">{{wn.user.name}}</span>
-            </div>
-            <div class="float-right" 
-              v-if="wn.user_id === ownerId">
-              <div class="btn-group">
+            <div class="float-right"
+              v-if="ownerId == li.user_id">
 
-                <span class="badge badge-success"
-                  v-if="wn.is_public === '1'">
-                  Public
-                </span>
-                <span class="badge badge-warning"
-                  v-else>
-                  Not public
-                </span>
-                <button class="btn btn-primary"
-                  @click.prevent="getEdit(wn.id)">
-                  Edit
-                </button>
+              <span class="badge badge-warning"
+                    v-if="li.is_public == 0">
+                Private
+              </span>
+              <span class="badge badge-success"
+                    v-else>
+                Public
+              </span>
+              <button class="btn btn-primary btn-small"
+                      @click.prevent="$emit('wnEdit',li.id)" >edit</button>
 
-                <button class="btn btn-danger"
-                  @click.prevent="getDel(wn.id)">
-                  Del
-                </button>
-              </div>
+              <button class="btn btn-danger"
+                     @click.prevent="$emit('wnDel',li.id)" >&times;</button>
+
             </div>
           </div>
-          <!-- div.clearfix END-->
         </article>
 
         <div class="pa">
           <ul class="pagination">
             <li class="page-item">
-              showing form
+              showing
               <span>
-                {{wnlist.from}}
-              </span>
-              to 
+                  {{whatnews.from}}
+              </span> 
+              to   
               <span>
-                {{wnlist.to}}
+                {{whatnews.to}}
               </span>
               of 
               <span>
-                {{wnlist.total}}
+                {{whatnews.total}}
               </span>
             </li>
             <li class="page-item"
-              v-for="li in wnlist.links">
+              v-for="mm in whatnews.links">
               <a href=""
-                v-html="li.label"
-                @click.prevent="goToPage(li.url)"
-                v-if="li.active===false && li.url !== null">
-                {{li.label}}
-              </a>
+                 @click.prevent="$emit('getWhatnews',mm.url)"
+                v-if="mm.active == false && mm.url != null"
+                v-html="mm.label">{{mm.label}}</a>
               <span v-else
                 class="active"
-                v-html="li.label">
-                {{li.label}}
+                v-html="mm.label">
+                {{mm.label}}
+              </span>
+            </li>
+            <li class="page-item">
+              <span>
+                {{whatnews.current_page}}
               </span>
             </li>
           </ul>
         </div>
+        <b-modal title="show sample" 
+                 ref="showBox" size="xl" 
+            id="showBox"
+          scrollable hide-footer
+          >
+            <div class="mb-4 d-block" v-html="show_sample">
+              {{show_sample}}
+            </div>
+          <b-button variant="outline-info" block 
+            @click.prevent="$emit('wnRead',showId)">Read On page</b-button>
+          <b-button variant="outline-danger" block 
+            @click.prevent="$bvModal.hide('showBox')">Just close</b-button>
+        </b-modal>
+
 
   </div>
-
 </template>
-<script>
 
+<script>
 var moment = require('moment')
 export default{
-  name:"WhatNewsList"
-  ,props:['wnlist'],
+  name:"WhatNewsList",
+  props:["whatnews"],
   data(){
     return{
+      ownerId:'',
       moment:moment,
-      wnslist:'',
-      ownerId:window.ownerId,
-      ownerName:window.ownerName
+      showId:0,
+      show_sample:''
     }
   },
+  watch:{
+    
+  },
   mounted(){
+    this.ownerId = window.ownerId
 
   },
   methods:{
-    getEdit(id){
-      this.$emit("getEdit",id)
+    showSample(id){
+      this.whatnews.data.forEach((val)=>{
+        if(val.id == id){
+          //console.log(val.whatnews_title)
+          this.show_sample = val.whatnews_body
+          this.showId = id
+          this.$refs["showBox"].show()
+        }
+      })
+
     },
-    goRead(id){
-      this.$emit("goRead",id)
-    },
-    goToPage(url){
-      this.$emit("goToPage",url)
-    },
-    getDel(id){
-      this.$emit("getDel",id)
-    }
+  
   }
 }
-
-
 </script>

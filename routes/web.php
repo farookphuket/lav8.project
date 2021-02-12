@@ -133,7 +133,10 @@ Route::prefix('admin')->name('admin.')->middleware('can:is_admin')->group(functi
     Route::get('/post/{post:slug}',[POSTAdmin::class,'show'])->name('post.show');
 
     Route::resource('/templates',TemAdmin::class);
-    Route::get('/templates/{template}',[TemAdmin::class,'show'])->name('templates.show');
+    Route::get("/viewTemplate/{template}",[TemAdmin::class,"viewTemplate"])
+        ->name("templates.viewTemplate");
+    Route::get('/getTemplates',[TemAdmin::class,'getTemplates'])
+        ->name('templates.getTemplates');
 
 
     Route::get('/getTags',[TagsAdmin::class,'getTags'])->name('tags.getTags');

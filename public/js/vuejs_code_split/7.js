@@ -1,14 +1,15 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[7],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Member/WhatNewsList.vue?vue&type=script&lang=js&":
-/*!*************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Member/WhatNewsList.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Admin/PostCommentList.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Admin/PostCommentList.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jodit_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jodit-vue */ "./node_modules/jodit-vue/dist/jodit-vue.esm.js");
 //
 //
 //
@@ -98,51 +99,94 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "WhatNewsList",
-  props: ['wnlist'],
+  name: "PostCommentList",
+  props: ["commentPostAll"],
   data: function data() {
     return {
       moment: moment,
-      wnslist: '',
-      ownerId: window.ownerId,
-      ownerName: window.ownerName
+      replyItem: [],
+      replyMsg: '',
+      bReply: true
     };
   },
-  mounted: function mounted() {},
   methods: {
-    getEdit: function getEdit(id) {
-      this.$emit("getEdit", id);
-    },
-    goRead: function goRead(id) {
-      this.$emit("goRead", id);
-    },
-    goToPage: function goToPage(url) {
-      this.$emit("goToPage", url);
+    getReply: function getReply(id) {
+      this.$emit("getReply", id);
     },
     getDel: function getDel(id) {
-      this.$emit("getDel", id);
+      if (confirm("You are going to remove ".concat(id)) == true) {
+        alert('delete'); //this.$emit("getDel",id)
+      } else {
+        alert('not del');
+      }
+    },
+    delSub: function delSub(id) {
+      if (confirm("are your sure you want to remove ".concat(id)) == true) {
+        this.$emit("delSub", id);
+      } else {
+        return false;
+      }
+    },
+    showReplyForm: function showReplyForm(id) {
+      this.bReply = false;
+      this.$set(this.replyItem, id, true);
+    },
+    hideReplyForm: function hideReplyForm(id) {
+      this.bReply = true;
+      this.replyMsg = '';
+      this.replyItem = [];
+      this.$set(this.replyItem, id, false);
+    },
+    sentReply: function sentReply(id) {
+      var _this = this;
+
+      var url = "/admin/sentReply";
+      var data = {
+        comment_id: id,
+        reply_body: this.replyMsg
+      };
+      axios.post(url, data).then(function (res) {
+        //console.log(res.data.msg)
+        _this.hideReplyForm();
+
+        _this.$emit("getCommentAll");
+      });
     }
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Member/Whatnews.vue?vue&type=script&lang=js&":
-/*!*********************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Member/Whatnews.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Admin/PostComments.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Admin/PostComments.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _WhatNewsList_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./WhatNewsList.vue */ "./resources/js/pages/Member/WhatNewsList.vue");
-/* harmony import */ var jodit_build_jodit_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jodit/build/jodit.min.css */ "./node_modules/jodit/build/jodit.min.css");
-/* harmony import */ var jodit_build_jodit_min_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jodit_build_jodit_min_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var jodit_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jodit-vue */ "./node_modules/jodit-vue/dist/jodit-vue.esm.js");
+/* harmony import */ var jodit_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jodit-vue */ "./node_modules/jodit-vue/dist/jodit-vue.esm.js");
+/* harmony import */ var _PostCommentList_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PostCommentList.vue */ "./resources/js/pages/Admin/PostCommentList.vue");
 //
 //
 //
@@ -183,243 +227,95 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"); //import WhatNewsForm from './WhatNewsForm.vue'
-
-
-
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  name: "AdminPostComment",
   components: {
-    //  WhatNewsForm,
-    WhatNewsList: _WhatNewsList_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    PostCommentList: _PostCommentList_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
-      moment: moment,
-      is_public: '',
-      title: '',
-      body: '',
-      editId: '',
-      wnlist: '',
+      commentPostAll: [],
+      comment: '',
+      cmId: 0,
       res_status: '',
-      error: '',
-      error_msg: [],
-      show_whatnews: false,
-      show_body: '',
-      show_url_id: 0
+      hasClick: true
     };
   },
   mounted: function mounted() {
-    //alert('test')
-    this.getWhatNewsList();
-    this.error = false;
+    this.getCommentAll();
   },
   methods: {
-    getWhatNewsList: function getWhatNewsList(page) {
+    getCommentAll: function getCommentAll() {
       var _this = this;
 
-      var url = "";
-
-      if (page) {
-        url = page;
-        this.$cookies.set("old_wn_page", url);
-      }
-
-      url = this.$cookies.get("old_wn_page");
-
-      if (!url) {
-        url = "/member/whatnews";
-      }
-
+      var url = "/admin/getPostCommentAll";
       axios.get(url).then(function (res) {
-        _this.wnlist = res.data.whatnews; //console.log(this.wnlist)
-      })["catch"](function (err) {
-        _this.error = 1;
-        _this.error_msg = err.response.message;
+        // console.log(res.data)
+        _this.commentPostAll = res.data.comments;
       });
     },
-    goRead: function goRead(id) {
+    getReply: function getReply(id) {
       var _this2 = this;
 
-      var url = "/member/whatnews/".concat(id);
+      var url = "/admin/comments/".concat(id);
       axios.get(url).then(function (res) {
-        //console.log(res.data)
-        _this2.show_url_id = res.data.whatnews.id;
-        _this2.show_whatnews = true;
-        _this2.show_body = res.data.whatnews.whatnews_body;
-
-        _this2.$nextTick(function () {
-          return _this2.$refs.show_whatnews.scrollIntoView(true);
-        });
+        _this2.comment = res.data.comment.comment_msg;
+        _this2.cmId = res.data.comment.id;
+        _this2.hasClick = false;
       });
+      window.scrollTo(0, 0);
     },
-    goUrl: function goUrl(id) {
-      var url = "/member/wnFullRead/".concat(id);
-      location.href = url;
-    },
-    getEdit: function getEdit(id) {
+    saveReply: function saveReply(id) {
       var _this3 = this;
 
-      var url = "/member/whatnews/".concat(id, "/edit");
-      axios.get(url).then(function (res) {
-        console.log(res.data); //this.title = res.data.whatnews.whatnews_title
-
-        var rData = res.data.whatnews;
-        _this3.title = rData.whatnews_title;
-        _this3.body = rData.whatnews_body;
-        _this3.is_public = rData.is_public;
-
-        if (_this3.is_public !== '1') {
-          _this3.is_public = false;
-        }
-
-        _this3.editId = rData.id;
-
-        _this3.$refs.title.focus();
-      });
-    },
-    saveWhat: function saveWhat(id) {
-      var _this4 = this;
-
-      var url = '';
+      var url = "/admin/comments/".concat(id);
       var data = {
-        whatnews_title: this.title,
-        whatnews_body: this.body,
-        is_public: this.is_public
+        comment: this.comment,
+        id: this.cmId
       };
+      axios.put(url, data).then(function (res) {
+        _this3.res_status = res.data.msg;
 
-      if (id) {
-        url = "/member/whatnews/".concat(id);
-        axios.put(url, data).then(function (res) {
-          _this4.res_status = res.data.msg;
-
-          _this4.$refs["onOk"].show();
-        })["catch"](function (err) {
-          _this4.error = true;
-        });
-        setTimeout(function () {
-          _this4.getWhatNewsList();
-        }, 2500);
-      } else {
-        url = "/member/whatnews";
-        axios.post(url, data).then(function (res) {
-          _this4.res_status = res.data.msg;
-          _this4.error = false;
-        })["catch"](function (err) {
-          _this4.error = true;
-          _this4.error_msg = "<span class=\"alert alert-danger\">\n             ".concat(err.message, " : Check your input!</span> ");
-          _this4.res_status = _this4.error_msg;
-        });
-        setTimeout(function () {
-          _this4.getWhatNewsList();
-        }, 2500);
-      }
-
-      this.showModal();
-    },
-    showModal: function showModal() {
-      this.$refs["onOk"].show();
-    },
-    clearForm: function clearForm() {
-      if (this.error !== false) {
-        this.res_status = "<span class=\"alert alert-danger\">\n          Error! please check your input! ".concat(this.error_msg, "</span>");
-      } else {
-        this.title = '';
-        this.body = '';
-        this.is_public = false;
-      }
+        _this3.$refs["onOk"].show();
+      });
     },
     getDel: function getDel(id) {
+      var _this4 = this;
+
+      var url = "/admin/comments/".concat(id);
+      axios["delete"](url).then(function (res) {
+        _this4.res_status = res.data.msg;
+
+        _this4.$refs["onOk"].show();
+      });
+    },
+    delSub: function delSub(id) {
       var _this5 = this;
 
-      var url = "/member/whatnews/".concat(id);
+      var url = "/admin/replies/".concat(id);
       axios["delete"](url).then(function (res) {
-        _this5.res_status = res.data.msg;
+        alert(res.data.msg);
+
+        _this5.getCommentAll();
       });
-      this.showModal();
-      setTimeout(function () {
-        _this5.getWhatNewsList();
-      }, 2500);
+    },
+    modClose: function modClose() {
+      this.getCommentAll();
+      this.comment = '';
+      this.cmId = 0;
+      this.hasClick = 0;
     }
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Member/Whatnews.vue?vue&type=style&index=0&id=fd6461da&scoped=true&lang=css&":
-/*!****************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--5-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--5-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Member/Whatnews.vue?vue&type=style&index=0&id=fd6461da&scoped=true&lang=css& ***!
-  \****************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Admin/PostCommentList.vue?vue&type=style&index=0&id=8f5f1878&scoped=true&lang=css&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--5-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--5-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Admin/PostCommentList.vue?vue&type=style&index=0&id=8f5f1878&scoped=true&lang=css& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -428,22 +324,22 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.show_whatnews[data-v-fd6461da]{\n  margin-top:10em;\n}\n.post-list[data-v-fd6461da]{\n  padding-top:2.5em;\n}\n\n\n", ""]);
+exports.push([module.i, "\n.card-body[data-v-8f5f1878]{\n    margin-top:1em;\n}\n.reply_form[data-v-8f5f1878]{\n    margin-bottom:1em;\n}\n.show_info[data-v-8f5f1878]{\n    color:#007bff;\n    font-weight:bold;\n}\n.show_info ul[data-v-8f5f1878],li[data-v-8f5f1878]{\n    display:inline-block;\n}\n@media only screen and (max-width: 480px){\n.show_info ul[data-v-8f5f1878],li[data-v-8f5f1878]{\n        display:block;\n}\n}\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Member/Whatnews.vue?vue&type=style&index=0&id=fd6461da&scoped=true&lang=css&":
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--5-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--5-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Member/Whatnews.vue?vue&type=style&index=0&id=fd6461da&scoped=true&lang=css& ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Admin/PostCommentList.vue?vue&type=style&index=0&id=8f5f1878&scoped=true&lang=css&":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--5-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--5-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Admin/PostCommentList.vue?vue&type=style&index=0&id=8f5f1878&scoped=true&lang=css& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--5-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--5-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./Whatnews.vue?vue&type=style&index=0&id=fd6461da&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Member/Whatnews.vue?vue&type=style&index=0&id=fd6461da&scoped=true&lang=css&");
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--5-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--5-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./PostCommentList.vue?vue&type=style&index=0&id=8f5f1878&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Admin/PostCommentList.vue?vue&type=style&index=0&id=8f5f1878&scoped=true&lang=css&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -465,10 +361,10 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Member/WhatNewsList.vue?vue&type=template&id=064ff91e&":
-/*!*****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Member/WhatNewsList.vue?vue&type=template&id=064ff91e& ***!
-  \*****************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Admin/PostCommentList.vue?vue&type=template&id=8f5f1878&scoped=true&":
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Admin/PostCommentList.vue?vue&type=template&id=8f5f1878&scoped=true& ***!
+  \*******************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -483,181 +379,171 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "container" },
-    [
-      _vm._l(_vm.wnlist.data, function(wn) {
-        return _c("article", { staticClass: "post-preview" }, [
-          _c(
-            "a",
-            {
-              attrs: { href: "" },
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  return _vm.goRead(wn.id)
-                }
-              }
-            },
-            [
-              _c("h2", { staticClass: "post-title" }, [
-                _vm._v(
-                  "\n            " + _vm._s(wn.whatnews_title) + "\n          "
-                )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("p", { staticClass: "post-meta" }, [
-            _vm._v(
-              "Posted by\n          \n        " +
-                _vm._s(wn.user.name) +
-                "\n          \n          on\n          " +
-                _vm._s(_vm.moment(wn.created_at)) +
-                " · \n          "
-            ),
+    _vm._l(_vm.commentPostAll, function(cm) {
+      return _c(
+        "div",
+        { staticClass: "card card-body" },
+        [
+          _c("div", { staticClass: "float-right" }, [
             _c(
-              "span",
+              "button",
               {
-                staticClass: "reading-time",
-                attrs: { title: "Estimated read time" }
+                staticClass: "btn btn-danger close",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.getDel(cm.id)
+                  }
+                }
               },
-              [
-                _vm._v(
-                  "\n            " +
-                    _vm._s(_vm.moment(wn.created_at).fromNow()) +
-                    "\n          "
-                )
-              ]
+              [_vm._v("×")]
             )
           ]),
           _vm._v(" "),
+          _c("div", [
+            _c("ul", [
+              _c("li", [_vm._v(_vm._s(cm.user.name))]),
+              _vm._v(" "),
+              _c("li", [_vm._v(_vm._s(cm.user.email))]),
+              _vm._v(" "),
+              _c("li", [_vm._v(_vm._s(_vm.moment(cm.created_at)))]),
+              _vm._v(" "),
+              _c("li", [_vm._v(_vm._s(_vm.moment(cm.created_at).fromNow()))])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { domProps: { innerHTML: _vm._s(cm.comment_msg) } }, [
+            _vm._v("\n            " + _vm._s(cm.comment_msg) + "\n        ")
+          ]),
+          _vm._v(" "),
+          _vm._l(cm.reply, function(re) {
+            return _c("div", { staticClass: "card card-body show_info" }, [
+              _c("div", { staticClass: "float-rig" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-danger close",
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.delSub(re.id)
+                      }
+                    }
+                  },
+                  [_vm._v("×")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { domProps: { innerHTML: _vm._s(re.reply_body) } }, [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(re.reply_body) +
+                    "\n            "
+                )
+              ]),
+              _vm._v(" "),
+              _c("ul", [
+                _c("li", [_vm._v(_vm._s(re.user.name))]),
+                _vm._v(" "),
+                _c("li", [_vm._v(_vm._s(re.user.email))]),
+                _vm._v(" "),
+                _c("li", [_vm._v(_vm._s(_vm.moment(re.created_at)))]),
+                _vm._v(" "),
+                _c("li", [_vm._v(_vm._s(_vm.moment(re.created_at).fromNow()))])
+              ])
+            ])
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "line" }),
+          _vm._v(" "),
+          _c("div", [
+            _vm.replyItem[cm.id]
+              ? _c(
+                  "div",
+                  { staticClass: "reply_form" },
+                  [
+                    _c("jodit-editor", {
+                      attrs: { height: "350" },
+                      model: {
+                        value: _vm.replyMsg,
+                        callback: function($$v) {
+                          _vm.replyMsg = $$v
+                        },
+                        expression: "replyMsg"
+                      }
+                    })
+                  ],
+                  1
+                )
+              : _c(
+                  "span",
+                  {
+                    staticClass: "badge badge-info",
+                    on: {
+                      click: function($event) {
+                        return _vm.showReplyForm(cm.id)
+                      }
+                    }
+                  },
+                  [_vm._v("\n                show reply form\n            ")]
+                )
+          ]),
+          _vm._v(" "),
           _c("div", { staticClass: "clearfix" }, [
-            _c("div", { staticClass: "float-left" }, [
-              _vm._v("\n            By "),
-              _c("span", { staticClass: "badge badge-info" }, [
-                _vm._v(_vm._s(wn.user.name))
-              ])
-            ]),
-            _vm._v(" "),
-            wn.user_id === _vm.ownerId
-              ? _c("div", { staticClass: "float-right" }, [
-                  _c("div", { staticClass: "btn-group" }, [
-                    wn.is_public === "1"
-                      ? _c("span", { staticClass: "badge badge-success" }, [
-                          _vm._v("\n                Public\n              ")
-                        ])
-                      : _c("span", { staticClass: "badge badge-warning" }, [
-                          _vm._v("\n                Not public\n              ")
-                        ]),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-primary",
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            return _vm.getEdit(wn.id)
-                          }
+            _c("div", { staticClass: "float-right" }, [
+              _vm.replyItem[cm.id]
+                ? _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary",
+                      attrs: { disabled: _vm.bReply },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.sentReply(cm.id)
                         }
-                      },
-                      [_vm._v("\n                Edit\n              ")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-danger",
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            return _vm.getDel(wn.id)
-                          }
+                      }
+                    },
+                    [_vm._v("\n                    Reply\n                ")]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.bReply == false && _vm.replyItem[cm.id]
+                ? _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-warning",
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.hideReplyForm(cm.id)
                         }
-                      },
-                      [_vm._v("\n                Del\n              ")]
-                    )
-                  ])
-                ])
-              : _vm._e()
+                      }
+                    },
+                    [_vm._v("\n                    Cancle\n                ")]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.getReply(cm.id)
+                    }
+                  }
+                },
+                [_vm._v("edit comment")]
+              )
+            ])
           ])
-        ])
-      }),
-      _vm._v(" "),
-      _c("div", { staticClass: "pa" }, [
-        _c(
-          "ul",
-          { staticClass: "pagination" },
-          [
-            _c("li", { staticClass: "page-item" }, [
-              _vm._v("\n            showing form\n            "),
-              _c("span", [
-                _vm._v(
-                  "\n              " +
-                    _vm._s(_vm.wnlist.from) +
-                    "\n            "
-                )
-              ]),
-              _vm._v("\n            to \n            "),
-              _c("span", [
-                _vm._v(
-                  "\n              " + _vm._s(_vm.wnlist.to) + "\n            "
-                )
-              ]),
-              _vm._v("\n            of \n            "),
-              _c("span", [
-                _vm._v(
-                  "\n              " +
-                    _vm._s(_vm.wnlist.total) +
-                    "\n            "
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _vm._l(_vm.wnlist.links, function(li) {
-              return _c("li", { staticClass: "page-item" }, [
-                li.active === false && li.url !== null
-                  ? _c(
-                      "a",
-                      {
-                        attrs: { href: "" },
-                        domProps: { innerHTML: _vm._s(li.label) },
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            return _vm.goToPage(li.url)
-                          }
-                        }
-                      },
-                      [
-                        _vm._v(
-                          "\n              " +
-                            _vm._s(li.label) +
-                            "\n            "
-                        )
-                      ]
-                    )
-                  : _c(
-                      "span",
-                      {
-                        staticClass: "active",
-                        domProps: { innerHTML: _vm._s(li.label) }
-                      },
-                      [
-                        _vm._v(
-                          "\n              " +
-                            _vm._s(li.label) +
-                            "\n            "
-                        )
-                      ]
-                    )
-              ])
-            })
-          ],
-          2
-        )
-      ])
-    ],
-    2
+        ],
+        2
+      )
+    }),
+    0
   )
 }
 var staticRenderFns = []
@@ -667,10 +553,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Member/Whatnews.vue?vue&type=template&id=fd6461da&scoped=true&":
-/*!*************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Member/Whatnews.vue?vue&type=template&id=fd6461da&scoped=true& ***!
-  \*************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Admin/PostComments.vue?vue&type=template&id=9a1f0646&":
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Admin/PostComments.vue?vue&type=template&id=9a1f0646& ***!
+  \****************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -684,243 +570,88 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { attrs: { clas: "container" } },
+    { staticClass: "contaniner-fluid" },
     [
-      _c(
-        "div",
-        { staticClass: "col-lg-12 editForm" },
-        [
-          _c("form", [
-            _c("div", { staticClass: "form-group" }, [
-              _c("label", { attrs: { for: "" } }, [_vm._v("title")]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.title,
-                    expression: "title"
-                  }
-                ],
-                ref: "title",
-                staticClass: "form-control",
-                attrs: { type: "text" },
-                domProps: { value: _vm.title },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.title = $event.target.value
-                  }
+      _c("div", { staticClass: "container" }, [
+        _c("form", { attrs: { action: "" } }, [
+          _c(
+            "div",
+            { staticClass: "form-group" },
+            [
+              _c("jodit-editor", {
+                attrs: { height: "550" },
+                model: {
+                  value: _vm.comment,
+                  callback: function($$v) {
+                    _vm.comment = $$v
+                  },
+                  expression: "comment"
                 }
               })
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "form-group" },
-              [
-                _c("jodit-editor", {
-                  attrs: { height: "350" },
-                  model: {
-                    value: _vm.body,
-                    callback: function($$v) {
-                      _vm.body = $$v
-                    },
-                    expression: "body"
-                  }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "clearfix" }, [
-              _c("div", { staticClass: "float-left" }, [
-                _c("label", { staticClass: "alert alert-warning" }, [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.is_public,
-                        expression: "is_public"
-                      }
-                    ],
-                    attrs: { type: "checkbox" },
-                    domProps: {
-                      checked: Array.isArray(_vm.is_public)
-                        ? _vm._i(_vm.is_public, null) > -1
-                        : _vm.is_public
-                    },
-                    on: {
-                      change: function($event) {
-                        var $$a = _vm.is_public,
-                          $$el = $event.target,
-                          $$c = $$el.checked ? true : false
-                        if (Array.isArray($$a)) {
-                          var $$v = null,
-                            $$i = _vm._i($$a, $$v)
-                          if ($$el.checked) {
-                            $$i < 0 && (_vm.is_public = $$a.concat([$$v]))
-                          } else {
-                            $$i > -1 &&
-                              (_vm.is_public = $$a
-                                .slice(0, $$i)
-                                .concat($$a.slice($$i + 1)))
-                          }
-                        } else {
-                          _vm.is_public = $$c
-                        }
-                      }
-                    }
-                  }),
-                  _vm._v("\n            is public")
-                ]),
-                _vm._v(" "),
-                !_vm.is_public === false
-                  ? _c("span", { staticClass: "alert alert-success" }, [
-                      _vm._v("\n              Public\n            ")
-                    ])
-                  : _c("span", { staticClass: "alert alert-warning" }, [
-                      _vm._v("Not Public")
-                    ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "float-right" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-primary",
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.saveWhat(_vm.editId)
-                      }
-                    }
-                  },
-                  [_vm._v("\n                Save\n              ")]
-                )
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "b-modal",
-            {
-              ref: "onOk",
-              attrs: { title: "message response from server", "ok-only": "" },
-              on: { ok: _vm.clearForm }
-            },
-            [
-              _c(
-                "div",
-                {
-                  staticClass: "text-center",
-                  domProps: { innerHTML: _vm._s(_vm.res_status) }
-                },
-                [_vm._v(_vm._s(_vm.res_status))]
-              )
-            ]
+            ],
+            1
           )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "show_preview" }, [
-        _c("h1", { staticClass: "text-center" }, [_vm._v(_vm._s(_vm.title))]),
+        ]),
         _vm._v(" "),
-        _c("div", { domProps: { innerHTML: _vm._s(_vm.body) } }, [
-          _vm._v(_vm._s(_vm.body))
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.show_whatnews,
-              expression: "show_whatnews"
-            }
-          ],
-          ref: "show_whatnews",
-          staticClass: "col-lg-12 show_whatnews",
-          attrs: { id: "show_whatnews" }
-        },
-        [
-          _c("div", { staticClass: "clearfix" }, [
-            _c("div", { staticClass: "float-right" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-danger",
-                  on: {
-                    click: function($event) {
-                      _vm.show_whatnews = false
-                    }
-                  }
-                },
-                [_vm._v("x")]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { domProps: { innerHTML: _vm._s(_vm.show_body) } }, [
-            _vm._v("\n      " + _vm._s(_vm.show_body) + "\n    ")
-          ]),
-          _vm._v(" "),
-          _c("p", { staticStyle: { "page-bottom": "10px" } }, [_vm._v(" ")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "text-center" }, [
+        _c("div", { staticClass: "clearfix" }, [
+          _c("div", { staticClass: "float-right" }, [
             _c(
               "button",
               {
                 staticClass: "btn btn-primary",
+                attrs: { disabled: _vm.hasClick },
                 on: {
                   click: function($event) {
-                    return _vm.goUrl(_vm.show_url_id)
+                    $event.preventDefault()
+                    return _vm.saveReply(_vm.cmId)
                   }
+                },
+                model: {
+                  value: _vm.hasClick,
+                  callback: function($$v) {
+                    _vm.hasClick = $$v
+                  },
+                  expression: "hasClick"
                 }
               },
-              [_vm._v("Read Full Post")]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-danger",
-                on: {
-                  click: function($event) {
-                    _vm.show_whatnews = false
-                  }
-                }
-              },
-              [_vm._v("Close")]
+              [_vm._v("Reply")]
             )
-          ]),
-          _vm._v(" "),
-          _c("hr")
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "b-modal",
+        {
+          ref: "onOk",
+          attrs: { title: "Message", "ok-only": "" },
+          on: {
+            ok: function($event) {
+              return _vm.modClose()
+            }
+          }
+        },
+        [
+          _c("div", { domProps: { innerHTML: _vm._s(_vm.res_status) } }, [
+            _vm._v("\n            " + _vm._s(_vm.res_status) + "\n        ")
+          ])
         ]
       ),
       _vm._v(" "),
-      _c("what-news-list", {
-        attrs: { wnlist: _vm.wnlist },
+      _c("post-comment-list", {
+        attrs: { commentPostAll: _vm.commentPostAll },
         on: {
-          goRead: function($event) {
-            return _vm.goRead($event)
+          getCommentAll: function($event) {
+            return _vm.getCommentAll($event)
           },
-          getEdit: function($event) {
-            return _vm.getEdit($event)
-          },
-          goToPage: function($event) {
-            return _vm.getWhatNewsList($event)
+          getReply: function($event) {
+            return _vm.getReply($event)
           },
           getDel: function($event) {
             return _vm.getDel($event)
+          },
+          delSub: function($event) {
+            return _vm.delSub($event)
           }
         }
       })
@@ -1047,87 +778,18 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ "./resources/js/pages/Member/WhatNewsList.vue":
-/*!****************************************************!*\
-  !*** ./resources/js/pages/Member/WhatNewsList.vue ***!
-  \****************************************************/
+/***/ "./resources/js/pages/Admin/PostCommentList.vue":
+/*!******************************************************!*\
+  !*** ./resources/js/pages/Admin/PostCommentList.vue ***!
+  \******************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _WhatNewsList_vue_vue_type_template_id_064ff91e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./WhatNewsList.vue?vue&type=template&id=064ff91e& */ "./resources/js/pages/Member/WhatNewsList.vue?vue&type=template&id=064ff91e&");
-/* harmony import */ var _WhatNewsList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./WhatNewsList.vue?vue&type=script&lang=js& */ "./resources/js/pages/Member/WhatNewsList.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _WhatNewsList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _WhatNewsList_vue_vue_type_template_id_064ff91e___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _WhatNewsList_vue_vue_type_template_id_064ff91e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/pages/Member/WhatNewsList.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/pages/Member/WhatNewsList.vue?vue&type=script&lang=js&":
-/*!*****************************************************************************!*\
-  !*** ./resources/js/pages/Member/WhatNewsList.vue?vue&type=script&lang=js& ***!
-  \*****************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_WhatNewsList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./WhatNewsList.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Member/WhatNewsList.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_WhatNewsList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/pages/Member/WhatNewsList.vue?vue&type=template&id=064ff91e&":
-/*!***********************************************************************************!*\
-  !*** ./resources/js/pages/Member/WhatNewsList.vue?vue&type=template&id=064ff91e& ***!
-  \***********************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_WhatNewsList_vue_vue_type_template_id_064ff91e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./WhatNewsList.vue?vue&type=template&id=064ff91e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Member/WhatNewsList.vue?vue&type=template&id=064ff91e&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_WhatNewsList_vue_vue_type_template_id_064ff91e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_WhatNewsList_vue_vue_type_template_id_064ff91e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/pages/Member/Whatnews.vue":
-/*!************************************************!*\
-  !*** ./resources/js/pages/Member/Whatnews.vue ***!
-  \************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Whatnews_vue_vue_type_template_id_fd6461da_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Whatnews.vue?vue&type=template&id=fd6461da&scoped=true& */ "./resources/js/pages/Member/Whatnews.vue?vue&type=template&id=fd6461da&scoped=true&");
-/* harmony import */ var _Whatnews_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Whatnews.vue?vue&type=script&lang=js& */ "./resources/js/pages/Member/Whatnews.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _Whatnews_vue_vue_type_style_index_0_id_fd6461da_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Whatnews.vue?vue&type=style&index=0&id=fd6461da&scoped=true&lang=css& */ "./resources/js/pages/Member/Whatnews.vue?vue&type=style&index=0&id=fd6461da&scoped=true&lang=css&");
+/* harmony import */ var _PostCommentList_vue_vue_type_template_id_8f5f1878_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PostCommentList.vue?vue&type=template&id=8f5f1878&scoped=true& */ "./resources/js/pages/Admin/PostCommentList.vue?vue&type=template&id=8f5f1878&scoped=true&");
+/* harmony import */ var _PostCommentList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PostCommentList.vue?vue&type=script&lang=js& */ "./resources/js/pages/Admin/PostCommentList.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _PostCommentList_vue_vue_type_style_index_0_id_8f5f1878_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PostCommentList.vue?vue&type=style&index=0&id=8f5f1878&scoped=true&lang=css& */ "./resources/js/pages/Admin/PostCommentList.vue?vue&type=style&index=0&id=8f5f1878&scoped=true&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -1138,66 +800,135 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
-  _Whatnews_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Whatnews_vue_vue_type_template_id_fd6461da_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Whatnews_vue_vue_type_template_id_fd6461da_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _PostCommentList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _PostCommentList_vue_vue_type_template_id_8f5f1878_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _PostCommentList_vue_vue_type_template_id_8f5f1878_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  "fd6461da",
+  "8f5f1878",
   null
   
 )
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/pages/Member/Whatnews.vue"
+component.options.__file = "resources/js/pages/Admin/PostCommentList.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/pages/Member/Whatnews.vue?vue&type=script&lang=js&":
-/*!*************************************************************************!*\
-  !*** ./resources/js/pages/Member/Whatnews.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************/
+/***/ "./resources/js/pages/Admin/PostCommentList.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/pages/Admin/PostCommentList.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Whatnews_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Whatnews.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Member/Whatnews.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Whatnews_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PostCommentList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./PostCommentList.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Admin/PostCommentList.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PostCommentList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/pages/Member/Whatnews.vue?vue&type=style&index=0&id=fd6461da&scoped=true&lang=css&":
-/*!*********************************************************************************************************!*\
-  !*** ./resources/js/pages/Member/Whatnews.vue?vue&type=style&index=0&id=fd6461da&scoped=true&lang=css& ***!
-  \*********************************************************************************************************/
+/***/ "./resources/js/pages/Admin/PostCommentList.vue?vue&type=style&index=0&id=8f5f1878&scoped=true&lang=css&":
+/*!***************************************************************************************************************!*\
+  !*** ./resources/js/pages/Admin/PostCommentList.vue?vue&type=style&index=0&id=8f5f1878&scoped=true&lang=css& ***!
+  \***************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_5_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Whatnews_vue_vue_type_style_index_0_id_fd6461da_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--5-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--5-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./Whatnews.vue?vue&type=style&index=0&id=fd6461da&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Member/Whatnews.vue?vue&type=style&index=0&id=fd6461da&scoped=true&lang=css&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_5_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Whatnews_vue_vue_type_style_index_0_id_fd6461da_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_5_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Whatnews_vue_vue_type_style_index_0_id_fd6461da_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_5_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Whatnews_vue_vue_type_style_index_0_id_fd6461da_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_5_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Whatnews_vue_vue_type_style_index_0_id_fd6461da_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_5_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PostCommentList_vue_vue_type_style_index_0_id_8f5f1878_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--5-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--5-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./PostCommentList.vue?vue&type=style&index=0&id=8f5f1878&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Admin/PostCommentList.vue?vue&type=style&index=0&id=8f5f1878&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_5_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PostCommentList_vue_vue_type_style_index_0_id_8f5f1878_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_5_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PostCommentList_vue_vue_type_style_index_0_id_8f5f1878_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_5_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PostCommentList_vue_vue_type_style_index_0_id_8f5f1878_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_5_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PostCommentList_vue_vue_type_style_index_0_id_8f5f1878_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ "./resources/js/pages/Member/Whatnews.vue?vue&type=template&id=fd6461da&scoped=true&":
-/*!*******************************************************************************************!*\
-  !*** ./resources/js/pages/Member/Whatnews.vue?vue&type=template&id=fd6461da&scoped=true& ***!
-  \*******************************************************************************************/
+/***/ "./resources/js/pages/Admin/PostCommentList.vue?vue&type=template&id=8f5f1878&scoped=true&":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/pages/Admin/PostCommentList.vue?vue&type=template&id=8f5f1878&scoped=true& ***!
+  \*************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Whatnews_vue_vue_type_template_id_fd6461da_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./Whatnews.vue?vue&type=template&id=fd6461da&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Member/Whatnews.vue?vue&type=template&id=fd6461da&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Whatnews_vue_vue_type_template_id_fd6461da_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PostCommentList_vue_vue_type_template_id_8f5f1878_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./PostCommentList.vue?vue&type=template&id=8f5f1878&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Admin/PostCommentList.vue?vue&type=template&id=8f5f1878&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PostCommentList_vue_vue_type_template_id_8f5f1878_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Whatnews_vue_vue_type_template_id_fd6461da_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PostCommentList_vue_vue_type_template_id_8f5f1878_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/Admin/PostComments.vue":
+/*!***************************************************!*\
+  !*** ./resources/js/pages/Admin/PostComments.vue ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _PostComments_vue_vue_type_template_id_9a1f0646___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PostComments.vue?vue&type=template&id=9a1f0646& */ "./resources/js/pages/Admin/PostComments.vue?vue&type=template&id=9a1f0646&");
+/* harmony import */ var _PostComments_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PostComments.vue?vue&type=script&lang=js& */ "./resources/js/pages/Admin/PostComments.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _PostComments_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _PostComments_vue_vue_type_template_id_9a1f0646___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _PostComments_vue_vue_type_template_id_9a1f0646___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/Admin/PostComments.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/Admin/PostComments.vue?vue&type=script&lang=js&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/pages/Admin/PostComments.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PostComments_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./PostComments.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Admin/PostComments.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PostComments_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/Admin/PostComments.vue?vue&type=template&id=9a1f0646&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/pages/Admin/PostComments.vue?vue&type=template&id=9a1f0646& ***!
+  \**********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PostComments_vue_vue_type_template_id_9a1f0646___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./PostComments.vue?vue&type=template&id=9a1f0646& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Admin/PostComments.vue?vue&type=template&id=9a1f0646&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PostComments_vue_vue_type_template_id_9a1f0646___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PostComments_vue_vue_type_template_id_9a1f0646___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

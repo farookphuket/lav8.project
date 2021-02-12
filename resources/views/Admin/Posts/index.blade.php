@@ -16,7 +16,7 @@
 @section('content')
 
   <div id="app">
-    <Adminpost></Adminpost>
+    <Adminpost :template="{{$template}}"></Adminpost>
   </div>
 
 @endsection

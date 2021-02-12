@@ -4,6 +4,15 @@
     <div class="container">
                 <form>
                     <div class="form-group">
+                        <select class="form-control"
+                            @change="setTemplate"
+                            ref="getTemplate">
+                            <option value="0">--Select --</option>
+                            <option v-for="li in template" 
+                                    :value="li.id">{{li.title}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <input ref="title" class="form-control" 
                         type="text" 
                         v-on:keyup="makeSlug()"
@@ -92,6 +101,9 @@
                                         @click.prevent="savePost(editId)">
                                         Save
                                     </button>
+                                    <button class="btn btn-danger"
+                                            @click.prevent="makeResetForm">
+                                        Clear</button>
                                 </div>
                             </div>
                         </div>
@@ -151,7 +163,11 @@ var moment = require("moment")
 import JoditEditor from "jodit-vue"
 
 export default{
-
+    props:{
+        template:{
+            type: Array
+        }
+    },
     components:{
         Postlist,
         PostTags
@@ -204,6 +220,21 @@ export default{
             }else{
                 this.isSelectAll = false;
             }
+        },
+        setTemplate(){
+            let tmp = this.$refs.getTemplate.value
+            let url = `/admin/templates/${tmp}`
+            axios.get(url)
+                .then(res=>{
+                    let get_tmp = res.data.template
+                    this.title = `you are using ${get_tmp.title}`
+                    this.excerpt = get_tmp.excerpt
+                    this.body = get_tmp.body
+                    setTimeout(()=>{
+                        this.$refs.getTemplate.value = 0
+                    },2500)
+                    
+                })
         },
         getPostsList(page){
             let url = '';

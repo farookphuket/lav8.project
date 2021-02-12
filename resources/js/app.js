@@ -8,7 +8,8 @@ window.Vue = require('vue');
 
 import moment from 'moment';
 
-import 'jodit/build/jodit.min.css'
+//import 'jodit/build/jodit.min.css'
+
 import Vue from 'vue'
 
 // date 10 Jan 2021 start using vue-cookies
@@ -51,7 +52,7 @@ Vue.component('PassReset',()=>import('./components/password-reset-form.vue'));
 
 
 //Vue.component('Whatnews',require('./pages/Member/Whatnews.vue').default);
-Vue.component('Whatnews',()=>import('./pages/Member/Whatnews.vue'));
+Vue.component('WhatnewsMember',()=>import('./pages/Member/WhatNews.vue'));
 //Vue.component('Postmember',require('./pages/Member/Post.vue').default);
 Vue.component('Postmember',()=>import('./pages/Member/Post.vue'));
 Vue.component('CommentMember',()=>import('./pages/Member/Comment.vue'));
@@ -63,7 +64,7 @@ Vue.component('Adminwm',()=>import('./pages/Admin/Whatnews.vue'));
 
 
 //Vue.component('Admintemplate',require('./pages/Admin/Template.vue').default);
-Vue.component('Admintemplate',()=>import('./pages/Admin/Template.vue'));
+Vue.component('AdminTemplate',()=>import('./pages/Admin/Template.vue'));
 
 
 //Vue.component('Admintag',require('./pages/Admin/Tags.vue').default);

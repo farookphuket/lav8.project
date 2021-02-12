@@ -30,7 +30,7 @@
 
 <div id="app">
 
-    <Whatnews :whatnews="{{json_encode($whatnews)}}"></Whatnews>
+    <whatnews-member :templates="{{$templates}}"></whatnews-member>
     <Visitors></Visitors>
 </div>
 

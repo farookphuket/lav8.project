@@ -12,7 +12,7 @@
 @section('content')
 
 <div class="container">
-
+    <div id="app"></div>
     <h1 class="text-center">
         {{$whatnews->whatnews_title}}
     </h1>

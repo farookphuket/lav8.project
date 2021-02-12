@@ -19,7 +19,8 @@ class TemplatesController extends Controller
      */
     public function index()
     {
-        $templates = Template::orderBy('created_at','desc')
+        $templates = Template::with("user")->orderBy('created_at','desc')
+                                
                                 ->paginate(5);
         $tags = Tag::all();
 
@@ -29,6 +30,28 @@ class TemplatesController extends Controller
         ]);
     }
 
+    public function viewTemplate(Template $template){
+        $template = Template::where("id",$template->id)
+           ->with("user") 
+            ->get();
+        $title = '';
+        foreach($template as $li):
+            $title = $li->title;
+        endforeach;
+        return view("Admin.Template.show")->with([
+            "template" => $template,
+            "title" => $title
+        ]);
+    }
+
+    public function getTemplates(){
+        $templates = Template::with("user")
+            ->orderBy("created_at","desc")
+            ->paginate(4);
+        return response()->json([
+            "templates" => $templates
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -50,14 +73,6 @@ class TemplatesController extends Controller
      */
     public function store()
     {
-        /* $this->validTemplate(); */
-        /* Template::create([ */
-        /*     'user_id' => Auth::user()->id, */
-        /*     'title' => request('title'), */
-        /*     'excerpt' => xx_clean(request('excerpt')), */
-        /*     'body' => xx_clean(request('body')) */
-        /* ]); */
-        /* return redirect()->route('admin.templates.index')->with(Session::flash('success','Template has been created!')); */
 
         $valid = request()->validate([
             "title" => ["required","min:8"],
@@ -114,9 +129,6 @@ class TemplatesController extends Controller
      */
     public function show(Template $template)
     {
-      //  return view("Admin.Template.show")->with([
-      //      "template" => $template
-      //  ]);
         return response()->json(["template" => $template]);
     }
 
@@ -145,17 +157,6 @@ class TemplatesController extends Controller
      */
     public function update(Template $template)
     {
-        /* $user_id = $template->user_id; */ 
-        /* $this->validTemplate(); */
-
-        /* Template::where('id',$template->id)->update([ */
-        /*     "user_id" => $user_id, */
-        /*     "title" => request()->title, */
-        /*     "excerpt" => xx_clean(request()->excerpt), */
-        /*     "body" => xx_clean(request()->body), */
-        /* ]); */
-        /* return redirect()->route('admin.templates.index')->with(Session::flash("success","your template has been updated!")); */
-
 
         $this->validTemplate($template->id);
         Template::where("id",$template->id)

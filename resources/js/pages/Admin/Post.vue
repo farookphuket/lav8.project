@@ -5,7 +5,7 @@
             Post admin using Vue
         </h1>
         <div v-html="msg">{{msg}}</div>
-        <post-form></post-form>
+        <post-form :template="template"></post-form>
     </div>
 </template>
 
@@ -14,6 +14,11 @@ import PostForm from './PostForm.vue'
 
 export default{
 
+    props:{
+        template:{
+            type: Array
+        }
+    },
     components:{
         PostForm,
     },

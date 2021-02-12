@@ -1,4 +1,29 @@
 
+/* copy the below as it is the template
+
+///////////////START OF TEMPLATE ///////////
+
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
+'1',
+'',
+'
+<p>
+
+
+</p>
+
+<p>
+
+</p>
+
+
+',
+'1',datetime('now','localtime'),datetime('now','localtime'));
+
+
+///////////////END OF TEMPLATE ///////////
+*/
 
 
 
@@ -8,7 +33,7 @@
 INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
 "is_public","created_at","updated_at") VALUES (6,
 '1',
-'',
+'last upgrade system from php 7 to php8 9 Feb 2021',
 '
 <p>
 <b>Hi there</b> today 9 Feb 2021 I just update the system the size of update 
@@ -52,14 +77,12 @@ and now thing is back to work again
 
 
 ',
-'1',datetime('now','localtime'),datetime('now','localtime'));
+'1','2021-02-09 20:45:07','2021-02-09 20:47:08');
 
 
 
 
 /* remove node_modules folder due to the file size matter */
-
-
 INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
 "is_public","created_at","updated_at") VALUES (5,
 '1',
@@ -135,31 +158,6 @@ that you ready to go.
 https://i.ibb.co/dQHLJR3/2021-01-27-cmus-best-music-player.png
 */
 
-/* copy the below as it is the template
-
-///////////////START OF TEMPLATE ///////////
-
-INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
-"is_public","created_at","updated_at") VALUES (NULL,
-'1',
-'',
-'
-<p>
-
-
-</p>
-
-<p>
-
-</p>
-
-
-',
-'1',datetime('now','localtime'),datetime('now','localtime'));
-
-
-///////////////END OF TEMPLATE ///////////
-*/
 
 
 /* Make thai slug javascript */
@@ -198,7 +196,7 @@ INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
 
 
 ',
-'1','2021-2-8 19:22:45','2021-2-8 19:23:15');
+'1','2021-02-08 19:22:45','2021-02-08 19:23:15');
 
 
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Member;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Template;
 use App\Models\Whatnews;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -29,8 +30,12 @@ class HomeController extends Controller
                        ->orWhere('user_id',Auth::user()->id)
                        ->orderBy('created_at','desc')
                        ->paginate(6);
+        $templates = Template::where("section","whatnews")->get();
         //dd($wn);
-        return view('Member.index')->with("whatnews",$wn);
+        return view('Member.index')->with([
+            "whatnews" => $wn,
+            "templates" => $templates
+        ]);
     }
 
     /**

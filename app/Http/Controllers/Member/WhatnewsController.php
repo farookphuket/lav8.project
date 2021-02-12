@@ -21,7 +21,7 @@ class WhatnewsController extends Controller
     {
         $getWhatNews = Whatnews::with("user")
             ->orderBy("created_at","desc")
-            ->paginate(13)
+            ->paginate(7)
             ->onEachSide(1);
         return response()->json(["whatnews" => $getWhatNews],200);
     }

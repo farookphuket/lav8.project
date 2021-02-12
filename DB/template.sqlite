@@ -1,4 +1,135 @@
-/* Template 1 */
+
+
+/*  Comment START 
+/* new item start  */
+INSERT INTO "templates" ("id","user_id","title","section","excerpt","body",
+"created_at","updated_at") VALUES (NULL,
+'1', /* user id */
+
+'', /* title */
+
+'', /* section */
+
+'
+
+', /* excerpt */
+
+'
+
+', /* Body */
+
+datetime('now','localtime'), /* created_at */
+
+datetime('now','localtime')); /* finish */
+
+/*  Finish COPY */
+    Comment END 
+*/
+
+
+
+
+/* wn with the photo on left  */
+INSERT INTO "templates" ("id","user_id","title","section","excerpt","body",
+"created_at","updated_at") VALUES (NULL,
+'1', /* user id */
+
+'photo on left', /* title */
+
+'whatnews', /* section */
+
+'
+<div class="row">
+    <div class="col-lg-4">
+        <img class="responsive" src="https://i.ibb.co/cb7ft8p/th-lang.png" 
+        alt="ฉันเป็นคนไทย">
+        <p class="text-center">
+            text at the bottom of picture
+        </p>
+    </div>
+    <div class="col-lg-8">
+        <p>
+            paragraph 1 in here anything for this post 
+        </p>
+    </div>
+</div>
+', /* excerpt */
+
+'
+<div class="container">
+    <div class="alert alert-warning">
+        <h1 class="text-center">
+            There is no need content body
+        </h1>
+        <p>
+The whatnews template doesn''t need to create the body text as it''s no
+ need.
+        </p>
+    </div>
+</div>
+', /* Body */
+
+datetime('now','localtime'), /* created_at */
+
+datetime('now','localtime')); /* finish */
+
+
+
+
+
+/* Whatnews template with video at the bottom 11 Feb 2021  */
+INSERT INTO "templates" ("id","user_id","title","section","excerpt","body",
+"created_at","updated_at") VALUES (NULL,
+'1', /* user id */
+
+'wn with video at the bottom', /* title */
+
+'whatnews', /* section */
+
+'
+    <p>
+        your text will be going here as one big paragraph
+    </p>
+    <div class="video-container">
+        <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/yNUeqi3Ebv0" 
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+        encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+        </iframe>
+    </div>
+', /* excerpt */
+
+'
+<div class="container">
+    <div class="alert alert-warning">
+        <h1 class="text-center">
+            There is no need content body
+        </h1>
+        <p>
+The whatnews template doesn''t need to create the body text as it''s no
+ need.
+        </p>
+    </div>
+</div>
+', /* Body */
+
+datetime('now','localtime'), /* created_at */
+
+datetime('now','localtime')); /* finish */
+
+
+
+
+/*      End of Whatnews Section */ 
+
+
+/* ----------------------- */
+
+
+/*      Post section  */
+
+
+/* Template 1 for post */
 INSERT INTO 'templates' ('id','user_id','section','title','excerpt','body',
 'created_at','updated_at') VALUES (NULL,
 

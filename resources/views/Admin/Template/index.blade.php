@@ -16,13 +16,8 @@
 
 @section('content')
 
-  @foreach($templates as $item)
-    <?php
-      $name = $item->user->name;
-    ?>
-  @endforeach
   <div id="app">
-    <admintemplate :templates="{{json_encode($templates)}}"></admintemplate>
+    <admin-template></admin-template>
   </div>
 
 @endsection
