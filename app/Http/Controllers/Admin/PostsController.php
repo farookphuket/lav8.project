@@ -57,13 +57,15 @@ class PostsController extends Controller
         $postList = Tag::where('id',$tagId)
                     ->firstOrFail()
                     ->posts()
+                    ->with("user")
                     ->orderBy("created_at","desc")
                     ->paginate(4)
                     ->onEachSide(1);
+                            
 
         return view("Admin.Posts.show_tag_list")->with([
             "postlist" => $postList,
-            "owner_name" => Auth::user()->name,
+            "owner_name" => $postList,
             "tag_id" => $tagId
         ]);
     }

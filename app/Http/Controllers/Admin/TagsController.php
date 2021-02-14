@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Tag;
+use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -17,9 +19,12 @@ class TagsController extends Controller
     public function index()
     {
         $tags = Tag::orderBy("created_at","desc")
-            ->paginate(10);
+            ->with("posts")
+            ->paginate(2);
+
         return view('Admin.Tags.index')->with([
             'tags' => $tags
+
         ]);
     }
 
@@ -28,7 +33,8 @@ class TagsController extends Controller
      */ 
     public function getTags(){
         $tags = Tag::orderBy("created_at","DESC")
-                    ->paginate(10)
+                    ->with("posts")
+                    ->paginate(5)
                    ->onEachSide(1);
         return response()->json(["tags"=>$tags],200);
     }
@@ -134,7 +140,6 @@ class TagsController extends Controller
     public function destroy(Tag $tag)
     {
         Tag::where('id',$tag->id)->delete();
-        //return redirect()->route('admin.tags.index')->with(Session::flash('success','tag is removed'));
         $msg = "<span class=\"alert alert-suucess\">Succes : tag deleted</span>";
         return response()->json(["msg" => $msg]);
     }

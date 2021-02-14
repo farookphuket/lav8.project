@@ -56,8 +56,9 @@ class PostsController extends Controller
     public function getPosts(){
         $posts = Post::with('tags')
                     ->orderBy("created_at","desc")
-                    ->join("users","users.id","=","posts.user_id")
-                    ->select("users.name","users.email","posts.*")
+                    /* ->join("users","users.id","=","posts.user_id") */
+                    /* ->select("users.name","users.email","posts.*") */
+                    ->with("user")
                     ->paginate(4)
                     ->onEachSide(1);
         $tag_with_content = Tag::has('posts')
@@ -93,9 +94,15 @@ class PostsController extends Controller
         $getPosts = Tag::where('id',$id)
                         ->firstOrFail()
                         ->posts()
-                        ->join("users","users.id","=","posts.user_id")
-                        ->select("users.name","users.email","posts.*")
-                        ->get();
+                     /*   
+                      *   ->join("users","users.id","=","posts.user_id")
+                      *
+                      *  ->select("users.name","users.email","posts.*")
+                      *   */
+                        ->with("user")
+                        ->orderBy("created_at","desc")
+                        ->paginate(8)
+                        ->onEachSide(1);
 
         return response()->json([
             "postlist" => $getPosts

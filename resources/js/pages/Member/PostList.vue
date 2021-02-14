@@ -1,123 +1,85 @@
 <template>
-    <div class="container"><!-- main div -->
-        <article class="post-preview"
-            v-for="po in postlist.data"
-            v-show="po.slug != 'about'"
-            :pkey="po.id">
-          <a href="#"
-            @click.prevent="goReadPage(po.slug)">
+<div class="container">
+        <article class="post-preview" v-for="post in posts.data">
+          <a href="#" :title="post.post_title"
+            @click.prevent="$emit('postRead',post.slug)">
             <h2 class="post-title">
-                {{po.post_title}}
+              {{post.post_title}}
             </h2>
-           <h3>
-             {{po.slug}}
-           </h3>
+            
+            <h3 class="post-subtitle">
+              {{post.slug}}
+            </h3>
+            
           </a>
           <p class="post-meta">Posted by
-          {{po.name}}
+          {{post.user.name}}
             on
-            {{moment(po.created_at)}} &middot; <span class="reading-time" title="Estimated read time">
-              {{moment(po.created_at).fromNow()}} </span>
+            {{moment(post.created_at)}} &middot; 
+            <span class="reading-time" title="Estimated read time">
+              {{moment(post.created_at).fromNow()}}
+            </span>
+            
           </p>
+          <div v-html="post.post_excerpt">
+            {{post.post_excerpt}}
+          </div>
           <div class="clearfix">
-            <div class="float-right post-btn" v-if="ownerId === po.user_id">
-              <div class="btn-group">
-                <span class="badge badge-warning" v-if="po.is_public !== '1'">
-                  Not public
-                </span>
-                <span class="badge badge-success" v-else>Public</span>
-                <button class="btn btn-primary"
-                  @click.prevent="editPost(po.id)">
-                  edit
-                </button>
-                <button class="btn btn-danger"
-                  @click.prevent="delPost(po.id)">
-                  Delete
-                </button>
-              </div>
+            <div class="float-right"
+              v-if="ownerid == post.user_id">
+              <span class="badge badge-warning"
+                    v-if="post.is_public == false">
+                Private Post
+              </span>
+              <span class="badge badge-success"
+                    v-else>
+                Public Post
+              </span>
+              <button class="btn btn-primary" 
+                @click.prevent="$emit('postEdit',post.id)">edit</button>
+              <button class="btn btn-danger" 
+                @click.prevent="$emit('postDel',post.id)">x</button>
             </div>
           </div>
+          <hr>
         </article>
-
-
         <div class="pa">
           <ul class="pagination">
             <li class="page-item">
-              showing 
-              <span>{{postlist.from}}</span>
-              to 
-              <span>{{postlist.to}}</span>
-              of 
-              <span>{{postlist.total}}</span>
+              showing from 
+              <span>{{posts.from}}</span> to 
+              <span>{{posts.to}}</span> of 
+              <span>{{posts.total}}</span> &middot; 
             </li>
-            <li class="page-item"
-              v-for="li in postlist.links"
-              :pagekey="li.label">
-              <a href=""
-                v-if="li.url !== null && li.active !== true"
-                v-html="li.label"
-                @click.prevent="getPaginate(li.url)">
-                {{li.label}}
-              </a>
-              <span v-html="li.label"
-                    :class="{active:getActive(li.active)}"
-                v-else>
-                {{li.label}}
-              </span>
+            <li class="page-item" v-for="li in posts.links">
+              <a href="#" v-if="li.url != null && li.active == false"
+                v-html="li.label" @click.prevent="$emit('getPosts',li.url)">
+                {{li.label}} 
+              </a>  
+              <span class="active" v-html="li.label" v-else>
+                {{li.label}} 
+              </span>  
             </li>
             <li class="page-item">
+                &middot;
                 <span class="active">
-                    {{postlist.current_page}}
+                  {{posts.current_page}}
                 </span>
-              </li>
-
+            </li>
           </ul>
         </div>
-    </div><!-- end of main div -->
-
-
+</div>
 </template>
 
-
-
-
 <script>
-var moment = require('moment')
-
+var moment = require("moment")
 export default{
-    name:"PostList"
-    ,props:["postlist"]
-  ,data(){
+  name:"PostList",
+  props:["posts","ownerid"],
+  data(){
     return{
-      moment:moment,
-      ownerName:window.ownerName,
-      ownerId:window.ownerId,
-      is_public:false
-      ,isActive:false
-    }
-  }
-  ,methods:{
-    editPost(id){
-      this.$emit("editPost",id)
-    },
-    delPost(id){
-      this.$emit('delPost',id)
-    },
-    goReadPage(id){
-      this.$emit('readPost',id)
-    },
-    getPaginate(page){
-      this.$emit('getPostList',page)
-    },
-    getActive(id){
-      let st = ''
-      if(id){
-        st = 'active'
-      }
-      return st
+      moment:moment
     }
   }
 }
-
-
 </script>

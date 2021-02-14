@@ -1,129 +1,81 @@
 
 
-/*  Comment START 
-/* new item start  */
-INSERT INTO "templates" ("id","user_id","title","section","excerpt","body",
-"created_at","updated_at") VALUES (NULL,
-'1', /* user id */
 
-'', /* title */
-
-'', /* section */
-
-'
-
-', /* excerpt */
-
-'
-
-', /* Body */
-
-datetime('now','localtime'), /* created_at */
-
-datetime('now','localtime')); /* finish */
-
-/*  Finish COPY */
-    Comment END 
+/* Template 2 for whatnews 1  */
+/*
+    INSERT INTO 'templates' ('id','user_id','section','title','excerpt','body',
+    'created_at','updated_at') VALUES (NULL,
+    '1',
+    'whatnews',
+    'title',
+    'excerpt',
+    'body',
+    date('now','localtime'),
+    date('now','localtime'));
 */
 
 
 
 
-/* wn with the photo on left  */
-INSERT INTO "templates" ("id","user_id","title","section","excerpt","body",
-"created_at","updated_at") VALUES (NULL,
-'1', /* user id */
 
-'photo on left', /* title */
 
-'whatnews', /* section */
+/* Template 2 for whatnews 1  */
+INSERT INTO 'templates' ('id','user_id','section','title','excerpt','body',
+'created_at','updated_at') VALUES (NULL,
 
+'1',
+'whatnews',
+'short post with video ',
 '
-<div class="row">
-    <div class="col-lg-4">
-        <img class="responsive" src="https://i.ibb.co/cb7ft8p/th-lang.png" 
-        alt="ฉันเป็นคนไทย">
-        <p class="text-center">
-            text at the bottom of picture
-        </p>
-    </div>
-    <div class="col-lg-8">
-        <p>
-            paragraph 1 in here anything for this post 
-        </p>
-    </div>
-</div>
-', /* excerpt */
+<p class="mb-4">
+<b>เหล้า เบียร์ </b> กินแล้วเมา สร้างปัญหา(คนที่ไม่ได้สร้างปัญหาก็อย่าเดือดร้อนนะ)
+ยกพวกตีกัน ทะเลาะกัน ขับรถชน ข่มขืน เพราะว่าคนเมาเหล้ามันขาดสติ (จริงๆ ไม่น่าจะโทษเหล้านะ
+คนมันเหี้ย ไม่ต้องแดกอะไรเข้าไป ก็เหี้ย) แต่ปัญหาเหล่านั้นส่วนมากก็จะมาจาก เมาแล้วขาดสติก่อนทั้งนั้น
 
+</p>
+<p>
+คนเสพ
+<b>
+ กัญชา
+</b> จะต่างจากคนกินเหล้า เพราะคนเมากัญชาจะขี้กลัว ไอ้เรื่องยกพวกตีใครคงหมดสิทธิ์ ถ้าคนเมากัญชา
+ขับรถชนคนเมากัญชา เคลียร์กันได้ด้วยของหวานถ้วยเดียว จากนั้นก็ต่างคนต่างไป หัวเราะร่าเริง
+ไม่มีการยิงกันแน่นอน ได้เห็นข่าวนี้แล้วชอบ ก็ได้แต่หวังว่ามันจะถูกกฎหมาย ทำไมกัญชาผิดกฎหมาย
+เพราะกัญชา ไม่มีฉลากว่า "เสียภาษีแล้ว" ยังไงล่ะ
+
+</p>
+<p class="pt-2 mb-4">
+จะให้กัญชาสามารถปลูกได้ทุกๆ บ้าน ในตอนนี้น่าจะยังคงเป็นเรื่องที่ห่างไกล เพราะว่ามันจะทำให้ "นายทุน"
+เสียผลประโยชน์ เรื่องนี้เป็นเรื่องที่ยอมไม่ได้ ประชาชนต้อง "รอไปก่อน" ถ้านายทุนยังไม่ได้ประโยชน์
+ประชาชนก็ตีหม้อประท้วงไปเหอะ แต่ใครจะเหลียวแล
+</p>
+<div class="video-container">
+    <iframe width="560" height="315"
+    src="https://www.youtube.com/embed/BWwm2wk1Kc8"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+    encrypted-media;
+    gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<p class="pt-4">
+    ไม่ได้จะเอาไว้เสพหรอกนะ แต่จะปลูกขาย
+</p>
+
+',
 '
 <div class="container">
-    <div class="alert alert-warning">
-        <h1 class="text-center">
-            There is no need content body
-        </h1>
-        <p>
-The whatnews template doesn''t need to create the body text as it''s no
- need.
-        </p>
-    </div>
+<div class="alert alert-warning">
+    <h1 class="text-center">
+There is no need for the body container since whatnews only need to 
+be a short post 
+    </h1>
 </div>
-', /* Body */
-
-datetime('now','localtime'), /* created_at */
-
-datetime('now','localtime')); /* finish */
-
-
-
-
-
-/* Whatnews template with video at the bottom 11 Feb 2021  */
-INSERT INTO "templates" ("id","user_id","title","section","excerpt","body",
-"created_at","updated_at") VALUES (NULL,
-'1', /* user id */
-
-'wn with video at the bottom', /* title */
-
-'whatnews', /* section */
-
-'
-    <p>
-        your text will be going here as one big paragraph
-    </p>
-    <div class="video-container">
-        <iframe width="560" height="315" 
-        src="https://www.youtube.com/embed/yNUeqi3Ebv0" 
-        frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
-        encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-        </iframe>
-    </div>
-', /* excerpt */
-
-'
-<div class="container">
-    <div class="alert alert-warning">
-        <h1 class="text-center">
-            There is no need content body
-        </h1>
-        <p>
-The whatnews template doesn''t need to create the body text as it''s no
- need.
-        </p>
-    </div>
 </div>
-', /* Body */
 
-datetime('now','localtime'), /* created_at */
-
-datetime('now','localtime')); /* finish */
-
+',
+'2021-02-12 10:45:43',
+'2021-02-12 10:46:02');
 
 
-
-/*      End of Whatnews Section */ 
-
-
-/* ----------------------- */
 
 
 /*      Post section  */

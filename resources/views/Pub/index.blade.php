@@ -6,10 +6,12 @@
     @if(!$whatnews->isEmpty())
         <h1 class="text-center page-heading">What's going on {{date('d-m-Y')}}</h1>
       @foreach($whatnews as $item)
-
+        @section("meta_title",$item->whatnews_title)
+        @section("meta_keywords",$item->whatnews_title)
+        @section("meta_des",$item->whatnews_title)
         <article class="post-preview">
 
-            <a href="#" title="view all post from {{$item->user->name}}">
+            <a href="#" title="this is not a link">
                         <h2 class="post-title">{{$item->whatnews_title}}</h2>
                         
                       </a>

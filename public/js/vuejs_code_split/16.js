@@ -34,6 +34,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -56,12 +84,20 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       var url = '';
 
       if (page) {
-        url = "/member/getPostsInTagId/".concat(this.tag_id).concat(page);
+        url = page;
+        this.$cookies.set("old_taglist_page", url);
       }
 
-      url = "/member/getPostsInTagId/".concat(this.tag_id);
+      url = this.$cookies.get("old_taglist_page");
+
+      if (!url) {
+        url = "/member/getPostsInTagId/".concat(this.tag_id);
+      }
+
       axios.get(url).then(function (res) {
         _this.postlist = res.data.postlist;
+      }, function (err) {
+        alert('Error ! please try again later');
       });
     },
     goReadPage: function goReadPage(slug) {
@@ -91,52 +127,122 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "container" },
-    _vm._l(_vm.postlist, function(po) {
-      return _c("article", { staticClass: "post-preview" }, [
-        _c(
-          "a",
-          {
-            attrs: { href: "#" },
-            on: {
-              click: function($event) {
-                $event.preventDefault()
-                return _vm.goReadPage(po.slug)
-              }
-            }
-          },
-          [
-            _c("h2", { staticClass: "post-title" }, [
-              _vm._v(_vm._s(po.post_title))
-            ])
-          ]
-        ),
-        _vm._v(" "),
-        _c("p", { staticClass: "post-meta" }, [
-          _vm._v(
-            "Posted by\n      \n    " +
-              _vm._s(po.name) +
-              "\n      \n      on\n      " +
-              _vm._s(_vm.moment(po.created_at)) +
-              " · \n      "
-          ),
+    [
+      _vm._l(_vm.postlist.data, function(po) {
+        return _c("article", { staticClass: "post-preview" }, [
           _c(
-            "span",
+            "a",
             {
-              staticClass: "reading-time",
-              attrs: { title: "Estimated read time" }
+              attrs: { href: "#" },
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.goReadPage(po.slug)
+                }
+              }
             },
             [
-              _vm._v(
-                "\n        " +
-                  _vm._s(_vm.moment(po.created_at).fromNow()) +
-                  "\n      "
-              )
+              _c("h2", { staticClass: "post-title" }, [
+                _vm._v(_vm._s(po.post_title))
+              ])
             ]
-          )
+          ),
+          _vm._v(" "),
+          _c("p", { staticClass: "post-meta" }, [
+            _vm._v(
+              "Posted by\n      \n    " +
+                _vm._s(po.user.name) +
+                "\n      \n      on\n      " +
+                _vm._s(_vm.moment(po.created_at)) +
+                " · \n      "
+            ),
+            _c(
+              "span",
+              {
+                staticClass: "reading-time",
+                attrs: { title: "Estimated read time" }
+              },
+              [
+                _vm._v(
+                  "\n        " +
+                    _vm._s(_vm.moment(po.created_at).fromNow()) +
+                    "\n      "
+                )
+              ]
+            )
+          ])
         ])
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "pa" }, [
+        _c(
+          "ul",
+          { staticClass: "pagination" },
+          [
+            _c("li", { staticClass: "page-item" }, [
+              _vm._v("\n        showing from \n        "),
+              _c("span", [_vm._v(_vm._s(_vm.postlist.from))]),
+              _vm._v(" to \n        "),
+              _c("span", [
+                _vm._v("\n          " + _vm._s(_vm.postlist.to) + " \n        ")
+              ]),
+              _vm._v(" of \n        "),
+              _c("span", [_vm._v(_vm._s(_vm.postlist.total))]),
+              _vm._v(" · \n      ")
+            ]),
+            _vm._v(" "),
+            _vm._l(_vm.postlist.links, function(page) {
+              return _c("li", { staticClass: "page-item" }, [
+                page.active == false && page.url != null
+                  ? _c(
+                      "a",
+                      {
+                        attrs: { href: "" },
+                        domProps: { innerHTML: _vm._s(page.label) },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.getPostsList(page.url)
+                          }
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n          " + _vm._s(page.label) + "\n        "
+                        )
+                      ]
+                    )
+                  : _c(
+                      "span",
+                      {
+                        staticClass: "active",
+                        domProps: { innerHTML: _vm._s(page.label) }
+                      },
+                      [
+                        _vm._v(
+                          "\n          " + _vm._s(page.label) + "\n        "
+                        )
+                      ]
+                    ),
+                _vm._v(" · \n      ")
+              ])
+            }),
+            _vm._v(" "),
+            _c("li", { staticClass: "page-item" }, [
+              _c("span", { staticClass: "active" }, [
+                _vm._v(
+                  "\n          " +
+                    _vm._s(_vm.postlist.current_page) +
+                    "\n        "
+                )
+              ])
+            ])
+          ],
+          2
+        )
       ])
-    }),
-    0
+    ],
+    2
   )
 }
 var staticRenderFns = []

@@ -1,6 +1,10 @@
 @extends('cleanblog.cleanblog')
 
 
+@section("meta_title",$post->post_title)
+@section("meta_keywords",$post->post_title)
+@section("meta_des",$post->post_title)
+
 @section('tag_in_head')
 
 
@@ -13,7 +17,6 @@
 
 
 @section('content')
-  {{Auth::user()->name}}
 <article class="post-preview">
   <a href="">
     <h2 class="post-title">

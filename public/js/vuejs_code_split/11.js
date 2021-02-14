@@ -86,6 +86,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["postlist", "owner_name", "tag_id"],
   data: function data() {
@@ -244,7 +247,15 @@ var render = function() {
               _c("div", { staticClass: "float-right" }, [
                 _c("span", [_vm._v(_vm._s(item.slug))]),
                 _vm._v("\n                        ·\n                        "),
-                _c("span", [_vm._v(_vm._s(item.name))])
+                _c("span", [_vm._v(_vm._s(item.name))]),
+                _vm._v(" ·\n                        "),
+                _c("span", { staticClass: "badge badge-info" }, [
+                  _vm._v(
+                    "\n                            " +
+                      _vm._s(item.email) +
+                      "\n                        "
+                  )
+                ])
               ])
             ])
           ]

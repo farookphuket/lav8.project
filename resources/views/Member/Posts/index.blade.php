@@ -6,26 +6,14 @@
 
 @section('tag_in_head')
 
-  <script>
-    var ownerName = "{!!Auth::user()->name!!}";
-    var ownerId = "{!!Auth::user()->id!!}";
-
-  </script>
-
 
 @endsection
 
 
 @section('content')
-
-  @foreach($posts as $item)
-    <?php
-      $name = $item->user->name;
-    ?>
-  @endforeach
-
   <div id="app">
-    <postmember :template="{{$template}}"></postmember>
+    <postmember :template="{{$template}}" 
+       :ownerId="{{Auth::user()->id}}"></postmember>
     <Visitors></Visitors>
   </div>
 

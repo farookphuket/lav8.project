@@ -10,6 +10,9 @@
 
 
 
+##  Last update 14 Feb 2021
+
+
 
 
 #   is my laravel project work on SHARE HOSTING?
@@ -409,6 +412,24 @@ app should be appear.
 >   the next thing that I have to find is "how can I set the edit and delete link 
 >   base on the Auth user" let say if the user does not own the item so he won't
 >   be able to edit or delete that item.
+
+
+
+
+
+--- 
+
+#   date 14 Feb 2021 
+
+>   Still! I cannot use v-select or v-multiselect I don't know what 
+>   I did wrong but I've learn a little more of "how to use vue" in 
+>   every day so try to improve my skill
+
+
+
+
+
+
 
 
 

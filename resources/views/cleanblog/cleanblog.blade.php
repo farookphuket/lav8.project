@@ -7,15 +7,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" href="{{ URL::asset('img/favicon.ico') }}" type="image/x-icon"/>
-  <title>
-    @hasSection('meta_title')
+  <title>@hasSection('meta_title')
       @yield('meta_title')
     @else
       Welcome to the thousand million project
-    @endif
-  </title>
+    @endif</title>
 
-  <meta name="description" content="The thousand Million project">
+  <meta name="description" content="@hasSection("meta_des")
+    @yield("meta_des")
+    @else a thousand million dollars project by farook @endif">
+  <meta name="keywords" content="@hasSection("meta_keywords") 
+    @yield("meta_keywords")@else thousand million project @endif">
 
 <!--
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>

@@ -104,7 +104,7 @@ End of video section
 
 .tags li{
     display:inline-block;
-    background-color:#007bff;
+  /*  background-color:#007bff;i */
     margin:5px;
 
 }

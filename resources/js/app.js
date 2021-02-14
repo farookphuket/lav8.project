@@ -8,6 +8,7 @@ window.Vue = require('vue');
 
 import moment from 'moment';
 
+
 //import 'jodit/build/jodit.min.css'
 
 import Vue from 'vue'
@@ -15,6 +16,8 @@ import Vue from 'vue'
 // date 10 Jan 2021 start using vue-cookies
 import VueCookies from 'vue-cookies';
 Vue.use(VueCookies)
+
+
 
 //  date 7 Jan 2021 using bootstrap-vue
 import { BootstrapVue, IconsPlugin  } from 'bootstrap-vue'

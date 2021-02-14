@@ -2,16 +2,16 @@
 
 
     <div class="container">
-
-        <div class="tags">
-            <p>this is the tag has content cannot pagination now</p>
-            <ul>
-                <li v-for="ll in tag_has_content" :tagkay="ll">
-                    <a href="" @click.prevent="sendToPage(ll.id)">
-                        {{ll.tag_name}} 
-                    </a>
-                </li>
-            </ul>
+        <div class="clearfix">
+            <div class="float-right tags">
+                <ul>
+                    <li v-for="ll in tag_has_content" :tagkay="ll">
+                        <a href="" @click.prevent="$emit('getPostByTagId',ll.id)">
+                            {{ll.tag_name}} 
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </template>
@@ -58,13 +58,7 @@ export default{
             tag_with_content: [],
             postsData: []
         }
-    },
-    methods:{
-        sendToPage(id){
-            this.$emit("sendToPage",id)
-        }
     }
-
 }
 
 

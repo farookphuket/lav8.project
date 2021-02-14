@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <article class="post-preview"
-      v-for="po in postlist">
+      v-for="po in postlist.data">
       <a href="#" @click.prevent="goReadPage(po.slug)">
         <h2 class="post-title">{{po.post_title}}</h2>
         
@@ -9,7 +9,7 @@
       </a>
       <p class="post-meta">Posted by
         
-      {{po.name}}
+      {{po.user.name}}
         
         on
         {{moment(po.created_at)}} &middot; 
@@ -19,7 +19,35 @@
         
       </p>
     </article>
+    <div class="pa">
+      <ul class="pagination">
+        <li class="page-item">
+          showing from 
+          <span>{{postlist.from}}</span> to 
+          <span>
+            {{postlist.to}} 
+          </span> of 
+          <span>{{postlist.total}}</span> &middot; 
+        </li>
+        <li class="page-item" v-for="page in postlist.links">
 
+          <a href="" v-html="page.label" 
+            @click.prevent="getPostsList(page.url)"
+            v-if="page.active == false && page.url != null">
+            {{page.label}}
+          </a>
+          <span class="active"
+            v-html="page.label" v-else>
+            {{page.label}}
+          </span> &middot; 
+        </li>
+        <li class="page-item">
+          <span class="active">
+            {{postlist.current_page}}
+          </span>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -42,12 +70,18 @@ export default{
     getPostsList(page){
       let url = ''
       if(page){
-        url = `/member/getPostsInTagId/${this.tag_id}${page}`
+        url = page
+        this.$cookies.set("old_taglist_page",url)
       }
-      url = `/member/getPostsInTagId/${this.tag_id}`
+      url = this.$cookies.get("old_taglist_page")
+      if(!url){
+        url = `/member/getPostsInTagId/${this.tag_id}`
+      }
       axios.get(url)
         .then(res=>{
           this.postlist = res.data.postlist
+        },err=>{
+          alert('Error ! please try again later')
         })
     },
     goReadPage(slug){

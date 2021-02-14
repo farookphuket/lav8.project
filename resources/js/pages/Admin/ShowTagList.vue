@@ -17,7 +17,10 @@
                         <div class="float-right">
                             <span>{{item.slug}}</span>
                             &middot;
-                            <span>{{item.name}}</span>
+                            <span>{{item.name}}</span> &middot;
+                            <span class="badge badge-info">
+                                {{item.email}}
+                            </span>
                         </div>
                     </div>
                 </div><!-- end of .card-body -->
