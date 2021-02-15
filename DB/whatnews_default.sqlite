@@ -1,13 +1,10 @@
 
-/* copy the below as it is the template
-    ///////////////START OF TEMPLATE ///////////
-*/
-
+/* this is the comment */
 /*
 INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
 "is_public","created_at","updated_at") VALUES (NULL,
-'1',
-'',
+'1',                            
+'',                             
 '
 <p>
 
@@ -19,14 +16,43 @@ INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
 </p>
 
 
-',
-'1',datetime('now','localtime'),datetime('now','localtime'));
+',                                          
+'1',                        
+datetime('now','localtime'),                
+datetime('now','localtime')                 
+);                                          
 
 */
 
 /*
-///////////////END OF TEMPLATE ///////////
+ ///////////////END OF TEMPLATE ///////////
 */
+
+
+
+/* ข่าวเกี่ยวกับ โควิด from youtube */
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
+'1',
+'The covid 19 news from youtube 15 Feb 2021',
+'
+<p>
+<b>Covid 19</b> is still the most problem in the world by now 
+ไปก๊อปข่าวนี้มาจาก ยูทูป เช้านี้เอง เรื่องเศรฐกิจว่าจะดีขึ้นเหรอ อืม ตอนนี้คงยาก ไอ้เรื่องธุรกิจท่องเที่ยว
+ที่ต้องพึ่งชาวต่างชาติ ตอนนี้ก็ตายทุกราย หาอย่างอื่นทำให้ได้ ถ้าหาไม่ได้ก็อดตายนี่คือกฎของธรรมชาติ
+
+</p>
+
+<div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gL5Ban8ee_g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p class="text-center mb-4 pt-2">
+ข่าวโควิดในเมืองไทย 15-Feb-2021
+</p>
+
+',
+'1','2021-02-15 11:02:22','2021-02-15 11:03:10');
+
 
 
 

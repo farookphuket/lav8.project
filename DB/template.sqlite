@@ -11,11 +11,46 @@
     'excerpt',
     'body',
     date('now','localtime'),
-    date('now','localtime'));
+    date('now','localtime')
+    ); 
 */
 
 
-
+/*  whatnews with photo on left 15-Feb-2021 */
+    INSERT INTO 'templates' ('id','user_id','section','title','excerpt','body',
+    'created_at','updated_at') VALUES (NULL,
+    '1',
+    'whatnews',
+    'Photo on left',
+    '
+<div class="row">
+    <div class="col-lg-4">
+        <img src="https://preview.redd.it/73ujvyglhsk31.png?width=960&crop=smart&auto=webp&s=ed4a06328f0815e3117ae3c2a9b529fd744ba5b7" 
+        alt="the photo text if you have" class="responsive">
+        <p class="text-center">
+The text under photo
+        </p>
+    </div>
+    <div class="col-lg-8">
+<p>this template will create photo on the left of the content</p>
+    </div>
+</div>
+    ',
+    '
+    <div class="container">
+        <div class="alert alert-warning">
+            <h1 class="text-center">
+No need content here
+            </h1>
+            <p>
+as it''s the whatnews template so no need the content
+            </p>
+        </div>
+    </div>
+    ',
+    date('now','localtime'),
+    date('now','localtime')
+    ); /* End of new item */
 
 
 
