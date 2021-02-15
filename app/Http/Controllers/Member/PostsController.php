@@ -176,7 +176,7 @@ class PostsController extends Controller
         $valid = request()->validate([
             'title' => ['required','min:8','max:80'],
             'excerpt' => ['required','min:8'],
-            'new_tag' => ['min:4','max:50','nullable','unique:tags,tag_name']
+            'new_tag' => ['min:4','max:50','nullable']
         ]);
         return $valid;
     }
@@ -188,10 +188,13 @@ class PostsController extends Controller
             $nTag = Tag::create([
                 'tag_name' => request('new_tag')
             ]);
+            
+            $nPost->tags()->attach($nTag);
         else:
             $nTag = $oldTag; 
+            $nPost->tags()->sync($nTag);
         endif;
-        $nPost->tags()->attach($nTag);
+
     }
 
 

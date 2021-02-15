@@ -34,7 +34,7 @@
                       {!!$item->whatnews_body!!}
         </article>
 
-        <p class="pt-4 mb-4">&nbsp;</p>
+        <p class="pt-4 mb-4">&nbsp; get file</p>
         <hr>
         <p class="pt-4 mb-4">&nbsp;</p>
 

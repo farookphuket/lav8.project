@@ -40,6 +40,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -232,6 +233,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "PostForm",
@@ -247,7 +259,9 @@ __webpack_require__.r(__webpack_exports__);
       saveId: 0,
       new_tag: '',
       error: 0,
-      res_status: ''
+      res_status: '',
+      show_form: false,
+      btnLabel: 'new post'
     };
   },
   watch: {
@@ -257,11 +271,22 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {},
   methods: {
+    toggle: function toggle(id) {
+      if (id) {
+        this.btnLabel = 'show edit';
+      } else {
+        this.btnLabel = 'new post';
+      }
+
+      this.show_form = !this.show_form;
+    },
     getEditData: function getEditData(id) {
       var _this = this;
 
       this.user_select_tag = [];
       this.is_public = false;
+      this.btnLabel = 'Close';
+      this.show_form = true;
 
       if (!id) {
         return;
@@ -355,6 +380,8 @@ __webpack_require__.r(__webpack_exports__);
       return this.slug;
     },
     clearFormData: function clearFormData() {
+      var _this4 = this;
+
       this.saveId = 0;
       this.is_public = false;
       this.excerpt = '';
@@ -363,12 +390,15 @@ __webpack_require__.r(__webpack_exports__);
       this.new_tag = '';
       this.tags = [];
       this.slug = '';
+      setTimeout(function () {
+        _this4.$emit('getPosts');
+      }, 2500);
     },
     closeBox: function closeBox() {
-      var _this4 = this;
+      var _this5 = this;
 
       setTimeout(function () {
-        _this4.res_status = '';
+        _this5.res_status = '';
       }, 3000);
 
       if (this.error != 0) {
@@ -630,296 +660,327 @@ var render = function() {
     "div",
     { staticClass: "container" },
     [
-      _c("form", [
-        _c("div", { staticClass: "form-group" }, [
+      _c("div", { staticClass: "clearfix" }, [
+        _c("div", { staticClass: "float-right" }, [
           _c(
-            "select",
+            "button",
             {
-              ref: "getTemplate",
-              staticClass: "form-control",
+              ref: "btnShow",
+              staticClass: "btn btn-primary",
               on: {
-                change: function($event) {
-                  $event.preventDefault()
-                  return _vm.setTemplate($event)
+                click: function($event) {
+                  return _vm.toggle(_vm.editId)
                 }
               }
             },
-            [
-              _c("option", { attrs: { value: "0" } }, [
-                _vm._v("-- Select Template --")
-              ]),
-              _vm._v(" "),
-              _vm._l(_vm.templates, function(li) {
-                return _c("option", { domProps: { value: li.id } }, [
-                  _vm._v("\n        " + _vm._s(li.title) + "\n        ")
-                ])
-              })
-            ],
-            2
+            [_vm._v(_vm._s(_vm.btnLabel))]
           )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            directives: [
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "form",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.show_form,
+              expression: "show_form"
+            }
+          ]
+        },
+        [
+          _c("div", { staticClass: "form-group" }, [
+            _c(
+              "select",
               {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.title,
-                expression: "title"
-              }
-            ],
-            ref: "title",
-            staticClass: "form-control",
-            attrs: { placeholder: "Enter the title", type: "text" },
-            domProps: { value: _vm.title },
-            on: {
-              keyup: function($event) {
-                return _vm.setSlug(_vm.title)
+                ref: "getTemplate",
+                staticClass: "form-control",
+                on: {
+                  change: function($event) {
+                    $event.preventDefault()
+                    return _vm.setTemplate($event)
+                  }
+                }
               },
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.title = $event.target.value
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.slug,
-                expression: "slug"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { placeholder: "leave this field blank", type: "text" },
-            domProps: { value: _vm.slug },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.slug = $event.target.value
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "form-group" },
-          [
-            _c("jodit-editor", {
-              attrs: { height: "550", placeholder: "Enter excerpt" },
-              model: {
-                value: _vm.excerpt,
-                callback: function($$v) {
-                  _vm.excerpt = $$v
-                },
-                expression: "excerpt"
-              }
-            })
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "form-group" },
-          [
-            _c("jodit-editor", {
-              attrs: { height: "550" },
-              model: {
-                value: _vm.body,
-                callback: function($$v) {
-                  _vm.body = $$v
-                },
-                expression: "body"
-              }
-            })
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "" } }, [
-            _vm._v(
-              'Select tag (Hold "Ctrl" key to select multiple\n            "Ctrl+a" to select all)\n          '
+              [
+                _c("option", { attrs: { value: "0" } }, [
+                  _vm._v("-- Select Template --")
+                ]),
+                _vm._v(" "),
+                _vm._l(_vm.templates, function(li) {
+                  return _c("option", { domProps: { value: li.id } }, [
+                    _vm._v("\n        " + _vm._s(li.title) + "\n        ")
+                  ])
+                })
+              ],
+              2
             )
           ]),
           _vm._v(" "),
-          _c(
-            "select",
-            {
+          _c("div", { staticClass: "form-group" }, [
+            _c("input", {
               directives: [
                 {
                   name: "model",
                   rawName: "v-model",
-                  value: _vm.tags,
-                  expression: "tags"
+                  value: _vm.title,
+                  expression: "title"
                 }
               ],
-              ref: "tags",
+              ref: "title",
               staticClass: "form-control",
-              attrs: { multiple: "true" },
+              attrs: { placeholder: "Enter the title", type: "text" },
+              domProps: { value: _vm.title },
               on: {
-                change: function($event) {
-                  var $$selectedVal = Array.prototype.filter
-                    .call($event.target.options, function(o) {
-                      return o.selected
-                    })
-                    .map(function(o) {
-                      var val = "_value" in o ? o._value : o.value
-                      return val
-                    })
-                  _vm.tags = $event.target.multiple
-                    ? $$selectedVal
-                    : $$selectedVal[0]
+                keyup: function($event) {
+                  return _vm.setSlug(_vm.title)
+                },
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.title = $event.target.value
                 }
               }
-            },
-            _vm._l(_vm.tag_all, function(li) {
-              return _c("option", { domProps: { value: li.id } }, [
-                _vm._v(
-                  "\n            " +
-                    _vm._s(li.id) +
-                    " -  " +
-                    _vm._s(li.tag_name) +
-                    "\n            "
-                )
-              ])
-            }),
-            0
-          )
-        ]),
-        _vm._v(" "),
-        _vm._m(0),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-4" }, [
-            _c("span", { domProps: { innerHTML: _vm._s(_vm.res_status) } }, [
-              _vm._v(_vm._s(_vm.res_status))
-            ])
+            })
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-md-4" }, [
-            _c("div", { staticClass: "form-group" }, [
-              _c("input", {
+          _c("div", { staticClass: "form-group" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.slug,
+                  expression: "slug"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { placeholder: "leave this field blank", type: "text" },
+              domProps: { value: _vm.slug },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.slug = $event.target.value
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "form-group" },
+            [
+              _c("jodit-editor", {
+                attrs: { height: "550", placeholder: "Enter excerpt" },
+                model: {
+                  value: _vm.excerpt,
+                  callback: function($$v) {
+                    _vm.excerpt = $$v
+                  },
+                  expression: "excerpt"
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "form-group" },
+            [
+              _c("jodit-editor", {
+                attrs: { height: "550" },
+                model: {
+                  value: _vm.body,
+                  callback: function($$v) {
+                    _vm.body = $$v
+                  },
+                  expression: "body"
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "" } }, [
+              _vm._v(
+                'Select tag (Hold "Ctrl" key to select multiple\n            "Ctrl+a" to select all)\n          '
+              )
+            ]),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
                 directives: [
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.new_tag,
-                    expression: "new_tag"
+                    value: _vm.tags,
+                    expression: "tags"
                   }
                 ],
+                ref: "tags",
                 staticClass: "form-control",
-                attrs: { type: "text", placeholder: "Create new tag" },
-                domProps: { value: _vm.new_tag },
+                attrs: { multiple: "true" },
                 on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.new_tag = $event.target.value
+                  change: function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.tags = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
                   }
                 }
-              })
-            ])
+              },
+              _vm._l(_vm.tag_all, function(li) {
+                return _c("option", { domProps: { value: li.id } }, [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(li.id) +
+                      " -  " +
+                      _vm._s(li.tag_name) +
+                      "\n            "
+                  )
+                ])
+              }),
+              0
+            )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-md-4" }, [
-            _c("div", { staticClass: "clearfix" }, [
-              _c("div", { staticClass: "float-left" }, [
-                _c("label", { attrs: { for: "" } }, [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.is_public,
-                        expression: "is_public"
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-4" }, [
+              _c("span", { domProps: { innerHTML: _vm._s(_vm.res_status) } }, [
+                _vm._v(_vm._s(_vm.res_status))
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-4" }, [
+              _c("div", { staticClass: "form-group" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.new_tag,
+                      expression: "new_tag"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", placeholder: "Create new tag" },
+                  domProps: { value: _vm.new_tag },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
                       }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { type: "checkbox" },
-                    domProps: {
-                      checked: Array.isArray(_vm.is_public)
-                        ? _vm._i(_vm.is_public, null) > -1
-                        : _vm.is_public
-                    },
-                    on: {
-                      change: function($event) {
-                        var $$a = _vm.is_public,
-                          $$el = $event.target,
-                          $$c = $$el.checked ? true : false
-                        if (Array.isArray($$a)) {
-                          var $$v = null,
-                            $$i = _vm._i($$a, $$v)
-                          if ($$el.checked) {
-                            $$i < 0 && (_vm.is_public = $$a.concat([$$v]))
+                      _vm.new_tag = $event.target.value
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-4" }, [
+              _c("div", { staticClass: "clearfix" }, [
+                _c("div", { staticClass: "float-left" }, [
+                  _c("label", { attrs: { for: "" } }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.is_public,
+                          expression: "is_public"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "checkbox" },
+                      domProps: {
+                        checked: Array.isArray(_vm.is_public)
+                          ? _vm._i(_vm.is_public, null) > -1
+                          : _vm.is_public
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.is_public,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = null,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.is_public = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.is_public = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
                           } else {
-                            $$i > -1 &&
-                              (_vm.is_public = $$a
-                                .slice(0, $$i)
-                                .concat($$a.slice($$i + 1)))
+                            _vm.is_public = $$c
                           }
-                        } else {
-                          _vm.is_public = $$c
                         }
                       }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _vm.is_public == false
-                    ? _c("span", { staticClass: "badge badge-warning" }, [
-                        _vm._v("Private")
-                      ])
-                    : _c("span", { staticClass: "bage badge-success" }, [
-                        _vm._v("Public")
-                      ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "float-right" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-primary",
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.postSave(_vm.saveId)
-                      }
-                    }
-                  },
-                  [_vm._v("save")]
-                ),
+                    }),
+                    _vm._v(" "),
+                    _vm.is_public == false
+                      ? _c("span", { staticClass: "badge badge-warning" }, [
+                          _vm._v("Private")
+                        ])
+                      : _c("span", { staticClass: "bage badge-success" }, [
+                          _vm._v("Public")
+                        ])
+                  ])
+                ]),
                 _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-danger",
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.clearFormData($event)
+                _c("div", { staticClass: "float-right" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary",
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.postSave(_vm.saveId)
+                        }
                       }
-                    }
-                  },
-                  [_vm._v("Clear")]
-                )
+                    },
+                    [_vm._v("save")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-danger",
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.clearFormData($event)
+                        }
+                      }
+                    },
+                    [_vm._v("Clear")]
+                  )
+                ])
               ])
             ])
           ])
-        ])
-      ]),
+        ]
+      ),
       _vm._v(" "),
       _c(
         "b-modal",
