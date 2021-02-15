@@ -1,7 +1,18 @@
 <template>
 
   <div class="container">
-    <form>
+    <div class="clearfix">
+      <div class="float-right">
+        <!-- copy from  
+          https://medium.com/@codebyjeff/vue-js-simple-tuts-toggling-b80edddee1ac
+          15 Feb 2021
+        -->
+        <button class="btn btn-primary" 
+                @click="toggle(editId)" ref="btnShow">{{btnLabel}}</button>
+      </div>
+    </div>
+    
+    <form v-show="show_form">
       <div class="form-group">
         <select class="form-control" ref="getTemplate" 
           @change.prevent="setTemplate">
@@ -108,7 +119,9 @@ export default{
       saveId:0,
       new_tag:'',
       error:0,
-      res_status:''
+      res_status:'',
+      show_form:false,
+      btnLabel:'new post'
     }
   },
   watch:{
@@ -120,9 +133,20 @@ export default{
 
   },
   methods:{
+    toggle(id){
+      if(id){
+        this.btnLabel = 'show edit'
+      }else{
+        this.btnLabel = 'new post'
+
+      }    
+      this.show_form = !this.show_form
+    },
     getEditData(id){
       this.user_select_tag = []
       this.is_public = false
+      this.btnLabel = 'Close'
+      this.show_form = true
       if(!id){
         return
       }
@@ -211,6 +235,9 @@ export default{
       this.new_tag = ''
       this.tags = []
       this.slug = ''
+      setTimeout(()=>{
+        this.$emit('getPosts')
+      },2500)
     },
     closeBox(){
       setTimeout(()=>{this.res_status = ''},3000)
@@ -219,6 +246,7 @@ export default{
         return
       }else{
         this.clearFormData()
+        
         this.$emit('getPosts')
       }
 

@@ -1,7 +1,8 @@
 <template>
   <div>
-    <post-form :editId="editId" :tag_all="tags" :templates="template"
-      @getPosts="getPosts($event)"></post-form>
+      <post-form :editId="editId" :tag_all="tags" :templates="template"
+         @getPosts="getPosts($event)" ></post-form>
+
 
     <post-list :posts="posts" :ownerid="ownerid" 
       @getPosts="getPosts($event)"
@@ -45,7 +46,7 @@ export default{
       tags:[],
       editId:0,
       res_status:'',
-      error:0
+      error:0,
     }
   },
   mounted(){
@@ -81,6 +82,7 @@ export default{
     },
     postEdit(id){
       this.editId = id
+
     },
     postDel(id){
       if(confirm(`Delete the id ${id} ?`) == true){
@@ -105,7 +107,8 @@ export default{
     },
     closeBox(){
       this.getPosts()
-    }
+    },
+
   },
 }
 </script>
