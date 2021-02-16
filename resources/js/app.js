@@ -92,6 +92,8 @@ Vue.component('MemberProfile',()=>import('./pages/Member/MemberProfile.vue'));
 //Vue.component('adminprofile',require('./components/admin-profile-form.vue').default);
 Vue.component('AdminProfile',()=>import('./pages/Admin/AdminProfile.vue'));
 
+
+Vue.component('Avisitor',()=>import('./pages/Admin/Visitors.vue'))
 //import VueRouter from 'vue-router'
 //Vue.use(VueRouter)
 //import routes from './routes'

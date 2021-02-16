@@ -23,6 +23,7 @@ use App\Http\Controllers\Admin\TemplatesController as TemAdmin;
 use App\Http\Controllers\Admin\TagsController as TagsAdmin;
 use App\Http\Controllers\Admin\CommentsController as ACMT;
 use App\Http\Controllers\Admin\RepliesController as ADRP;
+use App\Http\Controllers\Admin\VisitorsController as ADVT;
 
 
 /*
@@ -48,10 +49,13 @@ Route::get("/about",[PubPost::class,'about'])->name('posts.about');
 /* call by Vue START*/
 Route::resource('/visitors',PubVisit::class);
 Route::resource('/passwordreset',PasswordResetController::class);
-Route::get('/passreset/{timeout}',[PasswordResetController::class,'passreset'])->name('passreset');
-Route::get('/getmyresetinfo',[PasswordResetController::class,'getmyresetinfo'])->name('getmyresetinfo');
+Route::get('/passreset/{timeout}',[PasswordResetController::class,
+    'passreset'])->name('passreset');
+Route::get('/getmyresetinfo',[PasswordResetController::class,
+    'getmyresetinfo'])->name('getmyresetinfo');
 Route::post('/hello',[PasswordResetController::class,'hello'])->name('hello');
-Route::post('/update',[PasswordResetController::class,'update'])->name('update');
+Route::post('/update',[PasswordResetController::class,'update'])
+    ->name('update');
 
 /* call by Vue END*/
 
@@ -63,34 +67,46 @@ Route::post('/update',[PasswordResetController::class,'update'])->name('update')
 /* })->where('any','.*'); */
 
 
-Route::prefix('member')->name('member.')->middleware('auth')->group(function(){
+Route::prefix('member')->name('member.')->middleware('auth')
+                                        ->group(function(){
     Route::resource('/home',HomeController::class);
-    Route::post('/updateUserProfile',[HomeController::class,'updateUserProfile'])->name('updateUserProfile');
+    Route::post('/updateUserProfile',[HomeController::class,
+        'updateUserProfile'])->name('updateUserProfile');
 
 
-    Route::get('/getPosts',[MemberPost::class,'getPosts'])->name('posts.getPosts');
-    Route::get('/getPostsByTagId',[MemberPost::class,'getPostsByTagId'])->name('posts.getPostsByTagId');
-    Route::get('/getPostsInTagId/{id}',[MemberPost::class,'getPostsInTagId'])->name('posts.getPostsInTagId');
+    Route::get('/getPosts',[MemberPost::class,'getPosts'])
+        ->name('posts.getPosts');
+    Route::get('/getPostsByTagId',[MemberPost::class,'getPostsByTagId'])
+        ->name('posts.getPostsByTagId');
+    Route::get('/getPostsInTagId/{id}',[MemberPost::class,'getPostsInTagId'])
+        ->name('posts.getPostsInTagId');
     Route::resource('/posts',MemberPost::class);
-    Route::get('/posts/{post:slug}',[MemberPost::class,'show'])->name('posts.show');
+    Route::get('/posts/{post:slug}',[MemberPost::class,'show'])
+        ->name('posts.show');
     Route::get('/about',[MemberPost::class,"about"])->name('posts.about');
 
-    Route::get('/getPostComment/{post_id}',[MCMT::class,'getPostComment'])->name('comments.getPostComment');
+    Route::get('/getPostComment/{post_id}',[MCMT::class,'getPostComment'])
+        ->name('comments.getPostComment');
 
     Route::resource("/templates",TPM::class);
 
     Route::resource("/comments",MCMT::class);
-    Route::post('/replyComment',[MCMT::class,"replyComment"])->name("comments.replyComment");
+    Route::post('/replyComment',[MCMT::class,"replyComment"])
+        ->name("comments.replyComment");
 
-    Route::get('/wnFullRead/{whatnews}',[WMN::class,'wnFullRead'])->name('whatnews.wnFullRead');
+    Route::get('/wnFullRead/{whatnews}',[WMN::class,'wnFullRead'])
+        ->name('whatnews.wnFullRead');
     Route::resource('/whatnews',WMN::class);
-    Route::get('/whatnews/{whatnews}/edit',[WMN::class,'edit'])->name('whatnews.edit');
-    Route::delete('/whatnews/{whatnews}',[WMN::class,'destroy'])->name('whatnews.destroy');
+    Route::get('/whatnews/{whatnews}/edit',[WMN::class,'edit'])
+        ->name('whatnews.edit');
+    Route::delete('/whatnews/{whatnews}',[WMN::class,'destroy'])
+        ->name('whatnews.destroy');
 
 
 
 
-    Route::get('/profile',[HomeController::class,'profile'])->name('profile');
+    Route::get('/profile',[HomeController::class,'profile'])
+        ->name('profile');
 
     
 
@@ -105,32 +121,45 @@ Route::prefix('member')->name('member.')->middleware('auth')->group(function(){
 
 
 /* Admin */
-Route::prefix('admin')->name('admin.')->middleware('can:is_admin')->group(function(){
+Route::prefix('admin')->name('admin.')->middleware('can:is_admin')
+                                      ->group(function(){
     
 
     Route::resource('/whatnews',WPAdmin::class);
 
-
+    Route::resource('/visitors',ADVT::class);
+    Route::get('/resetVisitor',[ADVT::class,'resetVisitor'])
+        ->name('visitors.resetVisitor');
+    Route::get('/getVisitorList',[ADVT::class,'getVisitorList'])
+        ->name('visitors.getVisitorList');
 
     Route::resource('/home',HAdmin::class);
     Route::get('/profile',[HAdmin::class,'profile'])->name('profile');
-    Route::post('/updateadminprofile',[HAdmin::class,'updateadminprofile'])->name('updateadminprofile');
+    Route::post('/updateadminprofile',[HAdmin::class,'updateadminprofile'])
+        ->name('updateadminprofile');
 
     
-    Route::get("/getUserList",[UAdmin::class,"getUserList"])->name("user.getUserList");
+    Route::get("/getUserList",[UAdmin::class,"getUserList"])
+        ->name("user.getUserList");
     Route::resource("/user",UAdmin::class);
 
-    Route::get('/getPostCommentAll',[ACMT::class,"getPostCommentAll"])->name("comments.getPostCommentAll");
-    Route::post("/sentReply",[ACMT::class,'sentReply'])->name("comments.sentReply");
+    Route::get('/getPostCommentAll',[ACMT::class,"getPostCommentAll"])
+        ->name("comments.getPostCommentAll");
+    Route::post("/sentReply",[ACMT::class,'sentReply'])
+        ->name("comments.sentReply");
     Route::resource("/comments",ACMT::class);
 
     Route::resource("/replies",ADRP::class);
 
-    Route::get('/getPosts',[POSTAdmin::class,'getPosts'])->name('post.getPosts');
-    Route::get('/getPostsInTag/{tag}',[POSTAdmin::class,'getPostsInTag'])->name('post.getPostsInTag');
-    Route::get('/getPostsByTag',[POSTAdmin::class,'getPostsByTag'])->name('post.getPostsByTag');
+    Route::get('/getPosts',[POSTAdmin::class,'getPosts'])
+        ->name('post.getPosts');
+    Route::get('/getPostsInTag/{tag}',[POSTAdmin::class,'getPostsInTag'])
+        ->name('post.getPostsInTag');
+    Route::get('/getPostsByTag',[POSTAdmin::class,'getPostsByTag'])
+        ->name('post.getPostsByTag');
     Route::resource('/post',POSTAdmin::class);
-    Route::get('/post/{post:slug}',[POSTAdmin::class,'show'])->name('post.show');
+    Route::get('/post/{post:slug}',[POSTAdmin::class,'show'])
+        ->name('post.show');
 
     Route::resource('/templates',TemAdmin::class);
     Route::get("/viewTemplate/{template}",[TemAdmin::class,"viewTemplate"])

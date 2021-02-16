@@ -10,8 +10,30 @@
 
 
 
-##  Last update 14 Feb 2021
+##  Last update 16 Feb 2021
 
+>   I've spent all day just to make this work in the way that I want
+
+
+
+
+
+[![](http://img.youtube.com/vi/td77N8oauEw/0.jpg)](http://www.youtube.com/watch?v=td77N8oauEw "")
+
+
+
+
+
+
+
+
+
+
+# How can I use this 
+
+>   please watch this video it will tell you better than read from here
+
+[![](http://img.youtube.com/vi/Y0AEu2T5894/0.jpg)](http://www.youtube.com/watch?v=Y0AEu2T5894 "")
 
 
 
@@ -412,6 +434,11 @@ app should be appear.
 >   the next thing that I have to find is "how can I set the edit and delete link 
 >   base on the Auth user" let say if the user does not own the item so he won't
 >   be able to edit or delete that item.
+
+
+
+
+
 
 
 

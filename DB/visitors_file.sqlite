@@ -1,0 +1,12 @@
+
+INSERT INTO "visitors" ("id","post_id","client_ip","client_os",
+"client_browser","visited_month","visited_year","last_visited_date") VALUES (NULL,
+NULL,                            
+ '211.3.119.119',                             
+'Window',                                          
+'Safari ',                        
+2,                
+2021,                 
+1
+);                                          
+

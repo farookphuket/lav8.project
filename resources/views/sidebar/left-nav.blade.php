@@ -1,6 +1,6 @@
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>Bootstrap Sidebar</h3>
+                <h3>thousand millions</h3>
             </div>
 
             <ul class="list-unstyled components">
@@ -14,8 +14,8 @@
                         <li class="@if(Request::segment(2) == "comments") active @endif">
                             <a href="{{route('admin.comments.index')}}">Comments</a>
                         </li>
-                        <li>
-                            <a href="#">Home 3</a>
+                        <li class="@if(Request::segment(2) == "visitors") active @endif">
+                            <a href="{{route('admin.visitors.index')}}">visitors</a>
                         </li>
                     </ul>
                 </li>

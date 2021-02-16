@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             PostSeeder::class,
             TagTableSeeder::class,
             TemplateSeeder::class,
+            VisitorTableSeeder::class,
         ]);
     }
 }
