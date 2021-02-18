@@ -34,7 +34,7 @@
 
   <div class="clearfix"><!-- clearfix START-->
       <div class="float-left">
-        <a class="btn btn-info" href="{{route('posts.index')}}">Back</a>
+        <a class="btn btn-outline-info" href="{{route('posts.index')}}">Back</a>
       </div>
 
       <div class="float-right">

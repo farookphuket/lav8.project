@@ -1,29 +1,33 @@
 <template>
-    <div>
-          <form class="form-inline" action="">
-            <div class="form-group">
+    <span class="nav-link">
+          <!-- Login form modal -->
 
-              <input v-model="uemail" class="form-control" type="email" 
-              ref="uemail" placeholder="Enter email">
-            </div>
-            <div class="form-group">
-              <input class="form-control" type="password" 
-              v-model="upass" placeholder="Enter password">
-            </div>
-            <div class="form-group">
-              <button class="btn btn-warning" @click.prevent="getLogin">Login</button>
+            <form class="form-inline my-2 my-lg-0" action="">
 
-              <button class="btn btn-info" 
-                @click.prevent="signUp">register</button>
-            </div>
+              
+                <input v-model="uemail"  type="email" 
+                                         class="col-md-4"
+                ref="uemail" placeholder="Enter email">
+
+                <input  type="password" class="col-md-4" 
+                v-model="upass" placeholder="Enter password">
+
+
+                <button class="btn btn-outline-warning btn-sm" @click.prevent="getLogin">Login</button>
+
+                <button class="btn btn-outline-info btn-sm" 
+                  @click.prevent="signUp">register</button>
           </form>
+
+          <!-- end of login form modal -->
+
           <b-modal title="server said: "
             ref="onOk" centered @ok="closeBox" ok-only>
             <div v-html="res_status">
               {{res_status}}
             </div>
           </b-modal>
-    </div>
+    </span>
 </template>
 
 
@@ -36,7 +40,9 @@ export default{
             upass:'',
             res_status:'',
             error:0,
-            url:''
+            url:'',
+            found_user:false
+
         }
     },
     methods:{

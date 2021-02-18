@@ -37,6 +37,17 @@
             " href="{{url('/posts')}}">Post</a>
         </li>
 
+        <li class="nav-item">
+          <!--
+          <a class="nav-link" href="{{route('login')}}">Login</a>
+          -->
+
+
+            <login-form></login-form>
+
+
+
+        </li>
 
         @else
 
@@ -65,13 +76,6 @@
 
         @endguest
       </ul>
-      @guest
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <login-form></login-form>
-        </li>
-      </ul>
-      @endguest
     </div>
   </div>
 </nav>

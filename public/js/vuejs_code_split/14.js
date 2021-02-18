@@ -38,6 +38,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "LoginForm",
   data: function data() {
@@ -46,7 +50,8 @@ __webpack_require__.r(__webpack_exports__);
       upass: '',
       res_status: '',
       error: 0,
-      url: ''
+      url: '',
+      found_user: false
     };
   },
   methods: {
@@ -105,10 +110,13 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "div",
+    "span",
+    { staticClass: "nav-link" },
     [
-      _c("form", { staticClass: "form-inline", attrs: { action: "" } }, [
-        _c("div", { staticClass: "form-group" }, [
+      _c(
+        "form",
+        { staticClass: "form-inline my-2 my-lg-0", attrs: { action: "" } },
+        [
           _c("input", {
             directives: [
               {
@@ -119,7 +127,7 @@ var render = function() {
               }
             ],
             ref: "uemail",
-            staticClass: "form-control",
+            staticClass: "col-md-4",
             attrs: { type: "email", placeholder: "Enter email" },
             domProps: { value: _vm.uemail },
             on: {
@@ -130,10 +138,8 @@ var render = function() {
                 _vm.uemail = $event.target.value
               }
             }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
+          }),
+          _vm._v(" "),
           _c("input", {
             directives: [
               {
@@ -143,7 +149,7 @@ var render = function() {
                 expression: "upass"
               }
             ],
-            staticClass: "form-control",
+            staticClass: "col-md-4",
             attrs: { type: "password", placeholder: "Enter password" },
             domProps: { value: _vm.upass },
             on: {
@@ -154,14 +160,12 @@ var render = function() {
                 _vm.upass = $event.target.value
               }
             }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
+          }),
+          _vm._v(" "),
           _c(
             "button",
             {
-              staticClass: "btn btn-warning",
+              staticClass: "btn btn-outline-warning btn-sm",
               on: {
                 click: function($event) {
                   $event.preventDefault()
@@ -175,7 +179,7 @@ var render = function() {
           _c(
             "button",
             {
-              staticClass: "btn btn-info",
+              staticClass: "btn btn-outline-info btn-sm",
               on: {
                 click: function($event) {
                   $event.preventDefault()
@@ -185,8 +189,8 @@ var render = function() {
             },
             [_vm._v("register")]
           )
-        ])
-      ]),
+        ]
+      ),
       _vm._v(" "),
       _c(
         "b-modal",
