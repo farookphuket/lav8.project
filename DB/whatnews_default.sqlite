@@ -30,6 +30,50 @@ INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
 
 
 
+/* ทดสอบใส่ภาษาไทย on 18-Feb-2021 */
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
+'3',                            
+'ฟังนิยาย เพชรพระอุมา ตอน ดงมรณะ',                             
+'
+<div class="row">
+    <div class="col-lg-4">
+    <img class="responsive" 
+    src="https://lh3.googleusercontent.com/tsOd3oGP_IwJvUS9aPouBiie_GL3ChLTgzvlqkg-DFSydcKYiRGf3hzShqFx4c_WtT6xTiTmGDXvJZ9VRkk7Ds0VEeSZMefpjWk4FuoKEDDtgcdGk4JvEZHres4c5fWcmVcYvtaTiGo=w2400" alt="รูปปกหนังสือนิยาย เพชรพระอุมา ตอน ดงมรณะ">
+        <p class="text-center">
+ฟังนิยาย ตอน ดงมรณะ
+        </p>
+    </div>
+    <div class="col-lg-8">
+<p>
+เป็นข้อมูลตัวอย่าง เก็บรักษาไว้สำหรับฟัง เพื่อความบันเทิงส่วนตัวเท่านั้น ไม่ได้แจก จ่าย 
+ไม่ได้หาผลกำไร หรือ เจตนาละเมิดลิขสิทธิ์ แต่อย่างใด
+</p>
+        <div class="sound-container">
+
+<iframe src="https://archive.org/embed/clip_30_to_36" 
+        width="500" height="140" frameborder="0" webkitallowfullscreen="true" 
+        mozallowfullscreen="true" allowfullscreen></iframe>
+        </div>
+
+
+    <p class="pt-4 mb-4">
+ต้องการฟังเพิ่ม <a href="/posts/หนังสือนิยาย-เพชรพระอุมา-ตอน-ดงมรณะ"> Click here</a>
+    </p>
+    </div>
+</div>
+
+',                                          
+'1',                        
+'2021-02-18 16:04:45',                
+'2021-02-18 16:05:45'                
+);                                          
+
+
+
+
+
+
 /* React course from Traversy Media on 17-Feb-2021 */
 INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
 "is_public","created_at","updated_at") VALUES (NULL,
@@ -59,8 +103,8 @@ he make the best tutorial as always
 
 ',                                          
 '1',                        
-'2021-03-01 07:04:45',                
-'2021-03-01 07:05:45'                
+'2021-02-01 07:04:45',                
+'2021-02-01 07:05:45'                
 );                                          
 
 

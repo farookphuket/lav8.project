@@ -47,6 +47,7 @@ Vue.use(JoditVue)
 
 //Vue.component('Visitors',require( './components/visitors.vue').default);
 Vue.component('Visitors',()=>import( './components/visitors.vue'));
+Vue.component('LoginForm',()=>import( './components/LoginForm.vue'));
 
 
 //Vue.component('resetpass',require('./components/password-reset-form.vue').default);

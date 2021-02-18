@@ -80,7 +80,7 @@
 
 
 <body>
-
+  <div id="app">
   <!-- Navigation -->
   @include('cleanblog/top-nav')
 
@@ -124,11 +124,13 @@
 
 
         <!-- Pager -->
-
+      <!--
         <div id="app">
+      -->
           <Visitors></Visitors>
+          <!--
         </div>
-
+          -->
       </div>
 
     </div>
@@ -193,7 +195,7 @@
   </div>
 </footer>
 
-
+</div><!-- end of div id=app -->
 <script src="{{asset('cleanblog/js/bootstrap/bootstrap.bundle.js')}}"></script>
 <script src="{{asset('cleanblog/js/clean-blog.min.js')}}"></script>
 

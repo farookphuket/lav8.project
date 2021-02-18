@@ -32,6 +32,20 @@ Post list
 */
 
 
+
+/* post 7 has the tag 7 */
+INSERT INTO 'post_tag' ('id','post_id','tag_id','created_at','updated_at') 
+VALUES (NULL,'7','7',
+'2021-02-18 05:05:16',
+'2021-02-18 05:05:17');
+
+/* post 7 has the tag 1 */
+INSERT INTO 'post_tag' ('id','post_id','tag_id','created_at','updated_at') 
+VALUES (NULL,'7','1',
+'2021-02-18 05:05:02',
+'2021-02-18 05:05:04');
+
+
 /* post 6 has the tag 7 */
 INSERT INTO 'post_tag' ('id','post_id','tag_id','created_at','updated_at') 
 VALUES (NULL,'6','7',

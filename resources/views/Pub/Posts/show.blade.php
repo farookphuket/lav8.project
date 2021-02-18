@@ -1,7 +1,9 @@
 @extends('cleanblog.cleanblog')
 
 
-@section('meta_title','Blog 1.1 '.$post->post_title)
+@section('meta_title',$post->post_title)
+@section('meta_keywords',$post->post_title)
+@section('meta_des',$post->post_title)
 
 @section('content')
     

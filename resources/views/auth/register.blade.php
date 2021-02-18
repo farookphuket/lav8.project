@@ -53,7 +53,9 @@
                             </a>
                         </form>
                         <a href="#!" class="forgot-password-link">Forgot password?</a>
-                        <p class="login-card-footer-text">Alredy have an account? <a href="{{ route('login') }}" class="text-reset">Login here</a></p>
+                        <p class="login-card-footer-text">Lost password? 
+                            <a href="{{ url('/forgot-password') }}" 
+                                class="text-reset">Reset Password</a></p>
                         <nav class="login-card-footer-nav">
                             <a href="#!">Terms of use.</a>
                             <a href="#!">Privacy policy</a>

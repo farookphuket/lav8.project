@@ -23,13 +23,7 @@
                         {{$item->created_at}} &middot; <span class="reading-time" title="created">
               
                           {{$item->created_at->diffforHumans()}} </span>
-                        @if($item->updated_at != $item->created_at)
-                        
-                        &middot;Last update
-                        {{$item->updated_at}} &middot; <span class="reading-time" title="Last update">
-              
-                          {{$item->updated_at->diffforHumans()}} </span>
-                        @endif
+
                         
                       </p>
                       <p class="pt-4">&nbsp;</p>

@@ -24,6 +24,23 @@
                 {{$item->created_at}} &middot; 
                 <span class="reading-time" title="{{$item->post_title}}">
                   {{$item->created_at->diffForHumans()}}
+                  &middot; 
+                  <?php 
+                    $read = $item->read_count;
+                    $label = 'time';
+                    $msg = "";
+                    if($read == 0):
+                      $msg = "never has read";
+                      
+                    else:
+                      if($read >= 2):
+                        $label = 'times';
+                      endif;
+                      $msg = "read {$read} {$label}";
+                    endif;
+
+                  ?>
+                  {{$msg}}
                 </span>
 
                 @if($item->created_at != $item->updated_at)
@@ -31,7 +48,7 @@
                     last update
                     {{$item->updated_at}} &middot; 
                     <span class="reading-time" title="{{$item->post_title}}">
-                      {{$item->updated_at->diffForHumans()}}
+                      {{$item->updated_at->diffForHumans()}} 
                     </span>
                 @endif
               </p>
