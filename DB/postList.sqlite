@@ -316,17 +316,18 @@ margin-top:1em;margin-bottom:1em;text-align:center;">
         
         <a href="https://archive.org/compress/clip_037_to_042/formats=VBR%20MP3&file=/clip_037_to_042.zip" class="btn btn-primary">ดาวน์โหลดคลิป 037 - 042</a>
         
-        <a href="https://archive.org/compress/clip_44_to_51/formats=VBR%20MP3&file=/clip_44_to_51.zip" class="btn btn-primary">ดาวน์โหลดคลิป 044 - 051</a>
+        <a 
+href="https://archive.org/compress/clip_44_to_51/formats=VBR%20MP3&file=/clip_44_to_51.zip" 
+class="btn btn-primary">ดาวน์โหลดคลิป 044 - 051</a>
 
-<a href="https://archive.org/compress/clip_052_058/formats=VBR%20MP3&file=/clip_052_058.zip" class="btn btn-primary">ดาวน์โหลดคลิป 052 - 058</a>
+<a 
+href="https://archive.org/compress/clip_052_058/formats=VBR%20MP3&file=/clip_052_058.zip" 
+class="btn btn-primary">ดาวน์โหลดคลิป 052 - 058</a>
 </div>
 </div>
 
 
 </div>
-
-
-
 
 ','1','','','0',
 '2021-02-18 05:00:00',
@@ -334,15 +335,10 @@ margin-top:1em;margin-bottom:1em;text-align:center;">
 );
 
 
-
-
-
-
-
-
-
     /* หนังสือนิยาย เพชรพระอุมา ตอน ไพรมหากาฬ 8 Feb 2021  */
-    INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt","post_body","is_public","last_read_ip","last_read_date","read_count","created_at","updated_at") VALUES (6,
+    INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+    "post_body","is_public","last_read_ip","last_read_date","read_count",
+    "created_at","updated_at") VALUES (6,
 
             '1', /* USER ID */
 
@@ -354,7 +350,9 @@ margin-top:1em;margin-bottom:1em;text-align:center;">
             '
             <div class="row">
             <div class="col-lg-4">
-            <img src="https://lh3.googleusercontent.com/s2RNr270Kv4qx3ZsnLQcsl184NmadqcjGmSO8G5JVJyj_uZuLeHF8OD8O13RG8hnhs-QdbbnSZPEdFAjK3PYYzXB4FzV0_XP7iyHdb6b4GBMB9nbAQTzCnywcVQJdVRxzFLziBBJb7w=w2400" class="responsive">
+            <img 
+            src="https://lh3.googleusercontent.com/s2RNr270Kv4qx3ZsnLQcsl184NmadqcjGmSO8G5JVJyj_uZuLeHF8OD8O13RG8hnhs-QdbbnSZPEdFAjK3PYYzXB4FzV0_XP7iyHdb6b4GBMB9nbAQTzCnywcVQJdVRxzFLziBBJb7w=w2400" 
+            class="responsive">
             <p class="pt-2 text-center">
             ตอน ไพรมหากาฬ
             </p>
@@ -538,20 +536,11 @@ href="https://archive.org/compress/clip_001_to_011/formats=VBR%20MP3&file=/clip_
     '2021-02-08 00:57:07');
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* got headache for 6 hours just a simple thing */
 
-INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt","post_body","is_public","last_read_ip","last_read_date","read_count","created_at","updated_at") VALUES (5,
+INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+"post_body","is_public","last_read_ip","last_read_date","read_count",
+"created_at","updated_at") VALUES (5,
 '1',
 'beware simple thing is some time not simple',
 
@@ -599,7 +588,9 @@ come back to work as it use to
 /* cmus  START 27 jan 2021 */
 
 
-INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt","post_body","is_public","last_read_ip","last_read_date","read_count","created_at","updated_at") VALUES (4,
+INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+"post_body","is_public","last_read_ip","last_read_date","read_count",
+"created_at","updated_at") VALUES (4,
 '1',
 'get to know and how to use cmus in my 15 minute',
 
@@ -609,21 +600,25 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt","post_bod
 
 <div class="row">
     <div class="col-lg-4">
-        <img src="https://i.ibb.co/svbfBpY/2021-01-27-cmus-best-music-player.png" class="responsive">
+        <img 
+src="https://i.ibb.co/svbfBpY/2021-01-27-cmus-best-music-player.png" 
+class="responsive">
         <p>Cmus is great</p>
     </div>
     <div class="col-lg-8">
 
         <p>
-            <b>Rhythmbox</b> is the best music player I ever have on my computer for all time since Aug 2007 when I first try to using
-            "ubuntu 7.04" as my first time I ever install linux into my computer still remember how much I missing "window xp" but I have to
-            get rid of window it''s not because window is bad or anything I love window I learn how to use computer from "window 98"
-            that was the first time in mylife I ever touch the computer and I have learn a lot from window so thank you
-            to window operating system
+            <b>Rhythmbox</b> is the best music player I ever have on my 
+computer for all time since Aug 2007 when I first try to using "ubuntu 7.04" 
+as my first time I ever install linux into my computer still remember how much 
+I missing "window xp" but I have to get rid of window it''s not because window 
+is bad or anything I love window I learn how to use computer from "window 98" 
+that was the first time in mylife I ever touch the computer and I have learn 
+a lot from window so thank you to window operating system
         </p>
         <p>
-            <b>Cmus</b> is a very cool and will be my music player on 2021 and so on 
-            it is very fast and feature rich and yes! it''s powerful
+            <b>Cmus</b> is a very cool and will be my music player on 2021 
+and so on it is very fast and feature rich and yes! it''s powerful
         </p>
     </div>
 </div>
@@ -636,17 +631,19 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt","post_bod
 
  <div class="container">
     <div>
-        <img src="https://i.ibb.co/svbfBpY/2021-01-27-cmus-best-music-player.png" class="responsive">
+        <img 
+        src="https://i.ibb.co/svbfBpY/2021-01-27-cmus-best-music-player.png" 
+        class="responsive">
         <p class="text-center">Cmus is lightweight and yes powerful</p>
     </div>
 
     <p class="pt-4 mb-2">
-        cmus is a lightweight ncurses music player. It supports various output methods
-        by using dynamically-loaded output plugins. cmus has configurable keybindings
-        and can be controlled externally using cmus-remote if you are a vim fan
-        you will falll in love to cmus completely in just a few moment when you know it
-        but it''s will not be easy if this is your first touch
-        so this post will be "how can i use cmus in the first 15 minute".
+        cmus is a lightweight ncurses music player. It supports various output 
+methods by using dynamically-loaded output plugins. cmus has configurable 
+keybindings and can be controlled externally using cmus-remote if you are a 
+vim fan you will falll in love to cmus completely in just a few moment when 
+you know it but it''s will not be easy if this is your first touch so this post 
+will be "how can i use cmus in the first 15 minute".
 
     </p>
     <h2 class="text-center">
@@ -654,8 +651,8 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt","post_bod
         How to open cmus
     </h2>
     <p>
-        at this point I assume that you have install it already
-        cmus will be run in the command-line so fire up your command line program
+        at this point I assume that you have install it already cmus will be 
+run in the command-line so fire up your command line program
         (I use terminal)
     </p>
 
@@ -664,22 +661,26 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt","post_bod
         <input type="text" value="cmus" class="form-control">
     </div>
 
-    <p class="pt-4 mb-4">the first run you will only see the blank screen like this </p>
-    <img src="https://i.ibb.co/P9Phxq5/2021-01-27-cmus-blank.png" class="responsive">
+    <p class="pt-4 mb-4">the first run you will only see the blank screen like 
+this </p>
+    <img src="https://i.ibb.co/P9Phxq5/2021-01-27-cmus-blank.png" 
+    class="responsive">
 
 
     <h1 class="pt-4 text-center">
         How can I add song to the library
     </h1>
     <p>
-        now you have number 1 to 7 press the number 5 you can use the aero key up and down
-        or if you are vim fan just press "j" to go down "k" to go up you will see the
-        hilight now just navigate to your music library in my case here is in the path
-        "/run/media/farook/DATA2TB/ITuneCopy" you can see it is hilighted now
-        so I just press "a" to add all my music in to the cmus list and you will the hilight
-        will move to the lower line which mean that the music is added
+        now you have number 1 to 7 press the number 5 you can use the aero 
+key up and down or if you are vim fan just press "j" to go down "k" to go 
+up you will see the hilight now just navigate to your music library in my 
+case here is in the path "/run/media/farook/DATA2TB/ITuneCopy" you can see 
+it is hilighted now so I just press "a" to add all my music in to the cmus 
+list and you will the hilight will move to the lower line which mean that the 
+music is added
     </p>
-    <img src="https://i.ibb.co/dfVbmT3/2021-01-27-cmus-nav-to-music.png" class="responsive">
+    <img src="https://i.ibb.co/dfVbmT3/2021-01-27-cmus-nav-to-music.png" 
+    class="responsive">
 
     <h2 class="pt-4 text-center">
         your music now is ready!
@@ -687,60 +688,59 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt","post_bod
     <p>
         <span class="badge badge-warning">
             do you know?
-        </span> that your music is ready for you now just press "2"
-        to return to your music library now you will that I have "3131" file in here
-        now all you have to do is move the pointer to the song that you want to listen
-        then hit enter or "x" button then it will start to play to pause press "c"
-        to stop press "v"
+        </span> that your music is ready for you now just press "2" to return 
+to your music library now you will that I have "3131" file in here now all 
+you have to do is move the pointer to the song that you want to listen then 
+hit enter or "x" button then it will start to play to pause press "c" to stop 
+press "v"
     </p>
-    <img src="https://i.ibb.co/fdTTFvW/2021-01-27-cmus-list-view.png" class="responsive">
+    <img src="https://i.ibb.co/fdTTFvW/2021-01-27-cmus-list-view.png" 
+    class="responsive">
 
     <h2 class="pt-4">
         How can I create a new playlist?
     </h2>
     <p class="mb-4">
-        press "3" follow by ":pl-create your-playlist-name" hit enter press "j"
-        to move the cursor down to select the new playlist that we just created
-        press "space" key now you will see the "*" sign is come to focus
+        press "3" follow by ":pl-create your-playlist-name" hit enter press 
+"j" to move the cursor down to select the new playlist that we just created 
+press "space" key now you will see the "*" sign is come to focus
     </p>
-    <img src="https://i.ibb.co/8Bc7zHM/2021-01-28-cmus-new-playlist.png" class="responsive">
+    <img src="https://i.ibb.co/8Bc7zHM/2021-01-28-cmus-new-playlist.png" 
+    class="responsive">
     <h2 class="pt-4">
         How can I add music into my playlist?
     </h2>
     <p class="mb-2">
-        press "2" then move the cursor up or down by press "j" or "k" to select
-        the music by press "space" to add the music to the playlist press "y"
-        you can also press "e" to add the select song to be the next play too
-        now to go back to the playlist press "3" you will see the select song in
-        your the right panel of the playlist
+        press "2" then move the cursor up or down by press "j" or "k" to 
+select the music by press "space" to add the music to the playlist press "y" 
+you can also press "e" to add the select song to be the next play too now to 
+go back to the playlist press "3" you will see the select song in your the 
+right panel of the playlist
     </p>
-    <img src="https://i.ibb.co/5WymR2x/2021-01-28-cmus-select-song.png" class="responsive">
+    <img src="https://i.ibb.co/5WymR2x/2021-01-28-cmus-select-song.png" 
+    class="responsive">
     <h2 class="pt-4 mb-2">
         But I have so many song! can I search to the specific song?
     </h2>
     <p class="mb-2">
         <span class="badge badge-success">
             yes!
-        </span> you can search to the specific song by press "/"(slash sign) then
-        type the word name hit enter to find the next song you can keep on press
-        "n" until you find the specific song that you want to select the song press
-        "space" to find another song just redo the process before or you can press
-        "/" (slash sign) follow by the "aero" key up or down to see the search
-        history one by one in each time you press the aero key
-
+        </span> you can search to the specific song by press "/"(slash sign) 
+then type the word name hit enter to find the next song you can keep on press 
+"n" until you find the specific song that you want to select the song press 
+"space" to find another song just redo the process before or you can press "/" 
+(slash sign) follow by the "aero" key up or down to see the search history one 
+by one in each time you press the aero key
     </p>
     <h2 class="pt-4">
         How to manage song in my playlist?
     </h2>
     <p class="mb-2">
-        to manage the song in the playlist
-        press "TAB" you will see the cursor focus on the right panel press "j" or "k"
-        to move cursor up or down if you listen to the music now the step below
-        will not really disturb you much unless you press "enter" then the "current"
-        hilight song will be play but your select song will still remain the same
-
-
-
+        to manage the song in the playlist press "TAB" you will see the 
+cursor focus on the right panel press "j" or "k" to move cursor up or down 
+if you listen to the music now the step below will not really disturb you much 
+unless you press "enter" then the "current" hilight song will be play but your 
+select song will still remain the same
     </p>
     <p>
         (
@@ -761,22 +761,24 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt","post_bod
             3) Select or Not select by press "space bar" key
         </li>
         <li>
-            4)
-            you can select the song more than one by press "space" to move or if you want to move all select song up or down you have to move the cursor to the point
-            that you want the select song to be then press "P" or "p"(upper case p
-            to go up lower case p to place down) but the select song still selected
-            how to un-select press ":unmark"(press "colon" type "unmark")
-            hit enter the select will be gone
+            4) you can select the song more than one by press "space" to move 
+or if you want to move all select song up or down you have to move the cursor 
+to the point that you want the select song to be then press "P" or "p" (upper 
+case p to go up lower case p to place down) but the select song still selected 
+how to un-select press ":unmark"(press "colon" type "unmark") hit enter the 
+select will be gone
         </li>
         <li>
-            to remove song from this playlist by move the cursor to the song then
-            press "D"(upper case d) to remove the whole playlist press "TAB" follow
-            by press "D"(upper case d) follow by "y" the hit "enter" all the playlist
-            will be gone.
+            to remove song from this playlist by move the cursor to the 
+song then press "D"(upper case d) to remove the whole playlist press "TAB" 
+follow by press "D"(upper case d) follow by "y" the hit "enter" all the 
+playlist will be gone.
         </li>
     </ol>
 
-    <img src="https://i.ibb.co/Wp2qpTx/2021-01-28-cmus-manage-song-in-playlist.png" class="responsive">
+    <img 
+    src="https://i.ibb.co/Wp2qpTx/2021-01-28-cmus-manage-song-in-playlist.png" 
+    class="responsive">
     <p class="pt-2">
         <strong>
             <span class="badge badge-warning">
@@ -784,22 +786,27 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt","post_bod
             </span>
         </strong> that your playlist is <span class="badge badge-danger">
             NOT
-        </span> save now not yet until you press "<span class="badge badge-success">
+        </span> save now not yet until you press "<span class="badge 
+        badge-success">
             :save
-        </span>" hit enter and if you do any change to your playlist you have to do "<span class="badge badge-success">
+        </span>" hit enter and if you do any change to your playlist you have 
+to do "<span class="badge badge-success">
             :save
-        </span>" in every time to keep change now at this point I assume that you have
-        press "<span class="badge badge-success">:save</span>" so now we move on.
-
+        </span>" in every time to keep change now at this point I assume 
+that you have press "<span class="badge badge-success">:save</span>" so now 
+we move on.
     </p>
     <h2 class="pt-4 mb-2 text-center">
         but where is my playlist file that I just create and save?
     </h2>
     <p>
-        after you have type "<span class="badge badge-success">:save</span>" your
-        playlist will be save to "<span class="badge badge-info">~/.config/cmus/playlists/playlist-file-name</span>"
+        after you have type "<span class="badge badge-success">:save</span>" 
+your playlist will be save to "<span class="badge badge-info">
+~/.config/cmus/playlists/playlist-file-name</span>"
     </p>
-    <img src="https://i.ibb.co/V9fJ66k/2021-01-28-cmus-where-is-save-playlist.png" class="responsive">
+    <img 
+    src="https://i.ibb.co/V9fJ66k/2021-01-28-cmus-where-is-save-playlist.png" 
+    class="responsive">
 </div>
 
 
@@ -822,22 +829,26 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt","post_bod
 
 
 
-INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt","post_body","is_public","last_read_ip","last_read_date","read_count","created_at","updated_at") VALUES (1,
+INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+"post_body","is_public","last_read_ip","last_read_date","read_count",
+"created_at","updated_at") VALUES (1,
 '1',
 'How can I add datetime to .sqlite for auto data',
 
 'add-datetime-to-dot-sqlite-for-auto-data',
 
 '
-
-Hi there today is 25 Jan 2021 I don''t know how can I add automatic datetime 
-to .sqlite file so I got it from here "https://www.sqlitetutorial.net/sqlite-date/"
-and now I want to escaping the single quote which is not accept by sql what I do is 
-I put two single quote('') to replace and it is working as I expected I got it fro
-"https://stackoverflow.com/questions/603572/escape-single-quote-character-for-use-in-an-sqlite-query"
-now what else trick I learn today in (25-Jan-2021)
-
-
+<p class="mb-2">
+    Hi there today is 25 Jan 2021 I don''t know how can I add automatic 
+datetime to .sqlite file so I got it from 
+<a href="https://www.sqlitetutorial.net/sqlite-date/" 
+class="btn btn-outline-info " target="_blank"> here </a> and now I want to 
+escaping the single quote which is not accept by sql what I do is I put two 
+single quote('') to replace and it is working as I expected I got it from <a 
+href="https://stackoverflow.com/questions/603572/escape-single-quote-character-for-use-in-an-sqlite-query" class="btn btn-outline-info" target="_blank">
+https://stackoverflow.com</a> now what else trick I learn today in 
+(25-Jan-2021)
+</p>
 
 ',
 
@@ -858,9 +869,6 @@ now what else trick I learn today in (25-Jan-2021)
 
 
 
-
-
-
 /* The 2 post */
 
 INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
@@ -873,16 +881,16 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
 '
 <p>
 <b>Dear</b> friends it''s 26 Jan 2021 I am completely install manjaro-i3 as I 
-have been very tied of doing some config on my manjaro kde or xfce so my config 
-on i3 is quite simple this time just after newly install then I update the system
-by using "pamac tray" which is come with manjaro-i3 already so really really minimal
-config for me</p>
+have been very tied of doing some config on my manjaro kde or xfce so my 
+config on i3 is quite simple this time just after newly install then I update 
+the system by using "pamac tray" which is come with manjaro-i3 already so 
+really really minimal config for me</p>
 <p>
-any way! before I go much more far far from this point this post will talk about 
-'' how can I setup lamp server on majaro 20.2.2 '' which I mostly copy from this website
-: ''https://forum.manjaro.org/t/howto-install-apache-mariadb-mysql-php-lamp/13000 ''
-
-
+    any way! before I go much more far far from this point this post will 
+talk about '' how can I setup lamp server on majaro 20.2.2 '' which I mostly 
+copy from <a 
+href="https://forum.manjaro.org/t/howto-install-apache-mariadb-mysql-php-lamp/13000" 
+class="btn btn-outline-info" target="_blank">https://forum.manjaro.org</a>
 
 </p>
 '
@@ -895,13 +903,16 @@ any way! before I go much more far far from this point this post will talk about
 class="responsive">
 
 
-<p>I only have a bad example here so the video is may not look as professional as it''s 
-suppose to be but any way you don''t have to read this too much 
+<p>I only have a bad example here so the video is may not look as professional 
+as it''s suppose to be but any way you don''t have to read this too much 
 
 
 </p>
 <div class="video-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vvQCz2NK_80" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" 
+src="https://www.youtube.com/embed/vvQCz2NK_80" frameborder="0" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 <p>Hopefully you have learn something from this thank you</p>
@@ -921,18 +932,6 @@ suppose to be but any way you don''t have to read this too much
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* my keyboard layout on manjaro i3 now is working */ 
 
 
@@ -947,7 +946,8 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
 
 <div class="row">
     <div class="col-lg-4">
-        <img src="https://i.ibb.co/jDd1RWL/2021-01-27-keybord-layout.png" class="responsive">
+        <img src="https://i.ibb.co/jDd1RWL/2021-01-27-keybord-layout.png" 
+        class="responsive">
         <p>
             I got my keyboard layout to show in i3wm now
         </p>
@@ -957,18 +957,18 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
             <b>
                 My
             </b>
-            keyboard layout never show up since I start to usin "I3WM" in manjaro
-            and I cannot find any solution for that even tried so hard to search on the
-            internet but no still luck so I just forgot about it for so long
+            keyboard layout never show up since I start to usin "I3WM" in 
+            manjaro and I cannot find any solution for that even tried so 
+            hard to search on the internet but no still luck so I just forgot 
+            about it for so long
         </p>
         <p class="pt-2 mb-4">
             <b>Since</b> a few days ago(it''s 25 of Jan 2021 if I''m not wrong
-            my desktop computer which run manjaro 20.2 xfce was terriblly crash
-            (well it is crash because I did a lot of a stupid thing with the system
-            plus maybe I got so many error config and so many crash program install
-            maybe that''s the reason) so I have to re-install the os again but this time
-            I install manjaro-i3.
-
+my desktop computer which run manjaro 20.2 xfce was terriblly crash (well it 
+is crash because I did a lot of a stupid thing with the system plus maybe I 
+got so many error config and so many crash program install maybe that''s the 
+reason) so I have to re-install the os again but this time I install 
+manjaro-i3.
         </p>
 
     </div>
@@ -978,7 +978,8 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
 , /* excerpt */
 '
 <div class="container">
-    <img src="https://i.ibb.co/Wyz585K/2021-01-27-locale-setting.png" class="responsive">
+    <img src="https://i.ibb.co/Wyz585K/2021-01-27-locale-setting.png" 
+    class="responsive">
     <p>
         make sure that you have set the locale
     </p>
@@ -987,28 +988,29 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
             when
 
         </b>
-        come to start using manjaro with i3wm that I try to config it
-        by search from the article on the internet even I can make it look very
-        similar to what the other people show but I still got a problem as
-        I have to respect that "we are on the difference machine" so things
-        that work on another may not work on me and it''s seem to be so true!
-        I can setup i3wm by copy someone else from the internet but I have a problem
-        for one "No keyboard layout show" this is one of the thing that hard for
-        me because I have to type in "Thai" so if I don''t know what is the current
-        keyboard layout that I use now it''s mean that I will type in Thai
-        then I have to delete which is wasted time for me as I cannot type
-        without looking at the keyboard(I think they call touch-type) so
-        every key stroke that I type I have to look before I can press
+        come to start using manjaro with i3wm that I try to config it by 
+search from the article on the internet even I can make it look very similar 
+to what the other people show but I still got a problem as I have to respect 
+that "we are on the difference machine" so things that work on another may 
+not work on me and it''s seem to be so true! I can setup i3wm by copy 
+someone else from the internet but I have a problem for one "No keyboard 
+layout show" this is one of the thing that hard for me because I have to 
+type in "Thai" so if I don''t know what is the current keyboard layout that 
+I use now it''s mean that I will type in Thai then I have to delete which is 
+wasted time for me as I cannot type without looking at the keyboard(I think 
+they call touch-type) so every key stroke that I type I have to look before I 
+can press
     </p>
     <p>
-        back to "how can I get the keyboard layout to show?" I install
-        the program call "xxkb" by run the command "<i>sudo pacman -S xxkb </i>"
-        after the install I create the file in my home directory call ".xxkbrc"
-        by run the command "<i>vim ~/.xxkbrc</i>" the paste the following code below
+        back to "how can I get the keyboard layout to show?" I install the 
+program call "xxkb" by run the command "<i>sudo pacman -S xxkb </i>" after 
+the install I create the file in my home directory call ".xxkbrc" by run the 
+command "<i>vim ~/.xxkbrc</i>" the paste the following code below
     </p>
     <div class="form-group">
         <label>Just copy and paste</label>
-        <textarea class="form-control" rows="8">XXkb.image.path: /home/farook/.config/xxkb
+        <textarea class="form-control" 
+rows="8">XXkb.image.path: /home/farook/.config/xxkb
   
   XXkb.group.base: 1
   XXkb.group.alt: 2
@@ -1040,28 +1042,29 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
         </textarea>
     </div>
     <p class="pt-4 mb-2">
-        now create the folder in "~/.config" by run the command "<i>mkdir ~/.config/xxkb</i>"
-        just incase in the future maybe we can find the .xmp file "th and us flag"
-        so we will put in this folder
+        now create the folder in "~/.config" by run the command "<i>mkdir 
+~/.config/xxkb</i>" just incase in the future maybe we can find the .xmp 
+file "th and us flag" so we will put in this folder
     </p>
     <p>
-        now open the file ".xinitrc" we have to add xxkb to run when we login to i3
-        by run the command "<i>vim ~/.xinirc</i> " then add "<em>xxkb &amp;</em>"
-        just before the last line then you have to edit your i3 config file too
-        now type "<i>vim ~/.config/i3/config</i> " then add the line
+        now open the file ".xinitrc" we have to add xxkb to run when we 
+login to i3 by run the command "<i>vim ~/.xinirc</i> " then add "<em>xxkb 
+&amp;</em>" just before the last line then you have to edit your i3 config 
+file too now type "<i>vim ~/.config/i3/config</i> " then add the line
     </p>
 <div class="line-numbers">
     <pre>            
         <code class="language-config">
-                exec_always setxkbmap -model pc105 -layout "us,th" -option ''grp:alt_shift_toggle''
+                exec_always setxkbmap -model pc105 -layout "us,th" -option 
+                ''grp:alt_shift_toggle''
                 exec_always --no-startup-id xxkb     
         </code>
     </pre>
 </div>
     <p>
-        this is all the step that I have done to make the keyboard status to show
-        now I can click on the label or press "control+alt" key to toggle between
-        Thai and English
+        this is all the step that I have done to make the keyboard status to 
+show now I can click on the label or press "control+alt" key to toggle between 
+Thai and English
     </p>
     <p>
         so if you like to try my method all of this is what I''ve done on both

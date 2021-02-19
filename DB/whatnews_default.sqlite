@@ -1,5 +1,7 @@
 
 /* this is the comment */
+
+
 /*
 INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
 "is_public","created_at","updated_at") VALUES (NULL,
@@ -19,6 +21,34 @@ INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
  ///////////////END OF TEMPLATE ///////////
 */
 
+/*  Beginner''s Guide to the Bash Terminal 19 Feb 2021 */
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
+'1',                            
+'Beginner''s Guide to the Bash Terminal',                             
+'
+<p class="mb-4">
+    <b>Hi there</b> today (19-Feb-2021) I just copy the video from 
+    "Joe Collins" about how to use terminal.
+
+</p>
+<p class="pt-2 mb-4">
+    this video is basiclly post on the Mar 3 2017 but if you just start to using 
+    linux this is the good video to start with when it''s come to using the 
+    command line
+    
+</p>
+<div class="video-container">
+    <iframe width="560" height="315" 
+    src="https://www.youtube.com/embed/oxuRxtrO2Ag" frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+    gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+',                                          
+'1',                        
+'2021-02-19 20:33:45',                
+'2021-02-19 20:34:45'                 
+);                                          
 
 
 /* just install neovim on laptop 19 Feb 2021 */

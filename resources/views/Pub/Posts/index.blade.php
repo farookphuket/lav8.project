@@ -68,14 +68,18 @@
         @include('INC/_no_data')
     @endif
     @if(!$tags->isEmpty())
-       <div class="tags">
 
-            @foreach($tags as $tag)
-              <span>
-                <a href='{{route('posts.index',['tag' => $tag->id])}}'>{{$tag->tag_name}}</a>
-                </span>
-            @endforeach
-
-       </div>
+            <div class="clearfix">
+                <div class="float-right">
+                    @foreach($tags as $tag)
+                      <span>
+                        <a  class="btn btn-outline-info btn-sm" 
+                            href='{{route('posts.index',['tag' => $tag->id])}}'>
+                            {{$tag->tag_name}}
+                        </a>
+                        </span>
+                    @endforeach
+                </div>
+            </div>
     @endif
 @endsection

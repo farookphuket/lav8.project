@@ -65,13 +65,24 @@
 
         @endguest
       </ul>
-      @guest
       <ul class="navbar-nav ml-auto">
+            
+      @guest
         <li class="nav-item">
           <login-form></login-form>
         </li>
-      </ul>
+        @else
+        <li class="nav-item">
+            <form class="form-inline" 
+                method="post" action="{{route("logout")}}">
+                @csrf
+                <button class="btn btn-sm btn-outline-warning" type="submit">
+                    Logout
+                </button>
+            </form>
+        </li>
       @endguest
+      </ul>
     </div>
   </div>
 </nav>

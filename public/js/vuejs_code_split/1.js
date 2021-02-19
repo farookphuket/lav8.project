@@ -1236,12 +1236,12 @@ var render = function() {
   return _c("div", { staticClass: "container" }, [
     _c(
       "div",
-      { staticClass: "tags" },
       _vm._l(_vm.tag_with_content, function(li) {
         return _c("span", [
           _c(
             "a",
             {
+              staticClass: "btn btn-outline-info btn-sm",
               attrs: { href: "#" },
               on: {
                 click: function($event) {

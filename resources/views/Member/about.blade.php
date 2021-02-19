@@ -34,25 +34,10 @@
         @endforeach
 
     @else
+
+        @include("INC.about-default")
+
         
-        <article class="post-preview">
-          <a href="/member/home" title="back home">
-            <h2 class="post-title">This is the abot page</h2>
-            
-            <h3 class="post-subtitle">about</h3>
-            
-          </a>
-          <p class="post-meta">Posted by
-            
-          Default
-            
-            on
-            {{date("Y-m-d H:i a",time())}} &middot; <span class="reading-time" title="Estimated read time">
-  
-   4 mins  read </span>
-            
-          </p>
-        </article>
     @endif
 
 @endsection

@@ -96,14 +96,6 @@
             <h1>Thousand Millions</h1>
 
             <span class="subheading">The richest man will be here</span>
-            <p class="pt-4 mb-4">&nbsp;</p>
-            @auth
-              <form class="form" action="{{route('logout')}}" method='post'>
-                @csrf
-                <button class="btn btn-warning" type='submit'>Logout</button>
-              </form>
-              @endif
-
           </div>
         </div>
       </div>
