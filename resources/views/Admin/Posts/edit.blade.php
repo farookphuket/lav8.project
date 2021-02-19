@@ -3,36 +3,6 @@
 
 @section('meta_title',"Editing... ".$post->post_title)
 
-@section('tag_in_head')
-
-<script>
-    $(function(){
-            {{-- let my_name = "{!!Auth::user()->name!!}"; --}}
-            {{-- $('.post_excerpt').summernote({ --}}
-            {{--         height :250, --}}
-            {{--         placeholder : `Your post excerpt here` , --}}
-            {{--         dialogsInBody: true --}}
-            {{--     }); --}}
-
-            {{-- $('.post_body').summernote({ --}}
-            {{--         height: 550, --}}
-            {{--         placeholder : `Your post detail here` , --}}
-            {{--         dialogsInBody: true --}}
-            {{--     }); --}}
-            let exc = new Jodit('.post_excerpt',{
-                    height:550,
-                    placeholder: 'edit the excerpt'
-                });
-
-            let body = new Jodit('.post_body',{
-                    height:550,
-                    placeholder: 'edit the body'
-                });
-        });
-</script>
-
-@endsection
-
 
 @section('content')
     <div class="container">    

@@ -9,7 +9,9 @@
 
 /*
 
-INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt","post_body","is_public","last_read_ip","last_read_date","read_count","created_at","updated_at") VALUES (NULL,
+INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+"post_body","is_public","last_read_ip","last_read_date","read_count",
+"created_at","updated_at") VALUES (9,
 '1',
 'How can I add datetime to .sqlite for auto data',
 
@@ -17,11 +19,13 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt","post_bod
 
 '
 
-Hi there today is 25 Jan 2021 I don''t know how can I add automatic datetime 
-to .sqlite file so I got it from here "https://www.sqlitetutorial.net/sqlite-date/"
-and now I want to escaping the single quote which is not accept by sql what I do is 
-I put two single quote('') to replace and it is working as I expected I got it fro
-"https://stackoverflow.com/questions/603572/escape-single-quote-character-for-use-in-an-sqlite-query"
+Hi there today is 25 Jan 2021 I don''t know how can I add automatic 
+datetime to .sqlite file so I got it from 
+<a href="https://www.sqlitetutorial.net/sqlite-date/" target="_blank">here</a>
+and now I want to escaping the single quote which is not accept by sql what 
+I do is I put two single quote('') to replace and it is working as I 
+expected I got it from 
+<a href="https://stackoverflow.com/questions/603572/escape-single-quote-character-for-use-in-an-sqlite-query" target="_blank"> here</a> 
 now what else trick I learn today in (25-Jan-2021)
 
 
@@ -29,22 +33,104 @@ now what else trick I learn today in (25-Jan-2021)
 ',
 
 '
-
 <div class="container">
-
-
-
-
-
+    content will be here
 </div>
 
-
-
-
-
-','1','','2021-01-25','0',datetime('now','localtime'),datetime('now','localtime'));
+','1','','2021-01-25','0',
+'2021-02-18 05:10:45',
+'2021-02-18 05:10:45'
+);
 
 */
+
+
+
+/*  Install neovim on 18-Feb-2021 */
+INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+"post_body","is_public","last_read_ip","last_read_date","read_count",
+"created_at","updated_at") VALUES (8,
+'1',
+'Install and start using Neovim on 18-Feb-2021',
+
+'install-and-start-using-neovim-on-18-feb-2021',
+
+'
+
+<div>
+    <div class="row">
+        <div class="col-lg-4">
+            <img src="https://i.ibb.co/WnFkSGV/2021-02-18-neovim.png" 
+            class="responsive">
+            <p class="text-center">
+                neovim on 18-Feb-2021
+            </p>
+        </div>
+        <div class="col-lg-8">
+            <b>Dear friends</b> I just install and start using neovim today 
+            18-Feb-2021 so just kinda look around and do some config follow 
+            by this <a href="https://www.chrisatmachine.com/Neovim/02-vim-general-settings/" 
+            target="_blank" 
+            class="btn btn-outline-info">Chris@Machine</a> 
+            so my key binding will be :
+        </div>
+    </div>
+</div>
+
+', /* end of EXCERPT */
+
+'
+<div>
+<h2 class="text-center">neovim and my key binding</h2>
+<img class="responsive" src="https://i.ibb.co/WnFkSGV/2021-02-18-neovim.png" 
+alt="my neovim on 18-Feb-2021">
+    <p class="text-center mb-4 pt-2">
+        neovim that''s rock
+    </p>
+    <p class="pt-2 mb-2">
+        <b>Before</b> we really get into or download my config file I just 
+        want you to check if you have install neovim? on manjaro is simple 
+         like "sudo pacman -S neovim python-pynvim vim-clap --noconfirm" hit 
+         enter that''s it.
+    </p>
+    <p class="mb-2">
+        now open the terminal then copy the code into the terminal then hit 
+        enter 
+    </p>
+    <div class="form-group">
+        <label for="">Copy and paste the code</label>
+        <input class="form-control" type="text" 
+        value="git clone https://github.com/farookphuket/far_vimrc.git">
+    </div>
+    <p class="pt-2">
+        once the download done you''ll get the folde name "far_vimrc" copy the 
+        folder "nvim" paste it into "~/.config" the open terminal type "nvim "
+    </p>
+    <p class="mb-2">
+        now type ":PlugUpdate" after the plugin update has done press "Space 
+        follow by cr hit enter"(do it quick space->cr->enter) once the command 
+        done now you have to install coc-explorer by type ":CocInstall coc-explorer" 
+        hit enter.
+    </p>
+    <img class="responsive" src="https://i.ibb.co/XbXY7gC/2021-02-19-install-coc-explorer.png" 
+    alt="my nvim 19 feb 2021">
+    <p class="pt-2">
+        now you''ll set the next step is to use it this will be one of the 
+        long post that I will post.
+    </p>
+
+    
+
+</div>
+',  /* end of BODY */
+
+'1','','2021-01-25','0',
+'2021-02-19 23:05:45',
+'2021-02-19 23:10:45'
+);
+
+
+
 
 
 
