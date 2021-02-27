@@ -34,17 +34,18 @@
 
   <div class="clearfix"><!-- clearfix START-->
       <div class="float-left">
-        <a class="btn btn-outline-info" href="{{route('posts.index')}}">Back</a>
+        <a class="btn btn-outline-info btn-sm" 
+            href="{{route('posts.index')}}">Back</a>
       </div>
 
       <div class="float-right">
-        <div class="tags">
         @foreach($post->tags as $tag)
             <span class="">
-              <a href='{{route('posts.index',['tag' => $tag->id])}}'>{{$tag->tag_name}}</a>
+              <a class="btn btn-outline-info btn-sm"
+                href='{{route('posts.index',['tag' => $tag->id])}}'>
+                {{$tag->tag_name}}</a>
             </span>
         @endforeach
-        </div>
       </div>
 
   </div><!-- end of div.clearfix-->
