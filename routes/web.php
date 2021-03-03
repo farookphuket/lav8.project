@@ -178,5 +178,18 @@ Route::prefix('admin')->name('admin.')->middleware('can:is_admin')
 
 
     Route::resource("/song",aSong::class);
-    Route::get('/getSongList',[aSong::class,"getSongList"])->name("getSongList");
+    Route::get('/getSongList',[aSong::class,"getSongList"])
+        ->name("getSongList");
+
+    /* will be comment out */
+    Route::post("/makeAlbum",[aSong::class,"makeAlbum"])->name("makeAlbum");
+    Route::put("/makeAlbum/{album}",[aSong::class,"makeAlbum"])->name("makeAlbum");
+
+    Route::post("/makeArtist",[aSong::class,"makeArtist"])->name("makeArtist");
+    Route::put("/makeArtist/{artist}",[aSong::class,"makeArtist"])->name("makeArtist");
+    Route::get("/getArtistList",[aSong::class,"getArtistList"])
+        ->name("getArtistList");
+
+    Route::get("/getAlbumList",[aSong::class,"getAlbumList"])
+        ->name("getAlbumList");
 });

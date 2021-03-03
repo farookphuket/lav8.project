@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Song;
 use App\Models\Artist;
+use App\Models\Album;
+
 use App\Models\User;
 use DB;
 use Auth;
@@ -17,8 +19,12 @@ class SongController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    protected $artist_table = 'artist';
+    protected $artist_table = 'artists';
     protected $artist_name = "";
+
+    protected $album_table = "albums";
+    protected $album_name = "";
+    protected $album_id = 0;
 
     public function index()
     {
@@ -28,10 +34,12 @@ class SongController extends Controller
     public function getSongList(){
         $songs = Song::with('user')->get();
         $artists = $this->getArtistList();
+        $albums = $this->getAlbumList();
 
         return response()->json([
             "songs"=>$songs,
-            "artists" => $artists
+            "artists" => $artists,
+            "albums" => $albums
         ]);
     }
 
@@ -44,6 +52,15 @@ class SongController extends Controller
         $get = DB::table($this->artist_table)->where("name",$artist)->first();
         return $get;
     }
+
+    public function getAlbumList(){
+        $album = Album::get();
+        return $album;
+    }
+    public function getAlbum($album){
+        $get = Album::where("name",$album)->firstOrFail();
+        return $get;
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -54,17 +71,26 @@ class SongController extends Controller
         //
     }
 
-    public function makeArtist(){
-       $this->artist_name = request()->artist; 
-       if($this->getArtist($this->artist_name) == 0):
-           // new artist
-           Artist::create([
-               "name" => $this->artist_name
-           ]);  
-       else: 
-        // update
-       endif;
+    public function makeArtist(Artist $artist){
+        
+        
+    }
 
+    public function makeAlbum(Album $album){
+
+        $al_id = request()->album_id;
+        $this->album_name = request()->album;
+        $get = Album::where("id",$al_id)->get();
+        if(count($get) == 0):
+            $al_id = Album::create([
+                "name" => $this->album_name
+            ]);
+        else:
+            Album::where("id",$al_id)->update([
+                "name" => $this->album_name
+            ]);
+        endif;
+        return $al_id;
     }
 
     /**
@@ -76,8 +102,10 @@ class SongController extends Controller
     public function store()
     {
         //
-        $this->artist_name = $this->makeArtist();
-        $msg = "return from server {$this->artist_name}";
+        $artist_id = $this->makeArtist();
+        $album_id = $this->makeAlbum();
+
+        $msg = "return from server {$artist_id} the album id is {$album_id}";
         return response()->json([
             "msg" => $msg
         ]);

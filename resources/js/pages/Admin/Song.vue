@@ -1,8 +1,9 @@
 <template>
     <div class="container-fluid">
         <h1>Song Admin</h1>
-        <song-form></song-form>
-        <song-list></song-list>
+        <song-form :albums="albums" :editId="editId"
+        :artists="artists" @getSongList="getSongList($event)"></song-form>
+        <song-list :songList="songList" @getSongList="getSongList($event)"></song-list>
     </div>
 </template>
 
@@ -19,6 +20,8 @@ export default{
                  return{
                     songList:[],
                     editId:0,
+                    albums:[],
+                    artists:[],
                  }
              },
              mounted(){
@@ -33,7 +36,10 @@ methods:{
                     url = `/admin/getSongList`
                     axios.get(url)
                     .then(res=>{
-                    console.log(res.data)
+                    //console.log(res.data)
+                    this.albums = res.data.albums
+                    this.artists = res.data.artists
+                    this.songList = res.data.songs
                             })
             },
         },

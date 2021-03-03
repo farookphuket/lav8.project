@@ -19,6 +19,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -30,7 +31,9 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       songList: [],
-      editId: 0
+      editId: 0,
+      albums: [],
+      artists: []
     };
   },
   mounted: function mounted() {
@@ -38,6 +41,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     getSongList: function getSongList(page) {
+      var _this = this;
+
       var url = "";
 
       if (page) {
@@ -46,7 +51,10 @@ __webpack_require__.r(__webpack_exports__);
 
       url = "/admin/getSongList";
       axios.get(url).then(function (res) {
-        console.log(res.data);
+        //console.log(res.data)
+        _this.albums = res.data.albums;
+        _this.artists = res.data.artists;
+        _this.songList = res.data.songs;
       });
     }
   }
@@ -114,11 +122,39 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SongForm",
+  props: ["editId", "albums", "artists"],
   data: function data() {
     return {
-      editId: 0,
+      saveId: 0,
+      album_id: 0,
+      artist_id: 0,
       song: "",
       artist: "",
       album: "",
@@ -137,11 +173,88 @@ __webpack_require__.r(__webpack_exports__);
       if (id) {
         this.fUrl = "";
       } else {
-        this.fUrl = "";
+        this.fUrl = "/admin/song";
+        axios.post(url, this.fData).then(function (res) {
+          console.log(res.msg);
+        });
       }
     },
-    makeArtist: function makeArtist() {
-      alert(this.artist);
+    makeArtist: function makeArtist(id) {
+      var _this = this;
+
+      var url = "";
+
+      if (id != 0) {
+        url = "/admin/makeArtist/".concat(id);
+        axios.put(url, {
+          artist: this.artist,
+          artist_id: id
+        }).then(function (res) {
+          _this.$emit("getSongList");
+        });
+      } else {
+        url = "/admin/makeArtist";
+        axios.post(url, {
+          artist: this.artist
+        }).then(function (res) {
+          _this.$emit("getSongList");
+        });
+      }
+
+      setTimeout(function () {
+        _this.artist = "";
+        _this.artist_id = 0;
+      }, 2000);
+    },
+    makeAlbum: function makeAlbum(id) {
+      var _this2 = this;
+
+      var url = "";
+
+      if (id != 0) {
+        url = "/admin/makeAlbum/".concat(id);
+        axios.put(url, {
+          album: this.album,
+          album_id: id
+        }).then(function (res) {
+          _this2.$emit("getSongList");
+        });
+      } else {
+        url = "/admin/makeAlbum";
+        axios.post(url, {
+          album: this.album
+        }).then(function (res) {
+          _this2.$emit("getSongList");
+        });
+      }
+
+      setTimeout(function () {
+        _this2.album = "";
+        _this2.album_id = 0;
+      }, 2000);
+    },
+    getTheArtist: function getTheArtist() {
+      var _this3 = this;
+
+      var ar_id = this.$refs.getArtist.value;
+      this.artists.forEach(function (val) {
+        if (val.id == ar_id) {
+          _this3.artist = val.name;
+          _this3.artist_id = val.id;
+        }
+      }); //alert(`the artist id is ${ar_id}`)
+    },
+    getTheAlbum: function getTheAlbum() {
+      var _this4 = this;
+
+      var al_id = this.$refs.getAlbum.value;
+      this.albums.forEach(function (val) {
+        if (val.id == al_id) {
+          console.log(val.name);
+          _this4.album = val.name;
+          _this4.album_id = val.id;
+        }
+      });
     },
     findArtist: function findArtist() {}
   }
@@ -164,8 +277,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "SongList"
+  name: "SongList",
+  props: ["songList"]
 });
 
 /***/ }),
@@ -191,9 +315,23 @@ var render = function() {
     [
       _c("h1", [_vm._v("Song Admin")]),
       _vm._v(" "),
-      _c("song-form"),
+      _c("song-form", {
+        attrs: { albums: _vm.albums, editId: _vm.editId, artists: _vm.artists },
+        on: {
+          getSongList: function($event) {
+            return _vm.getSongList($event)
+          }
+        }
+      }),
       _vm._v(" "),
-      _c("song-list")
+      _c("song-list", {
+        attrs: { songList: _vm.songList },
+        on: {
+          getSongList: function($event) {
+            return _vm.getSongList($event)
+          }
+        }
+      })
     ],
     1
   )
@@ -246,39 +384,91 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "form-group" }, [
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.album,
-              expression: "album"
-            }
-          ],
-          staticClass: "form-control",
-          attrs: { type: "text", placeholder: "Album" },
-          domProps: { value: _vm.album },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.album = $event.target.value
-            }
-          }
-        })
-      ]),
-      _vm._v(" "),
       _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-6" }),
-        _vm._v(" "),
         _c("div", { staticClass: "col-lg-6" }, [
-          _c("div", { staticClass: "input-group mb-3" }, [
+          _c("div", { staticClass: "input-group " }, [
             _c("div", { staticClass: "input-group-prepend" }, [
               _c("span", { staticClass: "input-group-text" }, [
                 _vm._v(
-                  "\n                                Artist\n                            "
+                  "\n                            Album\n                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.album,
+                    expression: "album"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "text" },
+                domProps: { value: _vm.album },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.album = $event.target.value
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-outline-warning",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.makeAlbum(_vm.album_id)
+                    }
+                  }
+                },
+                [
+                  _vm._v(
+                    "\n                            Save " +
+                      _vm._s(_vm.album) +
+                      " " +
+                      _vm._s(_vm.album_id) +
+                      "?\n                        "
+                  )
+                ]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group pt-2" }, [
+            _c(
+              "select",
+              {
+                ref: "getAlbum",
+                staticClass: "form-control",
+                attrs: { multiple: "true" },
+                on: { change: _vm.getTheAlbum }
+              },
+              [
+                _c("option", { attrs: { value: "" } }, [_vm._v("Album List")]),
+                _vm._v(" "),
+                _vm._l(_vm.albums, function(ab) {
+                  return _c("option", { domProps: { value: ab.id } }, [
+                    _vm._v(_vm._s(ab.name))
+                  ])
+                })
+              ],
+              2
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-6" }, [
+          _c("div", { staticClass: "input-group " }, [
+            _c("div", { staticClass: "input-group-prepend" }, [
+              _c("span", { staticClass: "input-group-text" }, [
+                _vm._v(
+                  "\n                            Artist\n                        "
                 )
               ]),
               _vm._v(" "),
@@ -314,19 +504,41 @@ var render = function() {
                   on: {
                     click: function($event) {
                       $event.preventDefault()
-                      return _vm.makeArtist()
+                      return _vm.makeArtist(_vm.artist_id)
                     }
                   }
                 },
                 [
                   _vm._v(
-                    "\n                                Save " +
+                    "\n                            Save " +
                       _vm._s(_vm.artist) +
-                      " ?\n                            "
+                      " ?\n                        "
                   )
                 ]
               )
             ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group pt-2" }, [
+            _c(
+              "select",
+              {
+                ref: "getArtist",
+                staticClass: "form-control",
+                attrs: { multiple: "true" },
+                on: { change: _vm.getTheArtist }
+              },
+              [
+                _c("option", [_vm._v("The Artist")]),
+                _vm._v(" "),
+                _vm._l(_vm.artists, function(ar) {
+                  return _c("option", { domProps: { value: ar.id } }, [
+                    _vm._v(_vm._s(ar.name))
+                  ])
+                })
+              ],
+              2
+            )
           ])
         ])
       ]),
@@ -373,14 +585,30 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c("table", { staticClass: "table table-striped pt-4" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "tbody",
+        _vm._l(_vm.songList, function(li) {
+          return _c("tr", [
+            _c("td", [_vm._v(_vm._s(li.name))]),
+            _vm._v(" "),
+            _c("td", [_vm._v("Artist")])
+          ])
+        }),
+        0
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("h1", [_vm._v("songlist file")])])
+    return _c("thead", [_c("th", [_vm._v("title")])])
   }
 ]
 render._withStripped = true

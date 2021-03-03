@@ -22,17 +22,34 @@ class CreateSongsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('album', function (Blueprint $table) {
+        Schema::create('albums', function (Blueprint $table) {
             $table->id();
             $table->string("name");
             $table->timestamps();
         });
 
-        Schema::create('artist', function (Blueprint $table) {
+        Schema::create('artists', function (Blueprint $table) {
             $table->id();
             $table->string("name");
             $table->timestamps();
         });
+
+
+        $table->foreign("user_id")
+                ->references("id")
+                ->on("users")
+                ->onDelete("cascade");
+
+
+        $table->foreign("album_id")
+                ->references("id")
+                ->on("albums")
+                ->onDelete("cascade");
+
+        $table->foreign("artist_id")
+                ->references("id")
+                ->on("artists")
+                ->onDelete("cascade");
     }
 
     /**
