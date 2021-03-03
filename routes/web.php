@@ -7,6 +7,7 @@ use App\Http\Controllers\WhatnewsController;
 use App\Http\Controllers\PasswordResetController;
 use App\Http\Controllers\PostsController as PubPost;
 use App\Http\Controllers\VisitorsController as PubVisit;
+use App\Http\Controllers\SongController as pSong;
 
 
 use App\Http\Controllers\Member\WhatnewsController as WMN;
@@ -24,6 +25,7 @@ use App\Http\Controllers\Admin\TagsController as TagsAdmin;
 use App\Http\Controllers\Admin\CommentsController as ACMT;
 use App\Http\Controllers\Admin\RepliesController as ADRP;
 use App\Http\Controllers\Admin\VisitorsController as ADVT;
+use App\Http\Controllers\Admin\SongController as aSong;
 
 
 /*
@@ -42,6 +44,7 @@ Route::resource('/posts',PubPost::class);
 Route::get('/posts/{post:slug}',[PubPost::class,'show'])->name('posts.show');
 
 Route::get("/about",[PubPost::class,'about'])->name('posts.about');
+Route::resource("/song",pSong::class);
 
 
 
@@ -173,4 +176,7 @@ Route::prefix('admin')->name('admin.')->middleware('can:is_admin')
     Route::get('/tags/{tag}',[TagsAdmin::class,'show'])->name('tags.show');
     Route::get("/about",[POSTAdmin::class,"about"])->name("post.about");
 
+
+    Route::resource("/song",aSong::class);
+    Route::get('/getSongList',[aSong::class,"getSongList"])->name("getSongList");
 });

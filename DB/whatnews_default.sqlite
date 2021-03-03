@@ -21,6 +21,51 @@ INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
  ///////////////END OF TEMPLATE ///////////
 */
 
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
+'1',                            
+'Stop Hating On Linux Mint! - Joe Collins',                             
+'
+<p class="mb-4">
+ <b>All</b> linux (Linux mint included) are greate and I will never say or 
+ do any thing to make another people to hate any thing that any other has 
+created for another to use doesn''t matter if it free (Like linux) or paid 
+(like Mac and Window) 
+</p>
+<p>
+    <b>Me</b> personally I am using Manjaro 20.02 now(2021-Feb-21) (I''m 
+start using manjaro since year 2020 and fall in love with this distro) but 
+I am get to know linux by using Ubuntu ,Ubuntu mate, Linux mint,Mx linux 
+,Debian ,Pop os ...and so on I can''t remember but the ony thing I know was 
+I like all of them , none of them is useless no no.
+</p>
+<p class="pt-2 mb-4">
+I like what''s Joe Collins has said in his video to reply to the other people 
+who maybe do not like or using Linux mint.
+</p>
+
+<div class="video-container">
+<iframe width="560" height="315" 
+src="https://www.youtube.com/embed/szDHAeaqJD8" frameborder="0" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+picture-in-picture" allowfullscreen></iframe>
+</div>
+<p class="pt-4 mb-4">
+    well, to me I am a linux user since year 2007 start with Ubuntu 7.04 
+and since I start using linux I am never return back to use window again 
+but it''s not because I hate window no no I hate nothing form any other people
+has create for the other people to use whether it''s paid or free 
+you have your like or not like it but you cannot point your finger to force 
+any other people to like what you''re like that''s my opinion
+</p>
+',                                          
+'1',                        
+'2021-02-21 10:05:45',                
+'2021-02-21 10:06:45'                 
+);                                          
+
+
+
 /*  Beginner''s Guide to the Bash Terminal 19 Feb 2021 */
 INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
 "is_public","created_at","updated_at") VALUES (NULL,
