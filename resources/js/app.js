@@ -47,6 +47,7 @@ Vue.use(JoditVue)
 
 //Vue.component('Visitors',require( './components/visitors.vue').default);
 Vue.component('Visitors',()=>import( './components/visitors.vue'));
+Vue.component('Song',()=>import( './pages/Song.vue'));
 Vue.component('LoginForm',()=>import( './components/LoginForm.vue'));
 
 
@@ -69,6 +70,7 @@ Vue.component('Adminwm',()=>import('./pages/Admin/Whatnews.vue'));
 
 //Vue.component('Admintemplate',require('./pages/Admin/Template.vue').default);
 Vue.component('AdminTemplate',()=>import('./pages/Admin/Template.vue'));
+Vue.component('AdminSong',()=>import('./pages/Admin/Song.vue'));
 
 
 //Vue.component('Admintag',require('./pages/Admin/Tags.vue').default);

@@ -25,11 +25,6 @@
             " href="{{url('/')}}">Home</a>
         </li>
 
-        <li class="nav-item {{Request::is('about')?'bg-success':''}} ">
-          <a class="nav-link 
-
-            " href="{{url('/about')}}">about</a>
-        </li>
         <li class="nav-item
           {{Request::segment(1)== 'posts'?'bg-success':''}}
           ">
@@ -37,6 +32,18 @@
             " href="{{url('/posts')}}">Post</a>
         </li>
 
+        <li class="nav-item
+          {{Request::segment(1)== 'song'?'bg-success':''}}
+          ">
+          <a class="nav-link 
+            " href="{{url('/song')}}">Song</a>
+        </li>
+
+        <li class="nav-item {{Request::is('about')?'bg-success':''}} ">
+          <a class="nav-link 
+
+            " href="{{url('/about')}}">about</a>
+        </li>
 
         @else
 
@@ -48,6 +55,7 @@
           <a class="nav-link" href="{{route('member.posts.index')}}">Posts</a>
 
         </li>
+
 
         <li class="nav-item {{Request::is('member/about')?'bg-success':''}}">
           <a class="nav-link

@@ -38,10 +38,11 @@
       </div>
 
       <div class="float-right">
-        <div class="tags">
+        <div>
         @foreach($post->tags as $tag)
-            <span class="">
-              <a href='{{route('posts.index',['tag' => $tag->id])}}'>{{$tag->tag_name}}</a>
+            <span>
+              <a class="btn btn-outline-info"
+href='{{route('posts.index',['tag' => $tag->id])}}'>{{$tag->tag_name}}</a>
             </span>
         @endforeach
         </div>

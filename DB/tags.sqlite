@@ -47,3 +47,10 @@ INSERT INTO 'tags' ('id','tag_name','created_at','updated_at') VALUES (NULL,
 'หนังสือนิยาย',
 datetime('now','localtime'),
 datetime('now','localtime'));
+
+
+/* Tag 8 Tag ข่าวโควิด 23 Feb 2021 */
+INSERT INTO 'tags' ('id','tag_name','created_at','updated_at') VALUES (NULL,
+'ข่าวโควิด',
+'2021-02-23 23:23:23',
+ '2021-02-23 23:23:23');

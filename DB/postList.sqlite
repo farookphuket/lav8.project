@@ -46,6 +46,58 @@ now what else trick I learn today in (25-Jan-2021)
 
 
 
+
+INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+"post_body","is_public","last_read_ip","last_read_date","read_count",
+"created_at","updated_at") VALUES (10,
+'1',
+'Bash script in linux - Joe Collins',
+
+'bash-script-in-linux-joe-collins',
+
+'
+<p>
+<b>
+I just
+</b> copy this from youtube about "how to bash script in linux - Joe Collins" 
+on 23 Feb 2021 form youtube 
+<a href="https://www.youtube.com/channel/UCTfabOKD7Yty6sDF4POBVqA" 
+class="btn btn-outline-info" target="_blank">
+Joe''s youtube</a> this is very useful if you''re start to learn bash script.
+</p>
+
+<p><b>to me </b> I just start to learn how to write the bash script a couple 
+days ago with the "<a href="https://github.com/farookphuket/far_vimrc" 
+target="_blank" class="btn btn-outline-warning">far_vimrc</a>" just click 
+on the link if you love to see.
+</p>
+
+<div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QlWKQAh7MKc" 
+frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<p class="pt-4 mb-2">
+    the video has 4 part.
+</p>
+',
+
+'
+<div class="container">
+    content will be here
+</div>
+
+','1','','2021-01-25','0',
+'2021-02-18 05:10:45',
+'2021-02-18 05:10:45'
+);
+
+
+
+
+
+
 /*  Install neovim on 18-Feb-2021 */
 INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
 "post_body","is_public","last_read_ip","last_read_date","read_count",
