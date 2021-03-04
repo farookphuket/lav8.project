@@ -1,0 +1,129 @@
+
+
+
+
+
+
+/* number 12  in the list 4-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (12,
+"โซคูล's song",
+"2021-03-04 20:21:04",
+"2021-03-04 20:22:05"
+);
+
+
+
+/* number 11  in the list 4-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (11,
+"กะลา's song",
+"2021-03-04 20:21:04",
+"2021-03-04 20:22:05"
+);
+
+
+
+
+/* number 10  in the list 4-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (10,
+"ไฮเปอร์'s song",
+"2021-03-04 20:21:04",
+"2021-03-04 20:22:05"
+);
+
+
+
+/* number 9  in the list 4-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (9,
+"โบวี่'s song",
+"2021-03-04 20:21:04",
+"2021-03-04 20:22:05"
+);
+
+
+/* number 8  in the list 4-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (8,
+"เบิร์ด ธงชัย เซอร์วิช",
+"2021-03-04 20:21:04",
+"2021-03-04 20:22:05"
+);
+
+
+
+
+/* number 7  in the list 4-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (7,
+"ฟ้าหลังฝน",
+"2021-03-04 20:21:04",
+"2021-03-04 20:22:05"
+);
+
+
+/* number 6  in the list 4-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (6,
+"Destination",
+"2021-03-04 20:21:04",
+"2021-03-04 20:22:05"
+);
+
+
+/* number 5  in the list 4-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (5,
+"กู๊ด อาฟเตอร์นูน Good afternoon",
+"2021-03-04 20:21:04",
+"2021-03-04 20:22:05"
+);
+
+
+
+
+
+
+/* number 4  in the list 4-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (4,
+"เบบี้ บูล's song ",
+"2021-03-04 20:21:04",
+"2021-03-04 20:22:05"
+);
+
+
+
+
+
+/* number 3  in the list 4-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (3,
+"เสือ ธนพล's song ",
+"2021-03-04 20:21:04",
+"2021-03-04 20:22:05"
+);
+
+
+
+
+/* number 2  in the list 4-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (2,
+"บอย พีชเมกเกอร์'s song ",
+"2021-03-04 20:21:04",
+"2021-03-04 20:22:05"
+);
+
+
+
+
+/* first in the list 4-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (1,
+"Ed Sheeran's song",
+"2021-03-04 20:20:03",
+"2021-03-04 20:21:04"
+);

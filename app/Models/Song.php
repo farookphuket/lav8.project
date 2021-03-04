@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Song extends Model
 {
     use HasFactory;
-    protected $fillable = ["user_id","name","album_id","artist_id"];
+    protected $fillable = ["user_id","name","album_id",
+        "artist_id","cover","posted_at","url"];
 
     public function user(){
         return $this->belongsTo(User::class);

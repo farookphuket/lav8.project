@@ -19,6 +19,9 @@ class CreateSongsTable extends Migration
             $table->foreignId("album_id");
             $table->foreignId("user_id");
             $table->string("name");
+            $table->string("cover")->nullable();
+            $table->string("url")->nullable();
+            $table->dateTime("posted_at")->nullable();
             $table->timestamps();
 
 

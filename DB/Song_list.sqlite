@@ -1,0 +1,213 @@
+
+
+
+
+/* 
+
+|       Modified 4 Mar 2021              |
+|-------|--------------------------------|
+| Code  |   Artist                       |   
+|----------------------------------------|
+|  1.   |   Ed Sheeran                   |                
+|  2.   |   บอย พีชเมกเกอร์                |  
+|  3.   |   เสือ ธนพล                     |  
+|  4.   |   เบบี้ บูล                       |  
+|  5.   |   เบล สุพล                      |  
+|  6.   |   Ronan Keating                |  
+|  7.   |   เท่ห์ อุเทน พรหมมินทร์            |  
+|  8.   |   เบิร์ด ธงชัย แมคอินไตย           |  
+|  9.   |   โบวี่                          |  
+|  10.  |   ไฮเปอร์                       |  
+|  11.  |   กะลา                         |  
+|  12.  |   โซคูล                         |  
+|----------------------------------------|
+
+
+|-------------------------------------------------------
+|  Code      |      Album                              |   
+|------------------------------------------------------|
+|   1.       |                                         |
+|   2.       |                                         |
+|   3.       |                                         |
+|   4.       |                                         |
+|   5.       |     เบล สุพล's song                      |  
+|   6.       |     Destination - Ronan Keating         |  
+|   7.       |     เท่ห์ ฟ้าหลังฝน                         |  
+|   8.       |     เบิร์ด ธงชัย เซอร์วิช                    |  
+|   9.       |     โบวี่'s song                          |  
+|   10.      |     ไฮเปอร์                              |  
+|   11.      |     กะลา's song                         |  
+|   12.      |     โซคูล's song                         |  
+|------------------------------------------------------|
+*/
+
+
+
+
+
+
+/* เพลงที่ 15   */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"created_at","updated_at") VALUES (15,"12","12","1",
+"เหตุผลที่ไม่อยากเป็นเพื่อนเธอ",
+"2019-08-26 15:53:03",
+"2021-03-04 20:21:04"
+);
+
+
+/* เพลงที่ 14   */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"created_at","updated_at") VALUES (14,"8","8","1",
+"ก้อนหินกับนาฬิกา",
+"2019-08-26 15:36:03",
+"2021-03-04 20:21:04"
+);
+
+
+/* เพลงที่ 13   */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"created_at","updated_at") VALUES (13,"11","11","1",
+"ทุกคืนได้ไหม",
+"2019-06-23 12:28:03",
+"2021-03-04 20:21:04"
+);
+
+/* เพลงที่ 12   */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"created_at","updated_at") VALUES (12,"8","8","1",
+"อยากบอกรัก",
+"2019-06-20 22:43:03",
+"2021-03-04 20:21:04"
+);
+
+
+
+/* เพลงที่ 11   */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"created_at","updated_at") VALUES (11,"10","10","1",
+"ไม่มั่วแต่ทั่วถึง",
+"2019-06-20 22:33:03",
+"2021-03-04 20:21:04"
+);
+
+
+
+
+/* เพลงที่ 10   */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"created_at","updated_at") VALUES (10,"9","9","1",
+"ยอมจำนนฟ้าดิน",
+"2019-06-20 22:24:03",
+"2021-03-04 20:21:04"
+);
+
+
+
+
+/* เพลงที่ 9   */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"created_at","updated_at") VALUES (9,"8","8","1",
+"ถ่านไฟเก่า",
+"2019-06-20 22:07:03",
+"2021-03-04 20:21:04"
+);
+
+
+
+
+/* เพลงที่ 8 if tomorrow never comes - Ronan Keating  */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"created_at","updated_at") VALUES (8,"7","7","1",
+"สายตาลำเอียง",
+"2019-06-16 21:25:03",
+"2021-03-04 20:21:04"
+);
+
+
+
+/* เพลงที่ 7 if tomorrow never comes - Ronan Keating  */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"created_at","updated_at") VALUES (7,"6","6","1",
+"If Tomorrow Never Comes",
+"2019-06-16 21:12:03",
+"2021-03-04 20:21:04"
+);
+
+
+
+/* เพลงที่ 6 ไม่ธรรมดา - เบล สุพล  */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"created_at","updated_at") VALUES (6,"5","5","1",
+"ไม่ธรรมดา",
+"2019-06-13 14:40:03",
+"2021-03-04 20:21:04"
+);
+
+
+/* เพลงที่ 5 อาการแบบนี้ - เบบี้ บูล  */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (5,"4","4","1",
+"อาการแบบนี้",
+"2019-05-13 21:54:03",
+"http://p.kg.qq.com/photo_new/T002RM000000XCSnD1sI1mY.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/HXaz_85Hq4BDv574-?lang=th&amp;g_f=personal",
+"2019-05-13 21:54:03",
+"2021-03-04 20:21:04"
+);
+
+
+
+
+/* เพลงที่ 4 เรื่องบนเตียง - บอย พีชเมกเกอร์  */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (4,"2","2","1",
+"เรื่องบนเตียง",
+"2019-05-26 21:46:03",
+"http://p.kg.qq.com/photo_new/T002RM000004gUVsp1MAgld.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/CMG8czbCrKAsvbXy-?lang=th&amp;g_f=personal",
+"2019-05-26 21:46:03",
+"2021-03-04 20:21:04"
+);
+
+
+
+
+/* เพลงที่ 3 รักเดียวใจเดียว - เสือ ธนพล */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (3,"3","3","1",
+"รักเดียวใจเดียว",
+"2019-05-26 21:37:03",
+"http://p.kg.qq.com/photo_new/T002RM000000Ux18x1AP0lA.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/bdza4GCbl_m0vCPK-?lang=th&amp;g_f=personal",
+"2019-05-26 21:37:03",
+"2021-03-04 20:21:04"
+);
+
+
+/* เพลงที่ 2 ส่วนเกิน - บอย พีชเมกเกอร์  */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (2,"2","2","1",
+"ส่วนเกิน",
+"2019-05-22 22:10:03",
+"http://p.kg.qq.com/wsingpic/2122678496/376e73e9f59d82c5047e47ef83f9fafc59818aaf/320?j=PiajxSqBRaEIf0bHhsJQ0QVoFSjos8ibuwib8icMibSGWGru7aj84uAW826V84GUk58dtqf27eKC51gRtLapYyjVa45W08tXkdDtQG9Le4F0Ek9W6K5LtZLEOuv733VSrTJFWtohpMsf0Muc",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/7PBm-0Z7ujtAvZTC-?lang=th&amp;g_f=personal",
+"2019-05-22 22:10:03",
+"2021-03-04 20:21:04"
+);
+
+/* เพลงแรก perfect - Ed sheeran */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (1,"1","1","1",
+"Perfect",
+"2019-05-17 21:21:03",
+"http://p.kg.qq.com/wsingpic/2122678496/376e73e9f59d82c5047e47ef83f9fafc59818aaf/320?j=PiajxSqBRaEIf0bHhsJQ0QVoFSjos8ibuwib8icMibSGWGru7aj84uAW826V84GUk58dtqf27eKC51gRtLapYyjVa45W08tXkdDtQG9Le4F0Ek9W6K5LtZLEOuv733VSrTJFWtohpMsf0Muc",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/SaXdqyES_LWAvEuy-Perfect?lang=th&amp;g_f=personal"
+,
+"2019-05-17 21:21:03",
+"2021-03-04 20:21:04"
+);

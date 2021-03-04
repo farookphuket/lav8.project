@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             UserTableSeeder::class,
             WhatnewsTableSeeder::class,
             PostSeeder::class,
+            SongSeeder::class,
             TagTableSeeder::class,
             TemplateSeeder::class,
             VisitorTableSeeder::class,

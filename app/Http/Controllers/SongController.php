@@ -17,6 +17,17 @@ class SongController extends Controller
         return view("Pub.song");
     }
 
+
+
+    public function getSongList(){
+        $songs = Song::orderBy("created_at","desc")
+                        ->with("user")
+                        ->with("artist")
+                        ->with("album")
+                        ->paginate(5)
+                        ->onEachSide(1);
+        return response()->json(["songs" => $songs]);
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -1,0 +1,117 @@
+
+
+/* song number 12  in wesingapp.com the list 4-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (12,
+"โซคูล",
+"2021-03-04 20:20:03",
+"2021-03-04 20:21:04"
+);
+
+
+/* song number 11  in wesingapp.com the list 4-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (11,
+"กะลา",
+"2021-03-04 20:20:03",
+"2021-03-04 20:21:04"
+);
+
+
+/* song number 10  in wesingapp.com the list 4-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (10,
+"ไฮเปอร์",
+"2021-03-04 20:20:03",
+"2021-03-04 20:21:04"
+);
+
+
+
+
+
+/* song number 9  in wesingapp.com the list 4-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (9,
+"โบวี่",
+"2021-03-04 20:20:03",
+"2021-03-04 20:21:04"
+);
+
+
+
+/* song number 8  in wesingapp.com the list 4-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (8,
+"เบิร์ด ธงชัย แมคอินไตย์",
+"2021-03-04 20:20:03",
+"2021-03-04 20:21:04"
+);
+
+
+
+/* song number 7  in wesingapp.com the list 4-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (7,
+"เท่ห์ อุเทน พรหมมินทร์",
+"2021-03-04 20:20:03",
+"2021-03-04 20:21:04"
+);
+
+
+/* song number 6  in wesingapp.com the list 4-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (6,
+"Ronan Keating",
+"2021-03-04 20:20:03",
+"2021-03-04 20:21:04"
+);
+
+
+/* song number 5  in wesingapp.com the list 4-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (5,
+"เบล สุพล",
+"2021-03-04 20:20:03",
+"2021-03-04 20:21:04"
+);
+
+
+/* song number 4  in wesingapp.com the list 4-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (4,
+"เบบี้ บูล",
+"2021-03-04 20:20:03",
+"2021-03-04 20:21:04"
+);
+
+
+
+/* song number 3  in wesingapp.com the list 4-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (3,
+"เสือ ธนพล",
+"2021-03-04 20:20:03",
+"2021-03-04 20:21:04"
+);
+
+
+
+
+/* song number 2  in wesingapp.com the list 4-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (2,
+"บอย พีชเมกเกอร์",
+"2021-03-04 20:20:03",
+"2021-03-04 20:21:04"
+);
+
+
+
+/* first song in wesingapp.com the list 4-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (1,
+"Ed Sheeran",
+"2021-03-04 20:20:03",
+"2021-03-04 20:21:04"
+);

@@ -44,9 +44,11 @@ Route::resource('/posts',PubPost::class);
 Route::get('/posts/{post:slug}',[PubPost::class,'show'])->name('posts.show');
 
 Route::get("/about",[PubPost::class,'about'])->name('posts.about');
+
+
+
 Route::resource("/song",pSong::class);
-
-
+Route::get("/getSongList",[pSong::class,'getSongList'])->name("getSongList");
 
 
 /* call by Vue START*/
