@@ -164,6 +164,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     saveSong: function saveSong(id) {
+      var _this = this;
+
       this.fData = {
         song: this.song,
         artist: this.artist,
@@ -171,92 +173,83 @@ __webpack_require__.r(__webpack_exports__);
       };
 
       if (id) {
-        this.fUrl = "";
+        this.fUrl = "/admin/song/".concat(id);
+        axios.put(this.fUrl, this.fData).then(function (res) {
+          console.log(res.msg);
+
+          _this.$emit("getSongList");
+        });
       } else {
         this.fUrl = "/admin/song";
-        axios.post(url, this.fData).then(function (res) {
+        axios.post(this.fUrl, this.fData).then(function (res) {
           console.log(res.msg);
-        });
-      }
-    },
-    makeArtist: function makeArtist(id) {
-      var _this = this;
 
-      var url = "";
-
-      if (id != 0) {
-        url = "/admin/makeArtist/".concat(id);
-        axios.put(url, {
-          artist: this.artist,
-          artist_id: id
-        }).then(function (res) {
-          _this.$emit("getSongList");
-        });
-      } else {
-        url = "/admin/makeArtist";
-        axios.post(url, {
-          artist: this.artist
-        }).then(function (res) {
           _this.$emit("getSongList");
         });
       }
 
       setTimeout(function () {
-        _this.artist = "";
-        _this.artist_id = 0;
+        _this.clearForm();
       }, 2000);
     },
-    makeAlbum: function makeAlbum(id) {
+    makeArtist: function makeArtist() {
       var _this2 = this;
 
-      var url = "";
-
-      if (id != 0) {
-        url = "/admin/makeAlbum/".concat(id);
-        axios.put(url, {
-          album: this.album,
-          album_id: id
-        }).then(function (res) {
-          _this2.$emit("getSongList");
-        });
-      } else {
-        url = "/admin/makeAlbum";
-        axios.post(url, {
-          album: this.album
-        }).then(function (res) {
-          _this2.$emit("getSongList");
-        });
-      }
-
+      var url = "/admin/makeArtist";
+      axios.post(url, {
+        artist: this.artist
+      }).then(function (res) {
+        _this2.$emit("getSongList");
+      });
       setTimeout(function () {
-        _this2.album = "";
-        _this2.album_id = 0;
+        _this2.artist = "";
+        _this2.artist_id = 0;
+      }, 2000);
+    },
+    makeAlbum: function makeAlbum() {
+      var _this3 = this;
+
+      var url = "/admin/makeAlbum";
+      axios.post(url, {
+        album: this.album
+      }).then(function (res) {
+        _this3.$emit("getSongList");
+      });
+      setTimeout(function () {
+        _this3.album = "";
+        _this3.album_id = 0;
       }, 2000);
     },
     getTheArtist: function getTheArtist() {
-      var _this3 = this;
+      var _this4 = this;
 
       var ar_id = this.$refs.getArtist.value;
       this.artists.forEach(function (val) {
         if (val.id == ar_id) {
-          _this3.artist = val.name;
-          _this3.artist_id = val.id;
+          _this4.artist = val.name;
+          _this4.artist_id = val.id;
         }
       }); //alert(`the artist id is ${ar_id}`)
     },
     getTheAlbum: function getTheAlbum() {
-      var _this4 = this;
+      var _this5 = this;
 
       var al_id = this.$refs.getAlbum.value;
       this.albums.forEach(function (val) {
         if (val.id == al_id) {
-          console.log(val.name);
-          _this4.album = val.name;
-          _this4.album_id = val.id;
+          //console.log(val.name)
+          _this5.album = val.name;
+          _this5.album_id = val.id;
         }
       });
     },
-    findArtist: function findArtist() {}
+    findArtist: function findArtist() {// save for later
+    },
+    clearForm: function clearForm() {
+      this.album = "";
+      this.artist = "";
+      this.song = "";
+    }
   }
 });
 
@@ -287,9 +280,45 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SongList",
-  props: ["songList"]
+  props: ["songList"],
+  data: function data() {
+    return {
+      moment: moment
+    };
+  }
 });
 
 /***/ }),
@@ -423,7 +452,7 @@ var render = function() {
                   on: {
                     click: function($event) {
                       $event.preventDefault()
-                      return _vm.makeAlbum(_vm.album_id)
+                      return _vm.makeAlbum($event)
                     }
                   }
                 },
@@ -485,9 +514,6 @@ var render = function() {
                 attrs: { type: "text", placeholder: "Artist" },
                 domProps: { value: _vm.artist },
                 on: {
-                  keyup: function($event) {
-                    return _vm.findArtist()
-                  },
                   input: function($event) {
                     if ($event.target.composing) {
                       return
@@ -504,7 +530,7 @@ var render = function() {
                   on: {
                     click: function($event) {
                       $event.preventDefault()
-                      return _vm.makeArtist(_vm.artist_id)
+                      return _vm.makeArtist($event)
                     }
                   }
                 },
@@ -593,9 +619,51 @@ var render = function() {
         "tbody",
         _vm._l(_vm.songList, function(li) {
           return _c("tr", [
-            _c("td", [_vm._v(_vm._s(li.name))]),
+            _c("td", [
+              _c("div", [
+                _vm._v(
+                  "\n                        " +
+                    _vm._s(li.name) +
+                    "\n                    "
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _vm._v(
+                  "\n                        " +
+                    _vm._s(li.user.name) +
+                    "\n                    "
+                )
+              ])
+            ]),
             _vm._v(" "),
-            _c("td", [_vm._v("Artist")])
+            _c("td", [_vm._v(_vm._s(li.artist.name))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(li.album.name))]),
+            _vm._v(" "),
+            _c("td", { staticStyle: { width: "35%" } }, [
+              _c("div", [
+                _vm._v(
+                  "\n                        " +
+                    _vm._s(_vm.moment(li.created_at)) +
+                    " · \n                        " +
+                    _vm._s(_vm.moment(li.created_at).fromNow()) +
+                    "\n                    "
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _vm._v(
+                  "\n                        " +
+                    _vm._s(_vm.moment(li.updated_at)) +
+                    " · \n                        " +
+                    _vm._s(_vm.moment(li.updated_at).fromNow()) +
+                    "\n                    "
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._m(1, true)
           ])
         }),
         0
@@ -608,7 +676,33 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", [_c("th", [_vm._v("title")])])
+    return _c("thead", [
+      _c("th", [_vm._v("title / record")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Artist")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Album")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Date")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Manage")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticStyle: { width: "10%" } }, [
+      _c("div", { staticClass: "btn-group" }, [
+        _c("button", { staticClass: "btn btn-outline-warning btn-sm" }, [
+          _vm._v("edit")
+        ]),
+        _vm._v(" "),
+        _c("button", { staticClass: "btn btn-outline-danger btn-sm" }, [
+          _vm._v("x")
+        ])
+      ])
+    ])
   }
 ]
 render._withStripped = true

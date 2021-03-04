@@ -32,7 +32,10 @@ class SongController extends Controller
     }
 
     public function getSongList(){
-        $songs = Song::with('user')->get();
+        $songs = Song::with('user')
+                    ->with("artist")
+                    ->with("album")
+                    ->get();
         $artists = $this->getArtistList();
         $albums = $this->getAlbumList();
 
@@ -71,24 +74,45 @@ class SongController extends Controller
         //
     }
 
-    public function makeArtist(Artist $artist){
+    public function makeArtist($name=false){
         
-        
+        $ar_id = 0;     
+        $save = 0;
+      //  if(!$name):
+      //      $name = request()->artist;
+      //  endif;
+        $get = Artist::where("name",$name)->get();
+        if(count($get) == 0):
+            // will create new artist name 
+            $save = Artist::create([
+                "name" => $name
+            ]);
+            $ar_id = $save->id;
+        else:
+            foreach($get as $ar):
+                $ar_id = $ar->id;
+            endforeach;
+        endif;
+        return $ar_id;
     }
 
-    public function makeAlbum(Album $album){
+    public function makeAlbum($name=false){
 
-        $al_id = request()->album_id;
-        $this->album_name = request()->album;
-        $get = Album::where("id",$al_id)->get();
+        $al_id = 0;
+        $save = 0;
+       // if(!$name):
+       //     $name = request()->album;
+       // endif;
+        $get = Album::where("name",$name)->get();
         if(count($get) == 0):
-            $al_id = Album::create([
-                "name" => $this->album_name
+            $save = Album::create([
+                "name" => $name
             ]);
+            $al_id = $save->id;
         else:
-            Album::where("id",$al_id)->update([
-                "name" => $this->album_name
-            ]);
+            foreach($get as $ar):
+                $al_id = $ar->id;
+            endforeach;
         endif;
         return $al_id;
     }
@@ -102,10 +126,18 @@ class SongController extends Controller
     public function store()
     {
         //
-        $artist_id = $this->makeArtist();
-        $album_id = $this->makeAlbum();
-
-        $msg = "return from server {$artist_id} the album id is {$album_id}";
+        $artist_id = $this->makeArtist(request()->artist);
+        $album_id = $this->makeAlbum(request()->album);
+        $song = request()->song;
+        $song_id = Song::create([
+            "name" => $song,
+            "user_id" => Auth::user()->id,
+            "artist_id" => $artist_id,
+            "album_id" => $album_id
+        ]);
+        $msg = "<span class=\"badge badge-success\">Success : Song id xx 
+          album id {$album_id} artist id {$artist_id} 
+            </span>";
         return response()->json([
             "msg" => $msg
         ]);
