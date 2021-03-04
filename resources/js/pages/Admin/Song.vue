@@ -12,6 +12,7 @@ import SongForm from './SongForm.vue'
 import SongList from './SongList.vue'
 export default{
     name:"AdminSong",
+
              components:{
              SongForm,
              SongList

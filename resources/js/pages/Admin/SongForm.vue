@@ -18,7 +18,7 @@
                         <input  class="form-control" type="text" 
                         v-model="album">
                         <button class="btn btn-outline-warning" 
-                        @click.prevent="makeAlbum(album_id)">
+                        @click.prevent="makeAlbum">
                             Save {{album}} {{album_id}}?
                         </button>
                     </div>
@@ -41,10 +41,10 @@
                         </span>
 
                         <input class="form-control" type="text" v-model="artist"
-                        v-on:keyup="findArtist()"
+                        
                         placeholder="Artist">
                     
-                        <button class="btn btn-outline-secondary" @click.prevent="makeArtist(artist_id)">
+                        <button class="btn btn-outline-secondary" @click.prevent="makeArtist">
                             Save {{artist}} ?
                         </button>
 
@@ -98,83 +98,75 @@ methods:{
                     album:this.artist
                 }
                     if(id){
-                        this.fUrl = ``
-                    }else{
-                        this.fUrl = `/admin/song`
-                        axios.post(url,this.fData)
+                        this.fUrl = `/admin/song/${id}`
+                        axios.put(this.fUrl,this.fData)
                         .then(res=>{
                             console.log(res.msg)
+                            this.$emit("getSongList")
+                                })
+                    }else{
+                        this.fUrl = `/admin/song`
+                        axios.post(this.fUrl,this.fData)
+                        .then(res=>{
+                            console.log(res.msg)
+                            this.$emit("getSongList")
                                 })
                     }
+                    setTimeout(()=>{
+                        this.clearForm()
+                            },2000);
             },
-            makeArtist(id){
-               let url  = "" 
-
-                   if(id != 0){
-                        url = `/admin/makeArtist/${id}`
-                        axios.put(url,{artist:this.artist,artist_id:id})
-                        .then(res=>{
-                            this.$emit("getSongList")
-                        })
-                   }else{
-                        
-                        url = `/admin/makeArtist`
-                        axios.post(url,{artist:this.artist})
-                        .then(res=>{
-                            this.$emit("getSongList")
-                        })
-
-                   }
-
+            makeArtist(){
+               let url  =  `/admin/makeArtist`
+                axios.post(url,{artist:this.artist})
+                .then(res=>{
+                    this.$emit("getSongList")
+                })
                 setTimeout(()=>{
                     this.artist = ""
                     this.artist_id = 0
                 },2000)
                 
             },
-            makeAlbum(id){
-                let url = ""
-                if(id != 0){
-                    url = `/admin/makeAlbum/${id}`
-                    axios.put(url,{album:this.album,album_id:id})
-                    .then(res=>{
-                        this.$emit("getSongList")
-                    })
-                }else{
-                    url = `/admin/makeAlbum`
-                    axios.post(url,{album:this.album})
-                    .then(res=>{
-                        this.$emit("getSongList")
-                    })
-                }
+            makeAlbum(){
+                let url = `/admin/makeAlbum`
+                axios.post(url,{album:this.album})
+                .then(res=>{
+                    this.$emit("getSongList")
+                })
                 setTimeout(()=>{
                     this.album = ""
                     this.album_id = 0
-                        },2000)
+                },2000)
 
             },
             getTheArtist(){
                let ar_id = this.$refs.getArtist.value 
                    this.artists.forEach((val)=>{
-                           if(val.id == ar_id){
+                        if(val.id == ar_id){
                            this.artist = val.name
                            this.artist_id = val.id
-                           }
-                           })
+                        }
+                     })
                //alert(`the artist id is ${ar_id}`)
             },
             getTheAlbum(){
                 let al_id = this.$refs.getAlbum.value
                 this.albums.forEach((val)=>{
-                        if(val.id == al_id){
-                         console.log(val.name)
+                    if(val.id == al_id){
+                     //console.log(val.name)
                          this.album = val.name
                          this.album_id = val.id
-                        }
-                        })
+                    }
+                })
             },
             findArtist(){
-                
+                // save for later
+            },
+            clearForm(){
+               this.album = ""
+               this.artist = ""
+               this.song = ""
             },
         }
 

@@ -9,4 +9,8 @@ class Artist extends Model
 {
     use HasFactory;
     protected $fillable = ["name"];
+
+    public function song(){
+        return $this->hasMany(Song::class);
+    }
 }
