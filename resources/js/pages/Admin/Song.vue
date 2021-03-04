@@ -3,7 +3,14 @@
         <h1>Song Admin</h1>
         <song-form :albums="albums" :editId="editId"
         :artists="artists" @getSongList="getSongList($event)"></song-form>
-        <song-list :songList="songList" @getSongList="getSongList($event)"></song-list>
+        <song-list :songList="songList" @getSongList="getSongList($event)"
+        @songDel="songDel($event)" @songEdit="songEdit($event)"></song-list>
+
+
+        <b-modal title="Server Said : " centered ref="onOk" 
+        @ok="closeBox" ok-only>
+            <div v-html="res_status">{{res_status}}</div>
+        </b-modal>
     </div>
 </template>
 
@@ -23,6 +30,7 @@ export default{
                     editId:0,
                     albums:[],
                     artists:[],
+                    res_status:"",
                  }
              },
              mounted(){
@@ -42,6 +50,20 @@ methods:{
                     this.artists = res.data.artists
                     this.songList = res.data.songs
                             })
+            },
+            songEdit(id){
+                this.editId = id
+            },
+            songDel(id){
+                let url = `/admin/song/${id}`
+                axios.delete(url)
+                .then(res=>{
+                   this.res_status = res.data.msg 
+                   this.$refs["onOk"].show()
+                        })
+            },
+            closeBox(){
+                this.getSongList()
             },
         },
 

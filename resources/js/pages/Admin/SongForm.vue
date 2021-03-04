@@ -5,7 +5,7 @@
         
         <div class="form-group">
             <input class="form-control" type="text" v-model="song"
-            placeholder="Song title">
+            placeholder="Song title" ref="song">
         </div>
 
         <div class="row">
@@ -65,12 +65,16 @@
         <div class="clearfix">
             <div class="float-right">
                 <button class="btn btn-outline-primary"
-                @click.prevent="saveSong(editId)">
+                @click.prevent="saveSong(saveId)">
                     Save
                 </button>
             </div>
         </div>
     </form>
+    <b-modal @ok="closeBox" title="Server Said : " ref="onOk" centered 
+    ok-only>
+        <div v-html="res_status">{{res_status}}</div>
+    </b-modal>
 </div>
 </template>
 
@@ -87,29 +91,55 @@ export default{
                  artist:"",
                  album:"",
                  fData:{},
-                 fUrl:''
+                 fUrl:'',
+                 res_status:"",
                  }
              },
+             watch:{
+                 "editId":function(x){
+                   this.getEditData(x) 
+                 } 
+             },
 methods:{
+            getEditData(id){
+                if(id ==0){
+                    return
+                }
+                let url = `/admin/song/${id}`
+                axios.get(url)
+                .then(res=>{
+                    //console.log(res.data.song)
+                    let eData = res.data.song
+                    this.saveId = eData.id
+                    this.song = eData.name
+                    this.$refs.song.focus()
+                    this.album = eData.album.name
+                    this.artist = eData.artist.name
+                        })
+            },
             saveSong(id){
                 this.fData = {
                     song:this.song,
                     artist:this.artist,
-                    album:this.artist
+                    album:this.album
                 }
                     if(id){
                         this.fUrl = `/admin/song/${id}`
                         axios.put(this.fUrl,this.fData)
                         .then(res=>{
-                            console.log(res.msg)
-                            this.$emit("getSongList")
+                            //console.log(res.msg)
+                            //this.$emit("getSongList")
+                            this.res_status = res.data.msg
+                            this.$refs["onOk"].show()
                                 })
                     }else{
                         this.fUrl = `/admin/song`
                         axios.post(this.fUrl,this.fData)
                         .then(res=>{
-                            console.log(res.msg)
-                            this.$emit("getSongList")
+                            //console.log(res.msg)
+                            this.res_status = res.data.msg
+                            this.$refs["onOk"].show()
+                            //this.$emit("getSongList")
                                 })
                     }
                     setTimeout(()=>{
@@ -167,6 +197,10 @@ methods:{
                this.album = ""
                this.artist = ""
                this.song = ""
+               this.saveId = 0
+            },
+            closeBox(){
+                this.$emit("getSongList")
             },
         }
 

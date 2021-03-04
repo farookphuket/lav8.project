@@ -33,8 +33,10 @@
                 </td>
                 <td style="width:10%">
                     <div class="btn-group">
-                        <button class="btn btn-outline-warning btn-sm">edit</button>
-                        <button class="btn btn-outline-danger btn-sm">x</button>
+                        <button @click.prevent="$emit('songEdit',li.id)"
+                        class="btn btn-outline-warning btn-sm">edit</button>
+                        <button @click.prevent="$emit('songDel',li.id)"
+                        class="btn btn-outline-danger btn-sm">x</button>
                     </div>
                 </td>
             </tr>

@@ -20,6 +20,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -33,7 +40,8 @@ __webpack_require__.r(__webpack_exports__);
       songList: [],
       editId: 0,
       albums: [],
-      artists: []
+      artists: [],
+      res_status: ""
     };
   },
   mounted: function mounted() {
@@ -56,6 +64,22 @@ __webpack_require__.r(__webpack_exports__);
         _this.artists = res.data.artists;
         _this.songList = res.data.songs;
       });
+    },
+    songEdit: function songEdit(id) {
+      this.editId = id;
+    },
+    songDel: function songDel(id) {
+      var _this2 = this;
+
+      var url = "/admin/song/".concat(id);
+      axios["delete"](url).then(function (res) {
+        _this2.res_status = res.data.msg;
+
+        _this2.$refs["onOk"].show();
+      });
+    },
+    closeBox: function closeBox() {
+      this.getSongList();
     }
   }
 });
@@ -147,6 +171,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SongForm",
   props: ["editId", "albums", "artists"],
@@ -159,87 +187,117 @@ __webpack_require__.r(__webpack_exports__);
       artist: "",
       album: "",
       fData: {},
-      fUrl: ''
+      fUrl: '',
+      res_status: ""
     };
   },
+  watch: {
+    "editId": function editId(x) {
+      this.getEditData(x);
+    }
+  },
   methods: {
-    saveSong: function saveSong(id) {
+    getEditData: function getEditData(id) {
       var _this = this;
+
+      if (id == 0) {
+        return;
+      }
+
+      var url = "/admin/song/".concat(id);
+      axios.get(url).then(function (res) {
+        //console.log(res.data.song)
+        var eData = res.data.song;
+        _this.saveId = eData.id;
+        _this.song = eData.name;
+
+        _this.$refs.song.focus();
+
+        _this.album = eData.album.name;
+        _this.artist = eData.artist.name;
+      });
+    },
+    saveSong: function saveSong(id) {
+      var _this2 = this;
 
       this.fData = {
         song: this.song,
         artist: this.artist,
-        album: this.artist
+        album: this.album
       };
 
       if (id) {
         this.fUrl = "/admin/song/".concat(id);
         axios.put(this.fUrl, this.fData).then(function (res) {
-          console.log(res.msg);
+          //console.log(res.msg)
+          //this.$emit("getSongList")
+          _this2.res_status = res.data.msg;
 
-          _this.$emit("getSongList");
+          _this2.$refs["onOk"].show();
         });
       } else {
         this.fUrl = "/admin/song";
         axios.post(this.fUrl, this.fData).then(function (res) {
-          console.log(res.msg);
+          //console.log(res.msg)
+          _this2.res_status = res.data.msg;
 
-          _this.$emit("getSongList");
+          _this2.$refs["onOk"].show(); //this.$emit("getSongList")
+
         });
       }
 
       setTimeout(function () {
-        _this.clearForm();
+        _this2.clearForm();
       }, 2000);
     },
     makeArtist: function makeArtist() {
-      var _this2 = this;
+      var _this3 = this;
 
       var url = "/admin/makeArtist";
       axios.post(url, {
         artist: this.artist
       }).then(function (res) {
-        _this2.$emit("getSongList");
+        _this3.$emit("getSongList");
       });
       setTimeout(function () {
-        _this2.artist = "";
-        _this2.artist_id = 0;
+        _this3.artist = "";
+        _this3.artist_id = 0;
       }, 2000);
     },
     makeAlbum: function makeAlbum() {
-      var _this3 = this;
+      var _this4 = this;
 
       var url = "/admin/makeAlbum";
       axios.post(url, {
         album: this.album
       }).then(function (res) {
-        _this3.$emit("getSongList");
+        _this4.$emit("getSongList");
       });
       setTimeout(function () {
-        _this3.album = "";
-        _this3.album_id = 0;
+        _this4.album = "";
+        _this4.album_id = 0;
       }, 2000);
     },
     getTheArtist: function getTheArtist() {
-      var _this4 = this;
+      var _this5 = this;
 
       var ar_id = this.$refs.getArtist.value;
       this.artists.forEach(function (val) {
         if (val.id == ar_id) {
-          _this4.artist = val.name;
-          _this4.artist_id = val.id;
+          _this5.artist = val.name;
+          _this5.artist_id = val.id;
         }
       }); //alert(`the artist id is ${ar_id}`)
     },
     getTheAlbum: function getTheAlbum() {
-      var _this5 = this;
+      var _this6 = this;
 
       var al_id = this.$refs.getAlbum.value;
       this.albums.forEach(function (val) {
         if (val.id == al_id) {
           //console.log(val.name)
-          _this5.album = val.name;
-          _this5.album_id = val.id;
+          _this6.album = val.name;
+          _this6.album_id = val.id;
         }
       });
     },
@@ -249,6 +307,10 @@ __webpack_require__.r(__webpack_exports__);
       this.album = "";
       this.artist = "";
       this.song = "";
+      this.saveId = 0;
+    },
+    closeBox: function closeBox() {
+      this.$emit("getSongList");
     }
   }
 });
@@ -264,6 +326,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -358,9 +422,29 @@ var render = function() {
         on: {
           getSongList: function($event) {
             return _vm.getSongList($event)
+          },
+          songDel: function($event) {
+            return _vm.songDel($event)
+          },
+          songEdit: function($event) {
+            return _vm.songEdit($event)
           }
         }
-      })
+      }),
+      _vm._v(" "),
+      _c(
+        "b-modal",
+        {
+          ref: "onOk",
+          attrs: { title: "Server Said : ", centered: "", "ok-only": "" },
+          on: { ok: _vm.closeBox }
+        },
+        [
+          _c("div", { domProps: { innerHTML: _vm._s(_vm.res_status) } }, [
+            _vm._v(_vm._s(_vm.res_status))
+          ])
+        ]
+      )
     ],
     1
   )
@@ -387,207 +471,228 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("form", [
-      _c("div", { staticClass: "form-group" }, [
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.song,
-              expression: "song"
-            }
-          ],
-          staticClass: "form-control",
-          attrs: { type: "text", placeholder: "Song title" },
-          domProps: { value: _vm.song },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
+  return _c(
+    "div",
+    [
+      _c("form", [
+        _c("div", { staticClass: "form-group" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.song,
+                expression: "song"
               }
-              _vm.song = $event.target.value
-            }
-          }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-6" }, [
-          _c("div", { staticClass: "input-group " }, [
-            _c("div", { staticClass: "input-group-prepend" }, [
-              _c("span", { staticClass: "input-group-text" }, [
-                _vm._v(
-                  "\n                            Album\n                        "
-                )
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.album,
-                    expression: "album"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: { type: "text" },
-                domProps: { value: _vm.album },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.album = $event.target.value
-                  }
+            ],
+            ref: "song",
+            staticClass: "form-control",
+            attrs: { type: "text", placeholder: "Song title" },
+            domProps: { value: _vm.song },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
                 }
-              }),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-outline-warning",
+                _vm.song = $event.target.value
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-lg-6" }, [
+            _c("div", { staticClass: "input-group " }, [
+              _c("div", { staticClass: "input-group-prepend" }, [
+                _c("span", { staticClass: "input-group-text" }, [
+                  _vm._v(
+                    "\n                            Album\n                        "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.album,
+                      expression: "album"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text" },
+                  domProps: { value: _vm.album },
                   on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      return _vm.makeAlbum($event)
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.album = $event.target.value
                     }
                   }
+                }),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-outline-warning",
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.makeAlbum($event)
+                      }
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n                            Save " +
+                        _vm._s(_vm.album) +
+                        " " +
+                        _vm._s(_vm.album_id) +
+                        "?\n                        "
+                    )
+                  ]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group pt-2" }, [
+              _c(
+                "select",
+                {
+                  ref: "getAlbum",
+                  staticClass: "form-control",
+                  attrs: { multiple: "true" },
+                  on: { change: _vm.getTheAlbum }
                 },
                 [
-                  _vm._v(
-                    "\n                            Save " +
-                      _vm._s(_vm.album) +
-                      " " +
-                      _vm._s(_vm.album_id) +
-                      "?\n                        "
-                  )
-                ]
+                  _c("option", { attrs: { value: "" } }, [
+                    _vm._v("Album List")
+                  ]),
+                  _vm._v(" "),
+                  _vm._l(_vm.albums, function(ab) {
+                    return _c("option", { domProps: { value: ab.id } }, [
+                      _vm._v(_vm._s(ab.name))
+                    ])
+                  })
+                ],
+                2
               )
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "form-group pt-2" }, [
-            _c(
-              "select",
-              {
-                ref: "getAlbum",
-                staticClass: "form-control",
-                attrs: { multiple: "true" },
-                on: { change: _vm.getTheAlbum }
-              },
-              [
-                _c("option", { attrs: { value: "" } }, [_vm._v("Album List")]),
+          _c("div", { staticClass: "col-lg-6" }, [
+            _c("div", { staticClass: "input-group " }, [
+              _c("div", { staticClass: "input-group-prepend" }, [
+                _c("span", { staticClass: "input-group-text" }, [
+                  _vm._v(
+                    "\n                            Artist\n                        "
+                  )
+                ]),
                 _vm._v(" "),
-                _vm._l(_vm.albums, function(ab) {
-                  return _c("option", { domProps: { value: ab.id } }, [
-                    _vm._v(_vm._s(ab.name))
-                  ])
-                })
-              ],
-              2
-            )
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.artist,
+                      expression: "artist"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", placeholder: "Artist" },
+                  domProps: { value: _vm.artist },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.artist = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-outline-secondary",
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.makeArtist($event)
+                      }
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n                            Save " +
+                        _vm._s(_vm.artist) +
+                        " ?\n                        "
+                    )
+                  ]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group pt-2" }, [
+              _c(
+                "select",
+                {
+                  ref: "getArtist",
+                  staticClass: "form-control",
+                  attrs: { multiple: "true" },
+                  on: { change: _vm.getTheArtist }
+                },
+                [
+                  _c("option", [_vm._v("The Artist")]),
+                  _vm._v(" "),
+                  _vm._l(_vm.artists, function(ar) {
+                    return _c("option", { domProps: { value: ar.id } }, [
+                      _vm._v(_vm._s(ar.name))
+                    ])
+                  })
+                ],
+                2
+              )
+            ])
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-lg-6" }, [
-          _c("div", { staticClass: "input-group " }, [
-            _c("div", { staticClass: "input-group-prepend" }, [
-              _c("span", { staticClass: "input-group-text" }, [
-                _vm._v(
-                  "\n                            Artist\n                        "
-                )
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.artist,
-                    expression: "artist"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: { type: "text", placeholder: "Artist" },
-                domProps: { value: _vm.artist },
+        _c("div", { staticClass: "clearfix" }, [
+          _c("div", { staticClass: "float-right" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-outline-primary",
                 on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.artist = $event.target.value
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.saveSong(_vm.saveId)
                   }
                 }
-              }),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-outline-secondary",
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      return _vm.makeArtist($event)
-                    }
-                  }
-                },
-                [
-                  _vm._v(
-                    "\n                            Save " +
-                      _vm._s(_vm.artist) +
-                      " ?\n                        "
-                  )
-                ]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group pt-2" }, [
-            _c(
-              "select",
-              {
-                ref: "getArtist",
-                staticClass: "form-control",
-                attrs: { multiple: "true" },
-                on: { change: _vm.getTheArtist }
               },
-              [
-                _c("option", [_vm._v("The Artist")]),
-                _vm._v(" "),
-                _vm._l(_vm.artists, function(ar) {
-                  return _c("option", { domProps: { value: ar.id } }, [
-                    _vm._v(_vm._s(ar.name))
-                  ])
-                })
-              ],
-              2
+              [_vm._v("\n                    Save\n                ")]
             )
           ])
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "clearfix" }, [
-        _c("div", { staticClass: "float-right" }, [
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-outline-primary",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  return _vm.saveSong(_vm.editId)
-                }
-              }
-            },
-            [_vm._v("\n                    Save\n                ")]
-          )
-        ])
-      ])
-    ])
-  ])
+      _c(
+        "b-modal",
+        {
+          ref: "onOk",
+          attrs: { title: "Server Said : ", centered: "", "ok-only": "" },
+          on: { ok: _vm.closeBox }
+        },
+        [
+          _c("div", { domProps: { innerHTML: _vm._s(_vm.res_status) } }, [
+            _vm._v(_vm._s(_vm.res_status))
+          ])
+        ]
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -663,7 +768,37 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _vm._m(1, true)
+            _c("td", { staticStyle: { width: "10%" } }, [
+              _c("div", { staticClass: "btn-group" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-outline-warning btn-sm",
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.$emit("songEdit", li.id)
+                      }
+                    }
+                  },
+                  [_vm._v("edit")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-outline-danger btn-sm",
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.$emit("songDel", li.id)
+                      }
+                    }
+                  },
+                  [_vm._v("x")]
+                )
+              ])
+            ])
           ])
         }),
         0
@@ -686,22 +821,6 @@ var staticRenderFns = [
       _c("th", [_vm._v("Date")]),
       _vm._v(" "),
       _c("th", [_vm._v("Manage")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", { staticStyle: { width: "10%" } }, [
-      _c("div", { staticClass: "btn-group" }, [
-        _c("button", { staticClass: "btn btn-outline-warning btn-sm" }, [
-          _vm._v("edit")
-        ]),
-        _vm._v(" "),
-        _c("button", { staticClass: "btn btn-outline-danger btn-sm" }, [
-          _vm._v("x")
-        ])
-      ])
     ])
   }
 ]

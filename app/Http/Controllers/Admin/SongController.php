@@ -78,9 +78,9 @@ class SongController extends Controller
         
         $ar_id = 0;     
         $save = 0;
-      //  if(!$name):
-      //      $name = request()->artist;
-      //  endif;
+        if(!$name):
+            $name = request()->artist;
+        endif;
         $get = Artist::where("name",$name)->get();
         if(count($get) == 0):
             // will create new artist name 
@@ -100,9 +100,9 @@ class SongController extends Controller
 
         $al_id = 0;
         $save = 0;
-       // if(!$name):
-       //     $name = request()->album;
-       // endif;
+        if(!$name):
+            $name = request()->album;
+        endif;
         $get = Album::where("name",$name)->get();
         if(count($get) == 0):
             $save = Album::create([
@@ -151,7 +151,10 @@ class SongController extends Controller
      */
     public function show(Song $song)
     {
-        $song = Song::with("user")->where("name",$song->name)->first();
+        $song = Song::with("user")
+                    ->with("artist") 
+                    ->with("album") 
+                    ->where("name",$song->name)->first();
         return response()->json([
             "song" => $song
         ]);
@@ -175,9 +178,21 @@ class SongController extends Controller
      * @param  \App\Models\Song  $song
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Song $song)
+    public function update($id)
     {
-        //
+        $ar_id = $this->makeArtist(request()->artist);
+        $al_id = $this->makeAlbum(request()->album);
+        $song = request()->song;
+        Song::where("id",$id)->update([
+            "album_id" => $al_id,
+            "artist_id" => $ar_id,
+            "name" => $song,
+            "updated_at" => now()
+        ]);
+
+        $msg = "<span class=\"badge badge-success\">
+            Success : item has been updated</span>";
+       return response()->json(["msg" => $msg]); 
     }
 
     /**
@@ -186,8 +201,12 @@ class SongController extends Controller
      * @param  \App\Models\Song  $song
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Song $song)
+    public function destroy($id)
     {
-        //
+        $del = Song::find($id);
+        $del->delete();
+        $msg = "<span class=\"badge badge-success\">
+            Success : Item has been remove</span>";
+        return response()->json(["msg" => $msg]);
     }
 }
