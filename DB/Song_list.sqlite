@@ -48,8 +48,12 @@
 
 /* เพลงที่ 15   */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
 "created_at","updated_at") VALUES (15,"12","12","1",
 "เหตุผลที่ไม่อยากเป็นเพื่อนเธอ",
+"2019-08-26 15:53:03",
+"http://p.kg.qq.com/wsingpic/2122678496/89e7a4e8f59d82c5047e47ef83f9fafc5981a1ad/320?j=PiajxSqBRaEIf0bHhsJQ0QVoFSjos8ibuwib8icMibSGWGru7aj84uAW826V84GUk58dtqf27eKC51gRtLapYyjVa41rQwxgdcqJnL5Xu8FtOibdFPEYHQCib0bmAibdZg1iajASr0Yy5oYjJVoo",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/vhxNJoevWNuRveUp-?lang=th&amp;g_f=personal",
 "2019-08-26 15:53:03",
 "2021-03-04 20:21:04"
 );
@@ -57,8 +61,12 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 /* เพลงที่ 14   */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
 "created_at","updated_at") VALUES (14,"8","8","1",
 "ก้อนหินกับนาฬิกา",
+"2019-08-26 15:36:03",
+"http://p.kg.qq.com/wsingpic/2122678496/89e7a4e8f59d82c5047e47ef83f9fafc5981a1ad/320?j=PiajxSqBRaEIf0bHhsJQ0QVoFSjos8ibuwib8icMibSGWGru7aj84uAW826V84GUk58dtqf27eKC51gRtLapYyjVa43ka3btr8c6kvsPZeZ83J2gRoKxxHjxWHKMicTzokncAPcvVneu7pc7E",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/CMG8czbCl8HhvbX2-?lang=th&amp;g_f=personal",
 "2019-08-26 15:36:03",
 "2021-03-04 20:21:04"
 );
@@ -66,16 +74,24 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 /* เพลงที่ 13   */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
 "created_at","updated_at") VALUES (13,"11","11","1",
 "ทุกคืนได้ไหม",
+"2019-06-23 12:28:03",
+"http://p.kg.qq.com/wsingpic/2122678496/89e7a4e8f59d82c5047e47ef83f9fafc5981a1ad/320?j=PiajxSqBRaEIf0bHhsJQ0QVoFSjos8ibuwib8icMibSGWGru7aj84uAW826V84GUk58dtqf27eKC51gRtLapYyjVa4x7Hto7AdPGt3WvOh0DPykP8TJoKauiaDN4fHbyRLHG5KzQpThvzoicBU",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/eFon6xvej6EuvvDS-?lang=th&amp;g_f=personal",
 "2019-06-23 12:28:03",
 "2021-03-04 20:21:04"
 );
 
 /* เพลงที่ 12   */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
 "created_at","updated_at") VALUES (12,"8","8","1",
 "อยากบอกรัก",
+"2019-06-20 22:43:03",
+"http://p.kg.qq.com/wsingpic/2122678496/89e7a4e8f59d82c5047e47ef83f9fafc5981a1ad/320?j=nMl9ssowtibXicUj8k0ib8575Wlhysouh3Q4mslhx4v2erSwkiaNvTxL4b2eAeG8DBLmR9icy1ATzxiaTtBKJvclIyMwj8iceYwoMcXryiajCZEpyCY0icIXlXpvOibbLTzDReR0RfJcVLOBQFcSw",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/R9Nx2nuR7QJYvuRY-?lang=th&amp;g_f=personal",
 "2019-06-20 22:43:03",
 "2021-03-04 20:21:04"
 );
@@ -84,8 +100,12 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 /* เพลงที่ 11   */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
 "created_at","updated_at") VALUES (11,"10","10","1",
 "ไม่มั่วแต่ทั่วถึง",
+"2019-06-20 22:33:03",
+"http://p.kg.qq.com/wsingpic/2122678496/89e7a4e8f59d82c5047e47ef83f9fafc5981a1ad/320?j=nMl9ssowtibXicUj8k0ib8575Wlhysouh3Q4mslhx4v2erSwkiaNvTxL4b2eAeG8DBLmR9icy1ATzxiaTtBKJvclIyMwj8iceYwoMcXryiajCZEpyCY0icIXlXpvOibbLTzDReR0RfJcVLOBQFcSw",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/-nLF79I-2ZW2vIIK-?lang=th&amp;g_f=personal",
 "2019-06-20 22:33:03",
 "2021-03-04 20:21:04"
 );
@@ -95,8 +115,12 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 /* เพลงที่ 10   */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
 "created_at","updated_at") VALUES (10,"9","9","1",
 "ยอมจำนนฟ้าดิน",
+"2019-06-20 22:24:03",
+"http://p.kg.qq.com/wsingpic/2122678496/89e7a4e8f59d82c5047e47ef83f9fafc5981a1ad/320?j=nMl9ssowtibXicUj8k0ib8575Wlhysouh3Q4mslhx4v2erSwkiaNvTxL4b2eAeG8DBLmR9icy1ATzxiaTtBKJvclIyM4foZa05UMc3Ft5Z7y3LGCg6eiareWcTO5vrFKoRPzPCsKwvw2uYUVro",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/wKtryqkwaXMLvkki-?lang=th&amp;g_f=personal",
 "2019-06-20 22:24:03",
 "2021-03-04 20:21:04"
 );
@@ -106,8 +130,12 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 /* เพลงที่ 9   */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
 "created_at","updated_at") VALUES (9,"8","8","1",
 "ถ่านไฟเก่า",
+"2019-06-20 22:07:03",
+"http://p.kg.qq.com/wsingpic/2122678496/89e7a4e8f59d82c5047e47ef83f9fafc5981a1ad/320?j=nMl9ssowtibXicUj8k0ib8575Wlhysouh3Q4mslhx4v2erSwkiaNvTxL4b2eAeG8DBLmR9icy1ATzxiaTtBKJvclIyM93mbCwl0cR2HX3uwjtlwQleZrHlaIP3ayIgsMd54H6Wq3NI2XVZBLs",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/fxh9jFYf6WZPvYXJ-?lang=th&amp;g_f=personal",
 "2019-06-20 22:07:03",
 "2021-03-04 20:21:04"
 );
@@ -117,8 +145,12 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 /* เพลงที่ 8 if tomorrow never comes - Ronan Keating  */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
 "created_at","updated_at") VALUES (8,"7","7","1",
 "สายตาลำเอียง",
+"2019-06-16 21:25:03",
+"http://p.kg.qq.com/photo_new/T002RM000sg002VJCm22bbzYy.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/6mTPe3J6f6-LvJlu-?lang=th&amp;g_f=personal",
 "2019-06-16 21:25:03",
 "2021-03-04 20:21:04"
 );
@@ -127,8 +159,12 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 /* เพลงที่ 7 if tomorrow never comes - Ronan Keating  */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
 "created_at","updated_at") VALUES (7,"6","6","1",
 "If Tomorrow Never Comes",
+"2019-06-16 21:12:03",
+"http://p.kg.qq.com/photo_new/T002RM000000U5hbM0yYnfV.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/tDwVEkqtHtbrvqOh-IfTomorrowNeverComes?lang=th&amp;g_f=personal",
 "2019-06-16 21:12:03",
 "2021-03-04 20:21:04"
 );
@@ -137,8 +173,12 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 /* เพลงที่ 6 ไม่ธรรมดา - เบล สุพล  */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
 "created_at","updated_at") VALUES (6,"5","5","1",
 "ไม่ธรรมดา",
+"2019-06-13 14:40:03",
+"http://p.kg.qq.com/photo_new/T002RM000001TOgaL2bJHa5.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/1rcKG4O1dOgJvOSS-?lang=th&amp;g_f=personal",
 "2019-06-13 14:40:03",
 "2021-03-04 20:21:04"
 );
