@@ -7,6 +7,21 @@
             <input class="form-control" type="text" v-model="song"
             placeholder="Song title" ref="song">
         </div>
+        
+            <div class="form-group">
+                <input class="form-control" type="text" v-model="cover"
+                placeholder="The Album cover " ref="cover">
+                <img class="responsive" :src="cover" alt="">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" v-model="posted_at"
+                placeholder="eg: 2021-03-20 12:05:00" ref="posted_at">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" v-model="url"
+                placeholder="The song url " ref="url">
+            </div>
+
 
         <div class="row">
             <div class="col-lg-6">
@@ -79,6 +94,7 @@
 </template>
 
 <script>
+var moment = require("moment")
 export default{
     name:"SongForm",
     props:["editId","albums","artists"],
@@ -90,6 +106,11 @@ export default{
                  song:"",
                  artist:"",
                  album:"",
+                 cover:'',
+                 posted_at:'',
+                 moment:moment,
+                 url:'',
+                 date_holder:new Date(),
                  fData:{},
                  fUrl:'',
                  res_status:"",
@@ -115,13 +136,19 @@ methods:{
                     this.$refs.song.focus()
                     this.album = eData.album.name
                     this.artist = eData.artist.name
+                    this.cover = eData.cover
+                    this.posted_at = this.moment(eData.posted_at)
+                    this.url = eData.url
                         })
             },
             saveSong(id){
                 this.fData = {
                     song:this.song,
                     artist:this.artist,
-                    album:this.album
+                    album:this.album,
+                    cover:this.cover,
+                    posted_at:this.posted_at,
+                    url:this.url,
                 }
                     if(id){
                         this.fUrl = `/admin/song/${id}`
@@ -198,6 +225,9 @@ methods:{
                this.artist = ""
                this.song = ""
                this.saveId = 0
+               this.cover = ""
+               this.url = ""
+               this.posted_at = ""
             },
             closeBox(){
                 this.$emit("getSongList")

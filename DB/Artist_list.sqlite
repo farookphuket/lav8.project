@@ -1,5 +1,100 @@
 
 
+
+
+
+/* song number 20  in wesingapp.com the list 5-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (20,
+"ไท ธนาวุฒิ",
+"2021-03-05 14:29:09",
+"2021-03-05 23:05:04"
+);
+
+
+
+
+
+
+/* song number 19  in wesingapp.com the list 5-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (19,
+"ใหม่ เจริญปุระ",
+"2021-03-05 14:24:03",
+"2021-03-05 23:05:04"
+);
+
+
+
+
+
+/* song number 18  in wesingapp.com the list 5-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (18,
+"Aerosmith",
+"2021-03-05 14:12:03",
+"2021-03-05 23:05:04"
+);
+
+
+
+
+
+
+/* song number 17  in wesingapp.com the list 5-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (17,
+"บิ๊กแอ๊ด",
+"2021-03-05 13:55:03",
+"2021-03-05 23:05:04"
+);
+
+
+
+/* song number 16  in wesingapp.com the list 5-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (16,
+"Leann Rimes",
+"2021-03-05 13:41:03",
+"2021-03-05 23:05:04"
+);
+
+
+
+/* song number 15  in wesingapp.com the list 5-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (15,
+"ด๊อกเตอร์ ฟู",
+"2021-03-05 13:28:03",
+"2021-03-05 23:05:04"
+);
+
+
+
+/* song number 14  in wesingapp.com the list 5-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (14,
+"Boyzone",
+"2021-03-05 12:28:03",
+"2021-03-05 13:05:04"
+);
+
+
+
+
+
+/* song number 13  in wesingapp.com the list 5-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (13,
+"เพียว Pure",
+"2021-03-05 12:05:03",
+"2021-03-05 13:05:04"
+);
+
+
+
+
+
 /* song number 12  in wesingapp.com the list 4-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (12,

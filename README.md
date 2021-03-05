@@ -441,6 +441,16 @@ app should be appear.
 --- 
 
 
+# Date 5 Mar 2021 
+
+> show song list with the cover rows 
+> public side also use vue 
+
+
+
+
+
+
 
 # Date 3 Mar 2021 
 

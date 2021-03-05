@@ -175,6 +175,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SongForm",
   props: ["editId", "albums", "artists"],
@@ -186,6 +203,11 @@ __webpack_require__.r(__webpack_exports__);
       song: "",
       artist: "",
       album: "",
+      cover: '',
+      posted_at: '',
+      moment: moment,
+      url: '',
+      date_holder: new Date(),
       fData: {},
       fUrl: '',
       res_status: ""
@@ -215,6 +237,9 @@ __webpack_require__.r(__webpack_exports__);
 
         _this.album = eData.album.name;
         _this.artist = eData.artist.name;
+        _this.cover = eData.cover;
+        _this.posted_at = _this.moment(eData.posted_at);
+        _this.url = eData.url;
       });
     },
     saveSong: function saveSong(id) {
@@ -223,7 +248,10 @@ __webpack_require__.r(__webpack_exports__);
       this.fData = {
         song: this.song,
         artist: this.artist,
-        album: this.album
+        album: this.album,
+        cover: this.cover,
+        posted_at: this.posted_at,
+        url: this.url
       };
 
       if (id) {
@@ -308,6 +336,9 @@ __webpack_require__.r(__webpack_exports__);
       this.artist = "";
       this.song = "";
       this.saveId = 0;
+      this.cover = "";
+      this.url = "";
+      this.posted_at = "";
     },
     closeBox: function closeBox() {
       this.$emit("getSongList");
@@ -495,6 +526,86 @@ var render = function() {
                   return
                 }
                 _vm.song = $event.target.value
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.cover,
+                expression: "cover"
+              }
+            ],
+            ref: "cover",
+            staticClass: "form-control",
+            attrs: { type: "text", placeholder: "The Album cover " },
+            domProps: { value: _vm.cover },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.cover = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("img", {
+            staticClass: "responsive",
+            attrs: { src: _vm.cover, alt: "" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.posted_at,
+                expression: "posted_at"
+              }
+            ],
+            ref: "posted_at",
+            staticClass: "form-control",
+            attrs: { type: "text", placeholder: "eg: 2021-03-20 12:05:00" },
+            domProps: { value: _vm.posted_at },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.posted_at = $event.target.value
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.url,
+                expression: "url"
+              }
+            ],
+            ref: "url",
+            staticClass: "form-control",
+            attrs: { type: "text", placeholder: "The song url " },
+            domProps: { value: _vm.url },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.url = $event.target.value
               }
             }
           })

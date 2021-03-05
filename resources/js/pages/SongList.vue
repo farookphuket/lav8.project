@@ -1,21 +1,22 @@
 <template>
     <div>
-        <div class="card card-body" v-for="so in songs.data">
-            <h3 class="text-center">{{so.name}}</h3>
-            <div class="row">
-                <div class="col-lg-4">
-                    <img :src="so.cover" 
-                    class="responsive">
-                    <p class="text-center">
-                        {{so.name}} - {{moment(so.posted_at)}}
-                    </p>
+        
+        <div class="row">
+            <div class="col-md-4" v-for="so in songs.data">
+                
+                <div class="card card-body">
+                   <a class="" target="_blank" :href="so.url">
+                        <img :src="so.cover" class="responsive">
+                   </a>
+                   <span class="btn btn-outline-info btn-sm">
+                        {{so.name}} - {{moment(so.posted_at).fromNow()}}
+                   </span>
                 </div>
-                <div class="col-lg-8">
-                   <a class="btn btn-outline-info" target="_blank"
-                   :href="so.url">{{so.name}}</a>
-                </div>
-            </div>
-        </div>
+
+
+            </div> <!-- end col-md-4 -->
+        </div> <!-- end div.row-->
+
 
         <div class="pa">
             <ul class="pagination">

@@ -126,14 +126,21 @@ class SongController extends Controller
     public function store()
     {
         //
+        
         $artist_id = $this->makeArtist(request()->artist);
         $album_id = $this->makeAlbum(request()->album);
         $song = request()->song;
+        $cover = request()->cover;
+        $posted_at = date("Y-m-d H:m:i",strtotime(request()->posted_at));
+        $url = request()->url;
         $song_id = Song::create([
             "name" => $song,
             "user_id" => Auth::user()->id,
             "artist_id" => $artist_id,
-            "album_id" => $album_id
+            "album_id" => $album_id,
+            "cover" => $cover,
+            "posted_at" => $posted_at,
+            "url" => $url
         ]);
         $msg = "<span class=\"badge badge-success\">Success : Song id xx 
           album id {$album_id} artist id {$artist_id} 
@@ -183,10 +190,17 @@ class SongController extends Controller
         $ar_id = $this->makeArtist(request()->artist);
         $al_id = $this->makeAlbum(request()->album);
         $song = request()->song;
+
+        $cover = request()->cover;
+        $posted_at = date("Y-m-d H:m:i",strtotime(request()->posted_at));
+        $url = request()->url;
         Song::where("id",$id)->update([
             "album_id" => $al_id,
             "artist_id" => $ar_id,
             "name" => $song,
+            "cover" => $cover,
+            "posted_at" => $posted_at,
+            "url" => $url,
             "updated_at" => now()
         ]);
 

@@ -4,6 +4,106 @@
 
 
 
+/* number 20  in the list 5-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (20,
+"ไท ธนาวุฒิ's Song",
+"2021-03-05 14:28:08",
+"2021-03-05 20:24:05"
+);
+
+
+
+
+
+
+/* number 19  in the list 5-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (19,
+"ใหม่ เจริญปุระ's Song",
+"2021-03-05 14:27:07",
+"2021-03-05 20:24:05"
+);
+
+
+
+
+
+
+
+/* number 18  in the list 5-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (18,
+"Aerosmith's Song",
+"2021-03-05 14:11:04",
+"2021-03-05 20:24:05"
+);
+
+
+
+
+
+
+
+/* number 17  in the list 5-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (17,
+"บิ๊กแอ๊ด's Song",
+"2021-03-05 13:55:04",
+"2021-03-05 20:24:05"
+);
+
+
+
+
+
+/* number 16  in the list 5-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (16,
+"Leann Rimes's Song",
+"2021-03-05 13:41:04",
+"2021-03-05 20:24:05"
+);
+
+
+
+
+
+/* number 15  in the list 5-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (15,
+"ด๊อกเตอร์ ฟู's Song",
+"2021-03-05 13:28:04",
+"2021-03-05 23:22:05"
+);
+
+
+/* number 14  in the list 5-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (14,
+"Boyzone's Song",
+"2021-03-05 12:28:04",
+"2021-03-05 13:22:05"
+);
+
+
+
+
+
+/* number 13  in the list 5-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (13,
+"เพียว's song",
+"2021-03-05 12:06:04",
+"2021-03-05 13:22:05"
+);
+
+
+
+
+
+
+
 /* number 12  in the list 4-Mar-2021 */
 INSERT INTO "albums" ("id","name",
 "created_at","updated_at") VALUES (12,

@@ -20,6 +20,14 @@
 |  10.  |   ไฮเปอร์                       |  
 |  11.  |   กะลา                         |  
 |  12.  |   โซคูล                         |  
+|  13.  |   เพียว                         |  
+|  14.  |   Boyzone                      |  
+|  15.  |   ด๊อกเตอร์ ฟู                    |  
+|  16.  |   Leann Rimes                  |  
+|  17.  |   บิ๊กแอ๊ด                        |  
+|  18.  |   Aerosmith                    |  
+|  19.  |   ใหม่                          |  
+|  20.  |   ไท ธนาวุฒิ                     |  
 |----------------------------------------|
 
 
@@ -38,8 +46,165 @@
 |   10.      |     ไฮเปอร์                              |  
 |   11.      |     กะลา's song                         |  
 |   12.      |     โซคูล's song                         |  
+|   13.      |     เพียว's song                         |  
+|   14.      |     Boyzone's song                      |  
+|   15.      |     ด๊อกเตอร์ ฟู's song                    |  
+|   16.      |     Leann Rimes's song                  |  
+|   17.      |     บิ๊กแอ๊ด's song                        |  
+|   18.      |     Aerosmith's song                    |  
+|   19.      |     ใหม่'s song                          |  
+|   20.      |     ไท ธนาวุฒิ's song                     |  
 |------------------------------------------------------|
 */
+
+
+
+
+
+/* เพลงที่ 24   */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (24,"15","15","1",
+"ปลาทูนึ่ง - ฟารุคร้องเอง",
+"2020-11-21 22:49:34",
+"http://p.kg.qq.com/photo_new/T002RM000003CuBIc1UlNH9.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/JA3ivT6JWKX-v6LC-?lang=en&amp;g_f=personal",
+"2020-11-21 22:49:34",
+"2021-03-05 14:09:04"
+);
+
+
+
+/* เพลงที่ 23   */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (23,"20","20","1",
+"ไม่สมศักดิ์ศรี - ฟารุคร้องเอง",
+"2020-11-21 22:40:10",
+"http://p.kg.qq.com/photo_new/T002RM000001pGIeV0RGHRH.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/5y8GKaH5SvmOvH3M-?lang=en&amp;g_f=personal",
+"2020-11-21 22:40:10",
+"2021-03-05 14:32:04"
+);
+
+
+
+
+
+
+
+/* เพลงที่ 22   */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (22,"19","19","1",
+"แพ้ใจ",
+"2020-11-21 22:31:14",
+"http://p.kg.qq.com/photo_new/T002RM000002v7hjz0moWk9.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/YoFLWhfYvSDsvfXJ-?lang=en&amp;g_f=personal",
+"2020-11-21 22:31:14",
+"2021-03-05 14:09:04"
+);
+
+
+
+
+
+/* เพลงที่ 21   */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (21,"18","18","1",
+"I Don't Want To Miss A Thing",
+"2020-11-21 22:12:05",
+"http://p.kg.qq.com/photo_new/T002RM000002kanje0RtUno.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/Zi0AIB7ZQrzZv77M-IDon39tWanttoMissaThingFromquotArmageddonquotSoundtrack?lang=en&amp;g_f=personal",
+"2020-11-21 22:12:05",
+"2021-03-05 14:09:04"
+);
+
+
+
+
+
+
+/* เพลงที่ 20   */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (20,"17","17","1",
+"ทิ้งไว้ในใจ",
+"2020-11-21 22:01:45",
+"https://i.ibb.co/0chLn4S/bigAss.jpg",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/bdza4GCbpuLovCb4-?lang=en&amp;g_f=personal",
+"2020-11-21 22:01:45",
+"2021-03-05 08:41:04"
+);
+
+
+
+
+/* เพลงที่ 19   */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (19,"16","16","1",
+"How Do I Live",
+"2020-11-21 21:44:13",
+"http://p.kg.qq.com/photo_new/T002RM000002R4b7n3qAGf8.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/m6W7FjAm3k_ivAz5-HowDoILive?lang=en&amp;g_f=personal",
+"2020-11-21 21:44:13",
+"2021-03-05 08:41:04"
+);
+
+
+
+
+/* เพลงที่ 18   */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (18,"15","15","1",
+"ดวงดาวแห่งรัก",
+"2020-11-21 21:34:23",
+"http://p.kg.qq.com/photo_new/T002RM000003wavFU4W3LhH.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/20i3RPQ27cV-vQtl-?lang=en&amp;g_f=personal",
+"2020-11-21 21:34:23",
+"2021-03-05 20:21:04"
+);
+
+
+
+
+
+
+
+/* เพลงที่ 17   */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (17,"14","14","1",
+"Word",
+"2020-11-21 21:22:05",
+"http://p.kg.qq.com/photo_new/T002RM000003ytTTB2xcVJZ.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/hvfIAYFhoy55vFA8-Words?lang=en&amp;g_f=personal",
+"2020-11-21 21:22:05",
+"2021-03-05 20:21:04"
+);
+
+
+
+
+
+
+
+/* เพลงที่ 16   */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (16,"13","13","1",
+"ทางผ่าน",
+"2020-11-21 21:02:07",
+"http://p.kg.qq.com/photo_new/T002RM000sg001ZiNGq0dKlWa.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/HXaz_85HEehyv55f-?lang=en&amp;g_f=personal",
+"2020-11-21 21:02:07",
+"2021-03-05 08:21:04"
+);
+
+
 
 
 
