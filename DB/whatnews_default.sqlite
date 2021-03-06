@@ -21,6 +21,62 @@ INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
  ///////////////END OF TEMPLATE ///////////
 */
 
+
+
+
+
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
+'1',                            
+'Why I don''t do Window - Joe Collins',                             
+'
+<p>
+<b>I''ve copy</b> Joe Collins''s video from youtube 
+</p>
+<p class="pt-2 mb-4">
+    <b>October 1998</b> is the first time in my life that I''ve ever touch 
+    the computer it was <a href="https://en.wikipedia.org/wiki/Windows_98" 
+    class="btn btn-outline-info btn-sm" target="_blank">window 98 (wiki)</a>
+    I still remember deep in my mind
+    <em>how was the feeling like</em>?
+
+</p>
+<p>
+    There are so many people do not like Window 98 because it''s crash very 
+    often but to me at that time I know nothing about computer (even
+    now I still knowing nothing yeah not much) so I just get a chance to learn 
+    thing about computer since then and soon enough I am in the group
+    of people who''ve said "yes ,window 98 is crash very often" moving on to 
+    two years later
+
+</p>
+<div class="video-container">
+    <iframe width="560" height="315" 
+    src="https://www.youtube.com/embed/CrvKyR9DGUY" frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+    gyroscope; picture-in-picture" allowfullscreen=""><br></iframe>
+    <br>
+</div>
+
+<p class="pt-2 text-center">
+    Why I don''t do window - by Joe Collin
+</p>
+<p>
+Thanks to window ,Thanks to all of the programmer or creator in the world to 
+make thing for another people to use.
+</p>
+
+',                                          
+'1',                        
+'2021-03-06 15:15:45',                
+'2021-03-06 15:18:45'                 
+);                                          
+
+
+
+
+
+
 INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
 "is_public","created_at","updated_at") VALUES (NULL,
 '1',                            
