@@ -55,8 +55,7 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get(url).then(function (res) {
         var rData = res.data;
-        _this.songs = rData.songs;
-        console.log(rData);
+        _this.songs = rData.songs; // console.log(rData)
       });
     }
   }

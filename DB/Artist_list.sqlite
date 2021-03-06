@@ -1,6 +1,116 @@
 
 
 
+/* song number 30  in wesingapp.com the list 6-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (30,
+"แบลคเฮด",
+"2021-03-06 08:38:09",
+"2021-03-06 23:05:04"
+);
+
+
+
+
+
+
+
+/* song number 29  in wesingapp.com the list 6-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (29,
+"ดัง พันกร",
+"2021-03-06 08:37:09",
+"2021-03-06 23:05:04"
+);
+
+
+
+
+
+
+/* song number 28  in wesingapp.com the list 6-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (28,
+"พลพล",
+"2021-03-06 08:01:09",
+"2021-03-06 23:05:04"
+);
+
+
+
+/* song number 27  in wesingapp.com the list 6-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (27,
+"ไมค์ ภิรมย์พร",
+"2021-03-06 08:01:09",
+"2021-03-06 23:05:04"
+);
+
+
+
+/* song number 26  in wesingapp.com the list 6-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (26,
+"แอล กอ ฮอ",
+"2021-03-06 08:01:09",
+"2021-03-06 23:05:04"
+);
+
+
+
+/* song number 25  in wesingapp.com the list 6-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (25,
+"เอ็ม อรรถพล",
+"2021-03-06 08:01:09",
+"2021-03-06 23:05:04"
+);
+
+
+
+
+
+/* song number 24  in wesingapp.com the list 6-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (24,
+"บางแก้ว",
+"2021-03-06 07:52:09",
+"2021-03-06 23:05:04"
+);
+
+
+/* song number 23  in wesingapp.com the list 6-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (23,
+"ฮิวโก้",
+"2021-03-06 07:41:09",
+"2021-03-06 23:05:04"
+);
+
+
+/* song number 22  in wesingapp.com the list 6-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (22,
+"พงพัฒษ์",
+"2021-03-06 07:40:09",
+"2021-03-06 23:05:04"
+);
+
+
+
+
+
+
+/* song number 21  in wesingapp.com the list 6-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (21,
+"Glenn Frey",
+"2021-03-06 07:29:09",
+"2021-03-06 23:05:04"
+);
+
+
+
 
 
 /* song number 20  in wesingapp.com the list 5-Mar-2021 */

@@ -40,7 +40,7 @@ methods:{
                     .then(res=>{
                         let rData = res.data
                         this.songs = rData.songs
-                        console.log(rData)
+                       // console.log(rData)
                             })
             }
         }
