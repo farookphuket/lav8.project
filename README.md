@@ -440,6 +440,12 @@ app should be appear.
 
 --- 
 
+# Date 7 Mar 2021
+
+> I just copy the link of my Karaoke from `wesingapp.com` to keep in my list
+> so it will be more easy for me to check later 
+> The component I have create call "song"
+
 
 # Date 5 Mar 2021 
 

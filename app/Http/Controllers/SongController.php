@@ -24,7 +24,7 @@ class SongController extends Controller
                         ->with("user")
                         ->with("artist")
                         ->with("album")
-                        ->paginate(5)
+                        ->paginate(24)
                         ->onEachSide(1);
         return response()->json(["songs" => $songs]);
     }

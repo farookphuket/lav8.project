@@ -1,4 +1,320 @@
 
+/* number 71  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (71,
+"Shayne Ward's song'",
+"2021-03-07 10:13:11",
+"2021-03-07 10:22:05"
+);
+
+
+/* number 70  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (70,
+"Blue's song'",
+"2021-03-07 10:13:11",
+"2021-03-07 10:22:05"
+);
+
+
+/* number 69  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (69,
+"All 4 One's song'",
+"2021-03-07 10:13:11",
+"2021-03-07 10:22:05"
+);
+
+
+
+
+
+/* number 68  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (68,
+"Human Nature's song'",
+"2021-03-07 10:13:11",
+"2021-03-07 10:22:05"
+);
+
+
+
+/* number 67  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (67,
+"Backstreet Boys's song'",
+"2021-03-07 10:13:11",
+"2021-03-07 10:22:05"
+);
+
+
+
+/* number 66  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (66,
+"A1's song'",
+"2021-03-07 10:13:11",
+"2021-03-07 10:22:05"
+);
+
+
+
+
+/* number 65  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (65,
+"Joey Mcintyre's song'",
+"2021-03-07 10:13:11",
+"2021-03-07 10:22:05"
+);
+
+
+
+
+
+/* number 64  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (64,
+"ป้าง's song'",
+"2021-03-07 10:13:11",
+"2021-03-07 10:22:05"
+);
+
+
+
+/* number 63  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (63,
+"อาร์ม's song'",
+"2021-03-07 10:13:11",
+"2021-03-07 10:22:05"
+);
+
+
+
+/* number 62  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (62,
+"ไชโย ธนวัฒน์'s song'",
+"2021-03-07 09:10:11",
+"2021-03-07 09:22:05"
+);
+
+
+
+/* number 61  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (61,
+"พอส's song'",
+"2021-03-07 09:10:11",
+"2021-03-07 09:22:05"
+);
+
+
+/* number 60  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (60,
+"Westlife's song'",
+"2021-03-07 04:54:11",
+"2021-03-07 09:15:05"
+);
+
+
+/* number 59  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (59,
+"บอย โกสิยพงษ์'s song'",
+"2021-03-07 04:54:11",
+"2021-03-07 09:15:05"
+);
+
+
+/* number 58  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (58,
+"Matchbox Twenty's song'",
+"2021-03-07 04:54:11",
+"2021-03-07 09:15:05"
+);
+
+
+
+/* number 57  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (57,
+"ลาบานูน's song'",
+"2021-03-07 04:54:11",
+"2021-03-07 09:15:05"
+);
+
+
+/* number 56  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (56,
+"โปเตโต้'s song'",
+"2021-03-07 04:54:11",
+"2021-03-07 09:15:05"
+);
+
+
+/* number 55  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (55,
+"Shakira's song'",
+"2021-03-07 04:54:11",
+"2021-03-07 09:15:05"
+);
+
+
+
+/* number 54  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (54,
+"Robbie Williams's song'",
+"2021-03-07 04:54:11",
+"2021-03-07 09:15:05"
+);
+
+
+/* number 53  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (53,
+"ไอน้ำ's song'",
+"2021-03-07 04:54:11",
+"2021-03-07 09:15:05"
+);
+
+
+/* number 52  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (52,
+"แมทธิม ดีน's song'",
+"2021-03-07 04:54:11",
+"2021-03-07 09:15:05"
+);
+
+
+
+
+
+
+/* number 51  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (51,
+"วาย นอท เซเว่น's song'",
+"2021-03-07 04:54:11",
+"2021-03-07 09:15:05"
+);
+
+
+
+
+
+
+/* number 50  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (50,
+"เอกชัย ศรีวิชัย's song'",
+"2021-03-07 04:54:11",
+"2021-03-07 05:37:05"
+);
+
+
+
+/* number 49  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (49,
+"เกสซูโนวา's song'",
+"2021-03-07 04:54:11",
+"2021-03-07 05:37:05"
+);
+
+
+/* number 48  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (48,
+"ไอแซค's song'",
+"2021-03-07 04:54:11",
+"2021-03-07 05:37:05"
+);
+
+
+/* number 47  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (47,
+"ปีเตอร์ คอป ไดแรลดอล's song'",
+"2021-03-07 04:10:11",
+"2021-03-07 05:37:05"
+);
+
+
+
+/* number 46  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (46,
+"นายสะอาด's song'",
+"2021-03-07 04:10:11",
+"2021-03-07 05:37:05"
+);
+
+
+
+/* number 45  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (45,
+"เกียร์ ไนท์'s song'",
+"2021-03-07 04:10:11",
+"2021-03-07 05:37:05"
+);
+
+
+
+
+
+/* number 44  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (44,
+"เดช อิสระ's song'",
+"2021-03-07 04:10:11",
+"2021-03-07 05:37:05"
+);
+
+
+
+/* number 43  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (43,
+"กิฟท์'s song'",
+"2021-03-07 04:05:19",
+"2021-03-07 05:37:05"
+);
+
+
+
+
+/* number 42  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (42,
+"ฟลาย's song'",
+"2021-03-07 04:05:19",
+"2021-03-07 05:37:05"
+);
+
+
+
+
+
+/* number 41  in the list 7-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (41,
+"เกิร์ล's song'",
+"2021-03-07 04:05:19",
+"2021-03-07 05:37:05"
+);
+
+
+
+
 
 
 /* number 40  in the list 6-Mar-2021 */

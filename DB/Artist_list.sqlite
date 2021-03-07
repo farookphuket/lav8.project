@@ -1,4 +1,344 @@
 
+/* song number 71  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (71,
+"Shayne Ward",
+"2021-03-07 10:29:24",
+"2021-03-07 10:32:05"
+);
+
+
+
+
+/* song number 70  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (70,
+"Blue",
+"2021-03-07 10:29:24",
+"2021-03-07 10:32:05"
+);
+
+
+
+
+/* song number 69  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (69,
+"All 4 One",
+"2021-03-07 10:29:24",
+"2021-03-07 10:32:05"
+);
+
+
+
+
+/* song number 68  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (68,
+"Human Nature",
+"2021-03-07 10:29:24",
+"2021-03-07 10:32:05"
+);
+
+
+
+/* song number 67  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (67,
+"Backstreet Boys",
+"2021-03-07 10:29:24",
+"2021-03-07 10:32:05"
+);
+
+
+
+/* song number 66  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (66,
+"A1",
+"2021-03-07 10:29:24",
+"2021-03-07 10:32:05"
+);
+
+
+/* song number 65  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (65,
+"Joey Mcintyre",
+"2021-03-07 10:29:24",
+"2021-03-07 10:32:05"
+);
+
+
+
+
+
+
+
+/* song number 64  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (64,
+"ป้าง",
+"2021-03-07 10:29:24",
+"2021-03-07 10:32:05"
+);
+
+
+/* song number 63  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (63,
+"อาร์ม",
+"2021-03-07 10:29:24",
+"2021-03-07 10:32:05"
+);
+
+
+
+
+/* song number 62  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (62,
+"ไชโย ธนวัฒน์",
+"2021-03-07 09:10:24",
+"2021-03-07 09:15:05"
+);
+
+
+
+
+
+/* song number 61  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (61,
+"พอส",
+"2021-03-07 07:54:24",
+"2021-03-07 08:15:05"
+);
+
+
+
+
+
+/* song number 60  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (60,
+"Westlife",
+"2021-03-07 07:54:24",
+"2021-03-07 08:15:05"
+);
+
+
+
+
+
+/* song number 59  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (59,
+"บอย โกสิยพงษ์",
+"2021-03-07 07:54:24",
+"2021-03-07 08:15:05"
+);
+
+
+
+
+
+/* song number 58  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (58,
+"Matchbox Twenty",
+"2021-03-07 07:54:23",
+"2021-03-07 08:15:05"
+);
+
+
+
+
+
+
+/* song number 57  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (57,
+"ลาบานูน",
+"2021-03-07 07:54:22",
+"2021-03-07 08:15:05"
+);
+
+
+
+/* song number 56  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (56,
+"โปเตโต้",
+"2021-03-07 07:54:21",
+"2021-03-07 08:15:05"
+);
+
+
+
+/* song number 55  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (55,
+"Shakira",
+"2021-03-07 07:54:20",
+"2021-03-07 08:15:05"
+);
+
+
+/* song number 54  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (54,
+"Robbie Williams",
+"2021-03-07 07:54:17",
+"2021-03-07 08:15:05"
+);
+
+
+
+
+
+
+
+/* song number 53  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (53,
+"ไอน้ำ",
+"2021-03-07 07:54:15",
+"2021-03-07 08:15:05"
+);
+
+
+/* song number 52  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (52,
+"แมทธิว ดีน",
+"2021-03-07 07:54:15",
+"2021-03-07 08:15:05"
+);
+
+
+/* song number 51  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (51,
+"วาย นอท เซเว่น",
+"2021-03-07 07:54:15",
+"2021-03-07 08:15:05"
+);
+
+
+
+
+
+/* song number 50  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (50,
+"เอกชัย ศรีวิชัย",
+"2021-03-07 05:02:15",
+"2021-03-07 05:15:05"
+);
+
+
+
+
+/* song number 49  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (49,
+"เกสซูโนวา",
+"2021-03-07 05:02:15",
+"2021-03-07 05:15:05"
+);
+
+
+
+/* song number 48  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (48,
+"ไอแซค",
+"2021-03-07 05:01:15",
+"2021-03-07 05:06:05"
+);
+
+
+
+
+
+
+
+/* song number 47  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (47,
+"ปีเตอร์ คอป ไดแรลดอล",
+"2021-03-07 04:35:15",
+"2021-03-07 05:05:05"
+);
+
+
+
+/* song number 46  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (46,
+"นายสะอาด",
+"2021-03-07 04:35:12",
+"2021-03-07 05:05:04"
+);
+
+
+
+/* song number 45  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (45,
+"เกียร์ ไนท์",
+"2021-03-07 04:35:13",
+"2021-03-07 05:05:07"
+);
+
+
+
+
+
+
+
+/* song number 44  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (44,
+"เดช อิสระ",
+"2021-03-07 04:35:10",
+"2021-03-07 05:05:04"
+);
+
+
+
+/* song number 43  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (43,
+"กิฟท์",
+"2021-03-07 04:37:10",
+"2021-03-07 05:05:04"
+);
+
+
+/* song number 42  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (42,
+"ฟลาย",
+"2021-03-07 04:37:10",
+"2021-03-07 05:05:04"
+);
+
+
+
+
+
+
+
+/* song number 41  in wesingapp.com the list 7-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (41,
+"เกิร์ล",
+"2021-03-07 04:37:10",
+"2021-03-07 05:05:04"
+);
+
 
 
 

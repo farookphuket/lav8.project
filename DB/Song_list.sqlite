@@ -48,6 +48,37 @@
 |  38.  |   แว่นใหญ่                       |  
 |  39.  |   แอคอาร์ต                      |  
 |  40.  |   ไทม์                          |  
+|  41.  |   เกิร์ล                         |  
+|  42.  |   ฟลาย                         |  
+|  43.  |   กิฟท์                          |  
+|  44.  |   เดช อิสระ                     |  
+|  45.  |   เกียร์ ไนท์                     |  
+|  46.  |   นายสะอาด                     |  
+|  47.  |   ปีเตอร์ คอป ไดแรลดัล            |  
+|  48.  |   ไอแซค                        |  
+|  49.  |   เกสซูโนวา                     |  
+|  50.  |   เอกชัย ศรีวิชัย                  |  
+|  51.  |   วาย นอท เซเว่น                |  
+|  52.  |   แมทธิว ดีน                     |  
+|  53.  |   ไอน้ำ                         |  
+|  54.  |   Robbie Williams              |  
+|  55.  |   Shakira                      |  
+|  56.  |   โปเตโต้                       |  
+|  57.  |   ลาบานูน                       |  
+|  58.  |   Matchbox Twenty              |  
+|  59.  |   บอย โกสิยพงษ์                  |  
+|  60.  |   Westlife                     |  
+|  61.  |   พอส                          |  
+|  62.  |   ไชโย ธนวัฒน์                   |  
+|  63.  |   อาร์ม                         |  
+|  64.  |   ป้าง                          |  
+|  65.  |   Joey Mcintyre                |  
+|  66.  |   A1                           |  
+|  67.  |   Backstreet Boys              |  
+|  68.  |   Human Nature                 |  
+|  69.  |   All 4 One                    |  
+|  70.  |   Blue                         |  
+|  71.  |   Shayne Ward                  |  
 |----------------------------------------|
 
 
@@ -94,28 +125,886 @@
 |   38.      |     แว่นใหญ่'s song                       |  
 |   39.      |     แอคอาร์ต's song                      |  
 |   40.      |     ไทม์ ฟอ ฟัน                           |  
+|   41.      |     เกิร์ล's song                         |  
+|   42.      |     ฟลาย's song                         |  
+|   43.      |     กิฟท์'s song                          |  
+|   44.      |     เดช อิสระ's song                     |  
+|   45.      |     เกียร์ ไนท์'s song                     |  
+|   46.      |     นายสะอาด's song                     |  
+|   47.      |     ปีเตอร์ คอป ไดแรลดัล's song            |  
+|   48.      |     ไอแซค's song                        |  
+|   49.      |     เกสซูโนวา's song                     |  
+|   50.      |     เอกชัย ศรีวิชัย's song                  |  
+|   51.      |     วาย นอท เซเว่น's song                |  
+|   52.      |     แมทธิว ดีน's song                     |  
+|   53.      |     ไอน้ำ's song                         |  
+|   54.      |     Robbie Williams's song              |  
+|   55.      |     Shakira's song                      |  
+|   56.      |     โปเตโต้'s song                       |  
+|   57.      |     ลาบานูน's song                       |  
+|   58.      |     Matchbox Twenty's song              |  
+|   59.      |     บอย โกสิยพงษ์'s song                  |  
+|   60.      |     Westlife's song                     |  
+|   61.      |     พอส's song                          |  
+|   62.      |     ไชโย ธนวัฒน์'s song                   |  
+|   63.      |     อาร์ม's song                         |  
+|   64.      |     ป้าง's song                          |  
+|   65.      |     Joey Mcintyre's song                |  
+|   66.      |     A1's song                           |  
+|   67.      |     Backstreet Boys's song              |  
+|   68.      |     Human Nature's song                 |  
+|   69.      |     All 4 One's song                    |  
+|   70.      |     Blue's song                         |  
+|   71.      |     Shayne Ward's song                  |  
 |------------------------------------------------------|
 */
 
 
 
-/* เพลงที่ 65   Added  Mar 2021 */
-/*
+
+/* เพลงที่ 124   Added 7 Mar 2021 */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
-"created_at","updated_at") VALUES (65,"","","1",
-"",
-"",
-"",
-"",
-"",
-"2021-03-07 08:05:04"
+"created_at","updated_at") VALUES (124,"71","71","1",
+"Until You",
+"2021-03-06 18:19:09",
+"http://p.kg.qq.com/photo_new/T002RM000002dvsSx27UO6o.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/8E5CDHa8HY2kvaBi-UntilYou?lang=en&g_f=personal",
+"2021-03-06 18:19:09",
+"2021-03-07 12:10:04"
 );
-*/
+
+/* เพลงที่ 123   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (123,"10","10","1",
+"วิดลัยหลายใจ",
+"2021-03-06 18:08:09",
+"http://p.kg.qq.com/photo_new/T002RM000sg0015xLBp4ZGAgd.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/j3A0fmWjmsMavW4W-?lang=en&g_f=personal",
+"2021-03-06 18:08:09",
+"2021-03-07 12:10:04"
+);
+
+
+/* เพลงที่ 122   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (122,"64","64","1",
+"ซ้ำ",
+"2021-03-06 17:59:09",
+"http://p.kg.qq.com/photo_new/T002RM000002h6BlW3blTAs.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/NIRviunNuUKwvnfy-?lang=en&g_f=personal",
+"2021-03-06 17:59:09",
+"2021-03-07 12:10:04"
+);
+
+
+/* เพลงที่ 121   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (121,"70","70","1",
+"Best In Me",
+"2021-03-06 17:49:09",
+"http://p.kg.qq.com/photo_new/T002RM000002PZjRo21Izjt.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/Lu-YBI9LICqLv99D-BestInMe?lang=en&g_f=personal",
+"2021-03-06 17:49:09",
+"2021-03-07 12:10:04"
+);
 
 
 
-/* เพลงที่ 64   Added  Mar 2021 */
+/* เพลงที่ 120   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (120,"69","69","1",
+"I Swear",
+"2021-03-06 17:39:09",
+"http://p.kg.qq.com/photo_new/T002RM000004Q68Hu0vAMd6.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/XHSUkEyXEvZ-vyfB-ISwear?lang=en&g_f=personal",
+"2021-03-06 17:39:09",
+"2021-03-07 12:10:04"
+);
+
+
+
+/* เพลงที่ 119   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (119,"68","68","1",
+"Eternal Flame",
+"2021-03-06 17:27:09",
+"http://p.kg.qq.com/photo_new/T002RM000004QcRoB4JigAo.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/vhxNJoevoXOKvep--EternalFlame?lang=en&g_f=personal",
+"2021-03-06 17:27:09",
+"2021-03-07 12:10:04"
+);
+
+
+/* เพลงที่ 118   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (118,"67","67","1",
+"Like A Child",
+"2021-03-06 17:19:09",
+"http://p.kg.qq.com/photo_new/T002RM000004LhDDa1NfIdX.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/02Zj97B074SovBeI-LikeaChild?lang=en&g_f=personal",
+"2021-03-06 17:19:09",
+"2021-03-07 12:10:04"
+);
+
+
+
+/* เพลงที่ 117   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (117,"66","66","1",
+"Tomorrow",
+"2021-03-06 17:06:25",
+"http://p.kg.qq.com/photo_new/T002RM000001FlPPm06aQUz.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/vhxNJoevoXONveJw-Tomorrow?lang=en&g_f=personal",
+"2021-03-06 17:06:25",
+"2021-03-07 12:10:04"
+);
+
+
+/* เพลงที่ 116   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (116,"65","65","1",
+"Stay The Same",
+"2021-03-06 16:49:02",
+"http://p.kg.qq.com/photo_new/T002RM000003EUdBr1YPjAF.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/vhxNJoevoXOpvesh-StaytheSameIntheStyleofJoeyMcintyreDemoVocalVersion?lang=en&g_f=personal",
+"2021-03-06 16:49:02",
+"2021-03-07 12:10:04"
+);
+
+
+/* เพลงที่ 115   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (115,"64","64","1",
+"หัวล้านใจน้อย",
+"2021-03-05 17:41:21",
+"http://p.kg.qq.com/photo_new/T002RM000sg004gLMtK2NUeOA.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/j3A0fmWjms65vWbv-?lang=en&g_f=personal",
+"2021-03-05 17:41:21",
+"2021-03-07 18:10:04"
+);
+
+
+
+/* เพลงที่ 114   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (114,"2","2","1",
+"สุดท้าย",
+"2021-03-05 17:21:10",
+"http://p.kg.qq.com/photo_new/T002RM000000zQnJw4dqdc9.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/oYeuTvxovEhvvx5Z-?lang=en&g_f=personal",
+"2021-03-05 17:21:10",
+"2021-03-07 18:10:04"
+);
+
+
+
+
+
+/* เพลงที่ 113   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (113,"60","60","1",
+"I lay My Love On You",
+"2021-03-05 17:08:08",
+"http://p.kg.qq.com/photo_new/T002RM000000CypQc0mKT3W.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/iZ2JNQPiQlBavPiM-ILayMyLoveOnYou?lang=en&amp;g_f=personal",
+"2021-03-05 17:08:08",
+"2021-03-07 18:10:04"
+);
+
+/* เพลงที่ 112   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (112,"60","60","1",
+"What Makes A Man",
+"2021-03-05 16:59:20",
+"http://p.kg.qq.com/photo_new/T002RM000002clV5Y0E5EBK.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/iZ2JNQPiQlBXvPkt-WhatMakesAManSingleRemix?lang=en&g_f=personal",
+"2021-03-05 16:59:20",
+"2021-03-07 18:10:04"
+);
+
+
+
+/* เพลงที่ 111   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (111,"12","12","1",
+"เผื่อใจไม่เป็น",
+"2021-03-05 16:46:17",
+"http://p.kg.qq.com/photo_new/T002RM000004Ec1fn3EzJHZ.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/qskgSwtqw3_DvtFm-?lang=en&g_f=personal",
+"2021-03-05 16:46:17",
+"2021-03-07 09:10:04"
+);
+
+
+
+/* เพลงที่ 110   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (110,"63","63","1",
+"ปื๊ด",
+"2021-03-05 16:34:01",
+"http://p.kg.qq.com/photo_new/T002RM000002qGoPF1zvT1e.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/bdza4GCbG9U3vCWE-?lang=en&g_f=personal",
+"2021-03-05 16:34:01",
+"2021-03-07 09:10:04"
+);
+
+
+/* เพลงที่ 109   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (109,"19","19","1",
+"แพ้ใจ",
+"2021-03-05 16:25:25",
+"http://p.kg.qq.com/photo_new/T002RM000002v7hjz0moWk9.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/sq_4aKDsKjkovDL2-?lang=en&g_f=personal",
+"2021-03-05 16:25:25",
+"2021-03-07 09:10:04"
+);
+
+
+/* เพลงที่ 108   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (108,"15","15","1",
+"ปลาทูนึ่ง",
+"2021-03-05 16:16:10",
+"http://p.kg.qq.com/photo_new/T002RM000003CuBIc1UlNH9.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/zUbHOCGzCId4vGzK-?lang=en&g_f=personal",
+"2021-03-05 16:16:10",
+"2021-03-07 09:10:04"
+);
+
+
+
+/* เพลงที่ 107   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (107,"40","40","1",
+"แบ๊ะ แบ๊ะ แบ๊ะ",
+"2021-03-02 15:30:10",
+"http://p.kg.qq.com/photo_new/T002RM000004CTit32W1ezm.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/uLnoQNRuNG-WvRAC-?lang=en&g_f=personal",
+"2021-03-02 15:30:10",
+"2021-03-07 09:10:04"
+);
+
+
+/* เพลงที่ 106   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (106,"62","62","1",
+"หนุ่มเมืองเพชร",
+"2021-03-02 15:23:09",
+"http://p.kg.qq.com/photo_new/T002RM000000be0wJ4dKqYj.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/GpC51bzGbuMdvz12-?lang=en&g_f=personal",
+"2021-03-02 15:23:09",
+"2021-03-07 09:10:04"
+);
+
+
+
+/* เพลงที่ 105   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (105,"61","61","1",
+"ที่ว่าง",
+"2021-02-24 16:54:15",
+"http://p.kg.qq.com/photo_new/T002RM000003QRss81IaYgh.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/GpC51bzGbQC-vzqo-?lang=en&g_f=personal",
+"2021-02-24 16:54:15",
+"2021-03-07 09:10:04"
+);
+
+
+/* เพลงที่ 104   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (104,"40","40","1",
+"สวยแล้วหยิ่ง",
+"2021-02-24 16:34:20",
+"http://p.kg.qq.com/photo_new/T002RM000004CTit32W1ezm.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/k_qlXtwktft_vwX_-?lang=en&g_f=personal",
+"2021-02-24 16:34:20",
+"2021-03-07 09:10:04"
+);
+
+
+/* เพลงที่ 103   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (103,"40","40","1",
+"เฒ่าหัวงู",
+"2021-02-24 16:18:10",
+"http://p.kg.qq.com/photo_new/T002RM000004CTit32W1ezm.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/HXaz_85H838vv5dW-?lang=en&g_f=personal",
+"2021-02-24 16:18:10",
+"2021-03-07 09:10:04"
+);
+
+
+
+/* เพลงที่ 102   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (102,"20","20","1",
+"สัญญาเมื่อสายัณห์",
+"2021-02-24 15:38:12",
+"http://p.kg.qq.com/photo_new/T002RM0000000Xagz3uKcRb.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/6mTPe3J6383UvJsj-?lang=en&g_f=personal",
+"2021-02-24 15:38:12",
+"2021-03-07 09:10:04"
+);
+
+
+/* เพลงที่ 101   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (101,"60","60","1",
+"My Love",
+"2021-02-23 17:48:05",
+"http://p.kg.qq.com/photo_new/T002RM000002clV5Y0E5EBK.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/lOgkUVrlV9LOvrla-MyLove?lang=en&g_f=personal",
+"2021-02-23 17:48:05",
+"2021-03-07 09:10:04"
+);
+
+
+
+
+/* เพลงที่ 100   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (100,"59","59","1",
+"เรื่องจริง",
+"2021-02-23 17:37:15",
+"http://p.kg.qq.com/photo_new/T002RM000004FKyPe2uvAt1.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/3jJ2x6T36H5yvTZS-?lang=en&g_f=personal",
+"2021-02-23 17:37:15",
+"2021-03-07 09:10:04"
+);
+
+
+
+/* เพลงที่ 99   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (99,"58","58","1",
+"Unwell",
+"2021-02-15 17:05:55",
+"http://p.kg.qq.com/photo_new/T002RM0000035DnXL1p51oj.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/HXaz_85H83Tav5Za-UnwellIntheStyleofMatchboxTwentyDemoVocalVersion?lang=en&g_f=personal",
+"2021-02-15 17:05:55",
+"2021-03-07 09:10:04"
+);
+
+
+
+/* เพลงที่ 98   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (98,"40","40","1",
+"ไม่เฮิร์ทด้วยหรอก",
+"2021-02-15 16:55:55",
+"http://p.kg.qq.com/photo_new/T002RM000004CTit32W1ezm.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/Lu-YBI9LIrllv9aJ-?lang=en&g_f=personal",
+"2021-02-15 16:55:55",
+"2021-03-07 09:10:04"
+);
+
+
+
+/* เพลงที่ 97   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (97,"49","49","1",
+"คนไม่จำเป็น",
+"2020-12-15 14:50:37",
+"http://p.kg.qq.com/photo_new/T002RM000000Ayg3G0WCs7N.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/vhxNJoevYz0tvel6-?lang=en&g_f=personal",
+"2020-12-15 14:50:37",
+"2021-03-07 09:10:04"
+);
+
+
+
+
+/* เพลงที่ 96   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (96,"57","57","1",
+"แพ้ทาง",
+"2020-12-15 14:32:35",
+"http://p.kg.qq.com/photo_new/T002RM000003xIRNu3QdeuB.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/bdza4GCbpxk1vCjC-?lang=en&g_f=personal",
+"2020-12-15 14:32:35",
+"2021-03-07 09:10:04"
+);
+
+
+
+
+/* เพลงที่ 95   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (95,"8","8","1",
+"อย่ารักกันเลย",
+"2020-12-15 14:20:34",
+"http://p.kg.qq.com/photo_new/T002RM0000013CJfy0dDhkX.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/4gOsb1c4r3XJvcNu-?lang=en&amp;g_f=personal",
+"2020-12-15 14:20:34",
+"2021-03-07 09:10:04"
+);
+
+
+
+/* เพลงที่ 94   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (94,"56","56","1",
+"หวังดีเสมอ",
+"2020-12-15 14:03:32",
+"http://p.kg.qq.com/photo_new/T002RM000000mGuI71jrHSz.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/VcrtMlgVOW5_vg5a-?lang=en&amp;g_f=personal",
+"2020-12-15 14:03:32",
+"2021-03-07 09:10:04"
+);
+
+
+
+/* เพลงที่ 93   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (93,"55","55","1",
+"Underneath Your Clothes",
+"2020-12-15 13:50:29",
+"http://p.kg.qq.com/photo_new/T002RM000003emqVP0OXqCb.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/4gOsb1c4r3yHvcf6-UnderneathYourClothes?lang=en&g_f=personal",
+"2020-12-15 13:50:29",
+"2021-03-07 09:10:04"
+);
+
+
+
+
+
+/* เพลงที่ 92   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (92,"54","54","1",
+"Sexed Up",
+"2020-12-15 11:50:30",
+"http://p.kg.qq.com/photo_new/T002RM000001L7adS4WlRa0.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/eFon6xvefG6lvv0z-SexedUp2004MixRadioEdit?lang=en&g_f=personal",
+"2020-12-15 11:50:30",
+"2021-03-07 07:10:04"
+);
+
+
+
+/* เพลงที่ 91   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (91,"3","3","1",
+"ฟ้ากับเหว",
+"2020-12-4 17:45:28",
+"http://p.kg.qq.com/photo_new/T002RM000001MsHHR06cQBg.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/zUbHOCGzM0C3vGh7-?lang=en&g_f=personal",
+"2020-12-4 17:45:28",
+"2021-03-07 07:10:04"
+);
+
+
+
+/* เพลงที่ 90   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (90,"3","3","1",
+"ดูโง่โง่",
+"2020-12-4 16:11:25",
+"http://p.kg.qq.com/photo_new/T002RM000sg002JcRE71IktjD.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/UzdXlMpUC2b1vpv7-?lang=en&g_f=personal",
+"2020-12-4 16:11:25",
+"2021-03-07 08:10:04"
+);
+
+
+
+/* เพลงที่ 89   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (89,"53","53","1",
+"ทิ้งฉันลง ทิ้งฉันเลย",
+"2020-12-4 16:01:23",
+"http://p.kg.qq.com/photo_new/T002RM000sg003pnPFP2HHGab.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/VcrtMlgVOn1NvgIl-?lang=en&amp;g_f=personal",
+"2020-12-4 16:01:23",
+"2021-03-07 08:10:04"
+);
+
+
+
+/* เพลงที่ 88   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (88,"52","52","1",
+"ระแวง",
+"2020-12-4 15:51:19",
+"http://p.kg.qq.com/photo_new/T002RM000002Pos7e43SUTO.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/pGMyrdUpbQC3vUB5-?lang=en&g_f=personal",
+"2020-12-4 15:51:19",
+"2021-03-07 07:10:04"
+);
+
+
+
+/* เพลงที่ 87   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (87,"51","51","1",
+"เรื่องขี้หมา",
+"2020-12-4 15:42:18",
+"http://p.kg.qq.com/photo_new/T002RM000003eDGat2PRIK6.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/HXaz_85HEjSav5IP-?lang=en&amp;g_f=personal",
+"2020-12-4 15:42:18",
+"2021-03-07 07:10:04"
+);
+
+
+
+
+
+/* เพลงที่ 86   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (86,"24","24","1",
+"เหตุผลคนโง่",
+"2020-12-4 15:26:12",
+"http://p.kg.qq.com/photo_new/T002RM000002lVBj51MXn3W.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/NIRviunNLg9lvnWt-?lang=en&amp;g_f=personal",
+"2020-12-4 15:26:12",
+"2021-03-07 07:10:04"
+);
+
+
+
+/* เพลงที่ 85   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (85,"3","3","1",
+"ฉันเอง",
+"2020-12-3 20:14:09",
+"http://p.kg.qq.com/photo_new/T002RM000004CMTL63l3xQ2.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/4gOsb1c4rINavcfg-?lang=en&g_f=personal",
+"2020-12-3 20:14:09",
+"2021-03-07 07:10:04"
+);
+
+
+
+
+
+/* เพลงที่ 84   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (84,"50","50","1",
+"หมากัด",
+"2020-12-3 19:56:16",
+"http://p.kg.qq.com/photo_new/T002RM000000mtRz04dCEIs.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/hvfIAYFhosqzvFz_-?lang=en&amp;g_f=personal",
+"2020-12-3 19:56:16",
+"2021-03-07 07:10:04"
+);
+
+
+
+
+/* เพลงที่ 83   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (83,"49","49","1",
+"ไกลแค่ไหนคือใกล้",
+"2020-12-3 19:39:13",
+"http://p.kg.qq.com/photo_new/T002RM000000gc0vk2VQd0h.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/QBPTui2QZpzJv2Rg-SpecialVersion?lang=en&amp;g_f=personal",
+"2020-12-3 19:39:13",
+"2021-03-07 07:11:04"
+);
+
+
+
+/* เพลงที่ 82   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (82,"8","8","1",
+"หยดน้ำ",
+"2020-12-3 19:14:11",
+"http://p.kg.qq.com/photo_new/T002RM000002O2JBq2PZoMF.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/TW6QoJ3TAyHvv33W-?lang=en&amp;g_f=personal",
+"2020-12-3 19:14:11",
+"2021-03-07 07:10:04"
+);
+
+
+/* เพลงที่ 81   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (81,"11","11","1",
+"รอ",
+"2020-12-3 18:59:08",
+"http://p.kg.qq.com/photo_new/T002RM000sg003j52v84HU1rj.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/20i3RPQ27UGMvQEt-Remaster?lang=en&amp;g_f=personal",
+"2020-12-3 18:59:08",
+"2021-03-07 07:10:04"
+);
+
+
+
+
+
+/* เพลงที่ 80   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (80,"36","36","1",
+"เลิกรา",
+"2020-12-3 18:40:05",
+"http://p.kg.qq.com/photo_new/T002RM000000uhavc1qXjKu.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/3jJ2x6T3mX5ovT7P-?lang=en&amp;g_f=personal",
+"2020-12-3 18:40:05",
+"2021-03-07 06:56:04"
+);
+
+
+/* เพลงที่ 79   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (79,"2","2","1",
+"ระยะสุดท้าย",
+"2020-12-3 18:33:03",
+"http://p.kg.qq.com/photo_new/T002RM000003gYhVC3NjlX9.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/VcrtMlgVOnoXvgVG-?lang=en&amp;g_f=personal",
+"2020-12-3 18:33:03",
+"2021-03-07 06:56:04"
+);
+
+
+
+/* เพลงที่ 78   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (78,"20","20","1",
+"ยืดเยื้อ",
+"2020-12-3 18:22:59",
+"http://p.kg.qq.com/photo_new/T002RM0000000Xagz3uKcRb.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/8E5CDHa8XmBhvaB8-?lang=en&amp;g_f=personal",
+"2020-12-3 18:22:59",
+"2021-03-07 06:56:04"
+);
+
+
+
+/* เพลงที่ 77   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (77,"36","36","1",
+"ถ้าเธอต้องการ",
+"2020-12-3 18:11:57",
+"http://p.kg.qq.com/photo_new/T002RM000000zDk5t2n95Ix.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/oYeuTvxohwVLvxHU-?lang=en&g_f=personal",
+"2020-12-3 18:11:57",
+"2021-03-07 06:56:04"
+);
+
+
+
+/* เพลงที่ 76   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (76,"48","48","1",
+"คนรักกัน",
+"2020-12-3 17:58:54",
+"http://p.kg.qq.com/photo_new/T002RM00000344iHB24Sv7r.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/NIRviunNLgk6vnXe-?lang=en&g_f=personal",
+"2020-12-3 17:58:54",
+"2021-03-07 06:49:04"
+);
+
+
+
+
+/* เพลงที่ 75   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (75,"32","32","1",
+"กรุณาฟังให้จบ",
+"2020-12-3 17:15:52",
+"http://p.kg.qq.com/photo_new/T002RM00000419NU74aypH4.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/UzdXlMpUC26QvpLy-?lang=en&amp;g_f=personal",
+"2020-12-3 17:15:52",
+"2021-03-07 06:49:04"
+);
+
+
+
+/* เพลงที่ 74   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (74,"46","46","1",
+"ไม่ต้องทอน",
+"2020-12-3 17:03:50",
+"http://p.kg.qq.com/photo_new/T002RM000001cDyYq122DLS.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/HXaz_85HEj7Uv5-s-?lang=en&amp;g_f=personal",
+"2020-12-3 17:03:50",
+"2021-03-07 06:45:50"
+);
+
+
+
+/* เพลงที่ 73   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (73,"47","47","1",
+"ดูเอาเอง",
+"2020-12-1 19:55:46",
+"http://p.kg.qq.com/photo_new/T002RM0000016egdd4ZyElR.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/lOgkUVrlcQMGvr9o-?lang=en&amp;g_f=personal",
+"2020-12-1 19:55:46",
+"2021-03-07 06:45:04"
+);
+
+
+/* เพลงที่ 72   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (72,"46","46","1",
+"คำตอบ",
+"2020-12-1 19:11:44",
+"http://p.kg.qq.com/photo_new/T002RM000001cDyYq122DLS.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/3jJ2x6T3mweEvTdj-?lang=en&amp;g_f=personal",
+"2020-12-1 19:11:44",
+"2021-03-07 06:41:04"
+);
+
+
+
+/* เพลงที่ 71   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (71,"42","42","1",
+"บัวช้ำน้ำขุ่น",
+"2020-12-1 17:47:40",
+"http://p.kg.qq.com/photo_new/T002RM000000iNEmj0btiFm.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/oYeuTvxohXeZvxTb-?lang=en&g_f=personal",
+"2020-12-1 17:47:40",
+"2021-03-07 06:41:04"
+);
+
+
+
+
+
+
+/* เพลงที่ 70   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (70,"45","45","1",
+"ตายในหน้าที่",
+"2020-12-1 17:27:37",
+"http://p.kg.qq.com/photo_new/T002RM000000RTOif2WXlwo.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/P7Q6n2iP0g2MviYi-?lang=en&g_f=personal",
+"2020-12-1 17:27:37",
+"2021-03-07 06:38:04"
+);
+
+
+
+/* เพลงที่ 69   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (69,"45","45","1",
+"คนมีคู่ไม่รู้หรอก",
+"2020-12-1 17:18:37",
+"http://p.kg.qq.com/photo_new/T002RM000002xfNxc140gsS.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/3jJ2x6T3mw6lvTHg-?lang=en&amp;g_f=personal",
+"2020-12-1 17:18:37",
+"2021-03-07 06:36:04"
+);
+
+
+
+/* เพลงที่ 68   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (68,"44","44","1",
+"คนดำรักจริง",
+"2020-12-1 15:30:33",
+"http://p.kg.qq.com/wsingmvf/2122678496/89e7a4e8f59d82c5047e47ef83f9fafc5981a1ad/0?j=nMl9ssowtibXicUj8k0ib8575Wlhysouh3Q4mslhx4v2erSwkiaNvTxL4b2eAeG8DBLmR9icy1ATzxiaTtBKJvclIyM1icMpTENkVpKWusoYsPnibQaLiaX3Oa0OZpI3ntkbIDxjlGZbSRibnyDyc",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/xfvR3eoxFyF7vogc-?lang=en&amp;g_f=personal",
+"2020-12-1 15:30:33",
+"2021-03-07 06:26:04"
+);
+
+
+
+/* เพลงที่ 67   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (67,"43","43","1",
+"คนทางนั้น",
+"2020-12-1 15:20:31",
+"http://p.kg.qq.com/photo_new/T002RM000003oHTAa3JV8wE.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/-nLF79I-RbuWvI32-?lang=en&amp;g_f=personal",
+"2020-12-1 15:20:31",
+"2021-03-07 06:26:04"
+);
+
+
+/* เพลงที่ 66   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (66,"42","42","1",
+"แพ้คนสวย",
+"2020-12-1 15:06:29",
+"http://p.kg.qq.com/photo_new/T002RM000002y3fOH1AB7Z0.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/lOgkUVrlcQ47vrJr-?lang=en&amp;g_f=personal",
+"2020-12-1 15:06:29",
+"2021-03-07 06:26:04"
+);
+
+
+/* เพลงที่ 65   Added 7 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (65,"41","41","1",
+"เปลือง",
+"2020-12-1 14:49:24",
+"http://p.kg.qq.com/photo_new/T002RM000001uQCel1vcbZM.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/-nLF79I-Rbu2vITg-?lang=en&g_f=personal",
+"2020-12-1 14:49:24" ,
+"2021-03-07 05:14:04"
+);
+
+
+
+
+
+
+
+/* เพลงที่ 64   Added 6 Mar 2021 */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (64,"30","30","1",
@@ -130,7 +1019,7 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 
 
-/* เพลงที่ 63   Added  Mar 2021 */
+/* เพลงที่ 63   Added 6 Mar 2021 */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (63,"40","40","1",
@@ -144,7 +1033,7 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 
 
-/* เพลงที่ 62   Added  Mar 2021 */
+/* เพลงที่ 62   Added 6 Mar 2021 */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (62,"2","2","1",
@@ -157,7 +1046,7 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 );
 
 
-/* เพลงที่ 61   Added  Mar 2021 */
+/* เพลงที่ 61   Added 6 Mar 2021 */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (61,"29","29","1",
@@ -171,7 +1060,7 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 
 
-/* เพลงที่ 60   Added  Mar 2021 */
+/* เพลงที่ 60   Added 6 Mar 2021 */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (60,"40","40","1",
@@ -185,7 +1074,7 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 
 
-/* เพลงที่ 59   Added  Mar 2021 */
+/* เพลงที่ 59   Added 6 Mar 2021 */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (59,"40","40","1",
@@ -200,7 +1089,7 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 
 
-/* เพลงที่ 58   Added  Mar 2021 */
+/* เพลงที่ 58   Added 6 Mar 2021 */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (58,"40","40","1",
@@ -217,7 +1106,7 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 
 
-/* เพลงที่ 57   Added  Mar 2021 */
+/* เพลงที่ 57   Added 6 Mar 2021 */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (57,"39","39","1",
@@ -235,7 +1124,7 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 
 
-/* เพลงที่ 56   Added  Mar 2021 */
+/* เพลงที่ 56   Added 6 Mar 2021 */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (56,"38","38","1",
@@ -253,7 +1142,7 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 
 
-/* เพลงที่ 54   Added  Mar 2021 */
+/* เพลงที่ 54   Added 6 Mar 2021 */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (54,"37","37","1",
@@ -266,7 +1155,7 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 );
 
 
-/* เพลงที่ 53   Added  Mar 2021 */
+/* เพลงที่ 53   Added 6 Mar 2021 */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (53,"36","36","1",
@@ -280,7 +1169,7 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 
 
-/* เพลงที่ 52   Added  Mar 2021 */
+/* เพลงที่ 52   Added 6 Mar 2021 */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (52,"24","24","1",
@@ -294,7 +1183,7 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 
 
-/* เพลงที่ 51   Added  Mar 2021 */
+/* เพลงที่ 51   Added 6 Mar 2021 */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (51,"35","35","1",
@@ -309,7 +1198,7 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 
 
-/* เพลงที่ 50   Added  Mar 2021 */
+/* เพลงที่ 50   Added 6 Mar 2021 */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (50,"15","15","1",
@@ -323,7 +1212,7 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 
 
-/* เพลงที่ 49   Added  Mar 2021 */
+/* เพลงที่ 49   Added 6 Mar 2021 */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (49,"15","15","1",
@@ -337,7 +1226,7 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 
 
-/* เพลงที่ 48   Added  Mar 2021 */
+/* เพลงที่ 48   Added 6 Mar 2021 */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (48,"34","34","1",
@@ -352,7 +1241,7 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 
 
-/* เพลงที่ 47   Added  Mar 2021 */
+/* เพลงที่ 47   Added 6 Mar 2021 */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (47,"33","33","1",
@@ -368,7 +1257,7 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 
 
-/* เพลงที่ 46   Added  Mar 2021 */
+/* เพลงที่ 46   Added 6 Mar 2021 */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (46,"32","32","1",
@@ -383,7 +1272,7 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 
 
-/* เพลงที่ 45   Added  Mar 2021 */
+/* เพลงที่ 45   Added 6 Mar 2021 */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (45,"29","29","1",
@@ -399,7 +1288,7 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 
 
-/* เพลงที่  44  Added  Mar 2021 */
+/* เพลงที่  44  Added 6 Mar 2021 */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (44,"31","31","1",
@@ -414,7 +1303,7 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 
 
-/* เพลงที่ 43   Added  Mar 2021 */
+/* เพลงที่ 43   Added 6 Mar 2021 */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (43,"30","30","1",
@@ -1024,7 +1913,7 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 
 
 
-/* เพลงที่ 4 เรื่องบนเตียง - บอย พีชเมกเกอร์  */
+/* เพลงที่ 4 เรื่องบนเตียง */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (4,"2","2","1",
@@ -1052,7 +1941,7 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 );
 
 
-/* เพลงที่ 2 ส่วนเกิน - บอย พีชเมกเกอร์  */
+/* เพลงที่ 2 ส่วนเกิน  */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (2,"2","2","1",
