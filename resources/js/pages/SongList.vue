@@ -4,13 +4,22 @@
         <div class="row">
             <div class="col-md-4" v-for="so in songs.data">
                 
-                <div class="card card-body">
-                   <a class="" target="_blank" :href="so.url">
-                        <img :src="so.cover" class="responsive">
+                <div class="card ">
+                   <a class="" target="_blank" :href="so.url" 
+                   @click.prevent="readCount(so.id)">
+                        <img :src="so.cover" class="responsive card-image-top">
                    </a>
-                   <span class="btn btn-outline-info btn-sm">
-                        {{so.name}} - {{moment(so.posted_at).fromNow()}}
-                   </span>
+                    <div class="card-body">
+                        <p class="card-text">
+                            {{so.name}}
+                        </p>
+                        <p class="card-text">
+                        {{moment(so.posted_ar).fromNow()}} - 
+                         <b-icon icon="headphones"></b-icon> 
+                         {{so.read_count}}
+                            
+                        </p>
+                    </div>
                 </div>
 
 
@@ -57,6 +66,19 @@ export default{
         return{
             moment:moment
         }
-    }
+    },
+methods:{
+            readCount(id){
+             let url = `/readCount/${id}` 
+             axios.get(url)
+             .then(res=>{
+                //console.log(res.data.url)
+                window.open(res.data.url,"_blank")
+                setTimeout(()=>{
+                    this.$emit("getSongList")
+                        },2000) 
+                     })
+            },
+        },
 }
 </script>

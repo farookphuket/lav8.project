@@ -447,6 +447,12 @@ app should be appear.
 > The component I have create call "song"
 
 
+> Icon I've copy the from https://bootstrap-vue.org/docs/icons 
+> to use the icon `<b-icon icon="headphones"></b-icon>` 
+
+
+
+
 # Date 5 Mar 2021 
 
 > show song list with the cover rows 

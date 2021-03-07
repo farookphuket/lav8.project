@@ -122,6 +122,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -131,6 +140,20 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
     return {
       moment: moment
     };
+  },
+  methods: {
+    readCount: function readCount(id) {
+      var _this = this;
+
+      var url = "/readCount/".concat(id);
+      axios.get(url).then(function (res) {
+        //console.log(res.data.url)
+        window.open(res.data.url, "_blank");
+        setTimeout(function () {
+          _this.$emit("getSongList");
+        }, 2000);
+      });
+    }
   }
 });
 
@@ -199,18 +222,52 @@ var render = function() {
       { staticClass: "row" },
       _vm._l(_vm.songs.data, function(so) {
         return _c("div", { staticClass: "col-md-4" }, [
-          _c("div", { staticClass: "card card-body" }, [
-            _c("a", { attrs: { target: "_blank", href: so.url } }, [
-              _c("img", { staticClass: "responsive", attrs: { src: so.cover } })
-            ]),
+          _c("div", { staticClass: "card " }, [
+            _c(
+              "a",
+              {
+                attrs: { target: "_blank", href: so.url },
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.readCount(so.id)
+                  }
+                }
+              },
+              [
+                _c("img", {
+                  staticClass: "responsive card-image-top",
+                  attrs: { src: so.cover }
+                })
+              ]
+            ),
             _vm._v(" "),
-            _c("span", { staticClass: "btn btn-outline-info btn-sm" }, [
-              _vm._v(
-                "\n                    " +
-                  _vm._s(so.name) +
-                  " - " +
-                  _vm._s(_vm.moment(so.posted_at).fromNow()) +
-                  "\n               "
+            _c("div", { staticClass: "card-body" }, [
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v(
+                  "\n                        " +
+                    _vm._s(so.name) +
+                    "\n                    "
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "p",
+                { staticClass: "card-text" },
+                [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(_vm.moment(so.posted_ar).fromNow()) +
+                      " - \n                     "
+                  ),
+                  _c("b-icon", { attrs: { icon: "headphones" } }),
+                  _vm._v(
+                    " \n                     " +
+                      _vm._s(so.read_count) +
+                      "\n                        \n                    "
+                  )
+                ],
+                1
               )
             ])
           ])

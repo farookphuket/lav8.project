@@ -49,6 +49,7 @@ Route::get("/about",[PubPost::class,'about'])->name('posts.about');
 
 Route::resource("/song",pSong::class);
 Route::get("/getSongList",[pSong::class,'getSongList'])->name("getSongList");
+Route::get("/readCount/{id}",[pSong::class,'readCount'])->name("readCount");
 
 
 /* call by Vue START*/

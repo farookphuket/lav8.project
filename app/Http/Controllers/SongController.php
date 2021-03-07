@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Song;
 use Illuminate\Http\Request;
 
+use DB;
+
 class SongController extends Controller
 {
     /**
@@ -26,7 +28,10 @@ class SongController extends Controller
                         ->with("album")
                         ->paginate(24)
                         ->onEachSide(1);
-        return response()->json(["songs" => $songs]);
+        return response()->json([
+            "songs" => $songs
+            
+        ]);
     }
     /**
      * Show the form for creating a new resource.
@@ -60,6 +65,42 @@ class SongController extends Controller
         //
     }
 
+    public function readCount($song_id){
+
+        $read_time = 0;
+        $today = date("Y-m-d");
+        $cur_ip = getUserIp();
+        $cur_browser = getUserBrowser();
+
+        $cur_os = getUserOs();
+        $get = DB::table('read_song')->where("song_id",$song_id)
+                        ->where("readed_at",$today)
+                        ->where("ip",$cur_ip)
+                        ->get();
+        if(count($get) == 0):
+            DB::table("read_song")->insert([
+                "song_id" => $song_id,
+                "ip" => $cur_ip,
+                "os" => $cur_os,
+                "readed_at" => $today,
+                "browser" => $cur_browser,
+                "created_at" => now(),
+                "updated_at" => now()
+            ]);
+            $get = DB::table('read_song')->where("song_id",$song_id)->get();
+            $read_time = count($get);
+
+            Song::where("id",$song_id)->update([
+                "read_count" => $read_time
+            ]);
+        endif;
+            $url = "";
+            $get = Song::find($song_id);
+            $url = $get->url;
+        return response()->json([
+            "url" => $url,
+        ]);
+    }
     /**
      * Show the form for editing the specified resource.
      *

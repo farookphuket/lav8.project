@@ -19,6 +19,7 @@ class CreateSongsTable extends Migration
             $table->foreignId("album_id");
             $table->foreignId("user_id");
             $table->string("name");
+            $table->integer("read_count")->default(0);
             $table->string("cover")->nullable();
             $table->string("url")->nullable();
             $table->dateTime("posted_at")->nullable();
@@ -58,6 +59,20 @@ class CreateSongsTable extends Migration
         });
 
 
+
+        Schema::create('read_song', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId("song_id");
+            $table->date("readed_at"); // this field accept date
+            $table->string("os");
+            $table->string("browser");
+            $table->string("ip");
+            $table->timestamps();
+
+            $table->foreign("song_id")->references("id")->on("songs")
+                    ->onDelete("cascade");
+        });
+
     }
 
     /**
@@ -70,5 +85,6 @@ class CreateSongsTable extends Migration
         Schema::dropIfExists('songs');
         Schema::dropIfExists('album');
         Schema::dropIfExists('artist');
+        Schema::dropIfExists('read_song');
     }
 }
