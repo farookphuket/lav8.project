@@ -481,6 +481,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 
@@ -1171,6 +1177,25 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "clearfix" }, [
+            _c(
+              "div",
+              { staticClass: "float-left" },
+              _vm._l(li.tags, function(ta) {
+                return _c(
+                  "button",
+                  { staticClass: "btn btn-outline-info btn-sm" },
+                  [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(ta.tag_name) +
+                        "\n               "
+                    )
+                  ]
+                )
+              }),
+              0
+            ),
+            _vm._v(" "),
             _c("div", { staticClass: "float-right" }, [
               li.is_public == 1
                 ? _c("span", { staticClass: "alert alert-success" }, [

@@ -131,6 +131,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -221,7 +226,7 @@ var render = function() {
       "div",
       { staticClass: "row" },
       _vm._l(_vm.songs.data, function(so) {
-        return _c("div", { staticClass: "col-md-4" }, [
+        return _c("div", { staticClass: "col-md-3" }, [
           _c("div", { staticClass: "card " }, [
             _c(
               "a",
@@ -247,28 +252,35 @@ var render = function() {
                 _vm._v(
                   "\n                        " +
                     _vm._s(so.name) +
+                    " - " +
+                    _vm._s(so.user.name) +
                     "\n                    "
                 )
               ]),
               _vm._v(" "),
-              _c(
-                "p",
-                { staticClass: "card-text" },
-                [
+              _c("p", { staticClass: "card-text" }, [
+                _c("span", { staticClass: "badge badge-info" }, [
                   _vm._v(
-                    "\n                    " +
-                      _vm._s(_vm.moment(so.posted_ar).fromNow()) +
-                      " - \n                     "
-                  ),
-                  _c("b-icon", { attrs: { icon: "headphones" } }),
-                  _vm._v(
-                    " \n                     " +
-                      _vm._s(so.read_count) +
-                      "\n                        \n                    "
+                    "\n                        " +
+                      _vm._s(_vm.moment(so.posted_at).fromNow()) +
+                      "\n                    "
                   )
-                ],
-                1
-              )
+                ]),
+                _vm._v(" \n                     - \n                    "),
+                _c(
+                  "span",
+                  { staticClass: "badge badge-info" },
+                  [
+                    _c("b-icon", { attrs: { icon: "headphones" } }),
+                    _vm._v(
+                      " \n                         " +
+                        _vm._s(so.read_count) +
+                        "\n                    "
+                    )
+                  ],
+                  1
+                )
+              ])
             ])
           ])
         ])

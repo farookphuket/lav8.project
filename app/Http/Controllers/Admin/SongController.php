@@ -35,7 +35,9 @@ class SongController extends Controller
         $songs = Song::with('user')
                     ->with("artist")
                     ->with("album")
-                    ->get();
+                    ->orderBy("posted_at","DESC")
+                    ->paginate(24)
+                    ->onEachSide(1);
         $artists = $this->getArtistList();
         $albums = $this->getAlbumList();
 

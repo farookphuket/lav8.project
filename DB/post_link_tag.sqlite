@@ -1,7 +1,5 @@
 
 /* 
-
-
 This table will be link the post and Tag
 
 Tag table 
@@ -18,18 +16,14 @@ Tag table
 |                    |              |
 ------------------------------------
 
-
-please go to file "postList.sqlite" to the detail of post
-Post list
-1. How can I add datetime to .sqlite for auto data
-2. How can I setup lamp server on Manjaro 20.2.2 
-3. I am finally can get the keyboard layout now   
-4. get to know and how to use cmus in my 15 minute
-5. simple thing some time is not simple
-6. หนังสือนิยาย เพชรพระอุมา ตอน ไพรมหากาฬ 8 Feb 2021
-
-
 */
+
+
+/* post 11 เพชรพระอุมา ตอน จอมผีดิบมันตรัย has the tag 7 */
+INSERT INTO 'post_tag' ('id','post_id','tag_id','created_at','updated_at') 
+VALUES (NULL,'11','7',
+'2021-03-08 08:45:16',
+'2021-03-08 08:45:17');
 
 
 

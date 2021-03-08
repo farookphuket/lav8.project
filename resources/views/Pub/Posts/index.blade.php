@@ -55,6 +55,17 @@
               <p class="pt-4 mb-4">
                 {!!$item->post_excerpt!!}
               </p>
+                <div class="clearfix">
+                        <div class="float-right">
+                            @foreach($item->tags as $ta)
+                                <a 
+href='{{route('posts.index',['tag' => $ta->id])}}'
+class="btn btn-outline-info btn-sm">
+                                    {{$ta->tag_name}}
+                                </a>
+                            @endforeach
+                        </div>
+                </div>
             </article>
 
             <hr>

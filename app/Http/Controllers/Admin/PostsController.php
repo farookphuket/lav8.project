@@ -105,7 +105,8 @@ class PostsController extends Controller
         $this->validPost();
 
         //get the slug from post title
-        $slug = Str::slug(request('slug'));
+        //$slug = Str::slug(request('slug'));
+        $slug = request()->slug;
         
         // save the new post return the post->id
         $nPost = new Post();

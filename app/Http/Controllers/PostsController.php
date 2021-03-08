@@ -23,6 +23,7 @@ class PostsController extends Controller
             //return $posts;
         else:
             $posts = Post::where('is_public',true)
+                            ->with("tags")
                             ->orderBy('created_at','desc')
                             ->paginate(15)->onEachSide(1);
         endif;         

@@ -4,7 +4,8 @@
         <song-form :albums="albums" :editId="editId"
         :artists="artists" @getSongList="getSongList($event)"></song-form>
         <song-list :songList="songList" @getSongList="getSongList($event)"
-        @songDel="songDel($event)" @songEdit="songEdit($event)"></song-list>
+        @songDel="songDel($event)" @songEdit="songEdit($event)" 
+        @songShow="songShow($event)"></song-list>
 
 
         <b-modal title="Server Said : " centered ref="onOk" 
@@ -41,8 +42,12 @@ methods:{
                 let url = ""
                     if(page){
                         url = page
+                        this.$cookies.set("admin_song_old_page",url)
                     }
-                    url = `/admin/getSongList`
+                    url = this.$cookies.get("admin_song_old_page")
+                        if(!url){
+                            url = `/admin/getSongList`
+                        }
                     axios.get(url)
                     .then(res=>{
                     //console.log(res.data)
@@ -60,6 +65,16 @@ methods:{
                 .then(res=>{
                    this.res_status = res.data.msg 
                    this.$refs["onOk"].show()
+                        })
+            },
+            songShow(id){
+                let url = `/admin/song/${id}`
+                axios.get(url)
+                .then(res=>{
+                    console.log(res.data)
+                    let rData = res.data.song
+                    let url = rData.url
+                    window.open(url,"_blank")
                         })
             },
             closeBox(){

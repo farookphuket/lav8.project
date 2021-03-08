@@ -2,7 +2,7 @@
     <div>
         
         <div class="row">
-            <div class="col-md-4" v-for="so in songs.data">
+            <div class="col-md-3" v-for="so in songs.data">
                 
                 <div class="card ">
                    <a class="" target="_blank" :href="so.url" 
@@ -11,12 +11,17 @@
                    </a>
                     <div class="card-body">
                         <p class="card-text">
-                            {{so.name}}
+                            {{so.name}} - {{so.user.name}}
                         </p>
                         <p class="card-text">
-                        {{moment(so.posted_ar).fromNow()}} - 
-                         <b-icon icon="headphones"></b-icon> 
-                         {{so.read_count}}
+                        <span class="badge badge-info">
+                            {{moment(so.posted_at).fromNow()}}
+                        </span> 
+                         - 
+                        <span class="badge badge-info">
+                             <b-icon icon="headphones"></b-icon> 
+                             {{so.read_count}}
+                        </span>
                             
                         </p>
                     </div>

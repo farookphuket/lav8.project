@@ -27,6 +27,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -55,9 +56,15 @@ __webpack_require__.r(__webpack_exports__);
 
       if (page) {
         url = page;
+        this.$cookies.set("admin_song_old_page", url);
       }
 
-      url = "/admin/getSongList";
+      url = this.$cookies.get("admin_song_old_page");
+
+      if (!url) {
+        url = "/admin/getSongList";
+      }
+
       axios.get(url).then(function (res) {
         //console.log(res.data)
         _this.albums = res.data.albums;
@@ -76,6 +83,15 @@ __webpack_require__.r(__webpack_exports__);
         _this2.res_status = res.data.msg;
 
         _this2.$refs["onOk"].show();
+      });
+    },
+    songShow: function songShow(id) {
+      var url = "/admin/song/".concat(id);
+      axios.get(url).then(function (res) {
+        console.log(res.data);
+        var rData = res.data.song;
+        var url = rData.url;
+        window.open(url, "_blank");
       });
     },
     closeBox: function closeBox() {
@@ -404,6 +420,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -459,6 +497,9 @@ var render = function() {
           },
           songEdit: function($event) {
             return _vm.songEdit($event)
+          },
+          songShow: function($event) {
+            return _vm.songShow($event)
           }
         }
       }),
@@ -827,94 +868,163 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("table", { staticClass: "table table-striped pt-4" }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c(
-        "tbody",
-        _vm._l(_vm.songList, function(li) {
-          return _c("tr", [
-            _c("td", [
-              _c("div", [
-                _vm._v(
-                  "\n                        " +
-                    _vm._s(li.name) +
-                    "\n                    "
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", [
-                _vm._v(
-                  "\n                        " +
-                    _vm._s(li.user.name) +
-                    "\n                    "
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(li.artist.name))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(li.album.name))]),
-            _vm._v(" "),
-            _c("td", { staticStyle: { width: "35%" } }, [
-              _c("div", [
-                _vm._v(
-                  "\n                        " +
-                    _vm._s(_vm.moment(li.created_at)) +
-                    " · \n                        " +
-                    _vm._s(_vm.moment(li.created_at).fromNow()) +
-                    "\n                    "
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", [
-                _vm._v(
-                  "\n                        " +
-                    _vm._s(_vm.moment(li.updated_at)) +
-                    " · \n                        " +
-                    _vm._s(_vm.moment(li.updated_at).fromNow()) +
-                    "\n                    "
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("td", { staticStyle: { width: "10%" } }, [
-              _c("div", { staticClass: "btn-group" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-outline-warning btn-sm",
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.$emit("songEdit", li.id)
-                      }
+  return _c("div", { staticClass: "container" }, [
+    _c(
+      "div",
+      { staticClass: "row" },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._l(_vm.songList.data, function(so) {
+          return _c("div", { staticClass: "col-lg-3" }, [
+            _c("div", { staticClass: "card" }, [
+              _c(
+                "a",
+                {
+                  attrs: { href: "" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.$emit("songShow", so.id)
                     }
-                  },
-                  [_vm._v("edit")]
-                ),
+                  }
+                },
+                [
+                  _c("img", {
+                    staticClass: "responsive card-image-top",
+                    attrs: { src: so.cover, alt: "" }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-body" }, [
+                _c("p", { staticClass: "card-text" }, [
+                  _vm._v(_vm._s(so.name) + " - " + _vm._s(so.user.name))
+                ]),
                 _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-outline-danger btn-sm",
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.$emit("songDel", li.id)
-                      }
-                    }
-                  },
-                  [_vm._v("x")]
-                )
+                _c("div", { staticClass: "clearfix" }, [
+                  _c(
+                    "div",
+                    { staticClass: "float-left" },
+                    [
+                      _c("span", { staticClass: "badge badge-info" }, [
+                        _vm._v(
+                          "\n                                " +
+                            _vm._s(_vm.moment(so.posted_at).fromNow()) +
+                            "\n                            "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("b-icon", { attrs: { icon: "headphones" } }),
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(so.read_count) +
+                          " \n                        "
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "float-right" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-sm btn-outline-primary",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.$emit("songEdit", so.id)
+                          }
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n                                Edit\n                            "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-sm btn-outline-danger",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.$emit("songDel", so.id)
+                          }
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n                            x\n                            "
+                        )
+                      ]
+                    )
+                  ])
+                ])
               ])
             ])
           ])
         }),
-        0
-      )
-    ])
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-12" }, [
+          _c("div", { staticClass: "pa" }, [
+            _c(
+              "ul",
+              { staticClass: "pagination" },
+              [
+                _c("li", { staticClass: "page-item" }, [
+                  _vm._v(
+                    "\n                        showing from \n                        "
+                  ),
+                  _c("span", [_vm._v(_vm._s(_vm.songList.from))]),
+                  _vm._v(" to \n                        "),
+                  _c("span", [_vm._v(_vm._s(_vm.songList.to))]),
+                  _vm._v(" of \n                        "),
+                  _c("span", [_vm._v(_vm._s(_vm.songList.total))]),
+                  _vm._v(" · \n                    ")
+                ]),
+                _vm._v(" "),
+                _vm._l(_vm.songList.links, function(li) {
+                  return _c("li", { staticClass: "page-item" }, [
+                    li.url != null && li.active != true
+                      ? _c(
+                          "a",
+                          {
+                            attrs: { href: "" },
+                            domProps: { innerHTML: _vm._s(li.label) },
+                            on: {
+                              click: function($event) {
+                                $event.preventDefault()
+                                return _vm.$emit("getSongList", li.url)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(li.label))]
+                        )
+                      : _c(
+                          "span",
+                          {
+                            staticClass: "active",
+                            domProps: { innerHTML: _vm._s(li.label) }
+                          },
+                          [_vm._v(_vm._s(li.label))]
+                        )
+                  ])
+                }),
+                _vm._v(" "),
+                _c("li", { staticClass: "page-item" }, [
+                  _c("span", [_vm._v(_vm._s(_vm.songList.current_page))])
+                ])
+              ],
+              2
+            )
+          ])
+        ])
+      ],
+      2
+    )
   ])
 }
 var staticRenderFns = [
@@ -922,16 +1032,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("th", [_vm._v("title / record")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Artist")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Album")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Date")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Manage")])
+    return _c("div", { staticClass: "col-lg-12 mb-4" }, [
+      _c("h1", { staticClass: "text-center" }, [
+        _vm._v("\n                My Karaoke' \n            ")
+      ])
     ])
   }
 ]

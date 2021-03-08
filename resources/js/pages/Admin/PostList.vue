@@ -32,6 +32,12 @@
                 {{li.post_excerpt}}
             </div>
             <div class="clearfix">
+                <div class="float-left">
+                   <button class="btn btn-outline-info btn-sm"
+                   v-for="ta in li.tags">
+                    {{ta.tag_name}}
+                   </button>
+                </div>
                 <div class="float-right">
                     <span class="alert alert-success"
                           v-if="li.is_public == 1">Public</span>
