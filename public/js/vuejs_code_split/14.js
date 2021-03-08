@@ -87,8 +87,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["postlist", "owner_name", "tag_id"],
   data: function data() {
@@ -101,10 +99,6 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.tag = this.tag_id;
     this.getPosts();
-    console.log(this.$cookies.keys()); //   if(this.$cookies.get("old_tag_page")){
-    //       this.$cookies.remove("old_tag_page")
-    //   }
-    //   console.log(this.$cookies.keys())
   },
   methods: {
     getPosts: function getPosts(page) {
@@ -124,7 +118,7 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       axios.get(url).then(function (res) {
-        console.log(res.data);
+        // console.log(res.data)
         _this.posts = res.data.posts;
       });
     },
@@ -205,12 +199,8 @@ var render = function() {
     "div",
     { staticClass: "container" },
     [
-      _c("h1", [_vm._v("display post in tag using vue")]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "\n            what left to do is the pagination and styling!\n            "
-        )
+      _c("h1", [
+        _vm._v("Show by tag " + _vm._s(_vm.postlist.data.length) + " item(s).")
       ]),
       _vm._v(" "),
       _vm._l(_vm.posts.data, function(item) {
@@ -287,7 +277,7 @@ var render = function() {
                 "li",
                 { staticClass: "page-item", attrs: { tagkey: li.label } },
                 [
-                  !li.active && li.url !== null
+                  !li.active && li.url != null
                     ? _c(
                         "a",
                         {
@@ -310,7 +300,10 @@ var render = function() {
                       )
                     : _c(
                         "span",
-                        { domProps: { innerHTML: _vm._s(li.label) } },
+                        {
+                          staticClass: "active",
+                          domProps: { innerHTML: _vm._s(li.label) }
+                        },
                         [
                           _vm._v(
                             "\n                        " +

@@ -33,10 +33,13 @@
             </div>
             <div class="clearfix">
                 <div class="float-left">
-                   <button class="btn btn-outline-info btn-sm"
-                   v-for="ta in li.tags">
-                    {{ta.tag_name}}
-                   </button>
+                    <span v-for="ta in li.tags">
+                       <a @click.prevent="getPostByTagId(ta.id)" 
+                       class="btn btn-outline-info btn-sm"
+                       >
+                        {{ta.tag_name}}
+                       </a>
+                    </span>
                 </div>
                 <div class="float-right">
                     <span class="alert alert-success"
@@ -88,7 +91,7 @@
             </ul>
         </div><!-- end div.card-body -->
         <post-tag :tag_has_content="tag_with_content"
-                          :tag_all="tags"
+                          :tag_all="tag_all"
                           @getPostByTagId="getPostByTagId($event)"></post-tag>
     </div>
 </template>
@@ -106,7 +109,7 @@ export default{
             moment:moment
         }
     },
-    props:["posts","tag_with_content","tags"],
+    props:["posts","tag_with_content","tag_all"],
     methods:{
         getPostByTagId(id){
             let url = `/admin/getPostsByTag?tag=${id}`

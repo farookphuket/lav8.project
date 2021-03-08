@@ -21,12 +21,616 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
 
 '',
 
-'1','','2021-01-25','0',
-'2021-02-18 05:10:45',
-'2021-02-18 05:10:45'
+'1','','2021-03-08','0',
+'2021-03-08 15:22:45',
+'2021-03-08 15:45:45'
 );
 
 */
+
+
+
+
+
+/* หนังสือนิยาย เพชรพระอุมา ตอน แงซายจอมจักรา 8 Mar 2021  */
+INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+"post_body","is_public","last_read_ip","last_read_date","read_count",
+"created_at","updated_at") VALUES (14,
+'1',
+'หนังสือนิยาย เพชรพระอุมา ตอน แงซายจอมจักรา',
+
+'หนังสือนิยาย-เพชรพระอุมา-ตอน-แงซายจอมจักรา',
+
+'
+<div class="row">
+    <div class="col-lg-4">
+        <img src="https://lh3.googleusercontent.com/PZCqZ9vLP61C4BtGxNDSPQFyakMHYgW4C1YBtaWrX7nKtOhcrBJf5MbhGSjebdXzK4rJ9OHFZv9CO4GIhipclLkmNFOLv-bQZOQraNbbBC41gWntTjosEIiD_Kdhht2pGlpfqZ5KdSE=w2400" class="responsive" title="ตอน แงซายจอมจักรา">
+        <p class="pt-2 text-center">
+            ตอน แงซายจอมจักรา</p>
+    </div>
+    <div class="col-lg-8">
+        <p>
+            ฟังนิยายเพชรพระอุมา ตอน แงซายจอมจักรา
+        </p>
+        <p>
+            "เพชรพระอุมา" เป็นบทประพันธ์ของ "พนมเทียน" มีความยาวทั้งสิ้น 48 เล่ม
+            แบ่งออกเป็นสองภาค คือภาคแรกและภาคสมบูรณ์ ภาคละ 24 เล่ม เล่มละ 200 บาท
+            สั่งซื้อได้ตามร้านหนังสือทั่วไป
+        </p>
+        <p>
+            ห้องสมุดคอลฟิลด์เพื่อคนตาบอด ของมูลนิธิช่วยคนตาบอดแห่งประเทศไทย
+            ในพระบรมราชินูปถัมภ์ ได้นำมาจัดทำเป็นหนังสือเสียงทั้งสองภาค
+        </p>
+        <p>
+            ภาคแรกมีอาสาสมัครช่วยกันอ่านสองท่าน คือ คุณศศวรรณ อรรถจรรยากุล
+            เริ่มอ่านจากตอนต้น ..ไพรมหากาฬ ต่อด้วย..ดงมรณะไปถึงช่วงกลางๆ
+            จากนั้นคุณดวงวิภา ยุทธสุริยพันธุ์ อ่านต่อในส่วนที่เหลือจนจบทั้งสองภาค
+        </p>
+
+    </div>
+</div>
+
+
+',
+
+'
+<div>
+    <!-- no need class -->
+    <h1 class="text-center">
+        ตอน แงซายจอมจักรา</h1>
+    <p style="text-align:right;color:green;font-weight:bold;">
+        last edit 8 Mar 2021
+    </p>
+
+    <!-- copyright START -->
+    <div style="width:100%;background-color:#e7e7e7;
+        border:1px dashed #ffe3f4;text-align:center;">
+        <h2 style="text-align:center;padding:2px;
+            margin-top:1em;color:red;">
+            ใช้เพื่อฟังส่วนตัวเท่านั้น
+        </h2>
+        <p style="padding:2px;
+
+            background-color:#ffffff;
+            border:2px dotted #ff0000;">
+            ไฟล์เสียงเหล่านี้ได้ถูกจัดทำขึ้นด้วยจุดประสงค์เพื่อใช้ในการรับฟังเพื่อความบันเทิง
+            ส่วนตัวเท่านั้น ผู้นำเข้าได้มีการ อุดหนุนผลงานของผู้ประพันธ์ ที่ใช้นามปากกาว่า
+            "พนมเทียน" ครบทุกเล่มแล้ว ผู้นำเข้ามิได้มีเจตนาละเมิดลิขสิทธิ์แต่อย่างใด
+            ผู้นำเข้าไม่ได้มีผลประโยชน์ใดๆ ในด้านการค้า หรือกำไรจากการนำเข้า
+            ไฟล์เสียงเหล่านี้
+            มากไปกว่าการใช้งานเพื่อความบันเทิงโดยส่วนตัวและอยากเก็บผลงานเหล่านี้ไว้
+            เพื่อเปิดฟังส่วนตัวเท่านั้นไม่ได้มีเจตนา แจก จ่าย แต่อย่างใด
+            ทั้งนี้เจ้าของสิขสิทธิ์สามารถเรียกร้องให้ลบไฟล์เสียงเหล่านี้ออกได้ หากผู้ที่อ้าง
+            ว่าเป็นเจ้าของลิขสิทธิ์ สามารถพิสูจน์ได้ว่าเป็นเจ้าของลิขสิทธิ์ตัวจริงตามกฎหมาย
+        </p>
+        <p style="padding:2px;background-color:#ffffff;
+            border:2px dotted #ff0000;">
+            หากเจ้าของสิขสิทธิ์(ที่สามารถยืนยันตัวจริงได้) ต้องการให้ลบไฟล์เหล่านี้ที่ท่านมองว่า
+            มันเป็นการละเมิดลิขสิทธิ์ ผู้นำเข้ายินยอมที่จะลบไฟล์เสียงเหล่านี้ทันที
+            <br> กรุณาติดต่อทาง<strong>e-mail :</strong> <i>
+                <u>admin@farookphuket.com</u></i> หรือ
+            <i><u>admin@see-southern.com</u></i>
+        </p>
+    </div>
+    <!-- Copyright END -->
+
+    <!-- list of item START -->
+    <div class="mb-2 pt-4">
+        <h1 class="text-center">Clip 217 to 224</h1>
+        <div class="sound-container">
+            <iframe src="https://archive.org/embed/217to224" width="500" height="140" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""><br></iframe>
+        </div>
+        <p class="pt-2 mb-4 text-center">
+            ความยาว 9 ชั่วโมง 55 นาที 39 วินาที
+        </p>
+
+    </div>
+
+
+    <div class="mb-2 pt-2">
+
+        <h1 class="text-center">
+            Clip 225 to 230
+        </h1>
+        <div class="sound-container">
+            <iframe src="https://archive.org/embed/225-to-230" width="500" height="30" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""><br></iframe>
+        </div>
+        <p class="pt-2 mb-4 text-center">
+            ความยาว 7 ชั่วโมง 27 นาที 51 วินาที
+        </p>
+
+    </div>
+
+    <div class="pt-2 mb-2">
+
+        <h1 class="text-center">
+            Clip 231 to 237
+        </h1>
+        <div class="sound-container">
+            <iframe src="https://archive.org/embed/231-to-237" width="500" height="30" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""><br></iframe>
+        </div>
+        <p class="pt-2 mb-4 text-center">
+            ความยาว 8 ชั่วโมง 09 นาที 10 วินาที
+        </p>
+
+    </div>
+
+
+    <div class="pt-2 mb-2">
+        <h1 class="text-center">
+            Clip 238 to 244
+        </h1>
+        <div class="sound-container">
+            <iframe src="https://archive.org/embed/238to244" width="500" height="30" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""><br></iframe>
+        </div>
+        <p class="pt-2 mb-4 text-center">
+            ความยาว 8 ชั่วโมง 11 นาที 54 วินาที
+        </p>
+    </div>
+
+    <div class="pt-2 mb-2">
+        <h1 class="text-center">
+            Clip 245 to 249
+        </h1>
+        <div class="sound-container">
+            <iframe src="https://archive.org/embed/245to249" width="500" height="30" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""><br></iframe>
+        </div>
+        <p class="pt-2 mb-4 text-center">
+            ความยาว 6 ชั่วโมง 17 นาที 54 วินาที
+
+        </p>
+    </div>
+
+    <div class="pt-2 mb-2">
+        <h1 class="text-center">
+            Clip 250 to 257
+        </h1>
+        <div class="sound-container">
+            <iframe src="https://archive.org/embed/250-to-257" width="500" height="30" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""><br></iframe>
+        </div>
+        <p class="pt-2  text-center">
+            ความยาว 8 ชั่วโมง 18 นาที 18 วินาที
+
+        </p>
+        <p class="pt-2 mb-4">
+            จบตอน "แงซายจอมจักรา" แล้วครับ ตอนต่อไป "จอมพราน"
+
+        </p>
+    </div>
+
+
+
+    <!-- list item END -->
+
+    <p class="pt-4 mb-2">
+        เป็นการอัพเดทอีกครั้งเพื่อรวมคลิปเสียงไว้เป็นแค่ 6 คลิปเพื่อความสะดวกในการฟัง
+        ท่านสามารถปิดหน้าจอมือถือได้โดยที่คลิปจะยังเล่นอยู่ หากต้องการหยุดให้กดปุ่มหยุดเอาไว้
+        แต่อย่าปิดหน้าเวปเพราะว่าหากเปิดขึ้นมาใหม่จะเป็นการเริ่มเล่นใหม่ทั้งหมด
+    </p>
+
+
+
+
+    <div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div style="border:2px dashed #ff0000;
+        background-color:black;padding:5px;">
+                    <h1 class="text-center" style="color:red;">คำเตือน!</h1>
+                    <p style="color:white;font-weight:bold;
+                    margin-top:1em;margin-bottom:1em;text-align:center;">
+                        นี่อาจจะเป็นครั้งสุดท้ายของท่านที่จะได้ฟังนิยายจากเวปนี้ "รู้อะไรไม่สู้ รู้แบบนี้"
+                        เราเตือนคุณแล้ว เพราะฉะนั้นจัดการตัวเองซะ จงทำในสิ่งที่ต้องทำ
+                        มันมีลิ้งค์อยู่ข้างล่างกดสิ "ฟาย"!
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <a href="https://archive.org/download/217to224/%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AD%E0%B8%B8%E0%B8%A1%E0%B8%B2%201-6%20%E0%B9%81%E0%B8%87%E0%B8%8B%E0%B8%B2%E0%B8%A2%E0%B8%88%E0%B8%AD%E0%B8%A1%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%B2%20217-224.mp3" class="btn btn-outline-primary btn-sm" target="_blank">ดาวน์โหลดคลิป 217 - 224</a>
+                <a href="https://archive.org/download/225-to-230/%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AD%E0%B8%B8%E0%B8%A1%E0%B8%B2%201-6%20%E0%B9%81%E0%B8%87%E0%B8%8B%E0%B8%B2%E0%B8%A2%E0%B8%88%E0%B8%AD%E0%B8%A1%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%B2%20225%20-230%5B16-07-55%5D.mp3" class="btn btn-outline-primary btn-sm" target="_blank">ดาวน์โหลดคลิป 225 - 230</a>
+                <a href="https://archive.org/download/231-to-237/%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AD%E0%B8%B8%E0%B8%A1%E0%B8%B2%201-6%20%E0%B9%81%E0%B8%87%E0%B8%8B%E0%B8%B2%E0%B8%A2%E0%B8%88%E0%B8%AD%E0%B8%A1%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%B2%20231-237%20%5B4-12-62%5D.mp3" class="btn btn-outline-primary btn-sm" target="_blank">ดาวน์โหลดคลิป 231 - 237</a>
+            </div>
+            <div class="col-lg-6">
+
+                <a href="https://archive.org/download/238to244/%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AD%E0%B8%B8%E0%B8%A1%E0%B8%B2%201-6%20%E0%B9%81%E0%B8%87%E0%B8%8B%E0%B8%B2%E0%B8%A2%E0%B8%88%E0%B8%AD%E0%B8%A1%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%B2%20238%20-to-244%5B4-12-62%5D.mp3" class="btn btn-outline-primary btn-sm" target="_blank">ดาวน์โหลดคลิป 238 - 244</a>
+                <a href="https://archive.org/download/245to249/%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AD%E0%B8%B8%E0%B8%A1%E0%B8%B2%201-6%20%E0%B9%81%E0%B8%87%E0%B8%8B%E0%B8%B2%E0%B8%A2%E0%B8%88%E0%B8%AD%E0%B8%A1%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%B2%20245to249_%E0%B8%9A%E0%B8%97%E0%B8%97%E0%B8%B5%E0%B9%88201.mp3" class="btn btn-outline-primary btn-sm" target="_blank">ดาวน์โหลดคลิป 245 - 249</a>
+                <a href="https://archive.org/download/250-to-257/%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AD%E0%B8%B8%E0%B8%A1%E0%B8%B2%201-6%20%E0%B9%81%E0%B8%87%E0%B8%8B%E0%B8%B2%E0%B8%A2%E0%B8%88%E0%B8%AD%E0%B8%A1%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%B2%20250%20-257%5B20-08-55%5D_%E0%B8%9A%E0%B8%97%E0%B8%97%E0%B8%B5%E0%B9%88207-208.mp3" class="btn btn-outline-primary btn-sm" target="_blank">ดาวน์โหลดคลิป 250 - 257</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+',
+
+'1','','2021-03-08','0',
+'2021-03-08 16:50:45',
+'2021-03-08 17:03:03'
+);
+
+
+
+
+
+
+
+
+/* หนังสือนิยาย เพชรพระอุมา ตอน ป่าโลกล้านปี 8 Mar 2021  */
+INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+"post_body","is_public","last_read_ip","last_read_date","read_count",
+"created_at","updated_at") VALUES (13,
+'1',
+'หนังสือนิยาย เพชรพระอุมา ตอน ป่าโลกล้านปี',
+
+'หนังสือนิยาย-เพชรพระอุมา-ตอน-ป่าโลกล้านปี',
+
+'
+<div class="row">
+    <div class="col-lg-4">
+        <img src="https://lh3.googleusercontent.com/ZIgwIy7a236RWNjgleQgOUYd0fNCljhOahL7zEtvgiNV8rc3zPOgUpXl1KDR2dyplSqGHr48c3ItmrA3FEnVwUJidCGq8d8-68fuLvVVQ6aWNDUNYZ3NmnzW8zy_T0XdgC6WlpNqiaI=w2400" class="responsive" title="ตอน ป่าโลกล้านปี">
+        <p class="pt-2 text-center">
+            ตอน ป่าโลกล้านปี
+        </p>
+    </div>
+    <div class="col-lg-8">
+        <p>
+            ฟังนิยายเพชรพระอุมา ตอน ป่าโลกล้านปี
+        </p>
+        <p>
+            "เพชรพระอุมา" เป็นบทประพันธ์ของ "พนมเทียน" มีความยาวทั้งสิ้น 48 เล่ม
+            แบ่งออกเป็นสองภาค คือภาคแรกและภาคสมบูรณ์ ภาคละ 24 เล่ม เล่มละ 200 บาท
+            สั่งซื้อได้ตามร้านหนังสือทั่วไป
+        </p>
+        <p>
+            ห้องสมุดคอลฟิลด์เพื่อคนตาบอด ของมูลนิธิช่วยคนตาบอดแห่งประเทศไทย
+            ในพระบรมราชินูปถัมภ์ ได้นำมาจัดทำเป็นหนังสือเสียงทั้งสองภาค
+        </p>
+        <p>
+            ภาคแรกมีอาสาสมัครช่วยกันอ่านสองท่าน คือ คุณศศวรรณ อรรถจรรยากุล
+            เริ่มอ่านจากตอนต้น ..ไพรมหากาฬ ต่อด้วย..ดงมรณะไปถึงช่วงกลางๆ
+            จากนั้นคุณดวงวิภา ยุทธสุริยพันธุ์ อ่านต่อในส่วนที่เหลือจนจบทั้งสองภาค
+        </p>
+
+    </div>
+</div>
+',
+
+'
+<div>
+    <!-- no need class -->
+    <h1 class="text-center">
+        ตอน ป่าโลกล้านปี</h1>
+    <p style="text-align:right;color:green;font-weight:bold;">
+        last update 8 Mar 2021
+    </p>
+
+    <!-- copyright START -->
+    <div style="width:100%;background-color:#e7e7e7;
+        border:1px dashed #ffe3f4;text-align:center;">
+        <h2 style="text-align:center;padding:2px;
+            margin-top:1em;color:red;">
+            ใช้เพื่อฟังส่วนตัวเท่านั้น
+        </h2>
+        <p style="padding:2px;
+
+            background-color:#ffffff;
+            border:2px dotted #ff0000;">
+            ไฟล์เสียงเหล่านี้ได้ถูกจัดทำขึ้นด้วยจุดประสงค์เพื่อใช้ในการรับฟังเพื่อความบันเทิง
+            ส่วนตัวเท่านั้น ผู้นำเข้าได้มีการ อุดหนุนผลงานของผู้ประพันธ์ ที่ใช้นามปากกาว่า
+            "พนมเทียน" ครบทุกเล่มแล้ว ผู้นำเข้ามิได้มีเจตนาละเมิดลิขสิทธิ์แต่อย่างใด
+            ผู้นำเข้าไม่ได้มีผลประโยชน์ใดๆ ในด้านการค้า หรือกำไรจากการนำเข้า
+            ไฟล์เสียงเหล่านี้
+            มากไปกว่าการใช้งานเพื่อความบันเทิงโดยส่วนตัวและอยากเก็บผลงานเหล่านี้ไว้
+            เพื่อเปิดฟังส่วนตัวเท่านั้นไม่ได้มีเจตนา แจก จ่าย แต่อย่างใด
+            ทั้งนี้เจ้าของสิขสิทธิ์สามารถเรียกร้องให้ลบไฟล์เสียงเหล่านี้ออกได้ หากผู้ที่อ้าง
+            ว่าเป็นเจ้าของลิขสิทธิ์ สามารถพิสูจน์ได้ว่าเป็นเจ้าของลิขสิทธิ์ตัวจริงตามกฎหมาย
+        </p>
+        <p style="padding:2px;background-color:#ffffff;
+            border:2px dotted #ff0000;">
+            หากเจ้าของสิขสิทธิ์(ที่สามารถยืนยันตัวจริงได้) ต้องการให้ลบไฟล์เหล่านี้ที่ท่านมองว่า
+            มันเป็นการละเมิดลิขสิทธิ์ ผู้นำเข้ายินยอมที่จะลบไฟล์เสียงเหล่านี้ทันที
+            <br> กรุณาติดต่อทาง<strong>e-mail :</strong> <i>
+                <u>admin@farookphuket.com</u></i> หรือ
+            <i><u>admin@see-southern.com</u></i>
+        </p>
+    </div>
+    <!-- Copyright END -->
+
+    <!-- list of item START -->
+    <div class="mb-2 pt-2">
+        <h1 class="text-center">Clip 126 to 131</h1>
+        <div class="sound-container">
+            <iframe src="https://archive.org/embed/126to131" width="500" height="140" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""><br></iframe>
+        </div>
+        <p class="pt-4 mb-4 text-center">
+
+            ความยาว 7 ชั่วโมง 40 นาที 35 วินาที
+        </p>
+
+    </div>
+
+
+    <div class="mb-2 pt-2">
+
+        <h1 class="text-center">
+            Clip 132 to 136
+        </h1>
+        <div class="sound-container">
+            <iframe src="https://archive.org/embed/13213626sep2019" width="500" height="30" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""><br></iframe>
+        </div>
+        <p class="pt-4 mb-4 text-center">
+
+            ความยาว 6 ชั่วโมง 34 นาที 19 วินาที
+        </p>
+
+    </div>
+
+    <div class="pt-2 mb-2">
+
+        <h1 class="text-center">
+            Clip 137 to 145</h1>
+        <div class="sound-container">
+            <iframe src="https://archive.org/embed/137to145" width="500" height="30" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""><br></iframe>
+        </div>
+        <p class="pt-4 mb-2 text-center">
+
+            ความยาว 7 ชั่วโมง 57 นาที 14 วินาที
+        </p>
+
+    </div>
+
+
+    <div class="pt-2 mb-2">
+        <h1 class="text-center">
+            Clip 146 to 160</h1>
+        <div class="sound-container">
+            <iframe src="https://archive.org/embed/146146160shortclip" width="500" height="30" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""><br></iframe>
+        </div>
+        <p class="pt-4 mb-2 text-center">
+            ความยาว 6 ชั่วโมง 55 นาที 09 วินาที
+        </p>
+    </div>
+
+    <div class="pt-2 mb-2">
+        <h1 class="text-center">
+            Clip 161 to 177</h1>
+        <div class="sound-container">
+            <iframe src="https://archive.org/embed/1611777hrs48min" width="500" height="30" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""><br></iframe>
+        </div>
+        <p class="pt-4 mb-2 text-center">
+            ความยาว 7 ชั่วโมง 48 นาที 02 วินาที
+        </p>
+        <p class="pt-2">
+            จบตอน ป่าโลกล้านปีแล้วครับ ตอนต่อไป แงซายจอมจักรา
+        </p>
+    </div>
+
+    <!-- list item END -->
+
+    <p class="pt-2 mb-2">
+        เป็นการอัพเดทอีกครั้งเพื่อรวมคลิปเสียงไว้เป็นแค่ 5 คลิปเพื่อความสะดวกในการฟัง
+        ท่านสามารถปิดหน้าจอมือถือได้โดยที่คลิปจะยังเล่นอยู่ หากต้องการหยุดให้กดปุ่มหยุดเอาไว้
+        แต่อย่าปิดหน้าเวปเพราะว่าหากเปิดขึ้นมาใหม่จะเป็นการเริ่มเล่นใหม่ทั้งหมด
+    </p>
+
+    <div style="border:2px dashed #ff0000;
+        background-color:black;padding:5px;">
+        <h1 class="text-center" style="color:red;">คำเตือน!</h1>
+        <p style="color:white;font-weight:bold;
+        margin-top:1em;margin-bottom:1em;text-align:center;">
+            นี่อาจจะเป็นครั้งสุดท้ายของท่านที่จะได้ฟังนิยายจากเวปนี้ "รู้อะไรไม่สู้ รู้แบบนี้"
+            เราเตือนคุณแล้ว เพราะฉะนั้นจัดการตัวเองซะ จงทำในสิ่งที่ต้องทำ
+            มันมีลิ้งค์อยู่ข้างล่างกดสิ "ฟาย"!
+        </p>
+    </div>
+
+    <div class="clearfix">
+        <div class="float-right">
+            <a href="https://archive.org/download/126to131/%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AD%E0%B8%B8%E0%B8%A1%E0%B8%B2%20%E0%B8%A0%E0%B8%B2%E0%B8%84%E0%B9%81%E0%B8%A3%E0%B8%81%20%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%20126-to-131%20%E0%B8%9B%E0%B9%88%E0%B8%B2%E0%B9%82%E0%B8%A5%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%9B%E0%B8%B5%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%A3%E0%B8%81.mp3" class="btn btn-primary">ดาวน์โหลดคลิป 126 - 131</a>
+
+            <a href="https://archive.org/download/13213626sep2019/132-136_26-sep-2019%20%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AD%E0%B8%B8%E0%B8%A1%E0%B8%B2%20%E0%B8%A0%E0%B8%B2%E0%B8%84%E0%B9%81%E0%B8%A3%E0%B8%81%20%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%9B%E0%B9%88%E0%B8%B2%E0%B9%82%E0%B8%A5%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%9B%E0%B8%B5.mp3" class="btn btn-primary">ดาวน์โหลดคลิป 132 - 136</a>
+
+            <a href="https://archive.org/download/146146160shortclip/%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AD%E0%B8%B8%E0%B8%A1%E0%B8%B2%20%E0%B8%A0%E0%B8%B2%E0%B8%84%E0%B9%81%E0%B8%A3%E0%B8%81%20%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%20146%28146-160_short-clip%29.mp3" class="btn btn-primary">ดาวน์โหลดคลิป 137 - 145</a>
+
+            <a href="https://archive.org/download/1611777hrs48min/%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AD%E0%B8%B8%E0%B8%A1%E0%B8%B2%20%E0%B8%A0%E0%B8%B2%E0%B8%84%E0%B9%81%E0%B8%A3%E0%B8%81%20%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%20161-177%287hrs48min%29%E0%B8%9B%E0%B9%88%E0%B8%B2%E0%B9%82%E0%B8%A5%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%9B%E0%B8%B5.mp3" class="btn btn-primary">ดาวน์โหลดคลิป 161 - 177</a>
+        </div>
+    </div>
+</div>
+
+',
+
+'1','','2021-03-08','0',
+'2021-03-08 15:22:45',
+'2021-03-08 15:45:45'
+);
+
+
+
+
+
+
+
+/* หนังสือนิยาย เพชรพระอุมา ตอน  8 Mar 2021*/
+INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+"post_body","is_public","last_read_ip","last_read_date","read_count",
+"created_at","updated_at") VALUES (12,
+'1',
+'หนังสือนิยาย เพชรพระอุมา ตอน อาถรรพณ์นิทรานคร',
+
+'หนังสือนิยาย-เพชรพระอุมา-ตอน-อาถรรพณ์นิทรานคร',
+
+'
+<div class="row">
+    <div class="col-lg-4">
+        <img src="https://lh3.googleusercontent.com/YnmtFpAJ37zkuQTcyw-v6KHh07HFJdiFuF6WkTnx3tUX2WIdrY_hwJzGs8jXyrc_-jaY40prXfYaavlH_yoFyNjpgUq5N0yiFIEy1Qbwm_NJ4QsX6CB4WJVXBOsaIlGN8sGmPfo_KAo=w2400" class="responsive" title="Cover">
+        <p class="pt-2 text-center">
+            ตอน อาถรรพณ์นิทรานคร</p>
+    </div>
+    <div class="col-lg-8">
+        <p>
+            ฟังนิยายเพชรพระอุมา ตอน อาถรรพณ์นิทรานคร</p>
+
+        <p>
+            "เพชรพระอุมา" เป็นบทประพันธ์ของ "พนมเทียน" มีความยาวทั้งสิ้น 48 เล่ม
+            แบ่งออกเป็นสองภาค คือภาคแรกและภาคสมบูรณ์ ภาคละ 24 เล่ม เล่มละ 200 บาท
+            สั่งซื้อได้ตามร้านหนังสือทั่วไป
+        </p>
+        <p>
+            ห้องสมุดคอลฟิลด์เพื่อคนตาบอด ของมูลนิธิช่วยคนตาบอดแห่งประเทศไทย
+            ในพระบรมราชินูปถัมภ์ ได้นำมาจัดทำเป็นหนังสือเสียงทั้งสองภาค
+        </p>
+        <p>
+            ภาคแรกมีอาสาสมัครช่วยกันอ่านสองท่าน คือ คุณศศวรรณ อรรถจรรยากุล
+            เริ่มอ่านจากตอนต้น ..ไพรมหากาฬ ต่อด้วย..ดงมรณะไปถึงช่วงกลางๆ
+            จากนั้นคุณดวงวิภา ยุทธสุริยพันธุ์ อ่านต่อในส่วนที่เหลือจนจบทั้งสองภาค
+        </p>
+
+    </div>
+</div>
+
+',
+
+'
+<div>
+    <!-- no need class -->
+    <h1 class="text-center">
+        ตอน อาถรรพณ์นิทรานคร</h1>
+    <p style="text-align:right;color:green;font-weight:bold;">
+        last edit 5-Sep-2019
+
+    </p>
+
+    <!-- copyright START -->
+    <div style="width:100%;background-color:#e7e7e7;
+        border:1px dashed #ffe3f4;text-align:center;">
+        <h2 style="text-align:center;padding:2px;
+            margin-top:1em;color:red;">
+            ใช้เพื่อฟังส่วนตัวเท่านั้น
+        </h2>
+        <p style="padding:2px;
+
+            background-color:#ffffff;
+            border:2px dotted #ff0000;">
+            ไฟล์เสียงเหล่านี้ได้ถูกจัดทำขึ้นด้วยจุดประสงค์เพื่อใช้ในการรับฟังเพื่อความบันเทิง
+            ส่วนตัวเท่านั้น ผู้นำเข้าได้มีการ อุดหนุนผลงานของผู้ประพันธ์ ที่ใช้นามปากกาว่า
+            "พนมเทียน" ครบทุกเล่มแล้ว ผู้นำเข้ามิได้มีเจตนาละเมิดลิขสิทธิ์แต่อย่างใด
+            ผู้นำเข้าไม่ได้มีผลประโยชน์ใดๆ ในด้านการค้า หรือกำไรจากการนำเข้า
+            ไฟล์เสียงเหล่านี้
+            มากไปกว่าการใช้งานเพื่อความบันเทิงโดยส่วนตัวและอยากเก็บผลงานเหล่านี้ไว้
+            เพื่อเปิดฟังส่วนตัวเท่านั้นไม่ได้มีเจตนา แจก จ่าย แต่อย่างใด
+            ทั้งนี้เจ้าของสิขสิทธิ์สามารถเรียกร้องให้ลบไฟล์เสียงเหล่านี้ออกได้ หากผู้ที่อ้าง
+            ว่าเป็นเจ้าของลิขสิทธิ์ สามารถพิสูจน์ได้ว่าเป็นเจ้าของลิขสิทธิ์ตัวจริงตามกฎหมาย
+        </p>
+        <p style="padding:2px;background-color:#ffffff;
+            border:2px dotted #ff0000;">
+            หากเจ้าของสิขสิทธิ์(ที่สามารถยืนยันตัวจริงได้) ต้องการให้ลบไฟล์เหล่านี้ที่ท่านมองว่า
+            มันเป็นการละเมิดลิขสิทธิ์ ผู้นำเข้ายินยอมที่จะลบไฟล์เสียงเหล่านี้ทันที
+            <br> กรุณาติดต่อทาง<strong>e-mail :</strong> <i>
+                <u>admin@farookphuket.com</u></i> หรือ
+            <i><u>admin@see-southern.com</u></i>
+        </p>
+    </div>
+    <!-- Copyright END -->
+
+    <!-- list of item START -->
+    <div class="mb-2 pt-2">
+        <h1 class="text-center">Clip 101 to 107</h1>
+        <div class="sound-container">
+            <iframe src="https://archive.org/embed/101to107" width="500" height="140" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""><br></iframe>
+        </div>
+        <p class="pt-4 mb-4 text-center">
+
+            ความยาว 9 ชั่วโมง 58 นาที 20 วินาที
+        </p>
+
+    </div>
+
+
+    <div class="mb-2 pt-2">
+
+        <h1 class="text-center">
+            Clip 108 to 114
+        </h1>
+        <div class="sound-container">
+            <iframe src="https://archive.org/embed/108to114" width="500" height="30" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""><br></iframe>
+        </div>
+        <p class="pt-4 mb-4 text-center">
+            date on Thu Sep 2019 3:05 a.m. upload this sound clip.
+        </p>
+
+    </div>
+
+    <div class="pt-2 mb-2">
+
+        <h1 class="text-center">
+            Clip 115 to 120
+        </h1>
+        <div class="sound-container">
+            <iframe src="https://archive.org/embed/115to120" width="500" height="30" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""><br></iframe>
+        </div>
+        <p class="pt-4 mb-4 text-center">
+            Last update from Desktop 17 Sep 2020 10:30 p.m.
+        </p>
+
+    </div>
+
+
+    <div class="pt-2 mb-2">
+        <h1 class="text-center">
+            Clip 121 to 125
+        </h1>
+        <div class="sound-container">
+            <iframe src="https://archive.org/embed/121to125" width="500" height="30" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""><br></iframe>
+        </div>
+        <p class="pt-4 text-center">
+            Last update using Ubuntu 20.04 | date 20 Sep 2020 11:22 a.m.
+        </p>
+        <p class="pt-4 mb-4 text-center">
+            จบตอน อาถรรพณ์นิทรานคร แล้วนะครับ ตอนต่อไป ป่าโลกล้านปี
+        </p>
+    </div>
+    <!-- list item END -->
+
+    <p class="pt-2 mb-2">
+        เป็นการอัพเดทอีกครั้งเพื่อรวมคลิปเสียงไว้เป็นแค่ 4 คลิปเพื่อความสะดวกในการฟัง
+        ท่านสามารถปิดหน้าจอมือถือได้โดยที่คลิปจะยังเล่นอยู่ หากต้องการหยุดให้กดปุ่มหยุดเอาไว้
+        แต่อย่าปิดหน้าเวปเพราะว่าหากเปิดขึ้นมาใหม่จะเป็นการเริ่มเล่นใหม่ทั้งหมด
+    </p>
+
+    <div style="border:2px dashed #ff0000;
+        background-color:black;padding:5px;">
+        <h1 class="text-center" style="color:red;">คำเตือน!</h1>
+        <p style="color:white;font-weight:bold;
+        margin-top:1em;margin-bottom:1em;text-align:center;">
+            นี่อาจจะเป็นครั้งสุดท้ายของท่านที่จะได้ฟังนิยายจากเวปนี้ "รู้อะไรไม่สู้ รู้แบบนี้"
+            เราเตือนคุณแล้ว เพราะฉะนั้นจัดการตัวเองซะ จงทำในสิ่งที่ต้องทำ
+            มันมีลิ้งค์อยู่ข้างล่างกดสิ "ฟาย"!
+        </p>
+    </div>
+
+    <div class="clearfix">
+        <div class="float-right">
+            <a href="https://archive.org/download/101to107/%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AD%E0%B8%B8%E0%B8%A1%E0%B8%B2%20%E0%B8%A0%E0%B8%B2%E0%B8%84%E0%B9%81%E0%B8%A3%E0%B8%81%20%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%20101-to-107%20%E0%B8%AD%E0%B8%B2%E0%B8%96%E0%B8%A3%E0%B8%A3%E0%B8%9E%E0%B8%93%E0%B9%8C%E0%B8%99%E0%B8%B4%E0%B8%97%E0%B8%A3%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3.mp3" class="btn btn-primary">ดาวน์โหลดคลิป 101 - 107</a>
+
+            <a href="https://archive.org/download/108to114/%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AD%E0%B8%B8%E0%B8%A1%E0%B8%B2%20%E0%B8%A0%E0%B8%B2%E0%B8%84%E0%B9%81%E0%B8%A3%E0%B8%81%20%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%20108-to-114%E0%B8%AD%E0%B8%B2%E0%B8%96%E0%B8%A3%E0%B8%A3%E0%B8%9E%E0%B8%93%E0%B9%8C%E0%B8%99%E0%B8%B4%E0%B8%97%E0%B8%A3%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3.mp3" class="btn btn-primary">ดาวน์โหลดคลิป 108 - 114</a>
+
+            <a href="https://archive.org/download/115to120/%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AD%E0%B8%B8%E0%B8%A1%E0%B8%B2%20%E0%B8%A0%E0%B8%B2%E0%B8%84%E0%B9%81%E0%B8%A3%E0%B8%81%20%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%20115%20-to-120%E0%B8%AD%E0%B8%B2%E0%B8%96%E0%B8%A3%E0%B8%A3%E0%B8%9E%E0%B8%93%E0%B9%8C%E0%B8%99%E0%B8%B4%E0%B8%97%E0%B8%A3%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3.mp3" class="btn btn-primary">ดาวน์โหลดคลิป 115 - 120</a>
+
+            <a href="https://archive.org/download/121to125/%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AD%E0%B8%B8%E0%B8%A1%E0%B8%B2%20%E0%B8%A0%E0%B8%B2%E0%B8%84%E0%B9%81%E0%B8%A3%E0%B8%81%20%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%20121-to-125%20%E0%B8%AD%E0%B8%B2%E0%B8%96%E0%B8%A3%E0%B8%A3%E0%B8%9E%E0%B8%93%E0%B9%8C%E0%B8%99%E0%B8%B4%E0%B8%97%E0%B8%A3%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3_%E0%B8%88%E0%B8%9A%E0%B8%95%E0%B8%AD%E0%B8%99.mp3" class="btn btn-primary">ดาวน์โหลดคลิป 121 - 125</a>
+        </div>
+    </div>
+</div>
+
+',
+
+'1','','2021-03-25','0',
+'2021-03-08 14:10:45',
+'2021-03-08 14:20:45'
+);
+
+
+
+
 
 
 
@@ -38,9 +642,9 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
 "post_body","is_public","last_read_ip","last_read_date","read_count",
 "created_at","updated_at") VALUES (11,
 '1',
-'นิยายเพชรพระอุมา ตอน จอมผีดิบมันตรัย',
+'หนังสือนิยาย เพชรพระอุมา ตอน จอมผีดิบมันตรัย',
 
-'นิยายเพชรพระอุมา-ตอน-จอมผีดิบมันตรัย',
+'หนังสือนิยาย-เพชรพระอุมา-ตอน-จอมผีดิบมันตรัย',
 
 '<div class="row">
     <div class="col-lg-4">

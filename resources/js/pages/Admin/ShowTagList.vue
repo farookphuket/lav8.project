@@ -1,9 +1,7 @@
 <template>
     <div class="container">
-                <h1>display post in tag using vue</h1>
-                <p>
-                what left to do is the pagination and styling!
-                </p>
+                <h1>Show by tag {{postlist.data.length}} item(s).</h1>
+                
                 <div class="card card-body"
                     v-for="item in posts.data"
                     :tagId="item.pivot.tag_id"
@@ -44,12 +42,12 @@
                         >
                         <a href=""
                             v-html="li.label"
-                            v-if="!li.active && li.url !== null"
+                            v-if="!li.active && li.url != null"
                             @click.prevent="getPosts(li.url)">
 
                             {{li.label}}
                         </a>
-                        <span v-html="li.label" v-else>
+                        <span v-html="li.label" class="active" v-else>
                             {{li.label}}
                         </span>
                     </li>
@@ -94,12 +92,6 @@ export default{
     ,mounted(){
         this.tag = this.tag_id;
         this.getPosts();
-        console.log(this.$cookies.keys())
-     //   if(this.$cookies.get("old_tag_page")){
-     //       this.$cookies.remove("old_tag_page")
-     //   }
-
-     //   console.log(this.$cookies.keys())
     }
     ,methods:{
         getPosts(page){
@@ -114,7 +106,7 @@ export default{
             }
             axios.get(url)
                 .then(res=>{
-                    console.log(res.data)
+                   // console.log(res.data)
                     this.posts = res.data.posts;
                 })
         }

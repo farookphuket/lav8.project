@@ -487,6 +487,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 
@@ -500,7 +503,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       moment: moment
     };
   },
-  props: ["posts", "tag_with_content", "tags"],
+  props: ["posts", "tag_with_content", "tag_all"],
   methods: {
     getPostByTagId: function getPostByTagId(id) {
       var url = "/admin/getPostsByTag?tag=".concat(id);
@@ -1181,17 +1184,27 @@ var render = function() {
               "div",
               { staticClass: "float-left" },
               _vm._l(li.tags, function(ta) {
-                return _c(
-                  "button",
-                  { staticClass: "btn btn-outline-info btn-sm" },
-                  [
-                    _vm._v(
-                      "\n                " +
-                        _vm._s(ta.tag_name) +
-                        "\n               "
-                    )
-                  ]
-                )
+                return _c("span", [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-outline-info btn-sm",
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.getPostByTagId(ta.id)
+                        }
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(ta.tag_name) +
+                          "\n                   "
+                      )
+                    ]
+                  )
+                ])
               }),
               0
             ),
@@ -1324,7 +1337,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("post-tag", {
-        attrs: { tag_has_content: _vm.tag_with_content, tag_all: _vm.tags },
+        attrs: { tag_has_content: _vm.tag_with_content, tag_all: _vm.tag_all },
         on: {
           getPostByTagId: function($event) {
             return _vm.getPostByTagId($event)
