@@ -21,6 +21,39 @@ INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
  ///////////////END OF TEMPLATE ///////////
 */
 
+/*
+Error: Cannot find module ''semver''
+*/
+
+
+
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
+'1',                            
+'Error cannot find  module semver 09-03-2021',                             
+'
+<p>
+    <b>today 09-03-2021</b> I just ran the command to update my system 
+    "sudo pacman -Syu " and once it almost done it has say something about 
+    nodejs so to solved this I just remove the dir "/usr/lib/node_modules/" 
+    when the update has done so I reboot then back to my project and I run 
+    "npm run watch" so the error has now show "Error cannot find module 
+    semver" and cannot run the command I got this problem fixed from 
+    <a href="https://stackoverflow.com/questions/48229026/npm-cannot-find-module-node-gyp-bin-node-gyp" class="btn btn-outline-info" 
+    target="_blank">stackoverflow</a> the command to run is 
+</p>
+<textarea  class="form-control">sudo pacman -Sy node-gyp 
+npm update
+</textarea>
+<p>
+this is what work for me 
+</p>
+',                                          
+'1',                        
+'2021-03-09 22:15:45',                
+'2021-03-09 22:15:45'                 
+);                                          
+
 
 
 
