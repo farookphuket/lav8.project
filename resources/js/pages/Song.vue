@@ -1,19 +1,18 @@
 <template>
    <div class="container">
-       <h2 class="text-center mb-4">
-            My Karaoke' โอ้วเยส!
-       </h2>
-
+        <song-search @getSongList="getSongList($event)"></song-search>
         <song-list :songs="songs" @getSongList="getSongList($event)"></song-list>
    </div>
 </template>
 
 <script>
+import SongSearch from './SongSearch.vue'
 import SongList from './SongList.vue'
 export default{
     name:"Song",
              components:{
-                 SongList
+                 SongList,
+                 SongSearch
              },
              data(){
                  return{

@@ -440,6 +440,16 @@ app should be appear.
 
 --- 
 
+
+
+# Date 9 Mar 2021 
+
+> Added search for song using vue
+
+
+
+
+
 # Date 7 Mar 2021
 
 > I just copy the link of my Karaoke from `wesingapp.com` to keep in my list

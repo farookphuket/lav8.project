@@ -21,6 +21,16 @@ class SongController extends Controller
         return view("Pub.song")->with(["last_title" => $last_title]);
     }
 
+    public function search(){
+        $ssr = request()->search;
+        $song = Song::where("name","LIKE","%{$ssr}%")
+                        ->with('user')
+                        ->with("artist")
+                        ->with("album")
+                        ->get();
+       return response()->json(["song" => $song]); 
+    }
+
 
 
     public function getSongList(){
