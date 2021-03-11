@@ -28,10 +28,7 @@
       ?>
   @endforeach
 
-<div id="app">
 
     <whatnews-member :templates="{{$templates}}"></whatnews-member>
-    <Visitors></Visitors>
-</div>
 
 @endsection
