@@ -56,14 +56,9 @@
 
         </li>
 
-
-        <li class="nav-item {{Request::is('member/about')?'bg-success':''}}">
-          <a class="nav-link
-            
-            " href="{{route('member.posts.about')}}">About</a>
-
+        <li class="nav-item  {{Request::segment(2) == 'song'?'bg-success':''}}  ">
+          <a class="nav-link" href="{{route('member.song.index')}}">Song</a>
         </li>
-
 
         <li class="nav-item  {{Request::segment(2)== "profile"?'bg-success':''}}">
           <a class="nav-link
@@ -71,6 +66,11 @@
             " href="{{route('member.profile',Auth::user()->id)}}">profile</a>
         </li>
 
+        <li class="nav-item {{Request::is('member/about')?'bg-success':''}}">
+          <a class="nav-link
+            
+            " href="{{route('member.posts.about')}}">About</a>
+        </li>
         @endguest
       </ul>
       <ul class="navbar-nav ml-auto">
