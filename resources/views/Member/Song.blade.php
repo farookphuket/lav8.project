@@ -14,5 +14,5 @@
 
 
 @section('content')
-    <Song></Song>
+    <msong></msong>
 @endsection

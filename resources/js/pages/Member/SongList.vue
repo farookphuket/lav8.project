@@ -2,7 +2,7 @@
     <div class="row">
        <div class="col-lg-3 mb-2" v-for="so in songs.data">
            <div class="card pt-2">
-                <a href="" @click.prevent="songOpen(so.id)">
+                <a :href="so.url" @click.prevent="songOpen(so.id)">
                    <img class="responsive card-img-top" :src="so.cover" 
                    :alt="so.name">
                 </a>
@@ -23,7 +23,20 @@
                         <b-icon icon="headphones"></b-icon>
                         {{so.read_count}}
                     </span>
+               </div><!-- end of div.card-body -->
+               <div class="card-footer" v-if="ownerId == so.user.id">
+                    <div class="clearfix">
+                        <div class="float-right">
+                            <button class="btn btn-sm btn-outline-primary" 
+                            @click.prevent="$emit('songEdit',so.id)">
+                                edit
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger"
+                            @click.prevent="$emit('songDel',so.id)">x</button>
+                        </div>
+                    </div>
                </div>
+
            </div>
        </div>
         <div class="col-lg-12 pt-2 mb-4">
@@ -40,6 +53,7 @@
                    <li class="page-item" v-for="li in songs.links">
                        <a href="" 
                        v-html="li.label" 
+                       @click.prevent="$emit('getSongList',li.url)"
                        v-if="li.active != true && li.url != null">
                         {{li.label}}
                        </a>
@@ -75,7 +89,16 @@ export default{
     },
 methods:{
             songOpen(id){
-                alert(id)
+                //alert(id)
+                let url = `/readCount/${id}`
+                axios.get(url)
+                .then(res=>{
+                    //console.log(res.data)
+                    window.open(res.data.url,"_blank")
+                    setTimeout(()=>{
+                        this.$emit('getSongList')
+                            },2000)
+                        })
             }
         }
 }

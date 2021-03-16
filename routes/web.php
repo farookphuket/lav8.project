@@ -8,7 +8,8 @@ use App\Http\Controllers\PasswordResetController;
 use App\Http\Controllers\PostsController as PubPost;
 use App\Http\Controllers\VisitorsController as PubVisit;
 use App\Http\Controllers\SongController as pSong;
-
+use App\Http\Controllers\ArtistController as pArtist;
+use App\Http\Controllers\AlbumController as pAlbum;
 
 use App\Http\Controllers\Member\WhatnewsController as WMN;
 use App\Http\Controllers\Member\PostsController as MemberPost;
@@ -46,7 +47,8 @@ Route::get('/posts/{post:slug}',[PubPost::class,'show'])->name('posts.show');
 
 Route::get("/about",[PubPost::class,'about'])->name('posts.about');
 
-
+Route::resource('/album',pAlbum::class);
+Route::resource('/artist',pArtist::class);
 
 Route::resource("/song",pSong::class);
 Route::get("/getSongList",[pSong::class,'getSongList'])->name("getSongList");

@@ -6,7 +6,8 @@
                 <form action="">
                     <div class="form-group">
                         <input v-model="searchSong" class="form-control" 
-                        type="text" ref="searchSong" placeholder="Enter song title"
+                        type="text" ref="searchSong" 
+                        placeholder="Search Song..."
                         v-on:keyup="search">
                     </div>
                 </form>

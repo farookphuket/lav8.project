@@ -442,6 +442,14 @@ app should be appear.
 
 
 
+
+# Date 16 Mar 2021
+
+> last update finish Song on Member and added my karaoke list to 140 songs
+> @เกาะจำ กระบี่
+
+
+
 # Date 9 Mar 2021 
 
 > Added search for song using vue

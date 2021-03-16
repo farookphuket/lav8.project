@@ -79,6 +79,13 @@
 |  69.  |   All 4 One                    |  
 |  70.  |   Blue                         |  
 |  71.  |   Shayne Ward                  |  
+|  72.  |   จ๊อบ บรรจบ                    |  
+|  73.  |   Brian Mcknight               |  
+|  74.  |   Simple Plan                  |  
+|  75.  |   ฮอตด๊อก                       |  
+|  76.  |   Lewis Capaldi                |  
+|  77.  |   ต้อม เรนโบว์                   |  
+|  78.  |   60 ไมล์                       |  
 |----------------------------------------|
 
 
@@ -156,22 +163,253 @@
 |   69.      |     All 4 One's song                    |  
 |   70.      |     Blue's song                         |  
 |   71.      |     Shayne Ward's song                  |  
+|   72.      |     จ๊อบ บรรจบ's song                    |  
+|   73.      |     Brian Mcknight's song               |  
+|   74.      |     Simple Plan's song                  |  
+|   75.      |     ฮอตด๊อก's song                       |  
+|   76.      |     Lewis Capaldi's song                |  
+|   77.      |     ต้อม เรนโบว์'s song                   |  
+|   78.      |     60 ไมล์'s song                   |  
 |------------------------------------------------------|
 */
 
 
 
-
-/* เพลงที่ 124   Added 7 Mar 2021 */
+/* เพลงที่ 140   Added 16 Mar 2021 */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
-"created_at","updated_at") VALUES (124,"71","71","1",
-"Until You",
-"2021-03-06 18:19:09",
-"http://p.kg.qq.com/photo_new/T002RM000002dvsSx27UO6o.jpg/300?max_age=2592000",
-"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/8E5CDHa8HY2kvaBi-UntilYou?lang=en&g_f=personal",
-"2021-03-06 18:19:09",
-"2021-03-07 12:10:04"
+"created_at","updated_at") VALUES (140,"72","72","1",
+"รักติดปีก",
+"2021-03-11 15:50:14",
+"http://p.kg.qq.com/photo_new/T002RM000000XNiKj0OlEXR.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/Ol4_zc1OcIdPv1OG-?lang=th&amp;g_f=personal",
+"2021-03-11 15:50:14",
+"2021-03-16 12:39:14"
+);
+
+
+
+
+/* เพลงที่ 139   Added 16 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (139,"71","71","1",
+"If That''s Okay With You",
+"2021-03-11 15:19:14",
+"http://p.kg.qq.com/photo_new/T002RM0000027CFXO1Bd6RA.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/hvfIAYFhY_35vFFg-IfThat39sOKWithYouSingleMix?lang=th&amp;g_f=personal",
+"2021-03-11 15:19:14",
+"2021-03-16 12:39:14"
+);
+
+
+
+
+/* เพลงที่ 138   Added 16 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (138,"71","71","1",
+"Something Worth Living For",
+"2021-03-11 15:09:14",
+"http://p.kg.qq.com/photo_new/T002RM000001K3qob4FfxAU.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/8E5CDHa8HWw9vaJ7-SomethingWorthLivingFor?lang=th&amp;g_f=personal",
+"2021-03-11 15:09:14",
+"2021-03-16 12:39:14"
+);
+
+
+/* เพลงที่ 137   Added 16 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (137,"78","78","1",
+"หากฉันตาย",
+"2021-03-11 14:59:14",
+"http://p.kg.qq.com/photo_new/T002RM000sg002E5A590C77Xu.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/UzdXlMpUMiwGvpp9-?lang=th&amp;g_f=personal",
+"2021-03-11 14:59:14",
+"2021-03-16 12:39:14"
+);
+
+/* เพลงที่ 136   Added 16 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (136,"11","11","1",
+"เธอเป็นแฟนฉันแล้ว",
+"2021-03-09 18:54:14",
+"http://p.kg.qq.com/photo_new/T002RM000sg003j52v84HU1rj.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/pGMyrdUpdNALvU9S-?lang=th&g_f=personal",
+"2021-03-09 18:54:14",
+"2021-03-16 12:39:14"
+);
+
+
+
+
+
+/* เพลงที่ 135   Added 16 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (135,"77","77","1",
+"รักฉันนั้นเพื่อเธอ",
+"2021-03-09 18:45:14",
+"http://p.kg.qq.com/photo_new/T002RM000sg0040HnA22CJUU2.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/wKtryqkwqJIcvkCV-?lang=th&amp;g_f=personal",
+"2021-03-09 18:45:14",
+"2021-03-16 12:39:14"
+);
+
+
+/* เพลงที่ 134   Added 16 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (134,"41","41","1",
+"สบายดีใช่ไหม",
+"2021-03-09 18:36:14",
+"http://p.kg.qq.com/photo_new/T002RM000001uQCel1vcbZM.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/j3A0fmWjmDd3vWXU-?lang=th&amp;g_f=personal",
+"2021-03-09 18:36:14",
+"2021-03-16 12:39:14"
+);
+
+
+/* เพลงที่ 133   Added 16 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (133,"11","11","1",
+"ปิดตา",
+"2021-03-08 21:19:14",
+"http://p.kg.qq.com/photo_new/T002RM000sg003j52v84HU1rj.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/1rcKG4O14ZbuvOEs-?lang=th&amp;g_f=personal",
+"2021-03-08 21:19:14",
+"2021-03-16 12:39:14"
+);
+
+
+
+/* เพลงที่ 132   Added 16 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (132,"11","11","1",
+"จริงเหรอ",
+"2021-03-08 21:04:14",
+"http://p.kg.qq.com/photo_new/T002RM000001n90Gg4B8HYS.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/dbUSgpMdpurgvMMe-?lang=th&amp;g_f=personal",
+"2021-03-08 21:04:14",
+"2021-03-16 12:39:14"
+);
+
+
+/* เพลงที่ 131   Added 16 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (131,"29","29","1",
+"อย่าหยุดยั้ง",
+"2021-03-08 20:54:14",
+"http://p.kg.qq.com/photo_new/T002RM000sg002sFM1H0fZUFa.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/eFon6xvexXoQvveK-?lang=th&amp;g_f=personal",
+"2021-03-08 20:54:14",
+"2021-03-16 21:15:14"
+);
+
+
+
+
+
+/* เพลงที่ 130   Added 16 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (130,"76","76","1",
+"Someone You Love",
+"2021-03-08 20:43:09",
+"http://p.kg.qq.com/photo_new/T002RM000004FtVh708gGpm.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/lOgkUVrlVPg2vrvL-SomeoneYouLoved?lang=th&amp;g_f=personal",
+"2021-03-08 20:43:09",
+"2021-03-16 12:39:14"
+);
+
+
+
+
+
+
+/* เพลงที่ 129   Added 16 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (129,"11","11","1",
+"ศักดิ์ศรีลูกผู้ชาย",
+"2021-03-08 20:19:09",
+"http://p.kg.qq.com/photo_new/T002RM000001nYYpd44hEWT.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/CMG8czbCz9Gavbkg-?lang=th&g_f=personal",
+"2021-03-08 20:19:09",
+"2021-03-16 12:39:14"
+);
+
+
+
+
+
+
+/* เพลงที่ 128   Added 16 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (128,"75","75","1",
+"ลืมเลือน",
+"2021-03-08 20:07:09",
+"http://p.kg.qq.com/photo_new/T002RM000003nAhfd2zJ0EZ.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/uLnoQNRuNdn1vRQn-?lang=th&amp;g_f=personal",
+"2021-03-08 20:07:09",
+"2021-03-16 12:39:14"
+);
+
+
+
+
+
+/* เพลงที่ 127   Added 16 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (127,"74","74","1",
+"Shut Up!",
+"2021-03-08 19:52:09",
+"http://p.kg.qq.com/photo_new/T002RM0000034x6da2iSXj2.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/sq_4aKDsKW_DvD05-ShutUp?lang=th&amp;g_f=personal",
+"2021-03-08 19:52:09",
+"2021-03-16 12:39:14"
+);
+
+
+
+
+
+
+
+/* เพลงที่ 126   Added 16 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (126,"73","73","1",
+"Back At One",
+"2021-03-08 19:30:09",
+"http://p.kg.qq.com/photo_new/T002RM000003aKusg2YvTw4.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/-nLF79I-9z9DvIgM-BackAtOne?lang=th&amp;g_f=personal",
+"2021-03-16 12:39:09",
+"2021-03-16 12:39:14"
+);
+
+
+
+
+
+
+/* เพลงที่ 125   Added 16 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (125,"72","72","1",
+"Cha Cha Cha ร้อน ร้อน",
+"2021-03-08 19:05:09",
+"http://p.kg.qq.com/photo_new/T002RM0000011gW2L0yOwY1.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/DtKc8_sD_j_nvspX-CHACHACHA?lang=th&amp;g_f=personal",
+"2021-03-16 11:52:09",
+"2021-03-16 12:10:04"
 );
 
 /* เพลงที่ 123   Added 7 Mar 2021 */

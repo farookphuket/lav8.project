@@ -23,11 +23,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Song",
+  name: "Msong",
   components: {
     SongList: _SongList_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     SongForm: _SongForm_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -38,7 +46,8 @@ __webpack_require__.r(__webpack_exports__);
       songs: [],
       albums: [],
       artists: [],
-      editId: 0
+      editId: 0,
+      res_status: ''
     };
   },
   mounted: function mounted() {
@@ -48,6 +57,7 @@ __webpack_require__.r(__webpack_exports__);
     getSongList: function getSongList(page) {
       var _this = this;
 
+      this.editId = 0;
       var url = "";
 
       if (page) {
@@ -62,7 +72,7 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       axios.get(url).then(function (res) {
-        console.log(res.data);
+        //console.log(res.data)
         _this.songs = res.data.songs;
         _this.albums = res.data.albums;
         _this.artists = res.data.artists;
@@ -72,7 +82,22 @@ __webpack_require__.r(__webpack_exports__);
       this.editId = id;
     },
     songDel: function songDel(id) {
-      alert("will delete ".concat(id));
+      var _this2 = this;
+
+      //alert(`will delete ${id}`)
+      if (confirm("this will delete item ".concat(id, " are you sure?")) == true) {
+        var url = "/member/song/".concat(id);
+        axios["delete"](url).then(function (res) {
+          _this2.res_status = res.data.msg;
+        }, function (err) {
+          _this2.res_status = "<span class=\"badge badge-danger\">\n                                ".concat(err.response.data.message, "</span>");
+        });
+        this.$refs["onOk"].show();
+      }
+
+      setTimeout(function () {
+        _this2.getSongList();
+      }, 2500);
     }
   }
 });
@@ -178,9 +203,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SongForm",
-  props: ["editId", "artists", "albums"],
+  props: ["editId", "artists", "albums", "songs"],
   data: function data() {
     return {
       showForm: false,
@@ -190,7 +236,9 @@ __webpack_require__.r(__webpack_exports__);
       artist: "",
       album: "",
       saveId: 0,
-      formData: {}
+      error: 0,
+      formData: {},
+      res_status: ''
     };
   },
   watch: {
@@ -200,7 +248,109 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     getEditData: function getEditData(id) {
-      console.log("the edit id ".concat(id));
+      var _this = this;
+
+      //console.log(`the edit id ${id}`)
+      if (id == 0) {
+        return;
+      }
+
+      this.showForm = true;
+      this.$nextTick(function () {
+        this.$refs.song.focus();
+      });
+      this.songs.data.forEach(function (val) {
+        if (val.id == id) {
+          _this.song = val.name;
+          _this.url = val.url;
+          _this.cover = val.cover;
+          _this.album = val.album.name;
+          _this.artist = val.artist.name;
+          _this.saveId = val.id; //console.log(val.artist.name)
+        }
+      });
+    },
+    getArtist: function getArtist() {
+      var _this2 = this;
+
+      var ar = this.$refs.artist.value; //alert(`click ${ar}`)
+
+      this.artists.forEach(function (val) {
+        if (val.id == ar) {
+          _this2.artist = val.name;
+        }
+      });
+    },
+    getAlbum: function getAlbum() {
+      var _this3 = this;
+
+      var al = this.$refs.album.value;
+      this.albums.forEach(function (val) {
+        if (val.id == al) {
+          _this3.album = val.name;
+        }
+      });
+    },
+    save: function save(id) {
+      var _this4 = this;
+
+      var s_url = '';
+      this.formData = {
+        artist: this.artist,
+        album: this.album,
+        song: this.song,
+        cover: this.cover,
+        url: this.url
+      };
+
+      if (id) {
+        s_url = "/member/song/".concat(id);
+        axios.put(s_url, this.formData).then(function (res) {
+          _this4.res_status = res.data.msg;
+          _this4.error = 0;
+        }, function (err) {
+          _this4.res_status = "<span \n                            class=\"badge badge-danger\">Error : \n                            ".concat(err.response.data.message, "\n                            </span>");
+          _this4.error = 1;
+        });
+      } else {
+        s_url = "/member/song";
+        axios.post(s_url, this.formData).then(function (res) {
+          _this4.res_status = res.data.msg;
+          _this4.error = 0;
+        }, function (err) {
+          _this4.res_status = "<span \n                            class=\"badge badge-danger\">Error : \n                            ".concat(err.response.data.message, "\n                            </span>");
+          _this4.error = 1;
+        });
+      }
+
+      this.$refs["onOk"].show();
+      setTimeout(function () {
+        _this4.clearForm();
+
+        _this4.$emit('getSongList');
+      }, 200);
+    },
+    saveAlbum: function saveAlbum() {
+      var url = "/album";
+      axios.post(url, {
+        album: this.album
+      }).then(function (res) {//console.log(res.data)
+      });
+    },
+    saveArtist: function saveArtist() {
+      var url = "/artist";
+      axios.post(url, {
+        artist: this.artist
+      }).then(function (res) {//console.log(res.data)
+      });
+    },
+    clearForm: function clearForm() {
+      this.song = "";
+      this.saveId = 0;
+      this.cover = "";
+      this.url = "";
+      this.artist = "";
+      this.album = "";
     }
   }
 });
@@ -279,6 +429,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -292,7 +456,17 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
   },
   methods: {
     songOpen: function songOpen(id) {
-      alert(id);
+      var _this = this;
+
+      //alert(id)
+      var url = "/readCount/".concat(id);
+      axios.get(url).then(function (res) {
+        //console.log(res.data)
+        window.open(res.data.url, "_blank");
+        setTimeout(function () {
+          _this.$emit('getSongList');
+        }, 2000);
+      });
     }
   }
 });
@@ -308,6 +482,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -401,7 +576,17 @@ var render = function() {
       _c("song-search"),
       _vm._v(" "),
       _c("song-form", {
-        attrs: { artists: _vm.artists, albums: _vm.albums, editId: _vm.editId }
+        attrs: {
+          artists: _vm.artists,
+          albums: _vm.albums,
+          editId: _vm.editId,
+          songs: _vm.songs
+        },
+        on: {
+          getSongList: function($event) {
+            return _vm.getSongList($event)
+          }
+        }
       }),
       _vm._v(" "),
       _c("song-list", {
@@ -417,7 +602,17 @@ var render = function() {
             return _vm.songDel($event)
           }
         }
-      })
+      }),
+      _vm._v(" "),
+      _c(
+        "b-modal",
+        { ref: "onOk", attrs: { title: "Server Said :", "ok-only": "" } },
+        [
+          _c("div", { domProps: { innerHTML: _vm._s(_vm.res_status) } }, [
+            _vm._v("\n            " + _vm._s(_vm.res_status) + "\n        ")
+          ])
+        ]
+      )
     ],
     1
   )
@@ -444,221 +639,336 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" }, [
-    _c("div", { staticClass: "col-lg-12" }, [
-      _vm.showForm == true
-        ? _c("div", { staticClass: "mb-4" }, [
-            _c("div", { staticClass: "float-right" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "mb-4 btn btn-outline-danger",
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      _vm.showForm = false
-                    }
-                  }
-                },
-                [_vm._v("\n               close \n            ")]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mb-4" }, [
-              _c("div", { staticClass: "form-group" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.song,
-                      expression: "song"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: { type: "text", name: "" },
-                  domProps: { value: _vm.song },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
+  return _c(
+    "div",
+    { staticClass: "row" },
+    [
+      _c("div", { staticClass: "col-lg-12" }, [
+        _vm.showForm == true
+          ? _c("div", { staticClass: "mb-4" }, [
+              _c("div", { staticClass: "float-right" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "mb-4 btn btn-outline-danger",
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        _vm.showForm = false
                       }
-                      _vm.song = $event.target.value
                     }
-                  }
-                })
+                  },
+                  [_vm._v("\n               close \n            ")]
+                )
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.url,
-                      expression: "url"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: { type: "text", name: "" },
-                  domProps: { value: _vm.url },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
+              _c("div", { staticClass: "mb-4" }, [
+                _c("div", { staticClass: "form-group" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.song,
+                        expression: "song"
                       }
-                      _vm.url = $event.target.value
-                    }
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.cover,
-                      expression: "cover"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: { type: "text", name: "" },
-                  domProps: { value: _vm.cover },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
+                    ],
+                    ref: "song",
+                    staticClass: "form-control",
+                    attrs: { type: "text", placeholder: "Song title" },
+                    domProps: { value: _vm.song },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.song = $event.target.value
                       }
-                      _vm.cover = $event.target.value
                     }
-                  }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-lg-3" }, [
-                  _c("img", {
-                    staticClass: "responsive",
-                    attrs: { src: _vm.cover, alt: "" }
                   })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _vm._m(0),
+                ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-lg-6" }, [
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.album,
-                          expression: "album"
-                        }
-                      ],
-                      staticClass: "form-control ",
-                      attrs: { type: "text" },
-                      domProps: { value: _vm.album },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.album = $event.target.value
-                        }
+                _c("div", { staticClass: "form-group" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.url,
+                        expression: "url"
                       }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { type: "text", placeholder: "url of song" },
+                    domProps: { value: _vm.url },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.url = $event.target.value
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.cover,
+                        expression: "cover"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { type: "text", placeholder: "cover image url" },
+                    domProps: { value: _vm.cover },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.cover = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-lg-3" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: _vm.cover, alt: "" }
                     })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-lg-6" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.artist,
+                            expression: "artist"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "text", placeholder: "Artist" },
+                        domProps: { value: _vm.artist },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.artist = $event.target.value
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-outline-primary",
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.saveArtist($event)
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                            Save Artist\n                        "
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "select",
+                        {
+                          ref: "artist",
+                          staticClass: "form-control",
+                          attrs: { multiple: "true" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.getArtist($event)
+                            }
+                          }
+                        },
+                        [
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v("Artist")
+                          ]),
+                          _vm._v(" "),
+                          _vm._l(_vm.artists, function(ar) {
+                            return _c(
+                              "option",
+                              { domProps: { value: ar.id } },
+                              [_vm._v(_vm._s(ar.name))]
+                            )
+                          })
+                        ],
+                        2
+                      )
+                    ])
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "col-lg-6" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.album,
+                            expression: "album"
+                          }
+                        ],
+                        staticClass: "form-control ",
+                        attrs: { type: "text", placeholder: "Album" },
+                        domProps: { value: _vm.album },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.album = $event.target.value
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-outline-primary",
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.saveAlbum($event)
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                            Save Album\n                        "
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "select",
+                        {
+                          ref: "album",
+                          staticClass: "form-control pt-2",
+                          attrs: { multiple: "true" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.getAlbum($event)
+                            }
+                          }
+                        },
+                        [
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v("Album")
+                          ]),
+                          _vm._v(" "),
+                          _vm._l(_vm.albums, function(al) {
+                            return _c(
+                              "option",
+                              { domProps: { value: al.id } },
+                              [_vm._v(_vm._s(al.name))]
+                            )
+                          })
+                        ],
+                        2
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }, [
+                  _c("div", { staticClass: "float-right" }, [
                     _c(
-                      "select",
+                      "button",
                       {
-                        ref: "album",
-                        staticClass: "form-control pt-2",
-                        attrs: { multiple: "true" }
+                        staticClass: "btn btn-outline-primary",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.save(_vm.saveId)
+                          }
+                        }
                       },
                       [
-                        _c("option", { attrs: { value: "" } }, [
-                          _vm._v("Album")
-                        ]),
-                        _vm._v(" "),
-                        _vm._l(_vm.albums, function(al) {
-                          return _c("option", { domProps: { value: al.id } }, [
-                            _vm._v(_vm._s(al.name))
-                          ])
-                        })
-                      ],
-                      2
+                        _vm._v(
+                          "\n                        Save\n                    "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-outline-warning",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.clearForm($event)
+                          }
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n                        clear\n                    "
+                        )
+                      ]
                     )
                   ])
                 ])
-              ]),
-              _vm._v(" "),
-              _vm._m(1)
+              ])
             ])
-          ])
-        : _c("div", { staticClass: "mb-4" }, [
-            _c("div", { staticClass: "float-right" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "mb-4 btn btn-outline-info",
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      _vm.showForm = true
+          : _c("div", { staticClass: "mb-4" }, [
+              _c("div", { staticClass: "float-right" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "mb-4 btn btn-outline-info",
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        _vm.showForm = true
+                      }
                     }
-                  }
-                },
-                [_vm._v("\n                Add my song\n            ")]
-              )
+                  },
+                  [_vm._v("\n                Add my song\n            ")]
+                )
+              ])
             ])
-          ])
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-lg-6" }, [
-      _c("div", { staticClass: "form-group" }, [
-        _c("input", {
-          staticClass: "form-control",
-          attrs: { type: "text", name: "" }
-        })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "form-group" }, [
-        _c(
-          "select",
-          { staticClass: "form-control", attrs: { multiple: "true" } },
-          [_c("option", { attrs: { value: "" } }, [_vm._v("Artist")])]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "clearfix" }, [
-      _c("div", { staticClass: "float-right" }, [
-        _c("button", { staticClass: "btn btn-outline-primary" }, [
-          _vm._v("\n                        Save\n                    ")
-        ]),
-        _vm._v(" "),
-        _c("button", { staticClass: "btn btn-outline-warning" }, [
-          _vm._v("\n                        clear\n                    ")
-        ])
-      ])
-    ])
-  }
-]
+      _c(
+        "b-modal",
+        { ref: "onOk", attrs: { title: "server said :", "ok-only": "" } },
+        [
+          _c("div", { domProps: { innerHTML: _vm._s(_vm.res_status) } }, [
+            _vm._v("\n            " + _vm._s(_vm.res_status) + "\n        ")
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -690,7 +1000,7 @@ var render = function() {
             _c(
               "a",
               {
-                attrs: { href: "" },
+                attrs: { href: so.url },
                 on: {
                   click: function($event) {
                     $event.preventDefault()
@@ -748,7 +1058,47 @@ var render = function() {
                 ],
                 1
               )
-            ])
+            ]),
+            _vm._v(" "),
+            _vm.ownerId == so.user.id
+              ? _c("div", { staticClass: "card-footer" }, [
+                  _c("div", { staticClass: "clearfix" }, [
+                    _c("div", { staticClass: "float-right" }, [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-sm btn-outline-primary",
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.$emit("songEdit", so.id)
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                            edit\n                        "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-sm btn-outline-danger",
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.$emit("songDel", so.id)
+                            }
+                          }
+                        },
+                        [_vm._v("x")]
+                      )
+                    ])
+                  ])
+                ])
+              : _vm._e()
           ])
         ])
       }),
@@ -784,7 +1134,13 @@ var render = function() {
                         "a",
                         {
                           attrs: { href: "" },
-                          domProps: { innerHTML: _vm._s(li.label) }
+                          domProps: { innerHTML: _vm._s(li.label) },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.$emit("getSongList", li.url)
+                            }
+                          }
                         },
                         [
                           _vm._v(
@@ -868,7 +1224,7 @@ var render = function() {
               ],
               ref: "searchSong",
               staticClass: "form-control",
-              attrs: { type: "text", placeholder: "Enter song title" },
+              attrs: { type: "text", placeholder: "Search Song..." },
               domProps: { value: _vm.searchSong },
               on: {
                 keyup: _vm.search,

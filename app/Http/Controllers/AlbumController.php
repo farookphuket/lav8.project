@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Album;
 use Illuminate\Http\Request;
+use Auth;
 
 class AlbumController extends Controller
 {
@@ -33,9 +34,26 @@ class AlbumController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
         //
+        $al_id = 0;
+        if(Auth::user()->id):
+        
+            $al = request()->album;
+
+            $get = Album::where("name" ,$al)->get();
+            if(count($get) == 0):
+                // only if cannot find then create one
+                $al_id = Album::create([
+                    "name" => $al
+                ]);
+            endif;
+            foreach($get as $row):
+                $al_id = $row->id;
+            endforeach;
+        endif;
+       return response()->json(["album" => $al_id]); 
     }
 
     /**

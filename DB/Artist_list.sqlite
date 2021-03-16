@@ -1,4 +1,80 @@
 
+/* song number 78  in wesingapp.com the list 16-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (78,
+"60 ไมล์",
+"2021-03-16 14:06:24",
+"2021-03-16 14:16:21"
+);
+
+
+
+/* song number 77  in wesingapp.com the list 16-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (77,
+"ต้อม เรนโบว์",
+"2021-03-16 14:06:24",
+"2021-03-16 14:16:21"
+);
+
+
+
+
+
+/* song number 76  in wesingapp.com the list 16-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (76,
+"Lewis Capaldi",
+"2021-03-16 13:06:24",
+"2021-03-16 13:06:21"
+);
+
+
+
+/* song number 75  in wesingapp.com the list 16-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (75,
+"ฮอตด๊อก",
+"2021-03-16 12:04:24",
+"2021-03-16 12:05:05"
+);
+
+
+/* song number 74  in wesingapp.com the list 16-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (74,
+"Simple Plan",
+"2021-03-16 12:04:24",
+"2021-03-16 12:05:05"
+);
+
+
+
+
+
+/* song number 73  in wesingapp.com the list 16-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (73,
+"Brian Mcknight",
+"2021-03-16 12:04:24",
+"2021-03-16 12:05:05"
+);
+
+
+
+
+
+/* song number 72  in wesingapp.com the list 16-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (72,
+"จ๊อบ บรรจบ",
+"2021-03-16 11:49:24",
+"2021-03-16 11:50:05"
+);
+
+
+
+
 /* song number 71  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (71,
