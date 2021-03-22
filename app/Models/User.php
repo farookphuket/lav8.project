@@ -68,4 +68,8 @@ class User extends Authenticatable
         return $this->belongToMany(Song::class);
     }
 
+    public function videos(){
+        return $this->hasMany(Video::class);
+    }
+
 }

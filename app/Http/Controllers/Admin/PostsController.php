@@ -38,7 +38,7 @@ class PostsController extends Controller
                         ->join('users','users.id','=','posts.user_id')
                         ->select('users.name','users.email','posts.*')
                         ->orderBy("created_at","desc")
-                        ->paginate(3)
+                        ->paginate(15)
                         ->onEachSide(1);
         $tags = Tag::all();
         $tag_with_content = Tag::has('posts')

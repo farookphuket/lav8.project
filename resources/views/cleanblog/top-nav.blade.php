@@ -32,12 +32,23 @@
             " href="{{url('/posts')}}">Post</a>
         </li>
 
+
+
         <li class="nav-item
           {{Request::segment(1)== 'song'?'bg-success':''}}
           ">
           <a class="nav-link 
             " href="{{url('/song')}}">Song</a>
         </li>
+
+
+        <li class="nav-item
+          {{Request::segment(1)== 'video'?'bg-success':''}}
+          ">
+          <a class="nav-link 
+            " href="{{url('/video')}}">Video</a>
+        </li>
+
 
         <li class="nav-item {{Request::is('about')?'bg-success':''}} ">
           <a class="nav-link 
@@ -60,6 +71,8 @@
           <a class="nav-link" href="{{route('member.song.index')}}">Song</a>
         </li>
 
+
+
         <li class="nav-item  {{Request::segment(2)== "profile"?'bg-success':''}}">
           <a class="nav-link
             
@@ -73,7 +86,7 @@
         </li>
         @endguest
       </ul>
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav ">
             
       @guest
         <li class="nav-item">

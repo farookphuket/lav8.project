@@ -10,6 +10,7 @@ use App\Http\Controllers\VisitorsController as PubVisit;
 use App\Http\Controllers\SongController as pSong;
 use App\Http\Controllers\ArtistController as pArtist;
 use App\Http\Controllers\AlbumController as pAlbum;
+use App\Http\Controllers\VideoController as pVideo;
 
 use App\Http\Controllers\Member\WhatnewsController as WMN;
 use App\Http\Controllers\Member\PostsController as MemberPost;
@@ -28,6 +29,7 @@ use App\Http\Controllers\Admin\CommentsController as ACMT;
 use App\Http\Controllers\Admin\RepliesController as ADRP;
 use App\Http\Controllers\Admin\VisitorsController as ADVT;
 use App\Http\Controllers\Admin\SongController as aSong;
+use App\Http\Controllers\Admin\VideoController as aVideo;
 
 
 /*
@@ -49,6 +51,8 @@ Route::get("/about",[PubPost::class,'about'])->name('posts.about');
 
 Route::resource('/album',pAlbum::class);
 Route::resource('/artist',pArtist::class);
+Route::resource('/video',pVideo::class);
+Route::get('/getVideos',[pVideo::class,"getVideos"])->name("getVideos");
 
 Route::resource("/song",pSong::class);
 Route::get("/getSongList",[pSong::class,'getSongList'])->name("getSongList");
@@ -201,4 +205,10 @@ Route::prefix('admin')->name('admin.')->middleware('can:is_admin')
 
     Route::get("/getAlbumList",[aSong::class,"getAlbumList"])
         ->name("getAlbumList");
+
+
+    Route::resource("/video",aVideo::class);
+    Route::get("/getVideos",[aVideo::class,"getVideos"])->name("getVideos");
+
+
 });

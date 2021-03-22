@@ -20,6 +20,54 @@ Tag table
 
 
 
+/* post 20 เพชรพระอุมา ตอน  has the tag 7 */
+INSERT INTO 'post_tag' ('id','post_id','tag_id','created_at','updated_at') 
+VALUES (NULL,'20','7',
+'2021-03-19 19:19:16',
+'2021-03-19 19:24:17');
+
+
+/* post 19 เพชรพระอุมา ตอน  has the tag 7 */
+INSERT INTO 'post_tag' ('id','post_id','tag_id','created_at','updated_at') 
+VALUES (NULL,'19','7',
+'2021-03-19 19:19:16',
+'2021-03-19 19:24:17');
+
+
+/* post 18 เพชรพระอุมา ตอน  has the tag 7 */
+INSERT INTO 'post_tag' ('id','post_id','tag_id','created_at','updated_at') 
+VALUES (NULL,'18','7',
+'2021-03-19 19:19:16',
+'2021-03-19 19:24:17');
+
+
+
+/* post 17 เพชรพระอุมา ตอน  has the tag 7 */
+INSERT INTO 'post_tag' ('id','post_id','tag_id','created_at','updated_at') 
+VALUES (NULL,'17','7',
+'2021-03-19 19:19:16',
+'2021-03-19 19:24:17');
+
+/* post 16 เพชรพระอุมา ตอน  has the tag 7 */
+INSERT INTO 'post_tag' ('id','post_id','tag_id','created_at','updated_at') 
+VALUES (NULL,'16','7',
+'2021-03-19 19:19:16',
+'2021-03-19 19:24:17');
+
+
+/* post 15 เพชรพระอุมา ตอน  has the tag 7 */
+INSERT INTO 'post_tag' ('id','post_id','tag_id','created_at','updated_at') 
+VALUES (NULL,'15','7',
+'2021-03-19 19:19:16',
+'2021-03-19 19:24:17');
+
+/* post 14 เพชรพระอุมา ตอน  has the tag 7 */
+INSERT INTO 'post_tag' ('id','post_id','tag_id','created_at','updated_at') 
+VALUES (NULL,'14','7',
+'2021-03-19 19:19:16',
+'2021-03-19 19:24:17');
+
+
 
 /* post 13 เพชรพระอุมา ตอน ป่าโลกล้านปี has the tag 7 */
 INSERT INTO 'post_tag' ('id','post_id','tag_id','created_at','updated_at') 

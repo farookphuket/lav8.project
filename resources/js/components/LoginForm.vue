@@ -1,23 +1,38 @@
 <template>
     <span class="nav-link">
           <!-- Login form modal -->
+            <button class="btn btn-outline-primary btn-sm" 
+            @click.prevent="showLoginForm">
+                Login
+            </button>
+            <b-modal title="Login Form" ref="loginFormModal"
+            size="xl" hide-footer>
 
-            <form class="form-inline my-2 my-lg-0" action="">
+            <form >
 
-              
-                <input v-model="uemail"  type="email" 
-                                         class="col-md-4"
-                ref="uemail" placeholder="Enter email">
+                <div class="form-group">
 
-                <input  type="password" class="col-md-4" 
-                v-model="upass" placeholder="Enter password">
+                    <input v-model="uemail"  
+                    type="email" class="form-control" 
+                    ref="uemail" placeholder="Enter email">
+                </div>
+
+                <div class="form-group">
+                    <input  type="password" class="form-control" 
+                    v-model="upass" placeholder="Enter password">
+                </div>
 
 
-                <button class="btn btn-outline-warning btn-sm" @click.prevent="getLogin">Login</button>
+                <button class="btn btn-outline-warning btn-block" 
+                @click.prevent="getLogin">Login</button>
 
-                <button class="btn btn-outline-info btn-sm" 
+                <button class="btn btn-outline-info btn-block" 
                   @click.prevent="signUp">register</button>
+
+                <button class="btn btn-outline-danger btn-block" 
+                  @click.prevent="forgotpass">Forgot Password</button>
           </form>
+            </b-modal>
 
           <!-- end of login form modal -->
 
@@ -41,11 +56,15 @@ export default{
             res_status:'',
             error:0,
             url:'',
-            found_user:false
+            found_user:false,
+            isShow:false
 
         }
     },
     methods:{
+                showLoginForm(){
+                    this.$refs["loginFormModal"].show()
+                },
         getLogin(){
             let data = {
                 email:this.uemail,
@@ -80,7 +99,11 @@ export default{
       signUp(){
         let url = '/register'
         location.href=url
-      }
+      },
+      forgotpass(){
+        let url = "/forgot-password"
+        location.href=url
+      },
     }
 }
 </script>
