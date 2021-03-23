@@ -95,6 +95,7 @@ Vue.component('Admintaglist',()=>import('./pages/Admin/ShowTagList.vue'));
 
 //Vue.component('Memberinfo',require('./components/member-profile-form.vue').default);
 Vue.component('MemberProfile',()=>import('./pages/Member/MemberProfile.vue'));
+Vue.component('Mvideo',()=>import('./pages/Member/Video.vue'));
 
 //Vue.component('adminprofile',require('./components/admin-profile-form.vue').default);
 Vue.component('AdminProfile',()=>import('./pages/Admin/AdminProfile.vue'));

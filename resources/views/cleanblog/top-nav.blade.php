@@ -72,6 +72,9 @@
         </li>
 
 
+        <li class="nav-item  {{Request::segment(2) == 'video'?'bg-success':''}}  ">
+          <a class="nav-link" href="{{route('member.video.index')}}">Video</a>
+        </li>
 
         <li class="nav-item  {{Request::segment(2)== "profile"?'bg-success':''}}">
           <a class="nav-link

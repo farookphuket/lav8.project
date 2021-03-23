@@ -46,11 +46,11 @@
                         height="350"></jodit-editor>
 
                 </div>
-                <span v-else
-                    class="badge badge-info"
+                <button v-else
+                    class="btn btn-outline-info btn-sm"
                     @click="showReplyForm(cm.id)">
                     show reply form
-                </span>
+                </button>
             </div>
             <div class="clearfix">
                 <div class="float-right">
@@ -58,15 +58,15 @@
                         v-if="replyItem[cm.id]"
                         :disabled="bReply"
                         @click.prevent="sentReply(cm.id)"
-                        class="btn btn-primary">
+                        class="btn btn-outline-primary btn-sm">
                         Reply
                     </button>
-                    <button class="btn btn-warning"
+                    <button class="btn btn-outline-warning btn-sm"
                         v-if="bReply == false && replyItem[cm.id]"
                         @click.prevent="hideReplyForm(cm.id)">
                         Cancle
                     </button>
-                    <button class="btn btn-primary"
+                    <button class="btn btn-outline-primary btn-sm"
                         @click.prevent="getReply(cm.id)">edit comment</button>
                 </div>
             </div>

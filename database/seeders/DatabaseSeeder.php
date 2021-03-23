@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             TagTableSeeder::class,
             TemplateSeeder::class,
             VisitorTableSeeder::class,
+            VideoSeeder::class,
         ]);
     }
 }

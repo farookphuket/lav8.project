@@ -1,7 +1,7 @@
 <template>
     <div class="container">
        <div class="row">
-            <div class="col-lg-12" v-if="videos.data.length == 0">
+            <div class="col-lg-12" v-if="videos.data == 0">
                 <div class="alert alert-warning">
                     <h1 class="text-center">
                         There is no data now

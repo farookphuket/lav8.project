@@ -6,6 +6,8 @@ use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 
+use DB;
+
 class PostsController extends Controller
 {
     /**
@@ -82,6 +84,9 @@ class PostsController extends Controller
         $last_read_count = 0;
 
         $cur_ip = getUserIp();
+        $os = getUserOs();
+        $browser = getUserBrowser();
+        $device = getUserDevice();
         $cur_date = date('Y-m-d');
         $date_create = 0;
 
@@ -102,6 +107,19 @@ class PostsController extends Controller
                     'last_read_date' => $cur_date,
                     'updated_at' => $date_create
                 ]);
+
+            DB::table("post_read")
+                ->insert([
+                    "post_id" => $p_id,
+                    "os" => $os,
+                    "browser" => $browser,
+                    "ip" => $cur_ip,
+                    "device" => $device,
+                    "created_at" => now(),
+                    "updated_at" => now()
+                ]);
+
+
         endif;
 
 

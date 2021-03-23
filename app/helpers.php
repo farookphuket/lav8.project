@@ -41,7 +41,7 @@ function getUserDevice(){
   $agent = new Agent();
   $device = $agent->device();
   //dd($device);
-  //return $device;
+  return $device;
 }
 
 function OS(){

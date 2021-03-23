@@ -34,6 +34,20 @@ class CreatePostsTable extends Migration
 
 
 
+        Schema::create('post_read', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('post_id');
+            $table->string("os");
+            $table->string("ip");
+            $table->string("device");
+            $table->string("browser");
+            $table->timestamps();
+
+            $table->foreign("post_id")
+                    ->references("id")
+                    ->on("posts")
+                    ->onDelete("cascade");
+        });
     
     }
 
@@ -45,6 +59,7 @@ class CreatePostsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('posts');
+        Schema::dropIfExists('post_read');
         
     }
 }

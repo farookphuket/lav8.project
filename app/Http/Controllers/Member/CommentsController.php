@@ -33,9 +33,11 @@ class CommentsController extends Controller
     public function postComment($post_id){
         $get_comment = "";
         $comment = Comment::where("post_id",$post_id)
+                            ->orderBy("created_at","DESC")
                             ->get();
         if(count($comment) >= 1):
-            $get_comment = Comment::where("post_id",$post_id)
+            $get_comment = Comment::orderBy("created_at","DESC")
+                                    ->where("post_id",$post_id)
                                         ->with("reply")
                                         ->with("user")
                                        ->get();

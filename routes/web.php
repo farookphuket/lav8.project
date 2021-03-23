@@ -17,6 +17,7 @@ use App\Http\Controllers\Member\PostsController as MemberPost;
 use App\Http\Controllers\Member\CommentsController as MCMT;
 use App\Http\Controllers\Member\TemplatesController as TPM;
 use App\Http\Controllers\Member\SongController as SM;
+use App\Http\Controllers\Member\VideoController as VM;
 
 
 use App\Http\Controllers\Admin\WhatnewsController as WPAdmin;
@@ -125,6 +126,9 @@ Route::prefix('member')->name('member.')->middleware('auth')
     Route::resource("/song",SM::class);
     Route::get("/getSongList",[SM::class,"getSongList"])->name("getSongList");
     Route::get("/search",[SM::class,"search"])->name("search");
+
+    Route::resource("/video",VM::class);
+    Route::get("/getVideos",[VM::class,"getVideos"])->name("getVideos");
 
 });
 

@@ -259,6 +259,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -538,6 +545,10 @@ var render = function() {
                       _vm._s(cm.user.name) +
                       " \n            "
                   )
+                ]),
+                _vm._v(" · \n            "),
+                _c("span", { staticClass: "badge badge-info" }, [
+                  _vm._v(_vm._s(_vm.moment(cm.created_at).fromNow()))
                 ])
               ])
             ])
@@ -572,12 +583,16 @@ var render = function() {
                         "  \n              "
                     )
                   ]),
-                  _vm._v(" "),
+                  _vm._v(" ·\n              "),
                   _c("ul", [
-                    _c("li", [_vm._v(_vm._s(_vm.moment(re.created_at)))]),
-                    _vm._v(" "),
                     _c("li", [
-                      _vm._v(_vm._s(_vm.moment(re.created_at).fromNow()))
+                      _c("span", { staticClass: "badge badge-info" }, [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(_vm.moment(re.created_at).fromNow()) +
+                            "\n                    "
+                        )
+                      ])
                     ]),
                     _vm._v(" "),
                     _c("li", [_vm._v("IP " + _vm._s(re.ip))])

@@ -50,13 +50,12 @@ export default{
                  searchSong(){
                     let keySearch = this.$refs.search.value
                         if(keySearch.length > 2){
-                            
                             let url = `/search?search=${this.search}`
                             axios.get(url)
                             .then(res=>{
-                                console.log(res.data)
+                               // console.log(res.data)
                                 this.song = res.data.song
-                                    })
+                            })
                         }else{
                             this.clearForm()
                         }

@@ -13,10 +13,10 @@
             </form>
             <div class="clearfix">
                 <div class="float-right">
-                    <button class="btn btn-primary"
+                    <button class="btn btn-outline-primary"
                         v-model="hasClick"
                         :disabled="hasClick"
-                        @click.prevent="saveReply(cmId)">Reply</button>
+                        @click.prevent="saveReply(cmId)">Update User Comment</button>
                 </div>
             </div>
         </div>

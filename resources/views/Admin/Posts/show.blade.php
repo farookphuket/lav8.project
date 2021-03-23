@@ -14,8 +14,6 @@
 
 @section('content')
 <div class="container">    
-    <div id="app">
-    </div>
     <div class="row">
       <div class="col-lg-12  mx-auto">
             <h1 class="text-center">{{$post->post_title}}</h1>
@@ -49,7 +47,13 @@
                     </span>
                 @endforeach
             @endif
-      </div>
-    </div>
-</div>
+      </div><!-- end of div.col-lg-12 -->
+
+        <div class="col-lg-12 pt-4">
+            <div id="app">
+               <admin-post-comments></admin-post-comments>
+            </div>
+        </div>
+    </div><!-- end of div.row -->
+</div><!-- end of div.container -->
 @endsection

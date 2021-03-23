@@ -1,0 +1,27 @@
+
+
+
+/*
+    INSERT INTO "videos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    '',
+    '',
+    '2021-03-23 09:09:24',
+    '2021-03-23 09:09:28');                                          
+*/
+
+/* Last added 23 Mar 2021 */
+INSERT INTO "videos" ("id","user_id","title","embed",
+"created_at","updated_at") VALUES 
+(NULL,'1',
+
+'เปิดตัวขายจริงแล้ว ในยุโรป ใช้ชื่อ MG Marvel R ลุ้นเข้ามาทำตลาดในไทย',
+
+'<iframe width="560" height="315" 
+src="https://www.youtube.com/embed/BSxqcg7N-NA" title="YouTube video player" 
+frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+
+'2021-03-23 09:09:24',
+'2021-03-23 09:09:28');                                          

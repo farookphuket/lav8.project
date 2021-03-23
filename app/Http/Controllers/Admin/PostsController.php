@@ -174,8 +174,14 @@ class PostsController extends Controller
      */
     public function show(Post $post)
     {
+        $has_read = DB::table("post_read")
+                    ->where("post_id",$post->id)
+                    ->orderBy("created_at","DESC")
+                    ->paginate(5);
+        $device = getUserDevice();
         return view('Admin.Posts.show')->with([
-            'post' => $post
+            'post' => $post,
+            'has_read' => $has_read
         ]);
     }
 

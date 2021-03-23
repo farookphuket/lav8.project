@@ -11,7 +11,10 @@
             By 
             <span class="badge badge-info">
               {{cm.user.name}} 
-            </span>
+            </span> &middot; 
+            <span class="badge badge-info">{{moment(cm.created_at).fromNow()}}</span>
+
+
             </p>
           </div>
         </div>
@@ -31,10 +34,14 @@
               </span>
               <span class="badge badge-success">
                 {{re.user.name}}  
-              </span>
+              </span> &middot;
               <ul>
-                <li>{{moment(re.created_at)}}</li>
-                <li>{{moment(re.created_at).fromNow()}}</li>
+                <li>
+                    <span class="badge badge-info">
+                        {{moment(re.created_at).fromNow()}}
+                    </span>
+
+                </li>
                 <li>IP {{re.ip}}</li>
               </ul>
             </div>
