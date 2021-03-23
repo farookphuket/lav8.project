@@ -2,14 +2,79 @@
 
 
 /*
+copy from youtube 23 Mar 2021
     INSERT INTO "videos" ("id","user_id","title","embed","created_at",
     "updated_at") VALUES 
     (NULL,'1',
     '',
     '',
-    '2021-03-23 09:09:24',
-    '2021-03-23 09:09:28');                                          
+    '2021-03-23 18:35:24',
+    '2021-03-23 18:35:28');                                          
 */
+
+
+
+/* copy from youtube 23 Mar 2021 */
+INSERT INTO "videos" ("id","user_id","title","embed","created_at",
+"updated_at") VALUES 
+(NULL,'2',
+'รีวิว Redmi Note 10 ราคานี้ตายทั้งจักรวาลลามไปยันมัลติเวิร์ส',
+'<iframe width="560" height="315" src="https://www.youtube.com/embed/qzyDR1NjZuk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+'2021-03-23 18:35:24',
+'2021-03-23 18:35:28');                                          
+
+
+/* copy from youtube 23 Mar 2021 */
+INSERT INTO "videos" ("id","user_id","title","embed","created_at",
+"updated_at") VALUES 
+(NULL,'1',
+'GMC Hummer EV (2022) Full Details – Performance, Technology, Design',
+'<iframe width="560" height="315" src="https://www.youtube.com/embed/Ad3GGancjyc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+'2021-03-23 17:24:24',
+'2021-03-23 17:25:28');                                          
+
+
+
+
+
+/* copy from youtube 23 Mar 2021 */
+INSERT INTO "videos" ("id","user_id","title","embed","created_at",
+"updated_at") VALUES 
+(NULL,'1',
+'All Electric HUMMER EV?! - Everything you need to know!',
+'<iframe width="560" height="315" src="https://www.youtube.com/embed/9FrnNTyOAes" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+'2021-03-23 17:09:24',
+'2021-03-23 17:15:28');                                          
+
+
+/* copy from youtube 23 Mar 2021 */
+INSERT INTO "videos" ("id","user_id","title","embed","created_at",
+"updated_at") VALUES 
+(NULL,'1',
+'GMC Hummer EV vs. Tesla Cybertruck: SHOCKING PERFORMANCE',
+'<iframe width="560" height="315" src="https://www.youtube.com/embed/kOY6KGv7P2w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+'2021-03-23 17:01:24',
+'2021-03-23 16:55:28');                                          
+
+
+
+/* copy from youtube 23 Mar 2021 */
+INSERT INTO "videos" ("id","user_id","title","embed","created_at",
+"updated_at") VALUES 
+(NULL,'1',
+'Tesla Cybertruck 2021 | Why You SHOULD buy it for sure! (Updates, 
+Release Date, Changes +More)',
+'<iframe width="560" height="315" 
+src="https://www.youtube.com/embed/Uw6BjkhL_b4" 
+title="YouTube video player" frameborder="0" allow="accelerometer; 
+autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>',
+'2021-03-23 16:43:24',
+'2021-03-23 16:45:28');                                          
+
+
+
+
 
 /* Last added 23 Mar 2021 */
 INSERT INTO "videos" ("id","user_id","title","embed",
