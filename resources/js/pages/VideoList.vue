@@ -22,6 +22,42 @@
                     </div><!-- end of div.card-body -->
                 </div><!-- end of div.card -->
            </div><!-- end of div.col-md-4 -->
+
+           <div class="col-lg-12">
+                <div class="pa">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            showing from 
+                            <span>
+                                {{videos.from}} 
+                            </span> to 
+                            <span>
+                                {{videos.to}}
+                            </span> of 
+                            <span>
+                                {{videos.total}}
+                            </span> &middot;
+                        </li>
+
+                        <li class="page-item" v-for="li in videos.links">
+                           <a href="" @click.prevent="$emit('getVideos',li.url)" 
+                           v-if="li.active != true && li.url != null" 
+                           v-html="li.label">
+                                {{li.label}}
+                           </a>
+                           <span class="active" v-html="li.label" v-else>
+                                {{li.label}}
+                           </span>
+                        </li>
+
+                        <li class="page-item">
+                           <span class="active">
+                            {{videos.current_page}}
+                           </span>
+                        </li>
+                    </ul>
+                </div>
+           </div>
        </div><!-- end of div.row -->
 
        <b-modal title="Show video" ref="showVideoModal" size="xl" ok-only>

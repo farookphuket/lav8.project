@@ -1,5 +1,5 @@
 <template>
-    <div class="clearfix">
+    <div class="container">
         <div :class="visitorCount"
             v-show="showVisitorList === true">
             <ul class="visitorCount row">

@@ -1,27 +1,31 @@
 <template>
     <div>
-        <form>
-            <div class="form-group">
-                <input v-model="title" class="form-control" type="text" 
-                ref="title" placeholder="Video title">
+        <div class="row">
+            <div class="col-lg-12 pt-4 mb-4">
+                <form>
+                    <div class="form-group">
+                        <input v-model="title" class="form-control" type="text" 
+                        ref="title" placeholder="Video title">
+                    </div>
+                    <div class="form-group">
+                        <textarea v-model="embed" class="form-control" 
+                        name="" placeholder="embed code here"></textarea>
+                    </div>
+                    <div class="clearfix">
+                        <div class="float-right">
+                            <button class="btn btn-outline-primary" 
+                            @click.prevent="saveVideo(saveId)">
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div><!-- end of div.col-lg-12 form -->
+            <div class="col-lg-12">
+                {{res_status}}
             </div>
-            <div class="form-group">
-                <textarea v-model="embed" class="form-control" 
-                name="" placeholder="embed code here"></textarea>
-            </div>
-            <div class="clearfix">
-                <div class="float-right">
-                    <button class="btn btn-outline-primary" 
-                    @click.prevent="saveVideo(saveId)">
-                        Save
-                    </button>
-                </div>
-            </div>
-        </form>
-        <div class="pt-4 mb-4">
-            {{res_status}}
-        </div>
-    </div>
+        </div><!-- end of div.row -->
+    </div><!-- end of main div -->
 </template>
 
 

@@ -11,7 +11,10 @@ use App\Http\Controllers\SongController as pSong;
 use App\Http\Controllers\ArtistController as pArtist;
 use App\Http\Controllers\AlbumController as pAlbum;
 use App\Http\Controllers\VideoController as pVideo;
+use App\Http\Controllers\PhotosController as pPhotos;
 
+
+/* MEMBER */
 use App\Http\Controllers\Member\WhatnewsController as WMN;
 use App\Http\Controllers\Member\PostsController as MemberPost;
 use App\Http\Controllers\Member\CommentsController as MCMT;
@@ -20,6 +23,7 @@ use App\Http\Controllers\Member\SongController as SM;
 use App\Http\Controllers\Member\VideoController as VM;
 
 
+/* Admmin */
 use App\Http\Controllers\Admin\WhatnewsController as WPAdmin;
 use App\Http\Controllers\Admin\HomeController as HAdmin;
 use App\Http\Controllers\Admin\UserController as UAdmin;
@@ -31,6 +35,7 @@ use App\Http\Controllers\Admin\RepliesController as ADRP;
 use App\Http\Controllers\Admin\VisitorsController as ADVT;
 use App\Http\Controllers\Admin\SongController as aSong;
 use App\Http\Controllers\Admin\VideoController as aVideo;
+use App\Http\Controllers\Admin\PhotosController as aPhotos;
 
 
 /*
@@ -60,6 +65,9 @@ Route::get("/getSongList",[pSong::class,'getSongList'])->name("getSongList");
 Route::get("/readCount/{id}",[pSong::class,'readCount'])->name("readCount");
 Route::get("/search",[pSong::class,'search'])->name('search');
 
+Route::resource("/photo",pPhotos::class);
+Route::get("/getPhotos",[pPhotos::class,"getPhotos"])->name("getPhotos");
+Route::get("/search",[pPhotos::class,"search"])->name("search");
 
 /* call by Vue START*/
 Route::resource('/visitors',PubVisit::class);
@@ -214,5 +222,7 @@ Route::prefix('admin')->name('admin.')->middleware('can:is_admin')
     Route::resource("/video",aVideo::class);
     Route::get("/getVideos",[aVideo::class,"getVideos"])->name("getVideos");
 
+    Route::resource("/photo",aPhotos::class);
+    Route::get("/getPhotos",[aPhotos::class,"getPhotos"])->name("getPhotos");
 
 });

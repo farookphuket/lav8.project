@@ -1,10 +1,17 @@
 <template>
     <div class="container-fluid">
-        <h1>this is the video vue</h1>
-
+        <div class="clearfix">
+            <div class="float-right">
+                <button class="btn btn-outline-primary" 
+                @click.prevent="showFormAdd=true" 
+                v-if="showFormAdd == false">Add video</button>
+                <button class="btn btn-outline-danger" 
+                @click.prevent="showFormAdd=false" v-else>Close</button>
+            </div>
+        </div>
         <video-form @getVideos="getVideos($event)" :editId="editId" 
         :videos="videos.data"
-        ></video-form>
+         v-show="showFormAdd"></video-form>
 
         <video-list :videos="videos" @editVideo="editVideo($event)" 
         @delVideo="delVideo($event)" @getVideos="getVideos($event)"></video-list>
@@ -31,7 +38,8 @@ export default{
                  return{
                     videos:[],
                     editId:0,
-                    res_status:""
+                    res_status:"",
+                    showFormAdd:false,
                  }
              },
              mounted(){
@@ -39,7 +47,15 @@ export default{
              },
 methods:{
             getVideos(page){
-                let url = `/admin/getVideos`
+                let url = ""
+                    if(page){
+                        url = page 
+                        this.$cookies.set("avideo_old_page",url)
+                    }
+                    url = this.$cookies.get("avideo_old_page")
+                        if(!url){
+                            url = `/admin/getVideos`
+                        }
                 axios.get(url)
                 .then(res=>{
                 //console.log(res.data)
@@ -48,6 +64,7 @@ methods:{
             },
             editVideo(id){
                 this.editId = id
+                this.showFormAdd = true
             },
             delVideo(id){
                 let url = `/admin/video/${id}`

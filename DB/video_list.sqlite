@@ -2,16 +2,47 @@
 
 
 /*
-copy from youtube 23 Mar 2021
+    
     INSERT INTO "videos" ("id","user_id","title","embed","created_at",
     "updated_at") VALUES 
     (NULL,'1',
     '',
     '',
-    '2021-03-23 18:35:24',
-    '2021-03-23 18:35:28');                                          
+    '2021-03-24 15:42:44',
+    '2021-03-24 15:43:28');                                          
 */
 
+
+/* SETUP I3WM for Manjaro(KDE) 24 Mar 2021 */
+    INSERT INTO "videos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'SETUP I3WM for Manjaro(KDE)',
+    '<iframe width="560" height="315" src="https://www.youtube.com/embed/1qgfkFF-Pkk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    '2021-03-24 15:42:44',
+    '2021-03-24 15:43:28');                                          
+
+
+
+/* if iPhone commercials were honest 2 24 Mar 2021*/
+    INSERT INTO "videos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'if iPhone commercials were honest 2 ',
+    '<iframe width="560" height="315" src="https://www.youtube.com/embed/Iy-zs_iq6iE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    '2021-03-24 14:52:44',
+    '2021-03-24 14:53:28');                                          
+
+
+
+/*  if iPhone commercials were honest 24 Mar 2021 */
+    INSERT INTO "videos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'if iPhone commercials were honest',
+    '<iframe width="560" height="315" src="https://www.youtube.com/embed/aseb08zXLeg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    '2021-03-24 14:51:24',
+    '2021-03-24 14:52:28');                                          
 
 
 /* copy from youtube 23 Mar 2021 */

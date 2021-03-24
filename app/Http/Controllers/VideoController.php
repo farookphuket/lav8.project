@@ -21,7 +21,7 @@ class VideoController extends Controller
 
     public function getVideos(){
         $videos = Video::orderBy("created_at","DESC")
-            ->paginate(5)
+            ->paginate(24)
             ->onEachSide(1);
         return response()->json([
             "videos" => $videos
