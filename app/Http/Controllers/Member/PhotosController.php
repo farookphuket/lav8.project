@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Member;
 
 use App\Http\Controllers\Controller;
 use App\Models\Photo;
+use Auth;
 use Illuminate\Http\Request;
 
 class PhotosController extends Controller
@@ -15,7 +16,7 @@ class PhotosController extends Controller
      */
     public function index()
     {
-        //
+       return view("Member.Photos.index"); 
     }
 
     /**
@@ -23,6 +24,16 @@ class PhotosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function getPhotos(){
+        $photos = Photo::with("user")
+                        ->orderBy("created_at","DESC")
+                        ->paginate(5)
+                        ->onEachSide(1);
+        return response()->json([
+            "photos" => $photos
+        ]);
+    }
     public function create()
     {
         //
@@ -34,9 +45,20 @@ class PhotosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        $title = request()->title;
+        $embed = request()->embed;
+        Photo::create([
+            "title" => $title,
+            "embed" => $embed,
+            "user_id" => Auth::user()->id
+        ]);
+        $msg = "<span class=\"badge badge-success\">
+            Success : item has been save!</span>";
+        return response()->json([
+            "msg" => $msg
+        ]);
     }
 
     /**
@@ -68,9 +90,22 @@ class PhotosController extends Controller
      * @param  \App\Models\Photo  $photo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Photo $photo)
+    public function update($id)
     {
         //
+
+        $title = request()->title;
+        $embed = request()->embed;
+        Photo::where("id",$id)
+            ->update([
+            "title" => $title,
+            "embed" => $embed
+        ]);
+        $msg = "<span class=\"badge badge-success\">
+            Success : item {$id} has been updated!</span>";
+        return response()->json([
+            "msg" => $msg
+        ]);
     }
 
     /**
@@ -79,8 +114,16 @@ class PhotosController extends Controller
      * @param  \App\Models\Photo  $photo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Photo $photo)
+    public function destroy($id)
     {
         //
+
+        $del = Photo::find($id);
+        $del->delete();
+        $msg = "<span class=\"badge badge-success\">
+            Success : item has been deleted!</span>";
+        return response()->json([
+            "msg" => $msg
+        ]);
     }
 }

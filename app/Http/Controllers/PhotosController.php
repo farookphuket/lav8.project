@@ -31,7 +31,8 @@ class PhotosController extends Controller
 
     public function search(){
         $search = request()->search;
-        $photos = Photo::where("title","LIKE","%$search%")
+        $photos = Photo::with("user")
+                    ->where("title","LIKE","%$search%")
                         ->orderBy("created_at","DESC")
                         ->get();
         return response()->json([

@@ -356,15 +356,11 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
   },
   methods: {
     photoOpen: function photoOpen(id) {
-      var _this = this;
-
       this.photos.data.forEach(function (val) {
         if (val.id == id) {
-          _this.photo = val.embed;
-          _this.title = val.title;
+          console.log("the val is ".concat(val.id));
         }
       });
-      this.$refs["showPhotoModal"].show();
     },
     getSelect: function getSelect() {
       this.$refs.selectLink.select();
@@ -892,7 +888,7 @@ var render = function() {
           "b-modal",
           {
             ref: "showPhotoModal",
-            attrs: { title: _vm.title, size: "xl", "ok-only": "" }
+            attrs: { title: "show photo", size: "xl", "ok-only": "" }
           },
           [
             _c("div", { staticClass: "container" }, [
