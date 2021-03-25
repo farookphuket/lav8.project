@@ -47,7 +47,7 @@
                            <span>{{videos.total}}</span>
                         </li>
                         <li class="page-item" v-for="li in videos.links">
-                           <a @click.prevent="$emit('getVideos',li.url)" 
+                           <a href="" @click.prevent="$emit('getVideos',li.url)" 
                            v-if="li.active == false && li.url != null" 
                            v-html="li.label">
                             {{li.label}}

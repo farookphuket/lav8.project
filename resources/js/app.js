@@ -49,6 +49,7 @@ Vue.use(JoditVue)
 Vue.component('Visitors',()=>import( './components/visitors.vue'));
 Vue.component('Song',()=>import( './pages/Song.vue'));
 Vue.component('Pubvideo',()=>import( './pages/Video.vue'));
+Vue.component('PubPhoto',()=>import( './pages/Photo.vue'));
 Vue.component('LoginForm',()=>import( './components/LoginForm.vue'));
 Vue.component('LoginPage',()=>import( './components/LoginPage.vue'));
 
@@ -86,6 +87,7 @@ Vue.component('AdminPostComments',()=>import('./pages/Admin/PostComments.vue'));
 Vue.component('AdminAbout',()=>import('./pages/Admin/AdminAbout.vue'));
 Vue.component('ManageUser',()=>import('./pages/Admin/Users.vue'));
 Vue.component('Avideo',()=>import('./pages/Admin/Video.vue'));
+Vue.component('AdminPhoto',()=>import('./pages/Admin/Photo.vue'));
 
 
 //Vue.component('Admintaglist',require('./pages/Admin/ShowTagList.vue').default);

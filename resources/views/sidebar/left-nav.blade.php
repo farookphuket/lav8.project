@@ -37,8 +37,10 @@
                             >
                             <a href="{{route('admin.video.index')}}">Video</a>
                         </li>
-                        <li>
-                            <a href="#">Page 3</a>
+                        <li 
+                        class="@if(Request::segment(2) == "photo") active @endif "
+                            >
+                            <a href="{{route('admin.photo.index')}}">Photo</a>
                         </li>
                     </ul>
                 </li>

@@ -115,14 +115,6 @@
 
 
 
-        <!-- Pager -->
-      <!--
-        <div id="app">
-      -->
-          <Visitors></Visitors>
-          <!--
-        </div>
-          -->
       </div>
 
     </div>
@@ -183,6 +175,8 @@
 
         </ul>
       </div>
+        
+        <Visitors></Visitors>
     </div>
   </div>
 </footer>

@@ -41,6 +41,12 @@
             " href="{{url('/song')}}">Song</a>
         </li>
 
+        <li class="nav-item
+          {{Request::segment(1)== 'photo'?'bg-success':''}}
+          ">
+          <a class="nav-link 
+            " href="{{url('/photo')}}">Photo</a>
+        </li>
 
         <li class="nav-item
           {{Request::segment(1)== 'video'?'bg-success':''}}

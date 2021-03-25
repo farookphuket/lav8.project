@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid">
-        <video-list :videos="videos"></video-list>
+        <video-list :videos="videos" @getVideos="getVideos($event)"></video-list>
     </div>
 </template>
 
