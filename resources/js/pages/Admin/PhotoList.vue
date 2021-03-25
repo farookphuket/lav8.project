@@ -65,7 +65,7 @@
                     </ul>
                 </div>
             </div><!-- end of div.col-lg-12 pagination -->
-            <b-modal :title="title" ref="showPhotoModal" 
+            <b-modal title="show photo" ref="showPhotoModal" 
             size="xl" ok-only>
                 <div class="container">
                     
@@ -103,13 +103,12 @@ watch:{
       },
 methods:{
             photoOpen(id){
-                this.photos.data.forEach((val)=>{
-                        if(val.id == id){
-                            this.photo  = val.embed
-                            this.title = val.title
-                        }
-                        })
-                this.$refs["showPhotoModal"].show()
+                    this.photos.data.forEach((val)=>{
+                            if(val.id == id){
+                                console.log(`the val is ${val.id}`)
+                            }
+                    })
+                
             },
             getSelect(){
                 this.$refs.selectLink.select()

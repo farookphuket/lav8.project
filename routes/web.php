@@ -21,6 +21,7 @@ use App\Http\Controllers\Member\CommentsController as MCMT;
 use App\Http\Controllers\Member\TemplatesController as TPM;
 use App\Http\Controllers\Member\SongController as SM;
 use App\Http\Controllers\Member\VideoController as VM;
+use App\Http\Controllers\Member\PhotosController as mPhoto;
 
 
 /* Admmin */
@@ -137,6 +138,9 @@ Route::prefix('member')->name('member.')->middleware('auth')
 
     Route::resource("/video",VM::class);
     Route::get("/getVideos",[VM::class,"getVideos"])->name("getVideos");
+
+    Route::resource("/photo",mPhoto::class);
+    Route::get("/getPhotos",[mPhoto::class,"getPhotos"])->name("getPhotos");
 
 });
 

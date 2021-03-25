@@ -66,6 +66,7 @@ Vue.component('Postmember',()=>import('./pages/Member/Post.vue'));
 Vue.component('CommentMember',()=>import('./pages/Member/Comment.vue'));
 Vue.component('TagWithPostList',()=>import('./pages/Member/TagWithPostList.vue'));
 Vue.component('Msong',()=>import('./pages/Member/Song.vue'));
+Vue.component('MemberPhoto',()=>import('./pages/Member/Photo.vue'));
 
 
 //Vue.component('Adminwm',require('./pages/Admin/Whatnews.vue').default);

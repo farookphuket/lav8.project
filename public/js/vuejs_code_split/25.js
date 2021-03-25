@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[25],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/password-reset-form.vue?vue&type=script&lang=js&":
-/*!******************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/password-reset-form.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/email-request-form.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/email-request-form.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -30,89 +30,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "PassReset",
-  props: ['email'],
-  email: '',
-  uniqueId: '',
-  timeout: '',
+  name: "EmailReq",
   data: function data() {
     return {
       show: '',
       form: {
-        passwd: ''
-      },
-      ip: [],
-      timeout: [],
-      uniqueId: []
+        email: ''
+      }
     };
   },
-  mounted: function mounted() {
-    this.init();
-  },
   methods: {
-    sendClick: function sendClick() {
+    getClick: function getClick() {
       var _this = this;
 
-      //console.log(window.timeout);
-      var url2 = '/update';
-      axios.post(url2, {
-        passwd: this.$refs.passwd.value,
-        email: window.email
+      var url1 = '/hello';
+      axios.post(url1, {
+        email: this.$refs.email.value
       }).then(function (response) {
-        _this.show = response.data.msg;
-        setTimeout(function () {
-          location.href = '/login';
-        }, 5500);
-      }, function (error) {
-        console.log(error.response.data.message);
-        _this.show = "<span class=\"badge badge-danger\">\n                        Error  ".concat(error.response.data.message, "!\n                        </span>");
+        _this.show = response.data.msg; //      setTimeout(()=>{
+        //          window.location.reload();
+        //      },3500);
       });
-    },
-    getMyInfo: function getMyInfo() {
-      var _this2 = this;
-
-      axios.get('/getmyresetinfo').then(function (response) {
-        _this2.ip = response.data.ip;
-      });
-    },
-    init: function init() {
-      this.uniqueId = window.resettoken;
-      this.timeout = window.timeout;
-
-      if (this.timeout <= 0) {
-        alert("Sorry but your link has been expired!");
-        window.location.href = "/";
-      } else {
-        this.getMyInfo();
-        this.getReloadPage();
-      }
-    },
-    getReloadPage: function getReloadPage() {
-      var myTime = setInterval(function () {//location.reload();
-      }, 35000);
-
-      if (this.timeout <= 1) {
-        clearInterval(myTime);
-        myTime = 0;
-        alert("Your time for reset password is out now\n\n                this page will be expire sonn");
-      }
     }
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/password-reset-form.vue?vue&type=template&id=2a1188f9&":
-/*!**********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/password-reset-form.vue?vue&type=template&id=2a1188f9& ***!
-  \**********************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/email-request-form.vue?vue&type=template&id=6efd2fde&":
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/email-request-form.vue?vue&type=template&id=6efd2fde& ***!
+  \*********************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -124,77 +73,49 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("form", [
-      _c("div", { staticClass: "form-group" }, [
-        _c("label", { staticClass: "sr-only", attrs: { for: "passwd" } }, [
-          _vm._v("New password")
-        ]),
-        _vm._v(" "),
-        _c("input", {
-          ref: "passwd",
-          staticClass: "form-control",
-          attrs: {
-            type: "password",
-            name: "passwd",
-            placeholder: "Enter your new password"
-          }
-        })
+  return _c("form", [
+    _c("div", { staticClass: "form-group" }, [
+      _c("label", { staticClass: "sr-only", attrs: { for: "email" } }, [
+        _vm._v("Email")
       ]),
       _vm._v(" "),
-      _c(
-        "p",
-        {
-          staticStyle: { margin: "1.5em" },
-          domProps: { innerHTML: _vm._s(_vm.show) }
-        },
-        [_vm._v(_vm._s(_vm.show))]
-      ),
-      _vm._v(" "),
       _c("input", {
-        staticClass: "btn btn-block btn-info send-btn mb-4",
-        attrs: {
-          name: "send",
-          id: "send",
-          type: "submit",
-          value: "Reset My Password now DUDE"
-        },
-        on: {
-          click: function($event) {
-            $event.preventDefault()
-            return _vm.sendClick()
-          }
+        ref: "email",
+        staticClass: "form-control",
+        attrs: { type: "email", name: "email", placeholder: "Email address" }
+      })
+    ]),
+    _vm._v(" "),
+    _c("p", { domProps: { innerHTML: _vm._s(_vm.show) } }),
+    _vm._v(" "),
+    _c("input", {
+      staticClass: "btn btn-block btn-info send-btn mb-4",
+      attrs: {
+        name: "send",
+        id: "send",
+        type: "submit",
+        value: "sent Me reset link"
+      },
+      on: {
+        click: function($event) {
+          $event.preventDefault()
+          return _vm.getClick()
         }
-      }),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass: "btn btn-primary btn-block  mb-4",
-          staticStyle: { color: "white", "font-weight": "bold" },
-          attrs: { href: "/" }
-        },
-        [_vm._v("\n            Back Home\n        ")]
-      )
-    ])
+      }
+    }),
+    _vm._v(" "),
+    _c(
+      "a",
+      {
+        staticClass: "btn btn-primary btn-block  mb-4",
+        staticStyle: { color: "white", "font-weight": "bold" },
+        attrs: { href: "/" }
+      },
+      [_vm._v("\n        Back Home\n    ")]
+    )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", [
-      _vm._v(
-        "\n        dear friend please enter your new password before the time out \n        "
-      ),
-      _c("b", [_vm._v("please note")]),
-      _vm._v(" that this page will be expire soon .\n    ")
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -313,17 +234,17 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ "./resources/js/components/password-reset-form.vue":
-/*!*********************************************************!*\
-  !*** ./resources/js/components/password-reset-form.vue ***!
-  \*********************************************************/
+/***/ "./resources/js/components/email-request-form.vue":
+/*!********************************************************!*\
+  !*** ./resources/js/components/email-request-form.vue ***!
+  \********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _password_reset_form_vue_vue_type_template_id_2a1188f9___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./password-reset-form.vue?vue&type=template&id=2a1188f9& */ "./resources/js/components/password-reset-form.vue?vue&type=template&id=2a1188f9&");
-/* harmony import */ var _password_reset_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./password-reset-form.vue?vue&type=script&lang=js& */ "./resources/js/components/password-reset-form.vue?vue&type=script&lang=js&");
+/* harmony import */ var _email_request_form_vue_vue_type_template_id_6efd2fde___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./email-request-form.vue?vue&type=template&id=6efd2fde& */ "./resources/js/components/email-request-form.vue?vue&type=template&id=6efd2fde&");
+/* harmony import */ var _email_request_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./email-request-form.vue?vue&type=script&lang=js& */ "./resources/js/components/email-request-form.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -333,9 +254,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _password_reset_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _password_reset_form_vue_vue_type_template_id_2a1188f9___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _password_reset_form_vue_vue_type_template_id_2a1188f9___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _email_request_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _email_request_form_vue_vue_type_template_id_6efd2fde___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _email_request_form_vue_vue_type_template_id_6efd2fde___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -345,38 +266,38 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/password-reset-form.vue"
+component.options.__file = "resources/js/components/email-request-form.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/password-reset-form.vue?vue&type=script&lang=js&":
-/*!**********************************************************************************!*\
-  !*** ./resources/js/components/password-reset-form.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************************/
+/***/ "./resources/js/components/email-request-form.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/email-request-form.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_password_reset_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./password-reset-form.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/password-reset-form.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_password_reset_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_email_request_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./email-request-form.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/email-request-form.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_email_request_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/components/password-reset-form.vue?vue&type=template&id=2a1188f9&":
-/*!****************************************************************************************!*\
-  !*** ./resources/js/components/password-reset-form.vue?vue&type=template&id=2a1188f9& ***!
-  \****************************************************************************************/
+/***/ "./resources/js/components/email-request-form.vue?vue&type=template&id=6efd2fde&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/email-request-form.vue?vue&type=template&id=6efd2fde& ***!
+  \***************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_password_reset_form_vue_vue_type_template_id_2a1188f9___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./password-reset-form.vue?vue&type=template&id=2a1188f9& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/password-reset-form.vue?vue&type=template&id=2a1188f9&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_password_reset_form_vue_vue_type_template_id_2a1188f9___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_email_request_form_vue_vue_type_template_id_6efd2fde___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./email-request-form.vue?vue&type=template&id=6efd2fde& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/email-request-form.vue?vue&type=template&id=6efd2fde&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_email_request_form_vue_vue_type_template_id_6efd2fde___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_password_reset_form_vue_vue_type_template_id_2a1188f9___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_email_request_form_vue_vue_type_template_id_6efd2fde___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
