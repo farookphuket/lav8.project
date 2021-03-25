@@ -18,6 +18,17 @@ class PhotosController extends Controller
     }
 
 
+
+  //  public function search(){
+  //      $search = request()->search;
+  //      $photos = Photo::where("title","LIKE","%$search%")
+  //                      ->orderBy("created_at","DESC")
+  //                      ->get();
+  //      return response()->json([
+  //          "photos" => $photos 
+  //      ]);
+  //  }
+
     public function search(){
         $search = request()->search;
         $photos = Photo::where("title","LIKE","%$search%")
