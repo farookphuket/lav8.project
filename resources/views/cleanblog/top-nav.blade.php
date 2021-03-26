@@ -77,6 +77,9 @@
           <a class="nav-link" href="{{route('member.song.index')}}">Song</a>
         </li>
 
+        <li class="nav-item  {{Request::segment(2) == 'photo'?'bg-success':''}}  ">
+          <a class="nav-link" href="{{route('member.photo.index')}}">Photo</a>
+        </li>
 
         <li class="nav-item  {{Request::segment(2) == 'video'?'bg-success':''}}  ">
           <a class="nav-link" href="{{route('member.video.index')}}">Video</a>

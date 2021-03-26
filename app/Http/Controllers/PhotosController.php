@@ -68,7 +68,12 @@ class PhotosController extends Controller
      */
     public function show(Photo $photo)
     {
-        //
+        $photo = Photo::with("user")
+                ->where("id",$photo->id)
+                ->get();
+        return response()->json([
+            "photo" => $photo
+        ]);
     }
 
     /**

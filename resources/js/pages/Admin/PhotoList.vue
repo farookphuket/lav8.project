@@ -87,7 +87,7 @@ var moment = require('moment')
 
 export default{
     name:"PhotoList",
-    props:["photos","openPhoto"],
+    props:["photos","openId"],
     data(){
         return{
             moment:moment,
@@ -97,18 +97,22 @@ export default{
         }
     },
 watch:{
-          "openPhoto":function(x){
-            this.photoOpen(x)
+          "openId":function(x){
+            this.photoId = x
+            this.photoOpen(this.photoId)
           }
       },
 methods:{
             photoOpen(id){
-                    this.photos.data.forEach((val)=>{
-                            if(val.id == id){
-                                console.log(`the val is ${val.id}`)
-                            }
-                    })
-                
+               //console.log(`the id is ${id}`) 
+                   this.photos.data.forEach((val)=>{
+                           if(val.id == id){
+                            this.photo = val.embed
+                            this.title = val.title
+                            this.photoId = val.id 
+                           }    
+                        })
+                this.$refs["showPhotoModal"].show()
             },
             getSelect(){
                 this.$refs.selectLink.select()

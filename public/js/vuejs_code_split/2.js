@@ -415,12 +415,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "PhotoSearch",
   data: function data() {
     return {
       photo: [],
-      search: ''
+      search: '',
+      moment: moment,
+      ownerName: '',
+      title: '',
+      embed: '',
+      createDate: ''
     };
   },
   methods: {
@@ -433,6 +459,25 @@ __webpack_require__.r(__webpack_exports__);
           _this.photo = res.data.photos;
         });
       }
+    },
+    openPhoto: function openPhoto(id) {
+      var _this2 = this;
+
+      var url = "/photo/".concat(id);
+      axios.get(url).then(function (res) {
+        //console.log(res.data)
+        res.data.photo.forEach(function (val) {
+          _this2.title = val.title;
+          _this2.embed = val.embed;
+          _this2.ownerName = val.user.name;
+          _this2.createDate = val.created_at;
+        });
+
+        _this2.$refs["showSearchModel"].show();
+      });
+    },
+    selectCode: function selectCode() {
+      this.$refs.copyCode.select();
     }
   }
 });
@@ -1010,7 +1055,7 @@ var render = function() {
                     on: {
                       click: function($event) {
                         $event.preventDefault()
-                        return _vm.$emit("openPhoto", po.id)
+                        return _vm.openPhoto(po.id)
                       }
                     }
                   },
@@ -1036,7 +1081,56 @@ var render = function() {
               ])
             ]
           )
-        })
+        }),
+        _vm._v(" "),
+        _c(
+          "b-modal",
+          {
+            ref: "showSearchModel",
+            attrs: { title: _vm.title, size: "xl", "ok-only": "" }
+          },
+          [
+            _c("div", { staticClass: "card" }, [
+              _c("img", {
+                staticClass: "card-img-top",
+                attrs: { src: _vm.embed, alt: "" }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-body" }, [
+                _c("span", { staticClass: "badge badge-info" }, [
+                  _vm._v(_vm._s(_vm.ownerName))
+                ]),
+                _vm._v(" \n                    · \n                    "),
+                _c("span", { staticClass: "badge badge-info" }, [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(_vm.moment(_vm.createDate)) +
+                      " · \n                    " +
+                      _vm._s(_vm.moment(_vm.createDate).fromNow()) +
+                      "\n                    "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group pt-2" }, [
+                  _c(
+                    "textarea",
+                    {
+                      ref: "copyCode",
+                      staticClass: "form-control",
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.selectCode($event)
+                        }
+                      }
+                    },
+                    [_vm._v(_vm._s(_vm.embed))]
+                  )
+                ])
+              ])
+            ])
+          ]
+        )
       ],
       2
     )

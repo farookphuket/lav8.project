@@ -16,7 +16,9 @@
             </div>
            </div>
        </div>
-        <photo-search v-show="showSearch" @openPhoto="openPhoto($event)"></photo-search>
+        <photo-search v-show="showSearch" 
+        @openPhoto="openPhoto($event)"></photo-search>
+
         <photo-form :editId="editId" :photos="photos"
         @getPhotos="getPhotos($event)"  
         v-show="showFormPhoto"></photo-form>
@@ -25,7 +27,7 @@
         @photoEdit="photoEdit($event)"
         @photoDel="photoDel($event)"
         @getPhotos="getPhotos($event)" 
-        :openPhoto="openId"></photo-list>
+        :openId="openId"></photo-list>
 
         <b-modal title="Server Said :" ref="onOk" centered ok-only>
             <div v-html="res_status">
