@@ -50,6 +50,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -340,7 +342,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "PhotoList",
-  props: ["photos", "openPhoto"],
+  props: ["photos", "openId"],
   data: function data() {
     return {
       moment: moment,
@@ -350,17 +352,24 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
     };
   },
   watch: {
-    "openPhoto": function openPhoto(x) {
-      this.photoOpen(x);
+    "openId": function openId(x) {
+      this.photoId = x;
+      this.photoOpen(this.photoId);
     }
   },
   methods: {
     photoOpen: function photoOpen(id) {
+      var _this = this;
+
+      //console.log(`the id is ${id}`) 
       this.photos.data.forEach(function (val) {
         if (val.id == id) {
-          console.log("the val is ".concat(val.id));
+          _this.photo = val.embed;
+          _this.title = val.title;
+          _this.photoId = val.id;
         }
       });
+      this.$refs["showPhotoModal"].show();
     },
     getSelect: function getSelect() {
       this.$refs.selectLink.select();
@@ -411,6 +420,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -418,10 +445,12 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
   data: function data() {
     return {
       moment: moment,
-      photos: '',
+      photos: [],
       search: "",
       embed: '',
-      title: ''
+      title: '',
+      ownerName: '',
+      createDate: ''
     };
   },
   methods: {
@@ -432,9 +461,29 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
         this.photos = [];
         var url = "/search?search=".concat(this.search);
         axios.get(url).then(function (res) {
+          //console.log(res.data.photos)
           _this.photos = res.data.photos;
         });
       }
+    },
+    openPhoto: function openPhoto(id) {
+      var _this2 = this;
+
+      var url = "/photo/".concat(id);
+      axios.get(url).then(function (res) {
+        res.data.photo.forEach(function (val) {
+          //console.log(val)    
+          _this2.title = val.title;
+          _this2.embed = val.embed;
+          _this2.ownerName = val.user.name;
+          _this2.createDate = val.created_at;
+        });
+
+        _this2.$refs["showSearchModal"].show();
+      });
+    },
+    selectCode: function selectCode() {
+      this.$refs.copyCode.select();
     }
   }
 });
@@ -556,7 +605,7 @@ var render = function() {
       }),
       _vm._v(" "),
       _c("photo-list", {
-        attrs: { photos: _vm.photos, openPhoto: _vm.openId },
+        attrs: { photos: _vm.photos, openId: _vm.openId },
         on: {
           photoEdit: function($event) {
             return _vm.photoEdit($event)
@@ -1009,7 +1058,7 @@ var render = function() {
                     on: {
                       click: function($event) {
                         $event.preventDefault()
-                        return _vm.$emit("openPhoto", ph.id)
+                        return _vm.openPhoto(ph.id)
                       }
                     }
                   },
@@ -1037,7 +1086,56 @@ var render = function() {
               ])
             ]
           )
-        })
+        }),
+        _vm._v(" "),
+        _c(
+          "b-modal",
+          {
+            ref: "showSearchModal",
+            attrs: { title: _vm.title, size: "xl", "ok-only": "" }
+          },
+          [
+            _c("div", { staticClass: "card" }, [
+              _c("img", {
+                staticClass: "card-img-top",
+                attrs: { src: _vm.embed, alt: "" }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-body" }, [
+                _c("span", { staticClass: "badge badge-info" }, [
+                  _vm._v(_vm._s(_vm.ownerName))
+                ]),
+                _vm._v(" \n                   · \n                   "),
+                _c("span", { staticClass: "badge badge-info" }, [
+                  _vm._v(
+                    "\n                   " +
+                      _vm._s(_vm.moment(_vm.createDate)) +
+                      " · \n                   " +
+                      _vm._s(_vm.moment(_vm.createDate).fromNow()) +
+                      "  \n                   "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group pt-2" }, [
+                  _c(
+                    "textarea",
+                    {
+                      ref: "copyCode",
+                      staticClass: "form-control",
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.selectCode($event)
+                        }
+                      }
+                    },
+                    [_vm._v(_vm._s(_vm.embed))]
+                  )
+                ])
+              ])
+            ])
+          ]
+        )
       ],
       2
     )

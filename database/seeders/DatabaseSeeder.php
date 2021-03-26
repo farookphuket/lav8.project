@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             TemplateSeeder::class,
             VisitorTableSeeder::class,
             VideoSeeder::class,
+            PhotoSeeder::class,
         ]);
     }
 }

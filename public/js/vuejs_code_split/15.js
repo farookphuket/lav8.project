@@ -19,6 +19,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -26,6 +28,36 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     PhotoSearch: _PhotoSearch_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     PhotoList: _PhotoList_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  data: function data() {
+    return {
+      photos: []
+    };
+  },
+  mounted: function mounted() {
+    this.getPhotos();
+  },
+  methods: {
+    getPhotos: function getPhotos(page) {
+      var _this = this;
+
+      var url = '';
+
+      if (page) {
+        url = page;
+        this.$cookies.set("pic_old_page", url);
+      }
+
+      url = this.$cookies.get('pic_old_page');
+
+      if (!url) {
+        url = "/getPhotos";
+      }
+
+      axios.get(url).then(function (res) {
+        _this.photos = res.data.photos;
+      });
+    }
   }
 });
 
@@ -49,14 +81,91 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "PhotoList",
+  props: ["photos", "openId"],
   data: function data() {
     return {
-      moment: moment
+      moment: moment,
+      title: '',
+      embed: '',
+      createdDate: '',
+      ownerName: ''
     };
+  },
+  methods: {
+    openPhoto: function openPhoto(id) {
+      var _this = this;
+
+      //console.log(this.photos.data)
+      this.photos.data.forEach(function (val) {
+        if (val.id == id) {
+          _this.title = val.title;
+          _this.embed = val.embed;
+          _this.ownerName = val.user.name;
+          _this.createdDate = val.created_at; //console.log(this.title)
+        }
+
+        _this.$refs["showPhotoModal"].show();
+      });
+    },
+    selectCode: function selectCode() {
+      this.$refs.copyCode.select();
+    }
   }
 });
 
@@ -90,12 +199,80 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "PhotoSearch",
   data: function data() {
     return {
-      search: ''
+      search: '',
+      photos: [],
+      moment: moment,
+      title: '',
+      embed: '',
+      createDate: '',
+      ownerName: ''
     };
+  },
+  methods: {
+    searchPhoto: function searchPhoto() {
+      var _this = this;
+
+      var url = "/search?search=".concat(this.search);
+      axios.get(url).then(function (res) {
+        _this.photos = res.data.photos;
+      });
+    },
+    openPhoto: function openPhoto(id) {
+      var _this2 = this;
+
+      var url = "/photo/".concat(id);
+      axios.get(url).then(function (res) {
+        res.data.photo.forEach(function (val) {
+          if (val.id == id) {
+            _this2.title = val.title;
+            _this2.embed = val.embed;
+            _this2.createDate = val.created_at;
+            _this2.ownerName = val.user.name;
+          }
+
+          _this2.$refs["showPhotoModal"].show();
+        });
+      });
+    },
+    selectCode: function selectCode() {
+      this.$refs.copyCode.select();
+    }
   }
 });
 
@@ -116,7 +293,22 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("photo-search"), _vm._v(" "), _c("photo-list")], 1)
+  return _c(
+    "div",
+    [
+      _c("photo-search", { attrs: { photos: _vm.photos } }),
+      _vm._v(" "),
+      _c("photo-list", {
+        attrs: { photos: _vm.photos },
+        on: {
+          getPhotos: function($event) {
+            return _vm.getPhotos($event)
+          }
+        }
+      })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -140,20 +332,154 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c(
+      "div",
+      { staticClass: "row" },
+      [
+        _vm._l(_vm.photos.data, function(po) {
+          return _c("div", { staticClass: "col-lg-3" }, [
+            _c("div", { staticClass: "card" }, [
+              _c(
+                "a",
+                {
+                  attrs: { href: "" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.openPhoto(po.id)
+                    }
+                  }
+                },
+                [
+                  _c("img", {
+                    staticClass: "card-img-top",
+                    attrs: { src: po.embed, alt: "" }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-body" }, [
+                _c("span", { staticClass: "badge badge-info" }, [
+                  _vm._v(_vm._s(po.title))
+                ]),
+                _vm._v(" · \n                  "),
+                _c("span", { staticClass: "badge badge-info" }, [
+                  _vm._v(_vm._s(_vm.moment(po.created_at).fromNow()))
+                ])
+              ])
+            ])
+          ])
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-12" }, [
+          _c("div", { staticClass: "po" }, [
+            _c(
+              "ul",
+              { staticClass: "pagination" },
+              [
+                _c("li", { staticClass: "page-item" }, [
+                  _vm._v(
+                    "\n                        showing from  \n                        "
+                  ),
+                  _c("span", [_vm._v(_vm._s(_vm.photos.from))]),
+                  _vm._v(" to \n                        "),
+                  _c("span", [_vm._v(_vm._s(_vm.photos.to))]),
+                  _vm._v(" of  \n                        "),
+                  _c("span", [_vm._v(_vm._s(_vm.photos.total))]),
+                  _vm._v(" ·  \n                    ")
+                ]),
+                _vm._v(" "),
+                _vm._l(_vm.photos.links, function(li) {
+                  return _c("li", { staticClass: "page-item" }, [
+                    li.active != true && li.url != null
+                      ? _c(
+                          "a",
+                          {
+                            attrs: { href: "" },
+                            domProps: { innerHTML: _vm._s(li.label) },
+                            on: {
+                              click: function($event) {
+                                $event.preventDefault()
+                                return _vm.$emit("getPhotos", li.url)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(li.label))]
+                        )
+                      : _c(
+                          "span",
+                          {
+                            staticClass: "active",
+                            domProps: { innerHTML: _vm._s(li.label) }
+                          },
+                          [_vm._v(_vm._s(li.label))]
+                        ),
+                    _vm._v(" ·\n                    ")
+                  ])
+                }),
+                _vm._v(" "),
+                _c("li", { staticClass: "page-item" }, [
+                  _c("span", [_vm._v(_vm._s(_vm.photos.current_page))])
+                ])
+              ],
+              2
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "b-modal",
+          {
+            ref: "showPhotoModal",
+            attrs: { title: _vm.title, size: "xl", "ok-only": "" }
+          },
+          [
+            _c("div", { staticClass: "card" }, [
+              _c("img", {
+                staticClass: "card-img-top",
+                attrs: { src: _vm.embed, alt: "" }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-body" }, [
+                _c("span", { staticClass: "badge badge-info" }, [
+                  _vm._v(_vm._s(_vm.ownerName))
+                ]),
+                _vm._v(" \n                    · \n                    "),
+                _c("span", { staticClass: "badge badge-info" }, [
+                  _vm._v(
+                    _vm._s(_vm.moment(_vm.createdDate)) +
+                      " · \n                    " +
+                      _vm._s(_vm.moment(_vm.createdDate).fromNow())
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group pt-4 mb-4" }, [
+                _c(
+                  "textarea",
+                  {
+                    ref: "copyCode",
+                    staticClass: "form-control",
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.selectCode($event)
+                      }
+                    }
+                  },
+                  [_vm._v(_vm._s(_vm.embed))]
+                )
+              ])
+            ])
+          ]
+        )
+      ],
+      2
+    )
+  ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("h1", { staticClass: "text-center" }, [
-        _vm._v("\nPhoto list file\n        ")
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -176,38 +502,138 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-lg-12" }, [
-        _c("form", { attrs: { action: "" } }, [
-          _c("div", { staticClass: "form-group" }, [
-            _c("input", {
+    _c(
+      "div",
+      { staticClass: "row" },
+      [
+        _c("div", { staticClass: "col-lg-12" }, [
+          _c("form", { attrs: { action: "" } }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.search,
+                    expression: "search"
+                  }
+                ],
+                ref: "search",
+                staticClass: "form-control",
+                attrs: { type: "text", placeholder: "Search photo..." },
+                domProps: { value: _vm.search },
+                on: {
+                  keyup: _vm.searchPhoto,
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.search = $event.target.value
+                  }
+                }
+              })
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _vm._l(_vm.photos, function(po) {
+          return _c(
+            "div",
+            {
               directives: [
                 {
-                  name: "model",
-                  rawName: "v-model",
+                  name: "show",
+                  rawName: "v-show",
                   value: _vm.search,
                   expression: "search"
                 }
               ],
-              ref: "search",
-              staticClass: "form-control",
-              attrs: { type: "text", placeholder: "Search photo..." },
-              domProps: { value: _vm.search },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.search = $event.target.value
-                }
-              }
-            })
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-12" })
-    ])
+              staticClass: "col-lg-3"
+            },
+            [
+              _c("div", { staticClass: "card" }, [
+                _c(
+                  "a",
+                  {
+                    attrs: { href: "" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.openPhoto(po.id)
+                      }
+                    }
+                  },
+                  [
+                    _c("img", {
+                      staticClass: "card-img-top",
+                      attrs: { src: po.embed, alt: "" }
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c("span", { staticClass: "badge badge-info" }, [
+                    _vm._v(_vm._s(po.user.name))
+                  ]),
+                  _vm._v(" · \n                "),
+                  _c("span", { staticClass: "badge badge-info" }, [
+                    _vm._v(_vm._s(_vm.moment(po.created_at).fromNow()))
+                  ])
+                ])
+              ])
+            ]
+          )
+        }),
+        _vm._v(" "),
+        _c(
+          "b-modal",
+          {
+            ref: "showPhotoModal",
+            attrs: { title: _vm.title, size: "xl", "ok-only": "" }
+          },
+          [
+            _c("div", { staticClass: "card" }, [
+              _c("img", {
+                staticClass: "card-img-top",
+                attrs: { src: _vm.embed, alt: "" }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-body" }, [
+                _c("span", { staticClass: "badge badge-info" }, [
+                  _vm._v(_vm._s(_vm.ownerName))
+                ]),
+                _vm._v(" · \n\n               "),
+                _c("span", { staticClass: "badge badge-info" }, [
+                  _vm._v(
+                    _vm._s(_vm.moment(_vm.createDate)) +
+                      " \n               · " +
+                      _vm._s(_vm.moment(_vm.createDate).fromNow())
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group pt-2 pt-4" }, [
+                  _c(
+                    "textarea",
+                    {
+                      ref: "copyCode",
+                      staticClass: "form-control",
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.selectCode($event)
+                        }
+                      }
+                    },
+                    [_vm._v(_vm._s(_vm.embed))]
+                  )
+                ])
+              ])
+            ])
+          ]
+        )
+      ],
+      2
+    )
   ])
 }
 var staticRenderFns = []

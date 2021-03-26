@@ -18,6 +18,26 @@ class PhotosController extends Controller
     }
 
 
+    public function getPhotos(){
+        $photos = Photo::with("user")
+                        ->orderBy("created_at","DESC")
+                        ->paginate(5)
+                        ->onEachSide(1);
+        return response()->json([
+            "photos" => $photos
+        ]);
+    }
+
+  //  public function search(){
+  //      $search = request()->search;
+  //      $photos = Photo::where("title","LIKE","%$search%")
+  //                      ->orderBy("created_at","DESC")
+  //                      ->get();
+  //      return response()->json([
+  //          "photos" => $photos 
+  //      ]);
+  //  }
+
     public function search(){
         $search = request()->search;
         $photos = Photo::with("user")
@@ -57,7 +77,12 @@ class PhotosController extends Controller
      */
     public function show(Photo $photo)
     {
-        //
+        $photo = Photo::with("user")
+                ->where("id",$photo->id)
+                ->get();
+        return response()->json([
+            "photo" => $photo
+        ]);
     }
 
     /**
