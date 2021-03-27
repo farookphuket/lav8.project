@@ -175,6 +175,22 @@
 
 
 
+
+/* เพลงที่ 141   Added 16 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (141,"8","8","1",
+"คิดถึงทุกเวลา",
+"2021-03-26 11:26:14",
+"http://p.kg.qq.com/photo_new/T002RM000sg000OKikw3mHl6B.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/CMG8czbCzvJ9vbkt-?lang=vi&amp;g_f=personal",
+"2021-03-26 11:26:14",
+"2021-03-26 12:39:14"
+);
+
+
+
+
 /* เพลงที่ 140   Added 16 Mar 2021 */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",

@@ -33,6 +33,7 @@
   <link href="{{asset("cleanblog/font-google_2.css")}}" rel='stylesheet' type='text/css'>
 
   <script src="{{asset('js/jquery.js')}}"></script>
+  <script src="{{asset('js/gscript.js')}}"></script>
 
  <!--
   <script src="https://unpkg.com/@popperjs/core@2"></script>

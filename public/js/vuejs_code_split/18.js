@@ -159,6 +159,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -365,7 +367,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                        " +
+                              "\n                            " +
                                 _vm._s(_vm.smartTitle(vi.title, 9)) +
                                 "\n                        "
                             )
@@ -378,7 +380,12 @@ var render = function() {
                               _vm._s(_vm.moment(vi.created_at).fromNow()) +
                               "\n                        "
                           )
-                        ])
+                        ]),
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(_vm.smartTitle(vi.title, 13)) +
+                            "\n                        "
+                        )
                       ])
                     ])
                   ])

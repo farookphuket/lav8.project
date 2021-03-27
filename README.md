@@ -442,6 +442,38 @@ app should be appear.
 
 
 
+# Date 27 Mar 2021 
+    
+
+> Photo feature is that I can copy the embed code from another website that I 
+> put or share my picture so sometime I want to re-use that picture 
+
+
+> sometime the title is too long so you may need to cut it 
+
+
+``` 
+// javascript from https://www.codegrepper.com/code-examples/javascript/javascript+truncate+string+with+dots 
+function smartTitle(str,len){
+ return (str.length > len)? str.substring(0,len)+"...":str;
+};
+
+// to use 
+title = smartTitle(title,9);
+
+```
+
+## result may look like this
+
+[photo_27-mar-2021]:https://i.ibb.co/qgdPN4p/2021-03-27-photo-with-short-title.png
+
+![photo feature with short title][photo_27-mar-2021]
+
+
+
+
+
+
 # Date 22 Mar 2021
 
 > Create "Video" and change the login form from the menu bar

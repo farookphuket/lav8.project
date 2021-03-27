@@ -8,7 +8,7 @@
                     </a>
                     <div class="card-body">
                       <span class="badge badge-info" 
-                      >{{po.title}}</span> &middot; 
+                      >{{smartTitle(po.title,9)}}</span> &middot; 
                       <span class="badge badge-info" 
                       >{{moment(po.created_at).fromNow()}}</span>
                     </div>
@@ -42,7 +42,8 @@
                 <div class="card">
                     <img class="card-img-top" :src="embed" alt="">
                     <div class="card-body">
-                        <span class="badge badge-info">{{ownerName}}</span> 
+                        <span class="badge badge-info">
+                        {{title}} &middot; {{ownerName}}</span> 
                         &middot; 
                         <span class="badge badge-info" 
                         >{{moment(createdDate)}} &middot; 
@@ -61,7 +62,6 @@
 
 <script>
 var moment = require('moment')
-
 export default{
     name:"PhotoList",
     props:["photos","openId"],
@@ -73,6 +73,10 @@ export default{
                     createdDate:'',
                     ownerName:''
                  }
+             },
+             mounted(){
+
+             //   this.sTitle = smartTitle(this.title,5)
              },
 methods:{
             openPhoto(id){
@@ -91,6 +95,9 @@ methods:{
             selectCode(){
                 this.$refs.copyCode.select()
             },
+            smartTitle(str,len){
+                return (str.length > len)? str.substr(0,len)+'...': str
+            }
         }
 }
 </script>

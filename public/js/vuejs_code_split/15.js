@@ -133,6 +133,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -146,6 +147,8 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       createdDate: '',
       ownerName: ''
     };
+  },
+  mounted: function mounted() {//   this.sTitle = smartTitle(this.title,5)
   },
   methods: {
     openPhoto: function openPhoto(id) {
@@ -165,6 +168,9 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
     },
     selectCode: function selectCode() {
       this.$refs.copyCode.select();
+    },
+    smartTitle: function smartTitle(str, len) {
+      return str.length > len ? str.substr(0, len) + '...' : str;
     }
   }
 });
@@ -361,7 +367,7 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "card-body" }, [
                 _c("span", { staticClass: "badge badge-info" }, [
-                  _vm._v(_vm._s(po.title))
+                  _vm._v(_vm._s(_vm.smartTitle(po.title, 9)))
                 ]),
                 _vm._v(" · \n                  "),
                 _c("span", { staticClass: "badge badge-info" }, [
@@ -443,7 +449,12 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "card-body" }, [
                 _c("span", { staticClass: "badge badge-info" }, [
-                  _vm._v(_vm._s(_vm.ownerName))
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(_vm.title) +
+                      " · " +
+                      _vm._s(_vm.ownerName)
+                  )
                 ]),
                 _vm._v(" \n                    · \n                    "),
                 _c("span", { staticClass: "badge badge-info" }, [

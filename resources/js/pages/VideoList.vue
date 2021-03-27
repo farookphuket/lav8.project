@@ -16,11 +16,13 @@
                         </div>
                         <p class="pt-2 mb-2">
                             <a href="" @click.prevent="showVideo(vi.id)">
-                            {{smartTitle(vi.title,9)}}
+                                {{smartTitle(vi.title,9)}}
                             </a> - 
                             <span class="badge badge-info">
                                 {{moment(vi.created_at).fromNow()}}
                             </span>
+                            {{smartTitle(vi.title,13)}}
+                            </a>
                         </p>
                     </div><!-- end of div.card-body -->
                 </div><!-- end of div.card -->
