@@ -16,13 +16,21 @@
                 <div class="row">
                     <div class="col-lg-3" v-for="so in songs">
                         <div class="card">
-                            <img class="responsive card-img-top" 
-                            :src="so.cover" :alt="so.name">
+                            <a href="" @click.prevent="$emit('songOpen',so.id)">
+                                <img class="responsive card-img-top" 
+                                :src="so.cover" :alt="so.name">
+                            </a>
                             <div class="card-body">
-                                <p class="card-text">
-                                    {{so.name}} - {{so.artist.name}} 
-                                    post by {{so.user.name}} 
-                                </p>
+                                <span class="badge badge-info">
+                                    {{smartTitle(so.name)}} - {{so.artist.name}}
+                                </span>
+                                    <p class="pt-2">
+                                        post by 
+                                        <span class="badge badge-info">
+                                             {{so.user.name}} 
+                                        </span>
+                                    </p>
+
                                 <span class="badge badge-info">
                                     {{moment(so.posted_at).fromNow()}}
                                 </span>
@@ -59,12 +67,15 @@ methods:{
                         let url = `/member/search?search=${fsong}`
                         axios.get(url)
                         .then(res=>{
-                            console.log(res.data)
+             //               console.log(res.data)
                             this.songs = res.data.songs
 
                                 })
 
                     }
+            },
+            smartTitle(str,len=9){
+                return (str.length > len)? str.substr(0,len)+"...":str
             }
         },
 }

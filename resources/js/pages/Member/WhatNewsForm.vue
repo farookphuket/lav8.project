@@ -39,12 +39,12 @@
       </div>
       <div class="clearfix">
         <div class="float-right">
-          <button class="btn btn-primary"
+          <button class="btn btn-outline-primary"
             type="submit" @click.prevent="wnSave(saveId)">
             Save
           </button>
 
-          <button class="btn btn-danger"
+          <button class="btn btn-outline-danger"
               @click.prevent="clearFormdata">
             Clear
           </button>

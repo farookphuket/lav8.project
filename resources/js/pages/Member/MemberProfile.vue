@@ -45,7 +45,7 @@
 
       <div class="clearfix">
         <div class="float-right">
-          <button class="btn btn-primary"
+          <button class="btn btn-outline-primary btn-sm"
             @click.prevent="saveInfo(user_id)">
             Update Profile
           </button>

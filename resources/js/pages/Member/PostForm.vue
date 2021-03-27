@@ -7,7 +7,7 @@
           https://medium.com/@codebyjeff/vue-js-simple-tuts-toggling-b80edddee1ac
           15 Feb 2021
         -->
-        <button class="btn btn-primary" 
+        <button class="btn btn-outline-primary btn-sm" 
                 @click="toggle(editId)" ref="btnShow">{{btnLabel}}</button>
       </div>
     </div>
@@ -81,10 +81,10 @@
                   </div>
 
                   <div class="float-right">
-                      <button class="btn btn-primary" 
+                      <button class="btn btn-outline-primary btn-sm" 
                           @click.prevent="postSave(saveId)"
                         >save</button>
-                      <button class="btn btn-danger" 
+                      <button class="btn btn-outline-danger btn-sm" 
                         @click.prevent="clearFormData">Clear</button>
                   </div>
 

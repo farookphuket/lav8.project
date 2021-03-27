@@ -47,7 +47,8 @@ __webpack_require__.r(__webpack_exports__);
       albums: [],
       artists: [],
       editId: 0,
-      res_status: ''
+      res_status: '',
+      openId: 0
     };
   },
   mounted: function mounted() {
@@ -77,6 +78,9 @@ __webpack_require__.r(__webpack_exports__);
         _this.albums = res.data.albums;
         _this.artists = res.data.artists;
       });
+    },
+    songOpen: function songOpen(id) {
+      this.openId = id;
     },
     songEdit: function songEdit(id) {
       this.editId = id;
@@ -442,17 +446,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SongList",
-  props: ["songs"],
+  props: ["songs", "openId"],
   data: function data() {
     return {
       moment: moment,
       ownerId: window.ownerId
     };
+  },
+  watch: {
+    "openId": function openId(x) {
+      this.songOpen(x);
+    }
   },
   methods: {
     songOpen: function songOpen(id) {
@@ -467,6 +475,9 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
           _this.$emit('getSongList');
         }, 2000);
       });
+    },
+    smartTitle: function smartTitle(str, len) {
+      return str.length > len ? str.substring(0, len) + "..." : str;
     }
   }
 });
@@ -482,6 +493,14 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -545,10 +564,14 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       if (fsong.length > 1) {
         var url = "/member/search?search=".concat(fsong);
         axios.get(url).then(function (res) {
-          console.log(res.data);
+          //               console.log(res.data)
           _this.songs = res.data.songs;
         });
       }
+    },
+    smartTitle: function smartTitle(str) {
+      var len = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 9;
+      return str.length > len ? str.substr(0, len) + "..." : str;
     }
   }
 });
@@ -573,7 +596,13 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("song-search"),
+      _c("song-search", {
+        on: {
+          songOpen: function($event) {
+            return _vm.songOpen($event)
+          }
+        }
+      }),
       _vm._v(" "),
       _c("song-form", {
         attrs: {
@@ -590,7 +619,7 @@ var render = function() {
       }),
       _vm._v(" "),
       _c("song-list", {
-        attrs: { songs: _vm.songs },
+        attrs: { songs: _vm.songs, openId: _vm.openId },
         on: {
           getSongList: function($event) {
             return _vm.getSongList($event)
@@ -1017,23 +1046,23 @@ var render = function() {
             ),
             _vm._v(" "),
             _c("div", { staticClass: "card-body" }, [
-              _c("p", { staticClass: "card-text" }, [
+              _c("span", { staticClass: "badge badge-info" }, [
                 _vm._v(
                   "\n                    " +
-                    _vm._s(so.name) +
-                    " - " +
+                    _vm._s(_vm.smartTitle(so.name, 9)) +
+                    " · " +
                     _vm._s(so.artist.name) +
-                    " \n                    \n                "
+                    "\n                "
                 )
               ]),
               _vm._v(" "),
-              _c("p", { staticClass: "card-text" }, [
-                _vm._v("\n                    post by \n                    "),
+              _c("p", { staticClass: "pt-2" }, [
+                _vm._v(" post by \n                        "),
                 _c("span", { staticClass: "bage badge-info" }, [
                   _vm._v(
-                    "\n                        " +
+                    "\n                            " +
                       _vm._s(so.user.name) +
-                      "\n                    "
+                      "\n                        "
                   )
                 ])
               ]),
@@ -1260,22 +1289,47 @@ var render = function() {
             _vm._l(_vm.songs, function(so) {
               return _c("div", { staticClass: "col-lg-3" }, [
                 _c("div", { staticClass: "card" }, [
-                  _c("img", {
-                    staticClass: "responsive card-img-top",
-                    attrs: { src: so.cover, alt: so.name }
-                  }),
+                  _c(
+                    "a",
+                    {
+                      attrs: { href: "" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.$emit("songOpen", so.id)
+                        }
+                      }
+                    },
+                    [
+                      _c("img", {
+                        staticClass: "responsive card-img-top",
+                        attrs: { src: so.cover, alt: so.name }
+                      })
+                    ]
+                  ),
                   _vm._v(" "),
                   _c("div", { staticClass: "card-body" }, [
-                    _c("p", { staticClass: "card-text" }, [
+                    _c("span", { staticClass: "badge badge-info" }, [
                       _vm._v(
                         "\n                                " +
-                          _vm._s(so.name) +
+                          _vm._s(_vm.smartTitle(so.name)) +
                           " - " +
                           _vm._s(so.artist.name) +
-                          " \n                                post by " +
-                          _vm._s(so.user.name) +
-                          " \n                            "
+                          "\n                            "
                       )
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "pt-2" }, [
+                      _vm._v(
+                        "\n                                    post by \n                                    "
+                      ),
+                      _c("span", { staticClass: "badge badge-info" }, [
+                        _vm._v(
+                          "\n                                         " +
+                            _vm._s(so.user.name) +
+                            " \n                                    "
+                        )
+                      ])
                     ]),
                     _vm._v(" "),
                     _c("span", { staticClass: "badge badge-info" }, [

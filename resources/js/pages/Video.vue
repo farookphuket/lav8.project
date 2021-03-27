@@ -1,11 +1,15 @@
 <template>
     <div class="container-fluid">
-        <video-list :videos="videos" @getVideos="getVideos($event)"></video-list>
+
+        <video-search @openVideo="openVideo($event)"></video-search>
+        <video-list :videos="videos" @getVideos="getVideos($event)" 
+        :openId="openId"></video-list>
     </div>
 </template>
 
 <script>
 
+import VideoSearch from './VideoSearch.vue'
 import VideoList from './VideoList.vue'
 export default{
     name:"Pubvideo",
@@ -14,7 +18,8 @@ export default{
              },
              data(){
                  return{
-                    videos:[]
+                    videos:[],
+                    openId:0,
                  }
              },
              mounted(){

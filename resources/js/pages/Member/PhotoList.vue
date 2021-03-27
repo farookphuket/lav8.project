@@ -16,7 +16,7 @@
                         
                         <div class="float-left">
                             <span class="badge badge-info">
-                                {{po.title}}
+                                {{smartTitle(po.title,13)}}
                             </span>
                         </div>
                         <div class="float-right">
@@ -114,6 +114,9 @@ watch:{
                 },
                 selectCode(){
                     this.$refs.selectPhotoCode.select()
+                },
+                smartTitle(str,len){
+                    return (str.length > len)? str.substr(0,len)+"...":str
                 },
     }
 }

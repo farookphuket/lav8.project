@@ -1,7 +1,7 @@
 <template>
-    <div class="container">
+    <div>
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 pt-4">
                 <form>
                     <div class="form-group">
                         <input v-model="title" class="form-control" 

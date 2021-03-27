@@ -35,9 +35,9 @@
                     v-else>
                 Public Post
               </span>
-              <button class="btn btn-primary" 
+              <button class="btn btn-outline-primary btn-sm" 
                 @click.prevent="$emit('postEdit',post.id)">edit</button>
-              <button class="btn btn-danger" 
+              <button class="btn btn-outline-danger btn-sm" 
                 @click.prevent="$emit('postDel',post.id)">x</button>
             </div>
           </div>

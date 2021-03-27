@@ -370,6 +370,9 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
     },
     selectCode: function selectCode() {
       this.$refs.selectPhotoCode.select();
+    },
+    smartTitle: function smartTitle(str, len) {
+      return str.length > len ? str.substr(0, len) + "..." : str;
     }
   }
 });
@@ -806,7 +809,7 @@ var render = function() {
                   _c("span", { staticClass: "badge badge-info" }, [
                     _vm._v(
                       "\n                            " +
-                        _vm._s(po.title) +
+                        _vm._s(_vm.smartTitle(po.title, 13)) +
                         "\n                        "
                     )
                   ])

@@ -33,10 +33,10 @@
                     v-else>
                 Public
               </span>
-              <button class="btn btn-primary btn-small"
+              <button class="btn btn-outline-primary btn-sm"
                       @click.prevent="$emit('wnEdit',li.id)" >edit</button>
 
-              <button class="btn btn-danger"
+              <button class="btn btn-outline-danger btn-sm"
                      @click.prevent="$emit('wnDel',li.id)" >&times;</button>
 
             </div>

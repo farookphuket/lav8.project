@@ -20,13 +20,28 @@ class VideoController extends Controller
 
 
     public function getVideos(){
-        $videos = Video::orderBy("created_at","DESC")
+        $videos = Video::with("user")
+            ->orderBy("created_at","DESC")
             ->paginate(24)
             ->onEachSide(1);
         return response()->json([
             "videos" => $videos
         ]);
     } 
+
+    public function search(){
+        $search = request()->search;
+
+        $videos = Video::with("user")
+                    ->where("title","LIKE","%$search%")
+                    ->orderBy("created_at","DESC")
+                    ->get();
+                        
+
+        return response()->json([
+            "videos" => $videos
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -56,7 +71,13 @@ class VideoController extends Controller
      */
     public function show(Video $video)
     {
-        //
+        $video = Video::with("user")
+                        ->where("id",$video->id)
+                        ->get();
+
+        return response()->json([
+            "video" => $video
+        ]);
     }
 
     /**

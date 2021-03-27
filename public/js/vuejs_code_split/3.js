@@ -666,7 +666,7 @@ var render = function() {
             "button",
             {
               ref: "btnShow",
-              staticClass: "btn btn-primary",
+              staticClass: "btn btn-outline-primary btn-sm",
               on: {
                 click: function($event) {
                   return _vm.toggle(_vm.editId)
@@ -951,7 +951,7 @@ var render = function() {
                   _c(
                     "button",
                     {
-                      staticClass: "btn btn-primary",
+                      staticClass: "btn btn-outline-primary btn-sm",
                       on: {
                         click: function($event) {
                           $event.preventDefault()
@@ -965,7 +965,7 @@ var render = function() {
                   _c(
                     "button",
                     {
-                      staticClass: "btn btn-danger",
+                      staticClass: "btn btn-outline-danger btn-sm",
                       on: {
                         click: function($event) {
                           $event.preventDefault()
@@ -1106,7 +1106,7 @@ var render = function() {
                   _c(
                     "button",
                     {
-                      staticClass: "btn btn-primary",
+                      staticClass: "btn btn-outline-primary btn-sm",
                       on: {
                         click: function($event) {
                           $event.preventDefault()
@@ -1120,7 +1120,7 @@ var render = function() {
                   _c(
                     "button",
                     {
-                      staticClass: "btn btn-danger",
+                      staticClass: "btn btn-outline-danger btn-sm",
                       on: {
                         click: function($event) {
                           $event.preventDefault()

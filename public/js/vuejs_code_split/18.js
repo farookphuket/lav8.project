@@ -9,7 +9,11 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _VideoList_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VideoList.vue */ "./resources/js/pages/VideoList.vue");
+/* harmony import */ var _VideoSearch_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VideoSearch.vue */ "./resources/js/pages/VideoSearch.vue");
+/* harmony import */ var _VideoList_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VideoList.vue */ "./resources/js/pages/VideoList.vue");
+//
+//
+//
 //
 //
 //
@@ -17,14 +21,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Pubvideo",
   components: {
-    VideoList: _VideoList_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    VideoList: _VideoList_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
-      videos: []
+      videos: [],
+      openId: 0
     };
   },
   mounted: function mounted() {
@@ -150,6 +156,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -177,6 +186,75 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
     },
     selectText: function selectText() {
       this.$refs.showEmbed.select();
+    },
+    smartTitle: function smartTitle(str, len) {
+      return str.length > len ? str.substring(0, len) + "..." : str;
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/VideoSearch.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/VideoSearch.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "VideoSearch",
+  data: function data() {
+    return {
+      search: '',
+      videos: []
+    };
+  },
+  mounted: function mounted() {},
+  methods: {
+    searchVideo: function searchVideo() {
+      var _this = this;
+
+      var url = "/searchVideo?search=".concat(this.search);
+      axios.get(url).then(function (res) {
+        _this.videos = res.data.videos;
+      });
+    },
+    openVideo: function openVideo(id) {
+      this.$emit('openVideo', id);
+    },
+    smartTitle: function smartTitle(str, len) {
+      return str.length > len ? str.substring(0, len) + "..." : str;
     }
   }
 });
@@ -202,8 +280,16 @@ var render = function() {
     "div",
     { staticClass: "container-fluid" },
     [
+      _c("video-search", {
+        on: {
+          openVideo: function($event) {
+            return _vm.openVideo($event)
+          }
+        }
+      }),
+      _vm._v(" "),
       _c("video-list", {
-        attrs: { videos: _vm.videos },
+        attrs: { videos: _vm.videos, openId: _vm.openId },
         on: {
           getVideos: function($event) {
             return _vm.getVideos($event)
@@ -280,11 +366,19 @@ var render = function() {
                           [
                             _vm._v(
                               "\n                        " +
-                                _vm._s(vi.title) +
+                                _vm._s(_vm.smartTitle(vi.title, 9)) +
                                 "\n                        "
                             )
                           ]
-                        )
+                        ),
+                        _vm._v(" - \n                        "),
+                        _c("span", { staticClass: "badge badge-info" }, [
+                          _vm._v(
+                            "\n                            " +
+                              _vm._s(_vm.moment(vi.created_at).fromNow()) +
+                              "\n                        "
+                          )
+                        ])
                       ])
                     ])
                   ])
@@ -389,7 +483,7 @@ var render = function() {
         "b-modal",
         {
           ref: "showVideoModal",
-          attrs: { title: "Show video", size: "xl", "ok-only": "" }
+          attrs: { title: _vm.title, size: "xl", "ok-only": "" }
         },
         [
           _c("h2", { staticClass: "text-center" }, [
@@ -447,6 +541,123 @@ var staticRenderFns = [
     ])
   }
 ]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/VideoSearch.vue?vue&type=template&id=06b4a4ec&":
+/*!*********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/VideoSearch.vue?vue&type=template&id=06b4a4ec& ***!
+  \*********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      { staticClass: "row" },
+      [
+        _c("div", { staticClass: "col-lg-12 pt-4" }, [
+          _c("form", { attrs: { action: "" } }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.search,
+                    expression: "search"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { placeholder: "Search video...", type: "text" },
+                domProps: { value: _vm.search },
+                on: {
+                  keyup: _vm.searchVideo,
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.search = $event.target.value
+                  }
+                }
+              })
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _vm._l(_vm.videos, function(vi) {
+          return _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.search,
+                  expression: "search"
+                }
+              ],
+              staticClass: "col-lg-3 pt-4 mb-4"
+            },
+            [
+              _c("div", { staticClass: "card" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "video-container",
+                    domProps: { innerHTML: _vm._s(vi.embed) }
+                  },
+                  [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(vi.embed) +
+                        "\n                "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c(
+                    "a",
+                    {
+                      attrs: { href: "" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.openVideo(vi.id)
+                        }
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(_vm.smartTitle(vi.title, 10)) +
+                          "\n                "
+                      )
+                    ]
+                  )
+                ])
+              ])
+            ]
+          )
+        })
+      ],
+      2
+    )
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -698,6 +909,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VideoList_vue_vue_type_template_id_28c15800___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VideoList_vue_vue_type_template_id_28c15800___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/VideoSearch.vue":
+/*!********************************************!*\
+  !*** ./resources/js/pages/VideoSearch.vue ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _VideoSearch_vue_vue_type_template_id_06b4a4ec___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VideoSearch.vue?vue&type=template&id=06b4a4ec& */ "./resources/js/pages/VideoSearch.vue?vue&type=template&id=06b4a4ec&");
+/* harmony import */ var _VideoSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VideoSearch.vue?vue&type=script&lang=js& */ "./resources/js/pages/VideoSearch.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _VideoSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _VideoSearch_vue_vue_type_template_id_06b4a4ec___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _VideoSearch_vue_vue_type_template_id_06b4a4ec___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/VideoSearch.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/VideoSearch.vue?vue&type=script&lang=js&":
+/*!*********************************************************************!*\
+  !*** ./resources/js/pages/VideoSearch.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VideoSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./VideoSearch.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/VideoSearch.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VideoSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/VideoSearch.vue?vue&type=template&id=06b4a4ec&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/pages/VideoSearch.vue?vue&type=template&id=06b4a4ec& ***!
+  \***************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VideoSearch_vue_vue_type_template_id_06b4a4ec___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./VideoSearch.vue?vue&type=template&id=06b4a4ec& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/VideoSearch.vue?vue&type=template&id=06b4a4ec&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VideoSearch_vue_vue_type_template_id_06b4a4ec___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VideoSearch_vue_vue_type_template_id_06b4a4ec___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

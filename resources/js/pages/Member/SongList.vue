@@ -7,16 +7,15 @@
                    :alt="so.name">
                 </a>
                <div class="card-body">
-                    <p class="card-text">
-                        {{so.name}} - {{so.artist.name}} 
-                        
-                    </p>
-                    <p class="card-text">
-                        post by 
-                        <span class="bage badge-info">
-                            {{so.user.name}}
-                        </span>
-                    </p>
+                    <span class="badge badge-info">
+                        {{smartTitle(so.name,9)}} &middot; {{so.artist.name}}
+                    </span>
+                         
+                       <p class="pt-2"> post by 
+                            <span class="bage badge-info">
+                                {{so.user.name}}
+                            </span>
+                       </p>
                     <span class="badge badge-info">
                     {{moment(so.posted_at).fromNow()}}</span>
                     <span class="badge badge-info">
@@ -80,13 +79,18 @@ var moment = require("moment")
 
 export default{
     name:"SongList",
-    props:["songs"],
+    props:["songs","openId"],
     data(){
         return{
             moment:moment,
             ownerId:window.ownerId
         }
     },
+watch:{
+          "openId":function(x){
+            this.songOpen(x)
+          }
+      },
 methods:{
             songOpen(id){
                 //alert(id)
@@ -99,7 +103,10 @@ methods:{
                         this.$emit('getSongList')
                             },2000)
                         })
-            }
+            },
+            smartTitle(str,len){
+                return (str.length > len)? str.substring(0,len)+"...":str
+            },
         }
 }
 </script>

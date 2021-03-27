@@ -16,8 +16,11 @@
                         </div>
                         <p class="pt-2 mb-2">
                             <a href="" @click.prevent="showVideo(vi.id)">
-                            {{vi.title}}
-                            </a>
+                            {{smartTitle(vi.title,9)}}
+                            </a> - 
+                            <span class="badge badge-info">
+                                {{moment(vi.created_at).fromNow()}}
+                            </span>
                         </p>
                     </div><!-- end of div.card-body -->
                 </div><!-- end of div.card -->
@@ -60,7 +63,7 @@
            </div>
        </div><!-- end of div.row -->
 
-       <b-modal title="Show video" ref="showVideoModal" size="xl" ok-only>
+       <b-modal :title="title" ref="showVideoModal" size="xl" ok-only>
             <h2 class="text-center">
                 {{title}}
             </h2>
@@ -106,6 +109,9 @@ methods:{
             },
             selectText(){
                 this.$refs.showEmbed.select()
+            },
+            smartTitle(str,len){
+                return (str.length > len)? str.substring(0,len)+"...":str
             },
         }
 }

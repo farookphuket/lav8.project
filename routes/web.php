@@ -60,6 +60,7 @@ Route::resource('/album',pAlbum::class);
 Route::resource('/artist',pArtist::class);
 Route::resource('/video',pVideo::class);
 Route::get('/getVideos',[pVideo::class,"getVideos"])->name("getVideos");
+Route::get('/searchVideo',[pVideo::class,"search"])->name("searchVideo");
 
 Route::resource("/song",pSong::class);
 Route::get("/getSongList",[pSong::class,'getSongList'])->name("getSongList");

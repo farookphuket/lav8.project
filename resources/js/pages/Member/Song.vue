@@ -1,12 +1,12 @@
 <template>
     <div>
-        <song-search></song-search>
+        <song-search @songOpen="songOpen($event)"></song-search>
         <song-form :artists="artists" :albums="albums" 
         @getSongList="getSongList($event)" 
         :editId="editId" :songs="songs"></song-form>
 
         <song-list :songs="songs"   
-        @getSongList="getSongList($event)" 
+        @getSongList="getSongList($event)" :openId="openId" 
         @songEdit="songEdit($event)" @songDel="songDel($event)"></song-list>
 
         <b-modal title="Server Said :" ref="onOk" ok-only>
@@ -34,7 +34,8 @@ export default{
                     albums:[],
                     artists:[],
                     editId:0,
-                    res_status:''
+                    res_status:'',
+                    openId:0
                  }
              },
              mounted(){
@@ -60,6 +61,9 @@ methods:{
                             this.albums = res.data.albums
                             this.artists = res.data.artists
                         })
+            },
+            songOpen(id){
+                this.openId = id
             },
             songEdit(id){
                 this.editId = id
