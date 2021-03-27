@@ -65,7 +65,7 @@ Route::get('/searchVideo',[pVideo::class,"search"])->name("searchVideo");
 Route::resource("/song",pSong::class);
 Route::get("/getSongList",[pSong::class,'getSongList'])->name("getSongList");
 Route::get("/readCount/{id}",[pSong::class,'readCount'])->name("readCount");
-Route::get("/search",[pSong::class,'search'])->name('search');
+Route::get("/searchSong",[pSong::class,'search'])->name('searchSong');
 
 Route::resource("/photo",pPhotos::class);
 Route::get("/getPhotos",[pPhotos::class,"getPhotos"])->name("getPhotos");

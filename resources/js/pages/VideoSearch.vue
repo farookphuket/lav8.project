@@ -16,9 +16,15 @@
                         {{vi.embed}}
                     </div>
                    <div class="card-body">
-                    <a href="" @click.prevent="openVideo(vi.id)">
-                        {{smartTitle(vi.title,10)}}
-                    </a>
+                   <p class="pt-2 mb-4">
+                        <a href="" @click.prevent="openVideo(vi.id)">
+                            {{smartTitle(vi.title,13)}}
+                        </a>
+                   </p> &middot;
+                    <span class="badge badge-info">{{vi.user.name}}</span> 
+                    &middot; 
+                    <span class="badge badge-info">
+                    {{moment(vi.created_at).fromNow()}}</span>
                    </div>
                </div>
             </div>
@@ -27,13 +33,14 @@
 </template>
 
 <script>
-
+var moment = require("moment")
 export default{
     name:"VideoSearch",
     data(){
         return{
             search:'',
             videos:[],
+            moment:moment,
         }
     },
     mounted(){

@@ -14,6 +14,7 @@ import VideoList from './VideoList.vue'
 export default{
     name:"Pubvideo",
              components:{
+                VideoSearch,
                 VideoList,
              },
              data(){

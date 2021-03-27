@@ -451,12 +451,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "VideoSearch",
   data: function data() {
     return {
       search: '',
-      videos: []
+      videos: [],
+      moment: moment
     };
   },
   mounted: function mounted() {},
@@ -1096,25 +1105,38 @@ var render = function() {
                 ),
                 _vm._v(" "),
                 _c("div", { staticClass: "card-body" }, [
-                  _c(
-                    "a",
-                    {
-                      attrs: { href: "" },
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          return _vm.openVideo(vi.id)
+                  _c("p", { staticClass: "pt-2 mb-4" }, [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.openVideo(vi.id)
+                          }
                         }
-                      }
-                    },
-                    [
-                      _vm._v(
-                        "\n                    " +
-                          _vm._s(_vm.smartTitle(vi.title, 10)) +
-                          "\n                "
-                      )
-                    ]
-                  )
+                      },
+                      [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(_vm.smartTitle(vi.title, 13)) +
+                            "\n                    "
+                        )
+                      ]
+                    )
+                  ]),
+                  _vm._v(" ·\n                "),
+                  _c("span", { staticClass: "badge badge-info" }, [
+                    _vm._v(_vm._s(vi.user.name))
+                  ]),
+                  _vm._v(" \n                · \n                "),
+                  _c("span", { staticClass: "badge badge-info" }, [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(_vm.moment(vi.created_at).fromNow())
+                    )
+                  ])
                 ])
               ])
             ]

@@ -231,7 +231,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       var keySearch = this.$refs.search.value;
 
       if (keySearch.length > 2) {
-        var url = "/search?search=".concat(this.search);
+        var url = "/searchSong?search=".concat(this.search);
         axios.get(url).then(function (res) {
           // console.log(res.data)
           _this.song = res.data.song;
@@ -477,8 +477,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h1", { staticClass: "text-center" }, [_vm._v("search song")]),
-    _vm._v(" "),
     _c("form", { attrs: { action: "" } }, [
       _c("div", { staticClass: "form-group" }, [
         _c("input", {
@@ -492,7 +490,7 @@ var render = function() {
           ],
           ref: "search",
           staticClass: "form-control",
-          attrs: { type: "text" },
+          attrs: { placeholder: "Search Song...", type: "text" },
           domProps: { value: _vm.search },
           on: {
             keyup: _vm.searchSong,

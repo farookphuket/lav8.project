@@ -1,4 +1,35 @@
 
+/* song number 81  in wesingapp.com the list 27-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (81,
+"นิตยา บุญสูงเนิน",
+"2021-03-27 22:17:24",
+"2021-03-27 22:19:21"
+);
+
+
+
+/* song number 80  in wesingapp.com the list 27-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (80,
+"เบน ชลาทิศ",
+"2021-03-27 22:17:24",
+"2021-03-27 22:19:21"
+);
+
+
+/* song number 79  in wesingapp.com the list 27-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (79,
+"Gun 'N Rose",
+"2021-03-27 22:17:24",
+"2021-03-27 22:19:21"
+);
+
+
+
+
+
 /* song number 78  in wesingapp.com the list 16-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (78,

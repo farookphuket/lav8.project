@@ -86,6 +86,9 @@
 |  76.  |   Lewis Capaldi                |  
 |  77.  |   ต้อม เรนโบว์                   |  
 |  78.  |   60 ไมล์                       |  
+|  79.  |   Gun ''N Rose                 |  
+|  80.  |   เบน ชลาทิศ                    |  
+|  81.  |   นิตยา บุญสูงเนิน                 |  
 |----------------------------------------|
 
 
@@ -169,14 +172,159 @@
 |   75.      |     ฮอตด๊อก's song                       |  
 |   76.      |     Lewis Capaldi's song                |  
 |   77.      |     ต้อม เรนโบว์'s song                   |  
-|   78.      |     60 ไมล์'s song                   |  
+|   78.      |     60 ไมล์'s song                       |  
+|   79.      |     Gun 'N Rose's song                  |  
+|   80.      |     เบน ชลาทิศ's song                    |  
+|   81.      |     นิตยา บุญสูงเนิน's song                 |  
 |------------------------------------------------------|
 */
 
 
 
 
-/* เพลงที่ 141   Added 16 Mar 2021 */
+/* เพลงที่ 151   Added 27 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (151,"8","8","1",
+"อย่าน่ารัก",
+"2021-03-27 17:00:14",
+"http://p.kg.qq.com/photo_new/T002RM000sg000OKikw3mHl6B.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/02Zj97B07wgcvBDi-?lang=th&g_f=personal",
+"2021-03-27 17:00:14",
+"2021-03-27 18:39:14"
+);
+
+
+
+/* เพลงที่ 150   Added 27 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (150,"51","51","1",
+"เคยตายมาแล้ว",
+"2021-03-27 16:48:14",
+"http://p.kg.qq.com/photo_new/T002RM000000x3t4b4DGNVv.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/8E5CDHa8HNorva6m-?lang=th&g_f=personal",
+"2021-03-27 16:48:14",
+"2021-03-27 18:39:14"
+);
+
+
+
+
+/* เพลงที่ 149   Added 27 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (149,"51","51","1",
+"ค่อย ค่อย พูด",
+"2021-03-27 16:37:14",
+"http://p.kg.qq.com/photo_new/T002RM000001R5Y2G1ZKI3S.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/Zi0AIB7ZBtrYv7KY-?lang=th&amp;g_f=personal",
+"2021-03-27 16:37:14",
+"2021-03-27 18:39:14"
+);
+
+
+
+
+
+/* เพลงที่ 148   Added 27 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (148,"81","81","1",
+"ช้ำคือเรา",
+"2021-03-27 16:21:14",
+"http://p.kg.qq.com/photo_new/T002RM0000006VKNM0mfkTm.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/hvfIAYFhYMy4vF2j-?lang=th&g_f=personal",
+"2021-03-27 16:21:14",
+"2021-03-27 18:39:14"
+);
+
+
+
+
+
+/* เพลงที่ 147   Added 27 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (147,"80","80","1",
+"โอ๊ย โอ๊ย",
+"2021-03-27 16:03:14",
+"http://p.kg.qq.com/photo_new/T002RM000sg004Z241R0xwIBc.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/bdza4GCbGeuDvC4x-?lang=th&g_f=personal",
+"2021-03-27 16:03:14",
+"2021-03-27 18:39:14"
+);
+
+
+/* เพลงที่ 146   Added 27 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (146,"11","11","1",
+"เป็นแฟนกันตั้งแต่เมื่อไหร่",
+"2021-03-27 15:52:14",
+"http://p.kg.qq.com/photo_new/T002RM000001P78aI4F0BTp.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/20i3RPQ2PKcgvQuk-3?lang=th&amp;g_f=personal",
+"2021-03-27 15:52:14",
+"2021-03-27 18:39:14"
+);
+
+/* เพลงที่ 145   Added 27 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (145,"79","79","1",
+"Don't Cry",
+"2021-03-27 15:24:14",
+"http://p.kg.qq.com/photo_new/T002RM000001CxLnO08myNz.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/k_qlXtwktBmXvwX_-Don39tCry?lang=th&amp;g_f=personal",
+"2021-03-27 15:24:14",
+"2021-03-27 18:39:14"
+);
+
+
+/* เพลงที่ 144   Added 27 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (144,"41","41","1",
+"ข้องใจ",
+"2021-03-27 15:24:14",
+"http://p.kg.qq.com/photo_new/T002RM000003ocx8l0T1ccL.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/SaXdqyESy-j9vEAy-?lang=th&amp;g_f=personal",
+"2021-03-27 15:24:14",
+"2021-03-27 16:39:14"
+);
+
+
+
+/* เพลงที่ 143   Added 27 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (143,"41","41","1",
+"ทำไมไม่รัก",
+"2021-03-27 13:12:14",
+"http://p.kg.qq.com/photo_new/T002RM000003ocx8l0T1ccL.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/8E5CDHa8HNT7vaDv-?lang=th&g_f=personal",
+"2021-03-27 13:12:14",
+"2021-03-27 16:39:14"
+);
+
+
+
+/* เพลงที่ 142   Added 27 Mar 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (142,"60","60","1",
+"Beautiful In White",
+"2021-03-27 14:56:14",
+"http://p.kg.qq.com/photo_new/T002RM000000br5Cq4a9Zrt.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/3jJ2x6T361ahvTVr-BeautifulInWhiteDemo?lang=th&amp;g_f=personal",
+"2021-03-27 14:56:14",
+"2021-03-27 16:39:14"
+);
+
+
+
+
+/* เพลงที่ 141   Added 27 Mar 2021 */
 INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (141,"8","8","1",
@@ -1391,7 +1539,7 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 );
 
 
-
+/* missing the number 55 */
 
 
 

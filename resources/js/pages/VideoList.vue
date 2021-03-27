@@ -21,8 +21,6 @@
                             <span class="badge badge-info">
                                 {{moment(vi.created_at).fromNow()}}
                             </span>
-                            {{smartTitle(vi.title,13)}}
-                            </a>
                         </p>
                     </div><!-- end of div.card-body -->
                 </div><!-- end of div.card -->

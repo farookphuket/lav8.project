@@ -1,9 +1,9 @@
 <template>
     <div>
-        <h1 class="text-center">search song</h1>
         <form action="">
             <div class="form-group">
-                <input v-model="search" class="form-control" 
+                <input v-model="search" class="form-control"  
+                placeholder="Search Song..."
                 v-on:keyup="searchSong" type="text" ref="search">
             </div>
         </form>
@@ -50,7 +50,7 @@ export default{
                  searchSong(){
                     let keySearch = this.$refs.search.value
                         if(keySearch.length > 2){
-                            let url = `/search?search=${this.search}`
+                            let url = `/searchSong?search=${this.search}`
                             axios.get(url)
                             .then(res=>{
                                // console.log(res.data)

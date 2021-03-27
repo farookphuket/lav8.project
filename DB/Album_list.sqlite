@@ -1,5 +1,35 @@
 
 
+
+/* number 81  in the list 27-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (81,
+"นิตยา บุญสูงเนิน's song",
+"2021-03-27 22:19:11",
+"2021-03-16 22:20:15"
+);
+
+/* number 80  in the list 27-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (80,
+"เบน ชลาทิศ's song",
+"2021-03-27 22:19:11",
+"2021-03-16 22:20:15"
+);
+
+
+/* number 79  in the list 27-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (79,
+"Gun 'N Rose's song",
+"2021-03-27 22:19:11",
+"2021-03-16 22:20:15"
+);
+
+
+
+
+
 /* number 78  in the list 16-Mar-2021 */
 INSERT INTO "albums" ("id","name",
 "created_at","updated_at") VALUES (78,
