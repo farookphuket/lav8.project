@@ -158,6 +158,9 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
           _this.$emit("getSongList");
         }, 2000);
       });
+    },
+    smartTitle: function smartTitle(str, len) {
+      return str.length > len ? str.substring(0, len) + "..." : str;
     }
   }
 });
@@ -348,7 +351,7 @@ var render = function() {
               _c("p", { staticClass: "card-text" }, [
                 _vm._v(
                   "\n                        " +
-                    _vm._s(so.name) +
+                    _vm._s(_vm.smartTitle(so.name, 13)) +
                     " - " +
                     _vm._s(so.user.name) +
                     "\n                    "

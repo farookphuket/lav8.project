@@ -16,7 +16,7 @@
                         </div>
                         <p class="pt-2 mb-2">
                             <a href="" @click.prevent="showVideo(vi.id)">
-                            {{vi.title}}
+                            {{smartTitle(vi.title,13)}}
                             </a>
                         </p>
                     </div><!-- end of div.card-body -->
@@ -106,6 +106,9 @@ methods:{
             },
             selectText(){
                 this.$refs.showEmbed.select()
+            },
+            smartTitle(str,len){
+                return (str.length > len)? str.substring(0,len)+"...":str
             },
         }
 }

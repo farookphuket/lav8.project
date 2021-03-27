@@ -1,16 +1,21 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[15],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Photo.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Photo.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Member/Video.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Member/Video.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _PhotoSearch_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PhotoSearch.vue */ "./resources/js/pages/PhotoSearch.vue");
-/* harmony import */ var _PhotoList_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PhotoList.vue */ "./resources/js/pages/PhotoList.vue");
+/* harmony import */ var _VideoForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VideoForm */ "./resources/js/pages/Member/VideoForm.vue");
+/* harmony import */ var _VideoList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VideoList */ "./resources/js/pages/Member/VideoList.vue");
+//
+//
+//
+//
+//
 //
 //
 //
@@ -24,49 +29,70 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "PubPhoto",
+  name: "Video",
   components: {
-    PhotoSearch: _PhotoSearch_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    PhotoList: _PhotoList_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    VideoForm: _VideoForm__WEBPACK_IMPORTED_MODULE_0__["default"],
+    VideoList: _VideoList__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
-      photos: []
+      videos: [],
+      editId: 0,
+      res_status: ''
     };
   },
   mounted: function mounted() {
-    this.getPhotos();
+    this.getVideos();
   },
   methods: {
-    getPhotos: function getPhotos(page) {
+    getVideos: function getVideos(page) {
       var _this = this;
 
-      var url = '';
+      var url = "";
 
       if (page) {
         url = page;
-        this.$cookies.set("pic_old_page", url);
+        this.$cookies.set("old_mvideo_page", url);
       }
 
-      url = this.$cookies.get('pic_old_page');
+      url = this.$cookies.get("old_mvideo_page");
 
       if (!url) {
-        url = "/getPhotos";
+        url = "/member/getVideos";
       }
 
       axios.get(url).then(function (res) {
-        _this.photos = res.data.photos;
+        _this.videos = res.data.videos;
+      }, function (err) {
+        _this.videos = "<span class=\"badge badge-danger\">".concat(err.response.data.message, "</span>");
       });
+    },
+    videoEdit: function videoEdit(id) {
+      this.editId = id;
+    },
+    videoDel: function videoDel(id) {
+      var _this2 = this;
+
+      var url = "/member/video/".concat(id);
+      axios["delete"](url).then(function (res) {
+        _this2.res_status = res.data.msg;
+      }, function (err) {
+        _this2.res_status = "<span class=\"badge badge-danger\">\n                        ".concat(err.response.data.message, "\n                        </span>");
+      });
+      this.$refs["onOk"].show();
+      setTimeout(function () {
+        _this2.getVideos();
+      }, 2000);
     }
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoList.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/PhotoList.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Member/VideoForm.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Member/VideoForm.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -104,77 +130,84 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "PhotoList",
-  props: ["photos", "openId"],
+  name: "VideoForm",
+  props: ["editId", "videos"],
   data: function data() {
     return {
-      moment: moment,
-      title: '',
-      embed: '',
-      createdDate: '',
-      ownerName: ''
+      saveId: 0,
+      title: "",
+      embed: "",
+      res_status: ""
     };
   },
+  watch: {
+    "editId": function editId(x) {
+      this.getEditData(x);
+    }
+  },
   methods: {
-    openPhoto: function openPhoto(id) {
+    getEditData: function getEditData(id) {
       var _this = this;
 
-      //console.log(this.photos.data)
-      this.photos.data.forEach(function (val) {
+      if (id == 0) {
+        return;
+      }
+
+      this.videos.data.forEach(function (val) {
         if (val.id == id) {
           _this.title = val.title;
           _this.embed = val.embed;
-          _this.ownerName = val.user.name;
-          _this.createdDate = val.created_at; //console.log(this.title)
-        }
+          _this.saveId = val.id;
 
-        _this.$refs["showPhotoModal"].show();
+          _this.$refs.title.focus();
+        }
       });
     },
-    selectCode: function selectCode() {
-      this.$refs.copyCode.select();
+    videoSave: function videoSave(id) {
+      var _this2 = this;
+
+      var url = "";
+      var data = {
+        title: this.title,
+        embed: this.embed
+      };
+
+      if (id) {
+        url = "/member/video/".concat(id);
+        axios.put(url, data).then(function (res) {
+          _this2.res_status = res.data.msg;
+        }, function (err) {
+          _this2.res_status = "<span \n                               class=\"badge badge-danger\">\n                               ".concat(err.response.data.message, "\n                               </span>");
+        });
+      } else {
+        url = "/member/video";
+        axios.post(url, data).then(function (res) {
+          _this2.res_status = res.data.msg;
+        });
+      }
+
+      setTimeout(function () {
+        _this2.clearForm();
+
+        _this2.$emit('getVideos');
+      }, 2000);
+    },
+    clearForm: function clearForm() {
+      this.title = "";
+      this.saveId = "";
+      this.res_status = "";
+      this.embed = "";
     }
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoSearch.vue?vue&type=script&lang=js&":
-/*!*****************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/PhotoSearch.vue?vue&type=script&lang=js& ***!
-  \*****************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Member/VideoList.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Member/VideoList.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -229,59 +262,95 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "PhotoSearch",
+  name: "VideoList",
+  props: ["videos"],
   data: function data() {
     return {
-      search: '',
-      photos: [],
       moment: moment,
+      ownerId: window.ownerId,
       title: '',
       embed: '',
-      createDate: '',
-      ownerName: ''
+      postBy: ''
     };
   },
   methods: {
-    searchPhoto: function searchPhoto() {
+    videoShow: function videoShow(id) {
       var _this = this;
 
-      var url = "/search?search=".concat(this.search);
-      axios.get(url).then(function (res) {
-        _this.photos = res.data.photos;
+      this.videos.data.forEach(function (val) {
+        if (val.id == id) {
+          _this.title = val.title;
+          _this.embed = val.embed;
+          _this.postBy = val.user.name;
+
+          _this.$refs["showVideoModal"].show();
+        }
       });
     },
-    openPhoto: function openPhoto(id) {
-      var _this2 = this;
-
-      var url = "/photo/".concat(id);
-      axios.get(url).then(function (res) {
-        res.data.photo.forEach(function (val) {
-          if (val.id == id) {
-            _this2.title = val.title;
-            _this2.embed = val.embed;
-            _this2.createDate = val.created_at;
-            _this2.ownerName = val.user.name;
-          }
-
-          _this2.$refs["showPhotoModal"].show();
-        });
-      });
-    },
-    selectCode: function selectCode() {
-      this.$refs.copyCode.select();
+    selectEmbedCode: function selectEmbedCode() {
+      this.$refs.showEmbed.select();
     }
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Photo.vue?vue&type=template&id=6f599d79&":
-/*!***************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Photo.vue?vue&type=template&id=6f599d79& ***!
-  \***************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Member/Video.vue?vue&type=template&id=6f3100a2&":
+/*!**********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Member/Video.vue?vue&type=template&id=6f3100a2& ***!
+  \**********************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -295,17 +364,44 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "container-fluid" },
     [
-      _c("photo-search", { attrs: { photos: _vm.photos } }),
-      _vm._v(" "),
-      _c("photo-list", {
-        attrs: { photos: _vm.photos },
+      _c("video-form", {
+        attrs: { editId: _vm.editId, videos: _vm.videos },
         on: {
-          getPhotos: function($event) {
-            return _vm.getPhotos($event)
+          getVideos: function($event) {
+            return _vm.getVideos($event)
           }
         }
-      })
+      }),
+      _vm._v(" "),
+      _c("video-list", {
+        attrs: { videos: _vm.videos },
+        on: {
+          videoEdit: function($event) {
+            return _vm.videoEdit($event)
+          },
+          videoDel: function($event) {
+            return _vm.videoDel($event)
+          },
+          getVideos: function($event) {
+            return _vm.getVideos($event)
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c(
+        "b-modal",
+        {
+          ref: "onOk",
+          attrs: { title: "Server Said :", centered: "", "ok-only": "" }
+        },
+        [
+          _c("div", { domProps: { innerHTML: _vm._s(_vm.res_status) } }, [
+            _vm._v("\n            " + _vm._s(_vm.res_status) + "\n        ")
+          ])
+        ]
+      )
     ],
     1
   )
@@ -317,10 +413,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoList.vue?vue&type=template&id=401edab7&":
-/*!*******************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/PhotoList.vue?vue&type=template&id=401edab7& ***!
-  \*******************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Member/VideoForm.vue?vue&type=template&id=eb28e9da&":
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Member/VideoForm.vue?vue&type=template&id=eb28e9da& ***!
+  \**************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -332,67 +428,240 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-lg-12" }, [
+        _c("form", [
+          _c("div", { staticClass: "form-group" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.title,
+                  expression: "title"
+                }
+              ],
+              ref: "title",
+              staticClass: "form-control",
+              attrs: { type: "text", placeholder: "Enter video title" },
+              domProps: { value: _vm.title },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.title = $event.target.value
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.embed,
+                  expression: "embed"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { placeholder: "Enter the embed code" },
+              domProps: { value: _vm.embed },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.embed = $event.target.value
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "clearfix" }, [
+            _c("div", { staticClass: "float-left" }, [
+              _c("div", { domProps: { innerHTML: _vm._s(_vm.res_status) } }, [
+                _vm._v(
+                  "\n                            " +
+                    _vm._s(_vm.res_status) +
+                    "\n                        "
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "float-right" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-outline-primary",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.videoSave(_vm.saveId)
+                    }
+                  }
+                },
+                [_vm._v("Save")]
+              )
+            ])
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Member/VideoList.vue?vue&type=template&id=83369c26&":
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Member/VideoList.vue?vue&type=template&id=83369c26& ***!
+  \**************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
     _c(
       "div",
       { staticClass: "row" },
       [
-        _vm._l(_vm.photos.data, function(po) {
-          return _c("div", { staticClass: "col-lg-3" }, [
-            _c("div", { staticClass: "card" }, [
-              _c(
-                "a",
-                {
-                  attrs: { href: "" },
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      return _vm.openPhoto(po.id)
-                    }
-                  }
-                },
-                [
-                  _c("img", {
-                    staticClass: "card-img-top",
-                    attrs: { src: po.embed, alt: "" }
-                  })
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("span", { staticClass: "badge badge-info" }, [
-                  _vm._v(_vm._s(po.title))
-                ]),
-                _vm._v(" · \n                  "),
-                _c("span", { staticClass: "badge badge-info" }, [
-                  _vm._v(_vm._s(_vm.moment(po.created_at).fromNow()))
+        _vm.videos.data == 0
+          ? _c("div", { staticClass: "col-lg-12 pt-4" }, [_vm._m(0)])
+          : _vm._l(_vm.videos.data, function(vi) {
+              return _c("div", { staticClass: "col-lg-3 pt-4" }, [
+                _c("div", { staticClass: "card pt-2" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "video-container",
+                      domProps: { innerHTML: _vm._s(vi.embed) }
+                    },
+                    [
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(vi.embed) +
+                          "\n                "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("p", [
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.videoShow(vi.id)
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(vi.title) +
+                              "\n                    "
+                          )
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-footer" }, [
+                    _c("div", { staticClass: "clearfix" }, [
+                      _c("div", { staticClass: "float-left" }, [
+                        _c("span", { staticClass: "badge badge-info" }, [
+                          _vm._v(
+                            "\n                                " +
+                              _vm._s(_vm.moment(vi.created_at).fromNow()) +
+                              "\n                            "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "float-right" }, [
+                        _vm.ownerId == vi.user.id
+                          ? _c("div", { staticClass: "btn-group" }, [
+                              _c(
+                                "button",
+                                {
+                                  staticClass: "btn btn-outline-primary btn-sm",
+                                  on: {
+                                    click: function($event) {
+                                      $event.preventDefault()
+                                      return _vm.$emit("videoEdit", vi.id)
+                                    }
+                                  }
+                                },
+                                [_vm._v("edit")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "button",
+                                {
+                                  staticClass: "btn btn-outline-danger btn-sm",
+                                  on: {
+                                    click: function($event) {
+                                      $event.preventDefault()
+                                      return _vm.$emit("videoDel", vi.id)
+                                    }
+                                  }
+                                },
+                                [_vm._v("x")]
+                              )
+                            ])
+                          : _c("span", { staticClass: "badge badge-info" }, [
+                              _vm._v(
+                                "\n                                " +
+                                  _vm._s(vi.user.name) +
+                                  "\n                            "
+                              )
+                            ])
+                      ])
+                    ])
+                  ])
                 ])
               ])
-            ])
-          ])
-        }),
+            }),
         _vm._v(" "),
         _c("div", { staticClass: "col-lg-12" }, [
-          _c("div", { staticClass: "po" }, [
+          _c("div", { staticClass: "pa" }, [
             _c(
               "ul",
               { staticClass: "pagination" },
               [
                 _c("li", { staticClass: "page-item" }, [
                   _vm._v(
-                    "\n                        showing from  \n                        "
+                    "\n                        showing form \n                        "
                   ),
-                  _c("span", [_vm._v(_vm._s(_vm.photos.from))]),
+                  _c("span", [_vm._v(_vm._s(_vm.videos.from))]),
                   _vm._v(" to \n                        "),
-                  _c("span", [_vm._v(_vm._s(_vm.photos.to))]),
-                  _vm._v(" of  \n                        "),
-                  _c("span", [_vm._v(_vm._s(_vm.photos.total))]),
-                  _vm._v(" ·  \n                    ")
+                  _c("span", [_vm._v(_vm._s(_vm.videos.to))]),
+                  _vm._v(" of \n                        "),
+                  _c("span", [_vm._v(_vm._s(_vm.videos.total))]),
+                  _vm._v(" ·\n                    ")
                 ]),
                 _vm._v(" "),
-                _vm._l(_vm.photos.links, function(li) {
+                _vm._l(_vm.videos.links, function(li) {
                   return _c("li", { staticClass: "page-item" }, [
-                    li.active != true && li.url != null
+                    li.active == false && li.url != null
                       ? _c(
                           "a",
                           {
@@ -401,11 +670,17 @@ var render = function() {
                             on: {
                               click: function($event) {
                                 $event.preventDefault()
-                                return _vm.$emit("getPhotos", li.url)
+                                return _vm.$emit("getVideos", li.url)
                               }
                             }
                           },
-                          [_vm._v(_vm._s(li.label))]
+                          [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(li.label) +
+                                "\n                        "
+                            )
+                          ]
                         )
                       : _c(
                           "span",
@@ -413,14 +688,26 @@ var render = function() {
                             staticClass: "active",
                             domProps: { innerHTML: _vm._s(li.label) }
                           },
-                          [_vm._v(_vm._s(li.label))]
+                          [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(li.label) +
+                                "\n                        "
+                            )
+                          ]
                         ),
-                    _vm._v(" ·\n                    ")
+                    _vm._v(" ·\n                        \n                    ")
                   ])
                 }),
                 _vm._v(" "),
                 _c("li", { staticClass: "page-item" }, [
-                  _c("span", [_vm._v(_vm._s(_vm.photos.current_page))])
+                  _c("span", { staticClass: "active" }, [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(_vm.videos.current_page) +
+                        "\n                        "
+                    )
+                  ])
                 ])
               ],
               2
@@ -431,40 +718,46 @@ var render = function() {
         _c(
           "b-modal",
           {
-            ref: "showPhotoModal",
-            attrs: { title: _vm.title, size: "xl", "ok-only": "" }
+            ref: "showVideoModal",
+            attrs: { title: "show video", size: "xl", "hide-footer": "" }
           },
           [
-            _c("div", { staticClass: "card" }, [
-              _c("img", {
-                staticClass: "card-img-top",
-                attrs: { src: _vm.embed, alt: "" }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("span", { staticClass: "badge badge-info" }, [
-                  _vm._v(_vm._s(_vm.ownerName))
-                ]),
-                _vm._v(" \n                    · \n                    "),
-                _c("span", { staticClass: "badge badge-info" }, [
+            _c("div", { staticClass: "container" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "video-container",
+                  domProps: { innerHTML: _vm._s(_vm.embed) }
+                },
+                [
                   _vm._v(
-                    _vm._s(_vm.moment(_vm.createdDate)) +
-                      " · \n                    " +
-                      _vm._s(_vm.moment(_vm.createdDate).fromNow())
+                    "\n                    " +
+                      _vm._s(_vm.embed) +
+                      "\n                "
                   )
-                ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("p", { staticClass: "pt-2 mb-4" }, [
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(_vm.title) +
+                    " - " +
+                    _vm._s(_vm.postBy) +
+                    "\n                "
+                )
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "form-group pt-4 mb-4" }, [
+              _c("div", { staticClass: "form-group pt-4" }, [
                 _c(
                   "textarea",
                   {
-                    ref: "copyCode",
+                    ref: "showEmbed",
                     staticClass: "form-control",
                     on: {
                       click: function($event) {
                         $event.preventDefault()
-                        return _vm.selectCode($event)
+                        return _vm.selectEmbedCode($event)
                       }
                     }
                   },
@@ -479,164 +772,18 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoSearch.vue?vue&type=template&id=9aa542fe&":
-/*!*********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/PhotoSearch.vue?vue&type=template&id=9aa542fe& ***!
-  \*********************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      { staticClass: "row" },
-      [
-        _c("div", { staticClass: "col-lg-12" }, [
-          _c("form", { attrs: { action: "" } }, [
-            _c("div", { staticClass: "form-group" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.search,
-                    expression: "search"
-                  }
-                ],
-                ref: "search",
-                staticClass: "form-control",
-                attrs: { type: "text", placeholder: "Search photo..." },
-                domProps: { value: _vm.search },
-                on: {
-                  keyup: _vm.searchPhoto,
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.search = $event.target.value
-                  }
-                }
-              })
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _vm._l(_vm.photos, function(po) {
-          return _c(
-            "div",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.search,
-                  expression: "search"
-                }
-              ],
-              staticClass: "col-lg-3"
-            },
-            [
-              _c("div", { staticClass: "card" }, [
-                _c(
-                  "a",
-                  {
-                    attrs: { href: "" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.openPhoto(po.id)
-                      }
-                    }
-                  },
-                  [
-                    _c("img", {
-                      staticClass: "card-img-top",
-                      attrs: { src: po.embed, alt: "" }
-                    })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("span", { staticClass: "badge badge-info" }, [
-                    _vm._v(_vm._s(po.user.name))
-                  ]),
-                  _vm._v(" · \n                "),
-                  _c("span", { staticClass: "badge badge-info" }, [
-                    _vm._v(_vm._s(_vm.moment(po.created_at).fromNow()))
-                  ])
-                ])
-              ])
-            ]
-          )
-        }),
-        _vm._v(" "),
-        _c(
-          "b-modal",
-          {
-            ref: "showPhotoModal",
-            attrs: { title: _vm.title, size: "xl", "ok-only": "" }
-          },
-          [
-            _c("div", { staticClass: "card" }, [
-              _c("img", {
-                staticClass: "card-img-top",
-                attrs: { src: _vm.embed, alt: "" }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("span", { staticClass: "badge badge-info" }, [
-                  _vm._v(_vm._s(_vm.ownerName))
-                ]),
-                _vm._v(" · \n\n               "),
-                _c("span", { staticClass: "badge badge-info" }, [
-                  _vm._v(
-                    _vm._s(_vm.moment(_vm.createDate)) +
-                      " \n               · " +
-                      _vm._s(_vm.moment(_vm.createDate).fromNow())
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group pt-2 pt-4" }, [
-                  _c(
-                    "textarea",
-                    {
-                      ref: "copyCode",
-                      staticClass: "form-control",
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          return _vm.selectCode($event)
-                        }
-                      }
-                    },
-                    [_vm._v(_vm._s(_vm.embed))]
-                  )
-                ])
-              ])
-            ])
-          ]
-        )
-      ],
-      2
-    )
-  ])
-}
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "alert alert-warning" }, [
+      _c("h2", { staticClass: "text-center " }, [
+        _vm._v("\n                    There is no data\n                ")
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -755,18 +902,18 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ "./resources/js/pages/Photo.vue":
-/*!**************************************!*\
-  !*** ./resources/js/pages/Photo.vue ***!
-  \**************************************/
+/***/ "./resources/js/pages/Member/Video.vue":
+/*!*********************************************!*\
+  !*** ./resources/js/pages/Member/Video.vue ***!
+  \*********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Photo_vue_vue_type_template_id_6f599d79___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Photo.vue?vue&type=template&id=6f599d79& */ "./resources/js/pages/Photo.vue?vue&type=template&id=6f599d79&");
-/* harmony import */ var _Photo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Photo.vue?vue&type=script&lang=js& */ "./resources/js/pages/Photo.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _Video_vue_vue_type_template_id_6f3100a2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Video.vue?vue&type=template&id=6f3100a2& */ "./resources/js/pages/Member/Video.vue?vue&type=template&id=6f3100a2&");
+/* harmony import */ var _Video_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Video.vue?vue&type=script&lang=js& */ "./resources/js/pages/Member/Video.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -775,9 +922,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _Photo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Photo_vue_vue_type_template_id_6f599d79___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Photo_vue_vue_type_template_id_6f599d79___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _Video_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Video_vue_vue_type_template_id_6f3100a2___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Video_vue_vue_type_template_id_6f3100a2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -787,55 +934,55 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/pages/Photo.vue"
+component.options.__file = "resources/js/pages/Member/Video.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/pages/Photo.vue?vue&type=script&lang=js&":
-/*!***************************************************************!*\
-  !*** ./resources/js/pages/Photo.vue?vue&type=script&lang=js& ***!
-  \***************************************************************/
+/***/ "./resources/js/pages/Member/Video.vue?vue&type=script&lang=js&":
+/*!**********************************************************************!*\
+  !*** ./resources/js/pages/Member/Video.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Photo.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Photo.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Video_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Video.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Member/Video.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Video_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/pages/Photo.vue?vue&type=template&id=6f599d79&":
-/*!*********************************************************************!*\
-  !*** ./resources/js/pages/Photo.vue?vue&type=template&id=6f599d79& ***!
-  \*********************************************************************/
+/***/ "./resources/js/pages/Member/Video.vue?vue&type=template&id=6f3100a2&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/pages/Member/Video.vue?vue&type=template&id=6f3100a2& ***!
+  \****************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_template_id_6f599d79___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Photo.vue?vue&type=template&id=6f599d79& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Photo.vue?vue&type=template&id=6f599d79&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_template_id_6f599d79___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Video_vue_vue_type_template_id_6f3100a2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./Video.vue?vue&type=template&id=6f3100a2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Member/Video.vue?vue&type=template&id=6f3100a2&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Video_vue_vue_type_template_id_6f3100a2___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_template_id_6f599d79___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Video_vue_vue_type_template_id_6f3100a2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/js/pages/PhotoList.vue":
-/*!******************************************!*\
-  !*** ./resources/js/pages/PhotoList.vue ***!
-  \******************************************/
+/***/ "./resources/js/pages/Member/VideoForm.vue":
+/*!*************************************************!*\
+  !*** ./resources/js/pages/Member/VideoForm.vue ***!
+  \*************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _PhotoList_vue_vue_type_template_id_401edab7___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PhotoList.vue?vue&type=template&id=401edab7& */ "./resources/js/pages/PhotoList.vue?vue&type=template&id=401edab7&");
-/* harmony import */ var _PhotoList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PhotoList.vue?vue&type=script&lang=js& */ "./resources/js/pages/PhotoList.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _VideoForm_vue_vue_type_template_id_eb28e9da___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VideoForm.vue?vue&type=template&id=eb28e9da& */ "./resources/js/pages/Member/VideoForm.vue?vue&type=template&id=eb28e9da&");
+/* harmony import */ var _VideoForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VideoForm.vue?vue&type=script&lang=js& */ "./resources/js/pages/Member/VideoForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -844,9 +991,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _PhotoList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _PhotoList_vue_vue_type_template_id_401edab7___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _PhotoList_vue_vue_type_template_id_401edab7___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _VideoForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _VideoForm_vue_vue_type_template_id_eb28e9da___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _VideoForm_vue_vue_type_template_id_eb28e9da___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -856,55 +1003,55 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/pages/PhotoList.vue"
+component.options.__file = "resources/js/pages/Member/VideoForm.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/pages/PhotoList.vue?vue&type=script&lang=js&":
-/*!*******************************************************************!*\
-  !*** ./resources/js/pages/PhotoList.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************/
+/***/ "./resources/js/pages/Member/VideoForm.vue?vue&type=script&lang=js&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/pages/Member/VideoForm.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./PhotoList.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoList.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VideoForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./VideoForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Member/VideoForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VideoForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/pages/PhotoList.vue?vue&type=template&id=401edab7&":
-/*!*************************************************************************!*\
-  !*** ./resources/js/pages/PhotoList.vue?vue&type=template&id=401edab7& ***!
-  \*************************************************************************/
+/***/ "./resources/js/pages/Member/VideoForm.vue?vue&type=template&id=eb28e9da&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/pages/Member/VideoForm.vue?vue&type=template&id=eb28e9da& ***!
+  \********************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoList_vue_vue_type_template_id_401edab7___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./PhotoList.vue?vue&type=template&id=401edab7& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoList.vue?vue&type=template&id=401edab7&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoList_vue_vue_type_template_id_401edab7___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VideoForm_vue_vue_type_template_id_eb28e9da___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./VideoForm.vue?vue&type=template&id=eb28e9da& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Member/VideoForm.vue?vue&type=template&id=eb28e9da&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VideoForm_vue_vue_type_template_id_eb28e9da___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoList_vue_vue_type_template_id_401edab7___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VideoForm_vue_vue_type_template_id_eb28e9da___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/js/pages/PhotoSearch.vue":
-/*!********************************************!*\
-  !*** ./resources/js/pages/PhotoSearch.vue ***!
-  \********************************************/
+/***/ "./resources/js/pages/Member/VideoList.vue":
+/*!*************************************************!*\
+  !*** ./resources/js/pages/Member/VideoList.vue ***!
+  \*************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _PhotoSearch_vue_vue_type_template_id_9aa542fe___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PhotoSearch.vue?vue&type=template&id=9aa542fe& */ "./resources/js/pages/PhotoSearch.vue?vue&type=template&id=9aa542fe&");
-/* harmony import */ var _PhotoSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PhotoSearch.vue?vue&type=script&lang=js& */ "./resources/js/pages/PhotoSearch.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _VideoList_vue_vue_type_template_id_83369c26___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VideoList.vue?vue&type=template&id=83369c26& */ "./resources/js/pages/Member/VideoList.vue?vue&type=template&id=83369c26&");
+/* harmony import */ var _VideoList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VideoList.vue?vue&type=script&lang=js& */ "./resources/js/pages/Member/VideoList.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -913,9 +1060,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _PhotoSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _PhotoSearch_vue_vue_type_template_id_9aa542fe___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _PhotoSearch_vue_vue_type_template_id_9aa542fe___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _VideoList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _VideoList_vue_vue_type_template_id_83369c26___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _VideoList_vue_vue_type_template_id_83369c26___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -925,38 +1072,38 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/pages/PhotoSearch.vue"
+component.options.__file = "resources/js/pages/Member/VideoList.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/pages/PhotoSearch.vue?vue&type=script&lang=js&":
-/*!*********************************************************************!*\
-  !*** ./resources/js/pages/PhotoSearch.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************/
+/***/ "./resources/js/pages/Member/VideoList.vue?vue&type=script&lang=js&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/pages/Member/VideoList.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./PhotoSearch.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoSearch.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VideoList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./VideoList.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Member/VideoList.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VideoList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/pages/PhotoSearch.vue?vue&type=template&id=9aa542fe&":
-/*!***************************************************************************!*\
-  !*** ./resources/js/pages/PhotoSearch.vue?vue&type=template&id=9aa542fe& ***!
-  \***************************************************************************/
+/***/ "./resources/js/pages/Member/VideoList.vue?vue&type=template&id=83369c26&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/pages/Member/VideoList.vue?vue&type=template&id=83369c26& ***!
+  \********************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoSearch_vue_vue_type_template_id_9aa542fe___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./PhotoSearch.vue?vue&type=template&id=9aa542fe& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoSearch.vue?vue&type=template&id=9aa542fe&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoSearch_vue_vue_type_template_id_9aa542fe___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VideoList_vue_vue_type_template_id_83369c26___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./VideoList.vue?vue&type=template&id=83369c26& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Member/VideoList.vue?vue&type=template&id=83369c26&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VideoList_vue_vue_type_template_id_83369c26___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoSearch_vue_vue_type_template_id_9aa542fe___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VideoList_vue_vue_type_template_id_83369c26___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

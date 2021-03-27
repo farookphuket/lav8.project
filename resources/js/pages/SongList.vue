@@ -11,7 +11,7 @@
                    </a>
                     <div class="card-body">
                         <p class="card-text">
-                            {{so.name}} - {{so.user.name}}
+                            {{smartTitle(so.name,13)}} - {{so.user.name}}
                         </p>
                         <p class="card-text">
                         <span class="badge badge-info">
@@ -83,6 +83,9 @@ methods:{
                     this.$emit("getSongList")
                         },2000) 
                      })
+            },
+            smartTitle(str,len){
+                return (str.length > len)? str.substring(0,len)+"...":str
             },
         },
 }

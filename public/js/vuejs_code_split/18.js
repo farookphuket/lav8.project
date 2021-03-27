@@ -177,6 +177,9 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
     },
     selectText: function selectText() {
       this.$refs.showEmbed.select();
+    },
+    smartTitle: function smartTitle(str, len) {
+      return str.length > len ? str.substring(0, len) + "..." : str;
     }
   }
 });
@@ -280,7 +283,7 @@ var render = function() {
                           [
                             _vm._v(
                               "\n                        " +
-                                _vm._s(vi.title) +
+                                _vm._s(_vm.smartTitle(vi.title, 13)) +
                                 "\n                        "
                             )
                           ]
