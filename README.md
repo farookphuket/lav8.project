@@ -24,12 +24,19 @@
 
 
 
+# how can I donwload and setup 
+
+> please click on the youtube link to see it in detail
+
+[![](http://img.youtube.com/vi/41chFktm7MU/0.jpg)](http://www.youtube.com/watch?v=41chFktm7MU "")
+
 
 
 
 
 
 # How can I use this 
+
 
 >   please watch this video it will tell you better than read from here
 
