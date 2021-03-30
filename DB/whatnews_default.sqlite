@@ -4,6 +4,8 @@
 | other wise the script can not be run 
 
 */
+
+
 /*
 
 INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
