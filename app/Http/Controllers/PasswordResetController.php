@@ -38,7 +38,7 @@ class PasswordResetController extends Controller
         $token = '';
 
         foreach($get as $item):
-            $since = strtotime($item->created_at)+(60*30);
+            $since = strtotime($item->created_at)+(60*12);
             $email = $item->email;
             $token = $item->token;
         endforeach;
@@ -66,6 +66,16 @@ $msg = "<span class=\"badge badge-success\">you have  {$left}  minute left
                 ]);
     }
 
+    public function checkTimeLeft(){
+        /* 
+         * call by vue to check how long does user has left before the link has expire 
+         * */
+        $reqToken = request()->reqToken;
+        return"check time";
+
+
+    }
+
     public function hello(){
 
         $email = request()->email;
@@ -78,7 +88,8 @@ $msg = "<span class=\"badge badge-success\">you have  {$left}  minute left
         $id = '';
         $user_mail = '';
         if($num == 0):
-            $msg = "<span class=\"badge badge-danger\">Error : account not found</span>";
+            $msg = "<span class=\"badge badge-danger\">Error : account not 
+            found you have to register first!</span>";
         else:
 
             
@@ -164,9 +175,44 @@ $msg = "<span class=\"badge badge-success\">you have  {$left}  minute left
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show($token)
     {
-        //
+
+        $get = DB::table('password_resets')
+                                    ->where('token',$token)
+                                    ->get();
+
+        $since = '';
+        $email = '';
+        $token = '';
+
+        foreach($get as $item):
+            $since = strtotime($item->created_at)+(60*8);
+            $email = $item->email;
+            $token = $item->token;
+        endforeach;
+
+        $end = $since-time();
+        $left = round((int)$end/60);
+
+        $msg = "";
+
+        if($end < 0):
+            $msg = "<span class=\"badge badge-danger\">
+            Sorry your link has expired! please try again later.</span>";
+        else:
+$msg = "<span class=\"badge badge-success\">you have  {$left}  minute left 
+        </span>";
+        endif;
+        
+        //dd($msg);
+
+        return response()->json([
+            "email" => $email,
+            "token" => $token,
+            "msg" => $msg,
+            "timeleft" => $left
+        ]);
     }
 
     /**
@@ -204,7 +250,8 @@ $msg = "<span class=\"badge badge-success\">you have  {$left}  minute left
 
         User::where('email',$email)
             ->update([
-                'password' => $pHash
+                'password' => $pHash,
+                'updated_at' => now()
             ]);
 
 

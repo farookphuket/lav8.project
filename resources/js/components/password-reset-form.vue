@@ -1,116 +1,79 @@
 <template>
-
     <!-- form will sent post request to 'password.reset' -->
     <div class="container">
-        <p>
-            dear friend please enter your new password before the time out 
-            <b>please note</b> that this page will be expire soon .
+        <p v-html="msg">
+            {{msg}}
         </p>
         <form>
             <div class="form-group">
                 <label for="passwd" class="sr-only">New password</label>
-                <input type="password" name="passwd" ref="passwd" class="form-control" placeholder="Enter your new password">
-            </div>
-            <p v-html="show" style="margin:1.5em;">{{show}}</p>
-            <input @click.prevent="sendClick()" name="send" id="send" class="btn btn-block btn-info send-btn mb-4" type="submit" value="Reset My Password now DUDE">
+                <input 
+                    type="password"
+                    v-model="passwd"
+                    ref="passwd"
+                    class="form-control"
+                    placeholder="Enter your new password"
+                />
 
-            <a href="/"  style="color:white;font-weight:bold;" class="btn btn-primary btn-block  mb-4">
+            </div>
+            <p  class="pt-4 mb-4">{{ res_status }}</p>
+            <input
+                @click.prevent="resetMyPassword"
+                class="btn btn-block btn-outline-info send-btn mb-4"
+                type="submit"
+                :disabled="disabled"
+                value="Reset My Password"
+            />
+
+            <a
+                href="/"
+                style="color:blue;font-weight:bold;"
+                class="btn btn-outline-primary btn-block  mb-4"
+            >
                 Back Home
             </a>
         </form>
     </div>
-
 </template>
 
-
-
-
 <script>
-export default{
-
-    name:"PassReset",
-    props: ['email'],
-    email : '',
-    uniqueId: '',
-    timeout: '',
-    
-    data(){
-        return{
-
-            show: '',
-            form: {
-                passwd: ''
-            },
-            ip: [],
-            timeout: [],
-            uniqueId: [],
-
+export default {
+    name: "PasswordReset",
+    props:["resettoken"],
+    data() {
+        return {
+            res_status: "",
+            passwd: "",
+            email:'',
+            timeleft:20,
+            theTime:0,
+            msg:'',
+            disabled:false
         }
     },
+    mounted() {
+        this.getLastStatus()
+        this.theTime = setInterval(()=>{
+            this.getLastStatus();
 
-    mounted(){
-        this.init()
+            if(this.timeleft <= 0){
+                clearInterval(this.theTime)
+                this.disabled = true
+            }
+
+        },39500)
     },
-
     methods: {
-        sendClick(){
-            //console.log(window.timeout);
-            let url2 = '/update';
-            axios.post(url2,{
-                passwd: this.$refs.passwd.value,
-                email: window.email,
-            }).then(response=>{
-                    this.show = response.data.msg;
-                    setTimeout(()=>{
-                        location.href='/login';
-                    },5500);
-                    },error=>{
-                        console.log(error.response.data.message)
-                        this.show = `<span class="badge badge-danger">
-                        Error  ${error.response.data.message}!
-                        </span>`
-
-                    });
+        getLastStatus() {
+            let url = `/passwordreset/${this.resettoken}`
+            axios.get(url)
+                .then(res=>{
+           //         console.log(res.data)
+                    let re = res.data
+                    this.msg = re.msg
+                    this.timeleft = re.timeleft
+                })
         },
-        getMyInfo(){
-            axios.get('/getmyresetinfo')
-                .then(response => {
-                    this.ip = response.data.ip;
-
-                    });
-
-        },
-        init(){
-            this.uniqueId = window.resettoken;
-            this.timeout = window.timeout;
-
-            if(this.timeout <= 0){
-                alert("Sorry but your link has been expired!");
-                window.location.href="/";
-            }else{
-                this.getMyInfo();
-                this.getReloadPage();
-            }
-        },
-        getReloadPage(){
-
-            let myTime = setInterval(()=>{
-                //location.reload();
-            },35000);
-            
-            if(this.timeout <=1){
-               clearInterval(myTime);
-                myTime = 0;
-                alert(`Your time for reset password is out now\n
-                this page will be expire sonn`);
-            }
-        }
-
-
-
-    }
-
-}
-
-
+    },
+};
 </script>

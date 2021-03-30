@@ -30,28 +30,52 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "EmailReq",
   data: function data() {
     return {
-      show: '',
-      form: {
-        email: ''
-      }
+      res_status: "",
+      email: ''
     };
   },
+  mounted: function mounted() {
+    this.res_status = "<span class=\"badge badge-info\">Waiting...</span>";
+  },
   methods: {
-    getClick: function getClick() {
+    sentResetLink: function sentResetLink() {
       var _this = this;
 
-      var url1 = '/hello';
-      axios.post(url1, {
-        email: this.$refs.email.value
-      }).then(function (response) {
-        _this.show = response.data.msg; //      setTimeout(()=>{
-        //          window.location.reload();
-        //      },3500);
+      if (!this.$refs.email.value) {
+        this.$refs.email.focus();
+      }
+
+      var url = "/hello";
+      var formData = {
+        email: this.email
+      };
+      axios.post(url, formData).then(function (res) {
+        _this.res_status = res.data.msg;
+      }, function (err) {
+        _this.res_status = "<span class=\"badge badge-danger\">\n                        ".concat(err.response.data.message, "</span>");
       });
+      setTimeout(function () {
+        _this.clearForm();
+      }, 2000);
+    },
+    clearForm: function clearForm() {
+      this.res_status = '';
+      this.email = '';
     }
   }
 });
@@ -80,26 +104,40 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.email,
+            expression: "email"
+          }
+        ],
         ref: "email",
         staticClass: "form-control",
-        attrs: { type: "email", name: "email", placeholder: "Email address" }
+        attrs: { type: "email", placeholder: "Email address" },
+        domProps: { value: _vm.email },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.email = $event.target.value
+          }
+        }
       })
     ]),
     _vm._v(" "),
-    _c("p", { domProps: { innerHTML: _vm._s(_vm.show) } }),
+    _c("p", { domProps: { innerHTML: _vm._s(_vm.res_status) } }, [
+      _vm._v(_vm._s(_vm.res_status))
+    ]),
     _vm._v(" "),
     _c("input", {
-      staticClass: "btn btn-block btn-info send-btn mb-4",
-      attrs: {
-        name: "send",
-        id: "send",
-        type: "submit",
-        value: "sent Me reset link"
-      },
+      staticClass: "btn btn-block btn-outline-info send-btn mb-4",
+      attrs: { type: "submit", value: "sent email" },
       on: {
         click: function($event) {
           $event.preventDefault()
-          return _vm.getClick()
+          return _vm.sentResetLink($event)
         }
       }
     }),
@@ -107,8 +145,8 @@ var render = function() {
     _c(
       "a",
       {
-        staticClass: "btn btn-primary btn-block  mb-4",
-        staticStyle: { color: "white", "font-weight": "bold" },
+        staticClass: "btn btn-outline-primary btn-block  mb-4",
+        staticStyle: { color: "blue", "font-weight": "bold" },
         attrs: { href: "/" }
       },
       [_vm._v("\n        Back Home\n    ")]
