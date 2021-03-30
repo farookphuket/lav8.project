@@ -490,6 +490,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 
@@ -1210,41 +1215,47 @@ var render = function() {
             ),
             _vm._v(" "),
             _c("div", { staticClass: "float-right" }, [
-              li.is_public == 1
-                ? _c("span", { staticClass: "alert alert-success" }, [
-                    _vm._v("Public")
-                  ])
-                : _c("span", { staticClass: "alert alert-warning" }, [
-                    _vm._v("Private")
-                  ]),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-primary",
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      return _vm.$emit("postEdit", li.id)
+              _c("div", [
+                _c("span", { staticClass: "alert alert-info" }, [
+                  _vm._v("read " + _vm._s(li.read_count))
+                ]),
+                _vm._v(" "),
+                li.is_public == 1
+                  ? _c("span", { staticClass: "alert alert-success" }, [
+                      _vm._v("Public")
+                    ])
+                  : _c("span", { staticClass: "alert alert-warning" }, [
+                      _vm._v("Private")
+                    ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary",
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.$emit("postEdit", li.id)
+                      }
                     }
-                  }
-                },
-                [_vm._v("edit")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-danger",
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      return _vm.$emit("postDelete", li.id)
+                  },
+                  [_vm._v("edit")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-danger",
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.$emit("postDelete", li.id)
+                      }
                     }
-                  }
-                },
-                [_vm._v("X")]
-              )
+                  },
+                  [_vm._v("X")]
+                )
+              ])
             ])
           ])
         ])

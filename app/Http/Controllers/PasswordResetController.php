@@ -38,7 +38,7 @@ class PasswordResetController extends Controller
         $token = '';
 
         foreach($get as $item):
-            $since = strtotime($item->created_at)+(60*5);
+            $since = strtotime($item->created_at)+(60*30);
             $email = $item->email;
             $token = $item->token;
         endforeach;

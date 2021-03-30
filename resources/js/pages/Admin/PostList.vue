@@ -25,6 +25,7 @@
                         {{moment(li.created_at).fromNow()}}
                     </span>
 
+
                     </p>
                 </div>
             </div>
@@ -42,13 +43,17 @@
                     </span>
                 </div>
                 <div class="float-right">
-                    <span class="alert alert-success"
-                          v-if="li.is_public == 1">Public</span>
-                    <span class="alert alert-warning" v-else>Private</span>
-                    <button class="btn btn-primary"
-                            @click.prevent="$emit('postEdit',li.id)">edit</button>
-                    <button class="btn btn-danger" 
-                        @click.prevent="$emit('postDelete',li.id)">X</button>
+                    <div>
+                       <span class="alert alert-info">read {{li.read_count}}</span>
+                        <span class="alert alert-success"
+                              v-if="li.is_public == 1">Public</span>
+
+                        <span class="alert alert-warning" v-else>Private</span>
+                        <button class="btn btn-primary"
+                                @click.prevent="$emit('postEdit',li.id)">edit</button>
+                        <button class="btn btn-danger" 
+                            @click.prevent="$emit('postDelete',li.id)">X</button>
+                    </div>
                 </div>
             </div>
         </div>
