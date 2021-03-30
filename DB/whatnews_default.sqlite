@@ -31,7 +31,11 @@ INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
 '1',                            
 'How to clear pacman cache to save the storage',                             
 '
-<p>
+<div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Glmh2G-q7Vs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<p class="pt-4">
 <b>Today (28 Mar 2021)</b> I just update Manjaro and try to find the way to 
 clean pacman cache as it''s seem to take too much of the space on my SSD 
 (I only have 240 GB of ssd on my cheap computer) the command that I show here 

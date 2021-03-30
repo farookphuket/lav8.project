@@ -36,73 +36,55 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "PassReset",
-  props: ['email'],
-  email: '',
-  uniqueId: '',
-  timeout: '',
+  name: "PasswordReset",
+  props: ["resettoken"],
   data: function data() {
     return {
-      show: '',
-      form: {
-        passwd: ''
-      },
-      ip: [],
-      timeout: [],
-      uniqueId: []
+      res_status: "",
+      passwd: "",
+      email: '',
+      timeleft: 20,
+      theTime: 0,
+      msg: '',
+      disabled: false
     };
   },
   mounted: function mounted() {
-    this.init();
+    var _this = this;
+
+    this.getLastStatus();
+    this.theTime = setInterval(function () {
+      _this.getLastStatus();
+
+      if (_this.timeleft <= 0) {
+        clearInterval(_this.theTime);
+        _this.disabled = true;
+      }
+    }, 39500);
   },
   methods: {
-    sendClick: function sendClick() {
-      var _this = this;
-
-      //console.log(window.timeout);
-      var url2 = '/update';
-      axios.post(url2, {
-        passwd: this.$refs.passwd.value,
-        email: window.email
-      }).then(function (response) {
-        _this.show = response.data.msg;
-        setTimeout(function () {
-          location.href = '/login';
-        }, 5500);
-      }, function (error) {
-        console.log(error.response.data.message);
-        _this.show = "<span class=\"badge badge-danger\">\n                        Error  ".concat(error.response.data.message, "!\n                        </span>");
-      });
-    },
-    getMyInfo: function getMyInfo() {
+    getLastStatus: function getLastStatus() {
       var _this2 = this;
 
-      axios.get('/getmyresetinfo').then(function (response) {
-        _this2.ip = response.data.ip;
+      var url = "/passwordreset/".concat(this.resettoken);
+      axios.get(url).then(function (res) {
+        //         console.log(res.data)
+        var re = res.data;
+        _this2.msg = re.msg;
+        _this2.timeleft = re.timeleft;
       });
-    },
-    init: function init() {
-      this.uniqueId = window.resettoken;
-      this.timeout = window.timeout;
-
-      if (this.timeout <= 0) {
-        alert("Sorry but your link has been expired!");
-        window.location.href = "/";
-      } else {
-        this.getMyInfo();
-        this.getReloadPage();
-      }
-    },
-    getReloadPage: function getReloadPage() {
-      var myTime = setInterval(function () {//location.reload();
-      }, 35000);
-
-      if (this.timeout <= 1) {
-        clearInterval(myTime);
-        myTime = 0;
-        alert("Your time for reset password is out now\n\n                this page will be expire sonn");
-      }
     }
   }
 });
@@ -125,7 +107,9 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm._m(0),
+    _c("p", { domProps: { innerHTML: _vm._s(_vm.msg) } }, [
+      _vm._v("\n        " + _vm._s(_vm.msg) + "\n    ")
+    ]),
     _vm._v(" "),
     _c("form", [
       _c("div", { staticClass: "form-group" }, [
@@ -134,37 +118,42 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.passwd,
+              expression: "passwd"
+            }
+          ],
           ref: "passwd",
           staticClass: "form-control",
-          attrs: {
-            type: "password",
-            name: "passwd",
-            placeholder: "Enter your new password"
+          attrs: { type: "password", placeholder: "Enter your new password" },
+          domProps: { value: _vm.passwd },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.passwd = $event.target.value
+            }
           }
         })
       ]),
       _vm._v(" "),
-      _c(
-        "p",
-        {
-          staticStyle: { margin: "1.5em" },
-          domProps: { innerHTML: _vm._s(_vm.show) }
-        },
-        [_vm._v(_vm._s(_vm.show))]
-      ),
+      _c("p", { staticClass: "pt-4 mb-4" }, [_vm._v(_vm._s(_vm.res_status))]),
       _vm._v(" "),
       _c("input", {
-        staticClass: "btn btn-block btn-info send-btn mb-4",
+        staticClass: "btn btn-block btn-outline-info send-btn mb-4",
         attrs: {
-          name: "send",
-          id: "send",
           type: "submit",
-          value: "Reset My Password now DUDE"
+          disabled: _vm.disabled,
+          value: "Reset My Password"
         },
         on: {
           click: function($event) {
             $event.preventDefault()
-            return _vm.sendClick()
+            return _vm.resetMyPassword($event)
           }
         }
       }),
@@ -172,8 +161,8 @@ var render = function() {
       _c(
         "a",
         {
-          staticClass: "btn btn-primary btn-block  mb-4",
-          staticStyle: { color: "white", "font-weight": "bold" },
+          staticClass: "btn btn-outline-primary btn-block  mb-4",
+          staticStyle: { color: "blue", "font-weight": "bold" },
           attrs: { href: "/" }
         },
         [_vm._v("\n            Back Home\n        ")]
@@ -181,20 +170,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", [
-      _vm._v(
-        "\n        dear friend please enter your new password before the time out \n        "
-      ),
-      _c("b", [_vm._v("please note")]),
-      _vm._v(" that this page will be expire soon .\n    ")
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

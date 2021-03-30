@@ -24,14 +24,8 @@
 
                               <img src="{{asset('img/login-logo.jpg')}}" alt="logo" class="logo">
                         </div>
-                        <p class="login-card-description">Reset password </p>
-
-
-                        @if($msg) <p>{!!$msg!!}</p> @endif
-
                         <div id="app">
-
-                            <pass-reset></pass-reset>
+                            <pass-reset resettoken="{{$resettoken}}"></pass-reset>
                         </div>
 
                         <p class="login-card-footer-text">Don't have an account? <a href="{{ route('register') }}" class="text-reset">Register here</a></p>

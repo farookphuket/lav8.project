@@ -77,6 +77,7 @@ Route::resource('/visitors',PubVisit::class);
 Route::resource('/passwordreset',PasswordResetController::class);
 Route::get('/passreset/{timeout}',[PasswordResetController::class,
     'passreset'])->name('passreset');
+
 Route::get('/getmyresetinfo',[PasswordResetController::class,
     'getmyresetinfo'])->name('getmyresetinfo');
 Route::post('/hello',[PasswordResetController::class,'hello'])->name('hello');
