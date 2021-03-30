@@ -13,6 +13,23 @@ class CreateSongsTable extends Migration
      */
     public function up()
     {
+
+
+
+        Schema::create('albums', function (Blueprint $table) {
+            $table->id();
+            $table->string("name");
+            $table->timestamps();
+        });
+
+        Schema::create('artists', function (Blueprint $table) {
+            $table->id();
+            $table->string("name");
+            $table->timestamps();
+        });
+
+
+
         Schema::create('songs', function (Blueprint $table) {
             $table->id();
             $table->foreignId("artist_id");
@@ -46,17 +63,6 @@ class CreateSongsTable extends Migration
 
         });
 
-        Schema::create('albums', function (Blueprint $table) {
-            $table->id();
-            $table->string("name");
-            $table->timestamps();
-        });
-
-        Schema::create('artists', function (Blueprint $table) {
-            $table->id();
-            $table->string("name");
-            $table->timestamps();
-        });
 
 
 

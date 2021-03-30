@@ -67,9 +67,31 @@
             just login as Admin go to "About" menu then you can edit this page 
             as you'd love to put text ,picture or video
           </p>
-          <p class="pt-4">
+            <div class="clearfix">
+                <div class="float-right">
+                    <div class="col-md-3">
+                    </div>
+                </div>
+            </div>
+          <p class="pt-2">
           with respect
           </p>
+            <div class="row">
+                <div class="col-md-3">
+                    <img 
+                    src="https://lh3.googleusercontent.com/wYjHy9U9zBqZrn-D5Icfgc5TMy7nW8eWv3LNm4yxAWoz7xKWlUj59oX9ZXMvkFOYYVSJsvXDBHxgcdxl4LyZewjFAIwJlXSwoFV-oAGauW_H0e_e_VJshidQYHtyInXGBDPIIEaztjU=w1920-h1080">
+                </div>
+                <div class="col-md-3">
+                    <img class="responsive" src="https://lh3.googleusercontent.com/bh2XfTn5xOoQxELzEY3_2X7qopv3k5nZiBFNvHtc6Cf46QMZc2J3utdHIQPCJ0hGcrywr1c9Pm5tLs7xhZSz2at7tvozyXkTPZ0defBo8X0NGgwbVSG6LIMMFLGNCTEe9-ZOzGj8yik=w1920-h1080">
+
+                </div>
+                <div class="col-md-3">
+                    <a href="/donate-me">
+                        <img src="https://lh3.googleusercontent.com/cfOid3sYJtcVhxh6pXTQ9l2LfCTIDnPXGIY2TidhJRi2bkwzmtlZItSFINgzyFyG2FDXgfFS7bX1AQuzK03HOwJ-67Blc9oHtPD6QdrNpP_avEAYUhYyX6DLwuXKe5P_te8rbr0Ny4w=w1920-h1080" 
+class="responsive pt-4 mb-4">
+                    </a>
+                </div>
+            </div>
         </article>
 
 @endsection

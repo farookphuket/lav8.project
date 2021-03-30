@@ -24,6 +24,60 @@ INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
 
 
 
+
+
+INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
+`is_public`,`created_at`,`updated_at`) VALUES (NULL,
+'1',                            
+'How to clear pacman cache to save the storage',                             
+'
+<p>
+<b>Today (28 Mar 2021)</b> I just update Manjaro and try to find the way to 
+clean pacman cache as it''s seem to take too much of the space on my SSD 
+(I only have 240 GB of ssd on my cheap computer) the command that I show here 
+I have copy from <a 
+href="https://ostechnix.com/recommended-way-clean-package-cache-arch-linux/" 
+class="btn btn-outline-primary" target="_blank">ostechnix.com</a> 
+</p>
+
+<p class="pt-2 mb-4">As I have install manjaro and all of the package that I 
+have to use in my daily use this make the space on my small ssd become lower 
+so I have to delete something if it possible let check the size of pkg folder 
+by run this command </p>
+
+<textarea class="form-control">sudo ls /var/cache/pacman/pkg/ | wc -l</textarea> 
+
+<p class="pt-4 mb-4">
+to check the disk space run this command 
+</p>
+
+<textarea class="form-control">du -sh /var/cache/pacman/pkg/</textarea> 
+
+
+<p class="pt-4 mb-4">
+ to remove the download package and keep the most recent install run :
+</p>
+
+
+<textarea class="form-control mb-4">sudo paccache -rk 1</textarea> 
+
+<img class="responsive pt-4" 
+src="https://i.ibb.co/gP01hgz/2021-03-28-clear-pacman-cache.png" alt="">
+
+<p class="pt-4 mb-4">
+Thank you for stop by
+</p>
+',                                          
+'1',                        
+'2021-03-28 10:05:45',                
+'2021-03-28 20:49:45'                 
+);                                          
+
+
+
+
+
+
 /* 24 Mar 2021 added video link */
 INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
 "is_public","created_at","updated_at") VALUES (NULL,

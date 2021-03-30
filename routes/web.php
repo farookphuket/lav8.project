@@ -55,6 +55,7 @@ Route::resource('/posts',PubPost::class);
 Route::get('/posts/{post:slug}',[PubPost::class,'show'])->name('posts.show');
 
 Route::get("/about",[PubPost::class,'about'])->name('posts.about');
+Route::get("/donate-me",[PubPost::class,'donate'])->name('posts.donate');
 
 Route::resource('/album',pAlbum::class);
 Route::resource('/artist',pArtist::class);

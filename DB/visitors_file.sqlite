@@ -1,13 +1,76 @@
 
-INSERT INTO "visitors" ("id","post_id","client_ip","client_os",
-"client_browser","visited_month","visited_year","last_visited_date") VALUES (NULL,
+
+INSERT INTO `visitors` (`id`,`post_id`,`client_ip`,`client_os`,
+`client_browser`,`visited_month`,`visited_year`,`last_visited_date`) VALUES (NULL,
+NULL,                            
+ '66.249.71.73',                             
+'AndroidOS 6.0.1',                                          
+'Chrome 89.0.4389.99',                        
+3,                
+2021,                 
+'2021-03-28 08:01:42'
+);                                          
+
+
+INSERT INTO `visitors` (`id`,`post_id`,`client_ip`,`client_os`,
+`client_browser`,`visited_month`,`visited_year`,`last_visited_date`) VALUES (NULL,
+NULL,                            
+ '49.237.23.229',                             
+'AndroidOS 7.0',                                          
+'Chrome 89.0.4389.105',                        
+3,                
+2021,                 
+'2021-03-29 08:01:44'
+);                                          
+
+INSERT INTO `visitors` (`id`,`post_id`,`client_ip`,`client_os`,
+`client_browser`,`visited_month`,`visited_year`,`last_visited_date`) VALUES (NULL,
+NULL,                            
+ '66.249.71.43',                             
+'AndroidOS 6.0.1',                                          
+'Chrome 89.0.4389.99',                        
+3,                
+2021,                 
+'2021-03-29 08:01:43'
+);                                          
+
+
+
+
+INSERT INTO `visitors` (`id`,`post_id`,`client_ip`,`client_os`,
+`client_browser`,`visited_month`,`visited_year`,`last_visited_date`) VALUES (NULL,
+NULL,                            
+ '184.22.47.15',                             
+'iOS 14_3',                                          
+'Safari 14.0.2',                        
+3,                
+2021,                 
+'2021-03-28 08:01:42'
+);                                          
+
+
+INSERT INTO `visitors` (`id`,`post_id`,`client_ip`,`client_os`,
+`client_browser`,`visited_month`,`visited_year`,`last_visited_date`) VALUES (NULL,
+NULL,                            
+ '223.24.62.228',                             
+'AndroidOS 10',                                          
+'Chrome 89.0.4389.105',                        
+3,                
+2021,                 
+'2021-03-28 08:00:42'
+);                                          
+
+
+
+INSERT INTO `visitors` (`id`,`post_id`,`client_ip`,`client_os`,
+`client_browser`,`visited_month`,`visited_year`,`last_visited_date`) VALUES (NULL,
 NULL,                            
  '211.3.119.119',                             
 'Window',                                          
-'Safari ',                        
-2,                
-2021,                 
-'2021-02-16 03:00:42'
+'Internet Explorer ',                        
+6,                
+2018,                 
+'2018-02-16 13:00:42'
 );                                          
 
 
@@ -15,10 +78,10 @@ INSERT INTO "visitors" ("id","post_id","client_ip","client_os",
 "client_browser","visited_month","visited_year","last_visited_date") VALUES (NULL,
 NULL,                            
  '211.3.112.119',                             
-'Linux x64',                                          
+'Window',                                          
 'Internet Explorer ',                        
 2,                
-2021,                 
-'2021-02-16 02:05:39'
+2019,                 
+'2019-02-16 02:05:39'
 );                                          
 

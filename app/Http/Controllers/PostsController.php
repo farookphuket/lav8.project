@@ -42,6 +42,10 @@ class PostsController extends Controller
         $post = Post::where("slug","about")->limit(1)->get();
         return view("Pub.about")->with(["post" => $post]);
     }
+
+    public function donate(){
+        return view("Pub.donate_me");
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -48,6 +48,7 @@ Vue.use(JoditVue)
 //Vue.component('Visitors',require( './components/visitors.vue').default);
 Vue.component('Visitors',()=>import( './components/visitors.vue'));
 Vue.component('Song',()=>import( './pages/Song.vue'));
+Vue.component('DonateMe',()=>import( './pages/DonateMe.vue'));
 Vue.component('Pubvideo',()=>import( './pages/Video.vue'));
 Vue.component('PubPhoto',()=>import( './pages/Photo.vue'));
 Vue.component('LoginForm',()=>import( './components/LoginForm.vue'));
