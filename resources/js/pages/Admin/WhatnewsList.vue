@@ -1,9 +1,5 @@
 <template>
-    <div class="container">
-
-
-
-        <p>{{msg}}</p>
+    <div>
 
         <div class="card card-body"
             v-for="po in wnlist.data">
@@ -48,13 +44,13 @@
                     <div class="btn-group">
                         <button 
                             @click.prevent="goEdit(po.id)"
-                            class="btn btn-primary">
+                            class="btn btn-outline-primary btn-sm">
                             Edit
                         </button>
 
                         <button 
                             @click.prevent="goDel(po.id)"
-                            class="btn btn-danger">
+                            class="btn btn-outline-danger btn-sm">
                             delete
                         </button>
                     </div>
@@ -137,8 +133,7 @@ export default{
     ,props:["wnlist"]
     ,data(){
         return{
-            msg:'I still cannot make this work with the line number'
-            ,moment: moment
+            moment: moment,
 
         }
     },

@@ -37,6 +37,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -54,7 +68,8 @@ __webpack_require__.r(__webpack_exports__);
       tags: [],
       res_status: '',
       tag_with_content: [],
-      error: 0
+      error: 0,
+      showPostForm: false
     };
   },
   mounted: function mounted() {
@@ -127,6 +142,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jodit_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jodit-vue */ "./node_modules/jodit-vue/dist/jodit-vue.esm.js");
+//
 //
 //
 //
@@ -706,7 +722,51 @@ var render = function() {
     "div",
     { staticClass: "container-fluid" },
     [
+      _c("div", { staticClass: "clearfix" }, [
+        _c("div", { staticClass: "float-right" }, [
+          _c("p", { staticStyle: { color: "green" } }, [
+            _vm._v("system last update : 02 Apr 2021")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "btn-group pt-2 mb-4" }, [
+            _vm.showPostForm == false
+              ? _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-outline-primary btn-sm",
+                    on: {
+                      click: function($event) {
+                        _vm.showPostForm = true
+                      }
+                    }
+                  },
+                  [_vm._v("\n                    Create Post")]
+                )
+              : _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-outline-danger btn-sm",
+                    on: {
+                      click: function($event) {
+                        _vm.showPostForm = false
+                      }
+                    }
+                  },
+                  [_vm._v("\n                    Close")]
+                )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
       _c("post-form", {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.showPostForm,
+            expression: "showPostForm"
+          }
+        ],
         attrs: { templates: _vm.template, editId: _vm.editId, tags: _vm.tags },
         on: {
           getPostList: function($event) {
@@ -774,7 +834,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
     [
       _c("form", { attrs: { action: "" } }, [
         _c("div", { staticClass: "form-group" }, [
@@ -812,7 +871,10 @@ var render = function() {
             ],
             ref: "title",
             staticClass: "form-control",
-            attrs: { type: "text" },
+            attrs: {
+              type: "text",
+              placeholder: "Enter the title eg : this is the title of your post"
+            },
             domProps: { value: _vm.title },
             on: {
               keyup: function($event) {
@@ -839,7 +901,10 @@ var render = function() {
               }
             ],
             staticClass: "form-control",
-            attrs: { type: "text", placeholder: "leave this blank" },
+            attrs: {
+              type: "text",
+              placeholder: "Please leave this field blank"
+            },
             domProps: { value: _vm.slug },
             on: {
               input: function($event) {

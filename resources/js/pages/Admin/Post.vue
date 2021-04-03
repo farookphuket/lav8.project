@@ -1,6 +1,20 @@
 <template>
     <div class="container-fluid">
-        <post-form :templates="template"
+        <div class="clearfix">
+            <div class="float-right">
+                <p style="color:green">system last update : 02 Apr 2021</p>
+                <div class="btn-group pt-2 mb-4">
+                    <button v-if="showPostForm == false" 
+                        @click="showPostForm = true"
+                        class="btn btn-outline-primary btn-sm">
+                        Create Post</button>
+                    <button class="btn btn-outline-danger btn-sm" 
+                        @click="showPostForm = false" v-else>
+                        Close</button>
+                </div>
+            </div>
+        </div>
+        <post-form :templates="template" v-show="showPostForm"
          :editId="editId"
          :tags="tags"
          @getPostList="getPostList($event)"></post-form>
@@ -44,7 +58,8 @@ export default{
             tags:[],
             res_status:'',
             tag_with_content:[],
-            error:0
+            error:0,
+            showPostForm:false,
         }
     },
     mounted(){

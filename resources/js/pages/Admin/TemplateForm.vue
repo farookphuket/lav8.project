@@ -1,14 +1,13 @@
 <template>
 <div class="tmp-form">
 <form >
-
-
     <div class="form-group">
-        <input v-model="section" class="form-control" type="text">
+        <input v-model="section" class="form-control" 
+        placeholder="Enter section eg : whatnews,post" type="text">
     </div>
     <div class="form-group">
         <input v-model="title" class="form-control" 
-            ref="title"
+            ref="title" placeholder="Enter title eg : whatnews template"
         type="text">
     </div>
     <div class="form-group">

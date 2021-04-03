@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div>
 
         <form action="">
             <div class="form-group">
@@ -12,12 +12,13 @@
             </div>
             <div class="form-group">
                 <input v-model="title" class="form-control" 
-                    type="text" ref="title"
+                    type="text" ref="title" 
+            placeholder="Enter the title eg : this is the title of your post"
                     @keyup="makeSlug(title)">
             </div>
             <div class="form-group">
                 <input v-model="slug" class="form-control" type="text" 
-                    placeholder="leave this blank">
+                    placeholder="Please leave this field blank">
             </div>
             <div class="form-group">
                 <jodit-editor
