@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
       });
       setTimeout(function () {
         _this.clearForm();
-      }, 2000);
+      }, 5000);
     },
     clearForm: function clearForm() {
       this.res_status = '';

@@ -58,7 +58,7 @@ export default {
                 })
             setTimeout(()=>{
                 this.clearForm()
-            },2000)
+            },5000)
         },
         clearForm(){
             this.res_status = ''
