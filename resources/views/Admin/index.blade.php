@@ -14,6 +14,7 @@
 
 
 @section('content')
+    <h1 class="text-center">howdy! {{Auth::user()->name}}</h1>
     <div id="app">
         <adminwm :template="{{$template}}"></adminwm>
     </div>

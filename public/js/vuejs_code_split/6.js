@@ -43,6 +43,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -55,7 +71,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       templates: [],
       editId: 0,
-      res_status: ''
+      res_status: '',
+      showTemplateForm: false
     };
   },
   mounted: function mounted() {
@@ -127,7 +144,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jodit_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jodit-vue */ "./node_modules/jodit-vue/dist/jodit-vue.esm.js");
-//
 //
 //
 //
@@ -471,9 +487,51 @@ var render = function() {
         _vm._v("\n        Template for post \n    ")
       ]),
       _vm._v(" "),
-      _c("p", [_vm._v("\n    this templatenow using vue\n    ")]),
+      _c("div", { staticClass: "clearfix" }, [
+        _c("div", { staticClass: "float-right" }, [
+          _c("p", { staticStyle: { color: "green" } }, [
+            _vm._v("\n                last update 2 Apr 2021\n            ")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "btn-group mb-4 pt-2" }, [
+            _vm.showTemplateForm == false
+              ? _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-outline-primary btn-sm",
+                    on: {
+                      click: function($event) {
+                        _vm.showTemplateForm = true
+                      }
+                    }
+                  },
+                  [_vm._v("\n                    Create New\n                ")]
+                )
+              : _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-outline-danger btn-sm",
+                    on: {
+                      click: function($event) {
+                        _vm.showTemplateForm = false
+                      }
+                    }
+                  },
+                  [_vm._v("\n                    Close\n                ")]
+                )
+          ])
+        ])
+      ]),
       _vm._v(" "),
       _c("template-form", {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.showTemplateForm,
+            expression: "showTemplateForm"
+          }
+        ],
         attrs: { editId: _vm.editId },
         on: {
           getTemplates: function($event) {
@@ -552,7 +610,10 @@ var render = function() {
             }
           ],
           staticClass: "form-control",
-          attrs: { type: "text" },
+          attrs: {
+            placeholder: "Enter section eg : whatnews,post",
+            type: "text"
+          },
           domProps: { value: _vm.section },
           on: {
             input: function($event) {
@@ -577,7 +638,10 @@ var render = function() {
           ],
           ref: "title",
           staticClass: "form-control",
-          attrs: { type: "text" },
+          attrs: {
+            placeholder: "Enter title eg : whatnews template",
+            type: "text"
+          },
           domProps: { value: _vm.title },
           on: {
             input: function($event) {

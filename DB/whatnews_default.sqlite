@@ -8,19 +8,89 @@
 
 /*
 
-INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
-"is_public","created_at","updated_at") VALUES (NULL,
+INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
+`is_public`,`created_at`,`updated_at`) VALUES (NULL,
 '1',                            
-'Wow! I just fall in love with neovim already',                             
+'',                             
 '
 
 ',                                          
 '1',                        
-'2021-03-24 10:05:45',                
-'2021-03-24 10:06:45'                 
+'2021-04-02 12:05:45',                
+'2021-04-02 12:06:45'                 
 );                                          
 
 */
+
+
+INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
+`is_public`,`created_at`,`updated_at`) VALUES (NULL,
+'1',                            
+
+'my bash script for setup i3wm in manjaro',                             
+'
+<p class="mb-4">
+    <b>I''ve</b> been using Manjaro for a 1 year and I really love this distro 
+just because how simplicity is it and manjaro KDE is my belove favour after 
+a while when I got use to the KDE I also learn to use another window manager 
+like i3wm as it is a very easy one for the beginner like me
+</p>
+
+<p>but to setup i3wm in the way that I want to use and to set the key binding 
+is still something that I have to do over and over again in every single time 
+that I have to re-install my system in case I have done any thing stupid to 
+my system and the whole system has totally crashed </p>
+
+
+<p>so to prevent from all of the reparative step to get all the way throught 
+I just learn how to make an auto script to do thing for me and put all of 
+those script and the config file to github so this way I can re-use them 
+and I can share in between my computer ,laptop also to share with another 
+people too </p>
+<p class="pt-2 mb-2">
+please feel free to have a look or download my dot file 
+<a href="https://github.com/farookphuket/desktop-i3.git" 
+class="btn btn-outline-primary btn-sm" target="_blank">here</a>
+</p>
+<div class="form-group">
+<textarea 
+class="form-control mb-4" >https://github.com/farookphuket/desktop-i3.git</textarea>
+</div>
+
+<div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/q3Sanjl93dQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+',                                          
+'1',                        
+'2021-04-02 08:05:45',                
+'2021-04-02 08:06:45'                 
+);                                          
+
+
+
+
+
+/* fix the volume icon not appear after logout 02-Apr-2021 */
+INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
+`is_public`,`created_at`,`updated_at`) VALUES (NULL,
+'1',                            
+'fix the volume icon not appear after first install',                             
+'
+<p class="mb-4">
+<b>today (02-04-2021)</b> I just realize that the volume icon doesn''t show up 
+after I the script has done the process and logout so today I this problem has 
+been solved if you ever got this problem so take a look at the below video
+</p>
+<div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WHTF6WsgylI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+',                                          
+'1',                        
+'2021-04-02 11:44:45',                
+'2021-04-02 11:44:55'                 
+);                                          
+
+
 
 
 

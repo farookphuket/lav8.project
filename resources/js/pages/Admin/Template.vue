@@ -4,13 +4,29 @@
         <h1 class="text-center">
             Template for post 
         </h1>
-        <p>
-        this templatenow using vue
-        </p>
-
+        <div class="clearfix">
+            <div class="float-right">
+                <p style="color:green">
+                    last update 2 Apr 2021
+                </p>
+                <div class="btn-group mb-4 pt-2">
+                    <button v-if="showTemplateForm == false" 
+                        @click="showTemplateForm = true"
+                        class="btn btn-outline-primary btn-sm">
+                        Create New
+                    </button>
+                
+                    <button v-else 
+                        @click="showTemplateForm = false"
+                        class="btn btn-outline-danger btn-sm">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
         <template-form 
             @getTemplates="getTemplates($event)"
-            :editId="editId"></template-form>
+            :editId="editId" v-show="showTemplateForm"></template-form>
 
 
         <template-list 
@@ -43,7 +59,8 @@ export default{
         return{
             templates:[],
             editId:0,
-            res_status:''
+            res_status:'',
+            showTemplateForm:false,
         }
     },
     mounted(){
