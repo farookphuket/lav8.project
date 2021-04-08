@@ -16,11 +16,56 @@ INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
 
 ',                                          
 '1',                        
-'2021-04-02 12:05:45',                
-'2021-04-02 12:06:45'                 
+'2021-04-08 11:56:45',                
+'2021-04-08 11:56:45'                 
 );                                          
 
 */
+
+
+
+
+
+
+
+
+/* ข่าวโควิด ในเมืองไทย on 2021-04-08 */
+INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
+`is_public`,`created_at`,`updated_at`) VALUES (NULL,
+'1',                            
+'ข่าวโควิดในเมืองไทย on 2021-04-08',                             
+'
+<p>
+<b>โควิด19 </b> ในเมืองไทยแม้ว่าไม่ได้มากมายหากเทียบกับประเทศอื่นๆ ในโลก แต่ก็ยังเป็นเรื่องที่น่า 
+กังวลอยู่มากหากดูจากข่าวในทีวีทุกๆ วัน วันนี้(08-04-2021) ก่อนวันสงกรานต์ ซึ่งแน่นอนแล้วว่าวันสงกรานต์ 
+ในปีนี้(2564) ก็คงต้องหยุดกิจกรรมเสี่ยงทั้งหลายเพื่อคนไทยทุกๆ คน หากว่าทุกๆ คนร่วมมือกัน เราจะสามารถ
+ข้ามพ้นวิกฤตินี้ไปด้วยกันได้ในเร็ววันนี้ ภาวนาให้คนไทยและผู้คนทุกๆ ในโลกนี้
+</p>
+<div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DaS-JgrcGUU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p class="pt-2 mb-4 text-center">
+วิดิโอของวันที่ 7-04-64 นะครับผมยังหาวิดิโอของวันที่ 8 ไม่ได้เค้ายังไม่ประกาศ
+</p>
+<p class="pt-4 mb-2">
+ข่าวจากรายการ อรุณสวัสดิ์ ฟ้าวันใหม่ ก๊อปปี้มาจากยูทูป 
+</p>
+<div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1RY1TRgncrA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p class="pt-2 mb-4 text-center">
+จากรายการ อรุณสวัสดิ์ ฟ้าวันใหม่  08-04-64 ทาง youtube 
+</p>
+',                                          
+'1',                        
+'2021-04-08 11:56:45',                
+'2021-04-08 11:56:45'                 
+);                                          
+
+
+
+
+
 
 
 INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,

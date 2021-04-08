@@ -2,140 +2,203 @@
 
 
 /*
-    
+
     INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
-    `updated_at`) VALUES 
+    `updated_at`) VALUES
     (NULL,'1',
     '',
     '',
-    '2021-03-30 15:22:44',
-    '2021-03-30 15:25:28');                                          
+    '2021-04-08 13:08:44',
+    '2021-04-08 13:09:28');
 */
 
 
 
 
+/*  รายการ ฟ้าวันใหม่ นิวส์ (ภาคเที่ยง) วันพฤหัสบดีที่ 08 เมษายน 2564  on 08-04-2021 */
     INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
-    `updated_at`) VALUES 
+    `updated_at`) VALUES
     (NULL,'1',
-    'Error fail to update core (unable to lock databases) - 
+    'รายการ ฟ้าวันใหม่ นิวส์ (ภาคเที่ยง) วันพฤหัสบดีที่ 08 เมษายน 2564',
+    '
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zu7QmPCZrpQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    ',
+    '2021-04-08 13:08:44',
+    '2021-04-08 13:09:28');
+
+
+
+
+
+/*  อรุณสวัสดิ์ ฟ้าวันใหม่  08-04-64 on 08-04-2021 */
+    INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+    `updated_at`) VALUES
+    (NULL,'1',
+    'อรุณสวัสดิ์ ฟ้าวันใหม่  08-04-64',
+    '<iframe width="560" height="315" src="https://www.youtube.com/embed/1RY1TRgncrA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    '2021-04-08 12:22:44',
+    '2021-04-08 12:23:28');
+
+
+
+/* แถลงสถานการณ์ COVID-19 โดย ศบค. (7 เม.ย. 64) on 08-04-2021 */
+    INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+    `updated_at`) VALUES
+    (NULL,'1',
+    'แถลงสถานการณ์ COVID-19 โดย ศบค. (7 เม.ย. 64)',
+    '<iframe width="560" height="315" src="https://www.youtube.com/embed/DaS-JgrcGUU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    '2021-04-08 12:13:44',
+    '2021-04-08 12:14:28');
+
+
+
+
+
+/* Beginner''s Guide to the Bash Terminal on 2021-04-08 */
+    INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+    `updated_at`) VALUES
+    (NULL,'1',
+    'Beginner''s Guide to the Bash Terminal',
+    '<iframe width="560" height="315" src="https://www.youtube.com/embed/oxuRxtrO2Ag" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    '2021-04-08 11:52:04',
+    '2021-04-08 11:52:28');
+
+
+
+
+
+/*  Beginner''s Guide To Installing Ubuntu 18.04 LTS on 2021-04-08 */
+    INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+    `updated_at`) VALUES
+    (NULL,'1',
+    'Beginner''s Guide To Installing Ubuntu 18.04 LTS',
+    '<iframe width="560" height="315" src="https://www.youtube.com/embed/opBKvGi77cU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    '2021-04-08 11:47:04',
+    '2021-04-08 11:47:28');
+
+
+
+    INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+    `updated_at`) VALUES
+    (NULL,'1',
+    'Error fail to update core (unable to lock databases) -
     Error on Manjaro update fixed',
-    '<iframe width="560" height="315" 
-    src="https://www.youtube.com/embed/Glmh2G-q7Vs" 
-    title="YouTube video player" frameborder="0" allow="accelerometer; 
-    autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    '<iframe width="560" height="315"
+    src="https://www.youtube.com/embed/Glmh2G-q7Vs"
+    title="YouTube video player" frameborder="0" allow="accelerometer;
+    autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen></iframe>',
     '2021-03-30 15:22:44',
-    '2021-03-30 15:25:28');                                          
+    '2021-03-30 15:25:28');
 
 
 
 
 /* SETUP I3WM for Manjaro(KDE) 24 Mar 2021 */
-    INSERT INTO "videos" ("id","user_id","title","embed","created_at",
-    "updated_at") VALUES 
+    INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+    `updated_at`) VALUES
     (NULL,'1',
     'SETUP I3WM for Manjaro(KDE)',
     '<iframe width="560" height="315" src="https://www.youtube.com/embed/1qgfkFF-Pkk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
     '2021-03-24 15:42:44',
-    '2021-03-24 15:43:28');                                          
+    '2021-03-24 15:43:28');
 
 
 
 /* if iPhone commercials were honest 2 24 Mar 2021*/
-    INSERT INTO "videos" ("id","user_id","title","embed","created_at",
-    "updated_at") VALUES 
+    INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+    `updated_at`) VALUES
     (NULL,'1',
     'if iPhone commercials were honest 2 ',
     '<iframe width="560" height="315" src="https://www.youtube.com/embed/Iy-zs_iq6iE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
     '2021-03-24 14:52:44',
-    '2021-03-24 14:53:28');                                          
+    '2021-03-24 14:53:28');
 
 
 
 /*  if iPhone commercials were honest 24 Mar 2021 */
-    INSERT INTO "videos" ("id","user_id","title","embed","created_at",
-    "updated_at") VALUES 
+    INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+    `updated_at`) VALUES
     (NULL,'1',
     'if iPhone commercials were honest',
     '<iframe width="560" height="315" src="https://www.youtube.com/embed/aseb08zXLeg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
     '2021-03-24 14:51:24',
-    '2021-03-24 14:52:28');                                          
+    '2021-03-24 14:52:28');
 
 
 /* copy from youtube 23 Mar 2021 */
-INSERT INTO "videos" ("id","user_id","title","embed","created_at",
-"updated_at") VALUES 
+INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+`updated_at`) VALUES
 (NULL,'2',
 'รีวิว Redmi Note 10 ราคานี้ตายทั้งจักรวาลลามไปยันมัลติเวิร์ส',
 '<iframe width="560" height="315" src="https://www.youtube.com/embed/qzyDR1NjZuk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
 '2021-03-23 18:35:24',
-'2021-03-23 18:35:28');                                          
+'2021-03-23 18:35:28');
 
 
 /* copy from youtube 23 Mar 2021 */
-INSERT INTO "videos" ("id","user_id","title","embed","created_at",
-"updated_at") VALUES 
+INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+`updated_at`) VALUES
 (NULL,'1',
 'GMC Hummer EV (2022) Full Details – Performance, Technology, Design',
 '<iframe width="560" height="315" src="https://www.youtube.com/embed/Ad3GGancjyc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
 '2021-03-23 17:24:24',
-'2021-03-23 17:25:28');                                          
+'2021-03-23 17:25:28');
 
 
 
 
 
 /* copy from youtube 23 Mar 2021 */
-INSERT INTO "videos" ("id","user_id","title","embed","created_at",
-"updated_at") VALUES 
+INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+`updated_at`) VALUES
 (NULL,'1',
 'All Electric HUMMER EV?! - Everything you need to know!',
 '<iframe width="560" height="315" src="https://www.youtube.com/embed/9FrnNTyOAes" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
 '2021-03-23 17:09:24',
-'2021-03-23 17:15:28');                                          
+'2021-03-23 17:15:28');
 
 
 /* copy from youtube 23 Mar 2021 */
-INSERT INTO "videos" ("id","user_id","title","embed","created_at",
-"updated_at") VALUES 
+INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+`updated_at`) VALUES
 (NULL,'1',
 'GMC Hummer EV vs. Tesla Cybertruck: SHOCKING PERFORMANCE',
 '<iframe width="560" height="315" src="https://www.youtube.com/embed/kOY6KGv7P2w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
 '2021-03-23 17:01:24',
-'2021-03-23 16:55:28');                                          
+'2021-03-23 16:55:28');
 
 
 
 /* copy from youtube 23 Mar 2021 */
-INSERT INTO "videos" ("id","user_id","title","embed","created_at",
-"updated_at") VALUES 
+INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+`updated_at`) VALUES
 (NULL,'1',
-'Tesla Cybertruck 2021 | Why You SHOULD buy it for sure! (Updates, 
+'Tesla Cybertruck 2021 | Why You SHOULD buy it for sure! (Updates,
 Release Date, Changes +More)',
-'<iframe width="560" height="315" 
-src="https://www.youtube.com/embed/Uw6BjkhL_b4" 
-title="YouTube video player" frameborder="0" allow="accelerometer; 
-autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+'<iframe width="560" height="315"
+src="https://www.youtube.com/embed/Uw6BjkhL_b4"
+title="YouTube video player" frameborder="0" allow="accelerometer;
+autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe>',
 '2021-03-23 16:43:24',
-'2021-03-23 16:45:28');                                          
+'2021-03-23 16:45:28');
 
 
 
 
 
 /* Last added 23 Mar 2021 */
-INSERT INTO "videos" ("id","user_id","title","embed",
-"created_at","updated_at") VALUES 
+INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,
+`created_at`,`updated_at`) VALUES
 (NULL,'1',
 
 'เปิดตัวขายจริงแล้ว ในยุโรป ใช้ชื่อ MG Marvel R ลุ้นเข้ามาทำตลาดในไทย',
 
-'<iframe width="560" height="315" 
-src="https://www.youtube.com/embed/BSxqcg7N-NA" title="YouTube video player" 
-frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+'<iframe width="560" height="315"
+src="https://www.youtube.com/embed/BSxqcg7N-NA" title="YouTube video player"
+frameborder="0" allow="accelerometer; autoplay; clipboard-write;
 encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
 
 '2021-03-23 09:09:24',
-'2021-03-23 09:09:28');                                          
+'2021-03-23 09:09:28');
