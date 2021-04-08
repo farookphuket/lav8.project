@@ -49,6 +49,7 @@
                 {{$tag->tag_name}}</a>
             </span>
         @endforeach
+        </div>
       </div>
 
   </div><!-- end of div.clearfix-->
