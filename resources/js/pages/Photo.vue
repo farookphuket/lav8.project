@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container">
         <photo-search :photos="photos" ></photo-search>
 
         <photo-list :photos="photos"  

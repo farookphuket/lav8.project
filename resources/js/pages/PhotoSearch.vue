@@ -2,6 +2,9 @@
     <div>
        <div class="row">
            <div class="col-lg-12">
+                <div class="section-title">
+        <h2>photo</h2>
+                </div>
                 <form action="">
                     <div class="form-group">
                         <input v-model="search" class="form-control" 

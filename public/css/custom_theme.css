@@ -152,6 +152,8 @@ End of video section
 }
 
 
+
+
 .pa .active{
     color:red;
     background-color:black;
@@ -183,6 +185,7 @@ End of video section
         color:blue;
     }
 
+
     .post-preview h3{
         color:#868e96;
         font-size:18px;
@@ -201,7 +204,6 @@ End of video section
     .pagination a{
         color:blue;
     }
-
 
     .tags{
         width:100%;
@@ -223,10 +225,6 @@ End of video section
 
 
 
-/*tour program display start */
-/*add this style to display for the tour program 
-Adding this code on Thu 12 July 2018
-*/
 
 
 

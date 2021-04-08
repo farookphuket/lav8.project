@@ -9,7 +9,6 @@ window.Vue = require('vue');
 import moment from 'moment';
 
 
-//import 'jodit/build/jodit.min.css'
 
 import Vue from 'vue'
 
@@ -106,10 +105,11 @@ Vue.component('AdminProfile',()=>import('./pages/Admin/AdminProfile.vue'));
 
 
 Vue.component('Avisitor',()=>import('./pages/Admin/Visitors.vue'))
+
+
 //import VueRouter from 'vue-router'
 //Vue.use(VueRouter)
 //import routes from './routes'
-//
 //import App from './components/App.vue'
 
 
@@ -121,11 +121,3 @@ const {default : Axios } = require('axios');
  });
 
 
-//const app = new Vue({
-//    el : '#app',
-//    components: { 
-//        App 
-//    },
-//    router: new VueRouter(routes)
-//
-//});

@@ -134,6 +134,35 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -142,10 +171,10 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
   data: function data() {
     return {
       moment: moment,
-      title: '',
-      embed: '',
-      createdDate: '',
-      ownerName: ''
+      title: "",
+      embed: "",
+      createdDate: "",
+      ownerName: ""
     };
   },
   mounted: function mounted() {//   this.sTitle = smartTitle(this.title,5)
@@ -170,7 +199,20 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       this.$refs.copyCode.select();
     },
     smartTitle: function smartTitle(str, len) {
-      return str.length > len ? str.substr(0, len) + '...' : str;
+      return str.length > len ? str.substr(0, len) + "..." : str;
+    },
+    showOriginal: function showOriginal(url) {
+      var _this2 = this;
+
+      //open the photo in another tab
+      window.open(url, '_blank');
+      setTimeout(function () {
+        //close after 2500 milli sec 
+        _this2.closeBox();
+      }, 2500);
+    },
+    closeBox: function closeBox() {
+      this.$refs["showPhotoModal"].hide();
     }
   }
 });
@@ -186,6 +228,9 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
 //
 //
 //
@@ -301,6 +346,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "container" },
     [
       _c("photo-search", { attrs: { photos: _vm.photos } }),
       _vm._v(" "),
@@ -369,7 +415,7 @@ var render = function() {
                 _c("span", { staticClass: "badge badge-info" }, [
                   _vm._v(_vm._s(_vm.smartTitle(po.title, 9)))
                 ]),
-                _vm._v(" · \n                  "),
+                _vm._v("\n                    ·\n                    "),
                 _c("span", { staticClass: "badge badge-info" }, [
                   _vm._v(_vm._s(_vm.moment(po.created_at).fromNow()))
                 ])
@@ -378,67 +424,65 @@ var render = function() {
           ])
         }),
         _vm._v(" "),
-        _c("div", { staticClass: "col-lg-12" }, [
-          _c("div", { staticClass: "po" }, [
-            _c(
-              "ul",
-              { staticClass: "pagination" },
-              [
-                _c("li", { staticClass: "page-item" }, [
-                  _vm._v(
-                    "\n                        showing from  \n                        "
-                  ),
-                  _c("span", [_vm._v(_vm._s(_vm.photos.from))]),
-                  _vm._v(" to \n                        "),
-                  _c("span", [_vm._v(_vm._s(_vm.photos.to))]),
-                  _vm._v(" of  \n                        "),
-                  _c("span", [_vm._v(_vm._s(_vm.photos.total))]),
-                  _vm._v(" ·  \n                    ")
-                ]),
-                _vm._v(" "),
-                _vm._l(_vm.photos.links, function(li) {
-                  return _c("li", { staticClass: "page-item" }, [
-                    li.active != true && li.url != null
-                      ? _c(
-                          "a",
-                          {
-                            attrs: { href: "" },
-                            domProps: { innerHTML: _vm._s(li.label) },
-                            on: {
-                              click: function($event) {
-                                $event.preventDefault()
-                                return _vm.$emit("getPhotos", li.url)
-                              }
+        _c("div", { staticClass: "col-lg-12 pt-4" }, [
+          _c(
+            "ul",
+            { staticClass: "pagination" },
+            [
+              _c("li", { staticClass: "page-item" }, [
+                _vm._v(
+                  "\n                        showing from\n                        "
+                ),
+                _c("span", [_vm._v(_vm._s(_vm.photos.from))]),
+                _vm._v(" to\n                        "),
+                _c("span", [_vm._v(_vm._s(_vm.photos.to))]),
+                _vm._v(" of\n                        "),
+                _c("span", [_vm._v(_vm._s(_vm.photos.total))]),
+                _vm._v(" ·\n                    ")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.photos.links, function(li) {
+                return _c("li", { staticClass: "page-item" }, [
+                  li.active != true && li.url != null
+                    ? _c(
+                        "a",
+                        {
+                          attrs: { href: "" },
+                          domProps: { innerHTML: _vm._s(li.label) },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.$emit("getPhotos", li.url)
                             }
-                          },
-                          [_vm._v(_vm._s(li.label))]
-                        )
-                      : _c(
-                          "span",
-                          {
-                            staticClass: "active",
-                            domProps: { innerHTML: _vm._s(li.label) }
-                          },
-                          [_vm._v(_vm._s(li.label))]
-                        ),
-                    _vm._v(" ·\n                    ")
-                  ])
-                }),
-                _vm._v(" "),
-                _c("li", { staticClass: "page-item" }, [
-                  _c("span", [_vm._v(_vm._s(_vm.photos.current_page))])
+                          }
+                        },
+                        [_vm._v(_vm._s(li.label))]
+                      )
+                    : _c(
+                        "span",
+                        {
+                          staticClass: "active",
+                          domProps: { innerHTML: _vm._s(li.label) }
+                        },
+                        [_vm._v(_vm._s(li.label))]
+                      ),
+                  _vm._v("\n                        ·\n                    ")
                 ])
-              ],
-              2
-            )
-          ])
+              }),
+              _vm._v(" "),
+              _c("li", { staticClass: "page-item" }, [
+                _c("span", [_vm._v(_vm._s(_vm.photos.current_page))])
+              ])
+            ],
+            2
+          )
         ]),
         _vm._v(" "),
         _c(
           "b-modal",
           {
             ref: "showPhotoModal",
-            attrs: { title: _vm.title, size: "xl", "ok-only": "" }
+            attrs: { title: _vm.title, size: "xl", "hide-footer": "" }
           },
           [
             _c("div", { staticClass: "card" }, [
@@ -450,20 +494,26 @@ var render = function() {
               _c("div", { staticClass: "card-body" }, [
                 _c("span", { staticClass: "badge badge-info" }, [
                   _vm._v(
-                    "\n                    " +
+                    "\n                        " +
                       _vm._s(_vm.title) +
                       " · " +
                       _vm._s(_vm.ownerName)
                   )
                 ]),
-                _vm._v(" \n                    · \n                    "),
-                _c("span", { staticClass: "badge badge-info" }, [
-                  _vm._v(
-                    _vm._s(_vm.moment(_vm.createdDate)) +
-                      " · \n                    " +
-                      _vm._s(_vm.moment(_vm.createdDate).fromNow())
-                  )
-                ])
+                _vm._v("\n                    ·\n                    "),
+                _c(
+                  "span",
+                  [
+                    _c("b-icon", { attrs: { icon: "calendar2-day" } }),
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(_vm.moment(_vm.createdDate)) +
+                        " ·\n                        " +
+                        _vm._s(_vm.moment(_vm.createdDate).fromNow())
+                    )
+                  ],
+                  1
+                )
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form-group pt-4 mb-4" }, [
@@ -481,7 +531,35 @@ var render = function() {
                   },
                   [_vm._v(_vm._s(_vm.embed))]
                 )
-              ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-outline-primary btn-block",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.showOriginal(_vm.embed)
+                    }
+                  }
+                },
+                [_vm._v("\n                    original\n                ")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-outline-danger btn-block",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.closeBox($event)
+                    }
+                  }
+                },
+                [_vm._v("\n                    close\n                ")]
+              )
             ])
           ]
         )
@@ -518,6 +596,8 @@ var render = function() {
       { staticClass: "row" },
       [
         _c("div", { staticClass: "col-lg-12" }, [
+          _vm._m(0),
+          _vm._v(" "),
           _c("form", { attrs: { action: "" } }, [
             _c("div", { staticClass: "form-group" }, [
               _c("input", {
@@ -647,7 +727,16 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "section-title" }, [
+      _c("h2", [_vm._v("photo")])
+    ])
+  }
+]
 render._withStripped = true
 
 

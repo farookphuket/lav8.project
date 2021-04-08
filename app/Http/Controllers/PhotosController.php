@@ -14,7 +14,9 @@ class PhotosController extends Controller
      */
     public function index()
     {
-        return view("Pub.Photos.index");
+        $get = Photo::latest()->first();
+
+        return view("Pub.Photos.index")->with(["photo" => $get]);
     }
 
 

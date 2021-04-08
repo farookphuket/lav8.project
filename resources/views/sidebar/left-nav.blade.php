@@ -51,16 +51,21 @@
 
             <ul class="list-unstyled CTAs">
                 <li>
-                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+                    <a 
+                        href="https://bootstrapious.com/tutorial/files/sidebar.zip" 
+                        class="btn btn-outline-primary btn-block">Download source</a>
                 </li>
                 <li>
-                    <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+                    <a 
+                        href="https://bootstrapious.com/p/bootstrap-sidebar" 
+                        class="article" target="_blank">original article</a>
                 </li>
 
                 <li>
                     <form class="form" action="{{route('logout')}}" method="post">
                         @csrf
-                        <button class="btn btn-danger btn-block" type="submit">Logout</button>
+                        <button class="btn btn-outline-danger btn-block" 
+type="submit">Logout</button>
                     </form>
                 </li>
             </ul>

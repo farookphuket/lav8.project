@@ -44,8 +44,3 @@ function getUserDevice(){
   return $device;
 }
 
-function OS(){
-  $os_name = Browser::platformFamily();
-  $os_ver = Browser::platformVersion();
-  return $os_name.' '.$os_ver;
-}

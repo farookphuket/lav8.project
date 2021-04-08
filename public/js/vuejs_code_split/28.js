@@ -70,6 +70,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "DonateMe",
   data: function data() {
@@ -154,82 +157,88 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      { staticClass: "row" },
-      [
-        _vm._m(0),
-        _vm._v(" "),
-        _vm._l(_vm.pic, function(pi) {
-          return _c("div", { staticClass: "col-md-3" }, [
-            _c(
-              "a",
-              {
-                attrs: { href: "" },
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    return _vm.showPic(pi.id)
-                  }
-                }
-              },
-              [_c("img", { staticClass: "responsive", attrs: { src: pi.pic } })]
-            ),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-center" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "btn btn-outline-primary",
-                  attrs: { href: "", target: "_blank" },
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      return _vm.goTo(pi.id)
-                    }
-                  }
-                },
-                [
-                  _vm._v(
-                    "\n                    " +
-                      _vm._s(pi.name) +
-                      "\n                "
-                  )
-                ]
-              )
-            ])
-          ])
-        }),
-        _vm._v(" "),
+  return _c(
+    "section",
+    { staticClass: "portfolio", attrs: { id: "portfolio" } },
+    [
+      _c("div", { staticClass: "container" }, [
         _c(
-          "b-modal",
-          {
-            ref: "showPicModal",
-            attrs: {
-              title: _vm.pic_name,
-              size: "xl",
-              centered: "",
-              "ok-only": ""
-            }
-          },
+          "div",
+          { staticClass: "row" },
           [
-            _c("div", { staticClass: "container" }, [
-              _c("div", { staticClass: "card" }, [
-                _c("img", {
-                  staticClass: "card-img-top",
-                  attrs: { src: _vm.pic_img, alt: "" }
-                }),
+            _vm._m(0),
+            _vm._v(" "),
+            _vm._l(_vm.pic, function(pi) {
+              return _c("div", { staticClass: "col-md-3" }, [
+                _c(
+                  "a",
+                  {
+                    attrs: { href: "" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.showPic(pi.id)
+                      }
+                    }
+                  },
+                  [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: pi.pic }
+                    })
+                  ]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "card-body" })
+                _c("p", { staticClass: "text-center" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-outline-primary",
+                      attrs: { href: "", target: "_blank" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.goTo(pi.id)
+                        }
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(pi.name) +
+                          "\n                "
+                      )
+                    ]
+                  )
+                ])
               ])
-            ])
-          ]
+            }),
+            _vm._v(" "),
+            _c(
+              "b-modal",
+              {
+                ref: "showPicModal",
+                attrs: { title: _vm.pic_name, centered: "", "ok-only": "" }
+              },
+              [
+                _c("div", { staticClass: "container" }, [
+                  _c("div", { staticClass: "card" }, [
+                    _c("img", {
+                      staticClass: "card-img-top",
+                      attrs: { src: _vm.pic_img, alt: "" }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-body" })
+                  ])
+                ])
+              ]
+            )
+          ],
+          2
         )
-      ],
-      2
-    )
-  ])
+      ])
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
@@ -237,8 +246,10 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-lg-12" }, [
-      _c("h2", { staticClass: "text-center" }, [
-        _vm._v("\n                only for donate\n            ")
+      _c("div", { staticClass: "section-title" }, [
+        _c("h2", { staticClass: "text-center" }, [
+          _vm._v("\n                    only for donate\n                ")
+        ])
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "alert alert-danger" }, [
@@ -246,7 +257,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", { staticClass: "mb-2" }, [
           _vm._v(
-            "\n                    all of the money that you have paid to any of the way\n                    shown in the list below will be use to maintain and pay\n                    to a hosting for this website so do not spent a big\n                    amount to this website or put any of your personal\n                    information on this website! as we have nothing to do\n                    with your personal info\n                "
+            "\n                    all of the money that you have paid to any of the way has\n                    shown in the list below will be use to maintain and pay\n                    to a hosting for this website so do not spent a big\n                    amount to this website or put any of your personal\n                    information on this website! as we have nothing to do\n                    with your personal info\n                "
           )
         ])
       ]),

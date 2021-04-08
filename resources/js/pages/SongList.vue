@@ -32,7 +32,7 @@
         </div> <!-- end div.row-->
 
 
-        <div class="pa">
+        <div class="pa pt-4">
             <ul class="pagination">
                 <li class="page-item">
                     showing from  
@@ -50,7 +50,8 @@
                     </a>
                     <span class="active" v-html="ll.label" v-else>
                         {{ll.label}}
-                    </span>
+                    </span> &middot;
+
                 </li>
                 <li class="page-item">
                     <span class="active">{{songs.current_page}}</span>

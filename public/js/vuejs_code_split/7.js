@@ -83,6 +83,7 @@ __webpack_require__.r(__webpack_exports__);
     getWhatnewsList: function getWhatnewsList(page) {
       var _this = this;
 
+      this.editId = 0;
       var url = "";
 
       if (page) {
@@ -106,6 +107,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     goEdit: function goEdit(id) {
       this.editId = id;
+      this.showWhatnewsForm = true;
     },
     goDel: function goDel(id) {
       var _this2 = this;
@@ -134,6 +136,9 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jodit_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jodit-vue */ "./node_modules/jodit-vue/dist/jodit-vue.esm.js");
+//
+//
+//
 //
 //
 //
@@ -793,6 +798,20 @@ var render = function() {
                 }
               },
               [_vm._v("Post")]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-outline-danger btn-sm",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.clearForm($event)
+                  }
+                }
+              },
+              [_vm._v("clear ")]
             )
           ])
         ])

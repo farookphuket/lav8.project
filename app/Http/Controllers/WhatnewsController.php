@@ -61,7 +61,7 @@ class WhatnewsController extends Controller
     }
     public function show(User $user)
     {
-       dd($user); 
+       dd($user);
     }
 
     /**

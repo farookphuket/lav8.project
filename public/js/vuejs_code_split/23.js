@@ -134,12 +134,11 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "span",
-    { staticClass: "nav-link" },
     [
       _c(
         "button",
         {
-          staticClass: "btn btn-outline-primary btn-sm",
+          staticClass: "get-started-btn",
           on: {
             click: function($event) {
               $event.preventDefault()
@@ -154,7 +153,12 @@ var render = function() {
         "b-modal",
         {
           ref: "loginFormModal",
-          attrs: { title: "Login Form", size: "xl", "hide-footer": "" }
+          attrs: {
+            title: "Login Form",
+            size: "xl",
+            centered: "",
+            "hide-footer": ""
+          }
         },
         [
           _c("form", [

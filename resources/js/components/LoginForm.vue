@@ -1,12 +1,12 @@
 <template>
-    <span class="nav-link">
+    <span >
           <!-- Login form modal -->
-            <button class="btn btn-outline-primary btn-sm" 
+            <button class="get-started-btn" 
             @click.prevent="showLoginForm">
                 Login
             </button>
             <b-modal title="Login Form" ref="loginFormModal"
-            size="xl" hide-footer>
+            size="xl" centered hide-footer>
 
             <form >
 

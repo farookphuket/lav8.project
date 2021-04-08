@@ -457,13 +457,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "VideoSearch",
   data: function data() {
     return {
-      search: '',
+      search: "",
       videos: [],
       moment: moment
     };
@@ -479,7 +495,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       });
     },
     openVideo: function openVideo(id) {
-      this.$emit('openVideo', id);
+      this.$emit("openVideo", id);
     },
     smartTitle: function smartTitle(str, len) {
       return str.length > len ? str.substring(0, len) + "..." : str;
@@ -1044,7 +1060,9 @@ var render = function() {
       "div",
       { staticClass: "row" },
       [
-        _c("div", { staticClass: "col-lg-12 pt-4" }, [
+        _c("div", { staticClass: "container pt-4" }, [
+          _vm._m(0),
+          _vm._v(" "),
           _c("form", { attrs: { action: "" } }, [
             _c("div", { staticClass: "form-group" }, [
               _c("input", {
@@ -1119,21 +1137,21 @@ var render = function() {
                       },
                       [
                         _vm._v(
-                          "\n                        " +
+                          "\n                            " +
                             _vm._s(_vm.smartTitle(vi.title, 13)) +
-                            "\n                    "
+                            "\n                        "
                         )
                       ]
                     )
                   ]),
-                  _vm._v(" ·\n                "),
+                  _vm._v("\n                    ·\n                    "),
                   _c("span", { staticClass: "badge badge-info" }, [
                     _vm._v(_vm._s(vi.user.name))
                   ]),
-                  _vm._v(" \n                · \n                "),
+                  _vm._v("\n                    ·\n                    "),
                   _c("span", { staticClass: "badge badge-info" }, [
                     _vm._v(
-                      "\n                " +
+                      "\n                        " +
                         _vm._s(_vm.moment(vi.created_at).fromNow())
                     )
                   ])
@@ -1147,7 +1165,16 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "section-title" }, [
+      _c("h2", [_vm._v("Video")])
+    ])
+  }
+]
 render._withStripped = true
 
 

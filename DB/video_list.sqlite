@@ -8,10 +8,49 @@
     (NULL,'1',
     '',
     '',
-    '2021-03-30 15:22:44',
-    '2021-03-30 15:25:28');                                          
+    '2021-04-06 08:56:44',
+    '2021-04-06 08:57:28');                                          
 */
 
+
+/* Video  Mitsubishi Outlander PHEV 2021-04-06 09:10:44 */
+    INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+    `updated_at`) VALUES 
+    (NULL,'1',
+    'ลอง Mitsubishi Outlander PHEV ขับโคตรดี แรง นุ่ม-หนึบ เหมาะครอบครัว ไม่มี WallCharge ก็มีไฟวิ่งได้',
+    '
+<iframe width="560" height="315" src="https://www.youtube.com/embed/z7TmZWdhZkw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    ',
+    '2021-04-06 10:10:44',
+    '2021-04-06 10:10:48');                                          
+
+/* Video  Nissan Kicks e-Power 2021-04-06 09:10:44 */
+    INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+    `updated_at`) VALUES 
+    (NULL,'1',
+    'ลองขับ Nissan Kicks e-Power ไม่ประหยัดนะ แต่ขับโคตรมัน 
+    One Pedal ดีงาม ออปชั่นพอใช้ ค่าตัว 1.049ล้าน',
+    '
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JMd42sfh_kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    ',
+    '2021-04-06 09:10:44',
+    '2021-04-06 09:11:28');                                          
+
+
+
+
+/* Video MG Car EV 2021-04-06 08:56:44 */
+    INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+    `updated_at`) VALUES 
+    (NULL,'1',
+    'ลองรถไฟฟ้า MG ZS EV!! ราคาดี อัตราเร่งเฉียบ แต่ช่วงล่าง-การทรงตัว ไม่ผ่าน!!',
+    '
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ywjBGZyPU6E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    ',
+    '2021-04-06 08:56:44',
+    '2021-04-06 08:57:28');                                          
 
 
 

@@ -1,4 +1,4 @@
-@extends('cleanblog.cleanblog')
+@extends('Template.green.index')
 
 
 @section('meta_title',$post->post_title)
@@ -7,10 +7,12 @@
 
 @section('content')
     
-<article class="post-preview">
-  <a href="{{route('posts.index')}}" title="click to go back">
-      <h2 class="post-title">{{$post->post_title}}</h2>
-  </a>
+<div class="container">
+    <div class="section-title">
+        <a href="{{route('posts.index')}}" title="click to go back">
+            <h2>{{$post->post_title}}</h2>
+        </a>
+    </div>
 
   <div class="float-right">
     <span class="badge badge-info">
@@ -50,6 +52,6 @@
       </div>
 
   </div><!-- end of div.clearfix-->
-</article>
+</div>
 
 @endsection

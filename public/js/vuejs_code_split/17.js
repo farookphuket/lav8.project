@@ -160,6 +160,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -190,6 +209,9 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
     },
     smartTitle: function smartTitle(str, len) {
       return str.length > len ? str.substring(0, len) + "..." : str;
+    },
+    closeBox: function closeBox() {
+      this.$refs["showVideoModal"].hide();
     }
   }
 });
@@ -239,13 +261,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "VideoSearch",
   data: function data() {
     return {
-      search: '',
+      search: "",
       videos: [],
       moment: moment
     };
@@ -261,7 +299,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       });
     },
     openVideo: function openVideo(id) {
-      this.$emit('openVideo', id);
+      this.$emit("openVideo", id);
     },
     smartTitle: function smartTitle(str, len) {
       return str.length > len ? str.substring(0, len) + "..." : str;
@@ -381,7 +419,9 @@ var render = function() {
                             )
                           ]
                         ),
-                        _vm._v(" - \n                        "),
+                        _vm._v(
+                          "\n                        -\n                        "
+                        ),
                         _c("span", { staticClass: "badge badge-info" }, [
                           _vm._v(
                             "\n                            " +
@@ -395,95 +435,93 @@ var render = function() {
                 ])
               }),
           _vm._v(" "),
-          _c("div", { staticClass: "col-lg-12" }, [
-            _c("div", { staticClass: "pa" }, [
-              _c(
-                "ul",
-                { staticClass: "pagination" },
-                [
-                  _c("li", { staticClass: "page-item" }, [
+          _c("div", { staticClass: "col-lg-12 pt-4" }, [
+            _c(
+              "ul",
+              { staticClass: "pagination" },
+              [
+                _c("li", { staticClass: "page-item" }, [
+                  _vm._v(
+                    "\n                    showing from\n                    "
+                  ),
+                  _c("span", [
                     _vm._v(
-                      "\n                        showing from \n                        "
-                    ),
-                    _c("span", [
-                      _vm._v(
-                        "\n                            " +
-                          _vm._s(_vm.videos.from) +
-                          " \n                        "
-                      )
-                    ]),
-                    _vm._v(" to \n                        "),
-                    _c("span", [
-                      _vm._v(
-                        "\n                            " +
-                          _vm._s(_vm.videos.to) +
-                          "\n                        "
-                      )
-                    ]),
-                    _vm._v(" of \n                        "),
-                    _c("span", [
-                      _vm._v(
-                        "\n                            " +
-                          _vm._s(_vm.videos.total) +
-                          "\n                        "
-                      )
-                    ]),
-                    _vm._v(" ·\n                    ")
+                      "\n                        " +
+                        _vm._s(_vm.videos.from) +
+                        "\n                    "
+                    )
                   ]),
-                  _vm._v(" "),
-                  _vm._l(_vm.videos.links, function(li) {
-                    return _c("li", { staticClass: "page-item" }, [
-                      li.active != true && li.url != null
-                        ? _c(
-                            "a",
-                            {
-                              attrs: { href: "" },
-                              domProps: { innerHTML: _vm._s(li.label) },
-                              on: {
-                                click: function($event) {
-                                  $event.preventDefault()
-                                  return _vm.$emit("getVideos", li.url)
-                                }
+                  _vm._v("\n                    to\n                    "),
+                  _c("span", [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(_vm.videos.to) +
+                        "\n                    "
+                    )
+                  ]),
+                  _vm._v("\n                    of\n                    "),
+                  _c("span", [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(_vm.videos.total) +
+                        "\n                    "
+                    )
+                  ]),
+                  _vm._v("\n                    ·\n                ")
+                ]),
+                _vm._v(" "),
+                _vm._l(_vm.videos.links, function(li) {
+                  return _c("li", { staticClass: "page-item" }, [
+                    li.active != true && li.url != null
+                      ? _c(
+                          "a",
+                          {
+                            attrs: { href: "" },
+                            domProps: { innerHTML: _vm._s(li.label) },
+                            on: {
+                              click: function($event) {
+                                $event.preventDefault()
+                                return _vm.$emit("getVideos", li.url)
                               }
-                            },
-                            [
-                              _vm._v(
-                                "\n                            " +
-                                  _vm._s(li.label) +
-                                  "\n                       "
-                              )
-                            ]
-                          )
-                        : _c(
-                            "span",
-                            {
-                              staticClass: "active",
-                              domProps: { innerHTML: _vm._s(li.label) }
-                            },
-                            [
-                              _vm._v(
-                                "\n                            " +
-                                  _vm._s(li.label) +
-                                  "\n                       "
-                              )
-                            ]
-                          )
-                    ])
-                  }),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "page-item" }, [
-                    _c("span", { staticClass: "active" }, [
-                      _vm._v(
-                        "\n                        " +
-                          _vm._s(_vm.videos.current_page) +
-                          "\n                       "
-                      )
-                    ])
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n                        " +
+                                _vm._s(li.label) +
+                                "\n                    "
+                            )
+                          ]
+                        )
+                      : _c(
+                          "span",
+                          {
+                            staticClass: "active",
+                            domProps: { innerHTML: _vm._s(li.label) }
+                          },
+                          [
+                            _vm._v(
+                              "\n                        " +
+                                _vm._s(li.label) +
+                                "\n                    "
+                            )
+                          ]
+                        )
                   ])
-                ],
-                2
-              )
-            ])
+                }),
+                _vm._v(" "),
+                _c("li", { staticClass: "page-item" }, [
+                  _c("span", { staticClass: "active" }, [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(_vm.videos.current_page) +
+                        "\n                    "
+                    )
+                  ])
+                ])
+              ],
+              2
+            )
           ])
         ],
         2
@@ -493,7 +531,7 @@ var render = function() {
         "b-modal",
         {
           ref: "showVideoModal",
-          attrs: { title: _vm.title, size: "xl", "ok-only": "" }
+          attrs: { title: _vm.title, size: "xl", "hide-footer": "" }
         },
         [
           _c("h2", { staticClass: "text-center" }, [
@@ -531,7 +569,21 @@ var render = function() {
                 },
                 [_vm._v(_vm._s(_vm.embed))]
               )
-            ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-outline-danger btn-block",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.closeBox($event)
+                  }
+                }
+              },
+              [_vm._v("\n                close\n            ")]
+            )
           ])
         ]
       )
@@ -577,7 +629,9 @@ var render = function() {
       "div",
       { staticClass: "row" },
       [
-        _c("div", { staticClass: "col-lg-12 pt-4" }, [
+        _c("div", { staticClass: "container pt-4" }, [
+          _vm._m(0),
+          _vm._v(" "),
           _c("form", { attrs: { action: "" } }, [
             _c("div", { staticClass: "form-group" }, [
               _c("input", {
@@ -652,21 +706,21 @@ var render = function() {
                       },
                       [
                         _vm._v(
-                          "\n                        " +
+                          "\n                            " +
                             _vm._s(_vm.smartTitle(vi.title, 13)) +
-                            "\n                    "
+                            "\n                        "
                         )
                       ]
                     )
                   ]),
-                  _vm._v(" ·\n                "),
+                  _vm._v("\n                    ·\n                    "),
                   _c("span", { staticClass: "badge badge-info" }, [
                     _vm._v(_vm._s(vi.user.name))
                   ]),
-                  _vm._v(" \n                · \n                "),
+                  _vm._v("\n                    ·\n                    "),
                   _c("span", { staticClass: "badge badge-info" }, [
                     _vm._v(
-                      "\n                " +
+                      "\n                        " +
                         _vm._s(_vm.moment(vi.created_at).fromNow())
                     )
                   ])
@@ -680,7 +734,16 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "section-title" }, [
+      _c("h2", [_vm._v("Video")])
+    ])
+  }
+]
 render._withStripped = true
 
 

@@ -1,62 +1,44 @@
-@extends('cleanblog.cleanblog')
+@extends('Template.green.index')
 
 @section('meta_title','Blog post')
 
 @section('content')
+<!-- ===== Green template Start ==== -->
 
+    <section id="about" class="about">
+      <div class="container">
     @if(!$posts->isEmpty())
         @foreach($posts as $item)
+        <div class="section-title mb-4">
+            <h2>
+                {{$item->post_title}}
+            </h2>
+            <div>
+            {!!$item->post_excerpt!!}
 
-          @if($item->slug != "about")
-            <article class="post-preview">
-                <a href="{{route('posts.show',$item->slug)}}" title="click to read full detail">
-                  <h2 class="post-title">{{$item->post_title}}</h2>
+            <a class="btn btn-outline-primary" 
+                        href="{{route('posts.show',$item->slug)}}">read more...</a>
 
-                  <h3 class="post-subtitle">{{$item->slug}}</h3>
-
-              </a>
-
-              <p class="post-meta">Posted by
                 
-              {{$item->user->name}}
-                
-                on
-                {{$item->created_at}} &middot; 
-                <span class="reading-time" title="{{$item->post_title}}">
-                  {{$item->created_at->diffForHumans()}}
-                  &middot; 
-                  <?php 
-                    $read = $item->read_count;
-                    $label = 'time';
-                    $msg = "";
-                    if($read == 0):
-                      $msg = "never has read";
-                      
-                    else:
-                      if($read >= 2):
-                        $label = 'times';
-                      endif;
-                      $msg = "read {$read} {$label}";
-                    endif;
-
-                  ?>
-                  {{$msg}}
-                </span>
-
-                @if($item->created_at != $item->updated_at)
-                    &middot;
-                    last update
-                    {{$item->updated_at}} &middot; 
-                    <span class="reading-time" title="{{$item->post_title}}">
-                      {{$item->updated_at->diffForHumans()}} 
-                    </span>
-                @endif
-              </p>
-              <p class="pt-4 mb-4">
-                {!!$item->post_excerpt!!}
-              </p>
                 <div class="clearfix">
-                        <div class="float-right">
+                        <div class="float-right pt-4">
+
+                        <span class="badge badge-primary">
+                            <b-icon aria-hidden="true" icon="clock-history"></b-icon>
+                            {{$item->created_at}} &middot;  
+                            {{$item->created_at->diffForHumans()}}
+                        </span>
+
+                        <span class="badge badge-warning">
+                            <b-icon icon="eye" aria-hidden="true"></b-icon>
+                            {{$item->read_count}}
+                        </span>
+
+                        <span class="badge badge-info">
+                        <b-icon aria-hidden="true" icon="person"></b-icon>
+                        {{$item->user->name}}
+                        </span> 
+Tag :
                             @foreach($item->tags as $ta)
                                 <a 
 href='{{route('posts.index',['tag' => $ta->id])}}'
@@ -66,24 +48,22 @@ class="btn btn-outline-info btn-sm">
                             @endforeach
                         </div>
                 </div>
-            </article>
-
-            <hr>
-
-            @endif
+            </div>
+        </div>
+         
             @endforeach
+
             <div class="pagination ">
                 {{$posts->appends(Request::all())->links()}}
             </div>
-    @else
-        @include('INC/_no_data')
-    @endif
+            @endif
+
     @if(!$tags->isEmpty())
 
             <div class="clearfix">
-                <div class="float-right">
+                <div class="float-right pt-4">
                     @foreach($tags as $tag)
-                      <span>
+                      <span class="tags">
                         <a  class="btn btn-outline-info btn-sm" 
                             href='{{route('posts.index',['tag' => $tag->id])}}'>
                             {{$tag->tag_name}}
@@ -93,4 +73,9 @@ class="btn btn-outline-info btn-sm">
                 </div>
             </div>
     @endif
+      </div>
+    </section>
+<!-- ===== Green template End ==== -->
+
+
 @endsection

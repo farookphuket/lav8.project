@@ -1,4 +1,8 @@
+<!--
 @extends('cleanblog.cleanblog')
+-->
+
+@extends('Template.green.index')
 
 
 @section('content')

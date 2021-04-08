@@ -52,6 +52,9 @@
                 <div class="float-right">
                     <button class="btn btn-outline-primary btn-sm"
                         @click.prevent="saveWhatnews(saveId)">Post</button>
+
+                    <button class="btn btn-outline-danger btn-sm"
+                        @click.prevent="clearForm">clear </button>
                 </div>
             </div><!-- end div.clearfix-->
 

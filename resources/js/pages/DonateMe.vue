@@ -1,14 +1,17 @@
 <template>
-    <div>
+    <section id="portfolio" class="portfolio">
+        <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="text-center">
-                    only for donate
-                </h2>
+                <div class="section-title">
+                    <h2 class="text-center">
+                        only for donate
+                    </h2>
+                </div>
                 <div class="alert alert-danger">
                     <h3 class="text-center">DO NOT PAY!</h3>
                     <p class="mb-2">
-                        all of the money that you have paid to any of the way
+                        all of the money that you have paid to any of the way has
                         shown in the list below will be use to maintain and pay
                         to a hosting for this website so do not spent a big
                         amount to this website or put any of your personal
@@ -42,7 +45,6 @@
             <b-modal
                 :title="pic_name"
                 ref="showPicModal"
-                size="xl"
                 centered
                 ok-only
             >
@@ -56,7 +58,8 @@
             <!-- end of div.col-md-3 pic list -->
         </div>
         <!-- end of div.row -->
-    </div>
+        </div>
+    </section>
 </template>
 
 <script>

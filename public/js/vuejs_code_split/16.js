@@ -136,6 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -213,13 +214,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SongSearch",
   data: function data() {
     return {
-      search: '',
+      search: "",
       song: [],
       moment: moment
     };
@@ -248,7 +258,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
         //console.log(res.data)
         window.open(res.data.url, "_blank");
         setTimeout(function () {
-          _this2.$emit('getSongList');
+          _this2.$emit("getSongList");
         }, 2000);
       });
     },
@@ -388,7 +398,7 @@ var render = function() {
       0
     ),
     _vm._v(" "),
-    _c("div", { staticClass: "pa" }, [
+    _c("div", { staticClass: "pa pt-4" }, [
       _c(
         "ul",
         { staticClass: "pagination" },
@@ -439,7 +449,8 @@ var render = function() {
                           "\n                "
                       )
                     ]
-                  )
+                  ),
+              _vm._v(" ·\n\n            ")
             ])
           }),
           _vm._v(" "),
@@ -477,6 +488,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
     _c("form", { attrs: { action: "" } }, [
       _c("div", { staticClass: "form-group" }, [
         _c("input", {
@@ -490,7 +503,7 @@ var render = function() {
           ],
           ref: "search",
           staticClass: "form-control",
-          attrs: { placeholder: "Search Song...", type: "text" },
+          attrs: { placeholder: "Search my karaoke...", type: "text" },
           domProps: { value: _vm.search },
           on: {
             keyup: _vm.searchSong,
@@ -554,7 +567,7 @@ var render = function() {
                       [
                         _c("b-icon", { attrs: { icon: "headphones" } }),
                         _vm._v(
-                          " \n                            " +
+                          "\n                            " +
                             _vm._s(li.read_count) +
                             "\n                        "
                         )
@@ -573,7 +586,16 @@ var render = function() {
     _c("p", { staticClass: "mb-4 pt-4" }, [_vm._v(" ")])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "section-title" }, [
+      _c("h2", [_vm._v("My Karaoke")])
+    ])
+  }
+]
 render._withStripped = true
 
 

@@ -69,6 +69,7 @@ export default {
     },
     methods: {
         getWhatnewsList(page) {
+            this.editId = 0
             let url = "";
             if (page) {
                 url = page;
@@ -89,6 +90,7 @@ export default {
         },
         goEdit(id) {
             this.editId = id;
+            this.showWhatnewsForm = true
         },
         goDel(id) {
             let url = `/admin/whatnews/${id}`;

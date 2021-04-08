@@ -15,7 +15,8 @@ class VideoController extends Controller
      */
     public function index()
     {
-        return view("Pub.Video.index"); 
+        $get = Video::latest()->first();
+        return view("Pub.Video.index")->with(["video" => $get]); 
     }
 
 

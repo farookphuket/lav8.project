@@ -3,6 +3,9 @@
 <html>
 
 <head>
+<!-- === google script start ==== -->
+@include('INC._google_script')
+<!-- === google script End  ==== -->
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -66,10 +69,7 @@
 
 
 
-  @include('INC/_jodit3')
-
-
-
+@include('INC/_jodit3')
 @include('INC/_hljs')
 @include('INC/_prism-funky')
 
@@ -108,7 +108,6 @@
     <div class="row">
       <div class="col-lg-12 col-md-10 mx-auto">
         @include('INC/_flash_message')
-
 
         <!-- Home Post List -->
 
