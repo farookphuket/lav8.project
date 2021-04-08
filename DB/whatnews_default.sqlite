@@ -34,11 +34,12 @@ INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
 <div class="video-container">
      <iframe width="560" height="315" src="https://www.youtube.com/embed/JMd42sfh_kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<p class="text-center pt-2 mb-4">รีวิวนิสสัน คิก อีพาวเวอร์</p>
+<p class="text-center pt-2 mb-4">ลองขับ Nissan Kicks e-Power ไม่ประหยัดนะ 
+แต่ขับโคตรมัน One Pedal ดีงาม ออปชั่นพอใช้ ค่าตัว 1.049 ล้าน</p>
 <p class="pt-2 mb-4 text-center">
 รีวิว นิสสัน คิก อีพาวเวอร์ ขึ้นเขาเมืองระนอง
 </p>
-<div class="video-conta">
+<div class="video-container">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/EjnqZtPyQks" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <p class="pt-2 ">
@@ -55,9 +56,6 @@ autolifethailand.tv พาแฟนๆ มาลองขับ Nissan Kicks ร
 
 
 
-<<<<<<< HEAD
-/* my bash script setup i3wm for manjaro */
-=======
 
 
 
@@ -103,7 +101,9 @@ INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
 
 
 
->>>>>>> 9d0daf983a384800299b0de26b8fd998e7091d0e
+
+
+/* my bash script setup i3wm for manjaro */
 INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
 `is_public`,`created_at`,`updated_at`) VALUES (NULL,
 '1',                            
@@ -505,15 +505,16 @@ INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
 ไม่ได้หาผลกำไร หรือ เจตนาละเมิดลิขสิทธิ์ แต่อย่างใด .
 </p>
         <div class="sound-container">
-
-<iframe src="https://archive.org/embed/clip_30_to_36" 
+        <iframe src="https://archive.org/embed/clip_30_to_36" 
         width="500" height="140" frameborder="0" webkitallowfullscreen="true" 
         mozallowfullscreen="true" allowfullscreen></iframe>
         </div>
 
 
     <p class="pt-4 mb-4">
-ต้องการฟังเพิ่ม <a href="/posts/หนังสือนิยาย-เพชรพระอุมา-ตอน-ดงมรณะ"> Click here</a>
+ต้องการฟังเพิ่ม <a 
+class="btn btn-outline-primary"
+href="/posts/หนังสือนิยาย-เพชรพระอุมา-ตอน-ดงมรณะ"> Click here</a>
     </p>
     </div>
 </div>
@@ -558,8 +559,8 @@ he make the best tutorial as always
 
 ',                                          
 '1',                        
-'2021-02-01 07:04:45',                
-'2021-02-01 07:05:45'                
+'2021-02-01 07:14:45',                
+'2021-02-01 07:15:55'                
 );                                          
 
 
@@ -636,22 +637,12 @@ INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
 '1','2021-02-12 10:43:45','2021-02-12 10:44:45');
 
 
-
-
-
-
-
-
-
-
-
-
 /*  number 6 on date 9 Feb 2021 upgrade system to using php 8 */
 
 INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
 "is_public","created_at","updated_at") VALUES (NULL,
 '1',
-'last upgrade system from php 7 to php8 9 Feb 2021',
+'last upgrade system from php 7 to php8 on 9 Feb 2021',
 '
 <p>
 <b>Hi there</b> today 9 Feb 2021 I just update the system the size of update
@@ -662,7 +653,8 @@ now) so the httpd.conf file has to be edit
 "sudo vim /etc/httpd/conf/httpd.conf "
 </span>
 the full article is will be found
-<a href="https://wiki.archlinux.org/index.php/Apache_HTTP_Server" target="_blank">here</a>
+<a class="btn btn-outline-primary"
+href="https://wiki.archlinux.org/index.php/Apache_HTTP_Server" target="_blank">here</a>
 </p>
 <p class="pt-2 mb-2">
 the image below is my recently use system before update
@@ -728,13 +720,13 @@ INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
 Hi there today is 25 Jan 2021 I don''t know how can I add automatic datetime
 to .sqlite file so I got it from
 <a href="https://www.sqlitetutorial.net/sqlite-date/"
-class="badge badge-info" target="_blank">
+class="btn btn-outline-primary" target="_blank">
 here
 </a>
 and now I want to escaping the single quote which is not accept by sql what
 I do is I put two single quote('') to replace and it is working as I expected
 I got it from
-<a href="https://stackoverflow.com/questions/603572/escape-single-quote-character-for-use-in-an-sqlite-query" target="_blank" class="badge badge-info">
+<a href="https://stackoverflow.com/questions/603572/escape-single-quote-character-for-use-in-an-sqlite-query" target="_blank" class="btn btn-outline-primary">
 here
 </a> now what else trick I learn today in (25-Jan-2021)
 
@@ -756,18 +748,22 @@ INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
 <b>Puddletag</b> is the program to edit the tag file I use it mosly
 
 when I want to edit the mp3 file info such as to Add picture of the artist
-to that song Puddletag is not in pamac or pacman repo so tto install it
-I found it from here : "<a href="https://snapcraft.io/install/puddletag-snap/manjaro" target="blank"
+to that song Puddletag is not in pamac or pacman repo so to install it
+I found it from here : "<a 
+class="btn btn-outline-primary"
+href="https://snapcraft.io/install/puddletag-snap/manjaro" target="blank"
 >https://snapcraft.io/install/puddletag-snap/manjaro</a>"
 </p>
 <img
 src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_819,h_512/https://dashboard.snapcraft.io/site_media/appmedia/2020/12/Bildschirmfoto_von_2020-12-06_17-02-23.png" class="responsive">
-<p>
+<p class="mb-4 pt-4">
 to install run the command :sudo snap install puddletag-snap make sure
 you have snap install mostly if you use manjaro it is already installed so
-that you ready to go.
+that you ready to go (you can copy code to run in your terminal).
 </p>
-
+<div class="form-group pt-4">
+<textarea class="form-control" >sudo snap install puddletag-snap</textarea>
+</div>
 
 ',
 '1',
@@ -793,7 +789,7 @@ INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
  I''ve finally found  "how to make thai slug by using javascript"
   from
   <a href="https://gist.github.com/silkyland/004e9c74ed9ed8b76d613bc2e4e48f52"
-  target="_blank">here</a> so from now at least I will use this code
+  target="_blank" class="btn btn-outline-primary">here</a> so from now at least I will use this code
 
 </p>
 <div class="line-numbers">
@@ -865,7 +861,7 @@ and I even have the problem that cmus only run once and it throw error said
 "error opening false internal error" so what I do to solved the problem was
 one command "rm -rf .config/cmus/autosave" just after I read from
 <a href="https://bbs.archlinux.org/viewtopic.php?id=223095" target="_blank"
-class="badge badge-info">Here</a> now thing was completely working good I
+class="btn btn-outline-primary">Here</a> now thing was completely working good I
 love you manjaro-i3+cmus
 </p>
 
