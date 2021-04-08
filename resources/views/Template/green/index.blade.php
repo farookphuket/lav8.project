@@ -8,6 +8,7 @@
     $my_linkin = Config::get('DEFAULT_VAR.my_linkin');
     $my_contact_phone = Config::get('DEFAULT_VAR.my_contact_phone');
     $my_contact_email = Config::get('DEFAULT_VAR.my_contact_email');
+    $X2 = 'X2';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,12 +50,12 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="{{asset('/green/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-  <link href="{{asset('/green/vendor/icofont/icofont.min.css')}}" rel="stylesheet">
-  <link href="{{asset('/green/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
-  <link href="{{asset('/green/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
-  <link href="{{asset('/green/vendor/owl.carousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
-  <link href="{{asset('/green/vendor/venobox/venobox.css')}}" rel="stylesheet">
+  <link href="{{asset("/green/$X2/bootstrap/css/bootstrap.min.css")}}" rel="stylesheet">
+  <link href="{{asset("/green/$X2/icofont/icofont.min.css")}}" rel="stylesheet">
+  <link href="{{asset("/green/$X2/boxicons/css/boxicons.min.css")}}" rel="stylesheet">
+  <link href="{{asset("/green/$X2/animate.css/animate.min.css")}}" rel="stylesheet">
+  <link href="{{asset("/green/$X2/owl.carousel/assets/owl.carousel.min.css")}}" rel="stylesheet">
+  <link href="{{asset("/green/$X2/venobox/venobox.css")}}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="{{asset('/green/css/style.css')}}" rel="stylesheet">
@@ -229,13 +230,13 @@
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="{{asset('/green/vendor/jquery/jquery.min.js')}}"></script>
-  <script src="{{asset('/green/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{asset('/green/vendor/jquery.easing/jquery.easing.min.js')}}"></script>
-  <script src="{{asset('/green/vendor/php-email-form/validate.js')}}"></script>
-  <script src="{{asset('/green/vendor/owl.carousel/owl.carousel.min.js')}}"></script>
-  <script src="{{asset('/green/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
-  <script src="{{asset('/green/vendor/venobox/venobox.min.js')}}"></script>
+  <script src="{{asset("/green/$X2/jquery/jquery.min.js")}}"></script>
+  <script src="{{asset("/green/$X2/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
+  <script src="{{asset("/green/$X2/jquery.easing/jquery.easing.min.js")}}"></script>
+  <script src="{{asset("/green/$X2/php-email-form/validate.js")}}"></script>
+  <script src="{{asset("/green/$X2/owl.carousel/owl.carousel.min.js")}}"></script>
+  <script src="{{asset("/green/$X2/isotope-layout/isotope.pkgd.min.js")}}"></script>
+  <script src="{{asset("/green/$X2/venobox/venobox.min.js")}}"></script>
 
   <!-- Template Main JS File -->
     <script src="{{asset('/green/js/main.js')}}"></script>
