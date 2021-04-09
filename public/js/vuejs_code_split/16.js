@@ -1,16 +1,19 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[16],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Song.vue?vue&type=script&lang=js&":
-/*!**********************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Song.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Photo.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Photo.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _SongSearch_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SongSearch.vue */ "./resources/js/pages/SongSearch.vue");
-/* harmony import */ var _SongList_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SongList.vue */ "./resources/js/pages/SongList.vue");
+/* harmony import */ var _PhotoSearch_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PhotoSearch.vue */ "./resources/js/pages/PhotoSearch.vue");
+/* harmony import */ var _PhotoList_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PhotoList.vue */ "./resources/js/pages/PhotoList.vue");
+//
+//
+//
 //
 //
 //
@@ -21,41 +24,38 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Song",
+  name: "PubPhoto",
   components: {
-    SongList: _SongList_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    SongSearch: _SongSearch_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    PhotoSearch: _PhotoSearch_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    PhotoList: _PhotoList_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
-      songs: [],
-      albums: [],
-      artists: []
+      photos: []
     };
   },
   mounted: function mounted() {
-    this.getSongList();
+    this.getPhotos();
   },
   methods: {
-    getSongList: function getSongList(page) {
+    getPhotos: function getPhotos(page) {
       var _this = this;
 
-      var url = "";
+      var url = '';
 
       if (page) {
         url = page;
-        this.$cookies.set("psong_old_page", url);
+        this.$cookies.set("pic_old_page", url);
       }
 
-      url = this.$cookies.get("psong_old_page");
+      url = this.$cookies.get('pic_old_page');
 
       if (!url) {
-        url = "/getSongList";
+        url = "/getPhotos";
       }
 
       axios.get(url).then(function (res) {
-        var rData = res.data;
-        _this.songs = rData.songs; // console.log(rData)
+        _this.photos = res.data.photos;
       });
     }
   }
@@ -63,10 +63,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/SongList.vue?vue&type=script&lang=js&":
-/*!**************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/SongList.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoList.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/PhotoList.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -146,160 +146,224 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "SongList",
-  props: ["songs"],
+  name: "PhotoList",
+  props: ["photos", "openId"],
   data: function data() {
     return {
-      moment: moment
+      moment: moment,
+      title: "",
+      embed: "",
+      createdDate: "",
+      ownerName: ""
     };
   },
+  mounted: function mounted() {//   this.sTitle = smartTitle(this.title,5)
+  },
   methods: {
-    readCount: function readCount(id) {
+    openPhoto: function openPhoto(id) {
       var _this = this;
 
-      var url = "/readCount/".concat(id);
-      axios.get(url).then(function (res) {
-        //console.log(res.data.url)
-        window.open(res.data.url, "_blank");
-        setTimeout(function () {
-          _this.$emit("getSongList");
-        }, 2000);
+      //console.log(this.photos.data)
+      this.photos.data.forEach(function (val) {
+        if (val.id == id) {
+          _this.title = val.title;
+          _this.embed = val.embed;
+          _this.ownerName = val.user.name;
+          _this.createdDate = val.created_at; //console.log(this.title)
+        }
+
+        _this.$refs["showPhotoModal"].show();
       });
+    },
+    selectCode: function selectCode() {
+      this.$refs.copyCode.select();
     },
     smartTitle: function smartTitle(str, len) {
-      return str.length > len ? str.substring(0, len) + "..." : str;
-    }
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/SongSearch.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/SongSearch.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  name: "SongSearch",
-  data: function data() {
-    return {
-      search: "",
-      song: [],
-      moment: moment
-    };
-  },
-  methods: {
-    searchSong: function searchSong() {
-      var _this = this;
-
-      var keySearch = this.$refs.search.value;
-
-      if (keySearch.length > 2) {
-        var url = "/searchSong?search=".concat(this.search);
-        axios.get(url).then(function (res) {
-          // console.log(res.data)
-          _this.song = res.data.song;
-        });
-      } else {
-        this.clearForm();
-      }
+      return str.length > len ? str.substr(0, len) + "..." : str;
     },
-    getSong: function getSong(id) {
+    showOriginal: function showOriginal(url) {
       var _this2 = this;
 
-      var url = "/readCount/".concat(id);
-      axios.get(url).then(function (res) {
-        //console.log(res.data)
-        window.open(res.data.url, "_blank");
-        setTimeout(function () {
-          _this2.$emit("getSongList");
-        }, 2000);
-      });
+      //open the photo in another tab
+      window.open(url, '_blank');
+      setTimeout(function () {
+        //close after 2500 milli sec 
+        _this2.closeBox();
+      }, 2500);
     },
-    clearForm: function clearForm() {
-      this.song = 0;
-    },
-    smartTitle: function smartTitle(str, len) {
-      return str.length > len ? str.substring(0, len) + '...' : str;
+    closeBox: function closeBox() {
+      this.$refs["showPhotoModal"].hide();
     }
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Song.vue?vue&type=template&id=1e9b0d9e&":
-/*!**************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Song.vue?vue&type=template&id=1e9b0d9e& ***!
-  \**************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoSearch.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/PhotoSearch.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "PhotoSearch",
+  data: function data() {
+    return {
+      search: '',
+      photos: [],
+      moment: moment,
+      title: '',
+      embed: '',
+      createDate: '',
+      ownerName: ''
+    };
+  },
+  methods: {
+    searchPhoto: function searchPhoto() {
+      var _this = this;
+
+      var url = "/search?search=".concat(this.search);
+      axios.get(url).then(function (res) {
+        _this.photos = res.data.photos;
+      });
+    },
+    openPhoto: function openPhoto(id) {
+      var _this2 = this;
+
+      var url = "/photo/".concat(id);
+      axios.get(url).then(function (res) {
+        res.data.photo.forEach(function (val) {
+          if (val.id == id) {
+            _this2.title = val.title;
+            _this2.embed = val.embed;
+            _this2.createDate = val.created_at;
+            _this2.ownerName = val.user.name;
+          }
+
+          _this2.$refs["showPhotoModal"].show();
+        });
+      });
+    },
+    selectCode: function selectCode() {
+      this.$refs.copyCode.select();
+    },
+    openOriginal: function openOriginal(url) {
+      var _this3 = this;
+
+      window.open(url, '_blank');
+      setTimeout(function () {
+        _this3.closeBox();
+      }, 2500);
+    },
+    closeBox: function closeBox() {
+      this.$refs["showPhotoModal"].hide();
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Photo.vue?vue&type=template&id=6f599d79&":
+/*!***************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Photo.vue?vue&type=template&id=6f599d79& ***!
+  \***************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -315,19 +379,13 @@ var render = function() {
     "div",
     { staticClass: "container" },
     [
-      _c("song-search", {
-        on: {
-          getSongList: function($event) {
-            return _vm.getSongList($event)
-          }
-        }
-      }),
+      _c("photo-search", { attrs: { photos: _vm.photos } }),
       _vm._v(" "),
-      _c("song-list", {
-        attrs: { songs: _vm.songs },
+      _c("photo-list", {
+        attrs: { photos: _vm.photos },
         on: {
-          getSongList: function($event) {
-            return _vm.getSongList($event)
+          getPhotos: function($event) {
+            return _vm.getPhotos($event)
           }
         }
       })
@@ -342,10 +400,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/SongList.vue?vue&type=template&id=d99c9f48&":
-/*!******************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/SongList.vue?vue&type=template&id=d99c9f48& ***!
-  \******************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoList.vue?vue&type=template&id=401edab7&":
+/*!*******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/PhotoList.vue?vue&type=template&id=401edab7& ***!
+  \*******************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -361,58 +419,43 @@ var render = function() {
     _c(
       "div",
       { staticClass: "row" },
-      _vm._l(_vm.songs.data, function(so) {
-        return _c("div", { staticClass: "col-md-3 pt-2" }, [
-          _c("div", { staticClass: "card " }, [
-            _c(
-              "a",
-              {
-                attrs: { target: "_blank", href: so.url },
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    return _vm.readCount(so.id)
+      [
+        _vm._l(_vm.photos.data, function(po) {
+          return _c("div", { staticClass: "col-lg-3" }, [
+            _c("div", { staticClass: "card" }, [
+              _c(
+                "a",
+                {
+                  attrs: { href: "" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.openPhoto(po.id)
+                    }
                   }
-                }
-              },
-              [
-                _c("img", {
-                  staticClass: "responsive card-image-top",
-                  attrs: { src: so.cover }
-                })
-              ]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _c("p", { staticClass: "card-text" }, [
+                },
+                [
+                  _c("img", {
+                    staticClass: "card-img-top",
+                    attrs: { src: po.embed, alt: "" }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-body" }, [
                 _c(
                   "span",
+                  { staticClass: "badge badge-info" },
                   [
-                    _c("b-icon", { attrs: { icon: "info-circle" } }),
+                    _c("b-icon", { attrs: { icon: "check-square" } }),
                     _vm._v(
-                      "  \n                            " +
-                        _vm._s(_vm.smartTitle(so.name, 13)) +
-                        "\n                        "
+                      " \n                        " +
+                        _vm._s(_vm.smartTitle(po.title, 9))
                     )
                   ],
                   1
                 ),
-                _vm._v("  \n                        "),
-                _c(
-                  "span",
-                  [
-                    _c("b-icon", { attrs: { icon: "person" } }),
-                    _vm._v(
-                      "  \n                            " +
-                        _vm._s(so.user.name) +
-                        "\n                        "
-                    )
-                  ],
-                  1
-                )
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "card-text" }, [
+                _vm._v("\n                    ·\n                    "),
                 _c(
                   "span",
                   { staticClass: "badge badge-info" },
@@ -420,22 +463,7 @@ var render = function() {
                     _c("b-icon", { attrs: { icon: "clock-history" } }),
                     _vm._v(
                       " \n                        " +
-                        _vm._s(_vm.moment(so.posted_at).fromNow()) +
-                        "\n                    "
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" \n                     - \n                    "),
-                _c(
-                  "span",
-                  { staticClass: "badge badge-info" },
-                  [
-                    _c("b-icon", { attrs: { icon: "headphones" } }),
-                    _vm._v(
-                      " \n                         " +
-                        _vm._s(so.read_count) +
-                        "\n                    "
+                        _vm._s(_vm.moment(po.created_at).fromNow())
                     )
                   ],
                   1
@@ -443,78 +471,157 @@ var render = function() {
               ])
             ])
           ])
-        ])
-      }),
-      0
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "pa pt-4" }, [
-      _c(
-        "ul",
-        { staticClass: "pagination" },
-        [
-          _c("li", { staticClass: "page-item" }, [
-            _vm._v("\n                showing from  \n                "),
-            _c("span", [_vm._v(_vm._s(_vm.songs.from))]),
-            _vm._v("  \n                to \n                "),
-            _c("span", [_vm._v(_vm._s(_vm.songs.to))]),
-            _vm._v("   \n                of \n                "),
-            _c("span", [_vm._v(_vm._s(_vm.songs.total))]),
-            _vm._v(" ·\n            ")
-          ]),
-          _vm._v(" "),
-          _vm._l(_vm.songs.links, function(ll) {
-            return _c("li", { staticClass: "page-item" }, [
-              ll.active == false && ll.url != null
-                ? _c(
-                    "a",
-                    {
-                      attrs: { href: "" },
-                      domProps: { innerHTML: _vm._s(ll.label) },
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          return _vm.$emit("getSongList", ll.url)
-                        }
-                      }
-                    },
-                    [
-                      _vm._v(
-                        "\n                    " +
-                          _vm._s(ll.label) +
-                          "\n                "
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-12 pt-4" }, [
+          _c(
+            "ul",
+            { staticClass: "pagination" },
+            [
+              _c("li", { staticClass: "page-item" }, [
+                _vm._v(
+                  "\n                        showing from\n                        "
+                ),
+                _c("span", [_vm._v(_vm._s(_vm.photos.from))]),
+                _vm._v(" to\n                        "),
+                _c("span", [_vm._v(_vm._s(_vm.photos.to))]),
+                _vm._v(" of\n                        "),
+                _c("span", [_vm._v(_vm._s(_vm.photos.total))]),
+                _vm._v(" ·\n                    ")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.photos.links, function(li) {
+                return _c("li", { staticClass: "page-item" }, [
+                  li.active != true && li.url != null
+                    ? _c(
+                        "a",
+                        {
+                          attrs: { href: "" },
+                          domProps: { innerHTML: _vm._s(li.label) },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.$emit("getPhotos", li.url)
+                            }
+                          }
+                        },
+                        [_vm._v(_vm._s(li.label))]
                       )
-                    ]
+                    : _c(
+                        "span",
+                        {
+                          staticClass: "active",
+                          domProps: { innerHTML: _vm._s(li.label) }
+                        },
+                        [_vm._v(_vm._s(li.label))]
+                      ),
+                  _vm._v("\n                        ·\n                    ")
+                ])
+              }),
+              _vm._v(" "),
+              _c(
+                "li",
+                { staticClass: "page-item" },
+                [
+                  _c("b-icon", { attrs: { icon: "book-half" } }),
+                  _vm._v(" "),
+                  _c("span", [_vm._v(_vm._s(_vm.photos.current_page))])
+                ],
+                1
+              )
+            ],
+            2
+          )
+        ]),
+        _vm._v(" "),
+        _c(
+          "b-modal",
+          {
+            ref: "showPhotoModal",
+            attrs: { title: _vm.title, size: "xl", "hide-footer": "" }
+          },
+          [
+            _c("div", { staticClass: "card" }, [
+              _c("img", {
+                staticClass: "card-img-top",
+                attrs: { src: _vm.embed, alt: "" }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-body" }, [
+                _c("span", { staticClass: "badge badge-info" }, [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(_vm.title) +
+                      " · " +
+                      _vm._s(_vm.ownerName)
                   )
-                : _c(
-                    "span",
-                    {
-                      staticClass: "active",
-                      domProps: { innerHTML: _vm._s(ll.label) }
-                    },
-                    [
-                      _vm._v(
-                        "\n                    " +
-                          _vm._s(ll.label) +
-                          "\n                "
-                      )
-                    ]
-                  ),
-              _vm._v(" ·\n\n            ")
+                ]),
+                _vm._v("\n                    ·\n                    "),
+                _c(
+                  "span",
+                  [
+                    _c("b-icon", { attrs: { icon: "calendar2-day" } }),
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(_vm.moment(_vm.createdDate)) +
+                        " ·\n                        " +
+                        _vm._s(_vm.moment(_vm.createdDate).fromNow())
+                    )
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group pt-4 mb-4" }, [
+                _c(
+                  "textarea",
+                  {
+                    ref: "copyCode",
+                    staticClass: "form-control",
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.selectCode($event)
+                      }
+                    }
+                  },
+                  [_vm._v(_vm._s(_vm.embed))]
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-outline-primary btn-block",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.showOriginal(_vm.embed)
+                    }
+                  }
+                },
+                [_vm._v("\n                    original\n                ")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-outline-danger btn-block",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.closeBox($event)
+                    }
+                  }
+                },
+                [_vm._v("\n                    close\n                ")]
+              )
             ])
-          }),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c("span", { staticClass: "active" }, [
-              _vm._v(_vm._s(_vm.songs.current_page))
-            ])
-          ])
-        ],
-        2
-      )
-    ]),
-    _vm._v(" "),
-    _c("p", { staticClass: "pt-4" }, [_vm._v(" ")])
+          ]
+        )
+      ],
+      2
+    )
   ])
 }
 var staticRenderFns = []
@@ -524,10 +631,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/SongSearch.vue?vue&type=template&id=e73d4234&":
-/*!********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/SongSearch.vue?vue&type=template&id=e73d4234& ***!
-  \********************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoSearch.vue?vue&type=template&id=9aa542fe&":
+/*!*********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/PhotoSearch.vue?vue&type=template&id=9aa542fe& ***!
+  \*********************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -540,145 +647,206 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("form", { attrs: { action: "" } }, [
-      _c(
-        "div",
-        { staticClass: "form-group" },
-        [
-          _c(
-            "b-input-group",
-            [
-              _c(
-                "b-input-group-prepend",
-                { attrs: { "is-text": "" } },
-                [_c("b-icon", { attrs: { icon: "search" } })],
-                1
-              ),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.search,
-                    expression: "search"
-                  }
-                ],
-                ref: "search",
-                staticClass: "form-control",
-                attrs: { placeholder: "Search my karaoke...", type: "text" },
-                domProps: { value: _vm.search },
-                on: {
-                  keyup: _vm.searchSong,
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.search = $event.target.value
-                  }
-                }
-              })
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ]),
-    _vm._v(" "),
-    _vm.song != 0
-      ? _c("div", { staticClass: "container-fluid" }, [
-          _c(
+    _c(
+      "div",
+      { staticClass: "row" },
+      [
+        _c("div", { staticClass: "col-lg-12" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("form", { attrs: { action: "" } }, [
+            _c(
+              "div",
+              { staticClass: "form-group" },
+              [
+                _c(
+                  "b-input-group",
+                  [
+                    _c(
+                      "b-input-group-prepend",
+                      { attrs: { "is-text": "" } },
+                      [_c("b-icon", { attrs: { icon: "search" } })],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.search,
+                          expression: "search"
+                        }
+                      ],
+                      ref: "search",
+                      staticClass: "form-control",
+                      attrs: { type: "text", placeholder: "Search photo..." },
+                      domProps: { value: _vm.search },
+                      on: {
+                        keyup: _vm.searchPhoto,
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.search = $event.target.value
+                        }
+                      }
+                    })
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _vm._l(_vm.photos, function(po) {
+          return _c(
             "div",
-            { staticClass: "row" },
-            _vm._l(_vm.song, function(li) {
-              return _c("div", { staticClass: "col-lg-3 pt-2" }, [
-                _c("div", { staticClass: "card" }, [
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.search,
+                  expression: "search"
+                }
+              ],
+              staticClass: "col-lg-3"
+            },
+            [
+              _c("div", { staticClass: "card" }, [
+                _c(
+                  "a",
+                  {
+                    attrs: { href: "" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.openPhoto(po.id)
+                      }
+                    }
+                  },
+                  [
+                    _c("img", {
+                      staticClass: "card-img-top",
+                      attrs: { src: po.embed, alt: "" }
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
                   _c(
-                    "a",
+                    "span",
+                    { staticClass: "badge badge-info" },
+                    [
+                      _c("b-icon", { attrs: { icon: "person" } }),
+                      _vm._v(" \n                " + _vm._s(po.user.name))
+                    ],
+                    1
+                  ),
+                  _vm._v(" · \n                "),
+                  _c(
+                    "span",
+                    { staticClass: "badge badge-info" },
+                    [
+                      _c("b-icon", { attrs: { icon: "clock-history" } }),
+                      _vm._v(
+                        " \n                " +
+                          _vm._s(_vm.moment(po.created_at).fromNow())
+                      )
+                    ],
+                    1
+                  )
+                ])
+              ])
+            ]
+          )
+        }),
+        _vm._v(" "),
+        _c(
+          "b-modal",
+          {
+            ref: "showPhotoModal",
+            attrs: { title: _vm.title, size: "xl", "hide-footer": "" }
+          },
+          [
+            _c("div", { staticClass: "card" }, [
+              _c("img", {
+                staticClass: "card-img-top",
+                attrs: { src: _vm.embed, alt: "" }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-body" }, [
+                _c(
+                  "span",
+                  { staticClass: "badge badge-info" },
+                  [
+                    _c("b-icon", { attrs: { icon: "person" } }),
+                    _vm._v(" \n                   " + _vm._s(_vm.ownerName))
+                  ],
+                  1
+                ),
+                _vm._v(" · \n\n               "),
+                _c("span", { staticClass: "badge badge-info" }, [
+                  _vm._v(
+                    _vm._s(_vm.moment(_vm.createDate)) +
+                      " \n               · " +
+                      _vm._s(_vm.moment(_vm.createDate).fromNow())
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group pt-2 pt-4" }, [
+                  _c(
+                    "textarea",
                     {
-                      attrs: { href: "" },
+                      ref: "copyCode",
+                      staticClass: "form-control",
                       on: {
                         click: function($event) {
                           $event.preventDefault()
-                          return _vm.getSong(li.id)
+                          return _vm.selectCode($event)
                         }
                       }
                     },
-                    [
-                      _c("img", {
-                        staticClass: "responsive card-img-top",
-                        attrs: { src: li.cover, alt: li.name }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card-body" }, [
-                    _c(
-                      "span",
-                      [
-                        _c("b-icon", { attrs: { icon: "info-circle" } }),
-                        _vm._v(
-                          " \n                            " +
-                            _vm._s(_vm.smartTitle(li.name, 9)) +
-                            "\n                        "
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" ·\n                        "),
-                    _c(
-                      "span",
-                      [
-                        _c("b-icon", { attrs: { icon: "person" } }),
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(li.user.name) +
-                            "\n                        "
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      { staticClass: "badge badge-info" },
-                      [
-                        _c("b-icon", { attrs: { icon: "clock-history" } }),
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(_vm.moment(li.posted_at).fromNow()) +
-                            "\n                        "
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      { staticClass: "badge badge-info" },
-                      [
-                        _c("b-icon", { attrs: { icon: "headphones" } }),
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(li.read_count) +
-                            "\n                        "
-                        )
-                      ],
-                      1
-                    )
-                  ])
+                    [_vm._v(_vm._s(_vm.embed))]
+                  )
                 ])
               ])
-            }),
-            0
-          )
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _c("p", { staticClass: "mb-4 pt-4" }, [_vm._v(" ")])
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-outline-primary btn-block",
+                on: {
+                  click: function($event) {
+                    return _vm.openOriginal(_vm.embed)
+                  }
+                }
+              },
+              [_vm._v("original")]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-outline-danger btn-block",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.closeBox($event)
+                  }
+                }
+              },
+              [_vm._v("close")]
+            )
+          ]
+        )
+      ],
+      2
+    )
   ])
 }
 var staticRenderFns = [
@@ -687,7 +855,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "section-title" }, [
-      _c("h2", [_vm._v("My Karaoke")])
+      _c("h2", [_vm._v("photo")])
     ])
   }
 ]
@@ -809,17 +977,17 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ "./resources/js/pages/Song.vue":
-/*!*************************************!*\
-  !*** ./resources/js/pages/Song.vue ***!
-  \*************************************/
+/***/ "./resources/js/pages/Photo.vue":
+/*!**************************************!*\
+  !*** ./resources/js/pages/Photo.vue ***!
+  \**************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Song_vue_vue_type_template_id_1e9b0d9e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Song.vue?vue&type=template&id=1e9b0d9e& */ "./resources/js/pages/Song.vue?vue&type=template&id=1e9b0d9e&");
-/* harmony import */ var _Song_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Song.vue?vue&type=script&lang=js& */ "./resources/js/pages/Song.vue?vue&type=script&lang=js&");
+/* harmony import */ var _Photo_vue_vue_type_template_id_6f599d79___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Photo.vue?vue&type=template&id=6f599d79& */ "./resources/js/pages/Photo.vue?vue&type=template&id=6f599d79&");
+/* harmony import */ var _Photo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Photo.vue?vue&type=script&lang=js& */ "./resources/js/pages/Photo.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -829,9 +997,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _Song_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Song_vue_vue_type_template_id_1e9b0d9e___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Song_vue_vue_type_template_id_1e9b0d9e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _Photo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Photo_vue_vue_type_template_id_6f599d79___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Photo_vue_vue_type_template_id_6f599d79___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -841,54 +1009,54 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/pages/Song.vue"
+component.options.__file = "resources/js/pages/Photo.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/pages/Song.vue?vue&type=script&lang=js&":
-/*!**************************************************************!*\
-  !*** ./resources/js/pages/Song.vue?vue&type=script&lang=js& ***!
-  \**************************************************************/
+/***/ "./resources/js/pages/Photo.vue?vue&type=script&lang=js&":
+/*!***************************************************************!*\
+  !*** ./resources/js/pages/Photo.vue?vue&type=script&lang=js& ***!
+  \***************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Song_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Song.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Song.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Song_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Photo.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Photo.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/pages/Song.vue?vue&type=template&id=1e9b0d9e&":
-/*!********************************************************************!*\
-  !*** ./resources/js/pages/Song.vue?vue&type=template&id=1e9b0d9e& ***!
-  \********************************************************************/
+/***/ "./resources/js/pages/Photo.vue?vue&type=template&id=6f599d79&":
+/*!*********************************************************************!*\
+  !*** ./resources/js/pages/Photo.vue?vue&type=template&id=6f599d79& ***!
+  \*********************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Song_vue_vue_type_template_id_1e9b0d9e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Song.vue?vue&type=template&id=1e9b0d9e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Song.vue?vue&type=template&id=1e9b0d9e&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Song_vue_vue_type_template_id_1e9b0d9e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_template_id_6f599d79___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Photo.vue?vue&type=template&id=6f599d79& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Photo.vue?vue&type=template&id=6f599d79&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_template_id_6f599d79___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Song_vue_vue_type_template_id_1e9b0d9e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_template_id_6f599d79___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/js/pages/SongList.vue":
-/*!*****************************************!*\
-  !*** ./resources/js/pages/SongList.vue ***!
-  \*****************************************/
+/***/ "./resources/js/pages/PhotoList.vue":
+/*!******************************************!*\
+  !*** ./resources/js/pages/PhotoList.vue ***!
+  \******************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _SongList_vue_vue_type_template_id_d99c9f48___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SongList.vue?vue&type=template&id=d99c9f48& */ "./resources/js/pages/SongList.vue?vue&type=template&id=d99c9f48&");
-/* harmony import */ var _SongList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SongList.vue?vue&type=script&lang=js& */ "./resources/js/pages/SongList.vue?vue&type=script&lang=js&");
+/* harmony import */ var _PhotoList_vue_vue_type_template_id_401edab7___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PhotoList.vue?vue&type=template&id=401edab7& */ "./resources/js/pages/PhotoList.vue?vue&type=template&id=401edab7&");
+/* harmony import */ var _PhotoList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PhotoList.vue?vue&type=script&lang=js& */ "./resources/js/pages/PhotoList.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -898,9 +1066,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _SongList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _SongList_vue_vue_type_template_id_d99c9f48___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _SongList_vue_vue_type_template_id_d99c9f48___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _PhotoList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _PhotoList_vue_vue_type_template_id_401edab7___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _PhotoList_vue_vue_type_template_id_401edab7___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -910,54 +1078,54 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/pages/SongList.vue"
+component.options.__file = "resources/js/pages/PhotoList.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/pages/SongList.vue?vue&type=script&lang=js&":
-/*!******************************************************************!*\
-  !*** ./resources/js/pages/SongList.vue?vue&type=script&lang=js& ***!
-  \******************************************************************/
+/***/ "./resources/js/pages/PhotoList.vue?vue&type=script&lang=js&":
+/*!*******************************************************************!*\
+  !*** ./resources/js/pages/PhotoList.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SongList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./SongList.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/SongList.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SongList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./PhotoList.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoList.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/pages/SongList.vue?vue&type=template&id=d99c9f48&":
-/*!************************************************************************!*\
-  !*** ./resources/js/pages/SongList.vue?vue&type=template&id=d99c9f48& ***!
-  \************************************************************************/
+/***/ "./resources/js/pages/PhotoList.vue?vue&type=template&id=401edab7&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/pages/PhotoList.vue?vue&type=template&id=401edab7& ***!
+  \*************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SongList_vue_vue_type_template_id_d99c9f48___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./SongList.vue?vue&type=template&id=d99c9f48& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/SongList.vue?vue&type=template&id=d99c9f48&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SongList_vue_vue_type_template_id_d99c9f48___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoList_vue_vue_type_template_id_401edab7___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./PhotoList.vue?vue&type=template&id=401edab7& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoList.vue?vue&type=template&id=401edab7&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoList_vue_vue_type_template_id_401edab7___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SongList_vue_vue_type_template_id_d99c9f48___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoList_vue_vue_type_template_id_401edab7___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/js/pages/SongSearch.vue":
-/*!*******************************************!*\
-  !*** ./resources/js/pages/SongSearch.vue ***!
-  \*******************************************/
+/***/ "./resources/js/pages/PhotoSearch.vue":
+/*!********************************************!*\
+  !*** ./resources/js/pages/PhotoSearch.vue ***!
+  \********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _SongSearch_vue_vue_type_template_id_e73d4234___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SongSearch.vue?vue&type=template&id=e73d4234& */ "./resources/js/pages/SongSearch.vue?vue&type=template&id=e73d4234&");
-/* harmony import */ var _SongSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SongSearch.vue?vue&type=script&lang=js& */ "./resources/js/pages/SongSearch.vue?vue&type=script&lang=js&");
+/* harmony import */ var _PhotoSearch_vue_vue_type_template_id_9aa542fe___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PhotoSearch.vue?vue&type=template&id=9aa542fe& */ "./resources/js/pages/PhotoSearch.vue?vue&type=template&id=9aa542fe&");
+/* harmony import */ var _PhotoSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PhotoSearch.vue?vue&type=script&lang=js& */ "./resources/js/pages/PhotoSearch.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -967,9 +1135,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _SongSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _SongSearch_vue_vue_type_template_id_e73d4234___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _SongSearch_vue_vue_type_template_id_e73d4234___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _PhotoSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _PhotoSearch_vue_vue_type_template_id_9aa542fe___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _PhotoSearch_vue_vue_type_template_id_9aa542fe___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -979,38 +1147,38 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/pages/SongSearch.vue"
+component.options.__file = "resources/js/pages/PhotoSearch.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/pages/SongSearch.vue?vue&type=script&lang=js&":
-/*!********************************************************************!*\
-  !*** ./resources/js/pages/SongSearch.vue?vue&type=script&lang=js& ***!
-  \********************************************************************/
+/***/ "./resources/js/pages/PhotoSearch.vue?vue&type=script&lang=js&":
+/*!*********************************************************************!*\
+  !*** ./resources/js/pages/PhotoSearch.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SongSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./SongSearch.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/SongSearch.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SongSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./PhotoSearch.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoSearch.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/pages/SongSearch.vue?vue&type=template&id=e73d4234&":
-/*!**************************************************************************!*\
-  !*** ./resources/js/pages/SongSearch.vue?vue&type=template&id=e73d4234& ***!
-  \**************************************************************************/
+/***/ "./resources/js/pages/PhotoSearch.vue?vue&type=template&id=9aa542fe&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/pages/PhotoSearch.vue?vue&type=template&id=9aa542fe& ***!
+  \***************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SongSearch_vue_vue_type_template_id_e73d4234___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./SongSearch.vue?vue&type=template&id=e73d4234& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/SongSearch.vue?vue&type=template&id=e73d4234&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SongSearch_vue_vue_type_template_id_e73d4234___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoSearch_vue_vue_type_template_id_9aa542fe___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./PhotoSearch.vue?vue&type=template&id=9aa542fe& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PhotoSearch.vue?vue&type=template&id=9aa542fe&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoSearch_vue_vue_type_template_id_9aa542fe___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SongSearch_vue_vue_type_template_id_e73d4234___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PhotoSearch_vue_vue_type_template_id_9aa542fe___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

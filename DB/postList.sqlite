@@ -9,9 +9,9 @@
 
 /*
 
-INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
-"post_body","is_public","last_read_ip","last_read_date","read_count",
-"created_at","updated_at") VALUES (17,
+INSERT INTO `posts` (`id`,`user_id`,`post_title`,`slug`,`post_excerpt`,
+`post_body`,`is_public`,`last_read_ip`,`last_read_date`,`read_count`,
+`created_at`,`updated_at`) VALUES (17,
 '1',
 'title',
 

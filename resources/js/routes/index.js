@@ -12,6 +12,8 @@ import resetE from '../components/email-request-form.vue'
 import PostList from '../pages/Admin/PostList.vue'
 
 
+// test on 9 Apr 2021
+import PostListByTag from '../pages/PostListByTag.vue'
 
 // export default {
 //     mode: 'history',
@@ -52,6 +54,11 @@ export default {
         },
 
 
+        {
+            path: '/posts',
+            name: 'PostListByTag',
+            component: PostListByTag,
+        },
 
         {
             path: '/admin/post',

@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-
+use App\Http\Controllers\PostsController as pubPost;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,7 +16,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+// get post 
+Route::get('/getPostList',[pubPost::class,'getPostList'])->name('getPostList');
 
+// getPostListByTag 
+Route::get('/getPostListByTag/{tag_id}',[pubPost::class,'getPostListByTag'])
+    ->name('getPostListByTag');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

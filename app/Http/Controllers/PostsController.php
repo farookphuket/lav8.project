@@ -18,26 +18,51 @@ class PostsController extends Controller
 
     public function index()
     {
-        $tags = Tag::has('posts')->get();
 
-        if(request('tag')):
-            $posts = Tag::where('id',request('tag'))->firstOrFail()->posts()->where('is_public',1)->paginate(15)->onEachSide(1);
+        $view_index = "Pub.Posts.index";
+        $view_tag = "Pub.Posts.view_by_tag";
 
-            //return $posts;
+        $view_file = '';
+        $tags = Tag::get();
+
+        if(request()->tag):
+            $view_file = $view_tag;
+            $tag = Tag::where('id',request()->tag)
+                        ->get();
         else:
-            $posts = Post::where('is_public',true)
-                            ->with("tags")
-                            ->orderBy('created_at','desc')
-                            ->paginate(15)->onEachSide(1);
-        endif;         
+            $view_file = $view_index;
+        endif;
 
-            return view('Pub.Posts.index')->with([
-                'posts' => $posts,
-                'tags' => $tags
-            ]);
+        return view($view_file)->with(['tags' => $tags]);
 
     }
 
+    /* getPostlist call by ajax */ 
+    public function getPostList(){
+        $posts = Post::with('user')
+                        ->with('tags')
+                        ->orderBy('created_at','desc')
+                        ->paginate(5)
+                        ->onEachSide(1);
+        return response()->json([
+            'posts' => $posts
+        ]);
+    }
+
+    public function getPostListByTag($tag_id){
+        $posts = Tag::where('id',$tag_id)
+                    ->firstOrFail()
+                    ->posts()
+                    ->join('users','users.id','=','posts.user_id')
+                    ->select('users.name','users.email','posts.*')
+                    ->orderBy('created_at','desc')
+                    ->paginate(5)
+                    ->onEachSide(1);
+                     
+
+
+       return response()->json(["posts" => $posts]); 
+    }
     public function about(){
 
         $post = Post::where("slug","about")->limit(1)->get();
@@ -109,8 +134,7 @@ class PostsController extends Controller
                 ->update([
                     'read_count' => $last_read_count+1,
                     'last_read_ip' => $cur_ip,
-                    'last_read_date' => $cur_date,
-                    'updated_at' => $date_create
+                    'last_read_date' => $cur_date
                 ]);
 
             DB::table("post_read")

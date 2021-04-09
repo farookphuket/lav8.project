@@ -57,6 +57,7 @@ Vue.component('Song',()=>import( './pages/Song.vue'));
 Vue.component('DonateMe',()=>import( './pages/DonateMe.vue'));
 Vue.component('Pubvideo',()=>import( './pages/Video.vue'));
 Vue.component('PubPhoto',()=>import( './pages/Photo.vue'));
+Vue.component('PubPost',()=>import( './pages/Post.vue'));
 Vue.component('LoginForm',()=>import( './components/LoginForm.vue'));
 Vue.component('LoginPage',()=>import( './components/LoginPage.vue'));
 
@@ -123,7 +124,7 @@ Vue.component('Avisitor',()=>import('./pages/Admin/Visitors.vue'))
 const {default : Axios } = require('axios');
 
  const app = new Vue({
-     el : '#app'
+     el : '#app',
 
  });
 
