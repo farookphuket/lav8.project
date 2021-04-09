@@ -8,7 +8,7 @@
                     </h1>
                 </div>
             </div>
-            <div class="col-md-4 " v-for="vi in videos.data" v-else>
+            <div class="col-md-4 pt-2" v-for="vi in videos.data" v-else>
                 <div class="card">
                     <div class="card-body">
                         <div class="video-container" v-html="vi.embed">
@@ -16,10 +16,12 @@
                         </div>
                         <p class="pt-2 mb-2">
                             <a href="" @click.prevent="showVideo(vi.id)">
+                                <b-icon icon="film"></b-icon> 
                                 {{ smartTitle(vi.title, 9) }}
                             </a>
                             -
                             <span class="badge badge-info">
+                                <b-icon icon="clock-history"></b-icon> 
                                 {{ moment(vi.created_at).fromNow() }}
                             </span>
                         </p>

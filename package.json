@@ -27,6 +27,7 @@
         "@coreui/icons": "^2.0.0-rc.0",
         "@popperjs/core": "^2.6.0",
         "bootstrap-vue": "^2.21.2",
+        "buefy": "^0.9.6",
         "highlight.js": "^10.5.0",
         "jodit-vue": "^2.2.2",
         "moment": "^2.29.1",

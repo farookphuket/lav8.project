@@ -163,6 +163,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -280,6 +285,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -323,6 +343,17 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
     },
     selectCode: function selectCode() {
       this.$refs.copyCode.select();
+    },
+    openOriginal: function openOriginal(url) {
+      var _this3 = this;
+
+      window.open(url, '_blank');
+      setTimeout(function () {
+        _this3.closeBox();
+      }, 2500);
+    },
+    closeBox: function closeBox() {
+      this.$refs["showPhotoModal"].hide();
     }
   }
 });
@@ -412,13 +443,31 @@ var render = function() {
               ),
               _vm._v(" "),
               _c("div", { staticClass: "card-body" }, [
-                _c("span", { staticClass: "badge badge-info" }, [
-                  _vm._v(_vm._s(_vm.smartTitle(po.title, 9)))
-                ]),
+                _c(
+                  "span",
+                  { staticClass: "badge badge-info" },
+                  [
+                    _c("b-icon", { attrs: { icon: "check-square" } }),
+                    _vm._v(
+                      " \n                        " +
+                        _vm._s(_vm.smartTitle(po.title, 9))
+                    )
+                  ],
+                  1
+                ),
                 _vm._v("\n                    ·\n                    "),
-                _c("span", { staticClass: "badge badge-info" }, [
-                  _vm._v(_vm._s(_vm.moment(po.created_at).fromNow()))
-                ])
+                _c(
+                  "span",
+                  { staticClass: "badge badge-info" },
+                  [
+                    _c("b-icon", { attrs: { icon: "clock-history" } }),
+                    _vm._v(
+                      " \n                        " +
+                        _vm._s(_vm.moment(po.created_at).fromNow())
+                    )
+                  ],
+                  1
+                )
               ])
             ])
           ])
@@ -470,9 +519,16 @@ var render = function() {
                 ])
               }),
               _vm._v(" "),
-              _c("li", { staticClass: "page-item" }, [
-                _c("span", [_vm._v(_vm._s(_vm.photos.current_page))])
-              ])
+              _c(
+                "li",
+                { staticClass: "page-item" },
+                [
+                  _c("b-icon", { attrs: { icon: "book-half" } }),
+                  _vm._v(" "),
+                  _c("span", [_vm._v(_vm._s(_vm.photos.current_page))])
+                ],
+                1
+              )
             ],
             2
           )
@@ -599,31 +655,49 @@ var render = function() {
           _vm._m(0),
           _vm._v(" "),
           _c("form", { attrs: { action: "" } }, [
-            _c("div", { staticClass: "form-group" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.search,
-                    expression: "search"
-                  }
-                ],
-                ref: "search",
-                staticClass: "form-control",
-                attrs: { type: "text", placeholder: "Search photo..." },
-                domProps: { value: _vm.search },
-                on: {
-                  keyup: _vm.searchPhoto,
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.search = $event.target.value
-                  }
-                }
-              })
-            ])
+            _c(
+              "div",
+              { staticClass: "form-group" },
+              [
+                _c(
+                  "b-input-group",
+                  [
+                    _c(
+                      "b-input-group-prepend",
+                      { attrs: { "is-text": "" } },
+                      [_c("b-icon", { attrs: { icon: "search" } })],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.search,
+                          expression: "search"
+                        }
+                      ],
+                      ref: "search",
+                      staticClass: "form-control",
+                      attrs: { type: "text", placeholder: "Search photo..." },
+                      domProps: { value: _vm.search },
+                      on: {
+                        keyup: _vm.searchPhoto,
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.search = $event.target.value
+                        }
+                      }
+                    })
+                  ],
+                  1
+                )
+              ],
+              1
+            )
           ])
         ]),
         _vm._v(" "),
@@ -663,13 +737,28 @@ var render = function() {
                 ),
                 _vm._v(" "),
                 _c("div", { staticClass: "card-body" }, [
-                  _c("span", { staticClass: "badge badge-info" }, [
-                    _vm._v(_vm._s(po.user.name))
-                  ]),
+                  _c(
+                    "span",
+                    { staticClass: "badge badge-info" },
+                    [
+                      _c("b-icon", { attrs: { icon: "person" } }),
+                      _vm._v(" \n                " + _vm._s(po.user.name))
+                    ],
+                    1
+                  ),
                   _vm._v(" · \n                "),
-                  _c("span", { staticClass: "badge badge-info" }, [
-                    _vm._v(_vm._s(_vm.moment(po.created_at).fromNow()))
-                  ])
+                  _c(
+                    "span",
+                    { staticClass: "badge badge-info" },
+                    [
+                      _c("b-icon", { attrs: { icon: "clock-history" } }),
+                      _vm._v(
+                        " \n                " +
+                          _vm._s(_vm.moment(po.created_at).fromNow())
+                      )
+                    ],
+                    1
+                  )
                 ])
               ])
             ]
@@ -680,7 +769,7 @@ var render = function() {
           "b-modal",
           {
             ref: "showPhotoModal",
-            attrs: { title: _vm.title, size: "xl", "ok-only": "" }
+            attrs: { title: _vm.title, size: "xl", "hide-footer": "" }
           },
           [
             _c("div", { staticClass: "card" }, [
@@ -690,9 +779,15 @@ var render = function() {
               }),
               _vm._v(" "),
               _c("div", { staticClass: "card-body" }, [
-                _c("span", { staticClass: "badge badge-info" }, [
-                  _vm._v(_vm._s(_vm.ownerName))
-                ]),
+                _c(
+                  "span",
+                  { staticClass: "badge badge-info" },
+                  [
+                    _c("b-icon", { attrs: { icon: "person" } }),
+                    _vm._v(" \n                   " + _vm._s(_vm.ownerName))
+                  ],
+                  1
+                ),
                 _vm._v(" · \n\n               "),
                 _c("span", { staticClass: "badge badge-info" }, [
                   _vm._v(
@@ -719,7 +814,34 @@ var render = function() {
                   )
                 ])
               ])
-            ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-outline-primary btn-block",
+                on: {
+                  click: function($event) {
+                    return _vm.openOriginal(_vm.embed)
+                  }
+                }
+              },
+              [_vm._v("original")]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-outline-danger btn-block",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.closeBox($event)
+                  }
+                }
+              },
+              [_vm._v("close")]
+            )
           ]
         )
       ],

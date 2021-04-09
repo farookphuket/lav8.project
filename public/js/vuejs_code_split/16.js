@@ -137,6 +137,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -177,6 +186,20 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -264,6 +287,9 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
     },
     clearForm: function clearForm() {
       this.song = 0;
+    },
+    smartTitle: function smartTitle(str, len) {
+      return str.length > len ? str.substring(0, len) + '...' : str;
     }
   }
 });
@@ -336,7 +362,7 @@ var render = function() {
       "div",
       { staticClass: "row" },
       _vm._l(_vm.songs.data, function(so) {
-        return _c("div", { staticClass: "col-md-3" }, [
+        return _c("div", { staticClass: "col-md-3 pt-2" }, [
           _c("div", { staticClass: "card " }, [
             _c(
               "a",
@@ -359,23 +385,47 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "card-body" }, [
               _c("p", { staticClass: "card-text" }, [
-                _vm._v(
-                  "\n                        " +
-                    _vm._s(_vm.smartTitle(so.name, 13)) +
-                    " - " +
-                    _vm._s(so.user.name) +
-                    "\n                    "
+                _c(
+                  "span",
+                  [
+                    _c("b-icon", { attrs: { icon: "info-circle" } }),
+                    _vm._v(
+                      "  \n                            " +
+                        _vm._s(_vm.smartTitle(so.name, 13)) +
+                        "\n                        "
+                    )
+                  ],
+                  1
+                ),
+                _vm._v("  \n                        "),
+                _c(
+                  "span",
+                  [
+                    _c("b-icon", { attrs: { icon: "person" } }),
+                    _vm._v(
+                      "  \n                            " +
+                        _vm._s(so.user.name) +
+                        "\n                        "
+                    )
+                  ],
+                  1
                 )
               ]),
               _vm._v(" "),
               _c("p", { staticClass: "card-text" }, [
-                _c("span", { staticClass: "badge badge-info" }, [
-                  _vm._v(
-                    "\n                        " +
-                      _vm._s(_vm.moment(so.posted_at).fromNow()) +
-                      "\n                    "
-                  )
-                ]),
+                _c(
+                  "span",
+                  { staticClass: "badge badge-info" },
+                  [
+                    _c("b-icon", { attrs: { icon: "clock-history" } }),
+                    _vm._v(
+                      " \n                        " +
+                        _vm._s(_vm.moment(so.posted_at).fromNow()) +
+                        "\n                    "
+                    )
+                  ],
+                  1
+                ),
                 _vm._v(" \n                     - \n                    "),
                 _c(
                   "span",
@@ -462,7 +512,9 @@ var render = function() {
         ],
         2
       )
-    ])
+    ]),
+    _vm._v(" "),
+    _c("p", { staticClass: "pt-4" }, [_vm._v(" ")])
   ])
 }
 var staticRenderFns = []
@@ -491,31 +543,49 @@ var render = function() {
     _vm._m(0),
     _vm._v(" "),
     _c("form", { attrs: { action: "" } }, [
-      _c("div", { staticClass: "form-group" }, [
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.search,
-              expression: "search"
-            }
-          ],
-          ref: "search",
-          staticClass: "form-control",
-          attrs: { placeholder: "Search my karaoke...", type: "text" },
-          domProps: { value: _vm.search },
-          on: {
-            keyup: _vm.searchSong,
-            input: function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.search = $event.target.value
-            }
-          }
-        })
-      ])
+      _c(
+        "div",
+        { staticClass: "form-group" },
+        [
+          _c(
+            "b-input-group",
+            [
+              _c(
+                "b-input-group-prepend",
+                { attrs: { "is-text": "" } },
+                [_c("b-icon", { attrs: { icon: "search" } })],
+                1
+              ),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.search,
+                    expression: "search"
+                  }
+                ],
+                ref: "search",
+                staticClass: "form-control",
+                attrs: { placeholder: "Search my karaoke...", type: "text" },
+                domProps: { value: _vm.search },
+                on: {
+                  keyup: _vm.searchSong,
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.search = $event.target.value
+                  }
+                }
+              })
+            ],
+            1
+          )
+        ],
+        1
+      )
     ]),
     _vm._v(" "),
     _vm.song != 0
@@ -524,7 +594,7 @@ var render = function() {
             "div",
             { staticClass: "row" },
             _vm._l(_vm.song, function(li) {
-              return _c("div", { staticClass: "col-lg-3" }, [
+              return _c("div", { staticClass: "col-lg-3 pt-2" }, [
                 _c("div", { staticClass: "card" }, [
                   _c(
                     "a",
@@ -546,20 +616,45 @@ var render = function() {
                   ),
                   _vm._v(" "),
                   _c("div", { staticClass: "card-body" }, [
-                    _vm._v(
-                      "\n                        " +
-                        _vm._s(li.name) +
-                        " - " +
-                        _vm._s(li.user.name) +
-                        "\n                        "
+                    _c(
+                      "span",
+                      [
+                        _c("b-icon", { attrs: { icon: "info-circle" } }),
+                        _vm._v(
+                          " \n                            " +
+                            _vm._s(_vm.smartTitle(li.name, 9)) +
+                            "\n                        "
+                        )
+                      ],
+                      1
                     ),
-                    _c("span", { staticClass: "badge badge-info" }, [
-                      _vm._v(
-                        "\n                            " +
-                          _vm._s(_vm.moment(li.posted_at).fromNow()) +
-                          "\n                        "
-                      )
-                    ]),
+                    _vm._v(" ·\n                        "),
+                    _c(
+                      "span",
+                      [
+                        _c("b-icon", { attrs: { icon: "person" } }),
+                        _vm._v(
+                          "\n                            " +
+                            _vm._s(li.user.name) +
+                            "\n                        "
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "span",
+                      { staticClass: "badge badge-info" },
+                      [
+                        _c("b-icon", { attrs: { icon: "clock-history" } }),
+                        _vm._v(
+                          "\n                            " +
+                            _vm._s(_vm.moment(li.posted_at).fromNow()) +
+                            "\n                        "
+                        )
+                      ],
+                      1
+                    ),
                     _vm._v(" "),
                     _c(
                       "span",

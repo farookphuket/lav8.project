@@ -7,11 +7,15 @@
                         <img class="card-img-top" :src="po.embed" alt="" />
                     </a>
                     <div class="card-body">
-                        <span class="badge badge-info">{{
+                        <span class="badge badge-info">
+                            <b-icon icon="check-square"></b-icon> 
+                            {{
                             smartTitle(po.title, 9)
                         }}</span>
                         &middot;
-                        <span class="badge badge-info">{{
+                        <span class="badge badge-info"> 
+                            <b-icon icon="clock-history"></b-icon> 
+                            {{
                             moment(po.created_at).fromNow()
                         }}</span>
                     </div>
@@ -41,6 +45,7 @@
                             &middot;
                         </li>
                         <li class="page-item">
+                            <b-icon icon="book-half"></b-icon> 
                             <span>{{ photos.current_page }}</span>
                         </li>
                     </ul>
@@ -91,6 +96,9 @@
 
 <script>
 var moment = require("moment");
+
+
+
 export default {
     name: "PhotoList",
     props: ["photos", "openId"],
@@ -116,6 +124,8 @@ export default {
                     this.ownerName = val.user.name;
                     this.createdDate = val.created_at;
                     //console.log(this.title)
+
+
                 }
                 this.$refs["showPhotoModal"].show();
             });

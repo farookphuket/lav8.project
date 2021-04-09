@@ -5,6 +5,10 @@
         </div>
         <form action="">
             <div class="form-group">
+                <b-input-group>
+                    <b-input-group-prepend is-text>
+                        <b-icon icon="search"></b-icon>
+                    </b-input-group-prepend>
                 <input
                     v-model="search"
                     class="form-control"
@@ -13,11 +17,12 @@
                     type="text"
                     ref="search"
                 />
+                </b-input-group>
             </div>
         </form>
         <div class="container-fluid" v-if="song != 0">
             <div class="row">
-                <div v-for="li in song" class="col-lg-3">
+                <div v-for="li in song" class="col-lg-3 pt-2">
                     <div class="card">
                         <a href="" @click.prevent="getSong(li.id)">
                             <img
@@ -27,8 +32,17 @@
                             />
                         </a>
                         <div class="card-body">
-                            {{ li.name }} - {{ li.user.name }}
+                            <span>
+                                <b-icon icon="info-circle"></b-icon> 
+                                {{ smartTitle(li.name,9) }}
+                            </span> &middot;
+                            <span>
+                                <b-icon icon="person"></b-icon>
+                                {{ li.user.name }}
+                            </span>
+                              
                             <span class="badge badge-info">
+                                <b-icon icon="clock-history"></b-icon>
                                 {{ moment(li.posted_at).fromNow() }}
                             </span>
                             <span class="badge badge-info">
@@ -80,6 +94,9 @@ export default {
         },
         clearForm() {
             this.song = 0;
+        },
+        smartTitle(str,len){
+            return (str.length > len)?str.substring(0,len)+'...':str
         },
     },
 };

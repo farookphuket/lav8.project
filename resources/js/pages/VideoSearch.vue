@@ -7,6 +7,10 @@
                 </div>
                 <form action="">
                     <div class="form-group">
+                        <b-input-group>
+                            <b-input-group-prepend is-text>
+                                <b-icon icon="search"></b-icon>
+                            </b-input-group-prepend>
                         <input
                             v-model="search"
                             class="form-control"
@@ -14,12 +18,13 @@
                             type="text"
                             v-on:keyup="searchVideo"
                         />
+                        </b-input-group>
                     </div>
                 </form>
             </div>
             <!-- end of div.col-lg-12 form -->
             <div
-                class="col-lg-3 pt-4 mb-4"
+                class="container"
                 v-show="search"
                 v-for="vi in videos"
             >
@@ -30,13 +35,17 @@
                     <div class="card-body">
                         <p class="pt-2 mb-4">
                             <a href="" @click.prevent="openVideo(vi.id)">
-                                {{ smartTitle(vi.title, 13) }}
+                                <b-icon icon="info-circle"></b-icon> 
+                                {{ vi.title }}
                             </a>
                         </p>
                         &middot;
-                        <span class="badge badge-info">{{ vi.user.name }}</span>
+                        <span class="badge badge-info">
+                            <b-icon icon="person"></b-icon> 
+                            {{ vi.user.name }}</span>
                         &middot;
                         <span class="badge badge-info">
+                            <b-icon icon="clock-history"></b-icon> 
                             {{ moment(vi.created_at).fromNow() }}</span
                         >
                     </div>

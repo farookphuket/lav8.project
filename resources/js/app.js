@@ -33,6 +33,13 @@ import { BootstrapVue, IconsPlugin  } from 'bootstrap-vue'
 //  End date 7 Jan 2021
 
 
+
+
+
+
+
+
+
 import JoditVue from 'jodit-vue'
 Vue.use(JoditVue)
 
