@@ -10,14 +10,19 @@
         </a>
         <div class="clearfix">
             <div class="float-right">
-                created 
-                <span class="badge badge-info">
-                    {{moment(li.created_at)}} &middot;
+                <span>
+                    <b-icon icon="calendar2-day"></b-icon>
+                    {{moment(li.created_at)}} 
+                </span> &middot;
+                <span>
+                    <b-icon icon="clock-history"></b-icon>
                     {{moment(li.created_at).fromNow()}}
-                </span>
-                by  
+                </span> &middot;
                 <span class="badge badge-info">
-                    {{li.user.name}} &middot;  
+                    {{li.user.name}}   
+                </span> &middot;
+                <span>
+                    <b-icon icon="envelope"></b-icon>
                     {{li.user.email}}
                 </span>
             </div>
@@ -33,14 +38,16 @@
                 </span>
             </div>
             <div class="float-right">
-                <button class="btn btn-primary"
+                <button class="btn btn-outline-primary btn-sm"
                         @click.prevent="$emit('editTemplate',li.id)">
                     edit
                 </button>
 
-                <button class="btn btn-danger"
+                <button class="btn btn-outline-danger btn-sm"
                         @click.prevent="$emit('delTemplate',li.id)">
-                    delete
+                    <span>
+                    <b-icon icon="x-circle" variant="danger" ></b-icon>
+                    </span>
                 </button>
             </div>
         </div>

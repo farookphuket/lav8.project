@@ -141,17 +141,15 @@ End of video section
 
 
 
-.pagination{
-	text-align:center;
-	text-decoration:none;
-	margin-top:3em;
-  font-size:larger;
-  font-weight:bold;
-	width:100%;
 
+.pagination {
+    display: -ms-flexbox;
+    flex-wrap: wrap;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
 }
-
-
 
 
 .pa .active{

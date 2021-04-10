@@ -1,8 +1,5 @@
 <template>
     <div class="col-lg-12">
-        <h1 class="text-center">
-            Tags module is now on Vue 
-        </h1>
 
         <tag-form :editId="editId" 
             @getTags="getTags($event)"></tag-form>
@@ -41,11 +38,12 @@ export default{
             tags:[],
             editId:0,
             res_status:'',
-            error:0
+            error:0,
         }
     },
     mounted(){
         this.getTags()
+
     },
     methods:{
         getTags(page){
@@ -53,15 +51,16 @@ export default{
             let url = ''
             if(page){
                 url = page
-                this.$cookies.set("old_tag_page",url)
+                this.$cookies.set("old_admin_tag_page",url)
             }
-            url = this.$cookies.get("old_tag_page")
+            url = this.$cookies.get("old_admin_tag_page")
             if(!url){
                 url = `/admin/getTags`
             }
             axios.get(url)
                 .then(res=>{
                     this.tags = res.data.tags
+
                 },err=>{
                     console.log(`Error code ${err}`)
                 })

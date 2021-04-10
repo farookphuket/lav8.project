@@ -10,7 +10,7 @@
 
 
 
-##  Last update 1 Apr 2021
+##  Last update 11 Apr 2021
 
 >   I've spent all day just to make this work in the way that I want
 
@@ -24,7 +24,7 @@
 
 
 
-# how can I donwload and setup 
+# how can I download and setup 
 
 > please click on the youtube link to see it in detail
 
@@ -75,7 +75,7 @@ need public folder) I mean to my "public_html" folder
 
 
 
-
+```
 
     from :
     require __DIR__.'/../vendor/autoload.php';
@@ -91,6 +91,9 @@ need public folder) I mean to my "public_html" folder
     TO:
     $app = require_once __DIR__.'/../lav8Sys/bootstrap/app.php';
 
+```
+
+
 
 
 4.  edit the .env file to the database file or info 
@@ -98,14 +101,19 @@ need public folder) I mean to my "public_html" folder
 
 
 
-
+```
 
     FROM:
     DB_DATABASE=/srv/http/lav8.lap/DB/DB_SAMPLE.sqlite
 
-    TO: (it must be the full path you can find absolute path from your FTP)
+    TO: (it must be the full path you can find absolute path from your FTP 
+    or simply create the php file with this content "<?php echo __DIR__; ?>") 
+    this will be your absolute path 
 
     DB_DATABASE=/var/www/lav8Sys/DB/DB_SAMPLE.sqlite
+
+```
+
 
 
 
@@ -129,7 +137,7 @@ need public folder) I mean to my "public_html" folder
 
 
 
-##  Last update 10 Jan 2021
+##  Last update 11 Apr 2021
 
 >   update "Whatnews" module on admin to using Vue. 
 >   sync to the desktop computer
@@ -446,6 +454,61 @@ app should be appear.
 
 
 --- 
+
+
+# Date 10 Apr 2021 (fixed pagination not responsive)
+
+> by default the pagination will not be responsive so I just dig a little 
+> search and I found it here `https://github.com/twbs/bootstrap/issues/23504`
+> so my code will be :
+
+
+```
+
+=== your content list ===
+
+=== pagination path ===
+<div class="nav-scroller  py-1 mb-2">
+    <nav class="nav d-flex justify-content-center">
+        <ul class="pagination flex-wrap">
+            <li class="page-item disabled">
+                <div class="page-link">
+                    showing from <span>{{var_from}}</span> 
+                    to <span>{{val_to}}</span> of 
+                    <span>{{var_total}}</span>
+                </div>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="">
+                    page-number from loop
+                </a>
+            </li>
+            <li class="page-item active">
+                <span class="page-link">
+                    {{var_current_page}}
+                </span>
+            </li>
+        </ul>
+    </nav>
+
+</div>
+
+```
+
+
+> will render this
+
+[new_pagination]:https://i.ibb.co/RbHz44v/2021-04-10-pagination-fixed.png
+
+!["new pagination 11 Apr 2021"][new_pagination]
+
+
+
+> OK! my problem today has solved.
+
+
+
+
 
 
 

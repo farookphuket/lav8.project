@@ -94,7 +94,8 @@ export default{
     methods:{
 
         getEditData(x){
-            this.disabled = true
+            (this.editId == 0)? this.disabled = false:this.disabled = true
+            
             this.is_public = !this.is_public
             if(x == 0){
                 return

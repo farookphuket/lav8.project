@@ -12,7 +12,7 @@
 @section('content')
 
   <div id="app">
-    <Admintag :tags="{{json_encode($tags)}}"></Admintag>
+    <Admintag></Admintag>
 
   </div>
 

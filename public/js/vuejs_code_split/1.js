@@ -107,6 +107,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     postEdit: function postEdit(id) {
       this.editId = id;
+      this.showPostForm = true;
     },
     postDelete: function postDelete(id) {
       var _this2 = this;
@@ -268,6 +269,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      disabled: false,
       saveId: 0,
       title: '',
       slug: '',
@@ -304,10 +306,11 @@ __webpack_require__.r(__webpack_exports__);
     getEditData: function getEditData(id) {
       var _this2 = this;
 
-      if (!id) {
-        return;
-      }
-
+      /* 
+      the template should not be able to select on the edit mode 
+      fixed 10 Apr 2021
+      */
+      !this.editId || id == this.editId ? this.disabled = true : this.disabled = false;
       this.user_select_tag = [];
       this.is_public = false;
       var url = "/admin/post/".concat(id, "/edit");
@@ -408,6 +411,22 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _PostTags_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PostTags.vue */ "./resources/js/pages/Admin/PostTags.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -725,7 +744,7 @@ var render = function() {
       _c("div", { staticClass: "clearfix" }, [
         _c("div", { staticClass: "float-right" }, [
           _c("p", { staticStyle: { color: "green" } }, [
-            _vm._v("system last update : 02 Apr 2021")
+            _vm._v("system last update : 10 Apr 2021")
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "btn-group pt-2 mb-4" }, [
@@ -842,6 +861,7 @@ var render = function() {
             {
               ref: "getTemplate",
               staticClass: "form-control",
+              attrs: { disabled: _vm.disabled },
               on: { change: _vm.setTemplate }
             },
             [
@@ -1114,7 +1134,7 @@ var render = function() {
                 _c(
                   "button",
                   {
-                    staticClass: "btn btn-primary",
+                    staticClass: "btn btn-outline-primary btn-sm",
                     on: {
                       click: function($event) {
                         $event.preventDefault()
@@ -1128,7 +1148,7 @@ var render = function() {
                 _c(
                   "button",
                   {
-                    staticClass: "btn btn-danger",
+                    staticClass: "btn btn-outline-danger btn-sm",
                     on: {
                       click: function($event) {
                         $event.preventDefault()
@@ -1209,38 +1229,61 @@ var render = function() {
           _c("div", { staticClass: "clearfix" }, [
             _c("div", { staticClass: "float-right" }, [
               _c("p", { staticClass: "small" }, [
-                _vm._v("\n                by \n                "),
-                _c("span", { staticClass: "badge badge-info" }, [
-                  _vm._v(
-                    "\n                    " +
-                      _vm._s(li.name) +
-                      " \n                "
-                  )
-                ]),
+                _c(
+                  "span",
+                  { staticClass: "badge badge-info" },
+                  [
+                    _c("b-icon", { attrs: { icon: "person" } }),
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(li.name) +
+                        " \n                "
+                    )
+                  ],
+                  1
+                ),
                 _vm._v(" · \n                "),
-                _c("span", { staticClass: "badge badge-info" }, [
-                  _vm._v(
-                    "\n                    " +
-                      _vm._s(li.email) +
-                      "\n                "
-                  )
-                ]),
-                _vm._v(" on \n                "),
-                _c("span", { staticClass: "badge badge-info" }, [
-                  _vm._v(
-                    "\n                    " +
-                      _vm._s(_vm.moment(li.created_at)) +
-                      "\n                "
-                  )
-                ]),
+                _c(
+                  "span",
+                  { staticClass: "badge badge-info" },
+                  [
+                    _c("b-icon", { attrs: { icon: "envelope" } }),
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(li.email) +
+                        "\n                "
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "span",
+                  { staticClass: "badge badge-info p-2" },
+                  [
+                    _c("b-icon", { attrs: { icon: "calendar2-day" } }),
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(_vm.moment(li.created_at)) +
+                        "\n                "
+                    )
+                  ],
+                  1
+                ),
                 _vm._v(" ·\n                "),
-                _c("span", { staticClass: "badge badge-info" }, [
-                  _vm._v(
-                    "\n                    " +
-                      _vm._s(_vm.moment(li.created_at).fromNow()) +
-                      "\n                "
-                  )
-                ])
+                _c(
+                  "span",
+                  { staticClass: "badge badge-info p-2" },
+                  [
+                    _c("b-icon", { attrs: { icon: "clock-history" } }),
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(_vm.moment(li.created_at).fromNow()) +
+                        "\n                "
+                    )
+                  ],
+                  1
+                )
               ])
             ])
           ]),
@@ -1254,49 +1297,70 @@ var render = function() {
               "div",
               { staticClass: "float-left" },
               _vm._l(li.tags, function(ta) {
-                return _c("span", [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-outline-info btn-sm",
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          return _vm.getPostByTagId(ta.id)
+                return _c(
+                  "span",
+                  [
+                    _c("b-icon", { attrs: { icon: "tags" } }),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "btn btn-outline-info btn-sm",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.getPostByTagId(ta.id)
+                          }
                         }
-                      }
-                    },
-                    [
-                      _vm._v(
-                        "\n                    " +
-                          _vm._s(ta.tag_name) +
-                          "\n                   "
-                      )
-                    ]
-                  )
-                ])
+                      },
+                      [
+                        _vm._v(
+                          "\n                    " +
+                            _vm._s(ta.tag_name) +
+                            "\n                   "
+                        )
+                      ]
+                    )
+                  ],
+                  1
+                )
               }),
               0
             ),
             _vm._v(" "),
             _c("div", { staticClass: "float-right" }, [
               _c("div", [
-                _c("span", { staticClass: "alert alert-info" }, [
-                  _vm._v("read " + _vm._s(li.read_count))
-                ]),
+                _c(
+                  "span",
+                  [
+                    _c("b-icon", { attrs: { icon: "eye" } }),
+                    _vm._v(
+                      "\n                       " +
+                        _vm._s(li.read_count) +
+                        "\n                   "
+                    )
+                  ],
+                  1
+                ),
                 _vm._v(" "),
                 li.is_public == 1
-                  ? _c("span", { staticClass: "alert alert-success" }, [
-                      _vm._v("Public")
-                    ])
-                  : _c("span", { staticClass: "alert alert-warning" }, [
-                      _vm._v("Private")
-                    ]),
+                  ? _c(
+                      "span",
+                      { staticClass: "alert alert-success" },
+                      [_c("b-icon", { attrs: { icon: "unlock" } })],
+                      1
+                    )
+                  : _c(
+                      "span",
+                      { staticClass: "alert alert-warning" },
+                      [_c("b-icon", { attrs: { icon: "lock" } })],
+                      1
+                    ),
                 _vm._v(" "),
                 _c(
                   "button",
                   {
-                    staticClass: "btn btn-primary",
+                    staticClass: "btn btn-outline-primary btn-sm",
                     on: {
                       click: function($event) {
                         $event.preventDefault()
@@ -1304,13 +1368,14 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("edit")]
+                  [_c("b-icon", { attrs: { icon: "box-arrow-up" } })],
+                  1
                 ),
                 _vm._v(" "),
                 _c(
                   "button",
                   {
-                    staticClass: "btn btn-danger",
+                    staticClass: "btn btn-outline-danger btn-sm",
                     on: {
                       click: function($event) {
                         $event.preventDefault()
@@ -1318,7 +1383,8 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("X")]
+                  [_c("b-icon", { attrs: { icon: "trash" } })],
+                  1
                 )
               ])
             ])

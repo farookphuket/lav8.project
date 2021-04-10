@@ -185,6 +185,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -395,17 +397,72 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "PostSearch",
   data: function data() {
     return {
       posts: [],
-      search: ''
+      search: '',
+      finded: false,
+      resultLength: 0,
+      moment: moment
     };
   },
   methods: {
-    searchPost: function searchPost() {
-      console.log(this.search);
+    searchPost: function searchPost(page) {
+      var _this = this;
+
+      var url = '';
+
+      if (!this.search) {
+        this.finded = false;
+        return;
+      } else {
+        url = "/api/searchPost?search=".concat(this.search);
+        axios.get(url).then(function (res) {
+          _this.posts = res.data.posts;
+
+          if (_this.posts.data.length >= 1) {
+            _this.finded = true;
+          }
+
+          _this.resultLength = _this.posts.data.length;
+        });
+      }
     }
   }
 });
@@ -430,7 +487,13 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("post-search"),
+      _c("post-search", {
+        on: {
+          openPost: function($event) {
+            return _vm.openPost($event)
+          }
+        }
+      }),
       _vm._v(" "),
       _vm.isNorm == true
         ? _c("post-list", {
@@ -486,8 +549,6 @@ var render = function() {
       "div",
       { staticClass: "container" },
       [
-        _vm._m(0),
-        _vm._v(" "),
         _vm._l(_vm.posts.data, function(po) {
           return _c("div", [
             _c("div", { staticClass: "section-title mb-4" }, [
@@ -630,19 +691,20 @@ var render = function() {
           ])
         }),
         _vm._v(" "),
-        _c("div", { staticClass: "col-lg-12" }, [
+        _c("div", { staticClass: "nav-scroller py-1 mb-2 pt-4" }, [
           _c(
             "ul",
-            { staticClass: "pagination" },
+            { staticClass: "pagination flex-wrap" },
             [
               _c("li", { staticClass: "page-list" }, [
-                _vm._v("\n                    showing from "),
-                _c("span", [_vm._v(_vm._s(_vm.posts.from))]),
-                _vm._v(" \n                    to "),
-                _c("span", [_vm._v(_vm._s(_vm.posts.to))]),
-                _vm._v(" of \n                    "),
-                _c("span", [_vm._v(_vm._s(_vm.posts.total))]),
-                _vm._v(" ·\n                ")
+                _c("div", { staticClass: "page-link disabled" }, [
+                  _vm._v("\n\n                        showing from "),
+                  _c("span", [_vm._v(_vm._s(_vm.posts.from))]),
+                  _vm._v(" \n                        to "),
+                  _c("span", [_vm._v(_vm._s(_vm.posts.to))]),
+                  _vm._v(" of \n                        "),
+                  _c("span", [_vm._v(_vm._s(_vm.posts.total))])
+                ])
               ]),
               _vm._v(" "),
               _vm._l(_vm.posts.links, function(li) {
@@ -651,6 +713,7 @@ var render = function() {
                     ? _c(
                         "a",
                         {
+                          staticClass: "page-link",
                           attrs: { href: "" },
                           domProps: { innerHTML: _vm._s(li.label) },
                           on: {
@@ -670,7 +733,10 @@ var render = function() {
                       )
                     : _c(
                         "span",
-                        { domProps: { innerHTML: _vm._s(li.label) } },
+                        {
+                          staticClass: "page-link disabled",
+                          domProps: { innerHTML: _vm._s(li.label) }
+                        },
                         [
                           _vm._v(
                             "\n                        " +
@@ -678,15 +744,14 @@ var render = function() {
                               " \n                    "
                           )
                         ]
-                      ),
-                  _vm._v(" ·\n                ")
+                      )
                 ])
               }),
               _vm._v(" "),
-              _c("li", { staticClass: "page-list" }, [
+              _c("li", { staticClass: "page-list active" }, [
                 _c(
                   "span",
-                  { staticClass: "active" },
+                  { staticClass: "page-link disabled" },
                   [
                     _c("b-icon", { attrs: { icon: "book-half" } }),
                     _vm._v(
@@ -707,16 +772,7 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "section-title" }, [
-      _c("h2", [_vm._v("Blog Post")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -967,51 +1023,146 @@ var render = function() {
   return _c("div", { staticClass: "container" }, [
     _vm._m(0),
     _vm._v(" "),
-    _c("form", { attrs: { action: "" } }, [
-      _c(
-        "div",
-        { staticClass: "form-group" },
-        [
-          _c(
-            "b-input-group",
-            [
-              _c(
-                "b-input-group-prepend",
-                { attrs: { "is-text": "" } },
-                [_c("b-icon", { attrs: { icon: "search" } })],
-                1
-              ),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.search,
-                    expression: "search"
-                  }
-                ],
-                ref: "search",
-                staticClass: "form-control",
-                attrs: { type: "text", placeholder: "Search post" },
-                domProps: { value: _vm.search },
-                on: {
-                  keyup: _vm.searchPost,
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+    _c("div", [
+      _c("form", { attrs: { action: "" } }, [
+        _c(
+          "div",
+          { staticClass: "form-group" },
+          [
+            _c(
+              "b-input-group",
+              [
+                _c(
+                  "b-input-group-prepend",
+                  { attrs: { "is-text": "" } },
+                  [_c("b-icon", { attrs: { icon: "search" } })],
+                  1
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.search,
+                      expression: "search"
                     }
-                    _vm.search = $event.target.value
+                  ],
+                  ref: "search",
+                  staticClass: "form-control",
+                  attrs: { type: "text", placeholder: "Search post" },
+                  domProps: { value: _vm.search },
+                  on: {
+                    keyup: _vm.searchPost,
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.search = $event.target.value
+                    }
                   }
-                }
-              })
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ])
+                })
+              ],
+              1
+            )
+          ],
+          1
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.finded,
+            expression: "finded"
+          }
+        ]
+      },
+      [
+        _c("div", { staticClass: "section-title" }, [
+          _c("h2", [_vm._v(_vm._s(_vm.resultLength) + " item(s)")])
+        ]),
+        _vm._v(" "),
+        _c(
+          "ul",
+          { staticClass: "list-group" },
+          _vm._l(_vm.posts.data, function(li) {
+            return _c("li", { staticClass: "list-group-item" }, [
+              _c("div", { staticClass: "container" }, [
+                _c("h3", [
+                  _c(
+                    "a",
+                    {
+                      attrs: { href: "" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.$emit("openPost", li.slug)
+                        }
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(li.post_title) +
+                          " \n                        "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c(
+                    "span",
+                    [
+                      _c("b-icon", { attrs: { icon: "calendar2-date" } }),
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(_vm.moment(li.created_at)) +
+                          "\n                        "
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" ·\n                        "),
+                  _c(
+                    "span",
+                    [
+                      _c("b-icon", { attrs: { icon: "clock-history" } }),
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(_vm.moment(li.created_at).fromNow()) +
+                          "\n                        "
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" ·\n                        "),
+                  _c(
+                    "span",
+                    [
+                      _c("b-icon", { attrs: { icon: "eye" } }),
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(li.read_count) +
+                          "\n                        "
+                      )
+                    ],
+                    1
+                  )
+                ])
+              ])
+            ])
+          }),
+          0
+        )
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -1020,7 +1171,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "section-title" }, [
-      _c("h2", [_vm._v("search")])
+      _c("h2", [_vm._v("Blog")])
     ])
   }
 ]

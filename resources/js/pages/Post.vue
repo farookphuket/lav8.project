@@ -1,6 +1,6 @@
 <template>
     <div>
-        <post-search></post-search>
+        <post-search @openPost="openPost($event)"></post-search>
         <post-list :posts="posts" @openPost="openPost($event)" 
             @getPostList="getPostList($event)" 
             @openTag="openTag($event)"

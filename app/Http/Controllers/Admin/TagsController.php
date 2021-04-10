@@ -18,24 +18,16 @@ class TagsController extends Controller
      */
     public function index()
     {
-        $tags = Tag::orderBy("created_at","desc")
-            ->with("posts")
-            ->paginate(2);
-
-        return view('Admin.Tags.index')->with([
-            'tags' => $tags
-
-        ]);
+        return view('Admin.Tags.index');
     }
 
     /*
      *  getTags will return tags list to vue getTags
      */ 
     public function getTags(){
-        $tags = Tag::orderBy("created_at","DESC")
-                    ->with("posts")
-                    ->paginate(5)
-                   ->onEachSide(1);
+        $tags = Tag::with("posts")
+                ->orderBy("created_at","desc")
+                ->paginate(5);
         return response()->json(["tags"=>$tags],200);
     }
     /**

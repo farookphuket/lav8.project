@@ -5,7 +5,9 @@
 
 @section('tag_in_head')
 
-
+<script>
+    var userId = "{!!Auth::user()->id!!}";
+</script>
 
 @endsection
 

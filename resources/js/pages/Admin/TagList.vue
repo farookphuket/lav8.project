@@ -1,80 +1,78 @@
 <template>
     <div class="container">
-        <div class="card card-body" 
-            v-for="li in tags.data">
-            <div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <h3 class="text-center">
-                            {{li.tag_name}}
-                        </h3>
-                    </div>
-                    <div class="col-md-3">
-                        <span class="badge badge-info">
-                            {{li.tag_name}}
-                        </span> 
-                        <span class="badge badge-info">
-                            {{moment(li.created_at)}}
-                        </span> &middot; 
-                        <span class="badge badge-info">
-                            {{moment(li.created_at).fromNow()}}
-                        </span> 
-                    </div>
-                    <div class="col-md-3">
-                        <div class="clearfix">
-                            <div class="float-right">
-                                <div class="badge badge-info">
-                                    {{li.posts.length}}
-                                </div>
-                                <button class="btn btn-primary"
-                                    @click.prevent="$emit('tagEdit',li.id)">
-                                    edit</button>
-                                <button class="btn btn-danger"
-                                    @click.prevent="$emit('tagDelete',li.id)">
-                                    x</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <ul class="list-group"
-                v-show="li.posts.length != 0">
-                <li class="list-group-item"
-                    v-for="mm in li.posts">
-                    <a href="#" @click="$emit('goReadPost',mm.slug)">
-                        {{mm.post_title}}
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <div v-for="ta in tags.data">
+            <h3 class="text-center pt-2">
+                {{ta.tag_name}}
+            </h3>
+            <div class="clearfix">
 
+                <div class="float-right">
+                    <span>
+                        <b-icon icon="calenda2-day"></b-icon>
+                        {{moment(ta.created_at)}}
+                    </span> &middot; 
+                    <span>
+                        <b-icon icon="clock-history"></b-icon>
+                        {{moment(ta.created_at).fromNow()}}
+                    </span>
+                    <span>
+                        <b-icon icon="folder-symlink"></b-icon>
+                        {{ta.posts.length}}
+                    </span>
+                    <button class="btn btn-outline-primary btn-sm" 
+                        @click.prevent="$emit('tagEdit',ta.id)">edit</button>
+
+                    <button class="btn btn-outline-danger btn-sm" 
+                        @click.prevent="$emit('tagDelete',ta.id)">
+                        <b-icon icon="trash"></b-icon>
+                        
+                    </button>
+                </div>
+            </div><!-- end of div.clearfix -->
+            <div>
+                <ul>
+                    <li v-for="po in ta.posts">
+                        <span>
+                            <b-icon icon="file-earmark-word"></b-icon>
+                            <a href="" 
+                                @click.prevent="$emit('goReadPost',po.slug)">
+
+                                {{po.post_title}}
+                            </a>
+                        </span>
+                    </li>
+                </ul>
+            </div><!-- end of div post list -->
+            <hr class="pt-4 mb-2">
+            
+        </div><!-- end of div v-for -->
         <div class="pa">
             <ul class="pagination">
                 <li class="page-item">
-                    showing from 
-                    <span>{{tags.from}}</span> to 
-                    <span>{{tags.to}}</span> of 
-                    <span>{{tags.total}}</span>
+                    showing from <span>{{tags.from}}</span> to 
+                    <span>{{tags.to}}</span> of <span>{{tags.total}}</span> 
+                    &middot;
                 </li>
-                <li class="page-item" v-for="mm in tags.links">
-                    <a href="" 
-                        v-if="mm.active == false && mm.url != null"
-                        @click.prevent="$emit('getTags',mm.url)"
-                        v-html="mm.label">
-                        {{mm.label}}
+                <li class="page-item" v-for="li in tags.links">
+                    <a href="" v-html="li.label" 
+                        v-if="!li.active  && li.url != null" 
+                        @click.prevent="$emit('getTags',li.url)"
+                        >
+                        {{li.label}}
                     </a>
-                    <span class="active" v-html="mm.label" v-else>
-                        {{mm.label}}
-                    </span>
+                    <span class="active" v-html="li.label" v-else>
+                        {{li.label}}
+                    </span> &middot;
                 </li>
                 <li class="page-item">
                     <span class="active">
+                        <b-icon icon="book-half"></b-icon>
                         {{tags.current_page}}
                     </span>
                 </li>
             </ul>
-        </div>
-    </div>
+        </div><!-- end of div pagination -->
+    </div><!-- end of main div -->
 </template>
 
 
@@ -85,11 +83,9 @@ export default{
     props:["tags"],
     data(){
         return{
-            moment:moment
+            moment:moment,
+            tag_title:'',
         }
     },
-    methods:{
-
-    }
 }
 </script>

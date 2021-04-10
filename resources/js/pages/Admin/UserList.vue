@@ -6,62 +6,56 @@
       <div class="clearfix">
         <div class="float-right">
 
-          <button class="btn btn-danger close"
-            @click.prevent="delUser(li.id)">
-            &times;
+          <button class="btn btn-outline-danger btn-sm "
+            @click.prevent="delUser(li.id)" v-if="li.id != userId">
+              <b-icon icon="trash"></b-icon>
           </button>
-
+          <button class="btn btn-outline-danger btn-sm" disabled v-else>
+              <b-icon icon="trash"></b-icon>
+          </button>
         </div>
       </div>
       <div>
         <p>
-        name  {{li.name}} email {{li.email}}
+        <span>
+            <b-icon icon="person"></b-icon>
+            {{li.name}}
+        </span> &middot; 
+        <span>
+            <b-icon icon="envelope"></b-icon>
+            {{li.email}}
+        </span>
+          
         </p>
-        
+        <p class="pt-2">
+            <span>
+                <b-icon icon="calenda2-day"></b-icon>
+              {{moment(li.created_at)}}
+            </span> &middot;
+            <span>
+                <b-icon icon="clock-history"></b-icon>
+              {{moment(li.created_at).fromNow()}}
+            </span> 
+        </p>
       </div>
       <span>role</span>
       <ul>
        
         <li
          v-for="ro in li.roles">
-          {{ro.role_name}}
-        </li>
-      </ul>
-
-
-      <ul>
-        <li>
-          create
-
-            <span class="badge badge-info">
-              {{moment(li.created_at)}}
-            </span>
-        </li>
-        <li>
-
-            &middot;
-            <span class="badge badge-info">
-              {{moment(li.created_at).fromNow()}}
-            </span>
-        </li>
-        <li>
-          update 
-
-            <span class="badge badge-info">
-              {{moment(li.updated_at)}}
-            </span>
-        </li>
-        <li>
-            &middot;
-            <span class="badge badge-info">
-              {{moment(li.updated_at).fromNow()}}
+            <span>
+                <b-icon icon="tags"></b-icon>
+                {{ro.role_name}}
             </span>
         </li>
       </ul>
+
+
         <div class="clearfix">
           <div class="float-right">
-            <button class="btn btn-primary"
+            <button class="btn btn-outline-primary btn-sm"
               @click.prevent="editUser(li.id)">
+                <b-icon icon="arrow-up-circle"></b-icon>
               edit
             </button>
           </div>
@@ -126,9 +120,14 @@ export default{
   props:["users"],
   data(){
     return{
-      moment:moment
+      moment:moment,
+        userId:'',
     }
   },
+    mounted(){
+        this.userId = window.userId
+        //console.log(this.userId)
+    },
 
   methods:{
     editUser(id){

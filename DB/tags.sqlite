@@ -54,3 +54,16 @@ INSERT INTO 'tags' ('id','tag_name','created_at','updated_at') VALUES (NULL,
 'ข่าวโควิด',
 '2021-02-23 23:23:23',
  '2021-02-23 23:23:23');
+
+
+
+
+/* Tag 9 Tag รอมฎอน 10 Apr 2021 */
+INSERT INTO 'tags' ('id','tag_name','created_at','updated_at') VALUES (NULL,
+'รอมฎอน',
+'2021-04-10 08:57:23',
+ '2021-04-10 08:57:23');
+
+
+
+

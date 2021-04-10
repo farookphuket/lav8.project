@@ -9,8 +9,8 @@
                 </div>
             </div>
             <div class="col-md-4 pt-2" v-for="vi in videos.data" v-else>
-                <div class="card">
-                    <div class="card-body">
+                <div>
+                    
                         <div class="video-container" v-html="vi.embed">
                             {{ vi.embed }}
                         </div>
@@ -25,53 +25,57 @@
                                 {{ moment(vi.created_at).fromNow() }}
                             </span>
                         </p>
-                    </div>
-                    <!-- end of div.card-body -->
                 </div>
                 <!-- end of div.card -->
             </div>
             <!-- end of div.col-md-4 -->
+            <div class="col-lg-12 pt-2">&nbsp;</div>
+            <!-- get the space between pagination and the content -->
+            <div class="nav-scroller py-1 mb-2">
+                <nav class="nav d-flex justify-content-center">
+                    <ul class="pagination flex-wrap">
+                        <li class="page-item disabled">
+                            <div class="page-link">
+                                showing from
+                                <span>
+                                    {{ videos.from }}
+                                </span>
+                                to
+                                <span>
+                                    {{ videos.to }}
+                                </span>
+                                of
+                                <span>
+                                    {{ videos.total }}
+                                </span>
 
-            <div class="col-lg-12 pt-4">
-                <ul class="pagination">
-                    <li class="page-item">
-                        showing from
-                        <span>
-                            {{ videos.from }}
-                        </span>
-                        to
-                        <span>
-                            {{ videos.to }}
-                        </span>
-                        of
-                        <span>
-                            {{ videos.total }}
-                        </span>
-                        &middot;
-                    </li>
+                            </div>
+                        </li>
 
-                    <li class="page-item" v-for="li in videos.links">
-                        <a
-                            href=""
-                            @click.prevent="$emit('getVideos', li.url)"
-                            v-if="li.active != true && li.url != null"
-                            v-html="li.label"
-                        >
-                            {{ li.label }}
-                        </a>
-                        <span class="active" v-html="li.label" v-else>
-                            {{ li.label }}
-                        </span>
-                    </li>
+                        <li class="page-item" v-for="li in videos.links">
+                            <a class="page-link"
+                                href=""
+                                @click.prevent="$emit('getVideos', li.url)"
+                                v-if="li.active != true && li.url != null"
+                                v-html="li.label"
+                            >
+                                {{ li.label }}
+                            </a>
+                            <span class="page-link" v-html="li.label" v-else>
+                                {{ li.label }}
+                            </span>
+                        </li>
 
-                    <li class="page-item">
-                        <span class="active">
-                            {{ videos.current_page }}
-                        </span>
-                    </li>
-                </ul>
+                        <li class="page-item active">
+                            <span class="page-link">
+                                <b-icon icon="book-half"></b-icon>
+                                {{ videos.current_page }}
+                            </span>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            <!-- end of div.col-lg-12 pagination -->
+            <!-- end of div.nav-scroller pagination -->
         </div>
         <!-- end of div.row -->
 

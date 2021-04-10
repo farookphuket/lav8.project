@@ -13,10 +13,46 @@ Tag table
 |  Manjaro           |        5     |
 |  Open Software     |        6     |
 |  หนังสือนิยาย         |        7     |
+|  ข่าวโควิด           |        8     |
+|  เดือนรอมฎอน        |        9     |
 |                    |              |
 ------------------------------------
 
 */
+
+
+
+
+
+
+
+
+
+/* 
+
+post 21  รอมฎอน 2564 เดือนแห่งศรัทธา การถือศีลอดเพื่อฝึกตนของอิสลามิกชนทั่วโลก  
+has the tag 8 
+
+*/
+INSERT INTO 'post_tag' ('id','post_id','tag_id','created_at','updated_at') 
+VALUES (NULL,'21','9',
+'2021-04-10 08:51:16',
+'2021-04-10 08:52:17');
+
+INSERT INTO 'post_tag' ('id','post_id','tag_id','created_at','updated_at') 
+VALUES (NULL,'21','1',
+'2021-04-10 08:51:16',
+'2021-04-10 08:52:17');
+
+INSERT INTO 'post_tag' ('id','post_id','tag_id','created_at','updated_at') 
+VALUES (NULL,'21','2',
+'2021-04-10 08:51:16',
+'2021-04-10 08:52:17');
+
+
+
+
+
 
 
 

@@ -1,5 +1,5 @@
 <template>
-<div class="tmp-form">
+<div class="container">
 <form >
     <div class="form-group">
         <input v-model="section" class="form-control" 
@@ -33,25 +33,23 @@
             </ul>
         </div>
        <div class="float-right">
-            <button type="submit"
-                class="btn btn-primary"
+       <button type="submit"
+       class="btn btn-outline-primary btn-sm "
                 @click.prevent="saveTmp(saveId)">Save</button>
 
             <button 
-                class="btn btn-danger"
+                class="btn btn-outline-danger btn-sm"
                 @click.prevent="clearFormData()">Clear</button>
        </div>
+       <p class="pt-4 mb-4">&nbsp;</p>
     </div>
 </form>
 
 </div>
 
 </template>
-<style scoped>
-.tmp-form{
-    margin-bottom:8em;
-}
-</style>
+
+
 
 <script>
 

@@ -4,7 +4,7 @@
         <form action="">
             <div class="form-group">
                 <select class="form-control" ref="getTemplate"
-                    @change="setTemplate">
+                    @change="setTemplate" :disabled="disabled">
                     <option value="0">-- Select template --</option>
                     <option v-for="li in templates" 
                             :value="li.id">{{li.title}}</option>
@@ -77,9 +77,9 @@
                             </label>
                         </div>
                         <div class="float-right">
-                            <button class="btn btn-primary"
+                            <button class="btn btn-outline-primary btn-sm"
                                 @click.prevent="postSave(saveId)">Save</button>
-                            <button class="btn btn-danger"
+                            <button class="btn btn-outline-danger btn-sm"
                                 @click.prevent="clearFormData">Clear</button>
                         </div>
                     </div>
@@ -127,6 +127,7 @@ export default{
     },
     data(){
         return{
+            disabled:false,
             saveId:0,
             title:'',
             slug:'',
@@ -164,9 +165,12 @@ export default{
             },2500)
         },
         getEditData(id){
-            if(!id){
-                return
-            }
+            /* 
+            the template should not be able to select on the edit mode 
+            fixed 10 Apr 2021
+            */ 
+            (!this.editId || id == this.editId)?this.disabled = true:this.disabled = false
+
             this.user_select_tag = []
             this.is_public = false
             let url = `/admin/post/${id}/edit`

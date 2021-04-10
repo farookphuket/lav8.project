@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="clearfix">
             <div class="float-right">
-                <p style="color:green">system last update : 02 Apr 2021</p>
+                <p style="color:green">system last update : 10 Apr 2021</p>
                 <div class="btn-group pt-2 mb-4">
                     <button v-if="showPostForm == false" 
                         @click="showPostForm = true"
@@ -93,6 +93,7 @@ export default{
         },
         postEdit(id){
             this.editId = id
+            this.showPostForm = true
         },
         postDelete(id){
             if(confirm("this will delete are you sure?") == true){

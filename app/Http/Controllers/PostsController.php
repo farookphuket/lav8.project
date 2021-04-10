@@ -63,6 +63,23 @@ class PostsController extends Controller
 
        return response()->json(["posts" => $posts]); 
     }
+
+    // searchPost added on 10 Apr 2021
+    public function searchPost(){
+        $search = request()->search;
+        $posts = Post::orderBy("created_at","desc")
+                        ->with("user")
+                        ->with("tags")
+                        ->where("post_title","LIKE","%{$search}%")
+                        ->paginate(25)->onEachSide(1);
+
+        return response()->json([
+            "posts" => $posts
+        ]);
+
+    }
+
+
     public function about(){
 
         $post = Post::where("slug","about")->limit(1)->get();

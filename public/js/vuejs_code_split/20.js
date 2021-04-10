@@ -181,6 +181,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -293,154 +297,168 @@ var render = function() {
             ? _c("div", { staticClass: "col-lg-12" }, [_vm._m(0)])
             : _vm._l(_vm.videos.data, function(vi) {
                 return _c("div", { staticClass: "col-md-4 pt-2" }, [
-                  _c("div", { staticClass: "card" }, [
-                    _c("div", { staticClass: "card-body" }, [
+                  _c("div", [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "video-container",
+                        domProps: { innerHTML: _vm._s(vi.embed) }
+                      },
+                      [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(vi.embed) +
+                            "\n                    "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "pt-2 mb-2" }, [
                       _c(
-                        "div",
+                        "a",
                         {
-                          staticClass: "video-container",
-                          domProps: { innerHTML: _vm._s(vi.embed) }
+                          attrs: { href: "" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.showVideo(vi.id)
+                            }
+                          }
                         },
                         [
+                          _c("b-icon", { attrs: { icon: "film" } }),
                           _vm._v(
-                            "\n                        " +
-                              _vm._s(vi.embed) +
-                              "\n                    "
+                            " \n                            " +
+                              _vm._s(_vm.smartTitle(vi.title, 9)) +
+                              "\n                        "
                           )
-                        ]
+                        ],
+                        1
                       ),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "pt-2 mb-2" }, [
-                        _c(
-                          "a",
-                          {
-                            attrs: { href: "" },
-                            on: {
-                              click: function($event) {
-                                $event.preventDefault()
-                                return _vm.showVideo(vi.id)
-                              }
-                            }
-                          },
-                          [
-                            _c("b-icon", { attrs: { icon: "film" } }),
-                            _vm._v(
-                              " \n                            " +
-                                _vm._s(_vm.smartTitle(vi.title, 9)) +
-                                "\n                        "
-                            )
-                          ],
-                          1
-                        ),
-                        _vm._v(
-                          "\n                        -\n                        "
-                        ),
-                        _c(
-                          "span",
-                          { staticClass: "badge badge-info" },
-                          [
-                            _c("b-icon", { attrs: { icon: "clock-history" } }),
-                            _vm._v(
-                              " \n                            " +
-                                _vm._s(_vm.moment(vi.created_at).fromNow()) +
-                                "\n                        "
-                            )
-                          ],
-                          1
-                        )
-                      ])
+                      _vm._v(
+                        "\n                        -\n                        "
+                      ),
+                      _c(
+                        "span",
+                        { staticClass: "badge badge-info" },
+                        [
+                          _c("b-icon", { attrs: { icon: "clock-history" } }),
+                          _vm._v(
+                            " \n                            " +
+                              _vm._s(_vm.moment(vi.created_at).fromNow()) +
+                              "\n                        "
+                          )
+                        ],
+                        1
+                      )
                     ])
                   ])
                 ])
               }),
           _vm._v(" "),
-          _c("div", { staticClass: "col-lg-12 pt-4" }, [
-            _c(
-              "ul",
-              { staticClass: "pagination" },
-              [
-                _c("li", { staticClass: "page-item" }, [
-                  _vm._v(
-                    "\n                    showing from\n                    "
-                  ),
-                  _c("span", [
-                    _vm._v(
-                      "\n                        " +
-                        _vm._s(_vm.videos.from) +
-                        "\n                    "
-                    )
+          _c("div", { staticClass: "col-lg-12 pt-2" }, [_vm._v(" ")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "nav-scroller py-1 mb-2" }, [
+            _c("nav", { staticClass: "nav d-flex justify-content-center" }, [
+              _c(
+                "ul",
+                { staticClass: "pagination flex-wrap" },
+                [
+                  _c("li", { staticClass: "page-item disabled" }, [
+                    _c("div", { staticClass: "page-link" }, [
+                      _vm._v(
+                        "\n                            showing from\n                            "
+                      ),
+                      _c("span", [
+                        _vm._v(
+                          "\n                                " +
+                            _vm._s(_vm.videos.from) +
+                            "\n                            "
+                        )
+                      ]),
+                      _vm._v(
+                        "\n                            to\n                            "
+                      ),
+                      _c("span", [
+                        _vm._v(
+                          "\n                                " +
+                            _vm._s(_vm.videos.to) +
+                            "\n                            "
+                        )
+                      ]),
+                      _vm._v(
+                        "\n                            of\n                            "
+                      ),
+                      _c("span", [
+                        _vm._v(
+                          "\n                                " +
+                            _vm._s(_vm.videos.total) +
+                            "\n                            "
+                        )
+                      ])
+                    ])
                   ]),
-                  _vm._v("\n                    to\n                    "),
-                  _c("span", [
-                    _vm._v(
-                      "\n                        " +
-                        _vm._s(_vm.videos.to) +
-                        "\n                    "
-                    )
-                  ]),
-                  _vm._v("\n                    of\n                    "),
-                  _c("span", [
-                    _vm._v(
-                      "\n                        " +
-                        _vm._s(_vm.videos.total) +
-                        "\n                    "
-                    )
-                  ]),
-                  _vm._v("\n                    ·\n                ")
-                ]),
-                _vm._v(" "),
-                _vm._l(_vm.videos.links, function(li) {
-                  return _c("li", { staticClass: "page-item" }, [
-                    li.active != true && li.url != null
-                      ? _c(
-                          "a",
-                          {
-                            attrs: { href: "" },
-                            domProps: { innerHTML: _vm._s(li.label) },
-                            on: {
-                              click: function($event) {
-                                $event.preventDefault()
-                                return _vm.$emit("getVideos", li.url)
+                  _vm._v(" "),
+                  _vm._l(_vm.videos.links, function(li) {
+                    return _c("li", { staticClass: "page-item" }, [
+                      li.active != true && li.url != null
+                        ? _c(
+                            "a",
+                            {
+                              staticClass: "page-link",
+                              attrs: { href: "" },
+                              domProps: { innerHTML: _vm._s(li.label) },
+                              on: {
+                                click: function($event) {
+                                  $event.preventDefault()
+                                  return _vm.$emit("getVideos", li.url)
+                                }
                               }
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "\n                        " +
-                                _vm._s(li.label) +
-                                "\n                    "
-                            )
-                          ]
+                            },
+                            [
+                              _vm._v(
+                                "\n                            " +
+                                  _vm._s(li.label) +
+                                  "\n                        "
+                              )
+                            ]
+                          )
+                        : _c(
+                            "span",
+                            {
+                              staticClass: "page-link",
+                              domProps: { innerHTML: _vm._s(li.label) }
+                            },
+                            [
+                              _vm._v(
+                                "\n                            " +
+                                  _vm._s(li.label) +
+                                  "\n                        "
+                              )
+                            ]
+                          )
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "page-item active" }, [
+                    _c(
+                      "span",
+                      { staticClass: "page-link" },
+                      [
+                        _c("b-icon", { attrs: { icon: "book-half" } }),
+                        _vm._v(
+                          "\n                            " +
+                            _vm._s(_vm.videos.current_page) +
+                            "\n                        "
                         )
-                      : _c(
-                          "span",
-                          {
-                            staticClass: "active",
-                            domProps: { innerHTML: _vm._s(li.label) }
-                          },
-                          [
-                            _vm._v(
-                              "\n                        " +
-                                _vm._s(li.label) +
-                                "\n                    "
-                            )
-                          ]
-                        )
-                  ])
-                }),
-                _vm._v(" "),
-                _c("li", { staticClass: "page-item" }, [
-                  _c("span", { staticClass: "active" }, [
-                    _vm._v(
-                      "\n                        " +
-                        _vm._s(_vm.videos.current_page) +
-                        "\n                    "
+                      ],
+                      1
                     )
                   ])
-                ])
-              ],
-              2
-            )
+                ],
+                2
+              )
+            ])
           ])
         ],
         2

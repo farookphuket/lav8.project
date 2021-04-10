@@ -90,6 +90,7 @@ export default{
         },
         editTemplate(id){
             this.editId = id
+            this.showTemplateForm = true
         },
         delTemplate(id){
             if(confirm(`this will delete ${id}?`) == true){

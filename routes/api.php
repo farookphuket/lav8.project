@@ -23,6 +23,9 @@ Route::get('/getPostList',[pubPost::class,'getPostList'])->name('getPostList');
 Route::get('/getPostListByTag/{tag_id}',[pubPost::class,'getPostListByTag'])
     ->name('getPostListByTag');
 
+// search post 
+Route::get('/searchPost',[pubPost::class,'searchPost'])->name('searchPost');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 

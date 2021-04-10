@@ -146,6 +146,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -448,70 +455,88 @@ var render = function() {
       0
     ),
     _vm._v(" "),
-    _c("div", { staticClass: "pa pt-4" }, [
-      _c(
-        "ul",
-        { staticClass: "pagination" },
-        [
-          _c("li", { staticClass: "page-item" }, [
-            _vm._v("\n                showing from  \n                "),
-            _c("span", [_vm._v(_vm._s(_vm.songs.from))]),
-            _vm._v("  \n                to \n                "),
-            _c("span", [_vm._v(_vm._s(_vm.songs.to))]),
-            _vm._v("   \n                of \n                "),
-            _c("span", [_vm._v(_vm._s(_vm.songs.total))]),
-            _vm._v(" ·\n            ")
-          ]),
-          _vm._v(" "),
-          _vm._l(_vm.songs.links, function(ll) {
-            return _c("li", { staticClass: "page-item" }, [
-              ll.active == false && ll.url != null
-                ? _c(
-                    "a",
-                    {
-                      attrs: { href: "" },
-                      domProps: { innerHTML: _vm._s(ll.label) },
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          return _vm.$emit("getSongList", ll.url)
+    _c("div", { staticClass: "nav-scroller py-1 mb-2 pt-4" }, [
+      _c("nav", { staticClass: "nav d-flex justify-content-center" }, [
+        _c(
+          "ul",
+          { staticClass: "pagination flex-wrap" },
+          [
+            _c("li", { staticClass: "page-item disabled" }, [
+              _c("div", { staticClass: "page-link" }, [
+                _vm._v(
+                  "\n                        showing from  \n                        "
+                ),
+                _c("span", [_vm._v(_vm._s(_vm.songs.from))]),
+                _vm._v(
+                  "  \n                        to \n                        "
+                ),
+                _c("span", [_vm._v(_vm._s(_vm.songs.to))]),
+                _vm._v(
+                  "   \n                        of \n                        "
+                ),
+                _c("span", [_vm._v(_vm._s(_vm.songs.total))])
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._l(_vm.songs.links, function(ll) {
+              return _c("li", { staticClass: "page-item" }, [
+                ll.active == false && ll.url != null
+                  ? _c(
+                      "a",
+                      {
+                        staticClass: "page-link",
+                        attrs: { href: "" },
+                        domProps: { innerHTML: _vm._s(ll.label) },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.$emit("getSongList", ll.url)
+                          }
                         }
-                      }
-                    },
-                    [
-                      _vm._v(
-                        "\n                    " +
-                          _vm._s(ll.label) +
-                          "\n                "
-                      )
-                    ]
+                      },
+                      [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(ll.label) +
+                            "\n                    "
+                        )
+                      ]
+                    )
+                  : _c(
+                      "span",
+                      {
+                        staticClass: "page-link active",
+                        domProps: { innerHTML: _vm._s(ll.label) }
+                      },
+                      [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(ll.label) +
+                            "\n                    "
+                        )
+                      ]
+                    )
+              ])
+            }),
+            _vm._v(" "),
+            _c("li", { staticClass: "page-item active" }, [
+              _c(
+                "span",
+                { staticClass: "page-link" },
+                [
+                  _c("b-icon", { attrs: { icon: "book-half" } }),
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(_vm.songs.current_page)
                   )
-                : _c(
-                    "span",
-                    {
-                      staticClass: "active",
-                      domProps: { innerHTML: _vm._s(ll.label) }
-                    },
-                    [
-                      _vm._v(
-                        "\n                    " +
-                          _vm._s(ll.label) +
-                          "\n                "
-                      )
-                    ]
-                  ),
-              _vm._v(" ·\n\n            ")
+                ],
+                1
+              )
             ])
-          }),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c("span", { staticClass: "active" }, [
-              _vm._v(_vm._s(_vm.songs.current_page))
-            ])
-          ])
-        ],
-        2
-      )
+          ],
+          2
+        )
+      ])
     ]),
     _vm._v(" "),
     _c("p", { staticClass: "pt-4" }, [_vm._v(" ")])
@@ -594,7 +619,7 @@ var render = function() {
             "div",
             { staticClass: "row" },
             _vm._l(_vm.song, function(li) {
-              return _c("div", { staticClass: "col-lg-3 pt-2" }, [
+              return _c("div", { staticClass: "col-lg-4 pt-2" }, [
                 _c("div", { staticClass: "card" }, [
                   _c(
                     "a",

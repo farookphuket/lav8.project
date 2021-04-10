@@ -11,17 +11,20 @@
             <div class="clearfix">
                 <div class="float-right">
                     <p class="small">
-                    by 
                     <span class="badge badge-info">
+                        <b-icon icon="person"></b-icon>
                         {{li.name}} 
                     </span> &middot; 
                     <span class="badge badge-info">
+                        <b-icon icon="envelope"></b-icon>
                         {{li.email}}
-                    </span> on 
-                    <span class="badge badge-info">
+                    </span> 
+                    <span class="badge badge-info p-2">
+                        <b-icon icon="calendar2-day"></b-icon>
                         {{moment(li.created_at)}}
                     </span> &middot;
-                    <span class="badge badge-info">
+                    <span class="badge badge-info p-2">
+                        <b-icon icon="clock-history"></b-icon>
                         {{moment(li.created_at).fromNow()}}
                     </span>
 
@@ -35,6 +38,7 @@
             <div class="clearfix">
                 <div class="float-left">
                     <span v-for="ta in li.tags">
+                        <b-icon icon="tags"></b-icon>
                        <a @click.prevent="getPostByTagId(ta.id)" 
                        class="btn btn-outline-info btn-sm"
                        >
@@ -44,15 +48,27 @@
                 </div>
                 <div class="float-right">
                     <div>
-                       <span class="alert alert-info">read {{li.read_count}}</span>
+                       <span>
+                           <b-icon icon="eye"></b-icon>
+                           {{li.read_count}}
+                       </span>
                         <span class="alert alert-success"
-                              v-if="li.is_public == 1">Public</span>
+                              v-if="li.is_public == 1">
+                            <b-icon icon="unlock"></b-icon>
+                        </span>
 
-                        <span class="alert alert-warning" v-else>Private</span>
-                        <button class="btn btn-primary"
-                                @click.prevent="$emit('postEdit',li.id)">edit</button>
-                        <button class="btn btn-danger" 
-                            @click.prevent="$emit('postDelete',li.id)">X</button>
+                        <span class="alert alert-warning" v-else>
+                            <b-icon icon="lock"></b-icon>
+                        </span>
+                        <button class="btn btn-outline-primary btn-sm"
+                                @click.prevent="$emit('postEdit',li.id)">
+                            <b-icon icon="box-arrow-up"></b-icon>
+                        </button>
+                        <button class="btn btn-outline-danger btn-sm" 
+                            @click.prevent="$emit('postDelete',li.id)">
+                            <b-icon icon="trash"></b-icon>
+                            
+                        </button>
                     </div>
                 </div>
             </div>

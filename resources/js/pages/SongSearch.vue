@@ -22,7 +22,7 @@
         </form>
         <div class="container-fluid" v-if="song != 0">
             <div class="row">
-                <div v-for="li in song" class="col-lg-3 pt-2">
+                <div v-for="li in song" class="col-lg-4 pt-2">
                     <div class="card">
                         <a href="" @click.prevent="getSong(li.id)">
                             <img

@@ -2,9 +2,6 @@
 
     <section id="about" class="about">
       <div class="container">
-          <div class="section-title">
-              <h2>Blog Post</h2>
-          </div>
           <div v-for="po in posts.data">
             <div class="section-title mb-4">
                 <h2>
@@ -53,25 +50,30 @@
             <hr class="pt-4">
             </div><!--end of v-for div -->
 
-            <div class="col-lg-12">
-                <ul class="pagination">
+            <div class="nav-scroller py-1 mb-2 pt-4">
+                <ul class="pagination flex-wrap">
                     <li class="page-list">
-                        showing from <span>{{posts.from}}</span> 
-                        to <span>{{posts.to}}</span> of 
-                        <span>{{posts.total}}</span> &middot;
+                        <div class="page-link disabled">
+
+                            showing from <span>{{posts.from}}</span> 
+                            to <span>{{posts.to}}</span> of 
+                            <span>{{posts.total}}</span> 
+                        </div>
                     </li>
                     <li class="page-list" v-for="li in posts.links">
-                        <a href="" v-html="li.label" 
+                        <a href="" class="page-link"
+                           v-html="li.label" 
                             v-if="li.active != true && li.url != null" 
                             @click.prevent="setGoPage(li.url)">
                             {{li.label}}
                         </a>
-                        <span v-html="li.label" v-else>
+                        <span v-html="li.label" class="page-link disabled" 
+                            v-else>
                             {{li.label}} 
-                        </span> &middot;
+                        </span> 
                     </li>
-                    <li class="page-list">
-                        <span class="active">
+                    <li class="page-list active">
+                        <span class="page-link disabled">
                             <b-icon icon="book-half"></b-icon>
                             {{posts.current_page}}
                         </span>
