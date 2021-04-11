@@ -2,38 +2,63 @@
     <div class="container">
         <div class="card card-body"
             v-for="cm in commentPostAll">
-            <div class="float-right">
-                <button 
-                    @click.prevent="getDel(cm.id)"
-                    class="btn btn-danger close">&times;</button>
-            </div>
-            <div>
-                <ul>
-                    <li>{{cm.user.name}}</li>
-                    <li>{{cm.user.email}}</li>
-                    <li>{{moment(cm.created_at)}}</li>
-                    <li>{{moment(cm.created_at).fromNow()}}</li>
-                    
-                </ul>
-            </div>
-            <div v-html="cm.comment_msg">
+            <div class="clearfix">
+                <div class="float-right">
+                    <span>
+                        <b-icon icon="person"></b-icon>
+                        {{cm.user.name}}
+                    </span> &middot; 
+                    <span>
+                        <b-icon icon="envelope"></b-icon>
+                        {{cm.user.email}}
+                    </span> &middot; 
+                    <span>
+                        <b-icon icon="calendar2-day"></b-icon>
+                        {{moment(cm.created_at)}}
+                    </span> &middot; 
+                    <span>
+                        <b-icon icon="clock-history"></b-icon>
+                        {{moment(cm.created_at).fromNow()}}
+                    </span>
+                    <button 
+                        @click.prevent="getDel(cm.id)"
+                        class="btn btn-outline-danger btn-sm">
+                        <b-icon icon="trash"></b-icon>
+                    </button>
+                </div>
+            </div><!-- end of div.clearfix -->
+            <div class="pt-2 mb-2" v-html="cm.comment_msg">
                 {{cm.comment_msg}}
             </div>
-            <div class="card card-body show_info"
+            <div class="card card-body pt-4 show_info"
                 v-for="re in cm.reply">
-                <div class="float-rig">
-                    <button class="btn btn-danger close"
-                        @click.prevent="delSub(re.id)">&times;</button>
-                </div>
-                <div v-html="re.reply_body">
+                <div v-html="re.reply_body" class="pt-4">
                     {{re.reply_body}}
                 </div>
-                <ul>
-                    <li>{{re.user.name}}</li>
-                    <li>{{re.user.email}}</li>
-                    <li>{{moment(re.created_at)}}</li>
-                    <li>{{moment(re.created_at).fromNow()}}</li>
-                </ul>
+                <div class="clearfix">
+                    <div class="float-right">
+                        <span>
+                            <b-icon icon="person"></b-icon>
+                            {{re.user.name}}
+                        </span> &middot;
+                        <span>
+                            <b-icon icon="envelope"></b-icon>
+                            {{re.user.email}}
+                        </span> &middot;
+                        <span>
+                            <b-icon icon="calendar2-date"></b-icon>
+                            {{moment(re.created_at)}}
+                        </span> &middot;
+                        <span>
+                            <b-icon icon="clock-history"></b-icon>
+                            {{moment(re.created_at).fromNow()}}
+                        </span> &middot;
+                        <button class="btn btn-outline-danger btn-sm"
+                            @click.prevent="delSub(re.id)">
+                            <b-icon icon="trash"></b-icon>
+                        </button>
+                    </div>
+                </div><!-- end of div.clearfix -->
             </div>
             <div class="line"></div>
 
