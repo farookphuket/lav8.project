@@ -206,6 +206,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -442,6 +447,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -451,6 +479,12 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
     return {
       moment: moment
     };
+  },
+  methods: {
+    smartTitle: function smartTitle(str) {
+      var len = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 9;
+      return str.length > len ? str.substring(0, len) + "..." : str;
+    }
   }
 });
 
@@ -824,6 +858,20 @@ var render = function() {
                 }
               },
               [_vm._v("\n                    Save\n                ")]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-outline-danger",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.clearForm($event)
+                  }
+                }
+              },
+              [_vm._v("\n                    clear\n                ")]
             )
           ])
         ])
@@ -876,7 +924,7 @@ var render = function() {
         _vm._m(0),
         _vm._v(" "),
         _vm._l(_vm.songList.data, function(so) {
-          return _c("div", { staticClass: "col-lg-3" }, [
+          return _c("div", { staticClass: "col-lg-4 col-md-2 pt-2" }, [
             _c("div", { staticClass: "card" }, [
               _c(
                 "a",
@@ -891,7 +939,7 @@ var render = function() {
                 },
                 [
                   _c("img", {
-                    staticClass: "responsive card-image-top",
+                    staticClass: "responsive card-img-top",
                     attrs: { src: so.cover, alt: "" }
                   })
                 ]
@@ -899,31 +947,42 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "card-body" }, [
                 _c("p", { staticClass: "card-text" }, [
-                  _vm._v(_vm._s(so.name) + " - " + _vm._s(so.user.name))
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(_vm.smartTitle(so.name, 16)) +
+                      " - " +
+                      _vm._s(so.user.name)
+                  )
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "clearfix" }, [
-                  _c(
-                    "div",
-                    { staticClass: "float-left" },
-                    [
-                      _c("span", { staticClass: "badge badge-info" }, [
+                  _c("div", { staticClass: "float-left" }, [
+                    _c(
+                      "span",
+                      [
+                        _c("b-icon", { attrs: { icon: "clock-history" } }),
                         _vm._v(
                           "\n                                " +
                             _vm._s(_vm.moment(so.posted_at).fromNow()) +
                             "\n                            "
                         )
-                      ]),
-                      _vm._v(" "),
-                      _c("b-icon", { attrs: { icon: "headphones" } }),
-                      _vm._v(
-                        "\n                            " +
-                          _vm._s(so.read_count) +
-                          " \n                        "
-                      )
-                    ],
-                    1
-                  ),
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "span",
+                      [
+                        _c("b-icon", { attrs: { icon: "headphones" } }),
+                        _vm._v(
+                          "\n                                " +
+                            _vm._s(so.read_count) +
+                            " \n                            "
+                        )
+                      ],
+                      1
+                    )
+                  ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "float-right" }, [
                     _c(
@@ -968,58 +1027,76 @@ var render = function() {
           ])
         }),
         _vm._v(" "),
+        _c("div", { staticClass: "col-lg-12 pt-2 mb-2 p-2" }, [_vm._v(" ")]),
+        _vm._v(" "),
         _c("div", { staticClass: "col-lg-12" }, [
-          _c("div", { staticClass: "pa" }, [
-            _c(
-              "ul",
-              { staticClass: "pagination" },
-              [
-                _c("li", { staticClass: "page-item" }, [
-                  _vm._v(
-                    "\n                        showing from \n                        "
-                  ),
-                  _c("span", [_vm._v(_vm._s(_vm.songList.from))]),
-                  _vm._v(" to \n                        "),
-                  _c("span", [_vm._v(_vm._s(_vm.songList.to))]),
-                  _vm._v(" of \n                        "),
-                  _c("span", [_vm._v(_vm._s(_vm.songList.total))]),
-                  _vm._v(" · \n                    ")
-                ]),
-                _vm._v(" "),
-                _vm._l(_vm.songList.links, function(li) {
-                  return _c("li", { staticClass: "page-item" }, [
-                    li.url != null && li.active != true
-                      ? _c(
-                          "a",
-                          {
-                            attrs: { href: "" },
-                            domProps: { innerHTML: _vm._s(li.label) },
-                            on: {
-                              click: function($event) {
-                                $event.preventDefault()
-                                return _vm.$emit("getSongList", li.url)
+          _c("div", { staticClass: "nav-scroller py-1 mb-2" }, [
+            _c("nav", { staticClass: "nav d-flex justify-content-center" }, [
+              _c(
+                "ul",
+                { staticClass: "pagination flex-wrap" },
+                [
+                  _c("li", { staticClass: "page-item disabled" }, [
+                    _c("div", { staticClass: "page-link" }, [
+                      _vm._v(
+                        "\n                                showing from \n                                "
+                      ),
+                      _c("span", [_vm._v(_vm._s(_vm.songList.from))]),
+                      _vm._v(" to \n                                "),
+                      _c("span", [_vm._v(_vm._s(_vm.songList.to))]),
+                      _vm._v(" of \n                                "),
+                      _c("span", [_vm._v(_vm._s(_vm.songList.total))])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _vm._l(_vm.songList.links, function(li) {
+                    return _c("li", { staticClass: "page-item" }, [
+                      li.url != null && li.active != true
+                        ? _c(
+                            "a",
+                            {
+                              staticClass: "page-link p-2",
+                              attrs: { href: "" },
+                              domProps: { innerHTML: _vm._s(li.label) },
+                              on: {
+                                click: function($event) {
+                                  $event.preventDefault()
+                                  return _vm.$emit("getSongList", li.url)
+                                }
                               }
-                            }
-                          },
-                          [_vm._v(_vm._s(li.label))]
+                            },
+                            [_vm._v(_vm._s(li.label))]
+                          )
+                        : _c(
+                            "span",
+                            {
+                              staticClass: "page-link active disabled",
+                              domProps: { innerHTML: _vm._s(li.label) }
+                            },
+                            [_vm._v(_vm._s(li.label))]
+                          )
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "page-item active" }, [
+                    _c(
+                      "span",
+                      { staticClass: "page-link p-2" },
+                      [
+                        _c("b-icon", { attrs: { icon: "book-half" } }),
+                        _vm._v(
+                          "\n                                " +
+                            _vm._s(_vm.songList.current_page) +
+                            "\n                            "
                         )
-                      : _c(
-                          "span",
-                          {
-                            staticClass: "active",
-                            domProps: { innerHTML: _vm._s(li.label) }
-                          },
-                          [_vm._v(_vm._s(li.label))]
-                        )
+                      ],
+                      1
+                    )
                   ])
-                }),
-                _vm._v(" "),
-                _c("li", { staticClass: "page-item" }, [
-                  _c("span", [_vm._v(_vm._s(_vm.songList.current_page))])
-                ])
-              ],
-              2
-            )
+                ],
+                2
+              )
+            ])
           ])
         ])
       ],

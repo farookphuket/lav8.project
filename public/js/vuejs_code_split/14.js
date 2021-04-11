@@ -38,6 +38,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -49,6 +79,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       videos: [],
+      video: [],
+      title: '',
       editId: 0,
       res_status: "",
       showFormAdd: false
@@ -79,23 +111,40 @@ __webpack_require__.r(__webpack_exports__);
         _this.videos = res.data.videos;
       });
     },
+    openVideo: function openVideo(id) {
+      var _this2 = this;
+
+      var url = "/admin/video/".concat(id);
+      axios.get(url).then(function (res) {
+        _this2.video = res.data.video; //console.log(this.video)
+
+        _this2.video.forEach(function (val) {
+          _this2.title = val.title;
+        });
+
+        _this2.$refs["showVideoModal"].show();
+      });
+    },
     editVideo: function editVideo(id) {
       this.editId = id;
       this.showFormAdd = true;
     },
     delVideo: function delVideo(id) {
-      var _this2 = this;
+      var _this3 = this;
 
       var url = "/admin/video/".concat(id);
       axios["delete"](url).then(function (res) {
-        _this2.res_status = res.data.msg;
+        _this3.res_status = res.data.msg;
       }, function (err) {
-        _this2.res_status = "<span class=\"badge badge-danger\">\n                        ".concat(err.response.data.message, "</span>");
+        _this3.res_status = "<span class=\"badge badge-danger\">\n                        ".concat(err.response.data.message, "</span>");
       });
       this.$refs["onOk"].show();
       setTimeout(function () {
-        _this2.getVideos();
+        _this3.getVideos();
       }, 2000);
+    },
+    closeBox: function closeBox() {
+      this.$refs["showVideoModal"].hide();
     }
   }
 });
@@ -111,6 +160,13 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -309,6 +365,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -316,24 +376,13 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
   props: ["videos"],
   data: function data() {
     return {
-      moment: moment,
-      title: "",
-      embed: ""
+      moment: moment
     };
   },
   methods: {
-    openVideo: function openVideo(id) {
-      var _this = this;
-
-      //console.log(this.videos.data)
-      this.videos.data.forEach(function (val) {
-        if (val.id == id) {
-          _this.title = val.title;
-          _this.embed = val.embed;
-        }
-
-        _this.$refs["showVideo"].show();
-      });
+    smartTitle: function smartTitle(str) {
+      var len = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 9;
+      return str.length > len ? str.substring(0, len) + "..." : str;
     }
   }
 });
@@ -373,7 +422,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Add video")]
+                [_vm._v("\n                Add video\n            ")]
               )
             : _c(
                 "button",
@@ -386,10 +435,12 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Close")]
+                [_vm._v("\n                Close\n            ")]
               )
         ])
       ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-lg-12 pt-2 mb-2" }, [_vm._v(" ")]),
       _vm._v(" "),
       _c("video-form", {
         directives: [
@@ -411,6 +462,9 @@ var render = function() {
       _c("video-list", {
         attrs: { videos: _vm.videos },
         on: {
+          openVideo: function($event) {
+            return _vm.openVideo($event)
+          },
           editVideo: function($event) {
             return _vm.editVideo($event)
           },
@@ -426,12 +480,68 @@ var render = function() {
       _c(
         "b-modal",
         {
+          ref: "showVideoModal",
+          attrs: { title: _vm.title, size: "xl", "hide-footer": "" }
+        },
+        _vm._l(_vm.video, function(li) {
+          return _c("div", [
+            _c(
+              "div",
+              {
+                staticClass: "video-container",
+                domProps: { innerHTML: _vm._s(li.embed) }
+              },
+              [
+                _vm._v(
+                  "\n                " + _vm._s(li.embed) + "\n            "
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group pt-4 mb-4 p-2" }, [
+              _c(
+                "textarea",
+                {
+                  ref: "embed",
+                  refInFor: true,
+                  staticClass: "form-control",
+                  on: {
+                    focus: function($event) {
+                      return $event.target.select()
+                    }
+                  }
+                },
+                [_vm._v(_vm._s(li.embed))]
+              )
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-outline-danger btn-block",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.closeBox($event)
+                  }
+                }
+              },
+              [_vm._v("close")]
+            )
+          ])
+        }),
+        0
+      ),
+      _vm._v(" "),
+      _c(
+        "b-modal",
+        {
           ref: "onOk",
           attrs: { title: "Server Said :", centered: "", "ok-only": "" }
         },
         [
           _c("div", { domProps: { innerHTML: _vm._s(_vm.res_status) } }, [
-            _vm._v("\n        " + _vm._s(_vm.res_status) + "\n       ")
+            _vm._v("\n            " + _vm._s(_vm.res_status) + "\n        ")
           ])
         ]
       )
@@ -515,6 +625,16 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "clearfix" }, [
+            _c("div", { staticClass: "float-left" }, [
+              _c("div", { domProps: { innerHTML: _vm._s(_vm.res_status) } }, [
+                _vm._v(
+                  "\n                            " +
+                    _vm._s(_vm.res_status) +
+                    "\n                        "
+                )
+              ])
+            ]),
+            _vm._v(" "),
             _c("div", { staticClass: "float-right" }, [
               _c(
                 "button",
@@ -532,14 +652,28 @@ var render = function() {
                     "\n                            Save\n                        "
                   )
                 ]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-outline-danger",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.clearForm($event)
+                    }
+                  }
+                },
+                [
+                  _vm._v(
+                    "\n                            clear\n                        "
+                  )
+                ]
               )
             ])
           ])
         ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-12" }, [
-        _vm._v("\n            " + _vm._s(_vm.res_status) + "\n        ")
       ])
     ])
   ])
@@ -566,135 +700,139 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container" },
-    [
-      _c(
-        "div",
-        { staticClass: "row" },
-        [
-          _vm._l(_vm.videos.data, function(vi) {
-            return _c("div", { staticClass: "col-lg-4" }, [
-              _c("div", { staticClass: "card" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "video-container",
-                    domProps: { innerHTML: _vm._s(vi.embed) }
-                  },
-                  [
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(vi.embed) +
-                        "\n               "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("p", [
-                    _c(
-                      "a",
-                      {
-                        attrs: { href: "" },
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            return _vm.openVideo(vi.id)
-                          }
-                        }
-                      },
-                      [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(vi.title) +
-                            "\n                    "
-                        )
-                      ]
-                    ),
-                    _vm._v(
-                      " - " + _vm._s(vi.user.name) + "\n                    "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-footer" }, [
-                  _c("div", { staticClass: "clearfix" }, [
-                    _c("div", { staticClass: "float-left" }, [
-                      _c("p", [
-                        _c("span", { staticClass: "badge badge-info" }, [
-                          _vm._v(
-                            "\n                                    " +
-                              _vm._s(_vm.moment(vi.created_at).fromNow()) +
-                              "\n                                "
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "float-right" }, [
+  return _c("div", [
+    _c(
+      "div",
+      { staticClass: "row" },
+      [
+        _vm._l(_vm.videos.data, function(vi) {
+          return _c("div", { staticClass: "col-lg-4 col-md-2 p-2 pt-2" }, [
+            _c("div", { staticClass: "card card-body" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "video-container",
+                  domProps: { innerHTML: _vm._s(vi.embed) }
+                },
+                [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(vi.embed) +
+                      "\n                "
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-footer" }, [
+              _c("div", { staticClass: "clearfix" }, [
+                _c("div", { staticClass: "float-left" }, [
+                  _c(
+                    "span",
+                    [
+                      _c("b-icon", { attrs: { icon: "film" } }),
+                      _vm._v(" "),
                       _c(
-                        "button",
+                        "a",
                         {
-                          staticClass: "btn btn-outline-primary",
+                          attrs: { href: "" },
                           on: {
                             click: function($event) {
                               $event.preventDefault()
-                              return _vm.$emit("editVideo", vi.id)
+                              return _vm.$emit("openVideo", vi.id)
                             }
                           }
                         },
                         [
                           _vm._v(
-                            "\n                                edit\n                            "
+                            "\n                                " +
+                              _vm._s(_vm.smartTitle(vi.title, 16)) +
+                              "\n                            "
                           )
                         ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass: "btn btn-outline-danger",
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              return _vm.$emit("delVideo", vi.id)
-                            }
-                          }
-                        },
-                        [_vm._v("X")]
                       )
-                    ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" ·\n                        "),
+                  _c(
+                    "span",
+                    [
+                      _c("b-icon", { attrs: { icon: "person" } }),
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(vi.user.name) +
+                          "\n                        "
+                      )
+                    ],
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "float-right" }, [
+                  _c("span", [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-outline-primary btn-sm",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.$emit("editVideo", vi.id)
+                          }
+                        }
+                      },
+                      [_vm._v("edit")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-outline-danger btn-sm",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.$emit("delVideo", vi.id)
+                          }
+                        }
+                      },
+                      [_c("b-icon", { attrs: { icon: "trash" } })],
+                      1
+                    )
                   ])
                 ])
               ])
             ])
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-12 " }, [
-            _c("div", { staticClass: "pa" }, [
+          ])
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-12 pt-2 mb-2 p-2" }, [_vm._v(" ")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-12" }, [
+          _c("div", { staticClass: "nav-scroller py-1 mb-2" }, [
+            _c("nav", { staticClass: "nav d-flex justify-content-center" }, [
               _c(
                 "ul",
-                { staticClass: "pagination" },
+                { staticClass: "pagination flex-wrap" },
                 [
-                  _c("li", { staticClass: "page-item" }, [
-                    _vm._v(
-                      "\n                       showing from \n                       "
-                    ),
-                    _c("span", [_vm._v(" " + _vm._s(_vm.videos.from))]),
-                    _vm._v(" to \n                       "),
-                    _c("span", [_vm._v(_vm._s(_vm.videos.to))]),
-                    _vm._v(" of \n                       "),
-                    _c("span", [_vm._v(_vm._s(_vm.videos.total))])
+                  _c("li", { staticClass: "page-item disabled" }, [
+                    _c("div", { staticClass: "page-link" }, [
+                      _vm._v("\n                                showing from "),
+                      _c("span", [_vm._v(_vm._s(_vm.videos.from))]),
+                      _vm._v(" to \n                                "),
+                      _c("span", [_vm._v(_vm._s(_vm.videos.to))]),
+                      _vm._v(" of \n                                "),
+                      _c("span", [_vm._v(_vm._s(_vm.videos.total))])
+                    ])
                   ]),
                   _vm._v(" "),
                   _vm._l(_vm.videos.links, function(li) {
                     return _c("li", { staticClass: "page-item" }, [
-                      li.active == false && li.url != null
+                      !li.active && li.url != null
                         ? _c(
                             "a",
                             {
+                              staticClass: "page-link p-2",
                               attrs: { href: "" },
                               domProps: { innerHTML: _vm._s(li.label) },
                               on: {
@@ -706,85 +844,54 @@ var render = function() {
                             },
                             [
                               _vm._v(
-                                "\n                        " +
+                                "\n                                " +
                                   _vm._s(li.label) +
-                                  "\n                       "
+                                  "\n                            "
                               )
                             ]
                           )
                         : _c(
                             "span",
                             {
-                              staticClass: "active",
+                              staticClass: "page-link disabled",
                               domProps: { innerHTML: _vm._s(li.label) }
                             },
                             [
                               _vm._v(
-                                "\n                        " +
+                                "\n                                " +
                                   _vm._s(li.label) +
-                                  "\n                       "
+                                  "\n                            "
                               )
                             ]
                           )
                     ])
                   }),
                   _vm._v(" "),
-                  _c("li", { staticClass: "page-item" }, [
-                    _c("span", { staticClass: "active" }, [
-                      _vm._v(
-                        "\n                            " +
-                          _vm._s(_vm.videos.current_page) +
-                          "\n                        "
-                      )
-                    ])
+                  _c("li", { staticClass: "page-item active" }, [
+                    _c(
+                      "span",
+                      { staticClass: "page-link disabled" },
+                      [
+                        _c("b-icon", { attrs: { icon: "book-half" } }),
+                        _vm._v(
+                          "\n                                " +
+                            _vm._s(_vm.videos.current_page) +
+                            "\n                            "
+                        )
+                      ],
+                      1
+                    )
                   ])
                 ],
                 2
               )
             ])
           ])
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _c(
-        "b-modal",
-        {
-          ref: "showVideo",
-          attrs: { title: "test", size: "xl", centered: "", "ok-only": "" }
-        },
-        [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-body" }, [
-              _c("p", [
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(_vm.title) +
-                    "\n                "
-                )
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "video-container",
-                  domProps: { innerHTML: _vm._s(_vm.embed) }
-                },
-                [
-                  _vm._v(
-                    "\n                    " +
-                      _vm._s(_vm.embed) +
-                      "\n                "
-                  )
-                ]
-              )
-            ])
-          ])
-        ]
-      )
-    ],
-    1
-  )
+        ])
+      ],
+      2
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -1047,14 +1154,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!************************************************!*\
   !*** ./resources/js/pages/Admin/VideoList.vue ***!
   \************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _VideoList_vue_vue_type_template_id_6df90c40___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VideoList.vue?vue&type=template&id=6df90c40& */ "./resources/js/pages/Admin/VideoList.vue?vue&type=template&id=6df90c40&");
 /* harmony import */ var _VideoList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VideoList.vue?vue&type=script&lang=js& */ "./resources/js/pages/Admin/VideoList.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _VideoList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _VideoList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -1084,7 +1192,7 @@ component.options.__file = "resources/js/pages/Admin/VideoList.vue"
 /*!*************************************************************************!*\
   !*** ./resources/js/pages/Admin/VideoList.vue?vue&type=script&lang=js& ***!
   \*************************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

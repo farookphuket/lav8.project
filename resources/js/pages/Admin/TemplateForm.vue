@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<div>
 <form >
     <div class="form-group">
         <input v-model="section" class="form-control" 

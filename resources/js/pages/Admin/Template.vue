@@ -1,5 +1,4 @@
 <template>
-
     <div class="container-fluid">
         <h1 class="text-center">
             Template for post 

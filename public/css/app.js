@@ -738,7 +738,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /srv/http/lav8.lap/resources/scss/app.scss */"./resources/scss/app.scss");
+module.exports = __webpack_require__(/*! /home/farook/Desktop/lav8.lap/resources/scss/app.scss */"./resources/scss/app.scss");
 
 
 /***/ })

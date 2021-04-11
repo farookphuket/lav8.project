@@ -2,13 +2,14 @@
     <div class="container-fluid">
         <div class="clearfix">
             <div class="float-right">
-                <p style="color:green;" class="mb-4">last edit 3 Apr 2021</p>
+                <p style="color:green;" class="mb-4">last edit 11 Apr 2021</p>
                 <div class="btn-group">
                     <button
                         @click="showWhatnewsForm = true"
                         class="btn btn-outline-primary btn-sm"
                         v-if="showWhatnewsForm == false"
                     >
+                    <b-icon icon="plus"></b-icon>
                         Post
                     </button>
                     <button

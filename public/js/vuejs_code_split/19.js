@@ -113,6 +113,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
@@ -384,72 +409,172 @@ var render = function() {
         "div",
         { staticClass: "card card-body" },
         [
-          _c("div", { staticClass: "float-right" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-danger close",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    return _vm.getDel(cm.id)
+          _c("div", { staticClass: "clearfix" }, [
+            _c("div", { staticClass: "float-right" }, [
+              _c(
+                "span",
+                [
+                  _c("b-icon", { attrs: { icon: "person" } }),
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(cm.user.name) +
+                      "\n                "
+                  )
+                ],
+                1
+              ),
+              _vm._v(" · \n                "),
+              _c(
+                "span",
+                [
+                  _c("b-icon", { attrs: { icon: "envelope" } }),
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(cm.user.email) +
+                      "\n                "
+                  )
+                ],
+                1
+              ),
+              _vm._v(" · \n                "),
+              _c(
+                "span",
+                [
+                  _c("b-icon", { attrs: { icon: "calendar2-day" } }),
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(_vm.moment(cm.created_at)) +
+                      "\n                "
+                  )
+                ],
+                1
+              ),
+              _vm._v(" · \n                "),
+              _c(
+                "span",
+                [
+                  _c("b-icon", { attrs: { icon: "clock-history" } }),
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(_vm.moment(cm.created_at).fromNow()) +
+                      "\n                "
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-outline-danger btn-sm",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.getDel(cm.id)
+                    }
                   }
-                }
-              },
-              [_vm._v("×")]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", [
-            _c("ul", [
-              _c("li", [_vm._v(_vm._s(cm.user.name))]),
-              _vm._v(" "),
-              _c("li", [_vm._v(_vm._s(cm.user.email))]),
-              _vm._v(" "),
-              _c("li", [_vm._v(_vm._s(_vm.moment(cm.created_at)))]),
-              _vm._v(" "),
-              _c("li", [_vm._v(_vm._s(_vm.moment(cm.created_at).fromNow()))])
+                },
+                [_c("b-icon", { attrs: { icon: "trash" } })],
+                1
+              )
             ])
           ]),
           _vm._v(" "),
-          _c("div", { domProps: { innerHTML: _vm._s(cm.comment_msg) } }, [
-            _vm._v("\n            " + _vm._s(cm.comment_msg) + "\n        ")
-          ]),
+          _c(
+            "div",
+            {
+              staticClass: "pt-2 mb-2",
+              domProps: { innerHTML: _vm._s(cm.comment_msg) }
+            },
+            [_vm._v("\n            " + _vm._s(cm.comment_msg) + "\n        ")]
+          ),
           _vm._v(" "),
           _vm._l(cm.reply, function(re) {
-            return _c("div", { staticClass: "card card-body show_info" }, [
-              _c("div", { staticClass: "float-rig" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-danger close",
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.delSub(re.id)
+            return _c("div", { staticClass: "card card-body pt-4 show_info" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "pt-4",
+                  domProps: { innerHTML: _vm._s(re.reply_body) }
+                },
+                [
+                  _vm._v(
+                    "\n                " +
+                      _vm._s(re.reply_body) +
+                      "\n            "
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "clearfix" }, [
+                _c("div", { staticClass: "float-right" }, [
+                  _c(
+                    "span",
+                    [
+                      _c("b-icon", { attrs: { icon: "person" } }),
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(re.user.name) +
+                          "\n                    "
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" ·\n                    "),
+                  _c(
+                    "span",
+                    [
+                      _c("b-icon", { attrs: { icon: "envelope" } }),
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(re.user.email) +
+                          "\n                    "
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" ·\n                    "),
+                  _c(
+                    "span",
+                    [
+                      _c("b-icon", { attrs: { icon: "calendar2-date" } }),
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(_vm.moment(re.created_at)) +
+                          "\n                    "
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" ·\n                    "),
+                  _c(
+                    "span",
+                    [
+                      _c("b-icon", { attrs: { icon: "clock-history" } }),
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(_vm.moment(re.created_at).fromNow()) +
+                          "\n                    "
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" ·\n                    "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-outline-danger btn-sm",
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.delSub(re.id)
+                        }
                       }
-                    }
-                  },
-                  [_vm._v("×")]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { domProps: { innerHTML: _vm._s(re.reply_body) } }, [
-                _vm._v(
-                  "\n                " +
-                    _vm._s(re.reply_body) +
-                    "\n            "
-                )
-              ]),
-              _vm._v(" "),
-              _c("ul", [
-                _c("li", [_vm._v(_vm._s(re.user.name))]),
-                _vm._v(" "),
-                _c("li", [_vm._v(_vm._s(re.user.email))]),
-                _vm._v(" "),
-                _c("li", [_vm._v(_vm._s(_vm.moment(re.created_at)))]),
-                _vm._v(" "),
-                _c("li", [_vm._v(_vm._s(_vm.moment(re.created_at).fromNow()))])
+                    },
+                    [_c("b-icon", { attrs: { icon: "trash" } })],
+                    1
+                  )
+                ])
               ])
             ])
           }),

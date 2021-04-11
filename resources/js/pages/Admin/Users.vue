@@ -4,14 +4,14 @@
       <form >
         <div class="form-group">
           <label for="">name</label>
-          <input v-model="user_name" 
+          <input v-model="user_name" placeholder="Enter name"
             ref="user_name"
           class="form-control" type="text">
         </div>
 
         <div class="form-group">
           <label for="">Email</label>
-          <input v-model="user_email" 
+          <input v-model="user_email" placeholder="Enter email"
           class="form-control" type="text">
         </div>
 
@@ -37,7 +37,7 @@
                 </label>
               </span>
 
-              <button class="btn btn-primary"
+              <button class="btn btn-outline-primary btn-sm"
                 @click.prevent="saveUser(editId)">Save</button>
             </div>
           </div>
