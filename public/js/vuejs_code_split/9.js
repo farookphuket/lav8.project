@@ -710,7 +710,7 @@ var render = function() {
               ],
               ref: "user_name",
               staticClass: "form-control",
-              attrs: { type: "text" },
+              attrs: { placeholder: "Enter name", type: "text" },
               domProps: { value: _vm.user_name },
               on: {
                 input: function($event) {
@@ -736,7 +736,7 @@ var render = function() {
                 }
               ],
               staticClass: "form-control",
-              attrs: { type: "text" },
+              attrs: { placeholder: "Enter email", type: "text" },
               domProps: { value: _vm.user_email },
               on: {
                 input: function($event) {
@@ -838,7 +838,7 @@ var render = function() {
                   _c(
                     "button",
                     {
-                      staticClass: "btn btn-primary",
+                      staticClass: "btn btn-outline-primary btn-sm",
                       on: {
                         click: function($event) {
                           $event.preventDefault()

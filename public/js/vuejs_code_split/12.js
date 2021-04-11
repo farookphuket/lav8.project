@@ -63,21 +63,35 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "TagForm",
   props: ["editId"],
   data: function data() {
     return {
-      tag: '',
+      tag: "",
       saveId: 0,
       error: 0,
       showPreview: false,
       showLength: 0,
-      res_status: ''
+      res_status: ""
     };
   },
   watch: {
-    "editId": function editId(x) {
+    editId: function editId(x) {
       this.getEditData(x);
     }
   },
@@ -117,7 +131,7 @@ __webpack_require__.r(__webpack_exports__);
     tagSave: function tagSave(id) {
       var _this2 = this;
 
-      var url = '';
+      var url = "";
       var data = {
         tag: this.tag
       };
@@ -151,15 +165,15 @@ __webpack_require__.r(__webpack_exports__);
 
       if (this.error != 1) {
         this.saveId = 0;
-        this.tag = '';
-        this.res_status = '';
+        this.tag = "";
+        this.res_status = "";
         this.showPreview = false;
       } else {
         return;
       }
 
       setTimeout(function () {
-        _this3.$emit('getTags');
+        _this3.$emit("getTags");
       }, 2500);
     },
     onCancel: function onCancel() {
@@ -180,6 +194,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -399,53 +427,103 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("form", [
-      _c("div", { staticClass: "form-group" }, [
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.tag,
-              expression: "tag"
-            }
-          ],
-          ref: "tag",
-          staticClass: "form-control",
-          attrs: { type: "text", placeholder: "create new tag" },
-          domProps: { value: _vm.tag },
-          on: {
-            keydown: function($event) {
-              if (
-                !$event.type.indexOf("key") &&
-                _vm._k($event.keyCode, "esc", 27, $event.key, ["Esc", "Escape"])
-              ) {
-                return null
-              }
-              $event.preventDefault()
-              return _vm.onCancel($event)
-            },
-            keyup: _vm.tagPreview,
-            keypress: function($event) {
-              if (
-                !$event.type.indexOf("key") &&
-                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-              ) {
-                return null
-              }
-              $event.preventDefault()
-              return _vm.tagSave(_vm.saveId)
-            },
-            input: function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.tag = $event.target.value
-            }
-          }
-        })
-      ])
+    _c("div", { staticClass: "col-lg-12  mb-4" }, [
+      _c(
+        "form",
+        [
+          _c(
+            "b-input-group",
+            [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.tag,
+                    expression: "tag"
+                  }
+                ],
+                ref: "tag",
+                staticClass: "form-control",
+                attrs: { type: "text", placeholder: "create new tag" },
+                domProps: { value: _vm.tag },
+                on: {
+                  keydown: function($event) {
+                    if (
+                      !$event.type.indexOf("key") &&
+                      _vm._k($event.keyCode, "esc", 27, $event.key, [
+                        "Esc",
+                        "Escape"
+                      ])
+                    ) {
+                      return null
+                    }
+                    $event.preventDefault()
+                    return _vm.onCancel($event)
+                  },
+                  keyup: _vm.tagPreview,
+                  keypress: function($event) {
+                    if (
+                      !$event.type.indexOf("key") &&
+                      _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                    ) {
+                      return null
+                    }
+                    $event.preventDefault()
+                    return _vm.tagSave(_vm.saveId)
+                  },
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.tag = $event.target.value
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "b-input-group-prepend",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.showPreview,
+                      expression: "showPreview"
+                    }
+                  ],
+                  attrs: { "is-text": "" }
+                },
+                [
+                  _c(
+                    "a",
+                    {
+                      attrs: { href: "" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.clearFormData($event)
+                        }
+                      }
+                    },
+                    [
+                      _c("b-icon", {
+                        attrs: { icon: "trash", variant: "danger" }
+                      })
+                    ],
+                    1
+                  )
+                ]
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
     ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "col-lg-12 pt-2 mb-2" }, [_vm._v(" ")]),
     _vm._v(" "),
     _c(
       "div",
@@ -458,35 +536,41 @@ var render = function() {
             expression: "showPreview == true"
           }
         ],
-        staticClass: "card card-body"
+        staticClass: "card card-body pt-2"
       },
       [
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-4" }, [
-            _c("h3", { staticClass: "text-center" }, [
-              _vm._v(
-                "\n                        " +
-                  _vm._s(_vm.tag) +
-                  "\n                    "
-              )
-            ])
+            _c(
+              "h3",
+              { staticClass: "text-center" },
+              [
+                _c("b-icon", { attrs: { icon: "tags" } }),
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(_vm.tag) +
+                    "\n                "
+                )
+              ],
+              1
+            )
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "col-md-4" }, [
             _vm.showLength < 2
               ? _c("span", { staticClass: "badge badge-danger" }, [
                   _vm._v(
-                    "\n                        " +
+                    "\n                    " +
                       _vm._s(_vm.showLength) +
-                      "\n                    "
+                      "\n                "
                   )
                 ])
               : _vm.showLength <= 3
               ? _c("span", { staticClass: "badge badge-warning" }, [
                   _vm._v(
-                    "\n                        " +
+                    "\n                    " +
                       _vm._s(_vm.showLength) +
-                      "\n                    "
+                      "\n                "
                   )
                 ])
               : _vm._e(),
@@ -494,9 +578,9 @@ var render = function() {
             _vm.showLength >= 4
               ? _c("span", { staticClass: "badge badge-success" }, [
                   _vm._v(
-                    "\n                        " +
+                    "\n                    " +
                       _vm._s(_vm.showLength) +
-                      "\n                    "
+                      "\n                "
                   )
                 ])
               : _vm._e()
@@ -511,22 +595,20 @@ var render = function() {
                         { domProps: { innerHTML: _vm._s(_vm.res_status) } },
                         [
                           _vm._v(
-                            "\n                            " +
+                            "\n                        " +
                               _vm._s(_vm.res_status) +
-                              "\n                        "
+                              "\n                    "
                           )
                         ]
                       )
                     : _c("span", [
                         _vm._v(
-                          "\n                            hit enter to save\n                        "
+                          "\n                        hit enter to save\n                    "
                         )
                       ])
                 ])
               : _c("div", { staticClass: "badge badge-warning" }, [
-                  _vm._v(
-                    "\n                        too short!\n                    "
-                  )
+                  _vm._v("\n                    too short!\n                ")
                 ])
           ])
         ])
@@ -680,80 +762,87 @@ var render = function() {
         ])
       }),
       _vm._v(" "),
-      _c("div", { staticClass: "pa" }, [
-        _c(
-          "ul",
-          { staticClass: "pagination" },
-          [
-            _c("li", { staticClass: "page-item" }, [
-              _vm._v("\n                showing from "),
-              _c("span", [_vm._v(_vm._s(_vm.tags.from))]),
-              _vm._v(" to \n                "),
-              _c("span", [_vm._v(_vm._s(_vm.tags.to))]),
-              _vm._v(" of "),
-              _c("span", [_vm._v(_vm._s(_vm.tags.total))]),
-              _vm._v(" \n                ·\n            ")
-            ]),
-            _vm._v(" "),
-            _vm._l(_vm.tags.links, function(li) {
-              return _c("li", { staticClass: "page-item" }, [
-                !li.active && li.url != null
-                  ? _c(
-                      "a",
-                      {
-                        attrs: { href: "" },
-                        domProps: { innerHTML: _vm._s(li.label) },
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            return _vm.$emit("getTags", li.url)
-                          }
-                        }
-                      },
-                      [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(li.label) +
-                            "\n                "
+      _c("div", { staticClass: "col-lg-12 pt-2 mb-2" }, [_vm._v(" ")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-lg-12" }, [
+        _c("div", { staticClass: "nav-scroller py-1 mb-2" }, [
+          _c("nav", { staticClass: "nav d-flex justify-content-center" }, [
+            _c(
+              "ul",
+              { staticClass: "pagination flex-wrap" },
+              [
+                _c("li", { staticClass: "page-item disabled" }, [
+                  _c("div", { staticClass: "page-link" }, [
+                    _vm._v("\n                            showing from "),
+                    _c("span", [_vm._v(_vm._s(_vm.tags.from))]),
+                    _vm._v(" to \n                            "),
+                    _c("span", [_vm._v(_vm._s(_vm.tags.to))]),
+                    _vm._v(" of "),
+                    _c("span", [_vm._v(_vm._s(_vm.tags.total))])
+                  ])
+                ]),
+                _vm._v(" "),
+                _vm._l(_vm.tags.links, function(li) {
+                  return _c("li", { staticClass: "page-item" }, [
+                    !li.active && li.url != null
+                      ? _c(
+                          "a",
+                          {
+                            staticClass: "page-link p-2",
+                            attrs: { href: "" },
+                            domProps: { innerHTML: _vm._s(li.label) },
+                            on: {
+                              click: function($event) {
+                                $event.preventDefault()
+                                return _vm.$emit("getTags", li.url)
+                              }
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(li.label) +
+                                "\n                        "
+                            )
+                          ]
                         )
-                      ]
-                    )
-                  : _c(
-                      "span",
-                      {
-                        staticClass: "active",
-                        domProps: { innerHTML: _vm._s(li.label) }
-                      },
-                      [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(li.label) +
-                            "\n                "
+                      : _c(
+                          "span",
+                          {
+                            staticClass: "page-link active disabled",
+                            domProps: { innerHTML: _vm._s(li.label) }
+                          },
+                          [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(li.label) +
+                                "\n                        "
+                            )
+                          ]
                         )
-                      ]
-                    ),
-                _vm._v(" ·\n            ")
-              ])
-            }),
-            _vm._v(" "),
-            _c("li", { staticClass: "page-item" }, [
-              _c(
-                "span",
-                { staticClass: "active" },
-                [
-                  _c("b-icon", { attrs: { icon: "book-half" } }),
-                  _vm._v(
-                    "\n                    " +
-                      _vm._s(_vm.tags.current_page) +
-                      "\n                "
+                  ])
+                }),
+                _vm._v(" "),
+                _c("li", { staticClass: "page-item active" }, [
+                  _c(
+                    "span",
+                    { staticClass: "page-link " },
+                    [
+                      _c("b-icon", { attrs: { icon: "book-half" } }),
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(_vm.tags.current_page) +
+                          "\n                        "
+                      )
+                    ],
+                    1
                   )
-                ],
-                1
-              )
-            ])
-          ],
-          2
-        )
+                ])
+              ],
+              2
+            )
+          ])
+        ])
       ])
     ],
     2

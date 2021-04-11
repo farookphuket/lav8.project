@@ -12,18 +12,25 @@
                         name="" placeholder="embed code here"></textarea>
                     </div>
                     <div class="clearfix">
+                        <div class="float-left">
+                            <div v-html="res_status">
+                                {{res_status}}
+                            </div>
+                        </div>
                         <div class="float-right">
                             <button class="btn btn-outline-primary" 
                             @click.prevent="saveVideo(saveId)">
                                 Save
                             </button>
+
+                            <button class="btn btn-outline-danger" 
+                            @click.prevent="clearForm">
+                                clear
+                            </button>
                         </div>
                     </div>
                 </form>
             </div><!-- end of div.col-lg-12 form -->
-            <div class="col-lg-12">
-                {{res_status}}
-            </div>
         </div><!-- end of div.row -->
     </div><!-- end of main div -->
 </template>

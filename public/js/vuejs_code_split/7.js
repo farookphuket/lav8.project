@@ -59,6 +59,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -447,6 +448,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -546,7 +557,7 @@ var render = function() {
       _c("div", { staticClass: "clearfix" }, [
         _c("div", { staticClass: "float-right" }, [
           _c("p", { staticClass: "mb-4", staticStyle: { color: "green" } }, [
-            _vm._v("last edit 3 Apr 2021")
+            _vm._v("last edit 11 Apr 2021")
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "btn-group" }, [
@@ -561,7 +572,11 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("\n                    Post\n                ")]
+                  [
+                    _c("b-icon", { attrs: { icon: "plus" } }),
+                    _vm._v("\n                    Post\n                ")
+                  ],
+                  1
                 )
               : _c(
                   "button",
@@ -873,53 +888,75 @@ var render = function() {
                 }
               },
               [
+                _c("b-icon", { attrs: { icon: "arrow-up-right" } }),
                 _vm._v(
                   "\n            " +
                     _vm._s(po.whatnews_title) +
                     "\n            "
                 )
-              ]
+              ],
+              1
             )
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "clearfix x-info" }, [
             _c("div", { staticClass: "float-left" }, [
               po.is_public !== "1"
-                ? _c("span", { staticClass: "badge badge-danger" }, [
-                    _vm._v("\n                    Not Public\n                ")
-                  ])
-                : _c("span", { staticClass: "badge badge-success" }, [
-                    _vm._v("\n                    Public\n                ")
-                  ])
+                ? _c(
+                    "span",
+                    { staticClass: "badge badge-danger p-2" },
+                    [_c("b-icon", { attrs: { icon: "lock" } })],
+                    1
+                  )
+                : _c(
+                    "span",
+                    { staticClass: "badge badge-success p-2" },
+                    [_c("b-icon", { attrs: { icon: "unlock" } })],
+                    1
+                  )
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "float-right" }, [
-              _c("div", { staticClass: "x-info" }, [
-                _vm._v("\n                    By \n                    "),
-                _c("span", { staticClass: "badge badge-info" }, [
+              _c(
+                "span",
+                [
+                  _c("b-icon", { attrs: { icon: "person" } }),
                   _vm._v(
-                    "\n                        " +
+                    "\n                    " +
                       _vm._s(po.user.name) +
-                      "\n                    "
+                      "\n                "
                   )
-                ]),
-                _vm._v("\n                    on \n                    "),
-                _c("span", { staticClass: "badge badge-info" }, [
+                ],
+                1
+              ),
+              _vm._v(" ·\n                "),
+              _c(
+                "span",
+                { staticClass: "badge badge-info" },
+                [
+                  _c("b-icon", { attrs: { icon: "calenda2-day" } }),
                   _vm._v(
-                    "\n                        " +
+                    "\n                    " +
                       _vm._s(_vm.moment(po.created_at)) +
-                      "\n                    "
+                      "\n                "
                   )
-                ]),
-                _vm._v(" "),
-                _c("span", { staticClass: "badge badge-info" }, [
+                ],
+                1
+              ),
+              _vm._v(" ·\n                "),
+              _c(
+                "span",
+                { staticClass: "badge badge-info" },
+                [
+                  _c("b-icon", { attrs: { icon: "clock-history" } }),
                   _vm._v(
-                    "\n                        ·\n                        " +
+                    "\n                    " +
                       _vm._s(_vm.moment(po.created_at).fromNow()) +
-                      "\n                    "
+                      "\n                "
                   )
-                ])
-              ])
+                ],
+                1
+              )
             ])
           ]),
           _vm._v(" "),
@@ -957,11 +994,8 @@ var render = function() {
                       }
                     }
                   },
-                  [
-                    _vm._v(
-                      "\n                        delete\n                    "
-                    )
-                  ]
+                  [_c("b-icon", { attrs: { icon: "trash" } })],
+                  1
                 )
               ])
             ])
@@ -969,90 +1003,110 @@ var render = function() {
         ])
       }),
       _vm._v(" "),
-      _c("div", { staticClass: "pa" }, [
-        _c(
-          "ul",
-          { staticClass: "pagination" },
-          [
-            _c("li", { staticClass: "page-item" }, [
-              _vm._v("\n                showing from \n                "),
-              _c("span", [
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(_vm.wnlist.from) +
-                    "\n                "
-                )
+      _c("div", { staticClass: "col-lg-12 pt-2 mb-2" }, [_vm._v(" ")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-lg-12" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "nav-scroller py-1 mb-2" }, [
+        _c("nav", { staticClass: "nav d-flex justify-content-center" }, [
+          _c(
+            "ul",
+            { staticClass: "pagination flex-wrap" },
+            [
+              _c("li", { staticClass: "page-item active" }, [
+                _c("div", { staticClass: "page-link disabled" }, [
+                  _vm._v(
+                    "\n                        showing from \n                        "
+                  ),
+                  _c("span", [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(_vm.wnlist.from) +
+                        "\n                        "
+                    )
+                  ]),
+                  _vm._v(
+                    "\n                        to \n                        "
+                  ),
+                  _c("span", [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(_vm.wnlist.to) +
+                        "\n                        "
+                    )
+                  ]),
+                  _vm._v(
+                    "\n                        of \n                        "
+                  ),
+                  _c("span", [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(_vm.wnlist.total) +
+                        "\n                        "
+                    )
+                  ])
+                ])
               ]),
-              _vm._v("\n                to \n                "),
-              _c("span", [
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(_vm.wnlist.to) +
-                    "\n                "
-                )
-              ]),
-              _vm._v("\n                of \n                "),
-              _c("span", [
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(_vm.wnlist.total) +
-                    "\n                "
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _vm._l(_vm.wnlist.links, function(li) {
-              return _c("li", { staticClass: "page-item" }, [
-                li.active === false && li.url !== null
-                  ? _c(
-                      "a",
-                      {
-                        attrs: { href: "#" },
-                        domProps: { innerHTML: _vm._s(li.label) },
-                        on: {
-                          click: function($event) {
-                            return _vm.goToPage(li.url)
+              _vm._v(" "),
+              _vm._l(_vm.wnlist.links, function(li) {
+                return _c("li", { staticClass: "page-item" }, [
+                  li.active === false && li.url !== null
+                    ? _c(
+                        "a",
+                        {
+                          staticClass: "page-link p-2",
+                          attrs: { href: "#" },
+                          domProps: { innerHTML: _vm._s(li.label) },
+                          on: {
+                            click: function($event) {
+                              return _vm.goToPage(li.url)
+                            }
                           }
-                        }
-                      },
-                      [
-                        _vm._v(
-                          "\n                " +
-                            _vm._s(li.label) +
-                            "\n                "
-                        )
-                      ]
+                        },
+                        [
+                          _vm._v(
+                            "\n                    " +
+                              _vm._s(li.label) +
+                              "\n                    "
+                          )
+                        ]
+                      )
+                    : _c(
+                        "span",
+                        {
+                          staticClass: "page-link disabled active",
+                          domProps: { innerHTML: _vm._s(li.label) }
+                        },
+                        [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(li.label) +
+                              "\n                    "
+                          )
+                        ]
+                      )
+                ])
+              }),
+              _vm._v(" "),
+              _c("li", { staticClass: "page-item active" }, [
+                _c(
+                  "span",
+                  { staticClass: "page-link" },
+                  [
+                    _c("b-icon", { attrs: { icon: "book-half" } }),
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(_vm.wnlist.current_page) +
+                        "\n                    "
                     )
-                  : _c(
-                      "span",
-                      {
-                        staticClass: "active",
-                        domProps: { innerHTML: _vm._s(li.label) }
-                      },
-                      [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(li.label) +
-                            "\n                "
-                        )
-                      ]
-                    )
-              ])
-            }),
-            _vm._v(" "),
-            _c("li", { staticClass: "page-item" }, [
-              _vm._v("\n                current page \n                "),
-              _c("span", [
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(_vm.wnlist.current_page) +
-                    "\n                "
+                  ],
+                  1
                 )
               ])
-            ])
-          ],
-          2
-        )
+            ],
+            2
+          )
+        ])
       ])
     ],
     2

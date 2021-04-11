@@ -29,7 +29,7 @@ class VideoController extends Controller
     public function getVideos(){
         $videos = Video::with("user")
             ->orderBy("created_at","DESC")
-            ->paginate(24)
+            ->paginate(10)
             ->onEachSide(1);
         return response()->json([
             "videos" => $videos
@@ -59,8 +59,10 @@ class VideoController extends Controller
             "title" => $title,
             "embed" => $embed
         ]);
+        $msg = "<span class=\"badge badge-success p-2\">
+            Success : video link has been added </span>";
         return response()->json([
-            "msg" => "Video has been created"
+            "msg" => $msg
         ]);
     }
 
@@ -74,8 +76,8 @@ class VideoController extends Controller
     {
         //
 
-        $get = Video::where("id",$video->id)->get();
-        return $response()->json([
+        $get = Video::with("user")->where("id",$video->id)->get();
+        return response()->json([
             "video" => $get
         ]);
     }
@@ -108,8 +110,10 @@ class VideoController extends Controller
                 "embed" => $embed
             ]);
         
+        $msg = "<span class=\"badge badge-warning p-2\">
+            Success : video link has been Updated! </span>";
         return response()->json([
-            "msg" => "Video has been updated"
+            "msg" => $msg
         ]);
     }
 
@@ -123,7 +127,7 @@ class VideoController extends Controller
     {
         $del = Video::find($id);
         $del->delete();
-        $msg = "<span class=\"badge badge-success\">Suucess : Item has been 
+        $msg = "<span class=\"badge badge-success p-2\">Sucess : Item has been 
             remove</span>";
         return response()->json(["msg" => $msg]);
     }

@@ -22,7 +22,7 @@ class PhotosController extends Controller
     public function getPhotos(){
         $photos = Photo::with("user")
                     ->orderBy("created_at","DESC")
-                    ->paginate(5)
+                    ->paginate(24)
                     ->onEachSide(1);
         return response()->json([
             "photos" => $photos

@@ -83,6 +83,11 @@
                 @click.prevent="saveSong(saveId)">
                     Save
                 </button>
+
+                <button class="btn btn-outline-danger"
+                @click.prevent="clearForm">
+                    clear
+                </button>
             </div>
         </div>
     </form>

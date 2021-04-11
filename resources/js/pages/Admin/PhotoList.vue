@@ -35,34 +35,42 @@
                    </div><!-- end of div.card-footer -->
                </div><!-- end of div.card -->
             </div><!-- end of div.col-lg-3 -->
+            <div class="col-lg-12 pt-2 mb-2">&nbsp;</div>
             <div class="col-lg-12">
-                <div class="pa">
-                    <ul class="pagination">
-                        <li class="page-item">
-                            showing from 
-                            <span>
-                                {{photos.from}}
-                            </span> to 
-                            <span>{{photos.to}}</span> of 
-                            <span>{{photos.total}}</span> &middot;
+                <div class="nav-scroller py-1 mb-2">
+                    <nav class="nav d-flex justify-content-center">
+                        <ul class="pagination flex-wrap">
+                            <li class="page-item">
+                                <div class="page-link disabled">
+                                    showing from 
+                                    <span>
+                                        {{photos.from}}
+                                    </span> to 
+                                    <span>{{photos.to}}</span> of 
+                                    <span>{{photos.total}}</span>
+                                </div>
 
-                        </li>
-                        <li class="page-item" v-for="li in photos.links" 
-                        >
-                            <a href="" 
-                            @click.prevent="$emit('getPhotos',li.url)" 
-                            v-if="li.active != true && li.url != null" 
-                            v-html="li.label">
-                                {{li.label}}
-                            </a>
-                            <span class="active" v-html="li.label" v-else>
-                                {{li.label}}
-                            </span> &middot;
-                        </li>
-                        <li class="page-item">
-                            <span class="active">{{photos.current_page}}</span>
-                        </li>
-                    </ul>
+                            </li>
+                            <li class="page-item" v-for="li in photos.links" 
+                            >
+                                <a href="" class="page-link p-2" 
+                                @click.prevent="$emit('getPhotos',li.url)" 
+                                v-if="li.active != true && li.url != null" 
+                                v-html="li.label">
+                                    {{li.label}}
+                                </a>
+                                <span class="page-link" v-html="li.label" 
+                                    v-else>
+                                    {{li.label}}
+                                </span> 
+                            </li>
+                            <li class="page-item active">
+                                <span class="page-link">
+                                    <b-icon icon="book-half"></b-icon>
+                                    {{photos.current_page}}</span>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div><!-- end of div.col-lg-12 pagination -->
             <b-modal title="show photo" ref="showPhotoModal" 
