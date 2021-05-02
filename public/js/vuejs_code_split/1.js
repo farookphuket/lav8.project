@@ -256,7 +256,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "PostForm",
@@ -411,6 +410,13 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _PostTags_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PostTags.vue */ "./resources/js/pages/Admin/PostTags.vue");
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1208,7 +1214,7 @@ var render = function() {
     { staticClass: "container" },
     [
       _vm._l(_vm.posts.data, function(li) {
-        return _c("div", { staticClass: "card card-body" }, [
+        return _c("div", { staticClass: "card card-body p-2" }, [
           _c(
             "a",
             {
@@ -1291,6 +1297,8 @@ var render = function() {
           _c("div", { domProps: { innerHTML: _vm._s(li.post_excerpt) } }, [
             _vm._v("\n            " + _vm._s(li.post_excerpt) + "\n        ")
           ]),
+          _vm._v(" "),
+          _c("hr", { staticClass: "pt-2 mb-2" }),
           _vm._v(" "),
           _c("div", { staticClass: "clearfix" }, [
             _c(
@@ -1392,90 +1400,107 @@ var render = function() {
         ])
       }),
       _vm._v(" "),
-      _c("div", { staticClass: "pa" }, [
-        _c(
-          "ul",
-          { staticClass: "pagination" },
-          [
-            _c("li", { staticClass: "page-item" }, [
-              _vm._v("\n                showing form \n                "),
-              _c("span", [
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(_vm.posts.from) +
-                    "\n                "
-                )
+      _c("div", { staticClass: "col-lg-12 pt-2 mb-2" }, [_vm._v(" ")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "nav-scroller py-1 mb-2" }, [
+        _c("nav", { staticClass: "nav d-flex justify-content-center" }, [
+          _c(
+            "ul",
+            { staticClass: "pagination" },
+            [
+              _c("li", { staticClass: "page-item disabled" }, [
+                _c("div", { staticClass: "page-link" }, [
+                  _vm._v(
+                    "\n                        showing form \n                        "
+                  ),
+                  _c("span", [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(_vm.posts.from) +
+                        "\n                        "
+                    )
+                  ]),
+                  _vm._v(
+                    "\n                        to \n                        "
+                  ),
+                  _c("span", [
+                    _vm._v(
+                      " \n                            " +
+                        _vm._s(_vm.posts.to) +
+                        "\n                        "
+                    )
+                  ]),
+                  _vm._v(" of\n                        "),
+                  _c("span", [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(_vm.posts.total) +
+                        "\n                        "
+                    )
+                  ])
+                ])
               ]),
-              _vm._v("\n                to \n                "),
-              _c("span", [
-                _vm._v(
-                  " \n                    " +
-                    _vm._s(_vm.posts.to) +
-                    "\n                "
-                )
-              ]),
-              _vm._v(" of\n                "),
-              _c("span", [
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(_vm.posts.total) +
-                    "\n                "
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _vm._l(_vm.posts.links, function(mm) {
-              return _c("li", { staticClass: "page-item" }, [
-                mm.active == false && mm.url != null
-                  ? _c(
-                      "a",
-                      {
-                        attrs: { href: "" },
-                        domProps: { innerHTML: _vm._s(mm.label) },
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            return _vm.$emit("getPostList", mm.url)
+              _vm._v(" "),
+              _vm._l(_vm.posts.links, function(mm) {
+                return _c("li", { staticClass: "page-item" }, [
+                  mm.active == false && mm.url != null
+                    ? _c(
+                        "a",
+                        {
+                          staticClass: "page-link p-2",
+                          attrs: { href: "" },
+                          domProps: { innerHTML: _vm._s(mm.label) },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.$emit("getPostList", mm.url)
+                            }
                           }
-                        }
-                      },
-                      [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(mm.label) +
-                            "\n                "
-                        )
-                      ]
+                        },
+                        [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(mm.label) +
+                              "\n                    "
+                          )
+                        ]
+                      )
+                    : _c(
+                        "span",
+                        {
+                          staticClass: "page-link disabled",
+                          domProps: { innerHTML: _vm._s(mm.label) }
+                        },
+                        [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(mm.label) +
+                              "\n                    "
+                          )
+                        ]
+                      )
+                ])
+              }),
+              _vm._v(" "),
+              _c("li", { staticClass: "page-item active" }, [
+                _c(
+                  "span",
+                  { staticClass: "page-link" },
+                  [
+                    _c("b-icon", { attrs: { icon: "book-half" } }),
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(_vm.posts.current_page) +
+                        "\n                    "
                     )
-                  : _c(
-                      "span",
-                      {
-                        staticClass: "active",
-                        domProps: { innerHTML: _vm._s(mm.label) }
-                      },
-                      [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(mm.label) +
-                            "\n                "
-                        )
-                      ]
-                    )
-              ])
-            }),
-            _vm._v(" "),
-            _c("li", { staticClass: "page-item" }, [
-              _c("span", { staticClass: "active" }, [
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(_vm.posts.current_page) +
-                    "\n                "
+                  ],
+                  1
                 )
               ])
-            ])
-          ],
-          2
-        )
+            ],
+            2
+          )
+        ])
       ]),
       _vm._v(" "),
       _c("post-tag", {

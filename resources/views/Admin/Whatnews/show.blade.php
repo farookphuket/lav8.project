@@ -36,6 +36,7 @@
     <div class="line"></div>
     {!!$whatnews->whatnews_body!!}
 
-</div>
 
+</div>
+<div class="col-lg-12 pt-4 mb-2">&nbsp;</div>
 @endsection

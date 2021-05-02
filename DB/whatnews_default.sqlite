@@ -22,6 +22,43 @@ INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
 
 */
 
+
+/* update composer */
+INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
+`is_public`,`created_at`,`updated_at`) VALUES (NULL,
+'1',                            
+'I just update my composer on ubuntu box',                             
+'
+<div class="row">
+    <div class="col-lg-4">
+        <img src="https://i.ibb.co/nkZmFHt/2021-04-23-composer-need-update.png" alt="the photo text if you have" class="responsive">
+        <p class="text-center">
+            composer need upgrate to newer version
+
+
+        </p>
+    </div>
+    <div class="col-lg-8">
+        <p>
+            <b>Hi there</b> I just update composer on my Ubuntu box today(23 Apr 2021) after I never boot up for a long long time.
+        </p>
+        <p class="pt-2">to actully update composer from version x1 to version x2 is quite simple as just one single command</p>
+        <textarea class="form-control">sudo composer self-update</textarea>
+
+        <p class="pt-4">after run the above command now when you run `composer -v` you should see your composer version has changed!</p>
+        <img src="https://i.ibb.co/0czpxYX/2021-04-23-composer-has-update.png" class="responsive">
+
+    </div>
+</div>
+',                                          
+'1',                        
+'2021-04-23 13:22:45',                
+'2021-04-23 13:23:45'                 
+);                                          
+
+
+
+
 /* review nissn kick e-power 06-04-2021 */
 INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
 `is_public`,`created_at`,`updated_at`) VALUES (NULL,

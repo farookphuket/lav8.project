@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <form action="">
             <div class="form-group">
                 <select class="form-control" ref="getTemplate"

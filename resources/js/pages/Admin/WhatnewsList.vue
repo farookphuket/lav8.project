@@ -1,41 +1,39 @@
 <template>
     <div>
-
         <div class="card card-body"
             v-for="po in wnlist.data">
 
             <h2 class="text-center">
                 <a href=""
                     @click.prevent="goRead(po.id)">
+                    <b-icon icon="arrow-up-right"></b-icon>
                 {{po.whatnews_title}}
                 </a>
             </h2>
             <div class="clearfix x-info">
                 <div class="float-left">
-                    <span class="badge badge-danger"
+                    <span class="badge badge-danger p-2"
                         v-if="po.is_public !== '1'">
-                        Not Public
+                        <b-icon icon="lock"></b-icon>
                     </span>
-                    <span class="badge badge-success"
+                    <span class="badge badge-success p-2"
                         v-else>
-                        Public
+                        <b-icon icon="unlock"></b-icon>
                     </span>
                 </div><!-- end div.float-left -->
                 <div class="float-right">
-                    <div class="x-info">
-                        By 
-                        <span class="badge badge-info">
-                            {{po.user.name}}
-                        </span>
-                        on 
-                        <span class="badge badge-info">
-                            {{moment(po.created_at)}}
-                        </span>
-                        <span class="badge badge-info">
-                            &middot;
-                            {{moment(po.created_at).fromNow()}}
-                        </span>
-                    </div>
+                    <span>
+                        <b-icon icon="person"></b-icon>
+                        {{po.user.name}}
+                    </span> &middot;
+                    <span class="badge badge-info">
+                        <b-icon icon="calenda2-day"></b-icon>
+                        {{moment(po.created_at)}}
+                    </span> &middot;
+                    <span class="badge badge-info">
+                        <b-icon icon="clock-history"></b-icon>
+                        {{moment(po.created_at).fromNow()}}
+                    </span>
                 </div><!-- end div.float-right -->
             </div><!-- end div.clearfix -->
             <div class="line"></div>
@@ -51,49 +49,61 @@
                         <button 
                             @click.prevent="goDel(po.id)"
                             class="btn btn-outline-danger btn-sm">
-                            delete
+                            <b-icon icon="trash"></b-icon>
                         </button>
                     </div>
                 </div>
             </div>
-
         </div><!-- end of div.card -->
-        <div class="pa">
-            <ul class="pagination">
-                <li class="page-item">
-                    showing from 
-                    <span>
-                        {{wnlist.from}}
-                    </span>
-                    to 
-                    <span>
-                        {{wnlist.to}}
-                    </span>
-                    of 
-                    <span>
-                        {{wnlist.total}}
-                    </span>
-                </li>
-                <li class="page-item" 
-                    v-for="li in wnlist.links">
-                    <a v-if="li.active === false && li.url !== null"
-                       href="#"
-                       @click="goToPage(li.url)"
-                        v-html="li.label">
-                    {{li.label}}
-                    </a>
-                    <span class="active" v-else
-                        v-html="li.label">
+        <!-- =========== need some space START ====== -->
+        <div class="col-lg-12 pt-2 mb-2">&nbsp;</div>
+        <!-- =========== need some space End ====== -->
+        <!-- =========== pagination START ========= -->
+        <div class="col-lg-12">
+
+        </div>
+
+        <!-- =========== pagination End ========= -->
+        <div class="nav-scroller py-1 mb-2">
+            <nav class="nav d-flex justify-content-center">
+                <ul class="pagination flex-wrap">
+                    <li class="page-item active">
+                        <div class="page-link disabled">
+                            showing from 
+                            <span>
+                                {{wnlist.from}}
+                            </span>
+                            to 
+                            <span>
+                                {{wnlist.to}}
+                            </span>
+                            of 
+                            <span>
+                                {{wnlist.total}}
+                            </span>
+                        </div>
+                    </li>
+                    <li class="page-item" 
+                        v-for="li in wnlist.links">
+                        <a v-if="li.active === false && li.url !== null"
+                           href="#" class="page-link p-2"
+                           @click="goToPage(li.url)"
+                            v-html="li.label">
                         {{li.label}}
-                    </span>
-                </li>
-                <li class="page-item">
-                    current page 
-                    <span>
-                        {{wnlist.current_page}}
-                    </span>
-                </li>
-            </ul>
+                        </a>
+                        <span class="page-link disabled active" v-else
+                            v-html="li.label">
+                            {{li.label}}
+                        </span>
+                    </li>
+                    <li class="page-item active">
+                        <span class="page-link">
+                            <b-icon icon="book-half"></b-icon>
+                            {{wnlist.current_page}}
+                        </span>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
 </template>

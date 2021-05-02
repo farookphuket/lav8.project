@@ -214,7 +214,10 @@
         <a target="_blank" href="{{$my_linkin}}" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
       <div class="copyright">
-        &copy; Copyright <strong><span>Green</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Green</span></strong>. 
+        All Rights Reserved 
+        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->

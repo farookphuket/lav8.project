@@ -46,32 +46,46 @@
             <hr class="pt-4 mb-2">
             
         </div><!-- end of div v-for -->
-        <div class="pa">
-            <ul class="pagination">
-                <li class="page-item">
-                    showing from <span>{{tags.from}}</span> to 
-                    <span>{{tags.to}}</span> of <span>{{tags.total}}</span> 
-                    &middot;
-                </li>
-                <li class="page-item" v-for="li in tags.links">
-                    <a href="" v-html="li.label" 
-                        v-if="!li.active  && li.url != null" 
-                        @click.prevent="$emit('getTags',li.url)"
-                        >
-                        {{li.label}}
-                    </a>
-                    <span class="active" v-html="li.label" v-else>
-                        {{li.label}}
-                    </span> &middot;
-                </li>
-                <li class="page-item">
-                    <span class="active">
-                        <b-icon icon="book-half"></b-icon>
-                        {{tags.current_page}}
-                    </span>
-                </li>
-            </ul>
-        </div><!-- end of div pagination -->
+        <!-- ========= need some space START ======= -->
+        <div class="col-lg-12 pt-2 mb-2">&nbsp;</div>
+        <!-- ========= need some space End ======= -->
+        <!-- ========= pagination START =========== -->
+        <div class="col-lg-12">
+            <div class="nav-scroller py-1 mb-2">
+                <nav class="nav d-flex justify-content-center">
+                    <ul class="pagination flex-wrap">
+                        <li class="page-item disabled">
+                            <div class="page-link">
+                                showing from <span>{{tags.from}}</span> to 
+                                <span>{{tags.to}}</span> of <span>{{tags.total}}</span> 
+
+                            </div>
+                        </li>
+                        <li class="page-item" v-for="li in tags.links">
+                            <a href="" v-html="li.label" class="page-link p-2"
+                                v-if="!li.active  && li.url != null" 
+                                @click.prevent="$emit('getTags',li.url)"
+                                >
+                                {{li.label}}
+                            </a>
+                            <span class="page-link active disabled" 
+                                v-html="li.label" v-else>
+                                {{li.label}}
+                            </span> 
+                        </li>
+                        <li class="page-item active">
+                            <span class="page-link ">
+                                <b-icon icon="book-half"></b-icon>
+                                {{tags.current_page}}
+                            </span>
+                        </li>
+                    </ul>
+                </nav>
+            </div><!-- end of div pagination -->
+
+        </div>
+
+        <!-- ========= pagination END =========== -->
     </div><!-- end of main div -->
 </template>
 

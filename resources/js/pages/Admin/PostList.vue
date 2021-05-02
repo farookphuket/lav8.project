@@ -1,7 +1,6 @@
 <template>
     <div class="container">
-        
-        <div class="card card-body"
+        <div class="card card-body p-2"
             v-for="li in posts.data">
             <a href="#" @click="$emit('postRead',li.slug)">
             <h2 class="text-center">
@@ -27,14 +26,14 @@
                         <b-icon icon="clock-history"></b-icon>
                         {{moment(li.created_at).fromNow()}}
                     </span>
-
-
                     </p>
                 </div>
             </div>
             <div v-html="li.post_excerpt">
                 {{li.post_excerpt}}
             </div>
+            <hr class="pt-2 mb-2">
+            
             <div class="clearfix">
                 <div class="float-left">
                     <span v-for="ta in li.tags">
@@ -72,45 +71,53 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="pa">
-            <ul class="pagination">
-                <li class="page-item">
-                    showing form 
-                    <span>
-                        {{posts.from}}
-                    </span>
-                    to 
-                    <span> 
-                        {{posts.to}}
-                    </span> of
-                    <span>
-                        {{posts.total}}
-                    </span>
+        </div><!-- end of div.card.card-body content list -->
+        <!-- need a space between the content -->
+        <div class="col-lg-12 pt-2 mb-2">&nbsp;</div>
+        <!-- need a space between the content -->
+        <div class="nav-scroller py-1 mb-2">
+            <nav class="nav d-flex justify-content-center">
+                <ul class="pagination">
+                    <li class="page-item disabled">
+                        <div class="page-link">
+                            showing form 
+                            <span>
+                                {{posts.from}}
+                            </span>
+                            to 
+                            <span> 
+                                {{posts.to}}
+                            </span> of
+                            <span>
+                                {{posts.total}}
+                            </span>
+                        </div>
+                    </li>
+                    <li class="page-item"
+                        v-for="mm in posts.links">
+                        <a href="" class="page-link p-2"
+                            v-if="mm.active == false && mm.url != null"
+                            v-html="mm.label"
 
-                </li>
-                <li class="page-item"
-                    v-for="mm in posts.links">
-                    <a href=""
-                        v-if="mm.active == false && mm.url != null"
-                        v-html="mm.label"
+                            @click.prevent="$emit('getPostList',mm.url)">
+                            {{mm.label}}
+                        </a>
+                        <span class="page-link disabled" 
+                              v-html="mm.label"
+                            v-else>
+                            {{mm.label}}
+                        </span>
+                    </li>
+                    <li class="page-item active">
+                        <span class="page-link">
+                            <b-icon icon="book-half"></b-icon>
+                            {{posts.current_page}}
+                        </span>
+                    </li>
+                </ul>
 
-                        @click.prevent="$emit('getPostList',mm.url)">
-                        {{mm.label}}
-                    </a>
-                    <span class="active" 
-                          v-html="mm.label"
-                        v-else>
-                        {{mm.label}}
-                    </span>
-                </li>
-                <li class="page-item">
-                    <span class="active">
-                        {{posts.current_page}}
-                    </span>
-                </li>
-            </ul>
-        </div><!-- end div.card-body -->
+            </nav>
+        </div><!-- end of div pagination  -->
         <post-tag :tag_has_content="tag_with_content"
                           :tag_all="tag_all"
                           @getPostByTagId="getPostByTagId($event)"></post-tag>
