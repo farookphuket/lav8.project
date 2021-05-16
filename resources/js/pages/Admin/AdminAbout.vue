@@ -1,45 +1,11 @@
 <template>
 
-    <div class="contaniner-fluid">
-
-            <div class="container">
-                <form >
-
-                    <div class="form-group">
-                        <jodit-editor
-                            v-model="excerpt"
-                            height=450></jodit-editor>
-                    </div><!--  end of div.form-group-->
-                    <div class="form-group">
-                        <jodit-editor
-                            v-model="body"
-                            height=450></jodit-editor>
-                    </div><!--  end of div.form-group-->
-                    <div class="clearfix">
-                        <div class="float-left">
-                            <span v-html="res_status">
-                                {{res_status}}
-                            </span>
-                        </div>
-                        <div class="float-right">
-                            <button 
-                             @click.prevent="savePage(editId)"
-                                class="btn btn-primary">
-                                Save
-                            </button>
-                        </div>
-                    </div><!--  end of div.clearfix -->
-                </form>
-            </div>
-            <div class="container">
-                <div class="preview">
-                    <div class="card card-body">
-                        <div v-html="excerpt">{{excerpt}}</div>
-                        <div v-html="body">{{body}}</div>
-                    </div>
-                </div>
-            </div>
+<div class="contaniner-fluid">
+    <div class="container">
+        <about-form :editId="editId" :about="about"
+            :template="template"></about-form>
     </div>
+</div>
 </template>
 
 <style scoped>
@@ -51,16 +17,17 @@
 
 <script>
 
-
+import AboutForm from './AboutForm.vue'
 import JoditEditor from 'jodit-vue'
 
 export default{
     name:"AdminAbout",
-    props:["about"],
+    props:["about","template"],
+    components:{
+        AboutForm,
+    },
     data(){
         return{
-            excerpt:'',
-            body:'',
             editId:0,
             res_status:''
         }
@@ -77,10 +44,7 @@ export default{
                     this.body = val.post_body
                     this.editId = val.id
                 })
-            }else{
-                this.editId = 0;
-            }
-            
+            }            
         },
         savePage(id){
             let url = ``

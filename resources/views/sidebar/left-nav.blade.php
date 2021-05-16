@@ -21,7 +21,7 @@
                 </li>
                 <li class="@if(Request::segment(2) == "about") active @endif ">
                     <a  
-                        href="{{route('admin.post.about')}}">About</a>
+                        href="{{route('admin.about.index')}}">About</a>
                 </li>
                 <li class="@if(Request::segment(2) == "pages") active @endif ">
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>

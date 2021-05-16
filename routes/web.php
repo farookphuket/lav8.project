@@ -37,6 +37,7 @@ use App\Http\Controllers\Admin\VisitorsController as ADVT;
 use App\Http\Controllers\Admin\SongController as aSong;
 use App\Http\Controllers\Admin\VideoController as aVideo;
 use App\Http\Controllers\Admin\PhotosController as aPhotos;
+use App\Http\Controllers\Admin\AboutController as aAbout;
 
 
 /*
@@ -110,6 +111,8 @@ Route::prefix('member')->name('member.')->middleware('auth')
     Route::resource('/posts',MemberPost::class);
     Route::get('/posts/{post:slug}',[MemberPost::class,'show'])
         ->name('posts.show');
+
+    // will be update for user to be easy to contact admin
     Route::get('/about',[MemberPost::class,"about"])->name('posts.about');
 
     Route::get('/getPostComment/{post_id}',[MCMT::class,'getPostComment'])
@@ -231,5 +234,7 @@ Route::prefix('admin')->name('admin.')->middleware('can:is_admin')
 
     Route::resource("/photo",aPhotos::class);
     Route::get("/getPhotos",[aPhotos::class,"getPhotos"])->name("getPhotos");
+
+    Route::resource('/about',aAbout::class);
 
 });

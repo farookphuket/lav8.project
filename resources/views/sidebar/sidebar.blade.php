@@ -62,6 +62,7 @@
             @yield('content')
 
 
+<div class="line"></div>
         </div>
     </div>
 

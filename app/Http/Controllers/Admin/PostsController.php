@@ -27,11 +27,19 @@ class PostsController extends Controller
         return view("Admin.Posts.index")->with(["template" => $template]);
     }
 
+
+    /* about page */
     public function about(){
+        $template = Template::where("section","about")->get();
         $about = Post::where("slug","about")->get();
-        return view("Admin.about")->with(["about" => $about]);
+        return view("Admin.about")->with([
+            "about" => $about,
+            "template" => $template
+        ]);
     }
 
+
+    /* get all the post */
     public function getPosts(){
 
         $posts =  Post::with('tags')

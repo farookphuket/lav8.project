@@ -7,20 +7,35 @@
 
     @foreach($post as $item)
         @section("meta_title",$item->post_title)
-        <article class="post-preview">
+
+<div class="container">
+
           <a href="/member/home" title="back home">
               <h2 class="post-title">{{$item->post_title}}</h2>
           </a>
-          <p class="post-meta">Posted by
-            
-          {{$item->user->name}}
-            
-            on
-            {{$item->created_at}} &middot; <span class="reading-time" title="Estimated read time">
-  
-                {{$item->created_at->diffForHumans()}} </span>
-            
-          </p>
+
+            <p class="font-italic">
+                <span class="badge badge-info">
+                    <b-icon icon="person"></b-icon> 
+                    {{$item->user->name}}
+                </span>
+                
+               <span class="badge badge-primary">
+                    <b-icon icon="clock"></b-icon> 
+                    {{$item->created_at}}
+
+                    &middot; 
+                    {{$item->created_at->diffForHumans()}}
+                </span>
+               <span class="badge badge-warning">
+                    <b-icon icon="calendar2-day"></b-icon>  
+                    {{$item->updated_at}}
+                    &middot; 
+
+                    {{$item->updated_at->diffForHumans()}}
+                </span>
+            </p>
+
 
           <div>
               {!!$item->post_excerpt!!}
@@ -28,7 +43,8 @@
           <div>
               {!!$item->post_body!!}
           </div>
-        </article>
+
+</div>
 
       @endforeach
 
