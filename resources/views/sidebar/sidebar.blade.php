@@ -61,7 +61,7 @@
             @include('INC/_flash_message')
             @yield('content')
 
-
+            <div class="line"></div>
         </div>
     </div>
 
