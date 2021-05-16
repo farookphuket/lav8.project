@@ -134,11 +134,15 @@
 
                 </div>
                 <div class="col-md-3">
-                    <a href="/donate-me">
-                        <img src="" 
-class="responsive pt-4 mb-4">
+
+                    <img src="https://lh3.googleusercontent.com/cfOid3sYJtcVhxh6pXTQ9l2LfCTIDnPXGIY2TidhJRi2bkwzmtlZItSFINgzyFyG2FDXgfFS7bX1AQuzK03HOwJ-67Blc9oHtPD6QdrNpP_avEAYUhYyX6DLwuXKe5P_te8rbr0Ny4w=w1920-h1080" 
+                    class="img-fluid responsive" alt="click to go donate page">
                     </a>
+                    <p class="pt-2 text-center">
+                        if you want to support me click on my photo
+                    </p>
                 </div>
+
+
             </div>
-        </article>
 

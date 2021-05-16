@@ -39,7 +39,8 @@ class PostsController extends Controller
 
     /* getPostlist call by ajax */ 
     public function getPostList(){
-        $posts = Post::with('user')
+        $posts = Post::where('slug','!=','about')
+                    ->with('user')
                         ->with('tags')
                         ->orderBy('created_at','desc')
                         ->paginate(5)

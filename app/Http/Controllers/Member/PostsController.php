@@ -54,7 +54,8 @@ class PostsController extends Controller
     }
 
     public function getPosts(){
-        $posts = Post::with('tags')
+        $posts = Post::where("slug","!=","about")
+                    ->with('tags')
                     ->orderBy("created_at","desc")
                     /* ->join("users","users.id","=","posts.user_id") */
                     /* ->select("users.name","users.email","posts.*") */

@@ -31,22 +31,27 @@ INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
 '
 <div class="row">
     <div class="col-lg-4">
-        <img src="https://i.ibb.co/nkZmFHt/2021-04-23-composer-need-update.png" alt="the photo text if you have" class="responsive">
-        <p class="text-center">
-            composer need upgrate to newer version
 
-
-        </p>
     </div>
-    <div class="col-lg-8">
+    <div class="col-lg-12">
         <p>
-            <b>Hi there</b> I just update composer on my Ubuntu box today(23 Apr 2021) after I never boot up for a long long time.
+            <b>Hi there</b> I just update composer on my Ubuntu box today(23 
+            Apr 2021) after I never boot up for a long long time.
         </p>
-        <p class="pt-2">to actully update composer from version x1 to version x2 is quite simple as just one single command</p>
+
+        <p class="pt-4 mb-2">
+before update composer will be look like this when you run ''composer -v''
+        </p>
+        <img src="https://i.ibb.co/nkZmFHt/2021-04-23-composer-need-update.png" 
+        alt="the photo text if you have" class="responsive mb-4">
+        <p class="pt-2">to actully update composer from version x1 to version 
+        x2 is quite simple as just one single command</p>
         <textarea class="form-control">sudo composer self-update</textarea>
 
-        <p class="pt-4">after run the above command now when you run `composer -v` you should see your composer version has changed!</p>
-        <img src="https://i.ibb.co/0czpxYX/2021-04-23-composer-has-update.png" class="responsive">
+        <p class="pt-4">after run the above command now when you run 
+        ''composer -v'' you should see your composer version has changed!</p>
+        <img src="https://i.ibb.co/0czpxYX/2021-04-23-composer-has-update.png" 
+        class="responsive">
 
     </div>
 </div>

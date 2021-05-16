@@ -1,5 +1,156 @@
 (self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_pages_Admin_AdminAbout_vue"],{
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/AboutForm.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/AboutForm.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "AboutForm",
+  props: ["template", "editId", "about"],
+  data: function data() {
+    return {
+      excerpt: '',
+      body: '',
+      saveId: '',
+      res_status: ''
+    };
+  },
+  mounted: function mounted() {
+    this.showAbout();
+  },
+  methods: {
+    saveAbout: function saveAbout(id) {
+      var _this = this;
+
+      var data = {
+        title: 'about',
+        slug: 'about',
+        excerpt: this.excerpt,
+        body: this.body,
+        is_public: true
+      };
+      var url = '';
+
+      if (!id) {
+        url = '/admin/post';
+        axios.post(url, data).then(function (res) {
+          _this.res_status = res.data.msg;
+        });
+      } else {
+        url = "/admin/post/".concat(id);
+        axios.put(url, data).then(function (res) {
+          _this.res_status = res.data.msg;
+        });
+      }
+
+      setTimeout(function () {
+        location.reload();
+      }, 3000);
+    },
+    showAbout: function showAbout() {
+      var _this2 = this;
+
+      if (!this.about.length) {
+        this.excerpt = "\n                <div class=\"container\">\n                    <h1 class=\"text-center\">you are using default about page</h1>\n                    <div>\n                        <p>\n                            dear friends if you want to change this page just \n                            edit it from the above form.\n                        </p>\n                    </div>\n                </div>\n                ";
+      } else {
+        this.about.forEach(function (val) {
+          _this2.excerpt = val.post_excerpt;
+          _this2.body = val.post_body;
+          _this2.saveId = val.id;
+        }); //                console.log(this.about)
+      }
+    },
+    setTemplate: function setTemplate() {
+      var _this3 = this;
+
+      var tm = this.$refs.selectTemplate.value;
+      var url = "/admin/templates/".concat(tm);
+      axios.get(url).then(function (res) {
+        var val = res.data.template;
+        _this3.excerpt = val.excerpt;
+        _this3.body = val.body;
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/AdminAbout.vue?vue&type=script&lang=js&":
 /*!******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/AdminAbout.vue?vue&type=script&lang=js& ***!
@@ -11,41 +162,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var jodit_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jodit-vue */ "./node_modules/jodit-vue/dist/jodit-vue.esm.js");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var _AboutForm_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AboutForm.vue */ "./resources/js/pages/Admin/AboutForm.vue");
+/* harmony import */ var jodit_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jodit-vue */ "./node_modules/jodit-vue/dist/jodit-vue.esm.js");
 //
 //
 //
@@ -64,13 +182,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "AdminAbout",
-  props: ["about"],
+  props: ["about", "template"],
+  components: {
+    AboutForm: _AboutForm_vue__WEBPACK_IMPORTED_MODULE_0__.default
+  },
   data: function data() {
     return {
-      excerpt: '',
-      body: '',
       editId: 0,
       res_status: ''
     };
@@ -89,8 +209,6 @@ __webpack_require__.r(__webpack_exports__);
           _this.body = val.post_body;
           _this.editId = val.id;
         });
-      } else {
-        this.editId = 0;
       }
     },
     savePage: function savePage(id) {
@@ -150,6 +268,45 @@ ___CSS_LOADER_EXPORT___.push([module.id, "\n.card-body[data-v-70203232]{\n    ma
 
 /***/ }),
 
+/***/ "./resources/js/pages/Admin/AboutForm.vue":
+/*!************************************************!*\
+  !*** ./resources/js/pages/Admin/AboutForm.vue ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _AboutForm_vue_vue_type_template_id_5e303018___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AboutForm.vue?vue&type=template&id=5e303018& */ "./resources/js/pages/Admin/AboutForm.vue?vue&type=template&id=5e303018&");
+/* harmony import */ var _AboutForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AboutForm.vue?vue&type=script&lang=js& */ "./resources/js/pages/Admin/AboutForm.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _AboutForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _AboutForm_vue_vue_type_template_id_5e303018___WEBPACK_IMPORTED_MODULE_0__.render,
+  _AboutForm_vue_vue_type_template_id_5e303018___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/Admin/AboutForm.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/pages/Admin/AdminAbout.vue":
 /*!*************************************************!*\
   !*** ./resources/js/pages/Admin/AdminAbout.vue ***!
@@ -191,6 +348,22 @@ component.options.__file = "resources/js/pages/Admin/AdminAbout.vue"
 
 /***/ }),
 
+/***/ "./resources/js/pages/Admin/AboutForm.vue?vue&type=script&lang=js&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/pages/Admin/AboutForm.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AboutForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./AboutForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/AboutForm.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AboutForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
 /***/ "./resources/js/pages/Admin/AdminAbout.vue?vue&type=script&lang=js&":
 /*!**************************************************************************!*\
   !*** ./resources/js/pages/Admin/AdminAbout.vue?vue&type=script&lang=js& ***!
@@ -204,6 +377,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminAbout_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./AdminAbout.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/AdminAbout.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminAbout_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/Admin/AboutForm.vue?vue&type=template&id=5e303018&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/pages/Admin/AboutForm.vue?vue&type=template&id=5e303018& ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AboutForm_vue_vue_type_template_id_5e303018___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AboutForm_vue_vue_type_template_id_5e303018___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AboutForm_vue_vue_type_template_id_5e303018___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./AboutForm.vue?vue&type=template&id=5e303018& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/AboutForm.vue?vue&type=template&id=5e303018&");
+
 
 /***/ }),
 
@@ -241,10 +431,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/AdminAbout.vue?vue&type=template&id=70203232&scoped=true&":
-/*!***********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/AdminAbout.vue?vue&type=template&id=70203232&scoped=true& ***!
-  \***********************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/AboutForm.vue?vue&type=template&id=5e303018&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/AboutForm.vue?vue&type=template&id=5e303018& ***!
+  \**********************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -257,9 +447,39 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "contaniner-fluid" }, [
-    _c("div", { staticClass: "container" }, [
+  return _c("div", [
+    _c("h1", [_vm._v("about form vue")]),
+    _vm._v(" "),
+    _c("div", { staticClass: "col-lg-12 pt-4 mb-4" }, [
       _c("form", [
+        _c("div", { staticClass: "form-group" }, [
+          _c(
+            "select",
+            {
+              ref: "selectTemplate",
+              staticClass: "form-control",
+              attrs: { name: "template" },
+              on: { change: _vm.setTemplate }
+            },
+            [
+              _c("option", { attrs: { value: "0" } }, [
+                _vm._v("--Select Template --")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.template, function(tt) {
+                return _c("option", { domProps: { value: tt.id } }, [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(tt.title) +
+                      "\n                    "
+                  )
+                ])
+              })
+            ],
+            2
+          )
+        ]),
+        _vm._v(" "),
         _c(
           "div",
           { staticClass: "form-group" },
@@ -300,9 +520,9 @@ var render = function() {
           _c("div", { staticClass: "float-left" }, [
             _c("span", { domProps: { innerHTML: _vm._s(_vm.res_status) } }, [
               _vm._v(
-                "\n                            " +
+                "\n                        " +
                   _vm._s(_vm.res_status) +
-                  "\n                        "
+                  "\n                    "
               )
             ])
           ]),
@@ -315,24 +535,24 @@ var render = function() {
                 on: {
                   click: function($event) {
                     $event.preventDefault()
-                    return _vm.savePage(_vm.editId)
+                    return _vm.saveAbout(_vm.saveId)
                   }
                 }
               },
-              [
-                _vm._v(
-                  "\n                            Save\n                        "
-                )
-              ]
+              [_vm._v("\n                        Save\n                    ")]
             )
           ])
         ])
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "col-lg-12 mb-4 pt-4" }, [
       _c("div", { staticClass: "preview" }, [
         _c("div", { staticClass: "card card-body" }, [
+          _c("h2", { staticClass: "text-center" }, [_vm._v("About")]),
+          _vm._v(" "),
+          _c("p", [_vm._v("this is the preview of your about page")]),
+          _vm._v(" "),
           _c("div", { domProps: { innerHTML: _vm._s(_vm.excerpt) } }, [
             _vm._v(_vm._s(_vm.excerpt))
           ]),
@@ -343,6 +563,46 @@ var render = function() {
         ])
       ])
     ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/AdminAbout.vue?vue&type=template&id=70203232&scoped=true&":
+/*!***********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/AdminAbout.vue?vue&type=template&id=70203232&scoped=true& ***!
+  \***********************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "contaniner-fluid" }, [
+    _c(
+      "div",
+      { staticClass: "container" },
+      [
+        _c("about-form", {
+          attrs: {
+            editId: _vm.editId,
+            about: _vm.about,
+            template: _vm.template
+          }
+        })
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = []
