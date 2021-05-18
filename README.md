@@ -10,9 +10,10 @@
 
 
 
-##  Last update 11 Apr 2021
+##  Last update 18 May 2021
 
->   I've spent all day just to make this work in the way that I want
+> added to baanlungpa.com 18 May 2021
+> fixed the "forgot password"
 
 
 
@@ -24,7 +25,7 @@
 
 
 
-# how can I download and setup 
+# how can I download and setup
 
 > please click on the youtube link to see it in detail
 
@@ -35,7 +36,7 @@
 
 
 
-# How can I use this 
+# How can I use this
 
 
 >   please watch this video it will tell you better than read from here
@@ -48,29 +49,29 @@
 
 #   is my laravel project work on SHARE HOSTING?
 
->   Yes! but I will not recommand this! 
->   maybe I am a way too stupid for this, 
+>   Yes! but I will not recommand this!
+>   maybe I am a way too stupid for this,
 >   but the easier way that I can do to make this work is just gone around
->   this way (before you upload your project to the share host make sure that 
->   1.you have a copy project folder 2.you have run "npm run prod" 
+>   this way (before you upload your project to the share host make sure that
+>   1.you have a copy project folder 2.you have run "npm run prod"
 >   so this way we don't have to care about the "node_module"
 >   folder we have nothing to do with it)
 
 
 ##  at the share host side
 
-1.  for example I have my web root that I can access on the share host to 
-the folder www which allow me to create folder in here now I create new 
-folder call "lav8Sys" and I copy the file and folder from my project folder 
-EXCEPT "public" and "node_mpdule" to the folder "lav8Sys" that I have created 
-
-  
-2.  now copy everything inside of "public" folder to my web root(no 
-need public folder) I mean to my "public_html" folder 
+1.  for example I have my web root that I can access on the share host to
+the folder www which allow me to create folder in here now I create new
+folder call "lav8Sys" and I copy the file and folder from my project folder
+EXCEPT "public" and "node_mpdule" to the folder "lav8Sys" that I have created
 
 
+2.  now copy everything inside of "public" folder to my web root(no
+need public folder) I mean to my "public_html" folder
 
-3.  now edit the file "index.php" change the 2 lines as show below 
+
+
+3.  now edit the file "index.php" change the 2 lines as show below
 
 
 
@@ -96,7 +97,7 @@ need public folder) I mean to my "public_html" folder
 
 
 
-4.  edit the .env file to the database file or info 
+4.  edit the .env file to the database file or info
 
 
 
@@ -106,9 +107,9 @@ need public folder) I mean to my "public_html" folder
     FROM:
     DB_DATABASE=/srv/http/lav8.lap/DB/DB_SAMPLE.sqlite
 
-    TO: (it must be the full path you can find absolute path from your FTP 
-    or simply create the php file with this content "<?php echo __DIR__; ?>") 
-    this will be your absolute path 
+    TO: (it must be the full path you can find absolute path from your FTP
+    or simply create the php file with this content "<?php echo __DIR__; ?>")
+    this will be your absolute path
 
     DB_DATABASE=/var/www/lav8Sys/DB/DB_SAMPLE.sqlite
 
@@ -128,18 +129,18 @@ need public folder) I mean to my "public_html" folder
 # My word as I am stupid programmer copy other people code
 
 >   as I start this project from knowing nothing at all about laravel
->   until now I know just a very small piece of laravel and now I make 
+>   until now I know just a very small piece of laravel and now I make
 >   the simple project using laravel&vue as the backend and I am now
 >   at this point the point that I am stuck within my messy ugly code
 >   I don't know how or if I can improving myself at all
->   today (18 Jan 2021) I just try to clean up the code a little bit 
+>   today (18 Jan 2021) I just try to clean up the code a little bit
 >   so maybe it will render faster
 
 
 
 ##  Last update 11 Apr 2021
 
->   update "Whatnews" module on admin to using Vue. 
+>   update "Whatnews" module on admin to using Vue.
 >   sync to the desktop computer
 
 
@@ -153,19 +154,19 @@ need public folder) I mean to my "public_html" folder
 
 #   How to use?
 
-1.  open your terminal program type 
+1.  open your terminal program type
 " git clone https://github.com/farookphuket/lav8.project.git "
 
 
 
-2.  cd into the project directory "cd lav8.project" you have to create the 
+2.  cd into the project directory "cd lav8.project" you have to create the
 config file by command `cp .env.example .env`
 
 
 
 3.  edit file ".env"
 
--   "DB_CONNECTION=sqlite" (if you use mysql so just leave this line un-touch 
+-   "DB_CONNECTION=sqlite" (if you use mysql so just leave this line un-touch
 and provide you database credencials into this file).
 -   paste the absolute file path to your 'database.sqlite' file for example
 in my case I use manjaro and I name my project folder "lav8.project "
@@ -179,31 +180,31 @@ living in "/srv/http " so my absolute path will be
 
 
 
--   make sure that you are in "lav8.project" (or what if you have rename it 
-to something else it should be your project root folder ) now run 
+-   make sure that you are in "lav8.project" (or what if you have rename it
+to something else it should be your project root folder ) now run
 "composer install " or " composer update " (in my case I run "composer update")
-wait until the process has done now run "npm install " the command 
+wait until the process has done now run "npm install " the command
 "composer update" will create folder "vendor" and the command "npm install"
 will create folder " node_modules " in your project root directory
 
 
--   now run command "php artisan key:generate " you should get the success 
-message 
+-   now run command "php artisan key:generate " you should get the success
+message
 
 -   if you try to browse your web project now will be some permission denied
-so you have to run "sudo chmod 777 -R /path-to-your-project" in my case I have 
-my project in the path "/srv/http/la8.lap" so the command I run will be 
+so you have to run "sudo chmod 777 -R /path-to-your-project" in my case I have
+my project in the path "/srv/http/la8.lap" so the command I run will be
 "sudo chmod 777 -R /srv/http/lav8.lap"
 
 
 
 
--   in your project folder if you run the command `php artisan migrate:status` 
+-   in your project folder if you run the command `php artisan migrate:status`
 it should not be any error report shown and the table list will show.
 
 
--   if it is an error that means there are some library missing on your system 
-please go research on google then you can go the next step if the error not 
+-   if it is an error that means there are some library missing on your system
+please go research on google then you can go the next step if the error not
 been fix you may not go the next step.
 
 [migrate_status]:https://i.ibb.co/80rHhXW/php-serve.png
@@ -235,7 +236,7 @@ been fix you may not go the next step.
 
 #   setup fresh with sample data from me
 
--   to add the example data you can run ` php artisan db:seed ` 
+-   to add the example data you can run ` php artisan db:seed `
 after run the command `php artisan migrate:refresh` then you will get the
 example data (which is by now is still very little bit of them).
 
@@ -246,11 +247,11 @@ example data (which is by now is still very little bit of them).
 
 
 
-#   to get a lot of data to working with 
+#   to get a lot of data to working with
 
 
 >   in the root of the project (for example I name my project for "project1")
->   so if I want a lot of sample data of post from faker I can run 
+>   so if I want a lot of sample data of post from faker I can run
 >   the command in terminal like this:
 
 
@@ -283,16 +284,16 @@ example data (which is by now is still very little bit of them).
 >   the first thing I want you to do is watch my video that I provided
 >   on youtube as you can see at the link below in the `Still not clear` section
 
->   if there still some problem that you cannot really fix to make thing run 
->   in the way that you'd expect I want you to know that we are on the 
->   different machine setup environment I don't know what did you put in 
+>   if there still some problem that you cannot really fix to make thing run
+>   in the way that you'd expect I want you to know that we are on the
+>   different machine setup environment I don't know what did you put in
 >   your system to make thing run
 
 >   my os I use `Manjaro,Ubuntu,Pop os,Debian,MX Linux,Linux Mint,Arch Linux`
 >   up until nowaday (3 Dec 2020) I am using only `Manjaro` as my main os
 
 >   so I am completely do not know how this going to look like in window or mac
->   so if you are on the different os than I am that will be something for 
+>   so if you are on the different os than I am that will be something for
 >   you to check
 
 
@@ -307,10 +308,10 @@ example data (which is by now is still very little bit of them).
 
 -   this is my php.ini on Ubuntu 20.04
 
--   now this year(16 Dec 2020) I am completely wipe Ubuntu from all of 
-my computer 
+-   now this year(16 Dec 2020) I am completely wipe Ubuntu from all of
+my computer
 
--   and using Manjaro+i3wm. 
+-   and using Manjaro+i3wm.
 
 -   what is your php version type `php --version`
 
@@ -333,7 +334,7 @@ my computer
 <br />
 
 
-5.  that's all now you can run `php artisan serve` and your project 
+5.  that's all now you can run `php artisan serve` and your project
 app should be appear.
 
 
@@ -435,7 +436,7 @@ app should be appear.
 
 >   Date 17 Jan 2021 I have made completely `Whatnews` on member module
 >   things is going very very well I have no refresh on doing such a thing
->   like C-R-U-D(Create,Read,Update,Delete) and including Pagination(Well, it 
+>   like C-R-U-D(Create,Read,Update,Delete) and including Pagination(Well, it
 >   a very stupid lookin style I have here) but one thing I notice that now
 >   is my code hilighting is NOT working when come to view in the Vue pull data
 >   and it is seem to be like I have to donwload and install another plugin
@@ -443,22 +444,22 @@ app should be appear.
 
 
 
->   today in the morning (20-Dec-2020) I just try to figure out 
+>   today in the morning (20-Dec-2020) I just try to figure out
 >   "How can I use time ago in Vue like I can with Carbon in blade"
 >   now from youtube I found from `https://www.youtube.com/watch?v=kXMv44r-vBQ`
 >   it is way way very easy to me so I choose one now.
 
->   the next thing that I have to find is "how can I set the edit and delete link 
+>   the next thing that I have to find is "how can I set the edit and delete link
 >   base on the Auth user" let say if the user does not own the item so he won't
 >   be able to edit or delete that item.
 
 
---- 
+---
 
 
 # Date 10 Apr 2021 (fixed pagination not responsive)
 
-> by default the pagination will not be responsive so I just dig a little 
+> by default the pagination will not be responsive so I just dig a little
 > search and I found it here `https://github.com/twbs/bootstrap/issues/23504`
 > so my code will be :
 
@@ -473,8 +474,8 @@ app should be appear.
         <ul class="pagination flex-wrap">
             <li class="page-item disabled">
                 <div class="page-link">
-                    showing from <span>{{var_from}}</span> 
-                    to <span>{{val_to}}</span> of 
+                    showing from <span>{{var_from}}</span>
+                    to <span>{{val_to}}</span> of
                     <span>{{var_total}}</span>
                 </div>
             </li>
@@ -512,23 +513,23 @@ app should be appear.
 
 
 
-# Date 27 Mar 2021 
-    
-
-> Photo feature is that I can copy the embed code from another website that I 
-> put or share my picture so sometime I want to re-use that picture 
+# Date 27 Mar 2021
 
 
-> sometime the title is too long so you may need to cut it 
+> Photo feature is that I can copy the embed code from another website that I
+> put or share my picture so sometime I want to re-use that picture
 
 
-``` 
-// javascript from https://www.codegrepper.com/code-examples/javascript/javascript+truncate+string+with+dots 
+> sometime the title is too long so you may need to cut it
+
+
+```
+// javascript from https://www.codegrepper.com/code-examples/javascript/javascript+truncate+string+with+dots
 function smartTitle(str,len){
  return (str.length > len)? str.substring(0,len)+"...":str;
 };
 
-// to use 
+// to use
 title = smartTitle(title,9);
 
 ```
@@ -559,7 +560,7 @@ title = smartTitle(title,9);
 
 
 
-# Date 9 Mar 2021 
+# Date 9 Mar 2021
 
 > Added search for song using vue
 
@@ -570,28 +571,28 @@ title = smartTitle(title,9);
 # Date 7 Mar 2021
 
 > I just copy the link of my Karaoke from `wesingapp.com` to keep in my list
-> so it will be more easy for me to check later 
+> so it will be more easy for me to check later
 > The component I have create call "song"
 
 
-> Icon I've copy the from https://bootstrap-vue.org/docs/icons 
-> to use the icon `<b-icon icon="headphones"></b-icon>` 
+> Icon I've copy the from https://bootstrap-vue.org/docs/icons
+> to use the icon `<b-icon icon="headphones"></b-icon>`
 
 
 
 
-# Date 5 Mar 2021 
+# Date 5 Mar 2021
 
-> show song list with the cover rows 
-> public side also use vue 
-
-
+> show song list with the cover rows
+> public side also use vue
 
 
 
 
 
-# Date 3 Mar 2021 
+
+
+# Date 3 Mar 2021
 
 > Song is the song list from wesing.com just to keep the song title for easy
 > to find which song has been sang I love to sing a song if I can do it without
@@ -599,10 +600,10 @@ title = smartTitle(title,9);
 
 
 
-#   date 14 Feb 2021 
+#   date 14 Feb 2021
 
->   Still! I cannot use v-select or v-multiselect I don't know what 
->   I did wrong but I've learn a little more of "how to use vue" in 
+>   Still! I cannot use v-select or v-multiselect I don't know what
+>   I did wrong but I've learn a little more of "how to use vue" in
 >   every day so try to improve my skill
 
 
@@ -620,7 +621,7 @@ title = smartTitle(title,9);
 
 #   Date 9 Feb 2021 upgrade to php 8.0
 
->   yes! I know that the php 8 is already take place since last year(2020) but to me I just have ability to use it today just now and this can be something new for me so just a little bit of worries for instant after the update has done I just restart and found out that a ha "apache is not load!" so I just take a look of the error code it is because the config cannot find php 7 as it is already been replace with php 8 so to make it back again I have to edit the httpd.conf file by run this command `sudo vim /etc/httpd/conf/httpd.conf` and edit the include php file just like the code below 
+>   yes! I know that the php 8 is already take place since last year(2020) but to me I just have ability to use it today just now and this can be something new for me so just a little bit of worries for instant after the update has done I just restart and found out that a ha "apache is not load!" so I just take a look of the error code it is because the config cannot find php 7 as it is already been replace with php 8 so to make it back again I have to edit the httpd.conf file by run this command `sudo vim /etc/httpd/conf/httpd.conf` and edit the include php file just like the code below
 
 
 
@@ -639,20 +640,20 @@ title = smartTitle(title,9);
 
 ---
 
-#   Date 8 Feb 2021 make Thai slug 
+#   Date 8 Feb 2021 make Thai slug
 
 >   I've try to find "how can I make a Thai slug for post using javascript"
->   so today I just copy the code from 
->   `https://gist.github.com/silkyland/004e9c74ed9ed8b76d613bc2e4e48f52 ` 
->   to make this work in the way I want it's seem to be good so far(but not 
+>   so today I just copy the code from
+>   `https://gist.github.com/silkyland/004e9c74ed9ed8b76d613bc2e4e48f52 `
+>   to make this work in the way I want it's seem to be good so far(but not
 >   safe maybe in the long term so I have to find the way to encode it)
->   well at least for now 
+>   well at least for now
 
-``` 
-        //this.title  is the input text 
+```
+        //this.title  is the input text
         makeSlug(){
             let make_slug = this.title.replace(/\s+/g,"-")
-            .replace(/[^\u0E00-\u0E7F\w\-]+/g,'')            
+            .replace(/[^\u0E00-\u0E7F\w\-]+/g,'')
             .replace(/\-\-+/g,'-')
             .replace(/^-+/,'')
             .toLowerCase()
@@ -679,20 +680,20 @@ title = smartTitle(title,9);
 
 #   Date 6 Feb 2021 remove node_modules vendor folder
 
->   Dear friends the node_modules and vendor folder now will be remove from 
+>   Dear friends the node_modules and vendor folder now will be remove from
 >   the code base here as you can generate it on your local develop enviroment
 >   to get the "node_modules" back run "npm install" and to get the "vendor"
->   folder run "composer update" or "composer install" (one of them will be 
->   work) I have test on bote "laptop and Desktop" or even in the virtual 
->   machine it's will be work very well 
+>   folder run "composer update" or "composer install" (one of them will be
+>   work) I have test on bote "laptop and Desktop" or even in the virtual
+>   machine it's will be work very well
 
 
 
 #   date 28 Jan 2021 sample database will now pull from file
 
 
-1.  I just update the seeder file for easy to make a sample data to re-use 
-after run "php artisan migrate:fresh" and "php artisan db:seed" now it 
+1.  I just update the seeder file for easy to make a sample data to re-use
+after run "php artisan migrate:fresh" and "php artisan db:seed" now it
 should pull data from ".sqlite" file instead of run from the seeder file
 
 
@@ -703,14 +704,14 @@ should pull data from ".sqlite" file instead of run from the seeder file
 #   Date 24 Jan 2021 Many to Many relationship.
 
 
-1.  update "user profile","admin profile","user","about","post","tags" 
+1.  update "user profile","admin profile","user","about","post","tags"
 now using vue so you can do CRUD operation and pagination without page reload
-the pagination using "vue-cookies" to set the url it will remember 
+the pagination using "vue-cookies" to set the url it will remember
 the last set cookie page even when you have leave page to another page
-unlike the normal ajax page I use do create 
+unlike the normal ajax page I use do create
 
 >   I still cannot access to props from the methods try too many from the internet
->   still no luck for that so my component is very messy I hate it 
+>   still no luck for that so my component is very messy I hate it
 >   my code was so bad code
 
 
@@ -747,11 +748,11 @@ unlike the normal ajax page I use do create
 >   What I did today :
 
 1.  update post module on admin side now even know that it is NOT a single page
-application(No not for now there are too far for me) 
+application(No not for now there are too far for me)
 
 2.  create the about page to be more dynamic so if there is no about slug
-will be use the default | if you want to edit the default message go to 
-"resources/views/Pub/about.blade.php" 
+will be use the default | if you want to edit the default message go to
+"resources/views/Pub/about.blade.php"
 
 
 
@@ -767,9 +768,9 @@ so success now DUDE!
 
 ---
 
--   Date 17 Jan 2021 
-1.  Update the "Whatnews" on member to using Vue 
-so now Add,edit,update,delete,view,pagination will be load 
+-   Date 17 Jan 2021
+1.  Update the "Whatnews" on member to using Vue
+so now Add,edit,update,delete,view,pagination will be load
 without reload the page
 
 
@@ -778,8 +779,8 @@ without reload the page
 
 ---
 
--   Date 15 Jan 2021 
-1.  update `user Posts` to using vue as a frontend but still do not 
+-   Date 15 Jan 2021
+1.  update `user Posts` to using vue as a frontend but still do not
 fully understand the `components` concept of vue not just yet!
 so what I've done so far is pagination post delete without page reload
 that's sound to be success to me for now.
@@ -791,10 +792,10 @@ that's sound to be success to me for now.
 
 ---
 
--   Date 11 Jan 2021 
+-   Date 11 Jan 2021
 
-1.  I spend more than 4 hours today just try to figure out how can I join 2 table 
-for the vue data it is very hard when you don't know something but now I get it 
+1.  I spend more than 4 hours today just try to figure out how can I join 2 table
+for the vue data it is very hard when you don't know something but now I get it
 
 
 
@@ -808,7 +809,7 @@ for the vue data it is very hard when you don't know something but now I get it
 
 
 
-#   12 Jan 2021 
+#   12 Jan 2021
 >   make 4 tables join for my first time in Post admin
 >   to sent data to Post.vue
 
@@ -827,7 +828,7 @@ for the vue data it is very hard when you don't know something but now I get it
 
 1.  Using Vue with the Tag module in Admin successfully!
 now is completely the same lavel with my belove jQuery and Codeigniter
-like I use to but the next problem is "share hosting" so laravel project 
+like I use to but the next problem is "share hosting" so laravel project
 is still in the folder in my computer still not using it yet!
 any way today(10 Jan 2021) I spend the whole day just for the simple
 tags operation fuck it! but it is now working bro!!
@@ -839,10 +840,10 @@ tags operation fuck it! but it is now working bro!!
 ---
 
 
--   Date 7 Jan 2021 
+-   Date 7 Jan 2021
 
 1.  fail on tried to use jodit-vue inside of bootstrap-vue modal is shown
-but the jodit pop-up is under the modal 
+but the jodit pop-up is under the modal
 
 
 
@@ -870,17 +871,17 @@ but the jodit pop-up is under the modal
 
 -   Date 28 Dec 2020 in Roi-Et
 
-1.  the member "Whatnews" now using Vue for the management 
+1.  the member "Whatnews" now using Vue for the management
 but there is still a bug in the `pagination` path of `null` if the user click
-on the link that has the value of "null" this will cause an Error of redirect to 
+on the link that has the value of "null" this will cause an Error of redirect to
 404 page not found so far I still cannot fix this.
 
 
 
 2.  The checkbox will be set with the value 1 or 0 instead of `true` or `false`
-to create the checkbox in the template will be 
-`<input class="form-control" type="checkbox" v-bind:value="is_public" 
-v-bind:true-value="1">` I set the class of input element to `form-control` 
+to create the checkbox in the template will be
+`<input class="form-control" type="checkbox" v-bind:value="is_public"
+v-bind:true-value="1">` I set the class of input element to `form-control`
 this will take the class form bootstrap.
 
 
@@ -892,20 +893,20 @@ this will take the class form bootstrap.
 
 -   Date 22 Dec 2020
 
-1.  install node package `browser-sync` by ran the command 
+1.  install node package `browser-sync` by ran the command
 `sudo npm install -g browser-sync` this will fixing the browser cache problem
 from the browser cache in case when we edit the .js file on using vue
-to do this go to the project root's directory run `browser-sync start` 
+to do this go to the project root's directory run `browser-sync start`
 if there is any change you made in the .vue or .js file you have to run
 `npm run dev` or `npm run watch` to update the change.
 
-2.  the easy way is you better clear browser cache after edit file if the there is 
+2.  the easy way is you better clear browser cache after edit file if the there is
 still not load a new edit from `app.js` then run `npm run watch`
 
 
 
-3.  the `User profile ,Admin profile` now using Vue to edit the user profile 
->   last update 22 Dec 2020 
+3.  the `User profile ,Admin profile` now using Vue to edit the user profile
+>   last update 22 Dec 2020
 
 
 
@@ -915,7 +916,7 @@ still not load a new edit from `app.js` then run `npm run watch`
 
 -   Date 21 Dec 2020
 
-1.  Updated user  profile by using Vue 
+1.  Updated user  profile by using Vue
 will go further more on using Vue.
 
 
@@ -936,7 +937,7 @@ will go further more on using Vue.
 in case password lost there the reset-password page will be shown only
 when the use has click the link from their e-mail that currently register
 with the app in a perios of time(said 7 minute) the reset-password page's
-link will be completely expire after the limited of time there for it is 
+link will be completely expire after the limited of time there for it is
 still having some house keeper to do such as showing error on the user rule fail
 but so far I am still having a very limit abillity doing thing with Vue
 so to say so it may not that perfect or it is not even close(to the word perfect)
@@ -958,7 +959,7 @@ in the way it suppose to be.
 
 -   date 18 Dec 2020
 
-1.  Tried to config to make a reset-password to be able to send mail success 
+1.  Tried to config to make a reset-password to be able to send mail success
 by config my `.env` file this way
 
 <br />
@@ -997,13 +998,13 @@ by config my `.env` file this way
 
 
 
---- 
+---
 
 -   date 17 Dec 2020
 
 1.  Start making the forgot-password page using vue I am just very new for this
-so the first try was super terrible I spend more than 4 hours just learn to make 
-the load page to the main view. 
+so the first try was super terrible I spend more than 4 hours just learn to make
+the load page to the main view.
 
 
 
