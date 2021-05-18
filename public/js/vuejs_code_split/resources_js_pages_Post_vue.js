@@ -904,9 +904,14 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _c("div", { domProps: { innerHTML: _vm._s(po.post_excerpt) } }, [
-              _vm._v(_vm._s(po.post_excerpt))
-            ]),
+            _c(
+              "div",
+              {
+                staticClass: "mb-2",
+                domProps: { innerHTML: _vm._s(po.post_excerpt) }
+              },
+              [_vm._v(_vm._s(po.post_excerpt))]
+            ),
             _vm._v(" "),
             _c("div", { staticClass: "clearfix" }, [
               _c(
@@ -915,7 +920,7 @@ var render = function() {
                 _vm._l(po.tags, function(ta) {
                   return _c(
                     "span",
-                    { staticClass: "badge badge-primary p-2" },
+                    { staticClass: "badge badge-primary pt-2 p-2" },
                     [
                       _c(
                         "a",
@@ -934,8 +939,6 @@ var render = function() {
                           _vm._v(
                             "\n                        " +
                               _vm._s(ta.tag_name) +
-                              " " +
-                              _vm._s(ta.id) +
                               "\n                    "
                           )
                         ],

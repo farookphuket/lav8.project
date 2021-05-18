@@ -60,13 +60,7 @@
             <!-- END  nav-top -->
             @include('INC/_flash_message')
             @yield('content')
-
-<<<<<<< HEAD
             <div class="line"></div>
-=======
-
-<div class="line"></div>
->>>>>>> 344ab158ebac36fd4902e727e0262309e0d7e952
         </div>
     </div>
 

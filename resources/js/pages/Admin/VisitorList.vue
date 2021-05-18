@@ -98,31 +98,53 @@
             </tbody>
 
         </table>
-        <div class="pa">
-            <ul class="pagination">
-                <li class="page-item">
-                    showing from  
-                    <span>{{visitors.from}} </span> 
-                    to <span>{{visitors.to}} </span> 
-                    of <span>{{visitors.total}}</span> &middot;
-                </li>
-                <li class="page-item" v-for="li in visitors.links">  
-                    <a href="" v-if="li.active != true && li.url != null"
-                        @click.prevent="$emit('getVisitors',li.url)" v-html="li.label">
-                        {{li.label}} 
-                    </a>
-                    <span class="active" v-else v-html="li.label">
-                        {{li.label}} 
-                    </span>
+        <!-- ========= Need some space ====== -->
 
-                </li>
-                <li class="page-item">
-                   &middot; <span class="active">
-                        {{visitors.current_page}}
-                    </span>
-                </li>
-            </ul>
-        </div>
+
+            <!-- ============ Pagination START ======= --> 
+            <div class="nav-scroller py-1 mb-2">
+                <nav class="nav d-flex justify-content-center">
+                    <ul class="pagination flex-wrap">
+
+                    <li class="page-item active">
+                        <div class="page-link disabled">
+                            showing from 
+                            <span>
+                                {{visitors.from}}
+                            </span>
+                            to 
+                            <span>
+                                {{visitors.to}}
+                            </span>
+                            of 
+                            <span>
+                                {{visitors.total}}
+                            </span>
+                        </div>
+                    </li>
+                    <li class="page-item" 
+                        v-for="li in visitors.links">
+                        <a v-if="li.active === false && li.url !== null"
+                           href="#" class="page-link p-2"
+                           @click="$emit('getVisitors',li.url)"
+                            v-html="li.label">
+                        {{li.label}}
+                        </a>
+                        <span class="page-link disabled active" v-else
+                            v-html="li.label">
+                            {{li.label}}
+                        </span>
+                    </li>
+                    <li class="page-item active">
+                        <span class="page-link">
+                            <b-icon icon="book-half"></b-icon>
+                            {{visitors.current_page}}
+                        </span>
+                    </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- ============ Pagination END ======= --> 
     </div>
 </template>
 

@@ -12,12 +12,7 @@
             
             @if(!$whatnews->isEmpty())            
                 @foreach($whatnews as $item)
-<<<<<<< HEAD
-
                     @section('meta_title',$item->whatnews_title)
-=======
-                    @section("meta_title",$item->whatnews_title)
->>>>>>> dfc8d87ca4ed12f7f6f675280080d198086b6b6c
                 <div class="pt-4">
                     <h2 class="text-center pt-2">{{$item->whatnews_title}}</h2>
                     <div class="clearfix">

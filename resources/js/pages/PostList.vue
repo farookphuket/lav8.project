@@ -24,15 +24,15 @@
                     </span>
                 </div>
             </div>
-            <div v-html="po.post_excerpt">{{po.post_excerpt}}</div>
+            <div v-html="po.post_excerpt" class="mb-2">{{po.post_excerpt}}</div>
 
             <div class="clearfix">
                 <div class="float-left">
-                    <span class="badge badge-primary p-2" v-for="ta in po.tags">
+                    <span class="badge badge-primary pt-2 p-2" v-for="ta in po.tags">
                         <a style="color:white;" href="" 
                             @click.prevent="setGoTagPage(ta.id)">
                             <b-icon icon="tags"></b-icon>
-                            {{ta.tag_name}} {{ta.id}}
+                            {{ta.tag_name}}
                         </a>
                     </span>
                 </div>

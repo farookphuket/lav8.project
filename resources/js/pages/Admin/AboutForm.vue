@@ -1,7 +1,5 @@
 <template>
 <div>
-<h1>about form vue</h1>
-
 
 <!-- form START -->
     <div class="col-lg-12 pt-4 mb-4">
@@ -50,9 +48,8 @@
     <div class="col-lg-12 mb-4 pt-4">
         <div class="preview">
             <div class="card card-body">
-               <h2 class="text-center">About</h2>
-               <p>this is the preview of your about page</p>
-                <div v-html="excerpt">{{excerpt}}</div>
+               <h1 class="text-center">About</h1>
+                <div class="pt-4 mb-2" v-html="excerpt">{{excerpt}}</div>
                 <div v-html="body">{{body}}</div>
             </div>
         </div>
@@ -113,14 +110,86 @@ export default{
             if(!this.about.length){
                 this.excerpt = `
                 <div class="container">
-                    <h1 class="text-center">you are using default about page</h1>
-                    <div>
-                        <p>
-                            dear friends if you want to change this page just 
-                            edit it from the above form.
+                   <div class="row">
+                       <div class="col-lg-4">
+                        <img class="responsive mb-2" 
+                        src="https://lh3.googleusercontent.com/cfOid3sYJtcVhxh6pXTQ9l2LfCTIDnPXGIY2TidhJRi2bkwzmtlZItSFINgzyFyG2FDXgfFS7bX1AQuzK03HOwJ-67Blc9oHtPD6QdrNpP_avEAYUhYyX6DLwuXKe5P_te8rbr0Ny4w=w1920-h1080" 
+                        alt="your profile picture">
+                        <p class="text-center pt-2">
+                            your profile picture here
                         </p>
-                    </div>
+                       </div>
+                       <div class="col-lg-8">
+                            <h2 class="text-center">you are using default about page</h2>
+                            <div>
+                                <p>
+                                    dear friends if you want to change this page just 
+                                    edit it from the above form.
+                                </p>
+                                <div class="alert alert-warning">
+                                    <h3 class="text-center">
+                                        this will not show anywhere
+                                    </h3>
+                                    <p class="pt-2 mb-2">
+                                    this is the template and will not be shown 
+                                    in anywhere unless you press the Save 
+                                    button 
+                                    </p>
+                                </div>
+                            </div>
+                       </div>
+                   </div>
                 </div>
+                `
+                this.body = `
+                <div class="container">
+                    <h2 class="text-center pt-2 mb-2">
+                        your teams
+                    </h2>
+                    <p class="pt-2">
+                    your company is very cool we work great in all season just 
+                    for nothing.
+                    </p>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img class="responsive" 
+                            src="https://i.ibb.co/gvMphpd/IMG-20210420-201440.jpg" 
+                            alt="วันหลังลาย">
+                        </div>
+                        <div class="col-lg-4">
+                            <p>
+                                this can be text or you can just delete it
+                            </p>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="video-container">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/q3Sanjl93dQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <p class="pt-2 mb-2">
+                                how do I setup i3wm for manjaro(gnome)
+                            </p>
+                        </div>
+                    </div>
+                    <p class="pt-4">
+                    down here you can put your location map or your contact 
+                    information
+                    </p>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <b-icon icon="phone"></b-icon>
+                            Tel : +66 95 954-3920
+                        </li>
+                        <li class="list-group-item">
+                            <b-icon icon="envelope"></b-icon>
+                            e-mail : firefrook@gmail.com
+                        </li>
+                        <li class="list-group-item">
+                            <b-icon icon="book-half"></b-icon>
+                            56 m.3 t.lam-suk a.ao-luk Krabi Thailand 81110
+                        </li>
+                    </ul>
+                </div>
+
                 `
             }else{
                 this.about.forEach((val)=>{

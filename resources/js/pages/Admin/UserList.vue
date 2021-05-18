@@ -62,40 +62,55 @@
         </div><!-- end div.clearfix -->
 
     </div><!-- end div.card-body -->
-    <div class="pa">
-      <ul class="pagination">
-        <li class="page-item">
-          showing fron 
-          <span>
-          {{users.from}}
-          </span>
-          to 
-          <span>
-            {{users.to}}
-          </span>
+    <!-- ===== need some space ==== -->
+    <div class="col-lg-12 pt-2 mb-4">&nbsp;</div>
+    <!-- ===== need some space ==== -->
 
-          of 
-          <span>{{users.total}}</span>
-        </li>
-        <li class="page-item"
-          v-for="li in users.links">
-          <a href="#" class="li.active?active:''"
-            v-if="li.active != true && li.url != null"
-            @click.prevent="goChangePage(li.url)"
-            v-html="li.label">
-            {{li.label}}
-          </a>
-          <span class="active" v-else
-            v-html="li.label">
-            {{li.label}}
-          </span>
 
-        </li>
-        <li class="page-item">
-          <span>{{users.current_page}}</span>
-        </li>
-      </ul>
+    <!-- ======== pagination START ======= -->
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-center">
+            <ul class="pagination flex-wrap">
+
+            <li class="page-item active">
+                <div class="page-link disabled">
+                    showing from 
+                    <span>
+                        {{users.from}}
+                    </span>
+                    to 
+                    <span>
+                        {{users.to}}
+                    </span>
+                    of 
+                    <span>
+                        {{users.total}}
+                    </span>
+                </div>
+            </li>
+            <li class="page-item" 
+                v-for="li in users.links">
+                <a v-if="li.active == false && li.url != null"
+                   href="#" class="page-link p-2"
+                   @click="goChangePage(li.url)"
+                    v-html="li.label">
+                {{li.label}}
+                </a>
+                <span class="page-link disabled active" v-else
+                    v-html="li.label">
+                    {{li.label}}
+                </span>
+            </li>
+            <li class="page-item active">
+                <span class="page-link">
+                    <b-icon icon="book-half"></b-icon>
+                    {{users.current_page}}
+                </span>
+            </li>
+            </ul>
+        </nav>
     </div>
+    <!-- ======== pagination END ======= -->
   </div>
 </template>
 

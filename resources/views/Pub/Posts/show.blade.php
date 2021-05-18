@@ -8,9 +8,9 @@
 @section('content')
     
 <div class="container">
-    <div class="section-title">
+    <div class="section-title pt-4">
         <a href="{{route('posts.index')}}" title="click to go back">
-            <h2>
+            <h2 class="pt-2">
             <b-icon icon="chevron-double-left"></b-icon>
             {{$post->post_title}}</h2>
         </a>
