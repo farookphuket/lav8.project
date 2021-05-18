@@ -52,8 +52,9 @@ class PasswordResetController extends Controller
             $msg = "<span class=\"badge badge-danger\">
             Sorry your link has expired! please try again later.</span>";
         else:
-$msg = "<span class=\"badge badge-success\">you have  {$left}  minute left 
-        </span>";
+            $msg = "<span class=\"badge badge-success\"> 
+                    you have  {$left}  minute left 
+                    </span>";
         endif;
         
         //dd($msg);
@@ -98,7 +99,8 @@ $msg = "<span class=\"badge badge-success\">you have  {$left}  minute left
                 $user_mail = $it->email;
             endforeach;
 
-            $msg = "<span class=\"badge badge-success\">Success : please check your e-mail {$user_mail} </span>";
+                $msg = "<span class=\"badge badge-success\"> 
+                    Success : please check your e-mail {$user_mail} </span>";
         
         endif;
 
@@ -130,7 +132,8 @@ $msg = "<span class=\"badge badge-success\">you have  {$left}  minute left
         );
         Mail::send('mail.reset-passwd-mail',$data,function($msg) use ($get){
             $msg->from('no-reply@cannot-reply.nohost');
-            $msg->to($get['email'],'no-reply-back')->subject("Dear {$get['name']} we notice that you sent a request for password reset!");
+            $msg->to($get['email'],'no-reply-back')->subject("Dear 
+            {$get['name']} we notice that you sent a request for password reset!");
         });
 
 
@@ -187,7 +190,7 @@ $msg = "<span class=\"badge badge-success\">you have  {$left}  minute left
         $token = '';
 
         foreach($get as $item):
-            $since = strtotime($item->created_at)+(60*8);
+            $since = strtotime($item->created_at)+(60*25);
             $email = $item->email;
             $token = $item->token;
         endforeach;
@@ -201,8 +204,9 @@ $msg = "<span class=\"badge badge-success\">you have  {$left}  minute left
             $msg = "<span class=\"badge badge-danger\">
             Sorry your link has expired! please try again later.</span>";
         else:
-$msg = "<span class=\"badge badge-success\">you have  {$left}  minute left 
-        </span>";
+            $msg = "<span class=\"badge badge-success\">
+                        you have  {$left}  minute left 
+                    </span>";
         endif;
         
         //dd($msg);
@@ -255,7 +259,9 @@ $msg = "<span class=\"badge badge-success\">you have  {$left}  minute left
             ]);
 
 
-        $msg = "<span class=\"badge badge-success\">your password has been reset to {$passNew} you can now login with your new password</span>";
+        $msg = "<span class=\"badge badge-success\">your password has been 
+            updated<br /> 
+                you can login with your new password now </span>";
 
         return response()->json(['msg' => $msg],200);
     }

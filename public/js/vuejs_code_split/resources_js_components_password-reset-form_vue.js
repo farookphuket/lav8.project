@@ -49,6 +49,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "PasswordReset",
   props: ["resettoken"],
@@ -82,11 +88,30 @@ __webpack_require__.r(__webpack_exports__);
 
       var url = "/passwordreset/".concat(this.resettoken);
       axios.get(url).then(function (res) {
-        //         console.log(res.data)
+        //                   console.log(res.data)
         var re = res.data;
         _this2.msg = re.msg;
+        _this2.email = re.email;
         _this2.timeleft = re.timeleft;
       });
+    },
+    resetMyPassword: function resetMyPassword() {
+      var _this3 = this;
+
+      var url = "/update";
+      var data = {
+        email: this.email,
+        passwd: this.passwd
+      };
+      axios.post(url, data).then(function (res) {
+        //                    console.log(res.data)
+        _this3.res_status = res.data.msg;
+
+        _this3.$refs["onOk"].show();
+      });
+    },
+    gohome: function gohome() {
+      location.href = '/';
     }
   }
 });
@@ -181,69 +206,93 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("p", { domProps: { innerHTML: _vm._s(_vm.msg) } }, [
-      _vm._v("\n        " + _vm._s(_vm.msg) + "\n    ")
-    ]),
-    _vm._v(" "),
-    _c("form", [
-      _c("div", { staticClass: "form-group" }, [
-        _c("label", { staticClass: "sr-only", attrs: { for: "passwd" } }, [
-          _vm._v("New password")
-        ]),
-        _vm._v(" "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.passwd,
-              expression: "passwd"
-            }
-          ],
-          ref: "passwd",
-          staticClass: "form-control",
-          attrs: { type: "password", placeholder: "Enter your new password" },
-          domProps: { value: _vm.passwd },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.passwd = $event.target.value
-            }
-          }
-        })
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [
+      _c("p", { domProps: { innerHTML: _vm._s(_vm.msg) } }, [
+        _vm._v("\n    " + _vm._s(_vm.email) + " " + _vm._s(_vm.msg) + "\n    ")
       ]),
       _vm._v(" "),
-      _c("p", { staticClass: "pt-4 mb-4" }, [_vm._v(_vm._s(_vm.res_status))]),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "btn btn-block btn-outline-info send-btn mb-4",
-        attrs: {
-          type: "submit",
-          disabled: _vm.disabled,
-          value: "Reset My Password"
-        },
-        on: {
-          click: function($event) {
-            $event.preventDefault()
-            return _vm.resetMyPassword($event)
+      _c("form", [
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", { staticClass: "sr-only", attrs: { for: "passwd" } }, [
+            _vm._v("New password")
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.passwd,
+                expression: "passwd"
+              }
+            ],
+            ref: "passwd",
+            staticClass: "form-control",
+            attrs: { type: "password", placeholder: "Enter your new password" },
+            domProps: { value: _vm.passwd },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.passwd = $event.target.value
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "pt-4 mb-2" }, [_vm._v(" ")]),
+        _vm._v(" "),
+        _c("input", {
+          staticClass: "btn btn-block btn-outline-info send-btn mb-4",
+          attrs: {
+            type: "submit",
+            disabled: _vm.disabled,
+            value: "Reset My Password"
+          },
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              return _vm.resetMyPassword($event)
+            }
           }
-        }
-      }),
+        }),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "btn btn-outline-primary btn-block  mb-4",
+            staticStyle: { color: "blue", "font-weight": "bold" },
+            attrs: { href: "/" }
+          },
+          [_vm._v("\n            Back Home\n        ")]
+        )
+      ]),
       _vm._v(" "),
       _c(
-        "a",
+        "b-modal",
         {
-          staticClass: "btn btn-outline-primary btn-block  mb-4",
-          staticStyle: { color: "blue", "font-weight": "bold" },
-          attrs: { href: "/" }
+          ref: "onOk",
+          attrs: { title: "server Said :", centered: "", "ok-only": "" },
+          on: { ok: _vm.gohome }
         },
-        [_vm._v("\n            Back Home\n        ")]
+        [
+          _c(
+            "div",
+            {
+              staticClass: "container",
+              domProps: { innerHTML: _vm._s(_vm.res_status) }
+            },
+            [_vm._v("\n            " + _vm._s(_vm.res_status) + "\n        ")]
+          )
+        ]
       )
-    ])
-  ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

@@ -89,6 +89,11 @@
 |  79.  |   Gun ''N Rose                 |  
 |  80.  |   เบน ชลาทิศ                    |  
 |  81.  |   นิตยา บุญสูงเนิน                 |  
+|  82.  |   แบชเชอร์                      |  
+|  83.  |   เนอร์เซอร์รี่ ซาวน์               |  
+|  84.  |   หนู มิเตอร์                     |  
+|  85.  |   อัสนีย์ วสันต์                    |  
+|  86.  |   ปาล์มมี่                        |  
 |----------------------------------------|
 
 
@@ -176,8 +181,148 @@
 |   79.      |     Gun 'N Rose's song                  |  
 |   80.      |     เบน ชลาทิศ's song                    |  
 |   81.      |     นิตยา บุญสูงเนิน's song                 |  
+|   82.      |     แบทเชอร์'s song                 |  
+|   83.      |     เนอร์เซอร์รี่ ซาวน์'s song               |  
+|   84.      |     หนู มิเตอร์'s song                     |  
+|   85.      |     อัสนีย์ วสันต์'s song                    |  
+|   86.      |     ปาล์มมี่'s song                        |  
 |------------------------------------------------------|
 */
+
+
+
+
+
+/* เพลงที่ 160   Added 18 May 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (160,"86","86","1",
+"อยากร้องดัง ดัง",
+"2021-04-17 13:39:04",
+"http://p.kg.qq.com/photo_new/T002RM000000ynfyI3piE9u.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/KwD15s_KstrFv_oq-?lang=en&g_f=personal",
+"2021-04-17 13:39:04",
+"2021-04-17 13:39:05"
+);
+
+
+
+/* เพลงที่ 159   Added 18 May 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (159,"51","51","1",
+"YEAH! YEAH!",
+"2021-04-17 13:31:04",
+"https://1.bp.blogspot.com/-oQpbE35pmCk/XQdeis4fKNI/AAAAAAAAFuM/v1D2XM_Vs8oH_7Uv1xAu_5HtfWIM__45wCLcBGAs/s1600/ynot7.jpeg",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/JA3ivT6JTjZUv6aq-YEAHYEAH?lang=en&g_f=personal",
+"2021-04-17 13:31:04",
+"2021-04-17 13:31:05"
+);
+
+
+/* เพลงที่ 158   Added 18 May 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (158,"85","85","1",
+"สิทธิ์ของเธอ",
+"2021-04-17 13:18:04",
+"http://p.kg.qq.com/photo_new/T002RM000003ljo2v1FvvBN.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/P7Q6n2iP2BA7vi4A-?lang=en&g_f=personal",
+"2021-04-17 13:18:04",
+"2021-04-17 13:18:08"
+);
+
+
+
+/* เพลงที่ 157   Added 18 May 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (157,"8","8","1",
+"กลับไม่ได้ไปไม่ถึง",
+"2021-04-17 13:06:04",
+"http://p.kg.qq.com/photo_new/T002RM000003jOmmj2fEUeN.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/iZ2JNQPiQ0mMvPWJ-?lang=en&g_f=personal",
+"2021-04-17 13:06:04",
+"2021-04-17 13:06:08"
+);
+
+
+
+
+/* เพลงที่ 156   Added 18 May 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (156,"4","4","1",
+"ความจริงของคนเจ้าชู้",
+"2021-04-17 12:56:04",
+"http://p.kg.qq.com/photo_new/T002RM000000XCSnD1sI1mY.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/UzdXlMpUMb5TvpvJ-?lang=en&g_f=personal",
+"2021-04-17 12:56:04",
+"2021-04-17 12:56:05"
+);
+
+
+/* เพลงที่ 155   Added 18 May 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (155,"56","56","1",
+"คนดีไม่มีที่อยู่",
+"2021-04-17 12:40:04",
+"http://p.kg.qq.com/photo_new/T002RM000002ldmvE1EIIHh.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/3jJ2x6T36ABRvTV3-?lang=en&g_f=personal",
+"2021-04-17 12:40:04",
+"2021-04-17 12:40:05"
+);
+
+
+
+/* เพลงที่ 154   Added 18 May 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (154,"84","84","1",
+"พบรักที่ปากน้ำโพ",
+"2021-04-17 12:27:04",
+"http://p.kg.qq.com/photo_new/T002RM000004Efj1v0IlcC4.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/xfvR3eoxehL5voIa-?lang=en&g_f=personal",
+"2021-04-17 12:27:04",
+"2021-04-17 12:27:05"
+);
+
+
+
+/* เพลงที่ 153   Added 18 May 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (153,"83","83","1",
+"หวาน",
+"2021-04-17 12:17:04",
+"http://p.kg.qq.com/photo_new/T002RM000004XhCVz21JgVJ.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/Lu-YBI9LInx6v9Uy-?lang=en&g_f=personal",
+"2021-04-17 12:17:04",
+"2021-04-17 12:17:08"
+);
+
+
+
+
+
+
+/* เพลงที่ 152   Added 18 May 2021 */
+INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
+"posted_at","cover","url",
+"created_at","updated_at") VALUES (152,"82","82","1",
+"เสียดายของ",
+"2021-04-17 12:09:04",
+"http://p.kg.qq.com/photo_new/T002RM0000026INK51UeYlk.jpg/300?max_age=2592000",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/8E5CDHa8HyVEvaLz-?lang=en&amp;g_f=personal",
+"2021-04-17 12:09:04",
+"2021-04-17 12:09:04"
+);
+
+
+
+
+
 
 
 

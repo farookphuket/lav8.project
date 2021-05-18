@@ -2,7 +2,7 @@
     <!-- form will sent post request to 'password.reset' -->
     <div class="container">
         <p v-html="msg">
-            {{msg}}
+        {{email}} {{msg}}
         </p>
         <form>
             <div class="form-group">
@@ -16,7 +16,7 @@
                 />
 
             </div>
-            <p  class="pt-4 mb-4">{{ res_status }}</p>
+            <p class="pt-4 mb-2">&nbsp;</p>
             <input
                 @click.prevent="resetMyPassword"
                 class="btn btn-block btn-outline-info send-btn mb-4"
@@ -33,6 +33,12 @@
                 Back Home
             </a>
         </form>
+        <b-modal title="server Said :" ref="onOk" @ok="gohome" centered 
+            ok-only>
+            <div class="container" v-html="res_status">
+                {{res_status}}
+            </div>
+        </b-modal>
     </div>
 </template>
 
@@ -68,11 +74,29 @@ export default {
             let url = `/passwordreset/${this.resettoken}`
             axios.get(url)
                 .then(res=>{
-           //         console.log(res.data)
+ //                   console.log(res.data)
                     let re = res.data
+
                     this.msg = re.msg
+                    this.email = re.email
                     this.timeleft = re.timeleft
                 })
+        },
+        resetMyPassword(){
+            let url = `/update`
+            let data = {
+                email:this.email,
+                passwd:this.passwd
+            }
+            axios.post(url,data)
+                .then(res=>{
+//                    console.log(res.data)
+                    this.res_status = res.data.msg
+                    this.$refs["onOk"].show()
+                })
+        },
+        gohome(){
+            location.href='/'
         },
     },
 };

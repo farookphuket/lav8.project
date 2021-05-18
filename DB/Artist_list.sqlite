@@ -1,5 +1,70 @@
 
-/* song number 81  in wesingapp.com the list 27-Mar-2021 */
+
+
+
+/* artist นักร้อง  number 86  in wesingapp.com the list 27-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (86,
+"ปาล์มมี่",
+"2021-05-18 12:14:24",
+"2021-05-18 12:15:21"
+);
+
+
+
+
+
+
+/* artist นักร้อง  number 85  in wesingapp.com the list 27-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (85,
+"อัสนีย์ วสันต์",
+"2021-05-18 12:14:24",
+"2021-05-18 12:15:21"
+);
+
+
+
+
+
+/* artist นักร้อง  number 84  in wesingapp.com the list 27-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (84,
+"หนู มิเตอร์",
+"2021-05-18 12:14:24",
+"2021-05-18 12:15:21"
+);
+
+
+
+
+
+
+/* artist นักร้อง  number 83  in wesingapp.com the list 27-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (83,
+"เนอร์เซอร์รี่ ซาวน์",
+"2021-05-18 12:14:24",
+"2021-05-18 12:15:21"
+);
+
+
+
+
+
+
+/* artist นักร้อง  number 82  in wesingapp.com the list 27-Mar-2021 */
+INSERT INTO "artists" ("id","name",
+"created_at","updated_at") VALUES (82,
+"แบทเชอร์ Basher",
+"2021-05-18 12:14:24",
+"2021-05-18 12:15:21"
+);
+
+
+
+
+/* artist นักร้อง  number 81  in wesingapp.com the list 27-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (81,
 "นิตยา บุญสูงเนิน",
@@ -9,7 +74,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 80  in wesingapp.com the list 27-Mar-2021 */
+/* artist นักร้อง  number 80  in wesingapp.com the list 27-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (80,
 "เบน ชลาทิศ",
@@ -18,7 +83,7 @@ INSERT INTO "artists" ("id","name",
 );
 
 
-/* song number 79  in wesingapp.com the list 27-Mar-2021 */
+/* artist นักร้อง  number 79  in wesingapp.com the list 27-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (79,
 "Gun 'N Rose",
@@ -30,7 +95,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 78  in wesingapp.com the list 16-Mar-2021 */
+/* artist นักร้อง  number 78  in wesingapp.com the list 16-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (78,
 "60 ไมล์",
@@ -40,7 +105,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 77  in wesingapp.com the list 16-Mar-2021 */
+/* artist นักร้อง  number 77  in wesingapp.com the list 16-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (77,
 "ต้อม เรนโบว์",
@@ -52,7 +117,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 76  in wesingapp.com the list 16-Mar-2021 */
+/* artist นักร้อง  number 76  in wesingapp.com the list 16-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (76,
 "Lewis Capaldi",
@@ -62,7 +127,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 75  in wesingapp.com the list 16-Mar-2021 */
+/* artist นักร้อง  number 75  in wesingapp.com the list 16-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (75,
 "ฮอตด๊อก",
@@ -71,7 +136,7 @@ INSERT INTO "artists" ("id","name",
 );
 
 
-/* song number 74  in wesingapp.com the list 16-Mar-2021 */
+/* artist นักร้อง  number 74  in wesingapp.com the list 16-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (74,
 "Simple Plan",
@@ -83,7 +148,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 73  in wesingapp.com the list 16-Mar-2021 */
+/* artist นักร้อง  number 73  in wesingapp.com the list 16-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (73,
 "Brian Mcknight",
@@ -95,7 +160,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 72  in wesingapp.com the list 16-Mar-2021 */
+/* artist นักร้อง  number 72  in wesingapp.com the list 16-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (72,
 "จ๊อบ บรรจบ",
@@ -106,7 +171,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 71  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 71  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (71,
 "Shayne Ward",
@@ -117,7 +182,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 70  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 70  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (70,
 "Blue",
@@ -128,7 +193,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 69  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 69  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (69,
 "All 4 One",
@@ -139,7 +204,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 68  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 68  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (68,
 "Human Nature",
@@ -149,7 +214,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 67  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 67  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (67,
 "Backstreet Boys",
@@ -159,7 +224,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 66  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 66  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (66,
 "A1",
@@ -168,7 +233,7 @@ INSERT INTO "artists" ("id","name",
 );
 
 
-/* song number 65  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 65  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (65,
 "Joey Mcintyre",
@@ -182,7 +247,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 64  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 64  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (64,
 "ป้าง",
@@ -191,7 +256,7 @@ INSERT INTO "artists" ("id","name",
 );
 
 
-/* song number 63  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 63  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (63,
 "อาร์ม",
@@ -202,7 +267,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 62  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 62  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (62,
 "ไชโย ธนวัฒน์",
@@ -214,7 +279,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 61  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 61  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (61,
 "พอส",
@@ -226,7 +291,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 60  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 60  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (60,
 "Westlife",
@@ -238,7 +303,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 59  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 59  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (59,
 "บอย โกสิยพงษ์",
@@ -250,7 +315,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 58  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 58  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (58,
 "Matchbox Twenty",
@@ -263,7 +328,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 57  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 57  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (57,
 "ลาบานูน",
@@ -273,7 +338,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 56  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 56  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (56,
 "โปเตโต้",
@@ -283,7 +348,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 55  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 55  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (55,
 "Shakira",
@@ -292,7 +357,7 @@ INSERT INTO "artists" ("id","name",
 );
 
 
-/* song number 54  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 54  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (54,
 "Robbie Williams",
@@ -306,7 +371,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 53  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 53  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (53,
 "ไอน้ำ",
@@ -315,7 +380,7 @@ INSERT INTO "artists" ("id","name",
 );
 
 
-/* song number 52  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 52  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (52,
 "แมทธิว ดีน",
@@ -324,7 +389,7 @@ INSERT INTO "artists" ("id","name",
 );
 
 
-/* song number 51  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 51  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (51,
 "วาย นอท เซเว่น",
@@ -336,7 +401,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 50  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 50  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (50,
 "เอกชัย ศรีวิชัย",
@@ -347,7 +412,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 49  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 49  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (49,
 "เกสซูโนวา",
@@ -357,7 +422,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 48  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 48  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (48,
 "ไอแซค",
@@ -371,7 +436,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 47  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 47  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (47,
 "ปีเตอร์ คอป ไดแรลดอล",
@@ -381,7 +446,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 46  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 46  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (46,
 "นายสะอาด",
@@ -391,7 +456,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 45  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 45  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (45,
 "เกียร์ ไนท์",
@@ -405,7 +470,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 44  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 44  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (44,
 "เดช อิสระ",
@@ -415,7 +480,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 43  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 43  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (43,
 "กิฟท์",
@@ -424,7 +489,7 @@ INSERT INTO "artists" ("id","name",
 );
 
 
-/* song number 42  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 42  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (42,
 "ฟลาย",
@@ -438,7 +503,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 41  in wesingapp.com the list 7-Mar-2021 */
+/* artist นักร้อง  number 41  in wesingapp.com the list 7-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (41,
 "เกิร์ล",
@@ -449,7 +514,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 40  in wesingapp.com the list 6-Mar-2021 */
+/* artist นักร้อง  number 40  in wesingapp.com the list 6-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (40,
 "ไทม์",
@@ -458,7 +523,7 @@ INSERT INTO "artists" ("id","name",
 );
 
 
-/* song number 39  in wesingapp.com the list 6-Mar-2021 */
+/* artist นักร้อง  number 39  in wesingapp.com the list 6-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (39,
 "แอคอาร์ต",
@@ -468,7 +533,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 38  in wesingapp.com the list 6-Mar-2021 */
+/* artist นักร้อง  number 38  in wesingapp.com the list 6-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (38,
 "แว่นใหญ่",
@@ -477,7 +542,7 @@ INSERT INTO "artists" ("id","name",
 );
 
 
-/* song number 37  in wesingapp.com the list 6-Mar-2021 */
+/* artist นักร้อง  number 37  in wesingapp.com the list 6-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (37,
 "ค๊อกเทล",
@@ -489,7 +554,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 36  in wesingapp.com the list 6-Mar-2021 */
+/* artist นักร้อง  number 36  in wesingapp.com the list 6-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (36,
 "จีรศักดิ์ ปานพุ่ม",
@@ -501,7 +566,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 35  in wesingapp.com the list 6-Mar-2021 */
+/* artist นักร้อง  number 35  in wesingapp.com the list 6-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (35,
 "ศักดิ์ดา",
@@ -514,7 +579,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 34  in wesingapp.com the list 6-Mar-2021 */
+/* artist นักร้อง  number 34  in wesingapp.com the list 6-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (34,
 "The Eagle",
@@ -527,7 +592,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 33  in wesingapp.com the list 6-Mar-2021 */
+/* artist นักร้อง  number 33  in wesingapp.com the list 6-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (33,
 "Savage Garden",
@@ -538,7 +603,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 32  in wesingapp.com the list 6-Mar-2021 */
+/* artist นักร้อง  number 32  in wesingapp.com the list 6-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (32,
 "แช่ม แช่มรัมย์",
@@ -550,7 +615,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 31  in wesingapp.com the list 6-Mar-2021 */
+/* artist นักร้อง  number 31  in wesingapp.com the list 6-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (31,
 "หนูนา หนึ่งธิดา",
@@ -563,7 +628,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 30  in wesingapp.com the list 6-Mar-2021 */
+/* artist นักร้อง  number 30  in wesingapp.com the list 6-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (30,
 "แบลคเฮด",
@@ -577,7 +642,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 29  in wesingapp.com the list 6-Mar-2021 */
+/* artist นักร้อง  number 29  in wesingapp.com the list 6-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (29,
 "ดัง พันกร",
@@ -590,7 +655,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 28  in wesingapp.com the list 6-Mar-2021 */
+/* artist นักร้อง  number 28  in wesingapp.com the list 6-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (28,
 "พลพล",
@@ -600,7 +665,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 27  in wesingapp.com the list 6-Mar-2021 */
+/* artist นักร้อง  number 27  in wesingapp.com the list 6-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (27,
 "ไมค์ ภิรมย์พร",
@@ -610,7 +675,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 26  in wesingapp.com the list 6-Mar-2021 */
+/* artist นักร้อง  number 26  in wesingapp.com the list 6-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (26,
 "แอล กอ ฮอ",
@@ -620,7 +685,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 25  in wesingapp.com the list 6-Mar-2021 */
+/* artist นักร้อง  number 25  in wesingapp.com the list 6-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (25,
 "เอ็ม อรรถพล",
@@ -632,7 +697,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 24  in wesingapp.com the list 6-Mar-2021 */
+/* artist นักร้อง  number 24  in wesingapp.com the list 6-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (24,
 "บางแก้ว",
@@ -641,7 +706,7 @@ INSERT INTO "artists" ("id","name",
 );
 
 
-/* song number 23  in wesingapp.com the list 6-Mar-2021 */
+/* artist นักร้อง  number 23  in wesingapp.com the list 6-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (23,
 "ฮิวโก้",
@@ -650,7 +715,7 @@ INSERT INTO "artists" ("id","name",
 );
 
 
-/* song number 22  in wesingapp.com the list 6-Mar-2021 */
+/* artist นักร้อง  number 22  in wesingapp.com the list 6-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (22,
 "พงพัฒษ์",
@@ -663,7 +728,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 21  in wesingapp.com the list 6-Mar-2021 */
+/* artist นักร้อง  number 21  in wesingapp.com the list 6-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (21,
 "Glenn Frey",
@@ -675,7 +740,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 20  in wesingapp.com the list 5-Mar-2021 */
+/* artist นักร้อง  number 20  in wesingapp.com the list 5-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (20,
 "ไท ธนาวุฒิ",
@@ -688,7 +753,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 19  in wesingapp.com the list 5-Mar-2021 */
+/* artist นักร้อง  number 19  in wesingapp.com the list 5-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (19,
 "ใหม่ เจริญปุระ",
@@ -700,7 +765,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 18  in wesingapp.com the list 5-Mar-2021 */
+/* artist นักร้อง  number 18  in wesingapp.com the list 5-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (18,
 "Aerosmith",
@@ -713,7 +778,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 17  in wesingapp.com the list 5-Mar-2021 */
+/* artist นักร้อง  number 17  in wesingapp.com the list 5-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (17,
 "บิ๊กแอ๊ด",
@@ -723,7 +788,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 16  in wesingapp.com the list 5-Mar-2021 */
+/* artist นักร้อง  number 16  in wesingapp.com the list 5-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (16,
 "Leann Rimes",
@@ -733,7 +798,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 15  in wesingapp.com the list 5-Mar-2021 */
+/* artist นักร้อง  number 15  in wesingapp.com the list 5-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (15,
 "ด๊อกเตอร์ ฟู",
@@ -743,7 +808,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 14  in wesingapp.com the list 5-Mar-2021 */
+/* artist นักร้อง  number 14  in wesingapp.com the list 5-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (14,
 "Boyzone",
@@ -755,7 +820,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 13  in wesingapp.com the list 5-Mar-2021 */
+/* artist นักร้อง  number 13  in wesingapp.com the list 5-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (13,
 "เพียว Pure",
@@ -767,7 +832,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 12  in wesingapp.com the list 4-Mar-2021 */
+/* artist นักร้อง  number 12  in wesingapp.com the list 4-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (12,
 "โซคูล",
@@ -776,7 +841,7 @@ INSERT INTO "artists" ("id","name",
 );
 
 
-/* song number 11  in wesingapp.com the list 4-Mar-2021 */
+/* artist นักร้อง  number 11  in wesingapp.com the list 4-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (11,
 "กะลา",
@@ -785,7 +850,7 @@ INSERT INTO "artists" ("id","name",
 );
 
 
-/* song number 10  in wesingapp.com the list 4-Mar-2021 */
+/* artist นักร้อง  number 10  in wesingapp.com the list 4-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (10,
 "ไฮเปอร์",
@@ -797,7 +862,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 9  in wesingapp.com the list 4-Mar-2021 */
+/* artist นักร้อง  number 9  in wesingapp.com the list 4-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (9,
 "โบวี่",
@@ -807,7 +872,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 8  in wesingapp.com the list 4-Mar-2021 */
+/* artist นักร้อง  number 8  in wesingapp.com the list 4-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (8,
 "เบิร์ด ธงชัย แมคอินไตย์",
@@ -817,7 +882,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 7  in wesingapp.com the list 4-Mar-2021 */
+/* artist นักร้อง  number 7  in wesingapp.com the list 4-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (7,
 "เท่ห์ อุเทน พรหมมินทร์",
@@ -826,7 +891,7 @@ INSERT INTO "artists" ("id","name",
 );
 
 
-/* song number 6  in wesingapp.com the list 4-Mar-2021 */
+/* artist นักร้อง  number 6  in wesingapp.com the list 4-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (6,
 "Ronan Keating",
@@ -835,7 +900,7 @@ INSERT INTO "artists" ("id","name",
 );
 
 
-/* song number 5  in wesingapp.com the list 4-Mar-2021 */
+/* artist นักร้อง  number 5  in wesingapp.com the list 4-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (5,
 "เบล สุพล",
@@ -844,7 +909,7 @@ INSERT INTO "artists" ("id","name",
 );
 
 
-/* song number 4  in wesingapp.com the list 4-Mar-2021 */
+/* artist นักร้อง  number 4  in wesingapp.com the list 4-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (4,
 "เบบี้ บูล",
@@ -854,7 +919,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 3  in wesingapp.com the list 4-Mar-2021 */
+/* artist นักร้อง  number 3  in wesingapp.com the list 4-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (3,
 "เสือ ธนพล",
@@ -865,7 +930,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* song number 2  in wesingapp.com the list 4-Mar-2021 */
+/* artist นักร้อง  number 2  in wesingapp.com the list 4-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (2,
 "บอย พีชเมกเกอร์",
@@ -875,7 +940,7 @@ INSERT INTO "artists" ("id","name",
 
 
 
-/* first song in wesingapp.com the list 4-Mar-2021 */
+/* first artist นักร้อง  in wesingapp.com the list 4-Mar-2021 */
 INSERT INTO "artists" ("id","name",
 "created_at","updated_at") VALUES (1,
 "Ed Sheeran",
