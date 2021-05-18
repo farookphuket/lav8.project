@@ -16,11 +16,68 @@ INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
 
 ',                                          
 '1',                        
-'2021-5-17 10:22:05',                
-'2021-5-17 10:23:01'                 
+'2021-5-18 11:39:05',                
+'2021-5-18 11:42:01'                 
 );                                          
 
 */
+
+
+
+/* หมอพร้อม พร้อมสิ้นเดือน*/
+INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
+`is_public`,`created_at`,`updated_at`) VALUES (NULL,
+'1',                            
+'หมอพร้อม เค้าเปิดให้ประชาชนทั่วไปลงทะเบียนตั้งแต่สิ้นเดือน พฤษภาคม ปี 2564 เว้ย',                             
+'
+<div class="row">
+    <div class="col-lg-4">
+        <img class="responsive" 
+        src="https://i.ibb.co/6gKPnqG/2021-05-18-vacine-normal.png" alt="">
+        <p class="pt-2 mb-2">
+            หมอพร้อมแล้วนะ
+        </p>
+    </div>
+    <div class="col-lg-8">
+        <p class="mb">
+            เมื่อวานนี้(17-05-2564) ก็โง่ไปด่าโปรแกรมเมอร์ หมอพร้อม ซะเสียหายเลยทั้งที่จริงๆ 
+            ตัวเอง(ผมเองนี่แหละ)ที่โง่ไม่ดูข่าว วันนี้(18-05-2564) ไปเปิดดูถึงรู้ อ้อ! อย่างนี้นี่เอง 
+            ไอ้เวรเสือกไม่อ่านข่าวเอาแต่ไปโทษคนอื่น ไม่รู้ว่าใครเป็นอย่างผมบ้าง อะไรๆ ก็โทษคนอื่น
+            ไว้ก่อน แม๊.....อย่างนี้เค้าเรียก นิสัยเสีย
+
+        </p>
+        <a href="https://www.bangkokbiznews.com/news/detail/938260" 
+        target="_blank">
+            <img class="responsive" 
+            src="https://i.ibb.co/6gKPnqG/2021-05-18-vacine-normal.png" 
+            alt="หมอจะพร้อมตอนสิ้นเดือนโน่น">
+        </a>
+        <p class="pt-4 mb-4">
+            <span class="alert alert-warning">
+                ประชาชนทั่วไป จองคิว "ฉีดวัคซีน" ผ่านหมอพร้อมได้เมื่อไร
+            </span>
+        </p>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <b-icon icon="book-half"></b-icon>
+                ประชาชนทั่วไปที่มีอายุ 18-59 ปี จองคิวผ่านหมอพร้อมได้วันที่ 
+                31 พ.ค. 64 เป็นต้นไป
+            </li>
+        </ul>
+        <p class="pt-4 mb-4">
+            เออ......กูผิดเอง!
+        </p>
+
+    </div>
+</div>
+
+
+
+',                                          
+'1',                        
+'2021-5-18 11:39:05',                
+'2021-5-18 11:42:01'                 
+);                                          
 
 
 

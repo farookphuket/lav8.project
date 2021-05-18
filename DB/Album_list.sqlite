@@ -1,6 +1,61 @@
 
 
 
+
+
+/* number 86  in the list 27-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (86,
+"ปาล์มมี่'s song",
+"2021-03-27 22:19:11",
+"2021-03-16 22:20:15"
+);
+
+
+/* number 85  in the list 27-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (85,
+"อัสนีย์ วสันต์'s song",
+"2021-03-27 22:19:11",
+"2021-03-16 22:20:15"
+);
+
+
+
+/* number 84  in the list 27-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (84,
+"หนู มิเตอร์'s song",
+"2021-03-27 22:19:11",
+"2021-03-16 22:20:15"
+);
+
+
+
+/* number 83  in the list 27-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (83,
+"เนอร์เซอร์รี่ ซาวน์'s song",
+"2021-03-27 22:19:11",
+"2021-03-16 22:20:15"
+);
+
+
+/* number 82  in the list 27-Mar-2021 */
+INSERT INTO "albums" ("id","name",
+"created_at","updated_at") VALUES (82,
+"แบชเชอร์'s song",
+"2021-03-27 22:19:11",
+"2021-03-16 22:20:15"
+);
+
+
+
+
+
+
+
+
 /* number 81  in the list 27-Mar-2021 */
 INSERT INTO "albums" ("id","name",
 "created_at","updated_at") VALUES (81,
