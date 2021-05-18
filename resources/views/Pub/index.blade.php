@@ -12,6 +12,8 @@
             
             @if(!$whatnews->isEmpty())            
                 @foreach($whatnews as $item)
+
+                    @section('meta_title',$item->whatnews_title)
                 <div class="pt-4">
                     <h2 class="text-center pt-2">{{$item->whatnews_title}}</h2>
                     <div class="clearfix">
