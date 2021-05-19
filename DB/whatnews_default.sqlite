@@ -11,16 +11,139 @@
 INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
 `is_public`,`created_at`,`updated_at`) VALUES (NULL,
 '1',                            
-'',                             
 '
+
+
+',                             
+'
+
 
 ',                                          
 '1',                        
-'2021-5-18 11:39:05',                
-'2021-5-18 11:42:01'                 
+'2021-5-19 12:12:05',                
+'2021-5-19 12:12:10'                 
 );                                          
 
 */
+
+
+
+
+INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
+`is_public`,`created_at`,`updated_at`) VALUES (NULL,
+'1',                            
+'
+ทดลองใช้ อุบุนตู 21.04 ในโปรแกรม virtualbox กันเถอะ
+
+',                             
+'
+<div class="container">
+    <p class="mb-4">
+        ปรกติผมจะทำวิดิโอแล้วโพสใน <a 
+        href="https://www.youtube.com/channel/UCnApixzVAeTN0xLXuERn89g" 
+        class="btn btn-outline-primary" target="_blank">
+        youtube</a> ของผมซึ่งก็เหมือนๆ กับเวปไซต์นั่นแหละ คือ "ไม่มีคนดู" ฮ่าๆ อ้ะ ทำเองก็ดูเอง 
+        นักเลงพอ สำหรับใครก็ตามที่สนใจจะใช้งาน Ubuntu 21.04 อยากจะทดทองดูในโปรแกรม 
+        Virtualbox ลองดูวิดิโอนี้นะครับ 
+    </p>
+
+    <div class="video-container pt-2">
+        <iframe src="https://archive.org/embed/ubuntu-21-04_like_small-kid" 
+        width="640" height="480" frameborder="0" webkitallowfullscreen="true" 
+        mozallowfullscreen="true" allowfullscreen></iframe>
+    </div>
+
+</div>
+
+',                                          
+'1',                        
+'2021-5-19 17:45:05',                
+'2021-5-19 17:45:10'                 
+);                                          
+
+
+
+
+
+
+
+
+/* Conf Vue3 by Even You 19 May 2021*/
+INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
+`is_public`,`created_at`,`updated_at`) VALUES (NULL,
+'1',                            
+'
+Is there any one learn vue on 2021
+
+',                             
+'
+<div class="row">
+    <div class="col-lg-12">
+        <p class="pt-2 mb-2">
+        to learn "laravel" and "vue" is quite easy to picking up even you came 
+        from another framework like codeigniter as myself do from last year 
+        Oct 2020 up until now (19 May 2021) I am with laravel 8 and still using 
+        vue 2 by the way but this will be move to vue 3 soon.
+        </p>
+        <div class="video-container">
+            <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/WLpLYhnGqPA" 
+            title="Design Principles of Vue 3.0 by Evan You" 
+            frameborder="0" allow="accelerometer; autoplay; 
+            clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
+        </div>
+        <p class="pt-2 mb-2 text-center">
+            Design Principles of Vue 3.0 by Evan You
+        </p>
+        <p class="pt-2 mb-2">
+            but up until now I no nothing about Vue3 still! 💔
+        </p>
+    </div>
+</div>
+
+
+',                                          
+'1',                        
+'2021-5-19 12:12:05',                
+'2021-5-19 12:12:10'                 
+);                                          
+
+
+
+
+/* รถไฟความเร็วสูงของจีน 19 May 2021*/
+INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
+`is_public`,`created_at`,`updated_at`) VALUES (NULL,
+'1',                            
+'จีนเค้ามีรถไฟความเร็วสูง(จริง ๆ) แล้วนะ รู้ยัง',                             
+'
+
+<div class="row">
+    <div class="container">
+        <h2 class="text-center">
+            เห็นข่าวแบบนี้แล้วมันชื่นหัวจิต
+        </h2>
+        <p class="pt-2 mb-2">
+        จริงๆ จีนเค้ามีรถไฟความเร็วสูงใช้กันมาพักใหญ่ๆ แล้วล่ะ จะว่าได้เหรอประเทศใหญ่ขนาดนั้น 
+        แถมคนเป็นพันล้าน แต่ถึงยังงั้นก็ยังอดอิจฉาไม่ได้ แม๊....มึงจะล้ำไปไหนเมื่อไหร่จะมาบ้านกู?
+
+        </p>
+        <div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-UjtYq3wcco" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p class="pt-2 mb-4 text-center">
+            มาเที่ยวเมืองไทยบ้างเถิด เทคโนโลยีจ๋า 
+        </p>
+    </div>
+</div>
+
+',                                          
+'1',                        
+'2021-5-19 08:35:05',                
+'2021-5-19 08:35:10'                 
+);                                          
+
 
 
 
@@ -31,14 +154,7 @@ INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
 'หมอพร้อม เค้าเปิดให้ประชาชนทั่วไปลงทะเบียนตั้งแต่สิ้นเดือน พฤษภาคม ปี 2564 เว้ย',                             
 '
 <div class="row">
-    <div class="col-lg-4">
-        <img class="responsive" 
-        src="https://i.ibb.co/6gKPnqG/2021-05-18-vacine-normal.png" alt="">
-        <p class="pt-2 mb-2">
-            หมอพร้อมแล้วนะ
-        </p>
-    </div>
-    <div class="col-lg-8">
+    <div class="col-lg-12">
         <p class="mb">
             เมื่อวานนี้(17-05-2564) ก็โง่ไปด่าโปรแกรมเมอร์ หมอพร้อม ซะเสียหายเลยทั้งที่จริงๆ 
             ตัวเอง(ผมเองนี่แหละ)ที่โง่ไม่ดูข่าว วันนี้(18-05-2564) ไปเปิดดูถึงรู้ อ้อ! อย่างนี้นี่เอง 
@@ -89,15 +205,7 @@ INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
 'ลองลงทะเบียนฉีดวัคซีนโควิดวันที่ 17-05-2564 กับ App หมอพร้อม',                             
 '
 <div class="row">
-    <div class="col-lg-4">
-       <img class="responsive pt-4" 
-       src="https://i.ibb.co/TgVgwc1/IMG-20210517-085356.jpg" 
-       alt="ปีหน้าหมอยังไม่พร้อม">
-       <p class="text-center pt-2">
-        ปีหน้าหมอยังไม่พร้อม
-       </p>
-    </div>
-    <div class="col-lg-8">
+    <div class="col-lg-12">
         <p class="pt-4 mb-2">
             วันนี้ (17-05-2564) ทดลองลงทะเบียนฉีดวัคซีนผ่าน app หมอพร้อมในมือถือ 
             วีโว่ราคา 5 พันบาท ได้ความว่าไม่สามารถลงทะเบียนขอรับวัคซีนได้ 
@@ -142,14 +250,8 @@ INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
 '
 <!-- ========== วิธีไล่แมลงจากเวปที่ไร้ผล START ===== -->
 <div class="row">
-    <div class="col-lg-4">
-        <img src="https://i.ibb.co/VQ1hNR6/2021-05-17-insect-non-sence.png" 
-        title="วิธีการกำจัดแมงหวี่ที่ไร้ผล " alt="วิธีกำจัดแมงหวี่ที่ไร้ผล" class="responsive">
-        <p class="pt-2">
-            วิธีการกำจัดแมงหวี่ที่ไร้ผล
-        </p>
-    </div>
-    <div class="col-lg-8">
+
+    <div class="col-lg-12">
         <p class="pt-2 mb-4">
             หน้าร้อนทีไรมันต้องมากันเป็นขบวนทุกวันเลยสิไอ้แมลงน่ารำคาญพวกนี้ "แมงหวี่" 
             รำคาญชิบหายจะนอนก็ไม่ได้ มันตอมตา มันเข้าหน้า เข้าหู ทำยังไงล่ะทีนี้ ลองไปค้นๆ 
@@ -159,6 +261,13 @@ INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
             ว่าอะไรรู้ๆ กัน) แต่ที่คาใจก็คือ ที่เอามาโพสๆ กันน่ะเคยได้ลองทำกันบ้างหรือเปล่า? 
             หรือแค่นั่งก๊อปบทความไร้คุณภาพเอามาโพสไปวันๆ เห็นแล้วสมเพช 
             ทำผมหมดตังไปเป็น 100 บาทเพราะทดลองวิธีการพวกนี้  
+        </p>
+    </div>
+    <div class="col-lg-12">
+        <img src="https://i.ibb.co/VQ1hNR6/2021-05-17-insect-non-sence.png" 
+        title="วิธีการกำจัดแมงหวี่ที่ไร้ผล " alt="วิธีกำจัดแมงหวี่ที่ไร้ผล" class="responsive">
+        <p class="pt-2 text-center">
+            วิธีการกำจัดแมงหวี่ที่ไร้ผล
         </p>
     </div>
     <div class="col-lg-12">

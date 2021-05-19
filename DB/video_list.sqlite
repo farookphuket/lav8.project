@@ -22,11 +22,14 @@
 
 
 
-
-
-
-
-
+/* รถไฟความเร็วสูงของจีน 19 May 2021*/
+    INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+    `updated_at`) VALUES
+    (NULL,'1',
+    'จีน โชว์ต้นแบบรถไฟความเร็วสูง วิ่งเร็ว 620 กม./ชม. : ย่อโลกเศรษฐกิจ 20 ม.ค. 64',
+    '<iframe width="560" height="315" src="https://www.youtube.com/embed/-UjtYq3wcco" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    '2021-05-19 08:28:14',
+    '2021-05-19 08:28:15');                                          
 
 
 

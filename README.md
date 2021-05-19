@@ -5,7 +5,7 @@
 >   and I don't know if this code is really useful to any one
 >   or even it is make sense at all to you to copy this and use
 
-##  used Laravel 8 kicker!
+##  used Laravel 8 for the core code!
 >   started on 20 Oct 2020 from knowing nothing about laravel 8.
 
 
@@ -14,6 +14,10 @@
 
 > added to baanlungpa.com 18 May 2021
 > fixed the "forgot password"
+
+
+
+
 
 
 
@@ -91,7 +95,7 @@ need public folder) I mean to my "public_html" folder
     $app = require_once __DIR__.'/../bootstrap/app.php';
 
     TO:
-    $app = require_once __DIR__.'/../lav8Sys/bootstrap/app.php';
+    ::$app = require_once __DIR__.'/../lav8Sys/bootstrap/app.php';
 
 ```
 
@@ -112,7 +116,7 @@ need public folder) I mean to my "public_html" folder
     or simply create the php file with this content "<?php echo __DIR__; ?>")
     this will be your absolute path
 
-    DB_DATABASE=/var/www/lav8Sys/DB/DB_SAMPLE.sqlite
+    ::DB_DATABASE=/var/www/lav8Sys/DB/DB_SAMPLE.sqlite
 
 ```
 
@@ -139,11 +143,7 @@ need public folder) I mean to my "public_html" folder
 
 
 
-##  Last update 11 Apr 2021
-
->   update "Whatnews" module on admin to using Vue.
->   sync to the desktop computer
-
+---
 
 
 
