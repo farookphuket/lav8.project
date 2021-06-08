@@ -28,6 +28,124 @@ INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
 
 
 
+/* How much change of you?*/
+INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
+`is_public`,`created_at`,`updated_at`) VALUES (NULL,
+'1',                            
+'
+คุณเปลี่ยนไปแค่ไหน? ผมเหรอ อืม.....เยอะมาก
+
+',                             
+'
+<div class="row">
+    <div class="col-lg-12">
+        <p>
+            how much change that happen to you from the pass up until now
+            ปีๆ หนึ่งไหงมันช่างไวไปเสียนี่ รู้ตัวอีกทีก็ เห้อ 40 กว่าแล้วนะ ยังไม่มีอะไรเลย 💔
+        </p>
+    </div>
+    <div class="col-md-4">
+        <img src="https://i.ibb.co/HBptJC3/farook-year2006.jpg" class="responsive">
+        <p class="text-center pt-2">year 2006</p>
+    </div>
+
+    <div class="col-md-4">
+        <img src="https://i.ibb.co/PcS56LN/farook-year2007.jpg" class="responsive">
+        <p class="text-center pt-2">year 2007</p>
+    </div>
+
+    <div class="col-md-4">
+        <img src="https://i.ibb.co/BzZ5HNL/farook-year2007-2.jpg" class="responsive">
+        <p class="text-center pt-2">year 2007_2</p>
+    </div>
+
+    <div class="col-md-4">
+        <img src="https://i.ibb.co/18xQmdJ/farook-year2009.jpg" class="responsive">
+        <p class="text-center pt-2">year 2009</p>
+    </div>
+
+    <div class="col-md-4">
+        <img src="https://i.ibb.co/zxBw2yY/farook-year2011.jpg" class="responsive">
+        <p class="text-center pt-2">year 2011</p>
+    </div>
+
+
+
+    <div class="col-md-4">
+        <img src="https://i.ibb.co/7zGjm3j/farook-year2021.jpg" class="responsive">
+        <p class="text-center pt-2">
+            2021 ปีนี้ โครตแก่
+        </p>
+    </div>
+
+    <div class="col-lg-12">
+        <p>
+            this is what I took with friends
+        </p>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="https://i.ibb.co/YbP2X8M/farook-and-friends2006.jpg" class="responsive">
+                <p class="text-center pt-2">
+                    ถ่ายกับพี่บิลลี่ พี่ชอร์ ตอนไปแข่งพายเรือ
+                </p>
+            </div>
+            <div class="col-lg-3">
+
+                <img src="https://i.ibb.co/rGq2jxF/farook-and-friends2006-2.jpg" class="responsive">
+                <p class="text-center pt-2">
+                    ถ่ายกับพี่บิลลี่ พี่ชอร์ ตอนไปแข่งพายเรือ
+                </p>
+            </div>
+
+        </div>
+        <p class="pt-6 mb-4">
+            อันนี้ถ่ายกับ อิบรอน ลูกชายคนโต</p>
+        <div class="col-md-6">
+            <img src="https://i.ibb.co/tqSR0zM/20150508-farook-and-son.jpg" class="responsive">
+            <p class="pt-2 text-center">
+                ลูกชายโตเป็นหนุ่ม ส่วนพ่อ....เห้อ....
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+',                                          
+'1',                        
+'2021-06-08 21:20:05',                
+'2021-06-08 21:20:10'                 
+);                                          
+
+
+
+
+INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
+`is_public`,`created_at`,`updated_at`) VALUES (NULL,
+'1',                            
+'
+Pattalung with Tom 24 Nov 2020
+
+',                             
+'
+<div class="container">
+    <p>keep it for a memories.</p>
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/MhVd8be8dyA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+
+',                                          
+'1',                        
+'2021-06-08 20:52:05',                
+'2021-06-08 20:52:10'                 
+);                                          
+
+
+
+
+
 
 INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
 `is_public`,`created_at`,`updated_at`) VALUES (NULL,
@@ -43,7 +161,7 @@ INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
         href="https://www.youtube.com/channel/UCnApixzVAeTN0xLXuERn89g" 
         class="btn btn-outline-primary" target="_blank">
         youtube</a> ของผมซึ่งก็เหมือนๆ กับเวปไซต์นั่นแหละ คือ "ไม่มีคนดู" ฮ่าๆ อ้ะ ทำเองก็ดูเอง 
-        นักเลงพอ สำหรับใครก็ตามที่สนใจจะใช้งาน Ubuntu 21.04 อยากจะทดทองดูในโปรแกรม 
+        นักเลงพอ สำหรับใครก็ตามที่สนใจจะใช้งาน Ubuntu 21.04 อยากจะทดลองดูในโปรแกรม 
         Virtualbox ลองดูวิดิโอนี้นะครับ 
     </p>
 
@@ -57,8 +175,8 @@ INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
 
 ',                                          
 '1',                        
-'2021-5-19 17:45:05',                
-'2021-5-19 17:45:10'                 
+'2021-05-19 17:45:05',                
+'2021-05-19 17:45:10'                 
 );                                          
 
 
@@ -105,8 +223,8 @@ Is there any one learn vue on 2021
 
 ',                                          
 '1',                        
-'2021-5-19 12:12:05',                
-'2021-5-19 12:12:10'                 
+'2021-05-19 12:12:05',                
+'2021-05-19 12:12:10'                 
 );                                          
 
 
@@ -140,8 +258,8 @@ INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
 
 ',                                          
 '1',                        
-'2021-5-19 08:35:05',                
-'2021-5-19 08:35:10'                 
+'2021-05-19 08:35:05',                
+'2021-05-19 08:35:10'                 
 );                                          
 
 
@@ -191,8 +309,8 @@ INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
 
 ',                                          
 '1',                        
-'2021-5-18 11:39:05',                
-'2021-5-18 11:42:01'                 
+'2021-05-18 11:39:05',                
+'2021-05-18 11:42:01'                 
 );                                          
 
 
@@ -236,8 +354,8 @@ INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
 </div>
 ',                                          
 '1',                        
-'2021-5-17 10:22:05',                
-'2021-5-17 10:23:01'                 
+'2021-05-17 10:22:05',                
+'2021-05-17 10:23:01'                 
 );                                          
 
 
@@ -368,8 +486,8 @@ INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
 <!-- ========== วิธีไล่แมลงจากเวปที่ไร้ผล END ===== -->
 ',                                          
 '1',                        
-'2021-5-17 07:22:05',                
-'2021-5-17 07:22:01'                 
+'2021-05-17 07:22:05',                
+'2021-05-17 07:22:01'                 
 );                                          
 
 /* ============================================ */
