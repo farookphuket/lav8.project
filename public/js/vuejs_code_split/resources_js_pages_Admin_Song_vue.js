@@ -476,6 +476,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -1172,13 +1178,23 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "card-body" }, [
                 _c("p", { staticClass: "card-text" }, [
+                  _c("a", { attrs: { href: "", title: so.name } }, [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(_vm.smartTitle(so.name, 16)) +
+                        "\n                        "
+                    )
+                  ]),
                   _vm._v(
-                    "\n                    " +
-                      _vm._s(_vm.smartTitle(so.name, 16)) +
-                      " - " +
-                      _vm._s(so.user.name)
+                    " \n                        - " +
+                      _vm._s(so.user.name) +
+                      "\n                    "
                   )
                 ]),
+                _vm._v(" "),
+                _c("p", [_vm._v("Album : " + _vm._s(so.album.name))]),
+                _vm._v(" "),
+                _c("p", [_vm._v("Artist : " + _vm._s(so.artist.name))]),
                 _vm._v(" "),
                 _c("div", { staticClass: "clearfix" }, [
                   _c("div", { staticClass: "float-left" }, [

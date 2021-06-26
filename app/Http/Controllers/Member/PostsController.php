@@ -16,6 +16,17 @@ use Illuminate\Support\Str;
 
 class PostsController extends Controller
 {
+    protected $post_table;
+    protected $tag_table;
+    protected $post_tag_table;
+    protected $post_read_table;
+
+    public function __construct(){
+        $this->post_tag_table = "post_tag";
+        $this->tag_table = "tags";
+        $this->post_table = "posts";
+        $this->post_read_table = "post_read";
+    }
     /**
      * Display a listing of the resource.
      *
@@ -133,10 +144,10 @@ class PostsController extends Controller
     {
 
         $this->validPost(); 
-        //
-        //
-        //$slug = Str::slug(request()->title);
-        $slug = request()->slug;
+
+        // we have to remove the last dash from the string
+        $slug = rtrim(request()->slug,"-");
+
         $is_public = !request()->is_public?0:1;
         $excerpt = xx_clean(request()->excerpt);
         $body = xx_clean(request()->body);
@@ -144,7 +155,7 @@ class PostsController extends Controller
 
         $nPost = Post::create([
             "user_id" => $user_id,
-            "post_title" => request()->title,
+            "post_title" => xx_clean(request()->title),
             "slug" => $slug,
             "is_public" => $is_public,
             "post_body" => $body,
@@ -152,20 +163,13 @@ class PostsController extends Controller
         ]);
 
         $nPost->tags()->attach(request()->tags);
-
-        // the slug will not accept Thai 
-        // so will set the slug to the id of post
-        if(!$nPost->slug):
-            $slug = $nPost->id;
-            Post::where("id",$nPost->id)
-                ->update([
-                    "slug" => $slug
-                ]);
-        endif;
         
         if(!empty(request()->new_tag)):
             $this->makeTag($nPost);
         endif;
+
+        // make the backup 
+        $this->backupInsertPost();
 
         $msg = "<span class=\"badge badge-success\">Success : data has been created</span>";
         return response()->json([
@@ -191,6 +195,9 @@ class PostsController extends Controller
             ]);
             
             $nPost->tags()->attach($nTag);
+
+            // backup 
+            $this->backupInsertTag();
         else:
             $nTag = $oldTag; 
             $nPost->tags()->sync($nTag);
@@ -207,7 +214,7 @@ class PostsController extends Controller
      */
     public function show(Post $post)
     {
-
+       $this->makeCount($post->id); 
         return view('Member.Posts.show')->with([
             'post' => $post
         ]);
@@ -244,13 +251,16 @@ class PostsController extends Controller
     {
         $this->validPost();
         //$slug = Str::slug(request()->title);
-        $slug = request()->slug;
+
+        $slug = rtrim(request()->slug,"-");
+        // remove dash from the last character
+
         $excerpt = xx_clean(request()->excerpt);
         $body = xx_clean(request()->body);
         $is_public = !request()->is_public?0:1;
         $nPost = Post::where("id",$post->id)
             ->update([
-                "post_title" => request()->title,
+                "post_title" => xx_clean(request()->title),
                 "post_excerpt" => $excerpt,
                 "post_body" => $body,
                 "is_public" => $is_public,
@@ -287,4 +297,109 @@ class PostsController extends Controller
         ]);
 
     }
+
+
+    public function makeCount($id){
+        $get = Post::where("id",$id)->first();
+        $con1 = [
+            "post_id" => $get->id,
+            "os" => getUserOs(),
+            "ip" => getUserIp(),
+            "device" => getUserDevice(),
+            "browser" => getUserBrowser(),
+            "created_at" => now(),
+            "updated_at" => now()
+        ];
+        $hasCount = DB::table($this->post_read_table)
+            ->whereDay("created_at","=",date("Y-m-d"))
+            ->where("ip",getUserIp())
+            ->first();
+        if(!$hasCount):
+            DB::table($this->post_read_table)
+                ->insert($con1);
+
+            // ===== make a backup 
+            $this->backupCount();
+        endif;
+
+        // -- update the count field in posts table for this id as well 
+        $sum = DB::table($this->post_read_table)
+            ->where("post_id",$get->id)
+            ->get();
+        Post::where("id",$get->id)
+            ->update([
+                "last_read_date" => date("Y-m-d"),
+                "last_read_ip" => getUserIp(),
+                "read_count" => count($sum)
+            ]);
+
+
+    }
+
+    /* ============ make a backup 26 June 2021 START =========================*/
+    public function backupInsertPost(){
+
+        $post = Post::latest()->first();
+        $file = base_path("DB/postList.sqlite");
+        $con1 = "/* ========= auto backup ".date("Y-m-d H:i:s")." ========= */";
+        $con1 .= "
+INSERT INTO `{$this->post_table}`(`user_id`,`post_title`,`slug`,`post_excerpt`,
+`post_body`,`is_public`,`created_at`,`updated_at`) VALUES(
+    '{$post->user_id}','{$post->post_title}','{$post->slug}',
+    '{$post->post_excerpt}',
+    '{$post->post_body}',
+    '{$post->is_public}','{$post->created_at}','{$post->updated_at}'
+);
+";
+        write2text($file,$con1);
+
+        //======== tags can be more than one
+        $tags = DB::table($this->post_tag_table)
+            ->where("post_id",$post->id)
+            ->get();
+        foreach($tags as $item):
+            $file = base_path("DB/post_link_tag.sqlite");
+            $con2 = "/* ====== auto backup ".date("Y-m-d H:i:s")." ==========*/";
+            $con2 .= "
+INSERT INTO `{$this->post_tag_table}`(`post_id`,`tag_id`,`created_at`,
+`updated_at`) VALUES(
+    '{$item->post_id}','{$item->tag_id}','{$item->created_at}',
+    '{$item->updated_at}');
+";
+            write2text($file,$con2);
+        endforeach;
+
+    }
+
+    public function backupInsertTag(){
+        $tag = Tag::latest()->first();
+
+        $file = base_path("DB/tags.sqlite");
+        $con2 = "/* ===== auto backup ".date("Y-m-d H:i:s"). " ====  */";        
+        $con2 .= "
+INSERT INTO `{$this->tag_table}`(`tag_name`,
+`created_at`,'updated_at') VALUES(
+    '{$tag->tag_name}','{$tag->created_at}','{$tag->updated_at}'
+);
+";
+        write2text($file,$con2);
+    }
+
+    public function backupCount(){
+        $get = DB::table($this->post_read_table)
+                    ->latest()
+                    ->first();
+        $file = base_path("DB/post_read_count.sqlite");
+        $cont = "/* ========= auto backup ".date("Y-m-d H:i:s")." =========*/";
+        $cont .= "
+INSERT INTO `{$this->post_read_table}`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '{$get->post_id}','{$get->os}','{$get->ip}','{$get->device}',
+    '{$get->browser}','{$get->created_at}','{$get->updated_at}');
+";
+        write2text($file,$cont);
+    }
+
+    /* ============ make a backup 26 June 2021 End =========================*/
+
 }

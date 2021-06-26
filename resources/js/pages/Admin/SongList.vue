@@ -15,7 +15,13 @@
                 </a>
                 <div class="card-body">
                     <p class="card-text">
-                    {{smartTitle(so.name,16)}} - {{so.user.name}}</p>
+                        <a href="" :title="so.name">
+                            {{smartTitle(so.name,16)}}
+                        </a>&nbsp;
+                        - {{so.user.name}}
+                    </p>
+                    <p>Album : {{so.album.name}}</p>
+                    <p>Artist : {{so.artist.name}}</p>
                     <div class="clearfix">
                         <div class="float-left">
                             <span>

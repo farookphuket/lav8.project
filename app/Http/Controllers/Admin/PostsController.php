@@ -16,6 +16,15 @@ use DB;
 
 class PostsController extends Controller
 {
+    protected $tag_table;
+    protected $post_tag_table;
+    protected $post_table;
+
+    public function __construct(){
+        $this->tag_table = "tags";
+        $this->post_table = "posts";
+        $this->post_tag_table = "post_tag";
+    }
     /**
      * Display a listing of the resource.
      *
@@ -114,17 +123,21 @@ class PostsController extends Controller
 
         //get the slug from post title
         //$slug = Str::slug(request('slug'));
-        $slug = request()->slug;
+        // remove the last dash from the string
+        $slug = rtrim(request()->slug,"-");
         
         // save the new post return the post->id
         $nPost = new Post();
         $nPost->user_id = Auth::user()->id;
         $nPost->is_public = request()->is_public?1:0;
-        $nPost->post_title = request()->title;
+        $nPost->post_title = xx_clean(request()->title);
         $nPost->slug = $slug;
         $nPost->post_excerpt = xx_clean(request()->excerpt);
         $nPost->post_body = xx_clean(request()->body);
         $nPost->save();
+
+        //-- make a backup 
+        $this->backupInsertPost();
 
         $nPost->tags()->attach(request('tags'));
 
@@ -163,8 +176,11 @@ class PostsController extends Controller
         $oldTag = Tag::where('tag_name',request('new_tag'))->get();
         if(count($oldTag) == 0):
             $nTag = Tag::create([
-                'tag_name' => request('new_tag')
+                'tag_name' => xx_clean(request('new_tag'))
             ]);
+
+            // make a backup 
+            $this->backupInsertTag();
         else:
             $nTag = $oldTag; 
         endif;
@@ -231,7 +247,8 @@ class PostsController extends Controller
         $user_id = $post->user_id;
         //get the slug from post title
         //$slug = Str::slug(request('slug'));
-        $slug = request()->slug;
+        // remove the last dash
+        $slug = rtrim(request()->slug,"-");
 
         if(!$slug):
             $slug = $post->id;
@@ -247,7 +264,7 @@ class PostsController extends Controller
             ->update([
                 'user_id' => $user_id,
                 'is_public'  =>     request()->is_public?1:0,
-                'post_title'  => request()->title,
+                'post_title'  => xx_clean(request()->title),
                 'slug'  => $slug,
                 'post_excerpt'  => xx_clean(request()->excerpt),
                 'post_body'  => xx_clean(request()->body),
@@ -283,10 +300,65 @@ class PostsController extends Controller
         $del->delete();
         $del->tags()->detach();
 
-        $msg = "<span class=\"alert alert-success\">Success : item has been deleted</span>";
+        $msg = "<span class=\"alert alert-success\">Success : item has been 
+            deleted</span>";
         return response()->json(["msg" => $msg],200);
         
 
 //        return redirect()->route('admin.post.index')->with(Session::flash('success','Your post has been deleted'));
     }
+
+
+    /* ============ make a backup 26 June 2021 START =========================*/
+    public function backupInsertPost(){
+
+        $post = Post::latest()->first();
+        $file = base_path("DB/postList.sqlite");
+        $con1 = "/* ========= auto backup ".date("Y-m-d H:i:s")." ========= */";
+        $con1 .= "
+INSERT INTO `{$this->post_table}`(`user_id`,`post_title`,`slug`,`post_excerpt`,
+`post_body`,`is_public`,`created_at`,`updated_at`) VALUES(
+    '{$post->user_id}','{$post->post_title}','{$post->slug}',
+    '{$post->post_excerpt}',
+    '{$post->post_body}',
+    '{$post->is_public}','{$post->created_at}','{$post->updated_at}'
+);
+";
+        write2text($file,$con1);
+
+        //======== tags can be more than one
+        $tags = DB::table($this->post_tag_table)
+            ->where("post_id",$post->id)
+            ->get();
+        foreach($tags as $item):
+            $file = base_path("DB/post_link_tag.sqlite");
+            $con2 = "/* ====== auto backup ".date("Y-m-d H:i:s")." ==========*/";
+            $con2 .= "
+INSERT INTO `{$this->post_tag_table}`(`post_id`,`tag_id`,`created_at`,
+`updated_at`) VALUES(
+    '{$item->post_id}','{$item->tag_id}','{$item->created_at}',
+    '{$item->updated_at}');
+";
+            write2text($file,$con2);
+        endforeach;
+
+    }
+
+    public function backupInsertTag(){
+        $tag = Tag::latest()->first();
+
+        $file = base_path("DB/tags.sqlite");
+        $con2 = "/* ===== auto backup ".date("Y-m-d H:i:s"). " ====  */";        
+        $con2 .= "
+INSERT INTO `{$this->tag_table}`(`tag_name`,
+`created_at`,'updated_at') VALUES(
+    '{$tag->tag_name}','{$tag->created_at}','{$tag->updated_at}'
+);
+";
+        write2text($file,$con2);
+    }
+
+
+    /* ============ make a backup 26 June 2021 End =========================*/
+
 }
