@@ -157,6 +157,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -649,10 +653,20 @@ var render = function() {
                   { staticClass: "badge badge-info" },
                   [
                     _c("b-icon", { attrs: { icon: "clock-history" } }),
-                    _vm._v(
-                      " \n                        " +
-                        _vm._s(_vm.moment(so.posted_at).fromNow()) +
-                        "\n                    "
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticStyle: { color: "white", "font-weight": "bold" },
+                        attrs: { href: "", title: _vm.moment(so.posted_at) }
+                      },
+                      [
+                        _vm._v(
+                          "\n                            " +
+                            _vm._s(_vm.moment(so.posted_at).fromNow()) +
+                            "\n                        "
+                        )
+                      ]
                     )
                   ],
                   1

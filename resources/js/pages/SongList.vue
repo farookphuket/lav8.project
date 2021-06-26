@@ -23,7 +23,11 @@
                         <p class="card-text">
                         <span class="badge badge-info">
                             <b-icon icon="clock-history"></b-icon> 
-                            {{moment(so.posted_at).fromNow()}}
+                            <a href="" 
+                               style="color:white;font-weight:bold;"
+                                :title="moment(so.posted_at)">
+                                {{moment(so.posted_at).fromNow()}}
+                            </a>
                         </span> 
                          - 
                         <span class="badge badge-info">

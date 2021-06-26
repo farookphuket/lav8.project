@@ -15,7 +15,6 @@ class CreateVisitorsTable extends Migration
     {
         Schema::create('visitors', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('post_id')->nullable();
             $table->string('client_ip');
             $table->string('client_os');
             $table->string('client_browser');
@@ -24,7 +23,6 @@ class CreateVisitorsTable extends Migration
             $table->date('last_visited_date');
             $table->timestamps();
 
-            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
         });
     }
 

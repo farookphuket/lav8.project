@@ -912,3 +912,57 @@ INSERT INTO "albums" ("id","name",
 "2021-03-04 20:20:03",
 "2021-03-04 20:21:04"
 );
+
+ /* =========== auto script START 2021-06-25 21:30:13 pm  ==================== */
+ /* ========= auto script 2021-06-25 21:30:13 ====== to albums*/
+INSERT INTO `albums`(`name`,`created_at`,`updated_at`) 
+VALUES(
+'ศาล สานศิลป์׳s song','2021-06-25 21:30:13','2021-06-25 21:30:13'
+);
+ 
+ /* ======== auto script 2021-06-25 21:30:13 pm END ========= */
+
+ /* =========== auto script START 2021-06-25 21:39:56 pm  ==================== */
+ /* ========= auto script 2021-06-25 21:39:56 ====== to albums*/
+INSERT INTO `albums`(`name`,`created_at`,`updated_at`) 
+VALUES(
+'มาลีฮวนน่า׳s song','2021-06-25 21:39:56','2021-06-25 21:39:56'
+);
+ 
+ /* ======== auto script 2021-06-25 21:39:56 pm END ========= */
+
+ /* =========== auto script START 2021-06-25 21:59:33 pm  ==================== */
+ /* ========= auto script 2021-06-25 21:59:33 ====== to albums*/
+INSERT INTO `albums`(`name`,`created_at`,`updated_at`) 
+VALUES(
+'Michael Buble׳s song','2021-06-25 21:59:33','2021-06-25 21:59:33'
+);
+ 
+ /* ======== auto script 2021-06-25 21:59:33 pm END ========= */
+
+ /* =========== auto script START 2021-06-25 22:05:27 pm  ==================== */
+ /* ========= auto script 2021-06-25 22:05:27 ====== to albums*/
+INSERT INTO `albums`(`name`,`created_at`,`updated_at`) 
+VALUES(
+'Chicago׳s song','2021-06-25 22:05:27','2021-06-25 22:05:27'
+);
+ 
+ /* ======== auto script 2021-06-25 22:05:27 pm END ========= */
+
+ /* =========== auto script START 2021-06-25 22:09:50 pm  ==================== */
+ /* ========= auto script 2021-06-25 22:09:50 ====== to albums*/
+INSERT INTO `albums`(`name`,`created_at`,`updated_at`) 
+VALUES(
+'หวิว׳s song','2021-06-25 22:09:50','2021-06-25 22:09:50'
+);
+ 
+ /* ======== auto script 2021-06-25 22:09:50 pm END ========= */
+
+ /* =========== auto script START 2021-06-25 22:18:54 pm  ==================== */
+ /* ========= auto script 2021-06-25 22:18:54 ====== to albums*/
+INSERT INTO `albums`(`name`,`created_at`,`updated_at`) 
+VALUES(
+'มอร์กะจาย׳s song','2021-06-25 22:18:54','2021-06-25 22:18:54'
+);
+ 
+ /* ======== auto script 2021-06-25 22:18:54 pm END ========= */

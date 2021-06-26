@@ -72,7 +72,7 @@ INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
 
 
     <div class="col-md-4">
-        <img src="https://i.ibb.co/7zGjm3j/farook-year2021.jpg" class="responsive">
+        <img src="https://i.ibb.co/GVgKNzX/farook-year2021.jpg" class="responsive">
         <p class="text-center pt-2">
             2021 ปีนี้ โครตแก่
         </p>

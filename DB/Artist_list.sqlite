@@ -947,3 +947,57 @@ INSERT INTO "artists" ("id","name",
 "2021-03-04 20:20:03",
 "2021-03-04 20:21:04"
 );
+
+ /* =========== auto script START 2021-06-25 21:30:21 pm  ==================== */
+ /* ========= auto script 2021-06-25 21:30:21 ====== to artists*/
+INSERT INTO `artists`(`name`,`created_at`,`updated_at`) 
+VALUES(
+'ศาล สานศิลป์','2021-06-25 21:30:21','2021-06-25 21:30:21'
+);
+ 
+ /* ======== auto script 2021-06-25 21:30:21 pm END ========= */
+
+ /* =========== auto script START 2021-06-25 21:40:19 pm  ==================== */
+ /* ========= auto script 2021-06-25 21:40:19 ====== to artists*/
+INSERT INTO `artists`(`name`,`created_at`,`updated_at`) 
+VALUES(
+'มาลีฮวนน่า','2021-06-25 21:40:19','2021-06-25 21:40:19'
+);
+ 
+ /* ======== auto script 2021-06-25 21:40:19 pm END ========= */
+
+ /* =========== auto script START 2021-06-25 21:59:35 pm  ==================== */
+ /* ========= auto script 2021-06-25 21:59:35 ====== to artists*/
+INSERT INTO `artists`(`name`,`created_at`,`updated_at`) 
+VALUES(
+'Michael Buble','2021-06-25 21:59:35','2021-06-25 21:59:35'
+);
+ 
+ /* ======== auto script 2021-06-25 21:59:35 pm END ========= */
+
+ /* =========== auto script START 2021-06-25 22:05:38 pm  ==================== */
+ /* ========= auto script 2021-06-25 22:05:38 ====== to artists*/
+INSERT INTO `artists`(`name`,`created_at`,`updated_at`) 
+VALUES(
+'Chicago','2021-06-25 22:05:38','2021-06-25 22:05:38'
+);
+ 
+ /* ======== auto script 2021-06-25 22:05:38 pm END ========= */
+
+ /* =========== auto script START 2021-06-25 22:10:00 pm  ==================== */
+ /* ========= auto script 2021-06-25 22:10:00 ====== to artists*/
+INSERT INTO `artists`(`name`,`created_at`,`updated_at`) 
+VALUES(
+'หวิว','2021-06-25 22:10:00','2021-06-25 22:10:00'
+);
+ 
+ /* ======== auto script 2021-06-25 22:10:00 pm END ========= */
+
+ /* =========== auto script START 2021-06-25 22:19:01 pm  ==================== */
+ /* ========= auto script 2021-06-25 22:19:01 ====== to artists*/
+INSERT INTO `artists`(`name`,`created_at`,`updated_at`) 
+VALUES(
+'มอร์กะจาย','2021-06-25 22:19:01','2021-06-25 22:19:01'
+);
+ 
+ /* ======== auto script 2021-06-25 22:19:01 pm END ========= */

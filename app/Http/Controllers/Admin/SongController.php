@@ -26,6 +26,8 @@ class SongController extends Controller
     protected $album_name = "";
     protected $album_id = 0;
 
+    protected $song_table = 'songs';
+
     public function index()
     {
         return view("Admin.Song.index");
@@ -87,9 +89,10 @@ class SongController extends Controller
         if(count($get) == 0):
             // will create new artist name 
             $save = Artist::create([
-                "name" => $name
+                "name" => xx_clean($name)
             ]);
             $ar_id = $save->id;
+            $this->backupInsertArtist();
         else:
             foreach($get as $ar):
                 $ar_id = $ar->id;
@@ -108,9 +111,10 @@ class SongController extends Controller
         $get = Album::where("name",$name)->get();
         if(count($get) == 0):
             $save = Album::create([
-                "name" => $name
+                "name" => xx_clean($name)
             ]);
             $al_id = $save->id;
+            $this->backupInsertAlbum();
         else:
             foreach($get as $ar):
                 $al_id = $ar->id;
@@ -136,7 +140,7 @@ class SongController extends Controller
         $posted_at = date("Y-m-d H:m:i",strtotime(request()->posted_at));
         $url = request()->url;
         $song_id = Song::create([
-            "name" => $song,
+            "name" => xx_clean($song),
             "user_id" => Auth::user()->id,
             "artist_id" => $artist_id,
             "album_id" => $album_id,
@@ -144,8 +148,13 @@ class SongController extends Controller
             "posted_at" => $posted_at,
             "url" => $url
         ]);
-        $msg = "<span class=\"badge badge-success\">Success : Song id xx 
-          album id {$album_id} artist id {$artist_id} 
+
+        // ====== make a backup
+        $this->backupInsertSong();
+
+
+        $msg = "<span class=\"badge badge-success\">Success : Song created
+           
             </span>";
         return response()->json([
             "msg" => $msg
@@ -199,7 +208,7 @@ class SongController extends Controller
         Song::where("id",$id)->update([
             "album_id" => $al_id,
             "artist_id" => $ar_id,
-            "name" => $song,
+            "name" => xx_clean($song),
             "cover" => $cover,
             "posted_at" => $posted_at,
             "url" => $url,
@@ -225,4 +234,57 @@ class SongController extends Controller
             Success : Item has been remove</span>";
         return response()->json(["msg" => $msg]);
     }
+
+
+    /* backup script 25 June 2021 */
+    public  function backupInsertSong(){
+        $song = Song::latest()->first();
+        $file = base_path("DB/Song_list.sqlite");
+        $content = "/* ============== Auto back up ".date("Y-m-d H:i:s");
+        $content .= " ========= to {$this->song_table} */";
+        $content .= "
+INSERT INTO `{$this->song_table}`(`artist_id`,`album_id`,`user_id`,
+`name`,`posted_at`,`cover`,`url`,`created_at`,`updated_at`) VALUES(
+    '{$song->artist_id}','{$song->album_id}','{$song->user_id}','{$song->name}',
+    '{$song->posted_at}','{$song->cover}','{$song->url}','{$song->created_at}',
+    '{$song->updated_at}'
+);
+
+";
+    write2text($file,$content);
+    }
+
+    public function backupInsertArtist(){
+        
+        $ar = DB::table($this->artist_table)->latest()->first();
+        $file = base_path("DB/Artist_list.sqlite");
+        $con1 = "/* ========= auto script ".date("Y-m-d H:i:s");
+        $con1 .= " ====== to {$this->artist_table}*/";
+        $con1 .= "
+INSERT INTO `{$this->artist_table}`(`name`,`created_at`,`updated_at`) 
+VALUES(
+'{$ar->name}','{$ar->created_at}','{$ar->updated_at}'
+);
+";
+        write2text($file,$con1);
+    }
+
+
+    public function backupInsertAlbum(){
+        $ab = DB::table($this->album_table)->latest()->first();
+        $file = base_path("DB/Album_list.sqlite");
+
+        $con2 = "/* ========= auto script ".date("Y-m-d H:i:s");
+        $con2 .= " ====== to {$this->album_table}*/";
+        $con2 .= "
+INSERT INTO `{$this->album_table}`(`name`,`created_at`,`updated_at`) 
+VALUES(
+'{$ab->name}','{$ab->created_at}','{$ab->updated_at}'
+);
+";
+        write2text($file,$con2);
+    }
+    /* backup script 25 June 2021 */
+
+
 }
