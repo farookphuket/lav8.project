@@ -21,3 +21,435 @@ INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
     'Chrome 91.0.4472.114','2021-06-26 22:05:23','2021-06-26 22:05:23');
  
  /* ======== auto script 2021-06-26 22:05:23 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 19:22:57 pm  ==================== */
+ /* ========= auto backup 2021-06-27 19:22:57 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 19:22:57','2021-06-27 19:22:57');
+ 
+ /* ======== auto script 2021-06-27 19:22:57 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 19:24:25 pm  ==================== */
+ /* ========= auto backup 2021-06-27 19:24:25 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 19:24:25','2021-06-27 19:24:25');
+ 
+ /* ======== auto script 2021-06-27 19:24:25 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 19:51:37 pm  ==================== */
+ /* ========= auto backup 2021-06-27 19:51:37 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 19:51:37','2021-06-27 19:51:37');
+ 
+ /* ======== auto script 2021-06-27 19:51:37 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 19:52:02 pm  ==================== */
+ /* ========= auto backup 2021-06-27 19:52:02 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 19:52:02','2021-06-27 19:52:02');
+ 
+ /* ======== auto script 2021-06-27 19:52:02 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 19:58:39 pm  ==================== */
+ /* ========= auto backup 2021-06-27 19:58:39 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 19:58:39','2021-06-27 19:58:39');
+ 
+ /* ======== auto script 2021-06-27 19:58:39 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 20:01:59 pm  ==================== */
+ /* ========= auto backup 2021-06-27 20:01:59 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 20:01:59','2021-06-27 20:01:59');
+ 
+ /* ======== auto script 2021-06-27 20:01:59 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 20:02:17 pm  ==================== */
+ /* ========= auto backup 2021-06-27 20:02:17 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 20:02:17','2021-06-27 20:02:17');
+ 
+ /* ======== auto script 2021-06-27 20:02:17 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 20:03:10 pm  ==================== */
+ /* ========= auto backup 2021-06-27 20:03:10 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 20:03:10','2021-06-27 20:03:10');
+ 
+ /* ======== auto script 2021-06-27 20:03:10 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 20:05:19 pm  ==================== */
+ /* ========= auto backup 2021-06-27 20:05:19 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 20:05:19','2021-06-27 20:05:19');
+ 
+ /* ======== auto script 2021-06-27 20:05:19 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 20:07:25 pm  ==================== */
+ /* ========= auto backup 2021-06-27 20:07:25 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 20:07:25','2021-06-27 20:07:25');
+ 
+ /* ======== auto script 2021-06-27 20:07:25 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 20:07:39 pm  ==================== */
+ /* ========= auto backup 2021-06-27 20:07:39 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 20:07:39','2021-06-27 20:07:39');
+ 
+ /* ======== auto script 2021-06-27 20:07:39 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 20:08:13 pm  ==================== */
+ /* ========= auto backup 2021-06-27 20:08:13 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 20:08:13','2021-06-27 20:08:13');
+ 
+ /* ======== auto script 2021-06-27 20:08:13 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 20:18:30 pm  ==================== */
+ /* ========= auto backup 2021-06-27 20:18:30 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 20:18:30','2021-06-27 20:18:30');
+ 
+ /* ======== auto script 2021-06-27 20:18:30 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 20:18:57 pm  ==================== */
+ /* ========= auto backup 2021-06-27 20:18:57 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 20:18:57','2021-06-27 20:18:57');
+ 
+ /* ======== auto script 2021-06-27 20:18:57 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 20:20:01 pm  ==================== */
+ /* ========= auto backup 2021-06-27 20:20:01 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 20:20:01','2021-06-27 20:20:01');
+ 
+ /* ======== auto script 2021-06-27 20:20:01 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 20:20:18 pm  ==================== */
+ /* ========= auto backup 2021-06-27 20:20:18 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 20:20:18','2021-06-27 20:20:18');
+ 
+ /* ======== auto script 2021-06-27 20:20:18 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 20:24:14 pm  ==================== */
+ /* ========= auto backup 2021-06-27 20:24:14 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 20:24:14','2021-06-27 20:24:14');
+ 
+ /* ======== auto script 2021-06-27 20:24:14 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 20:24:29 pm  ==================== */
+ /* ========= auto backup 2021-06-27 20:24:29 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 20:24:29','2021-06-27 20:24:29');
+ 
+ /* ======== auto script 2021-06-27 20:24:29 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 20:25:14 pm  ==================== */
+ /* ========= auto backup 2021-06-27 20:25:14 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 20:25:14','2021-06-27 20:25:14');
+ 
+ /* ======== auto script 2021-06-27 20:25:14 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 20:26:41 pm  ==================== */
+ /* ========= auto backup 2021-06-27 20:26:41 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 20:26:41','2021-06-27 20:26:41');
+ 
+ /* ======== auto script 2021-06-27 20:26:41 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 20:28:00 pm  ==================== */
+ /* ========= auto backup 2021-06-27 20:28:00 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 20:28:00','2021-06-27 20:28:00');
+ 
+ /* ======== auto script 2021-06-27 20:28:00 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 20:32:46 pm  ==================== */
+ /* ========= auto backup 2021-06-27 20:32:46 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 20:32:46','2021-06-27 20:32:46');
+ 
+ /* ======== auto script 2021-06-27 20:32:46 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 20:38:41 pm  ==================== */
+ /* ========= auto backup 2021-06-27 20:38:41 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 20:38:41','2021-06-27 20:38:41');
+ 
+ /* ======== auto script 2021-06-27 20:38:41 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 20:42:37 pm  ==================== */
+ /* ========= auto backup 2021-06-27 20:42:37 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 20:42:37','2021-06-27 20:42:37');
+ 
+ /* ======== auto script 2021-06-27 20:42:37 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 20:44:13 pm  ==================== */
+ /* ========= auto backup 2021-06-27 20:44:13 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 20:44:13','2021-06-27 20:44:13');
+ 
+ /* ======== auto script 2021-06-27 20:44:13 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 20:52:44 pm  ==================== */
+ /* ========= auto backup 2021-06-27 20:52:44 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 20:52:44','2021-06-27 20:52:44');
+ 
+ /* ======== auto script 2021-06-27 20:52:44 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 20:56:13 pm  ==================== */
+ /* ========= auto backup 2021-06-27 20:56:13 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 20:56:13','2021-06-27 20:56:13');
+ 
+ /* ======== auto script 2021-06-27 20:56:13 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 20:56:51 pm  ==================== */
+ /* ========= auto backup 2021-06-27 20:56:51 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 20:56:51','2021-06-27 20:56:51');
+ 
+ /* ======== auto script 2021-06-27 20:56:51 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 20:58:52 pm  ==================== */
+ /* ========= auto backup 2021-06-27 20:58:52 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 20:58:52','2021-06-27 20:58:52');
+ 
+ /* ======== auto script 2021-06-27 20:58:52 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 21:07:00 pm  ==================== */
+ /* ========= auto backup 2021-06-27 21:07:00 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 21:07:00','2021-06-27 21:07:00');
+ 
+ /* ======== auto script 2021-06-27 21:07:00 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 21:10:08 pm  ==================== */
+ /* ========= auto backup 2021-06-27 21:10:08 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 21:10:08','2021-06-27 21:10:08');
+ 
+ /* ======== auto script 2021-06-27 21:10:08 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 21:10:32 pm  ==================== */
+ /* ========= auto backup 2021-06-27 21:10:32 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 21:10:32','2021-06-27 21:10:32');
+ 
+ /* ======== auto script 2021-06-27 21:10:32 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 21:12:56 pm  ==================== */
+ /* ========= auto backup 2021-06-27 21:12:56 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 21:12:56','2021-06-27 21:12:56');
+ 
+ /* ======== auto script 2021-06-27 21:12:56 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 21:24:52 pm  ==================== */
+ /* ========= auto backup 2021-06-27 21:24:52 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 21:24:52','2021-06-27 21:24:52');
+ 
+ /* ======== auto script 2021-06-27 21:24:52 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 21:26:43 pm  ==================== */
+ /* ========= auto backup 2021-06-27 21:26:43 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 21:26:43','2021-06-27 21:26:43');
+ 
+ /* ======== auto script 2021-06-27 21:26:43 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 21:29:39 pm  ==================== */
+ /* ========= auto backup 2021-06-27 21:29:39 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 21:29:39','2021-06-27 21:29:39');
+ 
+ /* ======== auto script 2021-06-27 21:29:39 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 21:33:28 pm  ==================== */
+ /* ========= auto backup 2021-06-27 21:33:28 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 21:33:28','2021-06-27 21:33:28');
+ 
+ /* ======== auto script 2021-06-27 21:33:28 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 21:34:13 pm  ==================== */
+ /* ========= auto backup 2021-06-27 21:34:13 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 21:34:13','2021-06-27 21:34:13');
+ 
+ /* ======== auto script 2021-06-27 21:34:13 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 21:40:53 pm  ==================== */
+ /* ========= auto backup 2021-06-27 21:40:53 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 21:40:53','2021-06-27 21:40:53');
+ 
+ /* ======== auto script 2021-06-27 21:40:53 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 22:07:22 pm  ==================== */
+ /* ========= auto backup 2021-06-27 22:07:22 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 22:07:22','2021-06-27 22:07:22');
+ 
+ /* ======== auto script 2021-06-27 22:07:22 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 22:09:16 pm  ==================== */
+ /* ========= auto backup 2021-06-27 22:09:16 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 22:09:16','2021-06-27 22:09:16');
+ 
+ /* ======== auto script 2021-06-27 22:09:16 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 22:10:01 pm  ==================== */
+ /* ========= auto backup 2021-06-27 22:10:01 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 22:10:01','2021-06-27 22:10:01');
+ 
+ /* ======== auto script 2021-06-27 22:10:01 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 22:13:16 pm  ==================== */
+ /* ========= auto backup 2021-06-27 22:13:16 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 22:13:16','2021-06-27 22:13:16');
+ 
+ /* ======== auto script 2021-06-27 22:13:16 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 22:15:20 pm  ==================== */
+ /* ========= auto backup 2021-06-27 22:15:20 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 22:15:20','2021-06-27 22:15:20');
+ 
+ /* ======== auto script 2021-06-27 22:15:20 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 22:17:29 pm  ==================== */
+ /* ========= auto backup 2021-06-27 22:17:29 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 22:17:29','2021-06-27 22:17:29');
+ 
+ /* ======== auto script 2021-06-27 22:17:29 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 22:32:56 pm  ==================== */
+ /* ========= auto backup 2021-06-27 22:32:56 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 22:32:56','2021-06-27 22:32:56');
+ 
+ /* ======== auto script 2021-06-27 22:32:56 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 22:36:58 pm  ==================== */
+ /* ========= auto backup 2021-06-27 22:36:58 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 22:36:58','2021-06-27 22:36:58');
+ 
+ /* ======== auto script 2021-06-27 22:36:58 pm END ========= */
+
+ /* =========== auto script START 2021-06-27 22:40:06 pm  ==================== */
+ /* ========= auto backup 2021-06-27 22:40:06 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-27 22:40:05','2021-06-27 22:40:05');
+ 
+ /* ======== auto script 2021-06-27 22:40:06 pm END ========= */

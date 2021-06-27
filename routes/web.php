@@ -115,7 +115,7 @@ Route::prefix('member')->name('member.')->middleware('auth')
     // will be update for user to be easy to contact admin
     Route::get('/about',[MemberPost::class,"about"])->name('posts.about');
 
-    Route::get('/getPostComment/{post_id}',[MCMT::class,'getPostComment'])
+    Route::get('/getPostComment',[MCMT::class,'getPostComment'])
         ->name('comments.getPostComment');
 
     Route::resource("/templates",TPM::class);

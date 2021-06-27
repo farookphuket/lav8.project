@@ -51,9 +51,11 @@
 
 <hr>
   <div id="app">
+    <div style="margin-top:4em;">
     <comment-member
-      :post="{{$post}}"
+      :post_id="{{$post->id}}"
       ></comment-member>
+    </div>
     <Visitors></Visitors>
   </div>
 @endsection

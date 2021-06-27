@@ -452,6 +452,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -501,6 +504,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
 //
 //
 //
@@ -1346,10 +1353,22 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "card-body" }, [
               _c("span", { staticClass: "badge badge-info" }, [
+                _c(
+                  "a",
+                  {
+                    staticStyle: { "font-weight": "bold", color: "white" },
+                    attrs: { href: "", title: so.name }
+                  },
+                  [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(_vm.smartTitle(so.name, 9)) +
+                        "\n                    "
+                    )
+                  ]
+                ),
                 _vm._v(
-                  "\n                    " +
-                    _vm._s(_vm.smartTitle(so.name, 9)) +
-                    " · " +
+                  "\n                    · " +
                     _vm._s(so.artist.name) +
                     "\n                "
                 )
@@ -1610,10 +1629,25 @@ var render = function() {
                   _vm._v(" "),
                   _c("div", { staticClass: "card-body" }, [
                     _c("span", { staticClass: "badge badge-info" }, [
+                      _c(
+                        "a",
+                        {
+                          staticStyle: {
+                            "font-weight": "bold",
+                            color: "white"
+                          },
+                          attrs: { href: "", title: so.name }
+                        },
+                        [
+                          _vm._v(
+                            "\n                                    " +
+                              _vm._s(_vm.smartTitle(so.name)) +
+                              "\n                                "
+                          )
+                        ]
+                      ),
                       _vm._v(
-                        "\n                                " +
-                          _vm._s(_vm.smartTitle(so.name)) +
-                          " - " +
+                        " \n                                 - " +
                           _vm._s(so.artist.name) +
                           "\n                            "
                       )

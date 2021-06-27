@@ -190,6 +190,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "WhatnewsForm",
@@ -864,89 +871,99 @@ var render = function() {
           1
         ),
         _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "" } }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.is_public,
-                  expression: "is_public"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: { type: "checkbox" },
-              domProps: {
-                checked: Array.isArray(_vm.is_public)
-                  ? _vm._i(_vm.is_public, null) > -1
-                  : _vm.is_public
-              },
-              on: {
-                change: function($event) {
-                  var $$a = _vm.is_public,
-                    $$el = $event.target,
-                    $$c = $$el.checked ? true : false
-                  if (Array.isArray($$a)) {
-                    var $$v = null,
-                      $$i = _vm._i($$a, $$v)
-                    if ($$el.checked) {
-                      $$i < 0 && (_vm.is_public = $$a.concat([$$v]))
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-lg-4" }, [
+            _c("label", { attrs: { for: "" } }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.is_public,
+                    expression: "is_public"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "checkbox" },
+                domProps: {
+                  checked: Array.isArray(_vm.is_public)
+                    ? _vm._i(_vm.is_public, null) > -1
+                    : _vm.is_public
+                },
+                on: {
+                  change: function($event) {
+                    var $$a = _vm.is_public,
+                      $$el = $event.target,
+                      $$c = $$el.checked ? true : false
+                    if (Array.isArray($$a)) {
+                      var $$v = null,
+                        $$i = _vm._i($$a, $$v)
+                      if ($$el.checked) {
+                        $$i < 0 && (_vm.is_public = $$a.concat([$$v]))
+                      } else {
+                        $$i > -1 &&
+                          (_vm.is_public = $$a
+                            .slice(0, $$i)
+                            .concat($$a.slice($$i + 1)))
+                      }
                     } else {
-                      $$i > -1 &&
-                        (_vm.is_public = $$a
-                          .slice(0, $$i)
-                          .concat($$a.slice($$i + 1)))
+                      _vm.is_public = $$c
                     }
-                  } else {
-                    _vm.is_public = $$c
                   }
                 }
-              }
-            }),
-            _vm._v(" "),
-            _vm.is_public == false
-              ? _c("span", { staticClass: "badge badge-warning" }, [
-                  _vm._v("\n            No , I don't want to show\n          ")
-                ])
-              : _c("span", { staticClass: "badge badge-success" }, [
-                  _vm._v(
-                    "\n            Yes, I want to show this post\n          "
-                  )
-                ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "clearfix" }, [
-          _c("div", { staticClass: "float-right" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-outline-primary",
-                attrs: { type: "submit" },
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    return _vm.wnSave(_vm.saveId)
+              }),
+              _vm._v(" "),
+              _vm.is_public == false
+                ? _c("span", { staticClass: "badge badge-warning" }, [
+                    _vm._v(
+                      "\n                No , I don't want to show\n              "
+                    )
+                  ])
+                : _c("span", { staticClass: "badge badge-success" }, [
+                    _vm._v(
+                      "\n                Yes, I want to show this post\n              "
+                    )
+                  ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-4" }, [
+            _c("div", { domProps: { innerHTML: _vm._s(_vm.res_status) } }, [
+              _vm._v(_vm._s(_vm.res_status))
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-4" }, [
+            _c("div", { staticClass: "float-right" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-outline-primary",
+                  attrs: { type: "submit" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.wnSave(_vm.saveId)
+                    }
                   }
-                }
-              },
-              [_vm._v("\n          Save\n        ")]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-outline-danger",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    return _vm.clearFormdata($event)
+                },
+                [_vm._v("\n              Save\n            ")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-outline-danger",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.clearFormdata($event)
+                    }
                   }
-                }
-              },
-              [_vm._v("\n          Clear\n        ")]
-            )
+                },
+                [_vm._v("\n              Clear\n            ")]
+              )
+            ])
           ])
         ])
       ]),

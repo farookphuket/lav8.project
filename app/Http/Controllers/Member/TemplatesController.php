@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class TemplatesController extends Controller
 {
+    protected $template_table;
+
+    public function __construct(){
+        $this->template_table = "templates";
+    }
     /**
      * Display a listing of the resource.
      *

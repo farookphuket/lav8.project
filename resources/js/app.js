@@ -8,9 +8,18 @@ window.Vue = require('vue');
 
 import moment from 'moment';
 
+// ============== 27 June 2021 ================================================
+import Form from './core/Form';
+import CustomText from './core/CustomText';
 
+window.Form = Form;
+window.CustomText = CustomText;
+
+// ============================================================================
 
 import Vue from 'vue'
+
+
 
 // date 10 Jan 2021 start using vue-cookies
 import VueCookies from 'vue-cookies';

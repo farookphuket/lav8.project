@@ -11,6 +11,14 @@ use Auth;
 
 class VideoController extends Controller
 {
+
+
+    protected $video_table;
+
+    public function __construct(){
+        $this->video_table = "videos";
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -56,10 +64,14 @@ class VideoController extends Controller
         $title = request()->title;
         $embed = request()->embed;
         Video::create([
-            "title" => $title,
+            "title" => xx_clean($title),
             "user_id" => Auth::user()->id,
             "embed" => $embed
         ]);
+
+        // ========= make backup 
+        $this->backupInsertVideo();
+
         $msg = "<span class=\"badge badge-success\">
             Success: Data has been created</span>";
         return response()->json(["msg" => $msg]);
@@ -123,4 +135,27 @@ class VideoController extends Controller
             Success: Data has been deleted!</span>";
         return response()->json(["msg" => $msg]);
     }
+
+
+
+    /* ==================== backup videos 27 June 2021 START =================*/ 
+    public function backupInsertVideo(){
+        $ph = Video::latest()->first();
+        $file = base_path("DB/video_list.sqlite");
+        $cont = "/* ================= backup `{$this->video_table}` ";
+        $cont .= " ======  ".date("Y-m-d H:i:s")." =============== */";
+        $cont .= "
+INSERT INTO `{$this->video_table}`(`user_id`,`title`,`embed`,
+`created_at`,`updated_at`) VALUES(
+    '{$ph->user_id}','{$ph->title}','{$ph->embed}',
+    '{$ph->created_at}','{$ph->updated_at}');
+";
+        write2text($file,$cont);
+    }
+
+    
+    /* ==================== backup photo 27 June 2021 END ===================*/ 
+
+
+
 }

@@ -10,8 +10,14 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 use Auth;
 
+
 class WhatnewsController extends Controller
 {
+
+    protected $whatnew_table;
+    public function __construct(){
+        $this->whatnew_table = "whatnews";
+    }
     /**
      * Display a listing of the resource.
      *
@@ -58,7 +64,7 @@ class WhatnewsController extends Controller
         $valid = request()->validate(
             [
             "whatnews_title" => ['required','min:8'],
-            "whatnews_body" => ['required','min:55'],
+            "whatnews_body" => ['required','min:30'],
             ]
         );
 
@@ -67,11 +73,13 @@ class WhatnewsController extends Controller
         Whatnews::create([
             'user_id' => Auth::user()->id,
             'is_public' => request()->is_public?1:0,
-            'whatnews_title' => request()->whatnews_title,
+            'whatnews_title' => xx_clean(request()->whatnews_title),
             'whatnews_body' => xx_clean(request()->whatnews_body)
         ]);
 
-       // return redirect()->route('member.home.index')->with(Session::flash('success','your post has been created'));
+        // make backup 
+        $this->backupInsertWhatnew();
+
         // do ajax on 10 Jan 2021
         $msg = "<span class=\"alert alert-success\">Data has been created!</span>";
         return response()->json([
@@ -125,7 +133,7 @@ class WhatnewsController extends Controller
 
         Whatnews::where('id',$whatnews->id)->update([
             'is_public' => request()->is_public?1:0,
-            'whatnews_title' => request()->whatnews_title,
+            'whatnews_title' => xx_clean(request()->whatnews_title),
             'whatnews_body' => $clean_body,
             'updated_at' => now()
         ]);
@@ -149,4 +157,24 @@ class WhatnewsController extends Controller
             success item has been remove</span>";
         return response()->json(["msg" => $msg],200);
     }
+
+    /* =============== backup whatnew 27 June 2021 START ====================*/
+
+    public function backupInsertWhatnew(){
+        $wn = Whatnews::latest()->first();
+        $file = base_path("DB/whatnews_default.sqlite");
+        $cont = "/* ============ backup {$this->whatnew_table} ";
+        $cont .= " ==== ".date("Y-m-d H:i:s")." ============ */";
+        $cont .= "
+INSERT INTO `{$this->whatnew_table}`(`user_id`,`whatnews_title`,
+`whatnews_body`,`is_public`,`created_at`,`updated_at`) VALUES(
+    '{$wn->user_id}','{$wn->whatnews_title}','{$wn->whatnews_body}',
+    '{$wn->is_public}','{$wn->created_at}','{$wn->updated_at}');
+";
+
+        write2text($file,$cont);
+    }
+
+    /* =============== backup whatnew 27 June 2021 END ======================*/
+
 }

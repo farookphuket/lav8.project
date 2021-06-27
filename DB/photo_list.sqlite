@@ -234,3 +234,12 @@
     'https://i.ibb.co/LS4PbZ9/web-update-19-aug-2020.png',
     '2021-03-26 20:45:44',
     '2021-03-26 20:45:28');                                          
+
+ /* =========== auto script START 2021-06-27 15:25:15 pm  ==================== */
+ /* ================= backup `photos`  ======  2021-06-27 15:25:15 =============== */
+INSERT INTO `photos`(`user_id`,`title`,`embed`,
+`created_at`,`updated_at`) VALUES(
+    '3','my red car ha ha','https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i9.J367E0UR4/v0/1200x800.jpg',
+    '2021-06-27 15:25:15','2021-06-27 15:25:15');
+ 
+ /* ======== auto script 2021-06-27 15:25:15 pm END ========= */

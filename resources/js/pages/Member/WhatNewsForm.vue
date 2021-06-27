@@ -23,33 +23,40 @@
           v-model="body"
           ></jodit-editor>
       </div>
-      <div class="form-group">
-          <label for="">
-            <input v-model="is_public" 
-                   class="form-control"
-            type="checkbox">
-            <span class="badge badge-warning"
-                  v-if="is_public == false">
-              No , I don't want to show
-            </span>
-            <span class="badge badge-success" v-else>
-              Yes, I want to show this post
-            </span>
-          </label>
-      </div>
-      <div class="clearfix">
-        <div class="float-right">
-          <button class="btn btn-outline-primary"
-            type="submit" @click.prevent="wnSave(saveId)">
-            Save
-          </button>
 
-          <button class="btn btn-outline-danger"
-              @click.prevent="clearFormdata">
-            Clear
-          </button>
-        </div>
+
+      <div class="row">
+          <div class="col-lg-4">
+              <label for="">
+                <input v-model="is_public" 
+                       class="form-control"
+                type="checkbox">
+                <span class="badge badge-warning"
+                      v-if="is_public == false">
+                  No , I don't want to show
+                </span>
+                <span class="badge badge-success" v-else>
+                  Yes, I want to show this post
+                </span>
+              </label>
+          </div>
+          <div class="col-lg-4">
+              <div v-html="res_status">{{res_status}}</div>
+          </div>
+          <div class="col-lg-4">
+            <div class="float-right">
+              <button class="btn btn-outline-primary"
+                type="submit" @click.prevent="wnSave(saveId)">
+                Save
+              </button>
+              <button class="btn btn-outline-danger"
+                  @click.prevent="clearFormdata">
+                Clear
+              </button>
+            </div>
+          </div>
       </div>
+
     </form>
     <b-modal title="message box"
       ref="onOk"

@@ -8,10 +8,18 @@ use App\Models\User;
 use App\Models\Reply;
 use App\Models\Post;
 use Auth;
+use DB;
 use Illuminate\Http\Request;
 
 class CommentsController extends Controller
 {
+
+    protected $comment_table;
+    protected $post_comment_table;
+    public function __construct(){
+        $this->comment_table = "comments";
+        $this->post_comment_table = "comment_post";
+    }
     /**
      * Display a listing of the resource.
      *
@@ -22,30 +30,18 @@ class CommentsController extends Controller
         return"this is comment";
     }
 
-    public function getPostComment($post_id){
+    public function getPostComment(){
+        $getComments = DB::table($this->post_comment_table)
+            ->where($this->post_comment_table.".post_id",
+                request()->post_id)
+                ->join($this->comment_table,"{$this->comment_table}.id",
+            "=","{$this->post_comment_table}.comment_id")
+            ->select("{$this->comment_table}.*","{$this->post_comment_table}.*")
+                ->get();
 
-        $comments = $this->postComment($post_id);
-
-        return response()->json(["comments" => $comments],200);
-            
-    }
-
-    public function postComment($post_id){
-        $get_comment = "";
-        $comment = Comment::where("post_id",$post_id)
-                            ->orderBy("created_at","DESC")
-                            ->get();
-        if(count($comment) >= 1):
-            $get_comment = Comment::orderBy("created_at","DESC")
-                                    ->where("post_id",$post_id)
-                                        ->with("reply")
-                                        ->with("user")
-                                       ->get();
-
-        else:
-            $get_comment = 0;
-        endif;
-        return $get_comment;
+        return response()->json([
+            "getComments" => $getComments
+        ]);
     }
 
 
@@ -61,21 +57,6 @@ class CommentsController extends Controller
 
     }
 
-    public function replyComment(){
-
-        request()->validate([
-            "reply_body" => ["required","min:30"]
-        ]);
-        Reply::create([
-            "user_id" => Auth::user()->id,
-            "ip" => getUserIp(),
-            "comment_id" => request()->comment_id,
-            "reply_body" => request()->reply_body
-        ]);
-
-        return response()->json(["msg" => "success"]);
-    }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -84,18 +65,34 @@ class CommentsController extends Controller
      */
     public function store()
     {
-        request()->validate([
-            "comment" => ["required","min:20"]
+        $validate = request()->validate([
+            "comment_title" => ["required"],
+            "comment_body" => ["required"]
         ]);
-        $nComment = Comment::create([
-            "user_id" => Auth::user()->id,
-            "post_id" => request()->post_id,
-            "comment_msg" => xx_clean(request()->comment),
-            "ip" => getUserIp()
-        ]);
+    
+        $post_id = request()->post_id;
+        $validate["comment_title"] = xx_clean(request()->comment_title);
+        $validate["comment_body"] = xx_clean(request()->comment_body);
+        $validate["user_id"] = Auth::user()->id;
+        $validate["ip"] = getUserIp();
+
+        Comment::create($validate);
+
+        $cm = Comment::latest()->first();
+        DB::table($this->post_comment_table)
+            ->insert([
+                "user_id" => $cm->user_id,
+                "comment_id" => $cm->id,
+                "post_id" => $post_id,
+                "created_at" => now(),
+               "updated_at" => now() 
+            ]);
+
         $msg = "<span class=\"alert alert-success\">
             Success : comment has created</span>";
-        return response()->json(["msg" => $msg]);
+        return response()->json([
+            "msg" => $msg,
+        ]);
     }
 
     /**
@@ -117,7 +114,7 @@ class CommentsController extends Controller
      */
     public function edit(Comment $comment)
     {
-        return response()->json(["comment" => $comment]);
+
     }
 
     /**
@@ -129,16 +126,6 @@ class CommentsController extends Controller
      */
     public function update($id)
     {
-        //dd(request()->comment);
-
-        Comment::where("id",$id)
-            ->update([
-                "ip" => getUserIp(),
-                "post_id" => request()->post_id,
-                "comment_msg" => request()->comment,
-                "updated_at" => now(),
-                "replied_at" => now()
-            ]);
 
         return response()->json(["msg" => "success"]);
 
@@ -152,9 +139,30 @@ class CommentsController extends Controller
      */
     public function destroy(Comment $comment)
     {
-        $comment->delete();
+
         $msg = "<span class=\"alert alert-success\">
             Success : item has been removed!</span>";
         return response()->json(["msg" => $msg]);
     }
+
+
+
+    /* ==================== backup photo 27 June 2021 START =================*/ 
+    public function backupInsertComment(){
+        $ph = Comment::latest()->first();
+        $file = base_path("DB/comment_post.sqlite");
+        $cont = "/* ================= backup `{$this->comment_table}` ";
+        $cont .= " ======  ".date("Y-m-d H:i:s")." =============== */";
+        $cont .= "
+INSERT INTO `{$this->comment_table}`(`user_id`,`post_id`,`ip`,
+`created_at`,`updated_at`) VALUES(
+    '{$ph->user_id}','{$ph->title}','{$ph->embed}',
+    '{$ph->created_at}','{$ph->updated_at}');
+";
+        write2text($file,$cont);
+    }
+
+    
+    /* ==================== backup photo 27 June 2021 END ===================*/ 
+
 }
