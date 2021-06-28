@@ -21,7 +21,7 @@ INSERT INTO `comments`(`user_id`,`ip`,`comment_title`,
 /* ================ link table ============================ */
 INSERT INTO `comment_post`(`user_id`,`comment_id`,`post_id`,
 `created_at`,`updated_at`) VALUES(
-    '4','10','21',
+    '3','1','1',
     '2021-06-28 15:29:41','2021-06-28 15:29:41');
  
  /* ======== auto script 2021-06-28 15:29:41 pm END ========= */

@@ -50,6 +50,11 @@ class PostSeeder extends Seeder
         DB::unprepared(file_get_contents($post_read));
         $this->command->info("re-insert Post Read Count");
 
+
+        $post_comment = 'DB/comment_post.sqlite';
+        DB::unprepared(file_get_contents($post_comment));
+        $this->command->info("re-insert Post Comment");
+
     }
 
 
