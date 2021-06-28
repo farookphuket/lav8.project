@@ -10,6 +10,15 @@
 
 
 
+
+
+--- 
+## update 28 June 2021 
+> created backup data for new reset make thing more easy for setup 
+> thing will be automatic backup to file.
+
+---
+
 ##  Last update 18 May 2021
 
 > added to baanlungpa.com 18 May 2021

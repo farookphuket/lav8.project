@@ -69,6 +69,7 @@ Vue.component('PubPhoto',()=>import( './pages/Photo.vue'));
 Vue.component('PubPost',()=>import( './pages/Post.vue'));
 Vue.component('LoginForm',()=>import( './components/LoginForm.vue'));
 Vue.component('LoginPage',()=>import( './components/LoginPage.vue'));
+Vue.component('RegisterForm',()=>import('./components/RegisterForm.vue'))
 
 
 //Vue.component('resetpass',require('./components/password-reset-form.vue').default);

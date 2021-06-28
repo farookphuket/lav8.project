@@ -1,6 +1,6 @@
 <template>
-    <div class="card-body">
-        <form action="" @submit.prevent="save(saveId)">
+    <div>
+        <form action="" style="margin-top:2em;" @submit.prevent="save(saveId)">
             <div class="form-group">
                 <input v-model="cForm.comment_title" class="form-control" 
                 type="text" name="comment_title" 
@@ -70,7 +70,11 @@ export default{
                             ${ob.join()}</span>`
                     })
             }
-        }
+            setTimeout(()=>{
+                this.res_status = ''
+                this.$emit('getPostComment')
+            },3200)
+        },
     },
 }
 </script>

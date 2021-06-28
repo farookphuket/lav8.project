@@ -39,7 +39,9 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        /*
         Fortify::createUsersUsing(CreateNewUser::class);
+         */
         Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
         Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
@@ -50,8 +52,11 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::requestPasswordResetLinkView(function(){
             return view('auth.forgot_pass');
         });
+
+        /*
         Fortify::registerView(function(){
             return view('auth.register');
         });
+         */
     }
 }

@@ -96,6 +96,99 @@ End of video section
 /*----Do Not remove all the above line this will make webpage responsive---*/
 
 
+/* fixed pre tag is not responsive */
+pre{
+     white-space:pre-wrap; 
+    word-break:break-all;
+}
+
+/*
+ * copy from https://jsfiddle.net/n2xkgt7s/2/
+ * on 30 May 2021
+ * */ 
+
+pre {
+
+    background: #303030;
+    /* color: #f1f1f1; */
+    color: white;
+    font-weight:bold;
+     padding: 8px 8px; 
+    border-radius: 14px;
+    border-top: 2px solid #00aeef; 
+    -moz-box-shadow: inset 0 0 10px #000;
+    box-shadow: inset 0 0 10px #000;
+    counter-reset: line;
+
+}
+
+pre span {
+  display: block;
+    /* line-height: 1.2rem; */
+    /* padding:2em; */
+    color:white;
+    /* border-bottom:2px solid white; */
+}
+
+pre .comment span{
+    color:green;
+}
+
+pre .comment span:last-child{
+    border-right:4px solid #ff0000;
+    color:blue;
+}
+pre span:before {
+      counter-increment: line;
+      content: counter(line);
+      line-height:1.2em;
+      display: inline-block;
+      border-right: 1px solid #ddd;
+      padding: 0 .5em;
+      margin-right: .5em;
+      color: #888
+
+}
+
+
+pre .comment{
+    background-color:white;
+    color:green;
+    font-weight:bold;
+    margin-left: -5px;
+    white-space:nowrap;
+}
+
+
+pre .code{
+    background-color:#e7e7e7;
+    font-weight:bold;
+    margin-left: -5px;
+    white-space:nowrap;
+
+}
+
+pre .code span{
+    width:100%;
+    color:#007bff;
+}
+
+
+.line-numbers pre{
+    color:white; 
+    font-size:18px;
+    font-weight:bold;
+   /* margin-top:0.5em; */
+}
+.line-numbers code{
+    color:white;
+}
+
+
+
+
+
+
 
 .container .list-group-item{
     color:black;

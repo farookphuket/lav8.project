@@ -36,11 +36,15 @@ class CommentsController extends Controller
                 request()->post_id)
                 ->join($this->comment_table,"{$this->comment_table}.id",
             "=","{$this->post_comment_table}.comment_id")
-            ->select("{$this->comment_table}.*","{$this->post_comment_table}.*")
-                ->get();
+            ->join("users","users.id","=","{$this->post_comment_table}.user_id")
+            ->select("{$this->comment_table}.*","{$this->post_comment_table}.*",
+            "users.name","users.email")
+            ->orderBy("{$this->post_comment_table}.created_at","desc")
+            ->paginate(2)
+            ->onEachSide(1);
 
         return response()->json([
-            "getComments" => $getComments
+            "comments" => $getComments
         ]);
     }
 
@@ -87,6 +91,8 @@ class CommentsController extends Controller
                 "created_at" => now(),
                "updated_at" => now() 
             ]);
+        // --- make backup
+        $this->backupInsertComment();
 
         $msg = "<span class=\"alert alert-success\">
             Success : comment has created</span>";
@@ -137,12 +143,17 @@ class CommentsController extends Controller
      * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comment $comment)
+    public function destroy($id)
     {
 
+        $del = Comment::where("id",$id)->first();
+        $del->delete();
         $msg = "<span class=\"alert alert-success\">
             Success : item has been removed!</span>";
-        return response()->json(["msg" => $msg]);
+        return response()->json([
+            "msg" => $msg,
+
+        ]);
     }
 
 
@@ -150,14 +161,24 @@ class CommentsController extends Controller
     /* ==================== backup photo 27 June 2021 START =================*/ 
     public function backupInsertComment(){
         $ph = Comment::latest()->first();
+
+        $col = DB::table($this->post_comment_table)->latest()->first();
+
         $file = base_path("DB/comment_post.sqlite");
         $cont = "/* ================= backup `{$this->comment_table}` ";
         $cont .= " ======  ".date("Y-m-d H:i:s")." =============== */";
         $cont .= "
-INSERT INTO `{$this->comment_table}`(`user_id`,`post_id`,`ip`,
+INSERT INTO `{$this->comment_table}`(`user_id`,`ip`,`comment_title`,
+`comment_body`,`created_at`,`updated_at`) VALUES(
+    '{$ph->user_id}','{$ph->ip}','{$ph->comment_title}',
+    '{$ph->comment_body}','{$ph->created_at}',
+    '{$ph->updated_at}');
+
+/* ================ link table ============================ */
+INSERT INTO `{$this->post_comment_table}`(`user_id`,`comment_id`,`post_id`,
 `created_at`,`updated_at`) VALUES(
-    '{$ph->user_id}','{$ph->title}','{$ph->embed}',
-    '{$ph->created_at}','{$ph->updated_at}');
+    '{$col->user_id}','{$col->comment_id}','{$col->post_id}',
+    '{$col->created_at}','{$col->updated_at}');
 ";
         write2text($file,$cont);
     }

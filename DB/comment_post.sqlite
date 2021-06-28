@@ -1,0 +1,27 @@
+
+ /* =========== auto script START 2021-06-28 15:29:41 pm  ==================== */
+ /* ================= backup `comments`  ======  2021-06-28 15:29:41 =============== */
+INSERT INTO `comments`(`user_id`,`ip`,`comment_title`,
+`comment_body`,`created_at`,`updated_at`) VALUES(
+    '3','127.0.0.1','ไทยศูนย์กลางผลิตยานยนต์ไฟฟ้าในอาเซียน I EEC Focus',
+    '<p>
+    ไทยศูนย์กลางผลิตยานยนต์ไฟฟ้าในอาเซียน I EEC Focus
+ไทย เตรียมก้าวเป็นศูนย์กลางผลิตยานยนต์ไฟฟ้าในอาเซียน 
+เช็คความพร้อมผลิตรถยนต์EV เพื่อการส่งออกของไทย 
+และเป้าหมายที่วางไว้ คนไทยจะใช้รถยนต์ไฟฟ้า100% ภายในปี2578 จะทำได้อย่างไร
+ติดตามได้ทุกวันศุกร์ กับ EEC Focus เวลา 10.30-11.00 น. ทาง TNN ช่อง 16
+“รู้อย่างเข้าใจ ฟังแล้วเข้าถึง สู่ไทยแลนด์ 4.0 ไปกับ EEC Focus”
+    
+</p>
+<div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/pEaEIHX0Zzg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>','2021-06-28 15:29:41',
+    '2021-06-28 15:29:41');
+
+/* ================ link table ============================ */
+INSERT INTO `comment_post`(`user_id`,`comment_id`,`post_id`,
+`created_at`,`updated_at`) VALUES(
+    '4','10','21',
+    '2021-06-28 15:29:41','2021-06-28 15:29:41');
+ 
+ /* ======== auto script 2021-06-28 15:29:41 pm END ========= */

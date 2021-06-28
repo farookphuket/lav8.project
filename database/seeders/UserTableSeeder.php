@@ -8,6 +8,8 @@ use App\Models\User;
 use App\Models\Role;
 
 use Illuminate\Support\Facades\Hash;
+use DB;
+use Eloquent;
 
 class UserTableSeeder extends Seeder
 {
@@ -18,7 +20,12 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->makeUser();
+        //$this->makeUser();
+
+        Eloquent::unguard();
+        $path = 'DB/user_list.sqlite';
+        DB::unprepared(file_get_contents($path));
+        $this->command->info("User has been Created!!");
     }
 
     public function makeUser(){
