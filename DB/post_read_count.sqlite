@@ -1812,3 +1812,12 @@ INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
     'Chrome 91.0.4472.114','2021-06-28 21:52:05','2021-06-28 21:52:05');
  
  /* ======== auto script 2021-06-28 21:52:05 pm END ========= */
+
+ /* =========== auto script START 2021-06-29 05:45:45 am  ==================== */
+ /* ========= auto backup 2021-06-29 05:45:45 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-06-29 05:45:45','2021-06-29 05:45:45');
+ 
+ /* ======== auto script 2021-06-29 05:45:45 am END ========= */
