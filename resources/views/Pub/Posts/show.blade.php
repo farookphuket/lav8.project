@@ -1,9 +1,23 @@
 @extends('Template.green.index')
 
+@foreach($post as $item)
+<?php
+    $title = $item->post_title;
+    $slug = $item->slug;
+    $excerpt = $item->post_excerpt;
+    $body = $item->post_body;
+    $tags = $item->tags;
+    $comments = $item->comments;
+    $name = $item->user->name;
+    $created_at = $item->created_at;
+    $updated_at = $item->updated_at;
+    $post_id = $item->id;
+?>
+@endforeach
 
-@section('meta_title',$post->post_title)
-@section('meta_keywords',$post->post_title)
-@section('meta_des',$post->post_title)
+@section('meta_title',$title)
+@section('meta_keywords',$title)
+@section('meta_des',$title)
 
 @section('content')
     
@@ -12,39 +26,39 @@
         <a href="{{route('posts.index')}}" title="click to go back">
             <h2 class="pt-2">
             <b-icon icon="chevron-double-left"></b-icon>
-            {{$post->post_title}}</h2>
+            {{$title}}</h2>
         </a>
     </div>
 
   <div class="float-right">
     <span class="badge badge-info p-2">
         <b-icon icon="person"></b-icon>
-        {{$post->user->name}}
+        {{$name}}
     </span>
     <span class="badge badge-info p-2">
         <b-icon icon="calendar-day"></b-icon>
-        {{$post->created_at}}
+        {{$created_at}}
     </span> &middot; 
     <span class="badge badge-info p-2">
         <b-icon icon="clock-history"></b-icon>
-        {{$post->created_at->diffForHumans()}}
+        {{$created_at->diffForHumans()}}
     </span>
-    @if($post->created_at != $post->updated_at)
+    @if($created_at != $updated_at)
       <span class="badge badge-primary p-2">
         <b-icon icon="calendar-day"></b-icon>
-        {{$post->updated_at}}
+        {{$updated_at}}
       </span> &middot;
         
         <span class="badge badge-warning p-2">
             <b-icon icon="clock-history"></b-icon>
-            {{$post->updated_at->diffForHumans()}}
+            {{$updated_at->diffForHumans()}}
         </span>
     @endif
   </div>
   <p style="margin-top:2em;">&nbsp;</p>
-  {!!$post->post_excerpt!!}
+  {!!$excerpt!!}
   <p style="margin-top:2em;">&nbsp;</p>
-  {!! $post->post_body!!}
+  {!! $body!!}
 
   <p style="magin-top:2em;">&nbsp;</p>
 
@@ -58,7 +72,7 @@
 
       <div class="float-right">
         <div>
-        @foreach($post->tags as $tag)
+        @foreach($tags as $tag)
             <span>
 
               <a class="btn btn-outline-info btn-sm"
@@ -72,6 +86,13 @@
 
   </div><!-- end of div.clearfix-->
 <p class="pt-4">&nbsp;</p>
+<div class="col-lg-12">
+    <h2 class="mb-4 pt-4">comments</h2>
+    
+    <pub-comment :post_id="{!!$post_id!!}"></pub-comment>
+</div>
+<p class="pt-4 mb-8">&nbsp;</p>
+
 </div>
 
 @endsection

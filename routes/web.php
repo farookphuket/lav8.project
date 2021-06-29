@@ -14,6 +14,9 @@ use App\Http\Controllers\VideoController as pVideo;
 use App\Http\Controllers\PhotosController as pPhotos;
 use App\Http\Controllers\RegisterController as pRegist;
 
+// added 29 June 2021
+use App\Http\Controllers\CommentsController as pComment;
+
 
 /* MEMBER */
 use App\Http\Controllers\Member\WhatnewsController as WMN;
@@ -58,6 +61,12 @@ Route::get('/posts/{post:slug}',[PubPost::class,'show'])->name('posts.show');
 
 Route::get("/about",[PubPost::class,'about'])->name('posts.about');
 Route::get("/donate-me",[PubPost::class,'donate'])->name('posts.donate');
+
+/* ============= public comment  29 June 2021 ======================*/
+Route::resource("/comment",pComment::class);
+Route::get("/getPostComments",[pComment::class,"getPostComments"])
+    ->name("comments.getPostComments");
+/* ============= public comment  29 June 2021 ======================*/
 
 /* =============== Register 28 June 2021====================*/
 Route::resource("/register",pRegist::class);

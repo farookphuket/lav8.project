@@ -140,6 +140,45 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
@@ -256,6 +295,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -267,6 +310,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       commentPostAll: [],
       comment: '',
+      title: '',
       cmId: 0,
       res_status: '',
       hasClick: true
@@ -276,10 +320,22 @@ __webpack_require__.r(__webpack_exports__);
     this.getCommentAll();
   },
   methods: {
-    getCommentAll: function getCommentAll() {
+    getCommentAll: function getCommentAll(page) {
       var _this = this;
 
-      var url = "/admin/getPostCommentAll";
+      var url = '';
+
+      if (page) {
+        url = page;
+        this.$cookies.set("acomment_old", url);
+      }
+
+      url = this.$cookies.get("acomment_old");
+
+      if (!url) {
+        url = "/admin/getPostCommentAll";
+      }
+
       axios.get(url).then(function (res) {
         // console.log(res.data)
         _this.commentPostAll = res.data.comments;
@@ -290,7 +346,8 @@ __webpack_require__.r(__webpack_exports__);
 
       var url = "/admin/comments/".concat(id);
       axios.get(url).then(function (res) {
-        _this2.comment = res.data.comment.comment_msg;
+        _this2.title = res.data.comment.comment_title;
+        _this2.comment = res.data.comment.comment_body;
         _this2.cmId = res.data.comment.id;
         _this2.hasClick = false;
       });
@@ -301,7 +358,8 @@ __webpack_require__.r(__webpack_exports__);
 
       var url = "/admin/comments/".concat(id);
       var data = {
-        comment: this.comment,
+        comment_title: this.title,
+        comment_body: this.comment,
         id: this.cmId
       };
       axios.put(url, data).then(function (res) {
@@ -332,6 +390,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     modClose: function modClose() {
       this.getCommentAll();
+      this.title = '';
       this.comment = '';
       this.cmId = 0;
       this.hasClick = 0;
@@ -547,271 +606,368 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "container" },
-    _vm._l(_vm.commentPostAll, function(cm) {
-      return _c(
-        "div",
-        { staticClass: "card card-body" },
-        [
-          _c("div", { staticClass: "clearfix" }, [
-            _c("div", { staticClass: "float-right" }, [
-              _c(
-                "span",
-                [
-                  _c("b-icon", { attrs: { icon: "person" } }),
-                  _vm._v(
-                    "\n                    " +
-                      _vm._s(cm.user.name) +
-                      "\n                "
-                  )
-                ],
-                1
-              ),
-              _vm._v(" · \n                "),
-              _c(
-                "span",
-                [
-                  _c("b-icon", { attrs: { icon: "envelope" } }),
-                  _vm._v(
-                    "\n                    " +
-                      _vm._s(cm.user.email) +
-                      "\n                "
-                  )
-                ],
-                1
-              ),
-              _vm._v(" · \n                "),
-              _c(
-                "span",
-                [
-                  _c("b-icon", { attrs: { icon: "calendar2-day" } }),
-                  _vm._v(
-                    "\n                    " +
-                      _vm._s(_vm.moment(cm.created_at)) +
-                      "\n                "
-                  )
-                ],
-                1
-              ),
-              _vm._v(" · \n                "),
-              _c(
-                "span",
-                [
-                  _c("b-icon", { attrs: { icon: "clock-history" } }),
-                  _vm._v(
-                    "\n                    " +
-                      _vm._s(_vm.moment(cm.created_at).fromNow()) +
-                      "\n                "
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-outline-danger btn-sm",
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      return _vm.getDel(cm.id)
-                    }
-                  }
-                },
-                [_c("b-icon", { attrs: { icon: "trash" } })],
-                1
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "pt-2 mb-2",
-              domProps: { innerHTML: _vm._s(cm.comment_msg) }
-            },
-            [_vm._v("\n            " + _vm._s(cm.comment_msg) + "\n        ")]
-          ),
-          _vm._v(" "),
-          _vm._l(cm.reply, function(re) {
-            return _c("div", { staticClass: "card card-body pt-4 show_info" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "pt-4",
-                  domProps: { innerHTML: _vm._s(re.reply_body) }
-                },
-                [
-                  _vm._v(
-                    "\n                " +
-                      _vm._s(re.reply_body) +
-                      "\n            "
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "clearfix" }, [
-                _c("div", { staticClass: "float-right" }, [
-                  _c(
-                    "span",
-                    [
-                      _c("b-icon", { attrs: { icon: "person" } }),
-                      _vm._v(
-                        "\n                        " +
-                          _vm._s(re.user.name) +
-                          "\n                    "
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" ·\n                    "),
-                  _c(
-                    "span",
-                    [
-                      _c("b-icon", { attrs: { icon: "envelope" } }),
-                      _vm._v(
-                        "\n                        " +
-                          _vm._s(re.user.email) +
-                          "\n                    "
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" ·\n                    "),
-                  _c(
-                    "span",
-                    [
-                      _c("b-icon", { attrs: { icon: "calendar2-date" } }),
-                      _vm._v(
-                        "\n                        " +
-                          _vm._s(_vm.moment(re.created_at)) +
-                          "\n                    "
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" ·\n                    "),
-                  _c(
-                    "span",
-                    [
-                      _c("b-icon", { attrs: { icon: "clock-history" } }),
-                      _vm._v(
-                        "\n                        " +
-                          _vm._s(_vm.moment(re.created_at).fromNow()) +
-                          "\n                    "
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" ·\n                    "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-outline-danger btn-sm",
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          return _vm.delSub(re.id)
-                        }
-                      }
-                    },
-                    [_c("b-icon", { attrs: { icon: "trash" } })],
-                    1
-                  )
-                ])
-              ])
-            ])
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "line" }),
-          _vm._v(" "),
-          _c("div", [
-            _vm.replyItem[cm.id]
-              ? _c(
-                  "div",
-                  { staticClass: "reply_form" },
+    [
+      _vm._l(_vm.commentPostAll.data, function(cm) {
+        return _c(
+          "div",
+          { staticClass: "card card-body" },
+          [
+            _c("div", { staticClass: "clearfix" }, [
+              _c("div", { staticClass: "float-right" }, [
+                _c(
+                  "span",
                   [
-                    _c("jodit-editor", {
-                      attrs: { height: "350" },
-                      model: {
-                        value: _vm.replyMsg,
-                        callback: function($$v) {
-                          _vm.replyMsg = $$v
-                        },
-                        expression: "replyMsg"
-                      }
-                    })
+                    _c("b-icon", { attrs: { icon: "person" } }),
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(cm.user.name) +
+                        "\n                "
+                    )
                   ],
                   1
-                )
-              : _c(
+                ),
+                _vm._v(" · \n                "),
+                _c(
+                  "span",
+                  [
+                    _c("b-icon", { attrs: { icon: "envelope" } }),
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(cm.user.email) +
+                        "\n                "
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" · \n                "),
+                _c(
+                  "span",
+                  [
+                    _c("b-icon", { attrs: { icon: "calendar2-day" } }),
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(_vm.moment(cm.created_at)) +
+                        "\n                "
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" · \n                "),
+                _c(
+                  "span",
+                  [
+                    _c("b-icon", { attrs: { icon: "clock-history" } }),
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(_vm.moment(cm.created_at).fromNow()) +
+                        "\n                "
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
                   "button",
                   {
-                    staticClass: "btn btn-outline-info btn-sm",
+                    staticClass: "btn btn-outline-danger btn-sm",
                     on: {
                       click: function($event) {
-                        return _vm.showReplyForm(cm.id)
+                        $event.preventDefault()
+                        return _vm.getDel(cm.id)
                       }
                     }
                   },
-                  [_vm._v("\n                show reply form\n            ")]
+                  [_c("b-icon", { attrs: { icon: "trash" } })],
+                  1
                 )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "clearfix" }, [
-            _c("div", { staticClass: "float-right" }, [
+              ])
+            ]),
+            _vm._v(" "),
+            _c("h3", { staticClass: "text-center" }, [
+              _vm._v(_vm._s(cm.comment_title))
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "pt-2 mb-2",
+                domProps: { innerHTML: _vm._s(cm.comment_body) }
+              },
+              [
+                _vm._v(
+                  "\n            " + _vm._s(cm.comment_body) + "\n        "
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _vm._l(cm.reply, function(re) {
+              return _c(
+                "div",
+                { staticClass: "card card-body pt-4 show_info" },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "pt-4",
+                      domProps: { innerHTML: _vm._s(re.reply_body) }
+                    },
+                    [
+                      _vm._v(
+                        "\n                " +
+                          _vm._s(re.reply_body) +
+                          "\n            "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "clearfix" }, [
+                    _c("div", { staticClass: "float-right" }, [
+                      _c(
+                        "span",
+                        [
+                          _c("b-icon", { attrs: { icon: "person" } }),
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(re.user.name) +
+                              "\n                    "
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" ·\n                    "),
+                      _c(
+                        "span",
+                        [
+                          _c("b-icon", { attrs: { icon: "envelope" } }),
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(re.user.email) +
+                              "\n                    "
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" ·\n                    "),
+                      _c(
+                        "span",
+                        [
+                          _c("b-icon", { attrs: { icon: "calendar2-date" } }),
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(_vm.moment(re.created_at)) +
+                              "\n                    "
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" ·\n                    "),
+                      _c(
+                        "span",
+                        [
+                          _c("b-icon", { attrs: { icon: "clock-history" } }),
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(_vm.moment(re.created_at).fromNow()) +
+                              "\n                    "
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" ·\n                    "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-outline-danger btn-sm",
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.delSub(re.id)
+                            }
+                          }
+                        },
+                        [_c("b-icon", { attrs: { icon: "trash" } })],
+                        1
+                      )
+                    ])
+                  ])
+                ]
+              )
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "line" }),
+            _vm._v(" "),
+            _c("div", [
               _vm.replyItem[cm.id]
                 ? _c(
+                    "div",
+                    { staticClass: "reply_form" },
+                    [
+                      _c("jodit-editor", {
+                        attrs: { height: "350" },
+                        model: {
+                          value: _vm.replyMsg,
+                          callback: function($$v) {
+                            _vm.replyMsg = $$v
+                          },
+                          expression: "replyMsg"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                : _c(
                     "button",
                     {
-                      staticClass: "btn btn-outline-primary btn-sm",
-                      attrs: { disabled: _vm.bReply },
+                      staticClass: "btn btn-outline-info btn-sm",
                       on: {
                         click: function($event) {
-                          $event.preventDefault()
-                          return _vm.sentReply(cm.id)
+                          return _vm.showReplyForm(cm.id)
                         }
                       }
                     },
-                    [_vm._v("\n                    Reply\n                ")]
+                    [_vm._v("\n                show reply form\n            ")]
                   )
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.bReply == false && _vm.replyItem[cm.id]
-                ? _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-outline-warning btn-sm",
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          return _vm.hideReplyForm(cm.id)
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "clearfix" }, [
+              _c("div", { staticClass: "float-right" }, [
+                _vm.replyItem[cm.id]
+                  ? _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-outline-primary btn-sm",
+                        attrs: { disabled: _vm.bReply },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.sentReply(cm.id)
+                          }
                         }
+                      },
+                      [_vm._v("\n                    Reply\n                ")]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.bReply == false && _vm.replyItem[cm.id]
+                  ? _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-outline-warning btn-sm",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.hideReplyForm(cm.id)
+                          }
+                        }
+                      },
+                      [_vm._v("\n                    Cancle\n                ")]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-outline-primary btn-sm",
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.getReply(cm.id)
                       }
-                    },
-                    [_vm._v("\n                    Cancle\n                ")]
-                  )
-                : _vm._e(),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-outline-primary btn-sm",
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      return _vm.getReply(cm.id)
                     }
-                  }
-                },
-                [_vm._v("edit comment")]
-              )
+                  },
+                  [_vm._v("edit comment")]
+                )
+              ])
             ])
+          ],
+          2
+        )
+      }),
+      _vm._v(" "),
+      _c("div", { staticStyle: { "margin-top": "2em" } }, [
+        _c("div", { staticClass: "nav-scroller py-1 mb-2" }, [
+          _c("nav", { staticClass: "nav d-flex justify-content-center" }, [
+            _c(
+              "ul",
+              { staticClass: "pagination flex-wrap" },
+              [
+                _c("li", { staticClass: "page-item disabled" }, [
+                  _c("div", { staticClass: "page-link" }, [
+                    _vm._v(
+                      "\n                                showing from " +
+                        _vm._s(_vm.commentPostAll.from) +
+                        "\n                                to "
+                    ),
+                    _c("span", [_vm._v(_vm._s(_vm.commentPostAll.to))]),
+                    _vm._v(" of\n                                "),
+                    _c("span", [_vm._v(_vm._s(_vm.commentPostAll.total))])
+                  ])
+                ]),
+                _vm._v(" "),
+                _vm._l(_vm.commentPostAll.links, function(li) {
+                  return _c("li", { staticClass: "page-item" }, [
+                    !li.active && li.url != null
+                      ? _c(
+                          "a",
+                          {
+                            staticClass: "page-link p-2",
+                            attrs: { href: "" },
+                            domProps: { innerHTML: _vm._s(li.label) },
+                            on: {
+                              click: function($event) {
+                                $event.preventDefault()
+                                return _vm.$emit("getCommentAll", li.url)
+                              }
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n                                " +
+                                _vm._s(li.label) +
+                                "\n                            "
+                            )
+                          ]
+                        )
+                      : _c(
+                          "span",
+                          {
+                            staticClass: "page-link active",
+                            domProps: { innerHTML: _vm._s(li.label) }
+                          },
+                          [
+                            _vm._v(
+                              "\n                                " +
+                                _vm._s(li.label) +
+                                "\n                            "
+                            )
+                          ]
+                        )
+                  ])
+                }),
+                _vm._v(" "),
+                _c("li", { staticClass: "page-item active" }, [
+                  _c(
+                    "span",
+                    { staticClass: "page-link " },
+                    [
+                      _c("b-icon", { attrs: { icon: "book-half" } }),
+                      _vm._v(
+                        "\n                                " +
+                          _vm._s(_vm.commentPostAll.current_page) +
+                          "\n                            "
+                      )
+                    ],
+                    1
+                  )
+                ])
+              ],
+              2
+            )
           ])
-        ],
-        2
-      )
-    }),
-    0
+        ])
+      ])
+    ],
+    2
   )
 }
 var staticRenderFns = []
@@ -843,6 +999,30 @@ var render = function() {
     [
       _c("div", { staticClass: "container" }, [
         _c("form", { attrs: { action: "" } }, [
+          _c("div", { staticClass: "form-group" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.title,
+                  expression: "title"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text", name: "title" },
+              domProps: { value: _vm.title },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.title = $event.target.value
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
           _c(
             "div",
             { staticClass: "form-group" },

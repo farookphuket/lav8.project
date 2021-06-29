@@ -57,6 +57,7 @@ class PostsController extends Controller
         $posts = Post::where('slug','!=','about')
                     ->with('user')
                         ->with('tags')
+                        ->with('comments')
                         ->orderBy('created_at','desc')
                         ->paginate(5)
                         ->onEachSide(1);
@@ -135,8 +136,13 @@ class PostsController extends Controller
     public function show(Post $post)
     {
         $this->makeCount($post->id);
+        $get_post = Post::with("comments")
+                    ->with("user")
+                    ->with("tags")
+                    ->where("slug",$post->slug)
+                    ->get();
         return view('Pub.Posts.show')->with([
-            'post' => $post
+            'post' => $get_post
         ]);
     }
 
@@ -195,13 +201,16 @@ class PostsController extends Controller
         ];
 
         // get the last ip from who read this item today
+        // will count only 1 time per day doesn't matter how many time 
+        // this person click the link
         $hasCount = DB::table($this->post_read_table)
-            ->whereDay("created_at","=",date("Y-m-d"))
             ->where("ip",getUserIp())
-            ->first();
+            ->where("post_id",$get->id) 
+            ->whereDate("created_at","=",date("Y-m-d"))
+            ->get();// must return the array
 
         // if today not count yet now do count
-        if(!$hasCount):
+        if(count($hasCount) == 0):
             DB::table($this->post_read_table)
                 ->insert($con1);
             // ===== make a backup 
@@ -212,6 +221,7 @@ class PostsController extends Controller
         $sum = DB::table($this->post_read_table)
             ->where("post_id",$get->id)
             ->get();
+
         Post::where("id",$get->id)
             ->update([
                 "last_read_date" => date("Y-m-d"),

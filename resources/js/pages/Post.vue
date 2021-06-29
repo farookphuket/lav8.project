@@ -60,7 +60,6 @@ export default{
                 })
         },
         openPost(theLink){
-            this.getPostList()
             let url = `/posts/${theLink}`
             location.href=url
         },

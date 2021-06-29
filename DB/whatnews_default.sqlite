@@ -1183,13 +1183,13 @@ the image below is my recently use system before update
 <p class="pt-4 mb-4">this is the edit file /etc/httpd/conf/httpd.conf</p>
 <div class="line-numbers">
     <pre>
-        <code class="language-php">
+        <div class="code">
 
-            LoadModule php_module modules/libphp.so
-            AddHandler php-script .php
-            Include conf/extra/php_module.conf
+          <span>  LoadModule php_module modules/libphp.so</span>
+          <span>  AddHandler php-script .php</span>
+          <span>  Include conf/extra/php_module.conf</span>
 
-        </code>
+        </div>
     </pre>
 </div>
 <p>
@@ -1305,17 +1305,17 @@ INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
 </p>
 <div class="line-numbers">
  <pre>
-    <code class="language-javascript">
-
-        makeSlug(){
-            let make_slug = this.title.replace(/\s+/g,"-")
-            .replace(/[^\u0E00-\u0E7F\w\-]+/g,"")
-            .replace(/\-\-+/g,"-")
-            .replace(/^-+/,"")
-            .toLowerCase()
-           return this.slug = make_slug
-        },
-    </code>
+    
+    <div class="code">
+      <span>  makeSlug(){</span>
+       <span>     let make_slug = this.title.replace(/\s+/g,"-") </span>
+       <span>     .replace(/[^\u0E00-\u0E7F\w\-]+/g,"")</span>
+       <span>     .replace(/\-\-+/g,"-")</span>
+       <span>     .replace(/^-+/,"")</span>
+       <span>     .toLowerCase()</span>
+       <span>    return this.slug = make_slug</span>
+       <span> },</span>
+    </div>
  </pre>
 </div>
  <img src="https://i.ibb.co/CVjyBVm/2021-02-08-thai-slug.png"
@@ -1388,11 +1388,3 @@ class="responsive">
 '2021-02-06 07:45:20'
 );
 
- /* =========== auto script START 2021-06-27 14:51:43 pm  ==================== */
- /* ============ backup whatnews  ==== 2021-06-27 14:51:43 ============ */
-INSERT INTO `whatnews`(`user_id`,`whatnews_title`,
-`whatnews_body`,`is_public`,`created_at`,`updated_at`) VALUES(
-    '3','this is my test ׳s come','<p>this is my very this test come</p><p>ha ha this sd&nbsp;</p>',
-    '1','2021-06-27 14:51:42','2021-06-27 14:51:42');
- 
- /* ======== auto script 2021-06-27 14:51:43 pm END ========= */

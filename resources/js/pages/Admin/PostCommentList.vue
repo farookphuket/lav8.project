@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="card card-body"
-            v-for="cm in commentPostAll">
+            v-for="cm in commentPostAll.data">
             <div class="clearfix">
                 <div class="float-right">
                     <span>
@@ -27,8 +27,9 @@
                     </button>
                 </div>
             </div><!-- end of div.clearfix -->
-            <div class="pt-2 mb-2" v-html="cm.comment_msg">
-                {{cm.comment_msg}}
+            <h3 class="text-center">{{cm.comment_title}}</h3>
+            <div class="pt-2 mb-2" v-html="cm.comment_body">
+                {{cm.comment_body}}
             </div>
             <div class="card card-body pt-4 show_info"
                 v-for="re in cm.reply">
@@ -96,6 +97,44 @@
                 </div>
             </div>
         </div>
+
+        <!-- ================== pagination ============ -->
+        
+       <div style="margin-top:2em;">
+
+                <div class="nav-scroller py-1 mb-2">
+                    <nav class="nav d-flex justify-content-center">
+                        <ul class="pagination flex-wrap">
+                            <li class="page-item disabled">
+                                <div class="page-link">
+                                    showing from {{commentPostAll.from}}
+                                    to <span>{{commentPostAll.to}}</span> of
+                                    <span>{{commentPostAll.total}}</span>
+                                </div>
+                            </li>
+                            <li class="page-item" v-for="li in commentPostAll.links">
+                                <a class="page-link p-2" href="" v-html="li.label"
+                                    v-if="!li.active && li.url != null"
+                                    @click.prevent="$emit('getCommentAll',li.url)">
+                                    {{li.label}}
+                                </a>
+                                <span class="page-link active"
+                                    v-html="li.label" v-else>
+                                    {{li.label}}
+                                </span>
+                            </li>
+                            <li class="page-item active">
+                                <span class="page-link ">
+                                    <b-icon icon="book-half"></b-icon>
+                                    {{commentPostAll.current_page}}
+                                </span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+       </div>
+        <!-- ================== pagination ============ -->
     </div>
 </template>
 

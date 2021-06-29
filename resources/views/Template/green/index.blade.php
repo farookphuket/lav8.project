@@ -59,7 +59,7 @@
 
   <!-- Template Main CSS File -->
   <link href="{{asset('/green/css/style.css')}}" rel="stylesheet">
-  <link href="{{asset('/green/css/custom_theme.css')}}" rel="stylesheet">
+  <link href="{{asset('css/custom_theme.css')}}" rel="stylesheet">
 
 
 <link href="{{asset('/green/css/tailwind.min.css')}}" rel="stylesheet">

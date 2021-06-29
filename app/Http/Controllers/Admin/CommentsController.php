@@ -24,7 +24,11 @@ class CommentsController extends Controller
     }
 
     public function getPostCommentAll(){
-        $comments = Comment::with("user")->with("reply")->get();
+        $comments = Comment::with("user")
+            ->with("posts")
+            ->orderBy("created_at","desc")
+            ->paginate(2)
+            ->onEachSide(1);
         return response()->json(["comments" => $comments]);
     }
 
@@ -90,7 +94,8 @@ class CommentsController extends Controller
     {
         Comment::where('id',request()->id)
             ->update([
-                "comment_msg" => request()->comment,
+                "comment_title" => request()->comment_title,
+                "comment_body" => request()->comment_body,
                 "updated_at" => now(),
                 "replied_at" => now()
             ]);

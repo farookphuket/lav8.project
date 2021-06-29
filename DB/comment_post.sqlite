@@ -25,3 +25,82 @@ INSERT INTO `comment_post`(`user_id`,`comment_id`,`post_id`,
     '2021-06-28 15:29:41','2021-06-28 15:29:41');
  
  /* ======== auto script 2021-06-28 15:29:41 pm END ========= */
+
+ /* =========== auto script START 2021-06-29 08:12:51 am  ==================== */
+ /* ================= backup `comments`  ======  2021-06-29 08:12:51 =============== */
+INSERT INTO `comments`(`user_id`,`ip`,`comment_title`,
+`comment_body`,`created_at`,`updated_at`) VALUES(
+    '3','127.0.0.1','this is my comment on here',
+    '<p>my first comment ha ha</p>','2021-06-29 08:12:51',
+    '2021-06-29 08:12:51');
+
+/* ================ link table ============================ */
+INSERT INTO `comment_post`(`user_id`,`comment_id`,`post_id`,
+`created_at`,`updated_at`) VALUES(
+    '3','2','21',
+    '2021-06-29 08:12:51','2021-06-29 08:12:51');
+ 
+ /* ======== auto script 2021-06-29 08:12:51 am END ========= */
+
+ /* =========== auto script START 2021-06-29 10:43:26 am  ==================== */
+ /* ================= backup `comments`  ======  2021-06-29 10:43:26 =============== */
+INSERT INTO `comments`(`user_id`,`ip`,`comment_title`,
+`comment_body`,`created_at`,`updated_at`) VALUES(
+    '3','127.0.0.1','อาหารที่ชาวมุสลิมจะทานได้ในช่วงถือศีลอดคือ',
+    '<p>ในการถือศีลอดจะทานอาหารหลัก ๆ 2 มื้อ คือ ซุโฮร์ (Suhoor) เป็นมื้อก่อนแสงอรุณ ถือเป็นมื้อแรกของวัน ทำให้ต้องหาอาหารที่มีโปรตีนสูงเพื่อให้อิ่มท้องนาน ๆ และอีกมื้อคือ อิฟตาร์ (Iftar) เป็นมื้ออาหารที่ทานหลังพระอาทิตย์ตก โดยอาหารที่นิยมทานเพื่อเติมโปรตีน เช่น มะตะบะเนื้อ ข้าวมันไก่ ข้าวหมกไก่ เป็นต้น นอกจากนี้ยังมีอินทผาลัม ผลไม้จากตะวันออกกลางที่หาทานได้ง่ายขึ้นเมื่อเข้าสู่เดือนรอมฎอน ตามประวัติศาสตร์ศาสนาอิสลาม อินทผาลัมเป็นผลไม้ที่ท่านนบีมูฮัมหมัดส่งเสริมให้ชาวมุสลิมทานคู่กับน้ำเปล่า โดยควรทานทั้งอินทผาลัมผลสด (ฤทธิ์เย็น) และอินทผาลัมผลแห้ง (ฤทธิ์ร้อน) เพื่อให้ร่างกายเกิดสมดุล นอกจากนี้แพทย์แผนปัจจุบันยังได้ศึกษาและระบุว่า อินทผาลัมเป็นผลไม้ที่มีคุณค่าทางโภชนาการสูงอีกด้วย</p>','2021-06-29 10:43:26',
+    '2021-06-29 10:43:26');
+
+/* ================ link table ============================ */
+INSERT INTO `comment_post`(`user_id`,`comment_id`,`post_id`,
+`created_at`,`updated_at`) VALUES(
+    '3','3','21',
+    '2021-06-29 10:43:26','2021-06-29 10:43:26');
+ 
+ /* ======== auto script 2021-06-29 10:43:26 am END ========= */
+
+ /* =========== auto script START 2021-06-29 11:02:00 am  ==================== */
+ /* ================= backup `comments`  ======  2021-06-29 11:02:00 =============== */
+INSERT INTO `comments`(`user_id`,`ip`,`comment_title`,
+`comment_body`,`created_at`,`updated_at`) VALUES(
+    '3','127.0.0.1','ฟังนิยายเพชรพระอุมา ตอน มงกุฎไพร',
+    '<p>เป็นการอัพเดทอีกครั้งเพื่อรวมคลิปเสียงไว้เป็นแค่ 4 คลิปเพื่อความสะดวกในการฟัง ท่านสามารถปิดหน้าจอมือถือได้โดยที่คลิปจะยังเล่นอยู่ หากต้องการหยุดให้กดปุ่มหยุดเอาไว้ แต่อย่าปิดหน้าเวปเพราะว่าหากเปิดขึ้นมาใหม่จะเป็นการเริ่มเล่นใหม่ทั้งหมด</p>','2021-06-29 11:02:00',
+    '2021-06-29 11:02:00');
+
+/* ================ link table ============================ */
+INSERT INTO `comment_post`(`user_id`,`comment_id`,`post_id`,
+`created_at`,`updated_at`) VALUES(
+    '3','4','20',
+    '2021-06-29 11:02:00','2021-06-29 11:02:00');
+ 
+ /* ======== auto script 2021-06-29 11:02:00 am END ========= */
+
+ /* =========== auto script START 2021-06-29 11:53:48 am  ==================== */
+ /* ================= backup `comments`  ======  2021-06-29 11:53:48 =============== */
+INSERT INTO `comments`(`user_id`,`ip`,`comment_title`,
+`comment_body`,`created_at`,`updated_at`) VALUES(
+    '3','127.0.0.1','Eloquent date filtering: whereDate() and other methods',
+    '<p>Let’s say you want to filter out entries created today. You have a timestamp field&nbsp;created_at, right? How do you filter the DATE only from that timestamp? Apparently, Taylor thought about it.</p>
+<p>
+    I’ve seen people doing it with raw queries, like this:
+</p>
+<div class="line-numbers">
+    <pre>    <div class="code">
+       <span>$q-&gt;where(DB::raw("DATE(created_at) = ׳".date(׳Y-m-d׳)."׳"));</span> 
+    </div>
+     <div class="comment">
+         <span>Luckily, Laravel Query Builder offers a more Eloquent solution:</span>
+     </div> 
+     <div class="code">
+         <span>$q-&gt;whereDate(׳created_at׳, ׳=׳, date(׳Y-m-d׳));</span>
+     </div>
+    </pre>
+</div>','2021-06-29 11:53:48',
+    '2021-06-29 11:53:48');
+
+/* ================ link table ============================ */
+INSERT INTO `comment_post`(`user_id`,`comment_id`,`post_id`,
+`created_at`,`updated_at`) VALUES(
+    '3','5','21',
+    '2021-06-29 11:53:48','2021-06-29 11:53:48');
+ 
+ /* ======== auto script 2021-06-29 11:53:48 am END ========= */

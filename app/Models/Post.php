@@ -23,6 +23,6 @@ class Post extends Model
         return $this->belongsToMany(Tag::class)->withTimestamps();
     }
     public function comments(){
-        return $this->hasMany(Comment::class)->with("user");
+        return $this->belongsToMany(Comment::class)->with("user");
     }
 }

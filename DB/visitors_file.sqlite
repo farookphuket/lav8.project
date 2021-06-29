@@ -30,3 +30,18 @@ INSERT INTO `visitors` (`client_ip`,`client_os`,
 
  
  /* ======== auto script 2021-06-28 22:34:13 pm END ========= */
+
+ /* =========== auto script START 2021-06-29 06:00:20 am  ==================== */
+ /* ========= auto script 2021-06-29 06:00:20 ====== to visitors*/
+INSERT INTO `visitors` (`client_ip`,`client_os`,
+`client_browser`,`visited_month`,`visited_year`,
+`last_visited_date`) VALUES (
+ '127.0.0.1',                             
+'Linux ',                                          
+'Chrome 91.0.4472.114',                        
+'6',                
+'2021',                 
+'2021-06-29');                                          
+
+ 
+ /* ======== auto script 2021-06-29 06:00:20 am END ========= */
