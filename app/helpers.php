@@ -6,12 +6,40 @@ use hisorange\BrowserDetect\Parser as Browser;
 
 function xx_clean($str){
 
-    $pattern = array("<script>","</script>");
-    $repl = array("&lt;script&gt;%&gt;","&lt;br&gt;&lt;/script&gt;");
+    $newTag = "";
+    $org_script = array("<script>","</script>",
+        "'","{{","}}");
+    $new_script = array("❮script❯","❮/script❯",
+        "׳","｛｛","｝｝");
+    if(strpos($str,'<script>') !== false ||
+        strpos($str,"'") !== false ||
+        strpos($str,"{{") !== false ||
+        strpos($str,"}}") !== false):
+        $newTag = str_replace($org_script,$new_script,$str);
+        else:
+        $newTag = $str;
+    endif;
 
-    return str_replace($pattern,$repl,$str);
+    return $newTag;
+
+
 
 }
+
+
+function write2text($file,$text){
+    // $file = file path
+    $f2 = fopen($file,"a+");
+    $content = "\n /* =========== auto script START ".date("Y-m-d H:i:s a",time())
+        ."  ==================== */\n";
+    $content .= " {$text} ";
+    $content .= "\n /* ======== auto script ".date("Y-m-d H:i:s a",time())." END ========= */\n";
+    fwrite($f2,$content);
+    fclose($f2);
+
+}
+
+
 
 
 // getUserIp
@@ -40,7 +68,6 @@ function getUserOs(){
 function getUserDevice(){
   $agent = new Agent();
   $device = $agent->device();
-  //dd($device);
   return $device;
 }
 

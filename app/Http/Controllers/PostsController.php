@@ -10,6 +10,21 @@ use DB;
 
 class PostsController extends Controller
 {
+
+    protected $post_table;
+    protected $tag_table;
+    protected $post_tag_table;
+    protected $post_read_table;
+
+    public function __construct(){
+        $this->post_tag_table = "post_tag";
+        $this->tag_table = "tags";
+        $this->post_table = "posts";
+        $this->post_read_table = "post_read";
+    }
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -42,6 +57,7 @@ class PostsController extends Controller
         $posts = Post::where('slug','!=','about')
                     ->with('user')
                         ->with('tags')
+                        ->with('comments')
                         ->orderBy('created_at','desc')
                         ->paginate(5)
                         ->onEachSide(1);
@@ -119,58 +135,17 @@ class PostsController extends Controller
      */
     public function show(Post $post)
     {
-        $this->readCount($post->id);
+        $this->makeCount($post->id);
+        $get_post = Post::with("comments")
+                    ->with("user")
+                    ->with("tags")
+                    ->where("slug",$post->slug)
+                    ->get();
         return view('Pub.Posts.show')->with([
-            'post' => $post
+            'post' => $get_post
         ]);
     }
 
-    public function readCount($p_id){
-
-        $last_read_date = 0;
-        $last_read_ip = "";
-        $last_read_count = 0;
-
-        $cur_ip = getUserIp();
-        $os = getUserOs();
-        $browser = getUserBrowser();
-        $device = getUserDevice();
-        $cur_date = date('Y-m-d');
-        $date_create = 0;
-
-        $posts = Post::where('id',$p_id)->get();
-        foreach($posts as $p):
-            $last_read_date = $p->last_read_date;
-            $last_read_ip = $p->last_read_ip;
-            $last_read_count = $p->read_count;
-            $date_create = $p->created_at;
-        endforeach;
-
-        // only if the cur_date equal to today and the ip is unique from the last read ip 
-        if($cur_date != $last_read_date || $cur_ip != $last_read_ip):
-            Post::where('id',$p_id)
-                ->update([
-                    'read_count' => $last_read_count+1,
-                    'last_read_ip' => $cur_ip,
-                    'last_read_date' => $cur_date
-                ]);
-
-            DB::table("post_read")
-                ->insert([
-                    "post_id" => $p_id,
-                    "os" => $os,
-                    "browser" => $browser,
-                    "ip" => $cur_ip,
-                    "device" => $device,
-                    "created_at" => now(),
-                    "updated_at" => now()
-                ]);
-
-
-        endif;
-
-
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -205,4 +180,121 @@ class PostsController extends Controller
     {
         //
     }
+
+    
+
+    public function makeCount($id){
+
+        // get the post info 
+        $get = Post::where("id",$id)->first();
+
+
+        // prepare data
+        $con1 = [
+            "post_id" => $get->id,
+            "os" => getUserOs(),
+            "ip" => getUserIp(),
+            "device" => getUserDevice(),
+            "browser" => getUserBrowser(),
+            "created_at" => now(),
+            "updated_at" => now()
+        ];
+
+        // get the last ip from who read this item today
+        // will count only 1 time per day doesn't matter how many time 
+        // this person click the link
+        $hasCount = DB::table($this->post_read_table)
+            ->where("ip",getUserIp())
+            ->where("post_id",$get->id) 
+            ->whereDate("created_at","=",date("Y-m-d"))
+            ->get();// must return the array
+
+        // if today not count yet now do count
+        if(count($hasCount) == 0):
+            DB::table($this->post_read_table)
+                ->insert($con1);
+            // ===== make a backup 
+            $this->backupCount();
+        endif;
+
+        // -- update the count field in posts table for this id as well 
+        $sum = DB::table($this->post_read_table)
+            ->where("post_id",$get->id)
+            ->get();
+
+        Post::where("id",$get->id)
+            ->update([
+                "last_read_date" => date("Y-m-d"),
+                "last_read_ip" => getUserIp(),
+                "read_count" => count($sum)
+            ]);
+    }
+
+    /* ============ make a backup 26 June 2021 START =========================*/
+    public function backupInsertPost(){
+
+        $post = Post::latest()->first();
+        $file = base_path("DB/postList.sqlite");
+        $con1 = "/* ========= auto backup ".date("Y-m-d H:i:s")." ========= */";
+        $con1 .= "
+INSERT INTO `{$this->post_table}`(`user_id`,`post_title`,`slug`,`post_excerpt`,
+`post_body`,`is_public`,`created_at`,`updated_at`) VALUES(
+    '{$post->user_id}','{$post->post_title}','{$post->slug}',
+    '{$post->post_excerpt}',
+    '{$post->post_body}',
+    '{$post->is_public}','{$post->created_at}','{$post->updated_at}'
+);
+";
+        write2text($file,$con1);
+
+        //======== tags can be more than one
+        $tags = DB::table($this->post_tag_table)
+            ->where("post_id",$post->id)
+            ->get();
+        foreach($tags as $item):
+            $file = base_path("DB/post_link_tag.sqlite");
+            $con2 = "/* ====== auto backup ".date("Y-m-d H:i:s")." ==========*/";
+            $con2 .= "
+INSERT INTO `{$this->post_tag_table}`(`post_id`,`tag_id`,`created_at`,
+`updated_at`) VALUES(
+    '{$item->post_id}','{$item->tag_id}','{$item->created_at}',
+    '{$item->updated_at}');
+";
+            write2text($file,$con2);
+        endforeach;
+
+    }
+
+    public function backupInsertTag(){
+        $tag = Tag::latest()->first();
+
+        $file = base_path("DB/tags.sqlite");
+        $con2 = "/* ===== auto backup ".date("Y-m-d H:i:s"). " ====  */";        
+        $con2 .= "
+INSERT INTO `{$this->tag_table}`(`tag_name`,
+`created_at`,'updated_at') VALUES(
+    '{$tag->tag_name}','{$tag->created_at}','{$tag->updated_at}'
+);
+";
+        write2text($file,$con2);
+    }
+
+    public function backupCount(){
+        $get = DB::table($this->post_read_table)
+                    ->latest()
+                    ->first();
+        $file = base_path("DB/post_read_count.sqlite");
+        $cont = "/* ========= auto backup ".date("Y-m-d H:i:s")." =========*/";
+        $cont .= "
+INSERT INTO `{$this->post_read_table}`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '{$get->post_id}','{$get->os}','{$get->ip}','{$get->device}',
+    '{$get->browser}','{$get->created_at}','{$get->updated_at}');
+";
+        write2text($file,$cont);
+    }
+
+    /* ============ make a backup 26 June 2021 End =========================*/
+
+
 }

@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 
 class VisitorsController extends Controller
 {
+    protected $visitor_table;
+    protected $today_short;
+    protected $today_long;
+
+    public function __construct(){
+        $this->today_short = date("Y-m-d");
+        $this->today_long = date("Y-m-d H:i:s");
+        $this->visitor_table = "visitors";
+    }
     /**
      * Display a listing of the resource.
      *
@@ -60,6 +69,9 @@ class VisitorsController extends Controller
                 'visited_year' => $year,
                 'last_visited_date' => $today
             ]);
+
+        // === make a backup
+        $this->backupInsert();
         endif;
         //return $numToday;
 
@@ -152,4 +164,28 @@ class VisitorsController extends Controller
     {
         //
     }
+
+
+    /*========== make backup 26 June 2021 STAT ================*/
+    public function backupInsert(){
+        $visit = Visitor::latest()->first();
+        $file = base_path("DB/visitors_file.sqlite");
+        $con2 = "/* ========= auto script ".date("Y-m-d H:i:s");
+        $con2 .= " ====== to {$this->visitor_table}*/";
+        $con2 .= "
+INSERT INTO `{$this->visitor_table}` (`client_ip`,`client_os`,
+`client_browser`,`visited_month`,`visited_year`,
+`last_visited_date`) VALUES (
+ '{$visit->client_ip}',                             
+'{$visit->client_os}',                                          
+'{$visit->client_browser}',                        
+'{$visit->visited_month}',                
+'{$visit->visited_year}',                 
+'{$visit->last_visited_date}');                                          
+
+";
+        write2text($file,$con2);
+    }
+    /*========== make backup 26 June 2021 End ================*/
 }
+

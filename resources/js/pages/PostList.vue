@@ -22,6 +22,10 @@
                         <b-icon icon="eye-fill"></b-icon>
                         {{po.read_count}}
                     </span>
+                    <span class="badge badge-info" v-if="po.comments.length != 0">
+                        <b-icon icon="chat-left-text"></b-icon>
+                        {{po.comments.length}}
+                    </span>
                 </div>
             </div>
             <div v-html="po.post_excerpt" class="mb-2">{{po.post_excerpt}}</div>
@@ -61,7 +65,7 @@
                         </div>
                     </li>
                     <li class="page-list" v-for="li in posts.links">
-                        <a href="" class="page-link"
+                        <a href="" class="page-link p-2"
                            v-html="li.label" 
                             v-if="li.active != true && li.url != null" 
                             @click.prevent="setGoPage(li.url)">

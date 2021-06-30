@@ -21,10 +21,10 @@
                 Back Home
             </a>
         </form>
-        <a href="forgot-password" 
+        <a href="/forgot-password" 
         class="forgot-password-link">Forgot password?</a>
         <p class="login-card-footer-text">Don't have an account? 
-        <a href="" class="text-reset">Register here</a></p>
+        <a href="/register" class="text-reset">Register here</a></p>
           <b-modal title="server said: "
             ref="onOk" centered @ok="closeBox" ok-only>
             <div v-html="res_status">

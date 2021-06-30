@@ -16,13 +16,26 @@ class CreateCommentsTable extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
             $table->foreignId("user_id");
-            $table->foreignId("post_id");
             $table->string("ip");//will keep an ip
-            $table->text("comment_msg");
+            $table->string("comment_title");
+            $table->text("comment_body");
+            $table->integer("reply_count")->nullable()->default(0);
             $table->dateTime("replied_at")->nullable()->default(0);
             $table->timestamps();
 
-           // $table->unique(["user_id","post_id"]);
+            $table->foreign("user_id")->references("id")
+                                        ->on("users")
+                                        ->onDelete("cascade");
+        });
+
+
+        Schema::create('comment_post', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId("user_id");
+            $table->foreignId("comment_id");
+            $table->foreignId("post_id");
+            $table->timestamps();
+
             $table->foreign("user_id")->references("id")
                                         ->on("users")
                                         ->onDelete("cascade");
@@ -31,7 +44,11 @@ class CreateCommentsTable extends Migration
                                         ->on("posts")
                                         ->onDelete("cascade");
 
+            $table->foreign("comment_id")->references("id")
+                                        ->on("comments")
+                                        ->onDelete("cascade");
         });
+            
     }
 
     /**
@@ -42,5 +59,6 @@ class CreateCommentsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('comments');
+        Schema::dropIfExists('comment_post');
     }
 }

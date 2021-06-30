@@ -20,6 +20,10 @@ class SongController extends Controller
      * @return \Illuminate\Http\Response
      */
     protected $canEdit;
+
+    protected $song_table;
+    protected $artist_table;
+    protected $album_table;
     /**
      * undocumented function
      *
@@ -32,6 +36,10 @@ class SongController extends Controller
 
         $this->artist = Artist::where("name", request()->artist)->first();
         $this->album = Album::where("name",request()->album)->first();
+
+        $this->song_table = "songs";
+        $this->artist_table = "artists";
+        $this->album_table = "albums";
     }
     
     public function index()
@@ -110,7 +118,7 @@ class SongController extends Controller
 
         //$post_date = date("Y-m-d H:i:s",now())
         $create_song = Song::create([
-            "name" => $song,
+            "name" => xx_clean($song),
             "user_id" => Auth::user()->id,
             "artist_id" => $ar_id,
             "album_id" => $al_id,
@@ -118,6 +126,9 @@ class SongController extends Controller
             "cover" => request()->cover,
             "posted_at" => now()
         ]);
+
+        //===== backup
+        $this->backupInsertSong();
         
         $msg = "<span class=\"badge badge-success\">Success : Data has been 
             created!</span>";
@@ -130,9 +141,12 @@ class SongController extends Controller
         $al_id = 0;
         if(!$album):
             $album = Album::create([
-                "name" => $name
+                "name" => xx_clean($name)
             ]);
             $al_id = $album->id;
+
+            // backup
+            $this->backupInsertAlbum();
         else:
             $al_id = $album->id;
        endif; 
@@ -144,9 +158,10 @@ class SongController extends Controller
         $ar_id = 0;
         if(!$artist):
             $artist = Artist::create([
-                "name" => $name
+                "name" => xx_clean($name)
             ]);
             $ar_id = $artist->id;
+            $this->backupInsertArtist();
         else:
             $ar_id = $artist->id;
        endif; 
@@ -198,7 +213,7 @@ class SongController extends Controller
 
         //$post_date = date("Y-m-d H:i:s",now())
         $update_song = Song::where("id",$id)->update([
-            "name" => $song,
+            "name" => xx_clean($song),
             "artist_id" => $ar_id,
             "album_id" => $al_id,
             "url" => request()->url,
@@ -225,4 +240,56 @@ class SongController extends Controller
             deleted!</span>";
        return response()->json(["msg" => $msg]);
     }
+
+    /* =========== make backup START =======================*/
+
+    public  function backupInsertSong(){
+        $song = Song::latest()->first();
+        $file = base_path("DB/Song_list.sqlite");
+        $content = "/* ============== Auto back up ".date("Y-m-d H:i:s");
+        $content .= " ========= to {$this->song_table} */";
+        $content .= "
+INSERT INTO `{$this->song_table}`(`artist_id`,`album_id`,`user_id`,
+`name`,`posted_at`,`cover`,`url`,`created_at`,`updated_at`) VALUES(
+    '{$song->artist_id}','{$song->album_id}','{$song->user_id}','{$song->name}',
+    '{$song->posted_at}','{$song->cover}','{$song->url}','{$song->created_at}',
+    '{$song->updated_at}'
+);
+
+";
+    write2text($file,$content);
+    }
+
+    public function backupInsertArtist(){
+        
+        $ar = DB::table($this->artist_table)->latest()->first();
+        $file = base_path("DB/Artist_list.sqlite");
+        $con1 = "/* ========= auto script ".date("Y-m-d H:i:s");
+        $con1 .= " ====== to {$this->artist_table}*/";
+        $con1 .= "
+INSERT INTO `{$this->artist_table}`(`name`,`created_at`,`updated_at`) 
+VALUES(
+'{$ar->name}','{$ar->created_at}','{$ar->updated_at}'
+);
+";
+        write2text($file,$con1);
+    }
+
+
+    public function backupInsertAlbum(){
+        $ab = DB::table($this->album_table)->latest()->first();
+        $file = base_path("DB/Album_list.sqlite");
+
+        $con2 = "/* ========= auto script ".date("Y-m-d H:i:s");
+        $con2 .= " ====== to {$this->album_table}*/";
+        $con2 .= "
+INSERT INTO `{$this->album_table}`(`name`,`created_at`,`updated_at`) 
+VALUES(
+'{$ab->name}','{$ab->created_at}','{$ab->updated_at}'
+);
+";
+        write2text($file,$con2);
+    }
+    /* =========== make backup End =======================*/
+
 }

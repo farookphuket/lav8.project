@@ -9,6 +9,13 @@ use Illuminate\Http\Request;
 
 class PhotosController extends Controller
 {
+
+
+    protected $photo_table;
+
+    public function __construct(){
+        $this->photo_table = "photos";
+    }
     /**
      * Display a listing of the resource.
      *
@@ -54,6 +61,10 @@ class PhotosController extends Controller
             "embed" => $embed,
             "user_id" => Auth::user()->id
         ]);
+
+        //========= make a backup 
+        $this->backupInsertPhoto();
+
         $msg = "<span class=\"badge badge-success\">
             Success : item has been save!</span>";
         return response()->json([
@@ -126,4 +137,24 @@ class PhotosController extends Controller
             "msg" => $msg
         ]);
     }
+
+    /* ==================== backup photo 27 June 2021 START =================*/ 
+    public function backupInsertPhoto(){
+        $ph = Photo::latest()->first();
+        $file = base_path("DB/photo_list.sqlite");
+        $cont = "/* ================= backup `{$this->photo_table}` ";
+        $cont .= " ======  ".date("Y-m-d H:i:s")." =============== */";
+        $cont .= "
+INSERT INTO `{$this->photo_table}`(`user_id`,`title`,`embed`,
+`created_at`,`updated_at`) VALUES(
+    '{$ph->user_id}','{$ph->title}','{$ph->embed}',
+    '{$ph->created_at}','{$ph->updated_at}');
+";
+        write2text($file,$cont);
+    }
+
+    
+    /* ==================== backup photo 27 June 2021 END ===================*/ 
+
+
 }

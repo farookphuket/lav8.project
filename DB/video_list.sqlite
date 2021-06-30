@@ -262,3 +262,12 @@ encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
 
 '2021-03-23 09:09:24',
 '2021-03-23 09:09:28');
+
+ /* =========== auto script START 2021-06-27 15:43:49 pm  ==================== */
+ /* ================= backup `videos`  ======  2021-06-27 15:43:49 =============== */
+INSERT INTO `videos`(`user_id`,`title`,`embed`,
+`created_at`,`updated_at`) VALUES(
+    '3','สารคดี สำรวจโลก','<iframe width="560" height="315" src="https://www.youtube.com/embed/Uvh31kHDtSc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    '2021-06-27 15:43:49','2021-06-27 15:43:49');
+ 
+ /* ======== auto script 2021-06-27 15:43:49 pm END ========= */

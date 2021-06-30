@@ -22,7 +22,11 @@
                             </a>
                             <div class="card-body">
                                 <span class="badge badge-info">
-                                    {{smartTitle(so.name)}} - {{so.artist.name}}
+                                    <a href="" :title="so.name" 
+                                        style="font-weight:bold;color:white;">
+                                        {{smartTitle(so.name)}}
+                                    </a>&nbsp;
+                                     - {{so.artist.name}}
                                 </span>
                                     <p class="pt-2">
                                         post by 

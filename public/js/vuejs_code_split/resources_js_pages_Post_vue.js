@@ -79,7 +79,6 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     openPost: function openPost(theLink) {
-      this.getPostList();
       var url = "/posts/".concat(theLink);
       location.href = url;
     },
@@ -104,6 +103,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
 //
 //
 //
@@ -900,7 +903,23 @@ var render = function() {
                     )
                   ],
                   1
-                )
+                ),
+                _vm._v(" "),
+                po.comments.length != 0
+                  ? _c(
+                      "span",
+                      { staticClass: "badge badge-info" },
+                      [
+                        _c("b-icon", { attrs: { icon: "chat-left-text" } }),
+                        _vm._v(
+                          "\n                    " +
+                            _vm._s(po.comments.length) +
+                            "\n                "
+                        )
+                      ],
+                      1
+                    )
+                  : _vm._e()
               ])
             ]),
             _vm._v(" "),
@@ -1014,7 +1033,7 @@ var render = function() {
                     ? _c(
                         "a",
                         {
-                          staticClass: "page-link",
+                          staticClass: "page-link p-2",
                           attrs: { href: "" },
                           domProps: { innerHTML: _vm._s(li.label) },
                           on: {

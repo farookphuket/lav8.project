@@ -1,142 +1,85 @@
 <template>
-
-
-  <div>
-
-    <div class="comment-main">
-      <h1 class="text-center">leave a Comment </h1>
-
-      <form action="">
-        <div class="form-group">
-          <jodit-editor
-            height=350
-            v-model="comment"></jodit-editor>
-          
+    <div class="container-fluid">
+        <div class="card-header">
+            <h2 class="card-title">new comment</h2>
         </div>
 
-        <div class="clearfix">
-          <div class="float-right">
-            <button class="btn btn-primary"
-              @click.prevent="sentComment(editId)">
-              Save
-            </button></div>
+        <comment-form :post_id="post_id" @getPostComment="getPostComment($event)"
+            ></comment-form>
+        <comment-list 
+            @getPostComment="getPostComment($event)"
+            :comments="comments" :owner_id="owner_id"
+            @del="del($event)"
+            ></comment-list>
+        <div class="row">
+            <div class="col-lg-12" style="margin-top:4em;">
+                <div v-html="res_status">{{res_status}}</div>
+            </div>
         </div>
-      </form>
     </div>
 
-    <b-modal
-      title="response message :"
-      ref="onOk"
-      @ok="modClose"
-      ok-only>
-      <div v-html="res_status">
-        {{res_status}}
-      </div>
-    </b-modal>
-
-  <!-- comment list will wrap in div.container -->
-    <comment-list 
-      @delMyComment="delMyComment($event)"
-      :comments="comments"
-      @rePlyTo="rePlyTo($event)"
-      ></comment-list>
-  <!-- comment list will wrap in div.container -->
-
-  </div>
 </template>
 
-<style scoped>
-.comment-main{
-  padding:0;
-  margin-top:50px;
-  margin-bottom:50px;
-}
-
-@media only screen and (max-width: 480px){
-
-    .comment-main{
-      padding:0;
-      margin-top:90px;
-    }
-
-}
-
-</style>
 <script>
+import CommentForm from './CommentForm.vue'
 import CommentList from './CommentList.vue'
-import JoditEditor from 'jodit-vue'
 export default{
-  name:"Comment",
-  props:["post"],
-  components:{
-    CommentList,
-  },
-  data(){
-    return{
-      editId:0,
-      comment:'',
-      post_id:this.post.id,
-      comments:[],
-      res_status:'',
-
-
-    }
-  },
-  mounted(){
-    this.getCommentList()
-  },
-  methods:{
-
-    sentComment(id){
-      let url = ""
-      let data = {
-        comment:this.comment,
-        post_id:this.post_id
-      }
-      if(id){
-
-      }else{
-        url = `/member/comments`
-        axios.post(url,data)
-          .then(res=>{
-            this.res_status = res.data.msg
-            this.$refs["onOk"].show()
-          })
-          .catch(err=>{
-            alert('Error ! please check your input')
-            
-          })
-
-      }
+    name:"CommentMember",
+    props:["post_id","owner_id"],
+    components:{
+        CommentForm,
+        CommentList,
     },
-    getCommentList(page){
-      let url = `/member/getPostComment/${this.post_id}`;
-      axios.get(url)
-        .then(res=>{
-          this.comments = res.data.comments
-        })
+    data(){
+        return{
+            comments:'',
+            res_status:'',
+        }
     },
-    modClose(){
+    mounted(){
 
-      this.comment = ''
-      this.getCommentList()
+        this.getPostComment()
+
     },
-    rePlyTo(id){
-    //  alert('cool!')
-      this.getCommentList()
+    methods:{
+        getPostComment(page){
+            this.checkPage()
+            this.$cookies.set("post_page_id",this.post_id)
+            let url = ''
+            if(page){
+                url = page+"&post_id="+this.post_id
+                this.$cookies.set("m_comment_old_page",url)
+            }
+            url = this.$cookies.get("m_comment_old_page")
+            if(!url){
+                url = `/member/getPostComment?post_id=${this.post_id}`
+            }
+            axios.get(url)
+                .then(res=>{
+                    //console.log(res)
+                    this.comments = res.data.comments
+                })
+
+        },
+        checkPage(){
+            let old_page = parseInt(this.$cookies.get("post_page_id"))
+            if(old_page != this.post_id){
+                this.$cookies.set("m_comment_old_page","")
+            }
+            console.log(this.$cookies.get("m_comment_old_page"))
+        },
+        del(id){
+
+            let url = `/member/comments/${id}`
+            axios.delete(url)
+                .then(res=>{
+                    this.res_status = res.data.msg
+                })
+            setTimeout(()=>{
+                this.res_status = ''
+                this.getPostComment()
+            },3200)
+        },
     },
-    delMyComment(id){
-      let url = `/member/comments/${id}`
-      axios.delete(url)
-        .then(res=>{
-          this.res_status = res.data.msg
-        })
-      this.$refs["onOk"].show()
-    },
-
-
-  }
-
 }
-
 </script>

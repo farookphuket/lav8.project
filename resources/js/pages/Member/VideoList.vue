@@ -17,7 +17,7 @@
                 <div class="card">
                     <div class="card-body">
                         <p>
-                        <a href="" @click.prevent="videoShow(vi.id)">
+                        <a href="" :title="vi.title" @click.prevent="videoShow(vi.id)">
                             {{smartTitle(vi.title,9)}}
                         </a> &middot; 
                             <span class="badge badge-info">

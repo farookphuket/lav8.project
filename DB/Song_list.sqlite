@@ -2512,3 +2512,123 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "2019-05-17 21:21:03",
 "2021-03-04 20:21:04"
 );
+
+ /* =========== auto script START 2021-06-25 21:30:48 pm  ==================== */
+ /* ============== Auto back up 2021-06-25 21:30:48 ========= to songs */
+INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
+`name`,`posted_at`,`cover`,`url`,`created_at`,`updated_at`) VALUES(
+    '87','87','1','ระเบิดเวลา',
+    '2021-06-23 20:06:34','https://i.ibb.co/wQwPk3X/image.jpg','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/CMG8czbCzT7FvbYU-?lang=th&g_f=personal','2021-06-25 21:30:48',
+    '2021-06-25 21:30:48'
+);
+
+ 
+ /* ======== auto script 2021-06-25 21:30:48 pm END ========= */
+
+ /* =========== auto script START 2021-06-25 21:40:36 pm  ==================== */
+ /* ============== Auto back up 2021-06-25 21:40:36 ========= to songs */
+INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
+`name`,`posted_at`,`cover`,`url`,`created_at`,`updated_at`) VALUES(
+    '88','88','1','หมาหยอกไก่',
+    '2021-06-23 21:06:08','https://www.naewna.com/uploads/news/source/528601.jpg','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/n-uePRNnRKgyvNnF-?lang=th&g_f=personal','2021-06-25 21:40:36',
+    '2021-06-25 21:40:36'
+);
+
+ 
+ /* ======== auto script 2021-06-25 21:40:36 pm END ========= */
+
+ /* =========== auto script START 2021-06-25 21:44:07 pm  ==================== */
+ /* ============== Auto back up 2021-06-25 21:44:07 ========= to songs */
+INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
+`name`,`posted_at`,`cover`,`url`,`created_at`,`updated_at`) VALUES(
+    '56','56','1','ปากดี',
+    '2021-06-25 19:51:06','http://p.kg.qq.com/photo_new/T002RM000002ldmvE1EIIHh.jpg/300?max_age=2592000','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/7PBm-0Z70XudvZ7o-?lang=th&g_f=personal','2021-06-25 21:44:07',
+    '2021-06-25 21:44:07'
+);
+
+ 
+ /* ======== auto script 2021-06-25 21:44:07 pm END ========= */
+
+ /* =========== auto script START 2021-06-25 21:50:45 pm  ==================== */
+ /* ============== Auto back up 2021-06-25 21:50:45 ========= to songs */
+INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
+`name`,`posted_at`,`cover`,`url`,`created_at`,`updated_at`) VALUES(
+    '85','85','1','เธอปันใจ',
+    '2021-06-25 19:06:58','https://th-test-11.slatic.net/p/418ed1f9f4d2921e6892c1839e5a1c95.jpg_720x720q80.jpg','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/GpC51bzGbJVZvzSN-?lang=th&g_f=personal','2021-06-25 21:50:45',
+    '2021-06-25 21:50:45'
+);
+
+ 
+ /* ======== auto script 2021-06-25 21:50:45 pm END ========= */
+
+ /* =========== auto script START 2021-06-25 22:01:13 pm  ==================== */
+ /* ============== Auto back up 2021-06-25 22:01:13 ========= to songs */
+INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
+`name`,`posted_at`,`cover`,`url`,`created_at`,`updated_at`) VALUES(
+    '89','89','1','Home',
+    '2021-06-25 20:06:24','http://www.michaelbuble.com/sites/g/files/g2000002856/f/201811/Buble_love_WebsiteAssets_111518_FBOG.png','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/g4lqdrVgrYzvvVoX-HomeAlbumVersion?lang=th&g_f=personal','2021-06-25 22:01:13',
+    '2021-06-25 22:01:13'
+);
+
+ 
+ /* ======== auto script 2021-06-25 22:01:13 pm END ========= */
+
+ /* =========== auto script START 2021-06-25 22:06:32 pm  ==================== */
+ /* ============== Auto back up 2021-06-25 22:06:32 ========= to songs */
+INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
+`name`,`posted_at`,`cover`,`url`,`created_at`,`updated_at`) VALUES(
+    '90','90','1','You''re The Inspiration',
+    '2021-06-25 20:06:32','https://d3el53au0d7w62.cloudfront.net/wp-content/uploads/2013/08/ven18_ja_09aug_chicago-594x600.jpg','','2021-06-25 22:06:32',
+    '2021-06-25 22:06:32'
+);
+
+ 
+ /* ======== auto script 2021-06-25 22:06:32 pm END ========= */
+
+ /* =========== auto script START 2021-06-25 22:12:22 pm  ==================== */
+ /* ============== Auto back up 2021-06-25 22:12:22 ========= to songs */
+INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
+`name`,`posted_at`,`cover`,`url`,`created_at`,`updated_at`) VALUES(
+    '91','91','1','กบ',
+    '2021-06-25 20:06:40','https://s.mxmcdn.net/images-storage/albums/6/6/4/9/0/7/26709466_800_800.jpg','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/-nLF79I-9kQWvIoJ-?lang=th&g_f=personal','2021-06-25 22:12:22',
+    '2021-06-25 22:12:22'
+);
+
+ 
+ /* ======== auto script 2021-06-25 22:12:22 pm END ========= */
+
+ /* =========== auto script START 2021-06-25 22:15:12 pm  ==================== */
+ /* ============== Auto back up 2021-06-25 22:15:12 ========= to songs */
+INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
+`name`,`posted_at`,`cover`,`url`,`created_at`,`updated_at`) VALUES(
+    '41','41','1','สิว',
+    '2021-06-25 20:06:54','http://p.kg.qq.com/photo_new/T002RM000003ocx8l0T1ccL.jpg/300?max_age=2592000','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/k_qlXtwkt-8PvwNn-?lang=th&g_f=personal','2021-06-25 22:15:12',
+    '2021-06-25 22:15:12'
+);
+
+ 
+ /* ======== auto script 2021-06-25 22:15:12 pm END ========= */
+
+ /* =========== auto script START 2021-06-25 22:19:11 pm  ==================== */
+ /* ============== Auto back up 2021-06-25 22:19:11 ========= to songs */
+INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
+`name`,`posted_at`,`cover`,`url`,`created_at`,`updated_at`) VALUES(
+    '92','92','1','ขอได้ไหม',
+    '2021-06-26 21:06:02','https://i1.sndcdn.com/artworks-000053498087-qp6emt-t500x500.jpg','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/_ksOHDK_DnE3vK_k-?lang=th&g_f=personal','2021-06-25 22:19:11',
+    '2021-06-25 22:19:11'
+);
+
+ 
+ /* ======== auto script 2021-06-25 22:19:11 pm END ========= */
+
+ /* =========== auto script START 2021-06-25 22:25:28 pm  ==================== */
+ /* ============== Auto back up 2021-06-25 22:25:28 ========= to songs */
+INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
+`name`,`posted_at`,`cover`,`url`,`created_at`,`updated_at`) VALUES(
+    '53','53','1','รักยิ้ม',
+    '2021-06-25 21:06:44','http://p.kg.qq.com/photo_new/T002RM000sg003pnPFP2HHGab.jpg/300?max_age=2592000','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/20i3RPQ2P8-svQ2s-?lang=th&g_f=personal','2021-06-25 22:25:28',
+    '2021-06-25 22:25:28'
+);
+
+ 
+ /* ======== auto script 2021-06-25 22:25:28 pm END ========= */

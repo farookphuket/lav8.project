@@ -33,7 +33,7 @@
                             <email-req></email-req>
                         </div>
 
-                        <p class="login-card-footer-text">Don't have an account? <a href="{{ route('register') }}" class="text-reset">Register here</a></p>
+                        <p class="login-card-footer-text">Don't have an account? <a href="{{ route('register.index') }}" class="text-reset">Register here</a></p>
                         <nav class="login-card-footer-nav">
                             <a href="#!">Terms of use.</a>
                             <a href="#!">Privacy policy</a>

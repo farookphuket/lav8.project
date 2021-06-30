@@ -107,14 +107,6 @@ class VisitorsController extends Controller
     public function destroy($id)
     {
 
-        try{
-            $ids = explode(",",$id);
-            Visitor::whereIn('id',$ids)->delete();
-        }catch(e){
-
-            }
-
-
         $msg = "<span class=\"badge badge-success\">
             the item has been remove!</span>";
         return response()->json([

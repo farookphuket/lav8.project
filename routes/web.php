@@ -12,6 +12,10 @@ use App\Http\Controllers\ArtistController as pArtist;
 use App\Http\Controllers\AlbumController as pAlbum;
 use App\Http\Controllers\VideoController as pVideo;
 use App\Http\Controllers\PhotosController as pPhotos;
+use App\Http\Controllers\RegisterController as pRegist;
+
+// added 29 June 2021
+use App\Http\Controllers\CommentsController as pComment;
 
 
 /* MEMBER */
@@ -57,6 +61,20 @@ Route::get('/posts/{post:slug}',[PubPost::class,'show'])->name('posts.show');
 
 Route::get("/about",[PubPost::class,'about'])->name('posts.about');
 Route::get("/donate-me",[PubPost::class,'donate'])->name('posts.donate');
+
+/* ============= public comment  29 June 2021 ======================*/
+Route::resource("/comment",pComment::class);
+Route::get("/getPostComments",[pComment::class,"getPostComments"])
+    ->name("comments.getPostComments");
+/* ============= public comment  29 June 2021 ======================*/
+
+/* =============== Register 28 June 2021====================*/
+Route::resource("/register",pRegist::class);
+Route::post("/sentUserConfirm",[pRegist::class,"sentUserConfirm"])
+    ->name("register.sentUserConfirm");
+Route::get("/userHasConfirmed/{token}",[pRegist::class,"userHasConfirmed"])
+    ->name("register.userHasConfirmed");
+/* =============== Register 28 June 2021====================*/
 
 Route::resource('/album',pAlbum::class);
 Route::resource('/artist',pArtist::class);
@@ -115,7 +133,7 @@ Route::prefix('member')->name('member.')->middleware('auth')
     // will be update for user to be easy to contact admin
     Route::get('/about',[MemberPost::class,"about"])->name('posts.about');
 
-    Route::get('/getPostComment/{post_id}',[MCMT::class,'getPostComment'])
+    Route::get('/getPostComment',[MCMT::class,'getPostComment'])
         ->name('comments.getPostComment');
 
     Route::resource("/templates",TPM::class);

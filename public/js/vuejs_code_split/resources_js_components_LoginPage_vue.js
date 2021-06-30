@@ -277,7 +277,7 @@ var render = function() {
         "a",
         {
           staticClass: "forgot-password-link",
-          attrs: { href: "forgot-password" }
+          attrs: { href: "/forgot-password" }
         },
         [_vm._v("Forgot password?")]
       ),
@@ -308,7 +308,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "login-card-footer-text" }, [
       _vm._v("Don't have an account? \n    "),
-      _c("a", { staticClass: "text-reset", attrs: { href: "" } }, [
+      _c("a", { staticClass: "text-reset", attrs: { href: "/register" } }, [
         _vm._v("Register here")
       ])
     ])

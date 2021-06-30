@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Session;
 
 class TemplatesController extends Controller
 {
+    protected $template_table = "templates";
     /**
      * Display a listing of the resource.
      *
@@ -80,20 +81,18 @@ class TemplatesController extends Controller
             "body" => ["required","min:8"]
         ]);
 
-        if(!$valid):
-            //  error is show in the form status
+        Template::create([
+            "user_id" => Auth::user()->id,
+            "title" => xx_clean(request()->title),
+            "section" => xx_clean(request()->section),
+            "excerpt" => xx_clean(request()->excerpt),
+            "body" => xx_clean(request()->body)
+        ]); 
 
-        else:
-            Template::create([
-                "user_id" => Auth::user()->id,
-                "title" => request()->title,
-                "section" => request()->section,
-                "excerpt" => xx_clean(request()->excerpt),
-                "body" => xx_clean(request()->body)
-            ]); 
-            $msg = "<span class=\"alert alert-success\">Success : item has been created</span>";
-        endif;
+        // --- make backup 
+        $this->backupInsertTemplate();
 
+        $msg = "<span class=\"alert alert-success\">Success : item has been created</span>";
 
 
 
@@ -161,11 +160,13 @@ class TemplatesController extends Controller
         $this->validTemplate($template->id);
         Template::where("id",$template->id)
             ->update([
-                "title" => request()->title,
+                "title" => xx_clean(request()->title),
                 "excerpt" => xx_clean(request()->excerpt),
                 "body" => xx_clean(request()->body),
                 "updated_at" => now()
             ]);
+        //---- make a backup 
+        $this->backupUpdateTemplate($template->id);
         $msg = "<span class=\"alert alert-success\">Success : item has been updated</span>";
         return response()->json([
             "msg" => $msg
@@ -190,4 +191,43 @@ class TemplatesController extends Controller
         ],200);
 
     }
+
+    /* ============= make backup template ==================================*/
+    public function backupInsertTemplate(){
+        $tp = Template::latest()->first();
+        $file = base_path("DB/template.sqlite");
+        $cont = "/* ======= backup template {$tp->section} ================*/";
+        $cont .= "\n/* ======= date ".date("Y-m-d H:i:s")." ==================*/";
+        $cont .= "
+INSERT INTO `{$this->template_table}`(`user_id`,`section`,`title`,`excerpt`,
+`body`,`created_at`,`updated_at`) VALUES(
+    '{$tp->user_id}',
+    '{$tp->section}',
+    '{$tp->title}',
+    '{$tp->excerpt}',
+    '{$tp->body}',
+    '{$tp->created_at}',
+    '{$tp->updated_at}');
+\n
+";
+        write2text($file,$cont);
+    }
+
+    public function backupUpdateTemplate($id){
+        $get = Template::find($id);
+        $file = base_path("DB/template.sqlite");
+        $cont = "/* === update of template section {$get->section} ========*/";
+        $cont .= "\n/* === update of template section {$get->section} =====*/";
+        $cont .= "
+UPDATE `{$this->template_table}` SET title='{$get->title}',
+section='{$get->section}',
+excerpt='{$get->excerpt}',
+body='{$get->body}',
+updated_at='{$get->updated_at}'
+	WHERE id={$id};
+";
+write2text($file,$cont);
+    }
+
+    /* ============= make backup template ==================================*/
 }

@@ -8,9 +8,18 @@ window.Vue = require('vue');
 
 import moment from 'moment';
 
+// ============== 27 June 2021 ================================================
+import Form from './core/Form';
+import CustomText from './core/CustomText';
 
+window.Form = Form;
+window.CustomText = CustomText;
+
+// ============================================================================
 
 import Vue from 'vue'
+
+
 
 // date 10 Jan 2021 start using vue-cookies
 import VueCookies from 'vue-cookies';
@@ -58,8 +67,14 @@ Vue.component('DonateMe',()=>import( './pages/DonateMe.vue'));
 Vue.component('Pubvideo',()=>import( './pages/Video.vue'));
 Vue.component('PubPhoto',()=>import( './pages/Photo.vue'));
 Vue.component('PubPost',()=>import( './pages/Post.vue'));
+
+// added 29 June 2021
+Vue.component('PubComment',()=>import( './pages/Comment.vue'));
+
+
 Vue.component('LoginForm',()=>import( './components/LoginForm.vue'));
 Vue.component('LoginPage',()=>import( './components/LoginPage.vue'));
+Vue.component('RegisterForm',()=>import('./components/RegisterForm.vue'))
 
 
 //Vue.component('resetpass',require('./components/password-reset-form.vue').default);

@@ -6,6 +6,10 @@
         <div class="container">
             <form action="">
                 <div class="form-group">
+                    <input v-model="title" class="form-control" 
+                    type="text" name="title">
+                </div>
+                <div class="form-group">
                     <jodit-editor
                         v-model="comment"
                         height=550></jodit-editor>
@@ -50,6 +54,7 @@ export default{
         return{
             commentPostAll:[],
             comment:'',
+            title:'',
             cmId:0,
             res_status:'',
             hasClick:true
@@ -59,8 +64,17 @@ export default{
         this.getCommentAll()
     }
     ,methods:{
-        getCommentAll(){
-            let url = `/admin/getPostCommentAll`
+        getCommentAll(page){
+            let url = ''
+            if(page){
+                url = page
+                this.$cookies.set("acomment_old",url)
+            }
+            url = this.$cookies.get("acomment_old")
+            if(!url){
+                url = `/admin/getPostCommentAll`
+            }
+
             axios.get(url)
                 .then(res=>{
                    // console.log(res.data)
@@ -71,7 +85,8 @@ export default{
             let url = `/admin/comments/${id}`
             axios.get(url)
                 .then(res=>{
-                    this.comment = res.data.comment.comment_msg;
+                    this.title = res.data.comment.comment_title;
+                    this.comment = res.data.comment.comment_body;
                     this.cmId = res.data.comment.id
                     this.hasClick = false
                 })
@@ -80,7 +95,8 @@ export default{
         saveReply(id){
             let url = `/admin/comments/${id}`
             let data = {
-                comment:this.comment,
+                comment_title:this.title,
+                comment_body:this.comment,
                 id:this.cmId
 
             }
@@ -108,6 +124,7 @@ export default{
         },
         modClose(){
             this.getCommentAll()
+            this.title = ''
             this.comment = ''
             this.cmId = 0
             this.hasClick = 0

@@ -47,13 +47,19 @@
         @endforeach
     </div>
   @endif
-</article>
+
 
 <hr>
-  <div id="app">
+<div class="col-lg-12" style="margin-top:4em;">&nbsp;</div>
+
     <comment-member
-      :post="{{$post}}"
+      :post_id="{{$post->id}}" 
+    :owner_id="{{Auth::user()->id}}"
       ></comment-member>
+    </div>
     <Visitors></Visitors>
-  </div>
+
+</article>
+
+
 @endsection
