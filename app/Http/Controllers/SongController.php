@@ -9,6 +9,9 @@ use DB;
 
 class SongController extends Controller
 {
+    protected $song_read_table = "read_song";
+    protected $song_table = "songs";
+    
     /**
      * Display a listing of the resource.
      *
@@ -74,44 +77,54 @@ class SongController extends Controller
      */
     public function show(Song $song)
     {
-        //
+        $song = Song::find($song->id);
+
+        // === make a count 
+        $this->readCount($song->id); 
+        return response()->json([
+            "url" => $song->url
+        ]);
     }
 
     public function readCount($song_id){
+        // get info of reading song
+        $song = Song::find($song_id);
 
-        $read_time = 0;
-        $today = date("Y-m-d");
-        $cur_ip = getUserIp();
-        $cur_browser = getUserBrowser();
+        //prepare the data 
+        $count_data = [
+            "song_id" => $song->id,
+            "readed_at" => date("Y-m-d"),
+            "os" => getUserOs(),
+            "browser" => getUserBrowser(),
+            "ip" => getUserIp(),
+            "created_at" => now(),
+            "updated_at" => now()
+        ]; 
 
-        $cur_os = getUserOs();
-        $get = DB::table('read_song')->where("song_id",$song_id)
-                        ->where("readed_at",$today)
-                        ->where("ip",$cur_ip)
+        // --- check if this person's ip who click this song link 
+        // has count today
+        $hasCount = DB::table($this->song_read_table)
+                        ->whereDate("created_at","=",date("Y-m-d"))
+                        ->where("ip",getUserIp())
+                        ->where("song_id",$song->id)
                         ->get();
-        if(count($get) == 0):
-            DB::table("read_song")->insert([
-                "song_id" => $song_id,
-                "ip" => $cur_ip,
-                "os" => $cur_os,
-                "readed_at" => $today,
-                "browser" => $cur_browser,
-                "created_at" => now(),
-                "updated_at" => now()
-            ]);
-            $get = DB::table('read_song')->where("song_id",$song_id)->get();
-            $read_time = count($get);
+        if(count($hasCount) == 0):
+            
+            DB::table($this->song_read_table)
+                ->insert($count_data);
 
-            Song::where("id",$song_id)->update([
-                "read_count" => $read_time
-            ]);
+            $sum = DB::table($this->song_read_table)
+                ->where("song_id",$song->id)
+                ->get();
+            // update the last count to song table field
+            Song::where("id",$song->id)
+                ->update([
+                    "read_count" => count($sum)
+                ]);
+
+            // then make a backup to file 
+            $this->backupSongReadCount();
         endif;
-            $url = "";
-            $get = Song::find($song_id);
-            $url = $get->url;
-        return response()->json([
-            "url" => $url,
-        ]);
     }
     /**
      * Show the form for editing the specified resource.
@@ -146,4 +159,23 @@ class SongController extends Controller
     {
         //
     }
+    /* ================ backup song read count 20 June 2021 =================*/
+    public function backupSongReadCount(){
+        // only get the last item
+        $get = DB::table($this->song_read_table)
+                    ->latest()->first();
+        $file = base_path("DB/song_read_count.sqlite");
+        $cont = "/* ============ backup for song read count =============*/\n";
+        $cont .= "/* ============ ".date("Y-m-d H:i:s")."  ================*/";
+        $cont .= "
+INSERT INTO `{$this->song_read_table}`(`song_id`,`readed_at`,`os`,`browser`,
+`ip`,`created_at`,`updated_at`) VALUES(
+    '{$get->song_id}','{$get->readed_at}','{$get->os}',
+    '{$get->browser}','{$get->ip}',
+    '{$get->created_at}','{$get->updated_at}');
+";
+        write2text($file,$cont);
+    }
+
+    /* ================ backup song read count 20 June 2021 =================*/
 }

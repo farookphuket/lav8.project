@@ -34,5 +34,11 @@ class SongSeeder extends Seeder
         DB::unprepared(file_get_contents($song));
         $this->command->info("Created song list");
 
+        // read count 
+
+        $song_read = "DB/song_read_count.sqlite";
+        DB::unprepared(file_get_contents($song_read));
+        $this->command->info("Re-Created song read list");
+
     }
 }

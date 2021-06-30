@@ -13,9 +13,14 @@
 
 
 --- 
-## update 28 June 2021 
+## update 30 June 2021 
+
+
 > created backup data for new reset make thing more easy for setup 
 > thing will be automatic backup to file.
+> please note this can be a harmful in the production mode so please 
+> make sure that you do not have any of the sensitive information in any of 
+> your back up file just to prevent from a security hole in your system.
 
 ---
 
