@@ -2,8 +2,8 @@
 @extends('sidebar.sidebar')
 
 
-@section('meta_title',"song page")
 
+@section('meta_title',Request::getHttpHost()." admin SONG section ".Auth::user()->name)
 
 
 

@@ -24,6 +24,9 @@
         </div>
        <div class="card-body">
             <div v-html="co.comment_body">{{co.comment_body}}</div>
+
+       </div>
+       <div class="card-footer">
             <div class="row">
                 <div class="col-md-10">
                     <span>{{co.created_at}}</span>
@@ -31,7 +34,10 @@
                 <div class="col-md-2">
                     <span class="float-right">
                         <b-icon icon="person"></b-icon>
-                        {{co.name}}
+                        <a href="" :title="co.ip">
+                            {{co.name}}
+                        </a>
+
                     </span>
                 </div>
             </div>
@@ -112,10 +118,12 @@ export default{
             axios.get(url)
                 .then(res=>{
                     this.comments = res.data.comments
+
+                    this.objNum = Object.keys(this.comments.data).length
                     //console.log(Object.keys(this.comments.data).length)
                     if(Object.keys(this.comments.data).length >= 2){
                         this.isShow = true
-                        this.objNum = Object.keys(this.comments.data).length
+
                     }
 
                 })

@@ -1,7 +1,8 @@
 @extends('sidebar.sidebar')
 
 
-@section('meta_title',"Post Admin Section ".Auth::user()->name)
+
+@section('meta_title',Request::getHttpHost()." admin POST section ".Auth::user()->name)
 
 @section('tag_in_head')
 

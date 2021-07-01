@@ -1,8 +1,7 @@
 @extends('sidebar.sidebar')
 
 
-@section('meta_title',"Photo ! ".Auth::user()->name)
-
+@section('meta_title',Request::getHttpHost()." PHOTO admin section ".Auth::user()->name)
 
 @section('content')
     <div id="app">

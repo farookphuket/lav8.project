@@ -1,7 +1,7 @@
 @extends('sidebar.sidebar')
 
 
-@section('meta_title',"welcome dude! ".Auth::user()->name)
+@section('meta_title',Request::getHttpHost()." admin COMMENT section ".Auth::user()->name)
 
 @section('tag_in_head')
 

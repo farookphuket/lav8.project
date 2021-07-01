@@ -71,6 +71,9 @@
                         v-model="replyMsg"
                         height="350"></jodit-editor>
 
+                    <span style="margin-top:4em;" v-html="res_status">
+                        {{res_status}}
+                    </span>
                 </div>
                 <button v-else
                     class="btn btn-outline-info btn-sm"
@@ -178,6 +181,7 @@ export default{
             replyItem:[],
             replyMsg:'',
             bReply:true,
+            res_status:'',
         }
     },
     methods:{
@@ -218,9 +222,15 @@ export default{
             axios.post(url,data)
                 .then(res=>{
                     //console.log(res.data.msg)
-                    this.hideReplyForm()
-                    this.$emit("getCommentAll")
+                    this.res_status = res.data.msg
+
                 })
+
+            setTimeout(()=>{
+                this.res_status = ''
+                this.hideReplyForm()
+                this.$emit("getCommentAll")
+            },3200)
         }
     }
 }

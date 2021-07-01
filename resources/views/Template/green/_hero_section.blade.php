@@ -45,6 +45,12 @@
                     website as we will not use any info here.
 
                 </p>
+
+                <p class="animate__animated animate__fadeInUp">
+                <b>Comment</b> system is a simple script that you can make a 
+                comment on post release on 30 June 2021 to make a comment you 
+                may have to <login-form></login-form>.
+                </p>
               <a href="/posts" 
                 class="btn-get-started animate__animated animate__fadeInUp scrollto">
                     view Blog 

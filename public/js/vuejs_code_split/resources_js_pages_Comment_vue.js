@@ -91,6 +91,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "PubComment",
   props: ["post_id"],
@@ -126,11 +132,11 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       axios.get(url).then(function (res) {
-        _this.comments = res.data.comments; //console.log(Object.keys(this.comments.data).length)
+        _this.comments = res.data.comments;
+        _this.objNum = Object.keys(_this.comments.data).length; //console.log(Object.keys(this.comments.data).length)
 
         if (Object.keys(_this.comments.data).length >= 2) {
           _this.isShow = true;
-          _this.objNum = Object.keys(_this.comments.data).length;
         }
       })["catch"](function (err) {
         var ob = Object.values(err);
@@ -268,8 +274,10 @@ var render = function() {
                     "div",
                     { domProps: { innerHTML: _vm._s(co.comment_body) } },
                     [_vm._v(_vm._s(co.comment_body))]
-                  ),
-                  _vm._v(" "),
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-footer" }, [
                   _c("div", { staticClass: "row" }, [
                     _c("div", { staticClass: "col-md-10" }, [
                       _c("span", [_vm._v(_vm._s(co.created_at))])
@@ -281,11 +289,14 @@ var render = function() {
                         { staticClass: "float-right" },
                         [
                           _c("b-icon", { attrs: { icon: "person" } }),
-                          _vm._v(
-                            "\n                        " +
-                              _vm._s(co.name) +
-                              "\n                    "
-                          )
+                          _vm._v(" "),
+                          _c("a", { attrs: { href: "", title: co.ip } }, [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(co.name) +
+                                "\n                        "
+                            )
+                          ])
                         ],
                         1
                       )

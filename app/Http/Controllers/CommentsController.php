@@ -28,6 +28,8 @@ class CommentsController extends Controller
 
     public function getPostComments(){
         $post_id = request()->post_id;
+
+        
         $comments = DB::table($this->comment_post_table)
                 ->where("{$this->comment_post_table}.post_id",$post_id)
                 ->join($this->post_table,$this->post_table.".id","=",
@@ -40,12 +42,29 @@ class CommentsController extends Controller
                     $this->user_table.".name",
                     $this->comment_table.".comment_title",
                     $this->comment_table.".comment_body",
+                    $this->comment_table.".ip",
                     $this->comment_post_table.".created_at"
                 )
                 ->orderBy("{$this->comment_post_table}.created_at","desc")
                 ->paginate(2)
                 ->onEachSide(1);
+         
 
+        /*
+        $comments = DB::table($this->comment_post_table)
+            ->where($this->comment_post_table.".post_id",
+            $post_id)
+            ->join($this->comment_table,"{$this->comment_table}.id","=",
+            $this->comment_post_table.".comment_id")
+            ->select(
+                $this->comment_table.".comment_title",
+                $this->comment_table.".comment_body",
+                $this->comment_post_table.".created_at"
+            )
+            ->orderBy("{$this->comment_post_table}.created_at","desc")
+            ->paginate(2)
+            ->onEachSide(1);
+         */
 
         return response()->json([
             "comments" => $comments

@@ -179,6 +179,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
@@ -191,7 +194,8 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       moment: moment,
       replyItem: [],
       replyMsg: '',
-      bReply: true
+      bReply: true,
+      res_status: ''
     };
   },
   methods: {
@@ -232,10 +236,15 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       };
       axios.post(url, data).then(function (res) {
         //console.log(res.data.msg)
+        _this.res_status = res.data.msg;
+      });
+      setTimeout(function () {
+        _this.res_status = '';
+
         _this.hideReplyForm();
 
         _this.$emit("getCommentAll");
-      });
+      }, 3200);
     }
   }
 });
@@ -811,7 +820,22 @@ var render = function() {
                           },
                           expression: "replyMsg"
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          staticStyle: { "margin-top": "4em" },
+                          domProps: { innerHTML: _vm._s(_vm.res_status) }
+                        },
+                        [
+                          _vm._v(
+                            "\n                    " +
+                              _vm._s(_vm.res_status) +
+                              "\n                "
+                          )
+                        ]
+                      )
                     ],
                     1
                   )

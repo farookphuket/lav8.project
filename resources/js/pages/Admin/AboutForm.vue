@@ -110,35 +110,10 @@ export default{
             if(!this.about.length){
                 this.excerpt = `
                 <div class="container">
-                   <div class="row">
-                       <div class="col-lg-4">
-                        <img class="responsive mb-2" 
-                        src="https://lh3.googleusercontent.com/cfOid3sYJtcVhxh6pXTQ9l2LfCTIDnPXGIY2TidhJRi2bkwzmtlZItSFINgzyFyG2FDXgfFS7bX1AQuzK03HOwJ-67Blc9oHtPD6QdrNpP_avEAYUhYyX6DLwuXKe5P_te8rbr0Ny4w=w1920-h1080" 
-                        alt="your profile picture">
-                        <p class="text-center pt-2">
-                            your profile picture here
-                        </p>
-                       </div>
-                       <div class="col-lg-8">
-                            <h2 class="text-center">you are using default about page</h2>
-                            <div>
-                                <p>
-                                    dear friends if you want to change this page just 
-                                    edit it from the above form.
-                                </p>
-                                <div class="alert alert-warning">
-                                    <h3 class="text-center">
-                                        this will not show anywhere
-                                    </h3>
-                                    <p class="pt-2 mb-2">
-                                    this is the template and will not be shown 
-                                    in anywhere unless you press the Save 
-                                    button 
-                                    </p>
-                                </div>
-                            </div>
-                       </div>
-                   </div>
+                    <h2 class="text-center">Template!</h2>
+                    <p>
+                        you can select the template from the above select form
+                    </p>
                 </div>
                 `
                 this.body = `
@@ -146,48 +121,7 @@ export default{
                     <h2 class="text-center pt-2 mb-2">
                         your teams
                     </h2>
-                    <p class="pt-2">
-                    your company is very cool we work great in all season just 
-                    for nothing.
-                    </p>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <img class="responsive" 
-                            src="https://i.ibb.co/gvMphpd/IMG-20210420-201440.jpg" 
-                            alt="วันหลังลาย">
-                        </div>
-                        <div class="col-lg-4">
-                            <p>
-                                this can be text or you can just delete it
-                            </p>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="video-container">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/q3Sanjl93dQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <p class="pt-2 mb-2">
-                                how do I setup i3wm for manjaro(gnome)
-                            </p>
-                        </div>
-                    </div>
-                    <p class="pt-4">
-                    down here you can put your location map or your contact 
-                    information
-                    </p>
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <b-icon icon="phone"></b-icon>
-                            Tel : +66 95 954-3920
-                        </li>
-                        <li class="list-group-item">
-                            <b-icon icon="envelope"></b-icon>
-                            e-mail : firefrook@gmail.com
-                        </li>
-                        <li class="list-group-item">
-                            <b-icon icon="book-half"></b-icon>
-                            56 m.3 t.lam-suk a.ao-luk Krabi Thailand 81110
-                        </li>
-                    </ul>
+                    <p>tell people about your self</p>
                 </div>
 
                 `
