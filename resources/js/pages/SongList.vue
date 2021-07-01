@@ -13,7 +13,10 @@
                         <p class="card-text">
                             <span>
                                 <b-icon icon="info-circle"></b-icon>  
-                                {{smartTitle(so.name,13)}}
+                                <a href="" :title="so.name">
+                                    {{smartTitle(so.name,13)}}
+                                </a>
+                                
                             </span> &nbsp;
                             <span>
                                 <b-icon icon="person"></b-icon>  
@@ -95,7 +98,7 @@ export default{
     },
 methods:{
             readCount(id){
-             let url = `/readCount/${id}` 
+             let url = `/song/${id}` 
              axios.get(url)
              .then(res=>{
                 //console.log(res.data.url)

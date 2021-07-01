@@ -161,6 +161,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -175,7 +178,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
     readCount: function readCount(id) {
       var _this = this;
 
-      var url = "/readCount/".concat(id);
+      var url = "/song/".concat(id);
       axios.get(url).then(function (res) {
         //console.log(res.data.url)
         window.open(res.data.url, "_blank");
@@ -624,11 +627,14 @@ var render = function() {
                   "span",
                   [
                     _c("b-icon", { attrs: { icon: "info-circle" } }),
-                    _vm._v(
-                      "  \n                            " +
-                        _vm._s(_vm.smartTitle(so.name, 13)) +
-                        "\n                        "
-                    )
+                    _vm._v(" "),
+                    _c("a", { attrs: { href: "", title: so.name } }, [
+                      _vm._v(
+                        "\n                                " +
+                          _vm._s(_vm.smartTitle(so.name, 13)) +
+                          "\n                            "
+                      )
+                    ])
                   ],
                   1
                 ),

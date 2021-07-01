@@ -2566,7 +2566,7 @@ INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
 INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
 `name`,`posted_at`,`cover`,`url`,`created_at`,`updated_at`) VALUES(
     '89','89','1','Home',
-    '2021-06-25 20:06:24','http://www.michaelbuble.com/sites/g/files/g2000002856/f/201811/Buble_love_WebsiteAssets_111518_FBOG.png','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/g4lqdrVgrYzvvVoX-HomeAlbumVersion?lang=th&g_f=personal','2021-06-25 22:01:13',
+    '2021-06-25 20:24:24','http://www.michaelbuble.com/sites/g/files/g2000002856/f/201811/Buble_love_WebsiteAssets_111518_FBOG.png','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/g4lqdrVgrYzvvVoX-HomeAlbumVersion?lang=th&g_f=personal','2021-06-25 22:01:13',
     '2021-06-25 22:01:13'
 );
 
@@ -2578,7 +2578,7 @@ INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
 INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
 `name`,`posted_at`,`cover`,`url`,`created_at`,`updated_at`) VALUES(
     '90','90','1','You''re The Inspiration',
-    '2021-06-25 20:06:32','https://d3el53au0d7w62.cloudfront.net/wp-content/uploads/2013/08/ven18_ja_09aug_chicago-594x600.jpg','','2021-06-25 22:06:32',
+    '2021-06-25 20:32:32','https://d3el53au0d7w62.cloudfront.net/wp-content/uploads/2013/08/ven18_ja_09aug_chicago-594x600.jpg','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/oYeuTvxov4mkvxIC-You39reTheInspirationKaraoketributeversionoriginallyperformedbyChicago?lang=th&g_f=personal','2021-06-25 22:06:32',
     '2021-06-25 22:06:32'
 );
 
@@ -2590,7 +2590,7 @@ INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
 INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
 `name`,`posted_at`,`cover`,`url`,`created_at`,`updated_at`) VALUES(
     '91','91','1','กบ',
-    '2021-06-25 20:06:40','https://s.mxmcdn.net/images-storage/albums/6/6/4/9/0/7/26709466_800_800.jpg','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/-nLF79I-9kQWvIoJ-?lang=th&g_f=personal','2021-06-25 22:12:22',
+    '2021-06-25 20:40:40','https://s.mxmcdn.net/images-storage/albums/6/6/4/9/0/7/26709466_800_800.jpg','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/-nLF79I-9kQWvIoJ-?lang=th&g_f=personal','2021-06-25 22:12:22',
     '2021-06-25 22:12:22'
 );
 
@@ -2602,7 +2602,7 @@ INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
 INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
 `name`,`posted_at`,`cover`,`url`,`created_at`,`updated_at`) VALUES(
     '41','41','1','สิว',
-    '2021-06-25 20:06:54','http://p.kg.qq.com/photo_new/T002RM000003ocx8l0T1ccL.jpg/300?max_age=2592000','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/k_qlXtwkt-8PvwNn-?lang=th&g_f=personal','2021-06-25 22:15:12',
+    '2021-06-25 20:54:54','http://p.kg.qq.com/photo_new/T002RM000003ocx8l0T1ccL.jpg/300?max_age=2592000','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/k_qlXtwkt-8PvwNn-?lang=th&g_f=personal','2021-06-25 22:15:12',
     '2021-06-25 22:15:12'
 );
 
@@ -2614,7 +2614,7 @@ INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
 INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
 `name`,`posted_at`,`cover`,`url`,`created_at`,`updated_at`) VALUES(
     '92','92','1','ขอได้ไหม',
-    '2021-06-26 21:06:02','https://i1.sndcdn.com/artworks-000053498087-qp6emt-t500x500.jpg','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/_ksOHDK_DnE3vK_k-?lang=th&g_f=personal','2021-06-25 22:19:11',
+    '2021-06-26 21:02:02','https://i1.sndcdn.com/artworks-000053498087-qp6emt-t500x500.jpg','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/_ksOHDK_DnE3vK_k-?lang=th&g_f=personal','2021-06-25 22:19:11',
     '2021-06-25 22:19:11'
 );
 
@@ -2626,7 +2626,7 @@ INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
 INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
 `name`,`posted_at`,`cover`,`url`,`created_at`,`updated_at`) VALUES(
     '53','53','1','รักยิ้ม',
-    '2021-06-25 21:06:44','http://p.kg.qq.com/photo_new/T002RM000sg003pnPFP2HHGab.jpg/300?max_age=2592000','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/20i3RPQ2P8-svQ2s-?lang=th&g_f=personal','2021-06-25 22:25:28',
+    '2021-06-25 21:44:44','http://p.kg.qq.com/photo_new/T002RM000sg003pnPFP2HHGab.jpg/300?max_age=2592000','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/20i3RPQ2P8-svQ2s-?lang=th&g_f=personal','2021-06-25 22:25:28',
     '2021-06-25 22:25:28'
 );
 
