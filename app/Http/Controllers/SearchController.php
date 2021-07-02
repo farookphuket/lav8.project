@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Search;
+use App\Models\Post;
+
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -55,7 +57,31 @@ class SearchController extends Controller
      */
     public function show(Search $search)
     {
-        //
+        $get = Search::where("method",request()->method)
+                    ->where("target_id",request()->target_id)
+                    ->first();
+
+        $url = "";
+        switch($get->method):
+            case"posts":
+                $url = $this->getPost();
+            break;
+            default:
+                $url = "";
+            break;
+        endswitch;
+                
+
+        return response()->json([
+            "msg" => $url
+        ]);
+    }
+
+    public function getPost($id){
+        $get = Post::find($id);
+
+        $url = "/posts/{$get->slug}";
+        return $url;
     }
 
     /**

@@ -1388,3 +1388,32 @@ class="responsive">
 '2021-02-06 07:45:20'
 );
 
+
+
+ /* =========== auto script START 2021-07-02 20:40:26 pm  ==================== */
+ /* =============== auto backup `whatnews`  =====*/
+INSERT INTO `whatnews`(`whatnews_title`,`whatnews_body`,`is_public`,
+`created_at`,`updated_at`) VALUES(
+    'ลงทะเบียนฉีดวัคซีนโควิด 19 ผ่าน หมอพร้อม+เป๋าตัง 1 กรกฎาคม 64','<div class="row">
+    <div class="col-lg-12">
+        <p>
+            วันนี้ผมลองลงทะเบียนฉีดวัคซีนโควิดอีกครั้ง(ก็พยายามมาตลอดแหละ) และก็อีกครั้งนึงครับที่ "หมอยังไม่พร้อม"
+
+        </p>
+    </div>
+    <div class="col-lg-6">
+        <img src="https://i.ibb.co/f27pKtK/IMG-20210702-193055.jpg" class="responsive">
+    </div>
+    <div class="col-lg-6">
+        <img src="https://i.ibb.co/xfKTmCw/IMG-20210702-194525.jpg" class="responsive">
+    </div>
+    <div class="col-lg-12">
+        <p>
+            ผมไม่ได้จะตีโพย ตีพายนะครับแค่บอกว่า ผมพร้อมฉีดแต่ยังลงทะเบียนไม่ได้ ส่วนเรื่องฉีดวัคซีนผมฉีดแน่ครับ
+        </p>
+    </div>
+</div>',
+    '1',
+    '2021-07-02 20:40:26','2021-07-02 20:40:26');
+ 
+ /* ======== auto script 2021-07-02 20:40:26 pm END ========= */

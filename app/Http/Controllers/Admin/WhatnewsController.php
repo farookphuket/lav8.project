@@ -8,8 +8,11 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Auth;
 
+use DB;
+
 class WhatnewsController extends Controller
 {
+    protected $wn_table = "whatnews";
     /**
      * Display a listing of the resource.
      *
@@ -52,22 +55,17 @@ class WhatnewsController extends Controller
             "title" => ["required","min:8"],
             "body" => ["required","min:50"]
         ]);
+        Whatnews::create([
+            "whatnews_title" => xx_clean(request()->title),
+            "whatnews_body" => xx_clean(request()->body),
+            "user_id" => Auth::user()->id,
+            "is_public" => !request()->is_public?0:1
+        ]);
 
-        if(!$valid):
-            return response()->json([
-                "errors" => $valid->errors
-            ]);
-        else:
-            Whatnews::create([
-                "whatnews_title" => request()->title,
-                "whatnews_body" => xx_clean(request()->body),
-                "user_id" => Auth::user()->id,
-                "is_public" => !request()->is_public?0:1
-            ]);
-
-            $msg = "<span class=\"badge badge-success\">
+        // make backup 
+        $this->backupInsertWN();
+        $msg = "<span class=\"badge badge-success\">
                 Success: item has been created</span>";
-        endif;
 
         return response()->json([
             "msg" => $msg
@@ -113,8 +111,6 @@ class WhatnewsController extends Controller
             "body" => ["required","min:50"]
         ]);
 
-        
-
         $msg = "";
         if(!$valid):
             //$msg = "There is something wrong ";
@@ -124,12 +120,15 @@ class WhatnewsController extends Controller
         else:
         Whatnews::where("id",$whatnews->id)
             ->update([
-                "whatnews_title" => request()->title,
+                "whatnews_title" => xx_clean(request()->title),
                 "whatnews_body" => xx_clean(request()->body),
                 "is_public" => !request()->is_public?0:1
 
             ]);
 
+
+        // update backup 
+        $this->backupUpdateWN($whatnews->id);
 
         $msg = "<span class=\"alert alert-success\">
             Success : item has been updated</span>";
@@ -153,4 +152,39 @@ class WhatnewsController extends Controller
             "msg" => $msg
         ]);
     }
+
+    /* =========== backup script 2 Jul 2021 =================================*/
+    public function backupInsertWN(){
+        $get = Whatnews::latest()->first();
+        $file = base_path("DB/whatnews_default.sqlite");
+        $cont = "/* =============== auto backup `{$this->wn_table}`  =====*/";
+        $cont .= "
+INSERT INTO `{$this->wn_table}`(`whatnews_title`,`whatnews_body`,`is_public`,
+`created_at`,`updated_at`) VALUES(
+    '{$get->whatnews_title}',
+    '{$get->whatnews_body}',
+    '{$get->is_public}',
+    '{$get->created_at}','{$get->updated_at}');
+";
+        write2text($file,$cont);
+    }
+
+    public function backupUpdateWN($id){
+        $get = Whatnews::find($id);
+        $file = base_path("DB/whatnews_default.sqlite");
+        $update = "/* ======== update script `{$this->wn_table}` ==========*/";
+        $update .= "
+UPDATE `{$this->wn_table}` SET whatnews_title='{$get->whatnews_title}',
+whatnews_body='{$get->whatnews_body}',
+is_public='{$get->is_public}',
+updated_at='{$get->updated_at}' 
+WHERE id='{$get->id}';
+
+";
+        $update .= "/* ==== auto update script".date("Y-m-d H:i:s")." =====*/";
+        write2text($file,$update);
+    }
+
+    /* =========== backup script 2 Jul 2021 =================================*/
+
 }

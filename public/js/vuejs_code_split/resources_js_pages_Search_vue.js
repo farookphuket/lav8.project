@@ -12,6 +12,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _SearchForm_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SearchForm.vue */ "./resources/js/pages/SearchForm.vue");
+/* harmony import */ var _SearchList_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SearchList.vue */ "./resources/js/pages/SearchList.vue");
 //
 //
 //
@@ -20,15 +21,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "PubSearch",
   components: {
     SearchForm: _SearchForm_vue__WEBPACK_IMPORTED_MODULE_0__.default
   },
+  data: function data() {
+    return {};
+  },
   methods: {
-    getURL: function getURL(method, id) {
-      var url = "/search?method=".concat(method, "&id=").concat(id);
-      alert(url);
+    getURL: function getURL(_ref) {
+      var method = _ref.method,
+          target_id = _ref.target_id,
+          id = _ref.id;
+      var url = "/search/".concat(id, "?method=").concat(method, "&target_id=").concat(target_id);
+      axios.get(url).then(function (res) {
+        console.log(res.data.msg);
+      });
     }
   }
 });
@@ -134,8 +144,12 @@ __webpack_require__.r(__webpack_exports__);
     return {};
   },
   methods: {
-    getURL: function getURL(method, id) {
-      this.$emit('getURL', method, id);
+    getURL: function getURL(method, target_id, id) {
+      this.$emit('getURL', {
+        method: method,
+        target_id: target_id,
+        id: id
+      });
     }
   }
 });
@@ -487,7 +501,7 @@ var render = function() {
         attrs: { result: _vm.searchResult },
         on: {
           getURL: function($event) {
-            return _vm.getURL($event)
+            return _vm.$emit("getURL", $event)
           }
         }
       })
@@ -531,7 +545,7 @@ var render = function() {
               on: {
                 click: function($event) {
                   $event.preventDefault()
-                  return _vm.getURL(re.method, re.target_id)
+                  return _vm.getURL(re.method, re.target_id, re.id)
                 }
               }
             },

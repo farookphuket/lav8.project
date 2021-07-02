@@ -11,7 +11,7 @@
             </div>
         </form>
         <search-list :result="searchResult" 
-            @getURL="getURL($event)"
+            @getURL="$emit('getURL',$event)"
             v-show="canShow"></search-list>
     </div>
 </template>
@@ -51,6 +51,7 @@ export default{
         xxform(){
             this.searchResult = ''
         },
+
 
     },
 }

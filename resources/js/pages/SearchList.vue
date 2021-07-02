@@ -2,7 +2,7 @@
     <div>
         <ul class="list-group">
             <li class="list-group-item" v-for="re in result">
-                <a href="" @click.prevent="getURL(re.method,re.target_id)">
+                <a href="" @click.prevent="getURL(re.method,re.target_id,re.id)">
                     {{re.target_title}}
                 </a>
 
@@ -22,8 +22,9 @@ export default{
         }
     },
     methods:{
-        getURL(method,id){
-            this.$emit('getURL',method,id)
+        getURL(method,target_id,id){
+            this.$emit('getURL',{method,target_id,id})
+
         }
     },
 

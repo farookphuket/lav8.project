@@ -7,17 +7,25 @@
 </template>
 <script>
 import SearchForm from './SearchForm.vue'
-
+import SearchList from './SearchList.vue'
 export default{
     name:"PubSearch",
     components:{
         SearchForm,
 
     },
+    data(){
+        return{
+
+        }
+    },
     methods:{
-        getURL(method,id){
-            let url = `/search?method=${method}&id=${id}`
-            alert(url)
+        getURL({method,target_id,id}){
+            let url = `/search/${id}?method=${method}&target_id=${target_id}`
+            axios.get(url)
+                .then(res=>{
+                    console.log(res.data.msg)
+                })
         },
     },
 }
