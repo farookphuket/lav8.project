@@ -13,6 +13,7 @@ use App\Http\Controllers\AlbumController as pAlbum;
 use App\Http\Controllers\VideoController as pVideo;
 use App\Http\Controllers\PhotosController as pPhotos;
 use App\Http\Controllers\RegisterController as pRegist;
+use App\Http\Controllers\SearchController as pSearch;
 
 // added 29 June 2021
 use App\Http\Controllers\CommentsController as pComment;
@@ -75,6 +76,13 @@ Route::post("/sentUserConfirm",[pRegist::class,"sentUserConfirm"])
 Route::get("/userHasConfirmed/{token}",[pRegist::class,"userHasConfirmed"])
     ->name("register.userHasConfirmed");
 /* =============== Register 28 June 2021====================*/
+
+/* =============== Search 1 July 2021 =======================================*/
+Route::resource("/search",pSearch::class);
+Route::post("/getSearchResult",[pSearch::class,"getSearchResult"])
+    ->name("search.getSearchResult");
+
+/* =============== Search 1 July 2021 =======================================*/
 
 Route::resource('/album',pAlbum::class);
 Route::resource('/artist',pArtist::class);

@@ -9,7 +9,8 @@
             <div class="section-title">
                 <h2 >what's up!</h2>
             </div>
-            
+            <pub-search></pub-search>            
+
             @if(!$whatnews->isEmpty())            
                 @foreach($whatnews as $item)
                     @section('meta_title',$item->whatnews_title)

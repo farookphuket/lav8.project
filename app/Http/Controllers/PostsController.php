@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Tag;
+use App\Models\Search;
 use Illuminate\Http\Request;
 
 use DB;
@@ -15,12 +16,14 @@ class PostsController extends Controller
     protected $tag_table;
     protected $post_tag_table;
     protected $post_read_table;
+    protected $search_table;
 
     public function __construct(){
         $this->post_tag_table = "post_tag";
         $this->tag_table = "tags";
         $this->post_table = "posts";
         $this->post_read_table = "post_read";
+        $this->search_table = "searches";
     }
 
 
@@ -141,6 +144,10 @@ class PostsController extends Controller
                     ->with("tags")
                     ->where("slug",$post->slug)
                     ->get();
+
+        // make index for search
+        $this->makeIndexPost($post->id);
+
         return view('Pub.Posts.show')->with([
             'post' => $get_post
         ]);
@@ -230,6 +237,32 @@ class PostsController extends Controller
             ]);
     }
 
+    /* ============ makeIndexPost for search ================================ */
+    public function makeIndexPost($id){
+        $post = Post::find($id);
+
+        $search = Search::where("keywords",$post->post_title)
+                        ->where("method","posts")
+                        ->where("target_id",$post->id)
+                        ->get();
+        
+        if(count($search) == 0):
+            $data = [
+                "target_title" => $post->post_title,
+                "method" => "posts",
+                "target_id" => $post->id,
+                "keywords" => $post->post_title
+            ];
+            Search::create($data);
+            
+            //make backup to file 
+            $this->backupInsertSearch(); 
+        endif;
+
+    }
+
+    /* ============ makeIndexPost for search ================================ */
+
     /* ============ make a backup 26 June 2021 START =========================*/
     public function backupInsertPost(){
 
@@ -290,6 +323,23 @@ INSERT INTO `{$this->post_read_table}`(`post_id`,`os`,`ip`,`device`,
 `browser`,`created_at`,`updated_at`) VALUES(
     '{$get->post_id}','{$get->os}','{$get->ip}','{$get->device}',
     '{$get->browser}','{$get->created_at}','{$get->updated_at}');
+";
+        write2text($file,$cont);
+    }
+
+    // backupInsertSearch 2 July 2021
+    public function backupInsertSearch(){
+        $search = Search::latest()->first();
+        $file = base_path("DB/search_list.sqlite");
+
+        $cont = "/* === backup search index ".date("Y-m-d H:i:s")." ====== */";
+        $cont .= "
+INSERT INTO `{$this->search_table}`(`target_title`,`method`,`target_id`,
+`keywords`,
+`created_at`,`updated_at`) VALUES(
+    '{$search->target_title}','{$search->method}','{$search->target_id}',
+    '{$search->keywords}',
+    '{$search->created_at}','{$search->updated_at}');
 ";
         write2text($file,$cont);
     }

@@ -68,6 +68,9 @@ Vue.component('Pubvideo',()=>import( './pages/Video.vue'));
 Vue.component('PubPhoto',()=>import( './pages/Photo.vue'));
 Vue.component('PubPost',()=>import( './pages/Post.vue'));
 
+// PubSearch 2 July 2021
+Vue.component('PubSearch',()=>import( './pages/Search.vue'));
+
 // added 29 June 2021
 Vue.component('PubComment',()=>import( './pages/Comment.vue'));
 
