@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container-fluid">
         <post-search @openPost="openPost($event)"></post-search>
         <post-list :posts="posts" @openPost="openPost($event)" 
             @getPostList="getPostList($event)" 

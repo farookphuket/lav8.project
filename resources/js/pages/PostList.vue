@@ -1,92 +1,122 @@
 <template>
+    <div class="container">
 
-    <section id="about" class="about">
-      <div class="container">
-          <div v-for="po in posts.data">
-            <div class="section-title mb-4">
-                <h2>
-                    {{po.post_title}}
-                </h2>
+        <!-- v-for START -->
+        <!-- we're wrap every post in div.card -->
+        <div class="card mb-4" 
+            v-for="po in posts.data">
+            <div class="card-header">
+                <h3 class="card-title text-center">{{po.post_title}}</h3>
             </div>
-            <div class="clearfix">
-                <div class="float-right">
-                    <span>
-                        <b-icon icon="person"></b-icon>
-                        {{po.user.name}}
-                    </span> &middot; 
-                    <span class="badge badge-warning">
-                        <b-icon icon="clock-history"></b-icon>
-                        {{moment(po.created_at).fromNow()}}
-                    </span> &middot; 
-                    <span class="badge badge-primary">
-                        <b-icon icon="eye-fill"></b-icon>
-                        {{po.read_count}}
-                    </span>
-                    <span class="badge badge-info" v-if="po.comments.length != 0">
-                        <b-icon icon="chat-left-text"></b-icon>
-                        {{po.comments.length}}
-                    </span>
+            <div class="card-body">
+                <div v-html="po.post_excerpt">
+                    {{po.post_excerpt}}
                 </div>
-            </div>
-            <div v-html="po.post_excerpt" class="mb-2">{{po.post_excerpt}}</div>
-
-            <div class="clearfix">
-                <div class="float-left">
-                    <span class="badge badge-primary pt-2 p-2" v-for="ta in po.tags">
-                        <a style="color:white;" href="" 
-                            @click.prevent="setGoTagPage(ta.id)">
+                <div class="row">
+                    <div class="col-lg-6">
+                        tags :
+                        <span v-for="ta in po.tags">
                             <b-icon icon="tags"></b-icon>
                             {{ta.tag_name}}
-                        </a>
-                    </span>
-                </div>
-                <div class="float-right">
-                    <span>
-                        <b-icon icon="calendar2-day"></b-icon>
-                        {{moment(po.created_at)}}
-                    </span>
-                    <button class="btn btn-outline-primary btn-sm" 
-                        @click.prevent="$emit('openPost',po.slug)">
-                        <b-icon icon="eye-fill"></b-icon> ({{po.read_count}})
-                        Read More...</button>
-                </div>
-            </div>
-            <hr class="pt-4">
-            </div><!--end of v-for div -->
-
-            <div class="nav-scroller py-1 mb-2 pt-4">
-                <ul class="pagination flex-wrap">
-                    <li class="page-list">
-                        <div class="page-link disabled">
-
-                            showing from <span>{{posts.from}}</span> 
-                            to <span>{{posts.to}}</span> of 
-                            <span>{{posts.total}}</span> 
-                        </div>
-                    </li>
-                    <li class="page-list" v-for="li in posts.links">
-                        <a href="" class="page-link p-2"
-                           v-html="li.label" 
-                            v-if="li.active != true && li.url != null" 
-                            @click.prevent="setGoPage(li.url)">
-                            {{li.label}}
-                        </a>
-                        <span v-html="li.label" class="page-link disabled" 
-                            v-else>
-                            {{li.label}} 
-                        </span> 
-                    </li>
-                    <li class="page-list active">
-                        <span class="page-link disabled">
-                            <b-icon icon="book-half"></b-icon>
-                            {{posts.current_page}}
                         </span>
-                    </li>
-                </ul>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="float-right">
+                            <button class="btn btn-outline-primary" 
+                                @click.prevent="$emit('openPost',po.slug)">
+                                Read more...&middot;
+                                (
+                                <b-icon icon="eye"></b-icon>
+                                {{po.read_count}}
+                                )
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div><!-- end of div.container -->
-    </section>
-    
+
+            <!-- div.card-footer -->
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-md-8">
+
+                        <span>
+                            <b-icon icon="calendar2-day"></b-icon>
+                            {{moment(po.created_at)}} &middot;
+                            {{moment(po.created_at).fromNow()}}
+                        </span>
+                    </div>
+                    <div class="col-md-4">
+
+                        <div class="float-right">
+                            <span>
+                                By :
+                                <b-icon icon="person"></b-icon>
+                                {{po.user.name}}
+                            </span>
+                            <span>
+                                <b-icon icon="chat-left-text"></b-icon>
+                                {{po.comments.length}}
+                            </span>
+                            <span>
+                                <b-icon icon="eye"></b-icon>
+                                {{po.read_count}}
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- div.card-footer END -->
+
+        </div>
+        <!-- v-for END -->
+
+        <!-- pagination START -->
+        <div class="container" style="margin-top:2em;margin-bottom:2em;">
+            
+                    <div class="nav-scroller py-1 mb-2">
+                        <nav class="nav d-flex justify-content-center">
+                            <ul class="pagination flex-wrap">
+                                <li class="page-item disabled">
+                                    <div class="page-link">
+                                        showing from
+                                        <span>{{ posts.from }}</span> to
+                                        <span>{{ posts.to }}</span> of
+                                        <span>{{ posts.total }}</span> 
+                                    </div> 
+                                </li>
+                                <li class="page-item" v-for="li in posts.links">
+                                    <a
+                                        href=""
+                                        class="page-link p-2"
+                                        v-html="li.label"
+                                        v-if="li.active != true && li.url != null"
+                                        @click.prevent="$emit('getPostList', li.url)"
+                                        >{{ li.label }}</a
+                                    >
+                                    <span class="page-link disabled" 
+                                        v-html="li.label" v-else>
+                                        {{ li.label  }}
+                                    </span>
+                                    
+                                </li>
+                                <li class="page-item active">
+                                    <span class="page-link">
+                                        <b-icon icon="book-half"></b-icon> 
+                                        {{ posts.current_page }}
+                                    </span>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- end of div.nav-scroller pagination -->
+        </div>
+        <!-- pagination END -->
+
+
+    </div>
 </template>
 
 <script>

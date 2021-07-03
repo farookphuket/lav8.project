@@ -79,3 +79,48 @@ INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
     'Chrome 91.0.4472.114','2021-07-02 10:26:19','2021-07-02 10:26:19');
  
  /* ======== auto script 2021-07-02 10:26:19 am END ========= */
+
+ /* =========== auto script START 2021-07-03 06:14:29 am  ==================== */
+ /* ========= auto backup 2021-07-03 06:14:29 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '21','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-07-03 06:14:29','2021-07-03 06:14:29');
+ 
+ /* ======== auto script 2021-07-03 06:14:29 am END ========= */
+
+ /* =========== auto script START 2021-07-03 06:34:43 am  ==================== */
+ /* ========= auto backup 2021-07-03 06:34:43 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '19','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-07-03 06:34:43','2021-07-03 06:34:43');
+ 
+ /* ======== auto script 2021-07-03 06:34:43 am END ========= */
+
+ /* =========== auto script START 2021-07-03 10:49:20 am  ==================== */
+ /* ========= auto backup 2021-07-03 10:49:20 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '11','iOS 10_3_1','127.0.0.1','iPhone',
+    'Safari 10.0','2021-07-03 10:49:20','2021-07-03 10:49:20');
+ 
+ /* ======== auto script 2021-07-03 10:49:20 am END ========= */
+
+ /* =========== auto script START 2021-07-03 11:26:13 am  ==================== */
+ /* ========= auto backup 2021-07-03 11:26:13 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '20','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-07-03 11:26:13','2021-07-03 11:26:13');
+ 
+ /* ======== auto script 2021-07-03 11:26:13 am END ========= */
+
+ /* =========== auto script START 2021-07-03 13:51:47 pm  ==================== */
+ /* ========= auto backup 2021-07-03 13:51:47 =========*/
+INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
+`browser`,`created_at`,`updated_at`) VALUES(
+    '1','Linux ','127.0.0.1','WebKit',
+    'Chrome 91.0.4472.114','2021-07-03 13:51:47','2021-07-03 13:51:47');
+ 
+ /* ======== auto script 2021-07-03 13:51:47 pm END ========= */

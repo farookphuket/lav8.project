@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Song;
+use App\Models\Search;
 use Illuminate\Http\Request;
 
 use DB;
@@ -12,6 +13,7 @@ class SongController extends Controller
     protected $song_read_table = "read_song";
     protected $song_table = "songs";
     
+    protected $search_table = "searches";
     /**
      * Display a listing of the resource.
      *
@@ -124,6 +126,9 @@ class SongController extends Controller
 
             // then make a backup to file 
             $this->backupSongReadCount();
+
+            // make indexing page for search 
+            $this->makeSearchIndexInsert($song->id);            
         endif;
     }
     /**
@@ -177,5 +182,35 @@ INSERT INTO `{$this->song_read_table}`(`song_id`,`readed_at`,`os`,`browser`,
         write2text($file,$cont);
     }
 
+    /* ============= make search index for this song 3 Jul 2021==============*/
+    public function makeSearchIndexInsert($song_id){
+        $method = "songs";
+        $song = Song::find($song_id);
+        
+        $search_data = [
+            "method" => $method,
+            "target_id" => $song_id,
+            "target_title" => $song->name,
+            "keywords" => $song->name
+
+        ];
+
+        Search::create($search_data);
+        $this->backupInsertSearch();
+
+    }
+    public function backupInsertSearch(){
+        $se = Search::latest()->first();
+        $file = base_path("DB/search_list.sqlite");
+        $cont = "/* ==== backup insert `{$this->search_table}` =========== */";
+        $cont .= "
+INSERT INTO `{$this->search_table}`(`target_title`,`method`,`target_id`,
+`keywords`,`created_at`,`updated_at`) VALUES(
+    '{$se->target_title}','{$se->method}','{$se->target_id}',
+    '{$se->keywords}',
+    '{$se->created_at}','{$se->updated_at}');
+";
+        write2text($file,$cont);
+    }
     /* ================ backup song read count 20 June 2021 =================*/
 }

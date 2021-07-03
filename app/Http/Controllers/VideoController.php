@@ -76,6 +76,7 @@ class VideoController extends Controller
                         ->where("id",$video->id)
                         ->get();
 
+
         return response()->json([
             "video" => $video
         ]);

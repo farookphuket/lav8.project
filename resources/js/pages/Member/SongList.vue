@@ -41,38 +41,53 @@
 
            </div>
        </div>
-        <div class="col-lg-12 pt-2 mb-4">
-           <div class="pa">
-               <ul class="pagination">
-                   <li class="page-item">
-                        showing from 
-                        <span>
-                            {{songs.from}} 
-                        </span> to 
-                        <span>{{songs.to}}</span> of 
-                        <span>{{songs.total}}</span> &middot;
-                   </li>
-                   <li class="page-item" v-for="li in songs.links">
-                       <a href="" 
-                       v-html="li.label" 
-                       @click.prevent="$emit('getSongList',li.url)"
-                       v-if="li.active != true && li.url != null">
-                        {{li.label}}
-                       </a>
 
-                        <span class="active" v-html="li.label" v-else>
-                            {{li.label}}
-                        </span>
-                        &middot;
-                   </li>
-                   <li class="page-item">
-                        <span class="active">
-                            {{songs.current_page}}
-                        </span>
-                   </li>
-               </ul>
-           </div>
-        </div>
+
+        <div class="col-lg-12">
+            <!-- new pagination 3 July 2021 START -->
+                <!-- pagination START -->
+                <div class="container" style="margin-top:2em;margin-bottom:2em;">
+                            <div class="nav-scroller py-1 mb-2">
+                                <nav class="nav d-flex justify-content-center">
+                                    <ul class="pagination flex-wrap">
+                                        <li class="page-item disabled">
+                                            <div class="page-link">
+                                                showing from
+                                                <span>{{ songs.from }}</span> to
+                                                <span>{{ songs.to }}</span> of
+                                                <span>{{ songs.total }}</span> 
+                                            </div> 
+                                        </li>
+                                        <li class="page-item" v-for="li in songs.links">
+                                            <a
+                                                href=""
+                                                class="page-link p-2"
+                                                v-html="li.label"
+                                                v-if="li.active != true && li.url != null"
+                                                @click.prevent="$emit('getSongList', li.url)"
+                                                >{{ li.label }}</a
+                                            >
+                                            <span class="page-link disabled" 
+                                                v-html="li.label" v-else>
+                                                {{ li.label  }}
+                                            </span>
+                                            
+                                        </li>
+                                        <li class="page-item active">
+                                            <span class="page-link">
+                                                <b-icon icon="book-half"></b-icon> 
+                                                {{ songs.current_page }}
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- end of div.nav-scroller pagination -->
+                </div>
+                <!-- pagination END -->
+
+            <!-- new pagination 3 July 2021 End -->
+        </div><!-- end of div.col-lg-12 -->
 
     </div>
 </template>

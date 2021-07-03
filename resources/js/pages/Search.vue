@@ -25,6 +25,7 @@ export default{
             axios.get(url)
                 .then(res=>{
                     console.log(res.data.msg)
+                    location.href = res.data.url
                 })
         },
     },

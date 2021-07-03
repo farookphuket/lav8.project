@@ -38,6 +38,7 @@ __webpack_require__.r(__webpack_exports__);
       var url = "/search/".concat(id, "?method=").concat(method, "&target_id=").concat(target_id);
       axios.get(url).then(function (res) {
         console.log(res.data.msg);
+        location.href = res.data.url;
       });
     }
   }
