@@ -35,33 +35,55 @@
                     </div>
                </div><!-- end of div.card -->
            </div><!-- end of div.col-md-3 -->
-           <div class="col-lg-12">
-            <div class="po">
-                <ul class="pagination">
-                    <li class="page-item">
-                        showing of 
-                        <span>{{photos.from}}</span> to 
-                        <span>{{photos.to}}</span> of
-                        <span>{{photos.total}}</span> &middot;
 
-                    </li>
-                    <li class="page-item" v-for="li in photos.links" 
-                    >
-                    <a href="" @click.prevent="$emit('getPhotos',li.url)" 
-                    v-if="li.active != true && li.url != null" 
-                    v-html="li.label">
-                        {{li.label}}
-                    </a> 
-                        <span class="active" v-html="li.label" v-else>
-                            {{li.label}}
-                        </span> &middot; 
-                    </li>
-                    <li class="page-item">
-                        {{photos.current_page}}
-                    </li>
-                </ul>
-            </div><!-- end of div.po -->
-           </div><!-- end of div.col-lg-12 pagination -->
+
+        <div class="col-lg-12">
+            <!-- new pagination 3 July 2021 START -->
+                <!-- pagination START -->
+                <div class="container" style="margin-top:2em;margin-bottom:2em;">
+                            <div class="nav-scroller py-1 mb-2">
+                                <nav class="nav d-flex justify-content-center">
+                                    <ul class="pagination flex-wrap">
+                                        <li class="page-item disabled">
+                                            <div class="page-link">
+                                                showing from
+                                                <span>{{ photos.from }}</span> to
+                                                <span>{{ photos.to }}</span> of
+                                                <span>{{ photos.total }}</span> 
+                                            </div> 
+                                        </li>
+                                        <li class="page-item" v-for="li in photos.links">
+                                            <a
+                                                href=""
+                                                class="page-link p-2"
+                                                v-html="li.label"
+                                                v-if="li.active != true && li.url != null"
+                                                @click.prevent="$emit('getPhotos', li.url)"
+                                                >{{ li.label }}</a
+                                            >
+                                            <span class="page-link disabled" 
+                                                v-html="li.label" v-else>
+                                                {{ li.label  }}
+                                            </span>
+                                            
+                                        </li>
+                                        <li class="page-item active">
+                                            <span class="page-link">
+                                                <b-icon icon="book-half"></b-icon> 
+                                                {{ photos.current_page }}
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- end of div.nav-scroller pagination -->
+                </div>
+                <!-- pagination END -->
+
+            <!-- new pagination 3 July 2021 End -->
+        </div><!-- end of div.col-lg-12 -->
+
+
            <b-modal :title="title" centered ref="showPhotoModal" 
            size="xl" ok-only>
             <div class="container">

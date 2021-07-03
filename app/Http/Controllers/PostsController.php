@@ -328,6 +328,7 @@ INSERT INTO `{$this->post_read_table}`(`post_id`,`os`,`ip`,`device`,
     }
 
     // backupInsertSearch 2 July 2021
+    // this will call when the no-login user view the post
     public function backupInsertSearch(){
         $search = Search::latest()->first();
         $file = base_path("DB/search_list.sqlite");

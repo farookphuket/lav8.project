@@ -9,3 +9,57 @@ INSERT INTO `searches`(`target_title`,`method`,`target_id`,
     '2021-07-02 11:41:04','2021-07-02 11:41:04');
  
  /* ======== auto script 2021-07-02 11:41:04 am END ========= */
+
+ /* =========== auto script START 2021-07-03 06:14:29 am  ==================== */
+ /* === backup search index 2021-07-03 06:14:29 ====== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,
+`created_at`,`updated_at`) VALUES(
+    'รอมฎอน 2564 เดือนแห่งศรัทธา การถือศีลอดเพื่อฝึกตนของอิสลามิกชนทั่วโลก','posts','21',
+    'รอมฎอน 2564 เดือนแห่งศรัทธา การถือศีลอดเพื่อฝึกตนของอิสลามิกชนทั่วโลก',
+    '2021-07-03 06:14:29','2021-07-03 06:14:29');
+ 
+ /* ======== auto script 2021-07-03 06:14:29 am END ========= */
+
+ /* =========== auto script START 2021-07-03 10:49:20 am  ==================== */
+ /* === backup search index 2021-07-03 10:49:20 ====== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,
+`created_at`,`updated_at`) VALUES(
+    'หนังสือนิยาย เพชรพระอุมา ตอน จอมผีดิบมันตรัย','posts','11',
+    'หนังสือนิยาย เพชรพระอุมา ตอน จอมผีดิบมันตรัย',
+    '2021-07-03 10:49:20','2021-07-03 10:49:20');
+ 
+ /* ======== auto script 2021-07-03 10:49:20 am END ========= */
+
+ /* =========== auto script START 2021-07-03 11:26:13 am  ==================== */
+ /* === backup search index 2021-07-03 11:26:13 ====== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,
+`created_at`,`updated_at`) VALUES(
+    'หนังสือนิยาย เพชรพระอุมา ตอน มงกุฎไพร','posts','20',
+    'หนังสือนิยาย เพชรพระอุมา ตอน มงกุฎไพร',
+    '2021-07-03 11:26:13','2021-07-03 11:26:13');
+ 
+ /* ======== auto script 2021-07-03 11:26:13 am END ========= */
+
+ /* =========== auto script START 2021-07-03 13:51:47 pm  ==================== */
+ /* === backup search index 2021-07-03 13:51:47 ====== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,
+`created_at`,`updated_at`) VALUES(
+    'How can I add datetime to .sqlite for auto data','posts','1',
+    'How can I add datetime to .sqlite for auto data',
+    '2021-07-03 13:51:47','2021-07-03 13:51:47');
+ 
+ /* ======== auto script 2021-07-03 13:51:47 pm END ========= */
+
+ /* =========== auto script START 2021-07-03 18:01:37 pm  ==================== */
+ /* ==== backup insert `searches =========== `*/
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,`created_at`,`updated_at`) VALUES(
+    'ปากดี','songs','163',
+    'ปากดี',
+    '2021-07-03 18:01:37','2021-07-03 18:01:37');
+ 
+ /* ======== auto script 2021-07-03 18:01:37 pm END ========= */

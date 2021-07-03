@@ -728,7 +728,7 @@ var render = function() {
                   ? _c(
                       "a",
                       {
-                        staticClass: "page-link",
+                        staticClass: "page-link p-2",
                         attrs: { href: "" },
                         domProps: { innerHTML: _vm._s(ll.label) },
                         on: {

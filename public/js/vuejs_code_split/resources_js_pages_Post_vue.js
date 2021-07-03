@@ -194,6 +194,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -786,6 +816,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "container-fluid" },
     [
       _c("post-search", {
         on: {
@@ -845,252 +876,237 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "about", attrs: { id: "about" } }, [
-    _c(
-      "div",
-      { staticClass: "container" },
-      [
-        _vm._l(_vm.posts.data, function(po) {
-          return _c("div", [
-            _c("div", { staticClass: "section-title mb-4" }, [
-              _c("h2", [
-                _vm._v(
-                  "\n                " +
-                    _vm._s(po.post_title) +
-                    "\n            "
-                )
-              ])
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [
+      _vm._l(_vm.posts.data, function(po) {
+        return _c("div", { staticClass: "card mb-4" }, [
+          _c("div", { staticClass: "card-header" }, [
+            _c("h3", { staticClass: "card-title text-center" }, [
+              _vm._v(_vm._s(po.post_title))
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _c("div", { domProps: { innerHTML: _vm._s(po.post_excerpt) } }, [
+              _vm._v(
+                "\n                " +
+                  _vm._s(po.post_excerpt) +
+                  "\n            "
+              )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "clearfix" }, [
-              _c("div", { staticClass: "float-right" }, [
-                _c(
-                  "span",
-                  [
-                    _c("b-icon", { attrs: { icon: "person" } }),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(po.user.name) +
-                        "\n                "
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" · \n                "),
-                _c(
-                  "span",
-                  { staticClass: "badge badge-warning" },
-                  [
-                    _c("b-icon", { attrs: { icon: "clock-history" } }),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.moment(po.created_at).fromNow()) +
-                        "\n                "
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" · \n                "),
-                _c(
-                  "span",
-                  { staticClass: "badge badge-primary" },
-                  [
-                    _c("b-icon", { attrs: { icon: "eye-fill" } }),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(po.read_count) +
-                        "\n                "
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                po.comments.length != 0
-                  ? _c(
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                { staticClass: "col-lg-6" },
+                [
+                  _vm._v("\n                    tags :\n                    "),
+                  _vm._l(po.tags, function(ta) {
+                    return _c(
                       "span",
-                      { staticClass: "badge badge-info" },
                       [
-                        _c("b-icon", { attrs: { icon: "chat-left-text" } }),
+                        _c("b-icon", { attrs: { icon: "tags" } }),
                         _vm._v(
-                          "\n                    " +
-                            _vm._s(po.comments.length) +
-                            "\n                "
+                          "\n                        " +
+                            _vm._s(ta.tag_name) +
+                            "\n                    "
                         )
                       ],
                       1
                     )
-                  : _vm._e()
-              ])
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "mb-2",
-                domProps: { innerHTML: _vm._s(po.post_excerpt) }
-              },
-              [_vm._v(_vm._s(po.post_excerpt))]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "clearfix" }, [
-              _c(
-                "div",
-                { staticClass: "float-left" },
-                _vm._l(po.tags, function(ta) {
-                  return _c(
-                    "span",
-                    { staticClass: "badge badge-primary pt-2 p-2" },
-                    [
-                      _c(
-                        "a",
-                        {
-                          staticStyle: { color: "white" },
-                          attrs: { href: "" },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              return _vm.setGoTagPage(ta.id)
-                            }
-                          }
-                        },
-                        [
-                          _c("b-icon", { attrs: { icon: "tags" } }),
-                          _vm._v(
-                            "\n                        " +
-                              _vm._s(ta.tag_name) +
-                              "\n                    "
-                          )
-                        ],
-                        1
-                      )
-                    ]
-                  )
-                }),
-                0
+                  })
+                ],
+                2
               ),
               _vm._v(" "),
-              _c("div", { staticClass: "float-right" }, [
+              _c("div", { staticClass: "col-lg-6" }, [
+                _c("div", { staticClass: "float-right" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-outline-primary",
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.$emit("openPost", po.slug)
+                        }
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                            Read more...·\n                            (\n                            "
+                      ),
+                      _c("b-icon", { attrs: { icon: "eye" } }),
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(po.read_count) +
+                          "\n                            )\n                        "
+                      )
+                    ],
+                    1
+                  )
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-footer" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-8" }, [
                 _c(
                   "span",
                   [
                     _c("b-icon", { attrs: { icon: "calendar2-day" } }),
                     _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.moment(po.created_at)) +
-                        "\n                "
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-outline-primary btn-sm",
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.$emit("openPost", po.slug)
-                      }
-                    }
-                  },
-                  [
-                    _c("b-icon", { attrs: { icon: "eye-fill" } }),
-                    _vm._v(
-                      " (" +
-                        _vm._s(po.read_count) +
-                        ")\n                    Read More..."
-                    )
-                  ],
-                  1
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("hr", { staticClass: "pt-4" })
-          ])
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "nav-scroller py-1 mb-2 pt-4" }, [
-          _c(
-            "ul",
-            { staticClass: "pagination flex-wrap" },
-            [
-              _c("li", { staticClass: "page-list" }, [
-                _c("div", { staticClass: "page-link disabled" }, [
-                  _vm._v("\n\n                        showing from "),
-                  _c("span", [_vm._v(_vm._s(_vm.posts.from))]),
-                  _vm._v(" \n                        to "),
-                  _c("span", [_vm._v(_vm._s(_vm.posts.to))]),
-                  _vm._v(" of \n                        "),
-                  _c("span", [_vm._v(_vm._s(_vm.posts.total))])
-                ])
-              ]),
-              _vm._v(" "),
-              _vm._l(_vm.posts.links, function(li) {
-                return _c("li", { staticClass: "page-list" }, [
-                  li.active != true && li.url != null
-                    ? _c(
-                        "a",
-                        {
-                          staticClass: "page-link p-2",
-                          attrs: { href: "" },
-                          domProps: { innerHTML: _vm._s(li.label) },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              return _vm.setGoPage(li.url)
-                            }
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n                        " +
-                              _vm._s(li.label) +
-                              "\n                    "
-                          )
-                        ]
-                      )
-                    : _c(
-                        "span",
-                        {
-                          staticClass: "page-link disabled",
-                          domProps: { innerHTML: _vm._s(li.label) }
-                        },
-                        [
-                          _vm._v(
-                            "\n                        " +
-                              _vm._s(li.label) +
-                              " \n                    "
-                          )
-                        ]
-                      )
-                ])
-              }),
-              _vm._v(" "),
-              _c("li", { staticClass: "page-list active" }, [
-                _c(
-                  "span",
-                  { staticClass: "page-link disabled" },
-                  [
-                    _c("b-icon", { attrs: { icon: "book-half" } }),
-                    _vm._v(
                       "\n                        " +
-                        _vm._s(_vm.posts.current_page) +
+                        _vm._s(_vm.moment(po.created_at)) +
+                        " ·\n                        " +
+                        _vm._s(_vm.moment(po.created_at).fromNow()) +
                         "\n                    "
                     )
                   ],
                   1
                 )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("div", { staticClass: "float-right" }, [
+                  _c(
+                    "span",
+                    [
+                      _vm._v(
+                        "\n                            By :\n                            "
+                      ),
+                      _c("b-icon", { attrs: { icon: "person" } }),
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(po.user.name) +
+                          "\n                        "
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    [
+                      _c("b-icon", { attrs: { icon: "chat-left-text" } }),
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(po.comments.length) +
+                          "\n                        "
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    [
+                      _c("b-icon", { attrs: { icon: "eye" } }),
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(po.read_count) +
+                          "\n                        "
+                      )
+                    ],
+                    1
+                  )
+                ])
               ])
-            ],
-            2
-          )
+            ])
+          ])
         ])
-      ],
-      2
-    )
-  ])
+      }),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "container",
+          staticStyle: { "margin-top": "2em", "margin-bottom": "2em" }
+        },
+        [
+          _c("div", { staticClass: "nav-scroller py-1 mb-2" }, [
+            _c("nav", { staticClass: "nav d-flex justify-content-center" }, [
+              _c(
+                "ul",
+                { staticClass: "pagination flex-wrap" },
+                [
+                  _c("li", { staticClass: "page-item disabled" }, [
+                    _c("div", { staticClass: "page-link" }, [
+                      _vm._v(
+                        "\n                                    showing from\n                                    "
+                      ),
+                      _c("span", [_vm._v(_vm._s(_vm.posts.from))]),
+                      _vm._v(" to\n                                    "),
+                      _c("span", [_vm._v(_vm._s(_vm.posts.to))]),
+                      _vm._v(" of\n                                    "),
+                      _c("span", [_vm._v(_vm._s(_vm.posts.total))])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _vm._l(_vm.posts.links, function(li) {
+                    return _c("li", { staticClass: "page-item" }, [
+                      li.active != true && li.url != null
+                        ? _c(
+                            "a",
+                            {
+                              staticClass: "page-link p-2",
+                              attrs: { href: "" },
+                              domProps: { innerHTML: _vm._s(li.label) },
+                              on: {
+                                click: function($event) {
+                                  $event.preventDefault()
+                                  return _vm.$emit("getPostList", li.url)
+                                }
+                              }
+                            },
+                            [_vm._v(_vm._s(li.label))]
+                          )
+                        : _c(
+                            "span",
+                            {
+                              staticClass: "page-link disabled",
+                              domProps: { innerHTML: _vm._s(li.label) }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    " +
+                                  _vm._s(li.label) +
+                                  "\n                                "
+                              )
+                            ]
+                          )
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "page-item active" }, [
+                    _c(
+                      "span",
+                      { staticClass: "page-link" },
+                      [
+                        _c("b-icon", { attrs: { icon: "book-half" } }),
+                        _vm._v(
+                          " \n                                    " +
+                            _vm._s(_vm.posts.current_page) +
+                            "\n                                "
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                ],
+                2
+              )
+            ])
+          ])
+        ]
+      )
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

@@ -189,6 +189,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -682,108 +685,118 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "col-lg-12 pt-2" }, [_vm._v(" ")]),
           _vm._v(" "),
-          _c("div", { staticClass: "nav-scroller py-1 mb-2" }, [
-            _c("nav", { staticClass: "nav d-flex justify-content-center" }, [
-              _c(
-                "ul",
-                { staticClass: "pagination flex-wrap" },
-                [
-                  _c("li", { staticClass: "page-item disabled" }, [
-                    _c("div", { staticClass: "page-link" }, [
-                      _vm._v(
-                        "\n                            showing from\n                            "
-                      ),
-                      _c("span", [
-                        _vm._v(
-                          "\n                                " +
-                            _vm._s(_vm.videos.from) +
-                            "\n                            "
-                        )
-                      ]),
-                      _vm._v(
-                        "\n                            to\n                            "
-                      ),
-                      _c("span", [
-                        _vm._v(
-                          "\n                                " +
-                            _vm._s(_vm.videos.to) +
-                            "\n                            "
-                        )
-                      ]),
-                      _vm._v(
-                        "\n                            of\n                            "
-                      ),
-                      _c("span", [
-                        _vm._v(
-                          "\n                                " +
-                            _vm._s(_vm.videos.total) +
-                            "\n                            "
-                        )
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _vm._l(_vm.videos.links, function(li) {
-                    return _c("li", { staticClass: "page-item" }, [
-                      li.active != true && li.url != null
-                        ? _c(
-                            "a",
-                            {
-                              staticClass: "page-link",
-                              attrs: { href: "" },
-                              domProps: { innerHTML: _vm._s(li.label) },
-                              on: {
-                                click: function($event) {
-                                  $event.preventDefault()
-                                  return _vm.$emit("getVideos", li.url)
-                                }
-                              }
-                            },
-                            [
-                              _vm._v(
-                                "\n                            " +
-                                  _vm._s(li.label) +
-                                  "\n                        "
-                              )
-                            ]
-                          )
-                        : _c(
-                            "span",
-                            {
-                              staticClass: "page-link",
-                              domProps: { innerHTML: _vm._s(li.label) }
-                            },
-                            [
-                              _vm._v(
-                                "\n                            " +
-                                  _vm._s(li.label) +
-                                  "\n                        "
-                              )
-                            ]
-                          )
-                    ])
-                  }),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "page-item active" }, [
+          _c(
+            "div",
+            { staticClass: "container", staticStyle: { "margin-top": "2em" } },
+            [
+              _c("div", { staticClass: "nav-scroller py-1 mb-2" }, [
+                _c(
+                  "nav",
+                  { staticClass: "nav d-flex justify-content-center" },
+                  [
                     _c(
-                      "span",
-                      { staticClass: "page-link" },
+                      "ul",
+                      { staticClass: "pagination flex-wrap" },
                       [
-                        _c("b-icon", { attrs: { icon: "book-half" } }),
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(_vm.videos.current_page) +
-                            "\n                        "
-                        )
+                        _c("li", { staticClass: "page-item disabled" }, [
+                          _c("div", { staticClass: "page-link" }, [
+                            _vm._v(
+                              "\n                                showing from\n                                "
+                            ),
+                            _c("span", [
+                              _vm._v(
+                                "\n                                    " +
+                                  _vm._s(_vm.videos.from) +
+                                  "\n                                "
+                              )
+                            ]),
+                            _vm._v(
+                              "\n                                to\n                                "
+                            ),
+                            _c("span", [
+                              _vm._v(
+                                "\n                                    " +
+                                  _vm._s(_vm.videos.to) +
+                                  "\n                                "
+                              )
+                            ]),
+                            _vm._v(
+                              "\n                                of\n                                "
+                            ),
+                            _c("span", [
+                              _vm._v(
+                                "\n                                    " +
+                                  _vm._s(_vm.videos.total) +
+                                  "\n                                "
+                              )
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.videos.links, function(li) {
+                          return _c("li", { staticClass: "page-item" }, [
+                            li.active != true && li.url != null
+                              ? _c(
+                                  "a",
+                                  {
+                                    staticClass: "page-link p-2",
+                                    attrs: { href: "" },
+                                    domProps: { innerHTML: _vm._s(li.label) },
+                                    on: {
+                                      click: function($event) {
+                                        $event.preventDefault()
+                                        return _vm.$emit("getVideos", li.url)
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                " +
+                                        _vm._s(li.label) +
+                                        "\n                            "
+                                    )
+                                  ]
+                                )
+                              : _c(
+                                  "span",
+                                  {
+                                    staticClass: "page-link",
+                                    domProps: { innerHTML: _vm._s(li.label) }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                " +
+                                        _vm._s(li.label) +
+                                        "\n                            "
+                                    )
+                                  ]
+                                )
+                          ])
+                        }),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "page-item active" }, [
+                          _c(
+                            "span",
+                            { staticClass: "page-link" },
+                            [
+                              _c("b-icon", { attrs: { icon: "book-half" } }),
+                              _vm._v(
+                                "\n                                " +
+                                  _vm._s(_vm.videos.current_page) +
+                                  "\n                            "
+                              )
+                            ],
+                            1
+                          )
+                        ])
                       ],
-                      1
+                      2
                     )
-                  ])
-                ],
-                2
-              )
-            ])
-          ])
+                  ]
+                )
+              ])
+            ]
+          )
         ],
         2
       ),

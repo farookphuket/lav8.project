@@ -61,7 +61,7 @@
                         </div>
                     </li>
                     <li class="page-item" v-for="ll in songs.links">
-                        <a href="" class="page-link"
+                        <a href="" class="page-link p-2"
                            v-html="ll.label" 
                         @click.prevent="$emit('getSongList',ll.url)" 
                         v-if="ll.active == false && ll.url != null">

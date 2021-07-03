@@ -13,7 +13,7 @@
 
 
 --- 
-## update 30 June 2021 
+## update 3 July 2021 
 
 
 > created backup data for new reset make thing more easy for setup 

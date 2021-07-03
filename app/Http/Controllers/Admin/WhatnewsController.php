@@ -159,8 +159,9 @@ class WhatnewsController extends Controller
         $file = base_path("DB/whatnews_default.sqlite");
         $cont = "/* =============== auto backup `{$this->wn_table}`  =====*/";
         $cont .= "
-INSERT INTO `{$this->wn_table}`(`whatnews_title`,`whatnews_body`,`is_public`,
+INSERT INTO `{$this->wn_table}`(`user_id`,`whatnews_title`,`whatnews_body`,`is_public`,
 `created_at`,`updated_at`) VALUES(
+    '{$get->user_id}',
     '{$get->whatnews_title}',
     '{$get->whatnews_body}',
     '{$get->is_public}',

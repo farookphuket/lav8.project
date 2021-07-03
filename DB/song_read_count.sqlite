@@ -24,3 +24,25 @@ INSERT INTO `read_song`(`song_id`,`readed_at`,`os`,`browser`,
     '2021-07-01 15:04:46','2021-07-01 15:04:46');
  
  /* ======== auto script 2021-07-01 15:04:46 pm END ========= */
+
+ /* =========== auto script START 2021-07-03 07:14:33 am  ==================== */
+ /* ============ backup for song read count =============*/
+/* ============ 2021-07-03 07:14:33  ================*/
+INSERT INTO `read_song`(`song_id`,`readed_at`,`os`,`browser`,
+`ip`,`created_at`,`updated_at`) VALUES(
+    '166','2021-07-03','Linux ',
+    'Chrome 91.0.4472.114','127.0.0.1',
+    '2021-07-03 07:14:33','2021-07-03 07:14:33');
+ 
+ /* ======== auto script 2021-07-03 07:14:33 am END ========= */
+
+ /* =========== auto script START 2021-07-03 18:01:37 pm  ==================== */
+ /* ============ backup for song read count =============*/
+/* ============ 2021-07-03 18:01:37  ================*/
+INSERT INTO `read_song`(`song_id`,`readed_at`,`os`,`browser`,
+`ip`,`created_at`,`updated_at`) VALUES(
+    '163','2021-07-03','Linux ',
+    'Chrome 91.0.4472.114','127.0.0.1',
+    '2021-07-03 18:01:37','2021-07-03 18:01:37');
+ 
+ /* ======== auto script 2021-07-03 18:01:37 pm END ========= */

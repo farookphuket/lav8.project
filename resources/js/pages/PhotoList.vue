@@ -23,44 +23,50 @@
                 <!-- end of div photolist -->
             </div>
             <!-- end of div.col-lg-3 photo list -->
-            <div class="col-lg-12 pt-2">&nbsp;</div>
-            <!-- try to get the space -->
-            <div class="nav-scroller py-1 mb-2">
-                <nav class="nav d-flex justify-content-center">
-                    <ul class="pagination flex-wrap">
-                        <li class="page-item disabled">
-                            <div class="page-link">
-                                showing from
-                                <span>{{ photos.from }}</span> to
-                                <span>{{ photos.to }}</span> of
-                                <span>{{ photos.total }}</span> 
-                            </div> 
-                        </li>
-                        <li class="page-item" v-for="li in photos.links">
-                            <a
-                                href=""
-                                class="page-link"
-                                v-html="li.label"
-                                v-if="li.active != true && li.url != null"
-                                @click.prevent="$emit('getPhotos', li.url)"
-                                >{{ li.label }}</a
-                            >
-                            <span class="page-link disabled" 
-                                v-html="li.label" v-else>
-                                {{ li.label  }}
-                            </span>
-                            
-                        </li>
-                        <li class="page-item active">
-                            <span class="page-link">
-                                <b-icon icon="book-half"></b-icon> 
-                                {{ photos.current_page }}
-                            </span>
-                        </li>
-                    </ul>
-                </nav>
+
+            <div class="container" style="margin-top:4em;">
+                <!-- Pagination div start 3 Jul 2021-->
+                    <div class="nav-scroller py-1 mb-2">
+                        <nav class="nav d-flex justify-content-center">
+                            <ul class="pagination flex-wrap">
+                                <li class="page-item disabled">
+                                    <div class="page-link">
+                                        showing from
+                                        <span>{{ photos.from }}</span> to
+                                        <span>{{ photos.to }}</span> of
+                                        <span>{{ photos.total }}</span> 
+                                    </div> 
+                                </li>
+                                <li class="page-item" v-for="li in photos.links">
+                                    <a
+                                        href=""
+                                        class="page-link p-2"
+                                        v-html="li.label"
+                                        v-if="li.active != true && li.url != null"
+                                        @click.prevent="$emit('getPhotos', li.url)"
+                                        >{{ li.label }}</a
+                                    >
+                                    <span class="page-link disabled" 
+                                        v-html="li.label" v-else>
+                                        {{ li.label  }}
+                                    </span>
+                                    
+                                </li>
+                                <li class="page-item active">
+                                    <span class="page-link">
+                                        <b-icon icon="book-half"></b-icon> 
+                                        {{ photos.current_page }}
+                                    </span>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- end of div.nav-scroller pagination -->
+
+                <!-- Pagination div END 3 Jul 2021-->
             </div>
-            <!-- end of div.nav-scroller pagination -->
+
+
             <b-modal ref="showPhotoModal" :title="title" size="xl" hide-footer>
                 <div class="card">
                     <img class="card-img-top" :src="embed" alt="" />
