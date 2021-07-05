@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
+use App\Models\Search;
 use App\Models\Template;
 use App\Models\Tag;
 use App\Models\User;
@@ -20,10 +21,13 @@ class PostsController extends Controller
     protected $post_tag_table;
     protected $post_table;
 
+    protected $search_table;
+
     public function __construct(){
         $this->tag_table = "tags";
         $this->post_table = "posts";
         $this->post_tag_table = "post_tag";
+        $this->search_table = "searches";
     }
     /**
      * Display a listing of the resource.
@@ -138,6 +142,9 @@ class PostsController extends Controller
 
         //-- make a backup 
         $this->backupInsertPost();
+
+        // make index for search 
+        $this->makeSearchIndex($nPost->id);
 
         $nPost->tags()->attach(request('tags'));
 
@@ -272,6 +279,7 @@ class PostsController extends Controller
             ]);
         $nPost = Post::where('id',$post->id)->first();
 
+        $this->backupUpdateTag($nPost->id);
         $nPost->tags()->sync(request('tags'));
 
         if(!empty(request('new_tag'))):
@@ -324,22 +332,39 @@ INSERT INTO `{$this->post_table}`(`user_id`,`post_title`,`slug`,`post_excerpt`,
     '{$post->is_public}','{$post->created_at}','{$post->updated_at}'
 );
 ";
+
+        // tags can be more than one
+        $tags = DB::table($this->post_tag_table)
+                        ->where("post_id",$post->id)
+                        ->get();
+        if(count($tags) >= 2):
+            $this->backupUpdateTag($post->id);
+
+
+        endif;
+
+
+
         write2text($file,$con1);
 
-        //======== tags can be more than one
+
+    }
+
+    public function backupUpdateTag($post_id){
+
         $tags = DB::table($this->post_tag_table)
-            ->where("post_id",$post->id)
-            ->get();
-        foreach($tags as $item):
+                    ->where("post_id",$post_id)
+                    ->get();
+
+        foreach($tags as $ta):
             $file = base_path("DB/post_link_tag.sqlite");
-            $con2 = "/* ====== auto backup ".date("Y-m-d H:i:s")." ==========*/";
-            $con2 .= "
+        $co = "/* === auto tag link ".date("Y-m-d H:i:s")." ==== */";
+        $co .= "
 INSERT INTO `{$this->post_tag_table}`(`post_id`,`tag_id`,`created_at`,
 `updated_at`) VALUES(
-    '{$item->post_id}','{$item->tag_id}','{$item->created_at}',
-    '{$item->updated_at}');
-";
-            write2text($file,$con2);
+    '{$ta->post_id}','{$ta->tag_id}','{$ta->created_at}','{$ta->updated_at}');
+";     
+        write2text($file,$co);
         endforeach;
 
     }
@@ -351,13 +376,55 @@ INSERT INTO `{$this->post_tag_table}`(`post_id`,`tag_id`,`created_at`,
         $con2 = "/* ===== auto backup ".date("Y-m-d H:i:s"). " ====  */";        
         $con2 .= "
 INSERT INTO `{$this->tag_table}`(`tag_name`,
-`created_at`,'updated_at') VALUES(
+`created_at`,`updated_at`) VALUES(
     '{$tag->tag_name}','{$tag->created_at}','{$tag->updated_at}'
 );
 ";
         write2text($file,$con2);
     }
 
+    /* this will create the index for search table */
+    public function makeSearchIndex($post_id){
+        $post = Post::find($post_id);
+
+        // get from search table 
+        $search = Search::where("method","posts")
+                    ->where("target_id",$post->id)
+                    ->get();
+        if(count($search) == 0):
+            $data = [
+                "target_id" => $post->id,
+                "keywords" => $post->post_title,
+                "method" => "posts",
+                "target_title" => $post->post_title,
+            ];
+            Search::create($data);
+            $se = Search::latest()->first();
+            
+            // write this to backup file
+            $this->backupSearch($se->id);
+
+        endif;
+
+    }
+
+    public function backupSearch($se_id){
+        $se = Search::find($se_id);
+
+        $file = base_path("DB/search_list.sqlite");
+        $cont = "/* === auto backup from posts ".date("Y-m-d H:i:s")."=====*/";
+
+        $cont .= "
+INSERT INTO `{$this->search_table}`(`target_title`,`target_id`,`keywords`,
+`method`,`created_at`,`updated_at`) VALUES(
+    '{$se->target_title}',
+    '{$se->target_id}',
+    '{$se->keywords}',
+    '{$se->method}',
+    '{$se->created_at}','{$se->updated_at}');
+";
+        write2text($file,$cont);
+    }
 
     /* ============ make a backup 26 June 2021 End =========================*/
 

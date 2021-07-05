@@ -20,15 +20,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "PubSearch",
   components: {
-    SearchForm: _SearchForm_vue__WEBPACK_IMPORTED_MODULE_0__.default
+    SearchForm: _SearchForm_vue__WEBPACK_IMPORTED_MODULE_0__.default,
+    SearchList: _SearchList_vue__WEBPACK_IMPORTED_MODULE_1__.default
   },
   data: function data() {
-    return {};
+    return {
+      searchResult: ''
+    };
   },
   methods: {
     getURL: function getURL(_ref) {
@@ -40,6 +46,12 @@ __webpack_require__.r(__webpack_exports__);
         console.log(res.data.msg);
         location.href = res.data.url;
       });
+    },
+    getSearchResult: function getSearchResult(res) {
+      this.searchResult = res;
+    },
+    clearSearch: function clearSearch() {
+      this.searchResult = '';
     }
   }
 });
@@ -57,7 +69,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _SearchList_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SearchList.vue */ "./resources/js/pages/SearchList.vue");
 //
 //
 //
@@ -73,15 +84,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "SearchForm",
-  components: {
-    SearchList: _SearchList_vue__WEBPACK_IMPORTED_MODULE_0__.default
-  },
   data: function data() {
     return {
       searchResult: [],
@@ -95,16 +99,20 @@ __webpack_require__.r(__webpack_exports__);
     submitSearch: function submitSearch() {
       var _this = this;
 
-      var url = "/getSearchResult";
-      this.sForm.submit("post", url).then(function (res) {
-        _this.searchResult = res.result;
+      this.$emit('clearSearch'); //console.log(Object.keys(this.sForm.search).length) 
 
-        if (Object.keys(_this.searchResult).length >= 1) {
-          _this.canShow = true;
-        }
-      })["catch"](function (err) {
-        _this.searchResult = "<span class=\"alert alert-warning\">\n                        ".concat(Object.values(err).join(), "</span>");
-      });
+      if (Object.keys(this.sForm.search).length >= 3) {
+        var url = "/getSearchResult";
+        var data = {
+          keywords: this.sForm.search
+        };
+        axios.post(url, data).then(function (res) {
+          console.log(res.data);
+          _this.searchResult = res.data.result;
+
+          _this.$emit('getSearchResult', _this.searchResult);
+        });
+      }
     },
     xxform: function xxform() {
       this.searchResult = '';
@@ -142,7 +150,14 @@ __webpack_require__.r(__webpack_exports__);
   name: "SearchList",
   props: ["result"],
   data: function data() {
-    return {};
+    return {
+      lists: ''
+    };
+  },
+  watch: {
+    "result": function result(x) {
+      this.lists = x;
+    }
   },
   methods: {
     getURL: function getURL(method, target_id, id) {
@@ -397,6 +412,18 @@ var render = function() {
       _vm._v(" "),
       _c("search-form", {
         on: {
+          getSearchResult: function($event) {
+            return _vm.getSearchResult($event)
+          },
+          clearSearch: function($event) {
+            return _vm.clearSearch($event)
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("search-list", {
+        attrs: { result: _vm.searchResult },
+        on: {
           getURL: function($event) {
             return _vm.getURL($event)
           }
@@ -429,86 +456,53 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c(
-        "form",
-        {
-          attrs: { action: "" },
-          on: {
-            submit: function($event) {
-              $event.preventDefault()
-              return _vm.submitSearch($event)
-            }
-          }
-        },
-        [
-          _c("div", { staticClass: "form-group" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.sForm.search,
-                  expression: "sForm.search"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: {
-                placeholder: "Search : หาอะไรไม่เจอ ก็ Search นะจ๊ะ",
-                type: "text",
-                name: "keywords"
-              },
-              domProps: { value: _vm.sForm.search },
-              on: {
-                keyup: [
-                  function($event) {
-                    $event.preventDefault()
-                    return _vm.xxform($event)
-                  },
-                  function($event) {
-                    if (
-                      !$event.type.indexOf("key") &&
-                      _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                    ) {
-                      return null
-                    }
-                    $event.preventDefault()
-                    return _vm.submitSearch($event)
-                  }
-                ],
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.sForm, "search", $event.target.value)
-                }
-              }
-            })
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c("search-list", {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.canShow,
-            expression: "canShow"
-          }
-        ],
-        attrs: { result: _vm.searchResult },
+  return _c("div", [
+    _c(
+      "form",
+      {
+        attrs: { action: "" },
         on: {
-          getURL: function($event) {
-            return _vm.$emit("getURL", $event)
+          submit: function($event) {
+            $event.preventDefault()
+            return _vm.submitSearch($event)
           }
         }
-      })
-    ],
-    1
-  )
+      },
+      [
+        _c("div", { staticClass: "form-group" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.sForm.search,
+                expression: "sForm.search"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: {
+              placeholder: "Search : หาอะไรไม่เจอ ก็ Search นะจ๊ะ",
+              type: "text",
+              name: "keywords"
+            },
+            domProps: { value: _vm.sForm.search },
+            on: {
+              keyup: function($event) {
+                $event.preventDefault()
+                return _vm.submitSearch($event)
+              },
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.sForm, "search", $event.target.value)
+              }
+            }
+          })
+        ])
+      ]
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -537,7 +531,7 @@ var render = function() {
     _c(
       "ul",
       { staticClass: "list-group" },
-      _vm._l(_vm.result, function(re) {
+      _vm._l(_vm.lists, function(re) {
         return _c("li", { staticClass: "list-group-item" }, [
           _c(
             "a",
@@ -557,7 +551,8 @@ var render = function() {
                   "\n            "
               )
             ]
-          )
+          ),
+          _vm._v(" - \n            " + _vm._s(re.method) + "\n        ")
         ])
       }),
       0

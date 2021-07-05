@@ -63,3 +63,58 @@ INSERT INTO `searches`(`target_title`,`method`,`target_id`,
     '2021-07-03 18:01:37','2021-07-03 18:01:37');
  
  /* ======== auto script 2021-07-03 18:01:37 pm END ========= */
+
+ /* =========== auto script START 2021-07-05 08:39:18 am  ==================== */
+ /* === backup search index 2021-07-05 08:39:18 ====== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,
+`created_at`,`updated_at`) VALUES(
+    'get to know and how to use cmus in my 15 minute','posts','4',
+    'get to know and how to use cmus in my 15 minute',
+    '2021-07-05 08:39:18','2021-07-05 08:39:18');
+ 
+ /* ======== auto script 2021-07-05 08:39:18 am END ========= */
+
+ /* =========== auto script START 2021-07-05 11:02:42 am  ==================== */
+ /* ======== update table `searches` ======== */
+UPDATE `searches` SET 
+target_title='หนังสือนิยาย เพชรพระอุมา ตอน แต่ปางบรรพ์',
+keywords='หนังสือนิยาย เพชรพระอุมา ตอน แต่ปางบรรพ์',
+updated_at='2021-07-05 10:49:24' WHERE id='1';
+ 
+ /* ======== auto script 2021-07-05 11:02:42 am END ========= */
+
+
+ /* =========== auto script START 2021-07-05 11:16:08 am  ==================== */
+ /* ==== backup insert `searches` =========== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,`created_at`,`updated_at`) VALUES(
+    'ความจริงของคนเจ้าชู้','songs','156',
+    'ความจริงของคนเจ้าชู้',
+    '2021-07-05 11:16:08','2021-07-05 11:16:08');
+ 
+ /* ======== auto script 2021-07-05 11:16:08 am END ========= */
+
+ /* =========== auto script START 2021-07-05 11:26:54 am  ==================== */
+ /* === backup search index 2021-07-05 11:26:54 ====== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,
+`created_at`,`updated_at`) VALUES(
+    'หนังสือนิยาย เพชรพระอุมา ตอน อาถรรพณ์นิทรานคร','posts','12',
+    'หนังสือนิยาย เพชรพระอุมา ตอน อาถรรพณ์นิทรานคร',
+    '2021-07-05 11:26:54','2021-07-05 11:26:54');
+ 
+ /* ======== auto script 2021-07-05 11:26:54 am END ========= */
+
+
+ /* =========== auto script START 2021-07-05 19:48:19 pm  ==================== */
+ /* === auto backup from posts 2021-07-05 19:48:19=====*/
+INSERT INTO `searches`(`target_title`,`target_id`,`keywords`,
+`method`,`created_at`,`updated_at`) VALUES(
+    'You may use the table method provided by the DB facade to begin a quer',
+    '22',
+    'You may use the table method provided by the DB facade to begin a quer',
+    'posts',
+    '2021-07-05 19:48:19','2021-07-05 19:48:19');
+ 
+ /* ======== auto script 2021-07-05 19:48:19 pm END ========= */

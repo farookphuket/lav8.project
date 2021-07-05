@@ -187,16 +187,25 @@ INSERT INTO `{$this->song_read_table}`(`song_id`,`readed_at`,`os`,`browser`,
         $method = "songs";
         $song = Song::find($song_id);
         
-        $search_data = [
-            "method" => $method,
-            "target_id" => $song_id,
-            "target_title" => $song->name,
-            "keywords" => $song->name
+        $get_se = Search::where("method",$method)
+                    ->where("target_id",$song->id)
+                    ->get();
 
-        ];
+        // only create if no row found
+        if(count($get_se) == 0):
+            $search_data = [
+                "method" => $method,
+                "target_id" => $song_id,
+                "target_title" => $song->name,
+                "keywords" => $song->name
 
-        Search::create($search_data);
-        $this->backupInsertSearch();
+            ];
+
+            Search::create($search_data);
+            $this->backupInsertSearch();
+
+        endif;
+
 
     }
     public function backupInsertSearch(){

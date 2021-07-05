@@ -1,8 +1,11 @@
 <template>
     <div class="container">
        <h2>search</h2>
-       <search-form @getURL="getURL($event)"></search-form>
+       <search-form @getSearchResult="getSearchResult($event)" 
+           @clearSearch="clearSearch($event)"></search-form>
 
+       <search-list :result="searchResult" 
+           @getURL="getURL($event)"></search-list>
     </div>
 </template>
 <script>
@@ -12,11 +15,11 @@ export default{
     name:"PubSearch",
     components:{
         SearchForm,
-
+        SearchList,
     },
     data(){
         return{
-
+            searchResult:'',
         }
     },
     methods:{
@@ -27,6 +30,12 @@ export default{
                     console.log(res.data.msg)
                     location.href = res.data.url
                 })
+        },
+        getSearchResult(res){
+            this.searchResult = res
+        },
+        clearSearch(){
+            this.searchResult = ''
         },
     },
 }

@@ -4,25 +4,19 @@
             @submit.prevent="submitSearch">
             <div class="form-group">
                 <input v-model="sForm.search" 
-                @keyup.prevent="xxform"
-                @keyup.enter.prevent="submitSearch"
+                @keyup.prevent="submitSearch"
                 placeholder="Search : หาอะไรไม่เจอ ก็ Search นะจ๊ะ"
                 class="form-control" type="text" name="keywords">
             </div>
         </form>
-        <search-list :result="searchResult" 
-            @getURL="$emit('getURL',$event)"
-            v-show="canShow"></search-list>
+
     </div>
 </template>
 
 <script>
-import SearchList from './SearchList.vue'
+
 export default{
     name:"SearchForm",
-    components:{
-        SearchList,
-    },
     data(){
         return{
             searchResult:[],
@@ -34,19 +28,20 @@ export default{
     },
     methods:{
         submitSearch(){
-            
-           let url = `/getSearchResult`
-            this.sForm.submit("post",url)
-                .then((res)=>{
-                    this.searchResult = res.result
-                    if(Object.keys(this.searchResult).length >= 1){
-                        this.canShow = true
-                    }
-                })
-                .catch((err)=>{
-                    this.searchResult = `<span class="alert alert-warning">
-                        ${Object.values(err).join()}</span>`
-                })
+            this.$emit('clearSearch')
+           //console.log(Object.keys(this.sForm.search).length) 
+            if(Object.keys(this.sForm.search).length >= 3){
+                let url = `/getSearchResult`
+                let data = {
+                    keywords:this.sForm.search
+                }
+                axios.post(url,data)
+                    .then(res=>{
+                        console.log(res.data)
+                        this.searchResult = res.data.result
+                        this.$emit('getSearchResult',this.searchResult)
+                    })
+            }
         },
         xxform(){
             this.searchResult = ''

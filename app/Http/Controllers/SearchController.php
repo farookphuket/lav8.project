@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
+    protected $search_table = "searches";
     /**
      * Display a listing of the resource.
      *
@@ -106,17 +107,43 @@ class SearchController extends Controller
             "post" => $get,
             "url" => $url
         ];
+
+        // make sure that we always get the last update from the post 
+        // in this search table
+        $se_id = Search::where("target_id",$get->id)
+            ->update([
+                "target_title" => $get->post_title,
+                "keywords" => $get->post_title,
+                "updated_at" => now()
+            ]);
+
+
+        // make a backup to file 
+        $this->updateBackupSearch($se_id);
         return $data;
     }
 
 
     public function getSong($id){
-        $song = Song::find($id);
+        $get = Song::find($id);
 
         $data = [
-            "url" =>  $song->url,
+            "url" =>  $get->url,
             "song" => $song
         ];
+
+        // make sure that we always get the last update from the song 
+        // in this search table
+        $se_id = Search::where("target_id",$get->id)
+            ->update([
+                "target_title" => $get->name,
+                "keywords" => $get->name,
+                "updated_at" => now()
+            ]);
+
+        
+        // make a backup to file 
+        $this->updateBackupSearch($se_id);
         return $data;
     }
     /**
@@ -137,9 +164,9 @@ class SearchController extends Controller
      * @param  \App\Models\Search  $search
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Search $search)
+    public function update($id)
     {
-        //
+
     }
 
     /**
@@ -159,6 +186,19 @@ class SearchController extends Controller
      * if the item has been compleatly change on it update  
      * */
 
+    public function updateBackupSearch($se_id){
+        $get = Search::find($se_id);
+        $file = base_path("DB/search_list.sqlite");
+        $cont = "/* ======== update table `{$this->search_table}` ======== */";
+        $cont .= "
+UPDATE `{$this->search_table}` SET 
+target_title='{$get->target_title}',
+keywords='{$get->keywords}',
+updated_at='{$get->updated_at}' WHERE id='{$get->id}';
+";
+
+        write2text($file,$cont);
+    }
     public function delBackupSearch($search_id){
 
     }
