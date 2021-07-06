@@ -22,11 +22,3 @@ INSERT INTO `searches`(`target_title`,`method`,`target_id`,
  
  /* ======== auto script 2021-07-06 11:21:43 am END ========= */
 
- /* =========== auto script START 2021-07-06 11:22:38 am  ==================== */
- /* ======== update table `searches` ======== */
-UPDATE `searches` SET 
-target_title='หนังสือนิยาย เพชรพระอุมา ตอน แต่ปางบรรพ์',
-keywords='หนังสือนิยาย เพชรพระอุมา ตอน แต่ปางบรรพ์',
-updated_at='2021-07-02 11:41:04' WHERE id='1';
- 
- /* ======== auto script 2021-07-06 11:22:38 am END ========= */
