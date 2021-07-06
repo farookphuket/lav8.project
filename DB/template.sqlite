@@ -1,22 +1,9 @@
 /* =================== Default template DO NOT DELETE THIS ==================*/
-/* Template 2 for whatnews 1  */
-/*
-    INSERT INTO 'templates' ('id','user_id','section','title','excerpt','body',
-    'created_at','updated_at') VALUES (NULL,
-    '1',
-    'whatnews',
-    'title',
-    'excerpt',
-    'body',
-    date('now','localtime'),
-    date('now','localtime')
-    ); 
-*/
 
 
 /*  whatnews with photo on left 15-Feb-2021 */
-    INSERT INTO 'templates' ('id','user_id','section','title','excerpt','body',
-    'created_at','updated_at') VALUES (NULL,
+    INSERT INTO 'templates' ('user_id','section','title','excerpt','body',
+    'created_at','updated_at') VALUES (
     '1',
     'whatnews',
     'Photo on left',
@@ -53,9 +40,8 @@ as it''s the whatnews template so no need the content
 
 
 /* Template 2 for whatnews 1  */
-INSERT INTO 'templates' ('id','user_id','section','title','excerpt','body',
-'created_at','updated_at') VALUES (NULL,
-
+INSERT INTO 'templates' ('user_id','section','title','excerpt','body',
+'created_at','updated_at') VALUES (
 '1',
 'whatnews',
 'short post with video ',
@@ -115,9 +101,8 @@ be a short post
 
 
 /* Template 1 for post */
-INSERT INTO 'templates' ('id','user_id','section','title','excerpt','body',
-'created_at','updated_at') VALUES (NULL,
-
+INSERT INTO 'templates' ('user_id','section','title','excerpt','body',
+'created_at','updated_at') VALUES (
 '1',    /* user id */
 
 'post',     /* template section */
@@ -309,50 +294,10 @@ INSERT INTO 'templates' ('id','user_id','section','title','excerpt','body',
 
 
 /* =================== Default template DO NOT DELETE THIS ==================*/
+/* ========================================================================= */
+/* ========================================================================= */
+/* =================== Auto script ========================================= */
 
-
- /* =========== auto script START 2021-06-30 09:48:50 am  ==================== */
- /* === update of template section whatnews ========*/
-/* === update of template section whatnews =====*/
-UPDATE `templates` SET title='short post with video x',
-section='whatnews',
-excerpt='<p class="mb-4">
-    <b>เหล้า เบียร์ </b> กินแล้วเมา สร้างปัญหา(คนที่ไม่ได้สร้างปัญหาก็อย่าเดือดร้อนนะ)
-    ยกพวกตีกัน ทะเลาะกัน ขับรถชน ข่มขืน เพราะว่าคนเมาเหล้ามันขาดสติ (จริงๆ ไม่น่าจะโทษเหล้านะ
-    คนมันเหี้ย ไม่ต้องแดกอะไรเข้าไป ก็เหี้ย) แต่ปัญหาเหล่านั้นส่วนมากก็จะมาจาก เมาแล้วขาดสติก่อนทั้งนั้น
-
-</p>
-
-<p class="pt-2 mb-4">
-    จะให้กัญชาสามารถปลูกได้ทุกๆ บ้าน ในตอนนี้น่าจะยังคงเป็นเรื่องที่ห่างไกล เพราะว่ามันจะทำให้ "นายทุน"
-    เสียผลประโยชน์ เรื่องนี้เป็นเรื่องที่ยอมไม่ได้ ประชาชนต้อง "รอไปก่อน" ถ้านายทุนยังไม่ได้ประโยชน์
-    ประชาชนก็ตีหม้อประท้วงไปเหอะ แต่ใครจะเหลียวแล
-</p>
-<div class="video-container">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/BWwm2wk1Kc8" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-    encrypted-media;
-    gyroscope; picture-in-picture" allowfullscreen=""><br></iframe><br>
-    <br>
-</div>
-<p class="pt-2 text-center">
-    ทดสอบการ update script  วันนี้นี่เอง
-</p>
-
-<p class="pt-4">
-    ไม่ได้จะเอาไว้เสพหรอกนะ แต่จะปลูกขาย
-</p>',
-body='<div class="container">
-<div class="alert alert-warning">
-    <h1 class="text-center">
-There is no need for the body container since whatnews only need to 
-be a short post 
-    </h1>
-</div>
-</div>',
-updated_at='2021-06-30 09:48:50'
-	WHERE id=2;
- 
- /* ======== auto script 2021-06-30 09:48:50 am END ========= */
 
  /* =========== auto script START 2021-06-30 10:12:13 am  ==================== */
  /* ======= backup template post ================*/
