@@ -123,40 +123,51 @@ class PostsController extends Controller
     public function store()
     {
         // validate form 
-        $this->validPost();
+        $validate = request()->validate([
+            "title" => ["required","max:80"],
+            "body" => ["required"],
+            "excerpt" => ["required"],
+            "new_tag" => ["min:4","max:15","nullable"]
+        ]);
 
-        //get the slug from post title
-        //$slug = Str::slug(request('slug'));
+        // unset array new_tag 
+        unset($validate["new_tag"]);
+
+        // prepare data to post table
+        $validate["post_title"] = xx_clean(request()->title);
+        $validate["post_excerpt"] = xx_clean(request()->excerpt);
+        $validate["post_body"] = xx_clean(request()->body);
+        $validate["is_public"] = !request()->is_public?0:1;
+        $validate["user_id"] = Auth::user()->id;
+        
+
         // remove the last dash from the string
-        $slug = rtrim(request()->slug,"-");
+        $validate["slug"] = rtrim(request()->slug,"-");
         
         // save the new post return the post->id
-        $nPost = new Post();
-        $nPost->user_id = Auth::user()->id;
-        $nPost->is_public = request()->is_public?1:0;
-        $nPost->post_title = xx_clean(request()->title);
-        $nPost->slug = $slug;
-        $nPost->post_excerpt = xx_clean(request()->excerpt);
-        $nPost->post_body = xx_clean(request()->body);
-        $nPost->save();
+        Post::create($validate);
 
-        //-- make a backup 
-        $this->backupInsertPost();
+        // get the last post 
+        $nPost = Post::latest()->first(); 
 
-        // make index for search 
-        $this->makeSearchIndex($nPost->id);
 
+
+        // link post to tags
         $nPost->tags()->attach(request('tags'));
 
         if(!empty(request('new_tag'))):
             $this->makeTag($nPost);
         endif;
 
-        if(!$nPost->slug):
-            Post::where('id',$nPost->id)->update([
-                'slug' => $nPost->id
-            ]);
+       // will make a search index only the public post 
+        if($nPost->is_public != 0):
+            // make index for search 
+            $this->makeSearchIndex($nPost->id);
         endif;
+
+        //-- make a backup for post
+        $this->backupInsertPost($nPost->id);
+
 
         $msg = "<span class=\"alert alert-success\">Success : Post created</span>";
 
@@ -252,19 +263,9 @@ class PostsController extends Controller
 
         // $user_id 
         $user_id = $post->user_id;
-        //get the slug from post title
-        //$slug = Str::slug(request('slug'));
+
         // remove the last dash
         $slug = rtrim(request()->slug,"-");
-
-        if(!$slug):
-            $slug = $post->id;
-        endif;
-        // before save
-
-        /* $this->exitTags($post); */
-        /* dd(request('tags')); */
-
 
         // save the new post return the post->id
         $nPost = Post::where('id',$post->id)
@@ -277,9 +278,10 @@ class PostsController extends Controller
                 'post_body'  => xx_clean(request()->body),
                 'updated_at' => now()
             ]);
+
+
         $nPost = Post::where('id',$post->id)->first();
 
-        $this->backupUpdateTag($nPost->id);
         $nPost->tags()->sync(request('tags'));
 
         if(!empty(request('new_tag'))):
@@ -289,9 +291,7 @@ class PostsController extends Controller
         $msg = "<span class=\"alert alert-success\">Success : item has been updated</span>";
         return response()->json(["msg" => $msg],200);
 
-        // check and save tag name
 
-       // return redirect()->route('admin.post.index')->with(Session::flash('success','your post has been updated!'));
 
     }
 
@@ -318,9 +318,10 @@ class PostsController extends Controller
 
 
     /* ============ make a backup 26 June 2021 START =========================*/
-    public function backupInsertPost(){
+    public function backupInsertPost($id){
 
-        $post = Post::latest()->first();
+        $post = Post::find($id);
+
         $file = base_path("DB/postList.sqlite");
         $con1 = "/* ========= auto backup ".date("Y-m-d H:i:s")." ========= */";
         $con1 .= "
@@ -329,43 +330,41 @@ INSERT INTO `{$this->post_table}`(`user_id`,`post_title`,`slug`,`post_excerpt`,
     '{$post->user_id}','{$post->post_title}','{$post->slug}',
     '{$post->post_excerpt}',
     '{$post->post_body}',
-    '{$post->is_public}','{$post->created_at}','{$post->updated_at}'
-);
+    '{$post->is_public}',
+    '{$post->created_at}','{$post->updated_at}');
 ";
 
-        // tags can be more than one
-        $tags = DB::table($this->post_tag_table)
-                        ->where("post_id",$post->id)
-                        ->get();
-        if(count($tags) >= 2):
-            $this->backupUpdateTag($post->id);
-
-
-        endif;
-
-
-
+        $this->backupPostTagLink($post->id);
         write2text($file,$con1);
-
-
     }
 
-    public function backupUpdateTag($post_id){
-
-        $tags = DB::table($this->post_tag_table)
+    public function backupPostTagLink($post_id){
+        // search in post_tag table of this post id
+        $tags = DB::table("post_tag")
                     ->where("post_id",$post_id)
                     ->get();
-
-        foreach($tags as $ta):
+        $now = date("Y-m-d H:i:s");
+        if(count($tags) <= 1):
             $file = base_path("DB/post_link_tag.sqlite");
-        $co = "/* === auto tag link ".date("Y-m-d H:i:s")." ==== */";
-        $co .= "
+        $cont = "
 INSERT INTO `{$this->post_tag_table}`(`post_id`,`tag_id`,`created_at`,
 `updated_at`) VALUES(
-    '{$ta->post_id}','{$ta->tag_id}','{$ta->created_at}','{$ta->updated_at}');
-";     
-        write2text($file,$co);
+    '{$post_id}','1',
+    '{$now}','{$now}');
+";
+    write2text($file,$cont);
+        else:
+        foreach($tags as $ta):
+            $file = base_path("DB/post_link_tag.sqlite");
+        $cont = "
+INSERT INTO `{$this->post_tag_table}`(`post_id`,`tag_id`,`created_at`,
+`updated_at`) VALUES(
+    '{$ta->post_id}','{$ta->tag_id}',
+    '{$ta->created_at}','{$ta->updated_at}');
+";
+    write2text($file,$cont);
         endforeach;
+        endif;
 
     }
 

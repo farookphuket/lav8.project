@@ -58,6 +58,7 @@ class PostsController extends Controller
     /* getPostlist call by ajax */ 
     public function getPostList(){
         $posts = Post::where('slug','!=','about')
+                    ->where("is_public","!=",0)
                     ->with('user')
                         ->with('tags')
                         ->with('comments')
@@ -138,12 +139,15 @@ class PostsController extends Controller
      */
     public function show(Post $post)
     {
-        $this->makeCount($post->id);
+
         $get_post = Post::with("comments")
                     ->with("user")
                     ->with("tags")
                     ->where("slug",$post->slug)
                     ->get();
+
+
+        $this->makeCount($post->id);
 
         // make index for search
         $this->makeIndexPost($post->id);
@@ -239,7 +243,7 @@ class PostsController extends Controller
 
     /* ============ makeIndexPost for search ================================ */
     public function makeIndexPost($id){
-        $post = Post::find($id);
+        $post = Post::where("id",$id)->first();
 
         $search = Search::where("keywords",$post->post_title)
                         ->where("method","posts")

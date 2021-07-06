@@ -379,9 +379,7 @@ __webpack_require__.r(__webpack_exports__);
 
       this.clearFormData();
       setTimeout(function () {
-        _this4.res_status = '';
-
-        _this4.$emit('getPostList');
+        _this4.res_status = ''; //      this.$emit('getPostList')
       }, 2500);
     },
     clearFormData: function clearFormData() {

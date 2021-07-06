@@ -1,43 +1,20 @@
-/*
-
-    Table Post Default content
-
-
-*/ 
 
 
 
-/*
-
-INSERT INTO `posts` (`id`,`user_id`,`post_title`,`slug`,`post_excerpt`,
-`post_body`,`is_public`,`last_read_ip`,`last_read_date`,`read_count`,
-`created_at`,`updated_at`) VALUES (2,
-'1',
-'title',
-
-'title-slug',
-
-'',
-
-'',
-
-'1','','2021-04-10','0',
-'2021-04-10 08:45:45',
-'2021-04-10 08:46:46'
-);
-
-*/
+/* ================= Default DATA DO NOT DELETE ===========================  */
 
 
 
 
+
+/* ================= Default DATA DO NOT DELETE ===========================  */
 
 
 
 /* Item 21 Date 10 Apr 2021  Name          */
-INSERT INTO `posts` (`id`,`user_id`,`post_title`,`slug`,`post_excerpt`,
+INSERT INTO `posts` (`user_id`,`post_title`,`slug`,`post_excerpt`,
 `post_body`,`is_public`,`last_read_ip`,`last_read_date`,`read_count`,
-`created_at`,`updated_at`) VALUES (21,
+`created_at`,`updated_at`) VALUES (
 '1',
 'รอมฎอน 2564 เดือนแห่งศรัทธา การถือศีลอดเพื่อฝึกตนของอิสลามิกชนทั่วโลก',
 
@@ -283,9 +260,9 @@ INSERT INTO `posts` (`id`,`user_id`,`post_title`,`slug`,`post_excerpt`,
 
 
 /* Item 20 Date 19 Mar 2021  Name หนังสือนิยาย เพชรพระอุมา ตอน มงกุฎไพร */ 
-INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+INSERT INTO "posts" ("user_id","post_title","slug","post_excerpt",
 "post_body","is_public","last_read_ip","last_read_date","read_count",
-"created_at","updated_at") VALUES (20,
+"created_at","updated_at") VALUES (
 '1',
 'หนังสือนิยาย เพชรพระอุมา ตอน มงกุฎไพร',
 
@@ -469,9 +446,9 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
 
 
 /* Item 19 Date 19 Mar 2021  Name หนังสือนิยาย เพชรพระอุมา ตอน แต่ปางบรรพ์ */ 
-INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+INSERT INTO "posts" ("user_id","post_title","slug","post_excerpt",
 "post_body","is_public","last_read_ip","last_read_date","read_count",
-"created_at","updated_at") VALUES (19,
+"created_at","updated_at") VALUES (
 '1',
 'หนังสือนิยาย เพชรพระอุมา ตอน แต่ปางบรรพ์',
 
@@ -680,9 +657,9 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
 
 
 /* Item 18 Date 19 Mar 2021 หนังสือนิยาย เพชรพระอุมา ตอน นาคเทวี */
-INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+INSERT INTO "posts" ("user_id","post_title","slug","post_excerpt",
 "post_body","is_public","last_read_ip","last_read_date","read_count",
-"created_at","updated_at") VALUES (18,
+"created_at","updated_at") VALUES (
 '1',
 'หนังสือนิยาย เพชรพระอุมา ตอน นาคเทวี',
 
@@ -871,9 +848,9 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
 
 
 /* Item 17 หนังสือนิยาย เพชรพระอุมา ตอน จิตรางคนางค์ */
-INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+INSERT INTO "posts" ("user_id","post_title","slug","post_excerpt",
 "post_body","is_public","last_read_ip","last_read_date","read_count",
-"created_at","updated_at") VALUES (17,
+"created_at","updated_at") VALUES (
 '1',
 'หนังสือนิยาย เพชรพระอุมา ตอน จิตรางคนางค์',
 
@@ -1056,9 +1033,9 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
 
 /* Item 16 Added 19 Mar 2021 */
 /* หนังสือนิยาย เพชรพระอุมา ตอน ไอ้งาดำ */
-INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+INSERT INTO "posts" ("user_id","post_title","slug","post_excerpt",
 "post_body","is_public","last_read_ip","last_read_date","read_count",
-"created_at","updated_at") VALUES (16,
+"created_at","updated_at") VALUES (
 '1',
 'หนังสือนิยาย เพชรพระอุมา ตอน ไอ้งาดำ',
 
@@ -1241,9 +1218,9 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
 
 
 /* เพชรพระอุมา ตอน จอมพราน 17-Mar-2021  */
-INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+INSERT INTO "posts" ("user_id","post_title","slug","post_excerpt",
 "post_body","is_public","last_read_ip","last_read_date","read_count",
-"created_at","updated_at") VALUES (15,
+"created_at","updated_at") VALUES (
 '1',
 'หนังสือนิยาย เพชรพระอุมา ตอน จอมพราน',
 
@@ -1427,9 +1404,9 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
 
 
 /* หนังสือนิยาย เพชรพระอุมา ตอน แงซายจอมจักรา 8 Mar 2021  */
-INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+INSERT INTO "posts" ("user_id","post_title","slug","post_excerpt",
 "post_body","is_public","last_read_ip","last_read_date","read_count",
-"created_at","updated_at") VALUES (14,
+"created_at","updated_at") VALUES (
 '1',
 'หนังสือนิยาย เพชรพระอุมา ตอน แงซายจอมจักรา',
 
@@ -1650,9 +1627,9 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
 
 
 /* หนังสือนิยาย เพชรพระอุมา ตอน ป่าโลกล้านปี 8 Mar 2021  */
-INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+INSERT INTO "posts" ("user_id","post_title","slug","post_excerpt",
 "post_body","is_public","last_read_ip","last_read_date","read_count",
-"created_at","updated_at") VALUES (13,
+"created_at","updated_at") VALUES (
 '1',
 'หนังสือนิยาย เพชรพระอุมา ตอน ป่าโลกล้านปี',
 
@@ -1845,9 +1822,9 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
 
 
 /* หนังสือนิยาย เพชรพระอุมา ตอน  8 Mar 2021*/
-INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+INSERT INTO "posts" ("user_id","post_title","slug","post_excerpt",
 "post_body","is_public","last_read_ip","last_read_date","read_count",
-"created_at","updated_at") VALUES (12,
+"created_at","updated_at") VALUES (
 '1',
 'หนังสือนิยาย เพชรพระอุมา ตอน อาถรรพณ์นิทรานคร',
 
@@ -2032,9 +2009,9 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
 
 
 /* */
-INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+INSERT INTO "posts" ("user_id","post_title","slug","post_excerpt",
 "post_body","is_public","last_read_ip","last_read_date","read_count",
-"created_at","updated_at") VALUES (11,
+"created_at","updated_at") VALUES (
 '1',
 'หนังสือนิยาย เพชรพระอุมา ตอน จอมผีดิบมันตรัย',
 
@@ -2209,9 +2186,9 @@ INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
 
 
 /* Bash script in linux - Joe Collins 2021-02-18 */
-INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+INSERT INTO "posts" ("user_id","post_title","slug","post_excerpt",
 "post_body","is_public","last_read_ip","last_read_date","read_count",
-"created_at","updated_at") VALUES (10,
+"created_at","updated_at") VALUES (
 '1',
 'Bash script in linux - Joe Collins',
 
@@ -2261,9 +2238,9 @@ gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 /*  Install neovim on 18-Feb-2021 */
-INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+INSERT INTO "posts" ("user_id","post_title","slug","post_excerpt",
 "post_body","is_public","last_read_ip","last_read_date","read_count",
-"created_at","updated_at") VALUES (8,
+"created_at","updated_at") VALUES (
 '1',
 'Install and start using Neovim on 18-Feb-2021',
 
@@ -2350,9 +2327,9 @@ alt="my neovim on 18-Feb-2021">
 
 
     /* หนังสือนิยาย เพชรพระอุมา ตอน ดงมรณะ  18 Feb 2021  */
-INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+INSERT INTO "posts" ("user_id","post_title","slug","post_excerpt",
 "post_body","is_public","last_read_ip","last_read_date","read_count",
-"created_at","updated_at") VALUES (7,
+"created_at","updated_at") VALUES (
 '1',
 'หนังสือนิยาย เพชรพระอุมา ตอน ดงมรณะ',
 
@@ -2550,9 +2527,9 @@ class="btn btn-primary">ดาวน์โหลดคลิป 052 - 058</a>
 
 
     /* หนังสือนิยาย เพชรพระอุมา ตอน ไพรมหากาฬ 8 Feb 2021  */
-    INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+    INSERT INTO "posts" ("user_id","post_title","slug","post_excerpt",
     "post_body","is_public","last_read_ip","last_read_date","read_count",
-    "created_at","updated_at") VALUES (6,
+    "created_at","updated_at") VALUES (
 
             '1', /* USER ID */
 
@@ -2752,9 +2729,9 @@ href="https://archive.org/compress/clip_001_to_011/formats=VBR%20MP3&file=/clip_
 
 /* got headache for 6 hours just a simple thing */
 
-INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+INSERT INTO "posts" ("user_id","post_title","slug","post_excerpt",
 "post_body","is_public","last_read_ip","last_read_date","read_count",
-"created_at","updated_at") VALUES (5,
+"created_at","updated_at") VALUES (
 '1',
 'beware simple thing is some time not simple',
 
@@ -2802,9 +2779,9 @@ come back to work as it use to
 /* cmus  START 27 jan 2021 */
 
 
-INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+INSERT INTO "posts" ("user_id","post_title","slug","post_excerpt",
 "post_body","is_public","last_read_ip","last_read_date","read_count",
-"created_at","updated_at") VALUES (4,
+"created_at","updated_at") VALUES (
 '1',
 'get to know and how to use cmus in my 15 minute',
 
@@ -3051,9 +3028,9 @@ your playlist will be save to "<span class="badge badge-info">
 
 
 
-INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+INSERT INTO "posts" ("user_id","post_title","slug","post_excerpt",
 "post_body","is_public","last_read_ip","last_read_date","read_count",
-"created_at","updated_at") VALUES (1,
+"created_at","updated_at") VALUES (
 '1',
 'How can I add datetime to .sqlite for auto data',
 
@@ -3093,9 +3070,9 @@ https://stackoverflow.com</a> now what else trick I learn today in
 
 /* The 2 post */
 
-INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+INSERT INTO "posts" ("user_id","post_title","slug","post_excerpt",
 "post_body","is_public","last_read_ip","last_read_date","read_count",
-"created_at","updated_at") VALUES (2,
+"created_at","updated_at") VALUES (
 '1',/* user id */
 'How can I setup lamp server on Manjaro 20.2.2 ',/* title */
 'how-can-i-setup-lamp-server-on-manjaro-20-2-2', /* Slug */
@@ -3157,9 +3134,9 @@ gyroscope; picture-in-picture" allowfullscreen></iframe>
 /* my keyboard layout on manjaro i3 now is working */ 
 
 
-INSERT INTO "posts" ("id","user_id","post_title","slug","post_excerpt",
+INSERT INTO "posts" ("user_id","post_title","slug","post_excerpt",
 "post_body","is_public","last_read_ip","last_read_date","read_count",
-"created_at","updated_at") VALUES (3,
+"created_at","updated_at") VALUES (
 '1',/* user id */
 'I am finally can get the language switcher to work in manjaro i3wm',/* title */
 'i-am-finally-can-get-the-language-switcher-to-work-in-manjaro-i3wm', /* Slug */
@@ -3305,14 +3282,12 @@ Thai and English
 
 
 
- /* =========== auto script START 2021-07-05 19:48:19 pm  ==================== */
- /* ========= auto backup 2021-07-05 19:48:19 ========= */
-INSERT INTO `posts`(`user_id`,`post_title`,`slug`,`post_excerpt`,
-`post_body`,`is_public`,`created_at`,`updated_at`) VALUES(
-    '1','You may use the table method provided by the DB facade to begin a quer','you-may-use-the-table-method-provided-by-the-db-facade-to-begin-a-quer',
-    '<p>You may use the&nbsp;table&nbsp;method provided by the&nbsp;DB&nbsp;facade to begin a query. The&nbsp;table&nbsp;method returns a fluent query builder instance for the given table, allowing you to chain more constraints onto the query and then finally retrieve the results of the query using the&nbsp;get&nbsp;method:</p>',
-    '<p>The&nbsp;get&nbsp;method returns an&nbsp;Illuminate\Support\Collection&nbsp;instance containing the results of the query where each result is an instance of the PHP&nbsp;stdClass&nbsp;object. You may access each column׳s value by accessing the column as a property of the object:</p>',
-    '0','2021-07-05 19:48:19','2021-07-05 19:48:19'
-);
- 
- /* ======== auto script 2021-07-05 19:48:19 pm END ========= */
+/* ============== Default Data END ========================================= */
+
+
+/* ============= Auto script will start from this point ==================== */
+
+
+
+
+

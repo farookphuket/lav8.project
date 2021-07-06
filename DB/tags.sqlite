@@ -67,20 +67,3 @@ INSERT INTO 'tags' ('id','tag_name','created_at','updated_at') VALUES (NULL,
 
 
 
- /* =========== auto script START 2021-07-05 19:43:12 pm  ==================== */
- /* ===== auto backup 2021-07-05 19:43:12 ====  */
-INSERT INTO `tags`(`tag_name`,
-`created_at`,`updated_at`) VALUES(
-    'Public Post','2021-07-05 08:38:42','2021-07-05 08:38:42'
-);
- 
- /* ======== auto script 2021-07-05 19:43:12 pm END ========= */
-
- /* =========== auto script START 2021-07-05 19:48:19 pm  ==================== */
- /* ===== auto backup 2021-07-05 19:48:19 ====  */
-INSERT INTO `tags`(`tag_name`,
-`created_at`,`updated_at`) VALUES(
-    'Public Post','2021-07-05 19:47:09','2021-07-05 19:47:09'
-);
- 
- /* ======== auto script 2021-07-05 19:48:19 pm END ========= */
