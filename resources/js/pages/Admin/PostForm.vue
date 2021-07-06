@@ -232,7 +232,7 @@ export default{
             this.clearFormData()
             setTimeout(()=>{
                 this.res_status = ''
-          //      this.$emit('getPostList')
+                this.$emit('getPostList')
             },2500)
         },
         clearFormData(){

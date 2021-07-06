@@ -30,3 +30,14 @@ keywords='หนังสือนิยาย เพชรพระอุมา
 updated_at='2021-07-02 11:41:04' WHERE id='1';
  
  /* ======== auto script 2021-07-06 11:22:38 am END ========= */
+
+ /* =========== auto script START 2021-07-06 14:27:09 pm  ==================== */
+ /* === backup search index 2021-07-06 14:27:09 ====== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,
+`created_at`,`updated_at`) VALUES(
+    'หนังสือนิยาย เพชรพระอุมา ตอน มงกุฎไพร','posts','2',
+    'หนังสือนิยาย เพชรพระอุมา ตอน มงกุฎไพร',
+    '2021-07-06 14:27:09','2021-07-06 14:27:09');
+ 
+ /* ======== auto script 2021-07-06 14:27:09 pm END ========= */

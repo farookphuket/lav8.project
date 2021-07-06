@@ -191,10 +191,12 @@ class SearchController extends Controller
         $file = base_path("DB/search_list.sqlite");
         $cont = "/* ======== update table `{$this->search_table}` ======== */";
         $cont .= "
+/* ================ update script ===========================================*/
 UPDATE `{$this->search_table}` SET 
 target_title='{$get->target_title}',
 keywords='{$get->keywords}',
 updated_at='{$get->updated_at}' WHERE id='{$get->id}';
+/* ================ update script ===========================================*/
 ";
 
         write2text($file,$cont);

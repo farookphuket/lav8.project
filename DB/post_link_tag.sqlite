@@ -47,10 +47,20 @@ INSERT INTO post_tag (`post_id`,`tag_id`,`created_at`,`updated_at`)
 VALUES('18','4','2021-06-20 22:10:04','2021-06-20 22:10:04');
 INSERT INTO post_tag (`post_id`,`tag_id`,`created_at`,`updated_at`)
 VALUES('19','4','2021-06-20 22:10:04','2021-06-20 22:10:04');
+
+
 INSERT INTO post_tag (`post_id`,`tag_id`,`created_at`,`updated_at`)
 VALUES('20','4','2021-06-20 22:10:04','2021-06-20 22:10:04');
 
+
+/*
+    post_link_tag.sqlite is the script to backup the post to link 
+    with tag 
+    
+
+*/
 /* ============== Default Data DO NOT DELETE!! =============================*/
+
 
 
 
