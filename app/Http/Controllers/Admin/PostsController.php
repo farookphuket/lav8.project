@@ -288,6 +288,9 @@ class PostsController extends Controller
             $this->makeTag($nPost);
         endif;
 
+        // backup the update version to file 
+        $this->backupUpdatePost($nPost->id);
+
         $msg = "<span class=\"alert alert-success\">Success : item has been updated</span>";
         return response()->json(["msg" => $msg],200);
 
@@ -368,6 +371,30 @@ INSERT INTO `{$this->post_tag_table}`(`post_id`,`tag_id`,`created_at`,
 
     }
 
+    /* make backup of the update version to file */
+    public function backupUpdatePost($id){
+        $post = Post::find($id);
+        $file = base_path("DB/postList.sqlite");
+        $cont = "/* ======== update script for post ============ */";
+        $cont .= "
+UPDATE `{$this->post_table}` SET post_title='{$post->post_title}',
+post_excerpt='{$post->post_excerpt}',
+post_body='{$post->post_body}',
+is_public='{$post->is_public}',
+updated_at='{$post->updated_at}' WHERE id='{$post->id}';
+";
+        $cont .= "/* ========== End of update script ===========*/";
+
+        write2text($file,$cont);
+
+        /* 
+         * this only can make a backup for post 
+         * will not update the tag link to file 
+         * */
+
+    }
+    /* make backup of the update version to file */
+
     public function backupInsertTag(){
         $tag = Tag::latest()->first();
 
@@ -423,6 +450,10 @@ INSERT INTO `{$this->search_table}`(`target_title`,`target_id`,`keywords`,
     '{$se->created_at}','{$se->updated_at}');
 ";
         write2text($file,$cont);
+    }
+
+    public function updateSearch($post_id){
+
     }
 
     /* ============ make a backup 26 June 2021 End =========================*/

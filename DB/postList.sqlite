@@ -3291,3 +3291,84 @@ Thai and English
 
 
 
+
+ /* =========== auto script START 2021-07-08 10:30:29 am  ==================== */
+ /* ========= auto backup 2021-07-08 10:30:29 ========= */
+INSERT INTO `posts`(`user_id`,`post_title`,`slug`,`post_excerpt`,
+`post_body`,`is_public`,`created_at`,`updated_at`) VALUES(
+    '1','Qemu and virt-manager  in my experience','qemu-and-virt-manager-in-my-experience',
+    '<div class="row">
+    <div class="col-lg-4">
+        <img src="https://i.ibb.co/5vjL4mQ/2021-07-08-qemu-virt-manager.png" class="responsive">
+        <p class="pt-2 text-center">
+            Virt manager in my ubuntu 20.04
+        </p>
+    </div>
+    <div class="col-lg-8">
+        <p>
+
+            <span class="badge badge-info p-2">
+                Virt-manager ,KVM,Qemu
+            </span> in my experience as I have been try 2 years ago was not that easy to me there are so many thing that make me feel
+            very upset of setting the thing up and start using "virt manager" that are all because I do not understand in it concept
+            so that׳s why I cannot using virt manager so my choice is always "Virtualbox" because it is way a lot more easier for me
+            up until 2 weeks ago (15 June 2021) I have try to using this program again and I am so so much in love with this!
+
+
+
+        </p>
+    </div>
+</div>',
+    '<div class="row">
+    <div class="col-lg-12">
+        <h2>about this post!</h2>
+        <p class="pt-2">
+            this post is just my experience of using the program virt-manager as I am just a beginner level only.
+        </p>
+    </div>
+</div>',
+    '1',
+    '2021-07-08 10:30:29','2021-07-08 10:30:29');
+ 
+ /* ======== auto script 2021-07-08 10:30:29 am END ========= */
+
+ /* =========== auto script START 2021-07-08 19:54:29 pm  ==================== */
+ /* ======== update script for post ============ */
+UPDATE `posts` SET post_title='Qemu and virt-manager  in my experience',
+post_excerpt='<div class="row">
+    <div class="col-lg-4">
+        <img src="https://i.ibb.co/5vjL4mQ/2021-07-08-qemu-virt-manager.png" class="responsive">
+        <p class="pt-2 text-center">
+            Virt manager in my ubuntu 20.04
+        </p>
+    </div>
+    <div class="col-lg-8">
+        <p>
+
+            <span class="badge badge-info p-2">
+                Virt-manager ,KVM,Qemu
+            </span> in my experience as I have been try 2 years ago was not that easy to me there are so many thing that make me feel
+            very upset of setting the thing up and start using "virt manager" that are all because I do not understand in it concept
+            so that׳s why I cannot using virt manager so my choice is always "Virtualbox" because it is way a lot more easier for me
+            up until 2 weeks ago (15 June 2021) I have try to using this program again and I am so so much in love with this!
+
+
+
+        </p>
+    </div>
+</div>',
+post_body='<div class="row">
+    <div class="col-lg-12">
+        <h2>about this post!</h2>
+        <p class="pt-2">
+            this post is just my experience of using the program virt-manager as I am just a beginner level only.
+        </p>
+        <p>
+            I just to prove the update
+        </p>
+    </div>
+</div>',
+is_public='1',
+updated_at='2021-07-08 19:54:29' WHERE id='21';
+/* ========== End of update script ===========*/ 
+ /* ======== auto script 2021-07-08 19:54:29 pm END ========= */

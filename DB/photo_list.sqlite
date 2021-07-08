@@ -1,4 +1,5 @@
 
+/* ==== dear user you must keep at least one row left here =================*/
 
 /*
     INSERT INTO "photos" ("id","user_id","title","embed","created_at",
@@ -13,6 +14,7 @@
 
 
 
+/* ==== dear user you must keep at least one row left here =================*/
     INSERT INTO "photos" ("id","user_id","title","embed","created_at",
     "updated_at") VALUES 
     (NULL,'1',

@@ -1418,3 +1418,31 @@ INSERT INTO `whatnews`(`user_id`,`whatnews_title`,`whatnews_body`,`is_public`,
     '2021-07-02 20:40:26','2021-07-02 20:40:26');
  
  /* ======== auto script 2021-07-02 20:40:26 pm END ========= */
+
+ /* =========== auto script START 2021-07-08 19:01:56 pm  ==================== */
+ /* =============== auto backup `whatnews`  =====*/
+INSERT INTO `whatnews`(`user_id`,`whatnews_title`,`whatnews_body`,`is_public`,
+`created_at`,`updated_at`) VALUES(
+    '1',
+    'ข่าวสถานการ์ณโควิดวันนี้ (8 มิย 64) ชักไม่สู้ดีแฮะ',
+    '<div class="row">
+    <div class="col-lg-12">
+        <p>
+            ผู้ติดเชื้อรายวันก็ยังดิ่งๆ อยู่นะดูท่าว่าจะไม่น่าภิรมย์เท่าไหร่เลยเห็นข่าวแล้ว อืม....
+        </p>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/HmL0EGVc6G0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="560" height="315" frameborder="0"><br></iframe>
+        </div>
+        <p class="text-center pt-2">
+            วิดิโอจากข่าวสดวันที่ 8 มิย. 2564
+        </p>
+        <p class="pt-2">
+            จะให้ทำยังไงกันดีล่ะครับ ก็เลือกเอาแล้วกันว่าจะเลือกหาวิธีปฏิบัติยังไงให้ปลอดภัย จะระวังยังไงจะเอาตัวเองไปเสี่ยงในที่คนเยอะๆ ให้ติดโควิดเล่นๆ กันมั้ย
+            มันไม่น่าจะคุ้มกันนะ รู้ได้ไงว่าเกิดอีกทีจะได้เกิดเป็นคน
+        </p>
+    </div>
+</div>',
+    '1',
+    '2021-07-08 19:01:56','2021-07-08 19:01:56');
+ 
+ /* ======== auto script 2021-07-08 19:01:56 pm END ========= */

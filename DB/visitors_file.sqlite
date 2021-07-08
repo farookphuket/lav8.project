@@ -17,3 +17,48 @@ INSERT INTO `visitors` (`client_ip`,`client_os`,
 
 
 
+
+ /* =========== auto script START 2021-07-06 17:11:23 pm  ==================== */
+ /* ========= auto script 2021-07-06 17:11:23 ====== to visitors*/
+INSERT INTO `visitors` (`client_ip`,`client_os`,
+`client_browser`,`visited_month`,`visited_year`,
+`last_visited_date`) VALUES (
+ '127.0.0.1',                             
+'Linux ',                                          
+'Chrome 91.0.4472.114',                        
+'7',                
+'2021',                 
+'2021-07-06');                                          
+
+ 
+ /* ======== auto script 2021-07-06 17:11:23 pm END ========= */
+
+ /* =========== auto script START 2021-07-07 06:14:01 am  ==================== */
+ /* ========= auto script 2021-07-07 06:14:01 ====== to visitors*/
+INSERT INTO `visitors` (`client_ip`,`client_os`,
+`client_browser`,`visited_month`,`visited_year`,
+`last_visited_date`) VALUES (
+ '127.0.0.1',                             
+'Linux ',                                          
+'Chrome 91.0.4472.114',                        
+'7',                
+'2021',                 
+'2021-07-07');                                          
+
+ 
+ /* ======== auto script 2021-07-07 06:14:01 am END ========= */
+
+ /* =========== auto script START 2021-07-08 10:07:26 am  ==================== */
+ /* ========= auto script 2021-07-08 10:07:26 ====== to visitors*/
+INSERT INTO `visitors` (`client_ip`,`client_os`,
+`client_browser`,`visited_month`,`visited_year`,
+`last_visited_date`) VALUES (
+ '127.0.0.1',                             
+'Linux ',                                          
+'Chrome 91.0.4472.114',                        
+'7',                
+'2021',                 
+'2021-07-08');                                          
+
+ 
+ /* ======== auto script 2021-07-08 10:07:26 am END ========= */

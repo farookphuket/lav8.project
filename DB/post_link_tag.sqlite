@@ -2,6 +2,7 @@
 INSERT INTO post_tag (`post_id`,`tag_id`,`created_at`,`updated_at`)
 VALUES('1','1','2021-06-20 22:10:04','2021-06-20 22:10:04');
 
+/* ==== dear user you must keep at least one row left here =================*/
 
 INSERT INTO post_tag (`post_id`,`tag_id`,`created_at`,`updated_at`)
 VALUES('2','7','2021-06-20 22:10:04','2021-06-20 22:10:04');
@@ -63,4 +64,23 @@ VALUES('20','4','2021-06-20 22:10:04','2021-06-20 22:10:04');
 
 
 
+
+
+ /* =========== auto script START 2021-07-08 10:30:29 am  ==================== */
+ 
+INSERT INTO `post_tag`(`post_id`,`tag_id`,`created_at`,
+`updated_at`) VALUES(
+    '21','1',
+    '2021-07-08 10:30:29','2021-07-08 10:30:29');
+ 
+ /* ======== auto script 2021-07-08 10:30:29 am END ========= */
+
+ /* =========== auto script START 2021-07-08 10:30:29 am  ==================== */
+ 
+INSERT INTO `post_tag`(`post_id`,`tag_id`,`created_at`,
+`updated_at`) VALUES(
+    '21','2',
+    '2021-07-08 10:30:29','2021-07-08 10:30:29');
+ 
+ /* ======== auto script 2021-07-08 10:30:29 am END ========= */
 

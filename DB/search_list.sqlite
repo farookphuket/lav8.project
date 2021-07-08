@@ -1,5 +1,7 @@
 
- /* =========== auto script START 2021-07-02 11:41:04 am  ==================== */
+/* ==== dear user you must keep at least one row left here =================*/
+
+/* =========== auto script START 2021-07-02 11:41:04 am  ==================== */
  /* === backup search index 2021-07-02 11:41:04 ====== */
 INSERT INTO `searches`(`target_title`,`method`,`target_id`,
 `keywords`,
@@ -41,3 +43,15 @@ INSERT INTO `searches`(`target_title`,`method`,`target_id`,
     '2021-07-06 14:27:09','2021-07-06 14:27:09');
  
  /* ======== auto script 2021-07-06 14:27:09 pm END ========= */
+
+ /* =========== auto script START 2021-07-08 10:30:29 am  ==================== */
+ /* === auto backup from posts 2021-07-08 10:30:29=====*/
+INSERT INTO `searches`(`target_title`,`target_id`,`keywords`,
+`method`,`created_at`,`updated_at`) VALUES(
+    'Qemu and virt-manager  in my experience',
+    '21',
+    'Qemu and virt-manager  in my experience',
+    'posts',
+    '2021-07-08 10:30:29','2021-07-08 10:30:29');
+ 
+ /* ======== auto script 2021-07-08 10:30:29 am END ========= */
