@@ -84,3 +84,49 @@ INSERT INTO `post_tag`(`post_id`,`tag_id`,`created_at`,
  
  /* ======== auto script 2021-07-08 10:30:29 am END ========= */
 
+
+
+
+
+
+
+ /* =========== auto script START 2021-07-08 22:05:53 pm  ==================== */
+ /* ======= delete */
+DELETE FROM `post_tag` WHERE post_id='21';
+/* ==== re-insert ===========*/
+INSERT INTO `post_tag`(`post_id`,`tag_id`,`created_at`,
+`updated_at`) VALUES(
+    '21','1',
+    '2021-07-08 10:30:29','2021-07-08 10:30:29'
+);
+    /* ===== re-insert END ======================*/
+/* ==== re-insert ===========*/
+INSERT INTO `post_tag`(`post_id`,`tag_id`,`created_at`,
+`updated_at`) VALUES(
+    '21','2',
+    '2021-07-08 22:01:34','2021-07-08 22:01:34'
+);
+    /* ===== re-insert END ======================*/
+/* ==== re-insert ===========*/
+INSERT INTO `post_tag`(`post_id`,`tag_id`,`created_at`,
+`updated_at`) VALUES(
+    '21','4',
+    '2021-07-08 21:56:26','2021-07-08 21:56:26'
+);
+    /* ===== re-insert END ======================*/
+/* ==== re-insert ===========*/
+INSERT INTO `post_tag`(`post_id`,`tag_id`,`created_at`,
+`updated_at`) VALUES(
+    '21','5',
+    '2021-07-08 21:56:26','2021-07-08 21:56:26'
+);
+    /* ===== re-insert END ======================*/
+/* ==== re-insert ===========*/
+INSERT INTO `post_tag`(`post_id`,`tag_id`,`created_at`,
+`updated_at`) VALUES(
+    '21','6',
+    '2021-07-08 21:56:26','2021-07-08 21:56:26'
+);
+    /* ===== re-insert END ======================*/
+ 
+ /* ======== auto script 2021-07-08 22:05:53 pm END ========= */

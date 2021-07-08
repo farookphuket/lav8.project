@@ -392,6 +392,33 @@ updated_at='{$post->updated_at}' WHERE id='{$post->id}';
          * will not update the tag link to file 
          * */
 
+        $ln = DB::table($this->post_tag_table)
+                    ->where("post_id",$post->id)
+                    ->get();
+        if(count($ln) != 0):
+            $fi = base_path("DB/post_link_tag.sqlite");
+
+            $cm = "/* ======= delete */";
+            $cm .= "
+DELETE FROM `{$this->post_tag_table}` WHERE post_id='{$post->id}';
+";
+            foreach($ln as $tag):
+
+
+            $cm .= "/* ==== re-insert ===========*/";
+            $cm .= "
+INSERT INTO `{$this->post_tag_table}`(`post_id`,`tag_id`,`created_at`,
+`updated_at`) VALUES(
+    '{$tag->post_id}','{$tag->tag_id}',
+    '{$tag->created_at}','{$tag->updated_at}'
+);
+    /* ===== re-insert END ======================*/
+";
+            endforeach;
+
+        write2text($fi,$cm);
+        endif;
+
     }
     /* make backup of the update version to file */
 
