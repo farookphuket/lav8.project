@@ -441,3 +441,73 @@ INSERT INTO `templates`(`user_id`,`section`,`title`,`excerpt`,
 
  
  /* ======== auto script 2021-07-01 08:11:05 am END ========= */
+
+ /* =========== auto script START 2021-07-09 07:42:21 am  ==================== */
+ /* ======= backup template whatnews ================*/
+/* ======= date 2021-07-09 07:42:21 ==================*/
+INSERT INTO `templates`(`user_id`,`section`,`title`,`excerpt`,
+`body`,`created_at`,`updated_at`) VALUES(
+    '1',
+    'whatnews',
+    'show paragraph code video',
+    '<div class="row">
+    <div class="col-lg-12">
+        <h2 class="text-center">
+            this is your title
+        </h2>
+        <p>
+            this is the paragraph you can post write the paragraph 1 formatt here
+        </p>
+        <p>
+            this is the paragraph you can post write the paragraph 2 formatt here
+        </p>
+
+        <p>
+            this is the paragraph you can post write the paragraph 3 formatt here
+        </p>
+        <!-- start div.code -->
+        <div class="line-numbers">
+            <pre>            <div class="comment">
+                <span>this is comment of your code </span>
+            </div>             
+            <div class="code">
+             <span>your code line number 1</span>
+             <span>your code line number 2</span>
+             <span>your code line number 3</span>
+             <span>your code line number 4</span>
+             <span>your code line number 5</span>
+             <span>your code line number 6</span>
+         </div>  
+         </pre>
+        </div>
+        <!-- end of div.code -->
+        <p class="pt-2">
+            your video here
+        </p>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/wsh64rjnRas" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""><br></iframe>
+        </div>
+        <p class="text-center pt-2">
+            title for your video here
+        </p>
+        <p class="pt-2">
+            more paragraph goes here
+        </p>
+    </div>
+</div>',
+    '<div class="container">
+    <h2 class="text-center">
+        no content needed
+    </h2>
+    <div class="alert alert-warning">
+        <p>
+            there is no need for the content shown here.
+        </p>
+    </div>
+</div>',
+    '2021-07-09 07:42:21',
+    '2021-07-09 07:42:21');
+
+
+ 
+ /* ======== auto script 2021-07-09 07:42:21 am END ========= */
