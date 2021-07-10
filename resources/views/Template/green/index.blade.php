@@ -216,7 +216,8 @@
       <div class="copyright">
         &copy; Copyright <strong><span>Green</span></strong>. 
         All Rights Reserved 
-        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+        &middot; core v{{ Illuminate\Foundation\Application::VERSION }} 
+        (PHP v{{ PHP_VERSION }}) &middot; last update 22 Jul 2021
 
       </div>
       <div class="credits">
