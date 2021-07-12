@@ -63,23 +63,8 @@ INSERT INTO `visitors` (`client_ip`,`client_os`,
  
  /* ======== auto script 2021-07-08 10:07:26 am END ========= */
 
- /* =========== auto script START 2021-07-10 06:51:10 am  ==================== */
- /* ========= auto script 2021-07-10 06:51:10 ====== to visitors*/
-INSERT INTO `visitors` (`client_ip`,`client_os`,
-`client_browser`,`visited_month`,`visited_year`,
-`last_visited_date`) VALUES (
- '127.0.0.1',                             
-'Ubuntu ',                                          
-'Firefox 89.0',                        
-'7',                
-'2021',                 
-'2021-07-10');                                          
-
- 
- /* ======== auto script 2021-07-10 06:51:10 am END ========= */
-
- /* =========== auto script START 2021-07-12 07:48:38 am  ==================== */
- /* ========= auto script 2021-07-12 07:48:38 ====== to visitors*/
+ /* =========== auto script START 2021-07-09 10:52:54 am  ==================== */
+ /* ========= auto script 2021-07-09 10:52:54 ====== to visitors*/
 INSERT INTO `visitors` (`client_ip`,`client_os`,
 `client_browser`,`visited_month`,`visited_year`,
 `last_visited_date`) VALUES (
@@ -88,7 +73,22 @@ INSERT INTO `visitors` (`client_ip`,`client_os`,
 'Chrome 91.0.4472.114',                        
 '7',                
 '2021',                 
-'2021-07-12');                                          
+'2021-07-09');                                          
 
  
- /* ======== auto script 2021-07-12 07:48:38 am END ========= */
+ /* ======== auto script 2021-07-09 10:52:54 am END ========= */
+
+ /* =========== auto script START 2021-07-11 02:51:13 am  ==================== */
+ /* ========= auto script 2021-07-11 02:51:13 ====== to visitors*/
+INSERT INTO `visitors` (`client_ip`,`client_os`,
+`client_browser`,`visited_month`,`visited_year`,
+`last_visited_date`) VALUES (
+ '127.0.0.1',                             
+'Linux ',                                          
+'Chrome 91.0.4472.114',                        
+'7',                
+'2021',                 
+'2021-07-11');                                          
+
+ 
+ /* ======== auto script 2021-07-11 02:51:13 am END ========= */
