@@ -81,6 +81,9 @@ export default{
                   }
                   this.res_status = `<span class="badge badge-success">
                     Welcome ${res.data.user.name}</span>`
+                    setTimeout(()=>{
+                        location.href=this.url
+                    },1500)
                 },err=>{
                   this.res_status = `<span class="bade badge-danger">
                     ${err.response.data.message}</span>`

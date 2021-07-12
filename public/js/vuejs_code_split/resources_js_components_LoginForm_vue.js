@@ -93,6 +93,9 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         _this.res_status = "<span class=\"badge badge-success\">\n                    Welcome ".concat(res.data.user.name, "</span>");
+        setTimeout(function () {
+          location.href = _this.url;
+        }, 1500);
       }, function (err) {
         _this.res_status = "<span class=\"bade badge-danger\">\n                    ".concat(err.response.data.message, "</span>");
         _this.error = 1;
