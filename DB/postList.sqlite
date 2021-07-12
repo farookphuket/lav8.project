@@ -3328,7 +3328,7 @@ INSERT INTO `posts`(`user_id`,`post_title`,`slug`,`post_excerpt`,
             may not as what you׳re expected
         </p>
         <p>
-            <span class="badge bagde-warning p-2">
+            <span class="badge badge-warning p-2">
                 Hope
             </span>
             you׳ll undestand this.
@@ -3367,6 +3367,25 @@ sudo usermod -aG libvirt $USER
             In <span class="badge badge-info p-2">virt manager</span>  to 
             clone the vm is very simple.
         </p>
+        <ul>
+            <li>select your guest os right click then select clone</li>
+            <li>name your clone vm click "clone" button</li>
+            <li>that's it!</li>
+        </ul>
+        <span>
+            <img src="https://i.ibb.co/WW87Jpk/002-clone.png" 
+            alt="clone guest os" class="responsive">
+            <p class="text-center pt-2">
+                right click then select clone.
+            </p>
+        </span>
+        <span>
+            <img src="https://i.ibb.co/bFpMVBb/005-clone.png" 
+            alt="clone guest os ready">
+            <p class="pt-2 text-center">
+                your clone guest is here now
+            </p>
+        </span>
         
     </div>
 <!-- clone vm-->
