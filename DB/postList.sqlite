@@ -3390,7 +3390,68 @@ sudo usermod -aG libvirt $USER
     </div>
 <!-- clone vm-->
 
+ <!-- share file between host and guest os -->
+    <div class="col-lg-12">
+        <h2 class="text-center">Share file between Host and Guest OS</h2>
+        <p>you can share file between host and guest os by a few step below</p>
+        <ol>
+            <li>
+                create the share folder on your Host os in my case I've create the folder call "VM_SHARED" im my home directory&nbsp;then in the terminal I rand the command.
+                <pre>                    <span>sudo chmod 777 -R ~/VM_SHARED</span>
+                </pre>
+            </li>
+            <li>
+               <span class="badge badge-warning p-2">
+                DO NOT START your guest os yet
+               </span>
+                "select" the vm then click on the "open" button in the vm 
+                guest window click on the "show virtual hardware details"
+            </li>
 
+        </ol>
+        <span>
+            <img class="responsive" src="https://i.ibb.co/02FcVf8/001-virt-sharefile.png" alt="share file in virt-manager 1">
+            <p class="pt-2 text-center">
+                add new hardware to the vm
+            </p>
+        </span>
+        <p class="pt-2">
+            make sure that you do everything exactly the same as it's shown here
+        </p>
+        <span>
+            <img src="https://i.ibb.co/NjK22D6/002-virt-sharefile.png" class="responsive" alt="share file in virt-manager 2">
+        </span>
+        <p class="pt-2">now click on the "Show the graphical console" the click on the "Power on the virtual machine" button to run the guest os then create the folder call "hostfiles" in the guest os</p>
+        <span>
+            <img src="https://i.ibb.co/cc88qMg/003-guest-share-file.png" class="responsive" alt="share file virt-manager 3">
+            <p class="pt-2 text-center">
+                create the folder in guest os call "hostfiles"
+            </p>
+        </span>
+        <p class="pt-2 mb-2">
+            then run the mount command <span class="badge badge-info p-2">sudo mount -t p9 -o trans=virtio /hostshare ~/hostfiles</span> hit enter type in your password then hit enter again.
+        </p>
+        <span>
+            <img src="https://i.ibb.co/BNRGVf0/004-guest-share-file.png" class="responsive" alt="share file in virt-manager 4">
+            <p class="text-center pt-2">
+                if there any error message other than what it show here do check the step 1 make sure you have done everything correctly.
+            </p>
+        </span>
+        <p class="pt-2">
+            you should get the same result as I do because I have been done this for more than 10 times and every single time gave me the same result none error!
+        </p>
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="https://i.ibb.co/YNj010y/005-guest-share-file.png" class="responsive" alt="share file in virt-manager 5">
+            </div>
+
+            <div class="col-lg-6">
+                <img src="https://i.ibb.co/Yp2j2yL/006-guest-share-file.png" class="responsive" alt="share file in virt-manager 5">
+            </div>
+        </div>
+    </div>
+
+    <!-- share file between host and guest os -->
 
 </div>
 
@@ -3401,4 +3462,8 @@ sudo usermod -aG libvirt $USER
     '2021-07-08 10:30:29','2021-07-08 10:30:29');
  
  /* ======== auto script 2021-07-08 10:30:29 am END ========= */
+
+
+
+/* ========================================================================== */
 
