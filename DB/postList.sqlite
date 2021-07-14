@@ -3309,10 +3309,14 @@ INSERT INTO `posts`(`user_id`,`post_title`,`slug`,`post_excerpt`,
 
             <span class="badge badge-info p-2">
                 Virt-manager ,KVM,Qemu
-            </span> in my experience as I have been try 2 years ago was not that easy to me there are so many thing that make me feel
-            very upset of setting the thing up and start using "virt manager" that are all because I do not understand in it concept
-            so that׳s why I cannot using virt manager so my choice is always "Virtualbox" because it is way a lot more easier for me
-            up until 2 weeks ago (15 June 2021) I have try to using this program again and I am so so much in love with this!
+            </span> in my experience as I have been try 2 years ago was not 
+            that easy to me there are so many thing that make me feel
+            very upset of setting the thing up and start using "virt manager" 
+            that''s because I do not understand in it concept
+            so that׳s why I cannot using virt manager. so my choice is always 
+            "Virtualbox" because it is way a lot more easier for me
+            up until 2 weeks ago (15 June 2021) I have try to using this 
+            program again and I am so so much in love with this!
 
 
 
@@ -3325,7 +3329,7 @@ INSERT INTO `posts`(`user_id`,`post_title`,`slug`,`post_excerpt`,
         <h2>about this post!</h2>
         <p class="pt-2">
             this post is just my experience of using the program virt-manager as I am just a beginner level only so this post here will be may or
-            may not as what you׳re expected
+            may not be as great as what you׳ve expected
         </p>
         <p>
             <span class="badge badge-warning p-2">
@@ -3370,7 +3374,7 @@ sudo usermod -aG libvirt $USER
         <ul>
             <li>select your guest os right click then select clone</li>
             <li>name your clone vm click "clone" button</li>
-            <li>that's it!</li>
+            <li>that''s it!</li>
         </ul>
         <span>
             <img src="https://i.ibb.co/WW87Jpk/002-clone.png" 
@@ -3392,13 +3396,23 @@ sudo usermod -aG libvirt $USER
 
  <!-- share file between host and guest os -->
     <div class="col-lg-12">
-        <h2 class="text-center">Share file between Host and Guest OS</h2>
+        <h2 class="text-center">
+            <b>
+                Share file between Host and Guest OS
+            </b>
+        </h2>
         <p>you can share file between host and guest os by a few step below</p>
         <ol>
             <li>
-                create the share folder on your Host os in my case I've create the folder call "VM_SHARED" im my home directory&nbsp;then in the terminal I rand the command.
-                <pre>                    <span>sudo chmod 777 -R ~/VM_SHARED</span>
-                </pre>
+                create the share folder on your Host os in my case I''ve 
+                create the folder call "VM_SHARED" im my home directory 
+                then in the terminal I ran the command.
+                <div class="form-group pt-4 mb-2">
+                    <input class="form-control" type="text" value="mkdir ~/VM_SHARED">
+                </div>
+                <div class="form-group pt-2 mb-4">
+                    <input class="form-control" type="text" value="sudo chmod 777 -R ~/VM_SHARED">
+                </div>
             </li>
             <li>
                <span class="badge badge-warning p-2">
@@ -3416,7 +3430,8 @@ sudo usermod -aG libvirt $USER
             </p>
         </span>
         <p class="pt-2">
-            make sure that you do everything exactly the same as it's shown here
+            make sure that you do everything exactly the same as it''s shown 
+            here
         </p>
         <span>
             <img src="https://i.ibb.co/NjK22D6/002-virt-sharefile.png" class="responsive" alt="share file in virt-manager 2">
@@ -3449,8 +3464,8 @@ sudo usermod -aG libvirt $USER
                 <img src="https://i.ibb.co/Yp2j2yL/006-guest-share-file.png" class="responsive" alt="share file in virt-manager 5">
             </div>
         </div>
-    </div>
 
+    </div>
     <!-- share file between host and guest os -->
 
 </div>
