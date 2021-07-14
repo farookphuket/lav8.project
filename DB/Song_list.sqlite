@@ -1168,10 +1168,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (91,"3","3","1",
 "ฟ้ากับเหว",
-"2020-12-04 17:45:28",
+"2020-12-4 17:45:28",
 "http://p.kg.qq.com/photo_new/T002RM000001MsHHR06cQBg.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/zUbHOCGzM0C3vGh7-?lang=en&g_f=personal",
-"2020-12-04 17:45:28",
+"2020-12-4 17:45:28",
 "2021-03-07 07:10:04"
 );
 
@@ -1182,10 +1182,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (90,"3","3","1",
 "ดูโง่โง่",
-"2020-12-04 16:11:25",
+"2020-12-4 16:11:25",
 "http://p.kg.qq.com/photo_new/T002RM000sg002JcRE71IktjD.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/UzdXlMpUC2b1vpv7-?lang=en&g_f=personal",
-"2020-12-04 16:11:25",
+"2020-12-4 16:11:25",
 "2021-03-07 08:10:04"
 );
 
@@ -1196,10 +1196,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (89,"53","53","1",
 "ทิ้งฉันลง ทิ้งฉันเลย",
-"2020-12-04 16:01:23",
+"2020-12-4 16:01:23",
 "http://p.kg.qq.com/photo_new/T002RM000sg003pnPFP2HHGab.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/VcrtMlgVOn1NvgIl-?lang=en&amp;g_f=personal",
-"2020-12-04 16:01:23",
+"2020-12-4 16:01:23",
 "2021-03-07 08:10:04"
 );
 
@@ -1210,10 +1210,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (88,"52","52","1",
 "ระแวง",
-"2020-12-04 15:51:19",
+"2020-12-4 15:51:19",
 "http://p.kg.qq.com/photo_new/T002RM000002Pos7e43SUTO.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/pGMyrdUpbQC3vUB5-?lang=en&g_f=personal",
-"2020-12-04 15:51:19",
+"2020-12-4 15:51:19",
 "2021-03-07 07:10:04"
 );
 
@@ -1224,10 +1224,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (87,"51","51","1",
 "เรื่องขี้หมา",
-"2020-12-04 15:42:18",
+"2020-12-4 15:42:18",
 "http://p.kg.qq.com/photo_new/T002RM000003eDGat2PRIK6.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/HXaz_85HEjSav5IP-?lang=en&amp;g_f=personal",
-"2020-12-04 15:42:18",
+"2020-12-4 15:42:18",
 "2021-03-07 07:10:04"
 );
 
@@ -1240,10 +1240,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (86,"24","24","1",
 "เหตุผลคนโง่",
-"2020-12-04 15:26:12",
+"2020-12-4 15:26:12",
 "http://p.kg.qq.com/photo_new/T002RM000002lVBj51MXn3W.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/NIRviunNLg9lvnWt-?lang=en&amp;g_f=personal",
-"2020-12-04 15:26:12",
+"2020-12-4 15:26:12",
 "2021-03-07 07:10:04"
 );
 
@@ -1254,10 +1254,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (85,"3","3","1",
 "ฉันเอง",
-"2020-12-03 20:14:09",
+"2020-12-3 20:14:09",
 "http://p.kg.qq.com/photo_new/T002RM000004CMTL63l3xQ2.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/4gOsb1c4rINavcfg-?lang=en&g_f=personal",
-"2020-12-03 20:14:09",
+"2020-12-3 20:14:09",
 "2021-03-07 07:10:04"
 );
 
@@ -1270,10 +1270,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (84,"50","50","1",
 "หมากัด",
-"2020-12-03 19:56:16",
+"2020-12-3 19:56:16",
 "http://p.kg.qq.com/photo_new/T002RM000000mtRz04dCEIs.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/hvfIAYFhosqzvFz_-?lang=en&amp;g_f=personal",
-"2020-12-03 19:56:16",
+"2020-12-3 19:56:16",
 "2021-03-07 07:10:04"
 );
 
@@ -1285,10 +1285,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (83,"49","49","1",
 "ไกลแค่ไหนคือใกล้",
-"2020-12-03 19:39:13",
+"2020-12-3 19:39:13",
 "http://p.kg.qq.com/photo_new/T002RM000000gc0vk2VQd0h.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/QBPTui2QZpzJv2Rg-SpecialVersion?lang=en&amp;g_f=personal",
-"2020-12-03 19:39:13",
+"2020-12-3 19:39:13",
 "2021-03-07 07:11:04"
 );
 
@@ -1299,10 +1299,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (82,"8","8","1",
 "หยดน้ำ",
-"2020-12-03 19:14:11",
+"2020-12-3 19:14:11",
 "http://p.kg.qq.com/photo_new/T002RM000002O2JBq2PZoMF.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/TW6QoJ3TAyHvv33W-?lang=en&amp;g_f=personal",
-"2020-12-03 19:14:11",
+"2020-12-3 19:14:11",
 "2021-03-07 07:10:04"
 );
 
@@ -1312,10 +1312,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (81,"11","11","1",
 "รอ",
-"2020-12-03 18:59:08",
+"2020-12-3 18:59:08",
 "http://p.kg.qq.com/photo_new/T002RM000sg003j52v84HU1rj.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/20i3RPQ27UGMvQEt-Remaster?lang=en&amp;g_f=personal",
-"2020-12-03 18:59:08",
+"2020-12-3 18:59:08",
 "2021-03-07 07:10:04"
 );
 
@@ -1328,10 +1328,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (80,"36","36","1",
 "เลิกรา",
-"2020-12-03 18:40:05",
+"2020-12-3 18:40:05",
 "http://p.kg.qq.com/photo_new/T002RM000000uhavc1qXjKu.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/3jJ2x6T3mX5ovT7P-?lang=en&amp;g_f=personal",
-"2020-12-03 18:40:05",
+"2020-12-3 18:40:05",
 "2021-03-07 06:56:04"
 );
 
@@ -1341,10 +1341,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (79,"2","2","1",
 "ระยะสุดท้าย",
-"2020-12-03 18:33:03",
+"2020-12-3 18:33:03",
 "http://p.kg.qq.com/photo_new/T002RM000003gYhVC3NjlX9.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/VcrtMlgVOnoXvgVG-?lang=en&amp;g_f=personal",
-"2020-12-03 18:33:03",
+"2020-12-3 18:33:03",
 "2021-03-07 06:56:04"
 );
 
@@ -1355,10 +1355,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (78,"20","20","1",
 "ยืดเยื้อ",
-"2020-12-03 18:22:59",
+"2020-12-3 18:22:59",
 "http://p.kg.qq.com/photo_new/T002RM0000000Xagz3uKcRb.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/8E5CDHa8XmBhvaB8-?lang=en&amp;g_f=personal",
-"2020-12-03 18:22:59",
+"2020-12-3 18:22:59",
 "2021-03-07 06:56:04"
 );
 
@@ -1369,10 +1369,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (77,"36","36","1",
 "ถ้าเธอต้องการ",
-"2020-12-03 18:11:57",
+"2020-12-3 18:11:57",
 "http://p.kg.qq.com/photo_new/T002RM000000zDk5t2n95Ix.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/oYeuTvxohwVLvxHU-?lang=en&g_f=personal",
-"2020-12-03 18:11:57",
+"2020-12-3 18:11:57",
 "2021-03-07 06:56:04"
 );
 
@@ -1383,10 +1383,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (76,"48","48","1",
 "คนรักกัน",
-"2020-12-03 17:58:54",
+"2020-12-3 17:58:54",
 "http://p.kg.qq.com/photo_new/T002RM00000344iHB24Sv7r.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/NIRviunNLgk6vnXe-?lang=en&g_f=personal",
-"2020-12-03 17:58:54",
+"2020-12-3 17:58:54",
 "2021-03-07 06:49:04"
 );
 
@@ -1398,10 +1398,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (75,"32","32","1",
 "กรุณาฟังให้จบ",
-"2020-12-03 17:15:52",
+"2020-12-3 17:15:52",
 "http://p.kg.qq.com/photo_new/T002RM00000419NU74aypH4.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/UzdXlMpUC26QvpLy-?lang=en&amp;g_f=personal",
-"2020-12-03 17:15:52",
+"2020-12-3 17:15:52",
 "2021-03-07 06:49:04"
 );
 
@@ -1412,10 +1412,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (74,"46","46","1",
 "ไม่ต้องทอน",
-"2020-12-03 17:03:50",
+"2020-12-3 17:03:50",
 "http://p.kg.qq.com/photo_new/T002RM000001cDyYq122DLS.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/HXaz_85HEj7Uv5-s-?lang=en&amp;g_f=personal",
-"2020-12-03 17:03:50",
+"2020-12-3 17:03:50",
 "2021-03-07 06:45:50"
 );
 
@@ -1426,10 +1426,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (73,"47","47","1",
 "ดูเอาเอง",
-"2020-12-01 19:55:46",
+"2020-12-1 19:55:46",
 "http://p.kg.qq.com/photo_new/T002RM0000016egdd4ZyElR.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/lOgkUVrlcQMGvr9o-?lang=en&amp;g_f=personal",
-"2020-12-01 19:55:46",
+"2020-12-1 19:55:46",
 "2021-03-07 06:45:04"
 );
 
@@ -1439,10 +1439,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (72,"46","46","1",
 "คำตอบ",
-"2020-12-01 19:11:44",
+"2020-12-1 19:11:44",
 "http://p.kg.qq.com/photo_new/T002RM000001cDyYq122DLS.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/3jJ2x6T3mweEvTdj-?lang=en&amp;g_f=personal",
-"2020-12-01 19:11:44",
+"2020-12-1 19:11:44",
 "2021-03-07 06:41:04"
 );
 
@@ -1453,10 +1453,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (71,"42","42","1",
 "บัวช้ำน้ำขุ่น",
-"2020-12-01 17:47:40",
+"2020-12-1 17:47:40",
 "http://p.kg.qq.com/photo_new/T002RM000000iNEmj0btiFm.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/oYeuTvxohXeZvxTb-?lang=en&g_f=personal",
-"2020-12-01 17:47:40",
+"2020-12-1 17:47:40",
 "2021-03-07 06:41:04"
 );
 
@@ -1470,10 +1470,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (70,"45","45","1",
 "ตายในหน้าที่",
-"2020-12-01 17:27:37",
+"2020-12-1 17:27:37",
 "http://p.kg.qq.com/photo_new/T002RM000000RTOif2WXlwo.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/P7Q6n2iP0g2MviYi-?lang=en&g_f=personal",
-"2020-12-01 17:27:37",
+"2020-12-1 17:27:37",
 "2021-03-07 06:38:04"
 );
 
@@ -1484,10 +1484,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (69,"45","45","1",
 "คนมีคู่ไม่รู้หรอก",
-"2020-12-01 17:18:37",
+"2020-12-1 17:18:37",
 "http://p.kg.qq.com/photo_new/T002RM000002xfNxc140gsS.jpg/300?max_age=2592000",
-"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/3jJ2x6T3mw6lvTHg-?lang=th&g_f=personal&from_page=frommv",
-"2020-12-01 17:18:37",
+"http://wesingapp.com/user/609c9f87232a3f8f3d48/song/3jJ2x6T3mw6lvTHg-?lang=en&amp;g_f=personal",
+"2020-12-1 17:18:37",
 "2021-03-07 06:36:04"
 );
 
@@ -1498,10 +1498,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (68,"44","44","1",
 "คนดำรักจริง",
-"2020-12-01 15:30:33",
+"2020-12-1 15:30:33",
 "http://p.kg.qq.com/wsingmvf/2122678496/89e7a4e8f59d82c5047e47ef83f9fafc5981a1ad/0?j=nMl9ssowtibXicUj8k0ib8575Wlhysouh3Q4mslhx4v2erSwkiaNvTxL4b2eAeG8DBLmR9icy1ATzxiaTtBKJvclIyM1icMpTENkVpKWusoYsPnibQaLiaX3Oa0OZpI3ntkbIDxjlGZbSRibnyDyc",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/xfvR3eoxFyF7vogc-?lang=en&amp;g_f=personal",
-"2020-12-01 15:30:33",
+"2020-12-1 15:30:33",
 "2021-03-07 06:26:04"
 );
 
@@ -1512,10 +1512,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (67,"43","43","1",
 "คนทางนั้น",
-"2020-12-01 15:20:31",
+"2020-12-1 15:20:31",
 "http://p.kg.qq.com/photo_new/T002RM000003oHTAa3JV8wE.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/-nLF79I-RbuWvI32-?lang=en&amp;g_f=personal",
-"2020-12-01 15:20:31",
+"2020-12-1 15:20:31",
 "2021-03-07 06:26:04"
 );
 
@@ -1525,10 +1525,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (66,"42","42","1",
 "แพ้คนสวย",
-"2020-12-01 15:06:29",
+"2020-12-1 15:06:29",
 "http://p.kg.qq.com/photo_new/T002RM000002y3fOH1AB7Z0.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/lOgkUVrlcQ47vrJr-?lang=en&amp;g_f=personal",
-"2020-12-01 15:06:29",
+"2020-12-1 15:06:29",
 "2021-03-07 06:26:04"
 );
 
@@ -1538,10 +1538,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (65,"41","41","1",
 "เปลือง",
-"2020-12-01 14:49:24",
+"2020-12-1 14:49:24",
 "http://p.kg.qq.com/photo_new/T002RM000001uQCel1vcbZM.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/-nLF79I-Rbu2vITg-?lang=en&g_f=personal",
-"2020-12-01 14:49:24" ,
+"2020-12-1 14:49:24" ,
 "2021-03-07 05:14:04"
 );
 
@@ -1556,10 +1556,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (64,"30","30","1",
 "ไม่เป็นไร",
-"2020-12-01 14:37:23",
+"2020-12-1 14:37:23",
 "http://p.kg.qq.com/photo_new/T002RM000sg0001xkZJ24iXF4.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/8E5CDHa8XhyWvaL3-?lang=en&amp;g_f=personal",
-"2020-12-01 14:37:23",
+"2020-12-1 14:37:23",
 "2021-03-07 08:05:04"
 );
 
@@ -1571,10 +1571,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (63,"40","40","1",
 "รู้",
-"2020-12-01 14:22:21",
+"2020-12-1 14:22:21",
 "http://p.kg.qq.com/photo_new/T002RM000004CTit32W1ezm.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/NIRviunNLM9WvnkE-?lang=en&amp;g_f=personal",
-"2020-12-01 14:22:21",
+"2020-12-1 14:22:21",
 "2021-03-07 08:05:04"
 );
 
@@ -1585,10 +1585,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (62,"2","2","1",
 "สุดท้าย",
-"2020-12-01 14:10:17",
+"2020-12-1 14:10:17",
 "http://p.kg.qq.com/photo_new/T002RM000000zQnJw4dqdc9.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/_ksOHDK_tWEcvK-O-?lang=en&g_f=personal",
-"2020-12-01 14:10:17",
+"2020-12-1 14:10:17",
 "2021-03-07 08:05:04"
 );
 
@@ -1598,10 +1598,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (61,"29","29","1",
 "ไปรักกันให้พอ",
-"2020-12-01 14:00:16",
+"2020-12-1 14:00:16",
 "http://p.kg.qq.com/photo_new/T002RM000004abLqh38f2w9.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/xfvR3eoxFymavoIa-?lang=en&g_f=personal",
-"2020-12-01 14:00:16",
+"2020-12-1 14:00:16",
 "2021-03-07 08:05:04"
 );
 
@@ -1612,10 +1612,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (60,"40","40","1",
 "จะว่าอะไร",
-"2020-12-01 12:24:05",
+"2020-12-1 12:24:05",
 "http://p.kg.qq.com/photo_new/T002RM000004CTit32W1ezm.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/TW6QoJ3TAkFzv3-_-?lang=en&g_f=personal",
-"2020-12-01 12:24:05",
+"2020-12-1 12:24:05",
 "2021-03-07 08:05:04"
 );
 
@@ -1626,10 +1626,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (59,"40","40","1",
 "รอนแรม",
-"2020-12-01 12:16:04",
+"2020-12-1 12:16:04",
 "http://p.kg.qq.com/photo_new/T002RM000004CTit32W1ezm.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/SaXdqyES5e_FvEhq-?lang=en&amp;g_f=personal",
-"2020-12-01 12:16:04",
+"2020-12-1 12:16:04",
 "2021-03-07 08:05:04"
 );
 
@@ -1641,10 +1641,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (58,"40","40","1",
 "คนมันหิว",
-"2020-12-01 11:18:01",
+"2020-12-1 11:18:01",
 "http://p.kg.qq.com/photo_new/T002RM000004CTit32W1ezm.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/9RIf0-L9nGWfvLpW-?lang=en&g_f=personal",
-"2020-12-01 11:18:01",
+"2020-12-1 11:18:01",
 "2021-03-07 08:05:04"
 );
 
@@ -1658,10 +1658,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (57,"39","39","1",
 "นอกจากชื่อฉัน",
-"2020-12-01 10:54:43",
+"2020-12-1 10:54:43",
 "http://p.kg.qq.com/photo_new/T002RM000003sx9kz22a7Af.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/k_qlXtwkDTpkvwwQ-?lang=en&g_f=personal",
-"2020-12-01 10:54:43",
+"2020-12-1 10:54:43",
 "2021-03-07 08:05:04"
 );
 
@@ -1676,10 +1676,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (56,"38","38","1",
 "เจ็บจนพอ",
-"2020-12-01 10:45:40",
+"2020-12-1 10:45:40",
 "http://p.kg.qq.com/photo_new/T002RM000000hnFAZ0ETnta.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/hvfIAYFho8Z9vFz9-?lang=en&g_f=personal",
-"2020-12-01 10:45:40",
+"2020-12-1 10:45:40",
 "2021-03-07 08:05:04"
 );
 
@@ -1694,10 +1694,10 @@ INSERT INTO "songs" ("id","artist_id","album_id","user_id","name",
 "posted_at","cover","url",
 "created_at","updated_at") VALUES (54,"37","37","1",
 "คู่ชีวิต",
-"2020-12-01 10:09:37",
+"2020-12-1 10:09:37",
 "http://p.kg.qq.com/photo_new/T002RM000000ercwj2SUhzo.jpg/300?max_age=2592000",
 "http://wesingapp.com/user/609c9f87232a3f8f3d48/song/vhxNJoevYEiCveee-?lang=en&g_f=personal",
-"2020-12-01 10:09:37",
+"2020-12-1 10:09:37",
 "2021-03-06 21:21:04"
 );
 
@@ -2614,7 +2614,7 @@ INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
 INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
 `name`,`posted_at`,`cover`,`url`,`created_at`,`updated_at`) VALUES(
     '92','92','1','ขอได้ไหม',
-    '2021-06-26 21:02:02','https://i1.sndcdn.com/artworks-000053498087-qp6emt-t500x500.jpg','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/_ksOHDK_DnE3vK_k-?lang=th&g_f=personal','2021-06-25 22:19:11',
+    '2021-06-26 21:02:44','https://i1.sndcdn.com/artworks-000053498087-qp6emt-t500x500.jpg','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/_ksOHDK_DnE3vK_k-?lang=th&g_f=personal','2021-06-25 22:19:11',
     '2021-06-25 22:19:11'
 );
 
@@ -2626,7 +2626,7 @@ INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
 INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
 `name`,`posted_at`,`cover`,`url`,`created_at`,`updated_at`) VALUES(
     '53','53','1','รักยิ้ม',
-    '2021-06-25 21:44:44','http://p.kg.qq.com/photo_new/T002RM000sg003pnPFP2HHGab.jpg/300?max_age=2592000','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/20i3RPQ2P8-svQ2s-?lang=th&g_f=personal','2021-06-25 22:25:28',
+    '2021-06-25 21:44:40','http://p.kg.qq.com/photo_new/T002RM000sg003pnPFP2HHGab.jpg/300?max_age=2592000','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/20i3RPQ2P8-svQ2s-?lang=th&g_f=personal','2021-06-25 22:25:28',
     '2021-06-25 22:25:28'
 );
 
