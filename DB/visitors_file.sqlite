@@ -123,17 +123,17 @@ INSERT INTO `visitors` (`client_ip`,`client_os`,
  
  /* ======== auto script 2021-07-13 04:28:49 am END ========= */
 
- /* =========== auto script START 2021-07-14 06:36:05 am  ==================== */
- /* ========= auto script 2021-07-14 06:36:05 ====== to visitors*/
+ /* =========== auto script START 2021-07-14 06:02:56 am  ==================== */
+ /* ========= auto script 2021-07-14 06:02:56 ====== to visitors*/
 INSERT INTO `visitors` (`client_ip`,`client_os`,
 `client_browser`,`visited_month`,`visited_year`,
 `last_visited_date`) VALUES (
  '127.0.0.1',                             
 'Linux ',                                          
-'Firefox 89.0',                        
+'Chrome 91.0.4472.114',                        
 '7',                
 '2021',                 
 '2021-07-14');                                          
 
  
- /* ======== auto script 2021-07-14 06:36:05 am END ========= */
+ /* ======== auto script 2021-07-14 06:02:56 am END ========= */
