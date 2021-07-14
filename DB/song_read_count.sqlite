@@ -14,3 +14,36 @@ INSERT INTO `read_song`(`song_id`,`readed_at`,`os`,`browser`,
  /* ================== Down here you can delete ============================*/
 
 
+
+ /* =========== auto script START 2021-07-15 06:22:00 am  ==================== */
+ /* ============ backup for song read count =============*/
+/* ============ 2021-07-15 06:22:00  ================*/
+INSERT INTO `read_song`(`song_id`,`readed_at`,`os`,`browser`,
+`ip`,`created_at`,`updated_at`) VALUES(
+    '169','2021-07-15','Linux ',
+    'Chrome 91.0.4472.114','127.0.0.1',
+    '2021-07-15 06:22:00','2021-07-15 06:22:00');
+ 
+ /* ======== auto script 2021-07-15 06:22:00 am END ========= */
+
+ /* =========== auto script START 2021-07-15 06:22:23 am  ==================== */
+ /* ============ backup for song read count =============*/
+/* ============ 2021-07-15 06:22:23  ================*/
+INSERT INTO `read_song`(`song_id`,`readed_at`,`os`,`browser`,
+`ip`,`created_at`,`updated_at`) VALUES(
+    '170','2021-07-15','Linux ',
+    'Chrome 91.0.4472.114','127.0.0.1',
+    '2021-07-15 06:22:23','2021-07-15 06:22:23');
+ 
+ /* ======== auto script 2021-07-15 06:22:23 am END ========= */
+
+ /* =========== auto script START 2021-07-15 06:23:19 am  ==================== */
+ /* ============ backup for song read count =============*/
+/* ============ 2021-07-15 06:23:19  ================*/
+INSERT INTO `read_song`(`song_id`,`readed_at`,`os`,`browser`,
+`ip`,`created_at`,`updated_at`) VALUES(
+    '168','2021-07-15','Linux ',
+    'Chrome 91.0.4472.114','127.0.0.1',
+    '2021-07-15 06:23:19','2021-07-15 06:23:19');
+ 
+ /* ======== auto script 2021-07-15 06:23:19 am END ========= */

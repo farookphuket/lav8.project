@@ -2614,7 +2614,7 @@ INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
 INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
 `name`,`posted_at`,`cover`,`url`,`created_at`,`updated_at`) VALUES(
     '92','92','1','ขอได้ไหม',
-    '2021-06-26 21:02:02','https://i1.sndcdn.com/artworks-000053498087-qp6emt-t500x500.jpg','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/_ksOHDK_DnE3vK_k-?lang=th&g_f=personal','2021-06-25 22:19:11',
+    '2021-06-26 21:02:44','https://i1.sndcdn.com/artworks-000053498087-qp6emt-t500x500.jpg','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/_ksOHDK_DnE3vK_k-?lang=th&g_f=personal','2021-06-25 22:19:11',
     '2021-06-25 22:19:11'
 );
 
@@ -2626,7 +2626,7 @@ INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
 INSERT INTO `songs`(`artist_id`,`album_id`,`user_id`,
 `name`,`posted_at`,`cover`,`url`,`created_at`,`updated_at`) VALUES(
     '53','53','1','รักยิ้ม',
-    '2021-06-25 21:44:44','http://p.kg.qq.com/photo_new/T002RM000sg003pnPFP2HHGab.jpg/300?max_age=2592000','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/20i3RPQ2P8-svQ2s-?lang=th&g_f=personal','2021-06-25 22:25:28',
+    '2021-06-25 21:44:40','http://p.kg.qq.com/photo_new/T002RM000sg003pnPFP2HHGab.jpg/300?max_age=2592000','http://wesingapp.com/user/609c9f87232a3f8f3d48/song/20i3RPQ2P8-svQ2s-?lang=th&g_f=personal','2021-06-25 22:25:28',
     '2021-06-25 22:25:28'
 );
 

@@ -55,3 +55,33 @@ INSERT INTO `searches`(`target_title`,`target_id`,`keywords`,
     '2021-07-08 10:30:29','2021-07-08 10:30:29');
  
  /* ======== auto script 2021-07-08 10:30:29 am END ========= */
+
+ /* =========== auto script START 2021-07-15 06:22:00 am  ==================== */
+ /* ==== backup insert `searches` =========== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,`created_at`,`updated_at`) VALUES(
+    'ขอได้ไหม','songs','169',
+    'ขอได้ไหม',
+    '2021-07-15 06:22:00','2021-07-15 06:22:00');
+ 
+ /* ======== auto script 2021-07-15 06:22:00 am END ========= */
+
+ /* =========== auto script START 2021-07-15 06:22:23 am  ==================== */
+ /* ==== backup insert `searches` =========== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,`created_at`,`updated_at`) VALUES(
+    'รักยิ้ม','songs','170',
+    'รักยิ้ม',
+    '2021-07-15 06:22:23','2021-07-15 06:22:23');
+ 
+ /* ======== auto script 2021-07-15 06:22:23 am END ========= */
+
+ /* =========== auto script START 2021-07-15 06:23:19 am  ==================== */
+ /* ==== backup insert `searches` =========== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,`created_at`,`updated_at`) VALUES(
+    'สิว','songs','168',
+    'สิว',
+    '2021-07-15 06:23:19','2021-07-15 06:23:19');
+ 
+ /* ======== auto script 2021-07-15 06:23:19 am END ========= */

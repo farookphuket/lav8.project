@@ -22,7 +22,8 @@ class SongController extends Controller
     public function index()
     {
         $last_title = Song::with("user")
-            ->latest("posted_at")->first();
+            ->orderBy("created_at","desc")
+            ->first();
         return view("Pub.song")->with(["last_title" => $last_title]);
     }
 
