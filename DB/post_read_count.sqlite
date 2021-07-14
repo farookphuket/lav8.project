@@ -14,38 +14,12 @@ VALUES(
 
 
 
- /* =========== auto script START 2021-07-08 10:42:20 am  ==================== */
- /* ========= auto backup 2021-07-08 10:42:20 =========*/
+
+ /* =========== auto script START 2021-07-14 08:15:54 am  ==================== */
+ /* ========= auto backup 2021-07-14 08:15:54 =========*/
 INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
 `browser`,`created_at`,`updated_at`) VALUES(
     '21','Linux ','127.0.0.1','WebKit',
-    'Chrome 91.0.4472.114','2021-07-08 10:42:20','2021-07-08 10:42:20');
+    'Chrome 91.0.4472.114','2021-07-14 08:15:54','2021-07-14 08:15:54');
  
- /* ======== auto script 2021-07-08 10:42:20 am END ========= */
-
- /* =========== auto script START 2021-07-08 11:53:31 am  ==================== */
- /* ========= auto backup 2021-07-08 11:53:31 =========*/
-INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
-`browser`,`created_at`,`updated_at`) VALUES(
-    '1','Linux ','127.0.0.1','WebKit',
-    'Chrome 91.0.4472.114','2021-07-08 11:53:31','2021-07-08 11:53:31');
- 
- /* ======== auto script 2021-07-08 11:53:31 am END ========= */
-
- /* =========== auto script START 2021-07-13 04:29:57 am  ==================== */
- /* ========= auto backup 2021-07-13 04:29:57 =========*/
-INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
-`browser`,`created_at`,`updated_at`) VALUES(
-    '21','Linux ','127.0.0.1','WebKit',
-    'Chrome 91.0.4472.114','2021-07-13 04:29:57','2021-07-13 04:29:57');
- 
- /* ======== auto script 2021-07-13 04:29:57 am END ========= */
-
- /* =========== auto script START 2021-07-14 06:40:56 am  ==================== */
- /* ========= auto backup 2021-07-14 06:40:56 =========*/
-INSERT INTO `post_read`(`post_id`,`os`,`ip`,`device`,
-`browser`,`created_at`,`updated_at`) VALUES(
-    '21','Linux ','127.0.0.1','0',
-    'Firefox 89.0','2021-07-14 06:40:55','2021-07-14 06:40:55');
- 
- /* ======== auto script 2021-07-14 06:40:56 am END ========= */
+ /* ======== auto script 2021-07-14 08:15:54 am END ========= */

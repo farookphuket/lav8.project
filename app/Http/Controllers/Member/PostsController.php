@@ -271,6 +271,10 @@ class PostsController extends Controller
         if(!empty(request()->new_tag)):
             $this->makeTag($nPost);
         endif;
+
+        // make a backup to file for the update version 14 Jul 2021
+        $this->backupUpdatePost($post->id);
+
         $msg = "<span class=\"alert alert-success\">Success :data updated</span>";
         return response()->json([
             "msg" => $msg
@@ -370,6 +374,64 @@ INSERT INTO `{$this->post_tag_table}`(`post_id`,`tag_id`,`created_at`,
         endforeach;
 
     }
+
+
+    /* make backup of the update version to file */
+    public function backupUpdatePost($id){
+        $post = Post::find($id);
+        $file = base_path("DB/postList.sqlite");
+        $cont = "/* ======== update script for post ============ */";
+        $cont .= "
+UPDATE `{$this->post_table}` SET post_title='{$post->post_title}',
+post_excerpt='{$post->post_excerpt}',
+post_body='{$post->post_body}',
+is_public='{$post->is_public}',
+updated_at='{$post->updated_at}' WHERE id='{$post->id}';
+";
+        $cont .= "/* ========== End of update script ===========*/";
+
+        write2text($file,$cont);
+
+        /* 
+         * this only can make a backup for post 
+         * will not update the tag link to file 
+         * but we will delete and re-insert it instead 
+         * */
+
+        $ln = DB::table($this->post_tag_table)
+                    ->where("post_id",$post->id)
+                    ->get();
+        if(count($ln) != 0):
+            $fi = base_path("DB/post_link_tag.sqlite");
+
+            $cm = "/* ======= delete */";
+            $cm .= "
+DELETE FROM `{$this->post_tag_table}` WHERE post_id='{$post->id}';
+";
+            foreach($ln as $tag):
+
+
+            $cm .= "/* ==== re-insert ===========*/";
+            $cm .= "
+INSERT INTO `{$this->post_tag_table}`(`post_id`,`tag_id`,`created_at`,
+`updated_at`) VALUES(
+    '{$tag->post_id}','{$tag->tag_id}',
+    '{$tag->created_at}','{$tag->updated_at}'
+);
+    /* ===== re-insert END ======================*/
+";
+            endforeach;
+
+        write2text($fi,$cm);
+        endif;
+
+    }
+    /* make backup of the update version to file */
+
+
+
+
+
 
     public function backupInsertTag(){
         $tag = Tag::latest()->first();

@@ -25,17 +25,10 @@
 
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>@hasSection('meta_title')
-      @yield('meta_title')
-    @else
-      Welcome to the thousand million project
-    @endif</title>
+  <title>@hasSection('meta_title') @yield('meta_title') @else Welcome to the thousand million project @endif</title>
 
-  <meta name="description" content="@hasSection("meta_des")
-    @yield("meta_des")
-    @else a thousand million dollars project by farook @endif">
-  <meta name="keywords" content="@hasSection("meta_keywords") 
-    @yield("meta_keywords")@else thousand million project @endif">
+  <meta name="description" content="@hasSection("meta_des") @yield("meta_des") @else a thousand million dollars project by farook @endif">
+  <meta name="keywords" content="@hasSection("meta_keywords") @yield("meta_keywords") @else thousand million project @endif">
 
 
 

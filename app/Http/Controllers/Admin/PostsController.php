@@ -390,6 +390,7 @@ updated_at='{$post->updated_at}' WHERE id='{$post->id}';
         /* 
          * this only can make a backup for post 
          * will not update the tag link to file 
+         * but we will delete and re-insert it instead 
          * */
 
         $ln = DB::table($this->post_tag_table)
