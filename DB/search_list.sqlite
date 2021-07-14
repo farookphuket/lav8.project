@@ -55,3 +55,173 @@ INSERT INTO `searches`(`target_title`,`target_id`,`keywords`,
     '2021-07-08 10:30:29','2021-07-08 10:30:29');
  
  /* ======== auto script 2021-07-08 10:30:29 am END ========= */
+
+ /* =========== auto script START 2021-07-14 08:32:49 am  ==================== */
+ /* ==== backup insert `searches` =========== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,`created_at`,`updated_at`) VALUES(
+    'เธอปันใจ','songs','164',
+    'เธอปันใจ',
+    '2021-07-14 08:32:49','2021-07-14 08:32:49');
+ 
+ /* ======== auto script 2021-07-14 08:32:49 am END ========= */
+
+ /* =========== auto script START 2021-07-14 08:33:57 am  ==================== */
+ /* ==== backup insert `searches` =========== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,`created_at`,`updated_at`) VALUES(
+    'ขอได้ไหม','songs','169',
+    'ขอได้ไหม',
+    '2021-07-14 08:33:57','2021-07-14 08:33:57');
+ 
+ /* ======== auto script 2021-07-14 08:33:57 am END ========= */
+
+ /* =========== auto script START 2021-07-14 08:38:36 am  ==================== */
+ /* ==== backup insert `searches` =========== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,`created_at`,`updated_at`) VALUES(
+    'กบ','songs','167',
+    'กบ',
+    '2021-07-14 08:38:36','2021-07-14 08:38:36');
+ 
+ /* ======== auto script 2021-07-14 08:38:36 am END ========= */
+
+ /* =========== auto script START 2021-07-14 08:39:35 am  ==================== */
+ /* ==== backup insert `searches` =========== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,`created_at`,`updated_at`) VALUES(
+    'คนมีคู่ไม่รู้หรอก','songs','69',
+    'คนมีคู่ไม่รู้หรอก',
+    '2021-07-14 08:39:35','2021-07-14 08:39:35');
+ 
+ /* ======== auto script 2021-07-14 08:39:35 am END ========= */
+
+ /* =========== auto script START 2021-07-14 08:39:49 am  ==================== */
+ /* ==== backup insert `searches` =========== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,`created_at`,`updated_at`) VALUES(
+    'คนมันหิว','songs','58',
+    'คนมันหิว',
+    '2021-07-14 08:39:49','2021-07-14 08:39:49');
+ 
+ /* ======== auto script 2021-07-14 08:39:49 am END ========= */
+
+ /* =========== auto script START 2021-07-14 08:40:03 am  ==================== */
+ /* ==== backup insert `searches` =========== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,`created_at`,`updated_at`) VALUES(
+    'วิดลัยหลายใจ','songs','123',
+    'วิดลัยหลายใจ',
+    '2021-07-14 08:40:03','2021-07-14 08:40:03');
+ 
+ /* ======== auto script 2021-07-14 08:40:03 am END ========= */
+
+ /* =========== auto script START 2021-07-14 08:50:09 am  ==================== */
+ /* ==== backup insert `searches` =========== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,`created_at`,`updated_at`) VALUES(
+    'Stay','songs','26',
+    'Stay',
+    '2021-07-14 08:50:09','2021-07-14 08:50:09');
+ 
+ /* ======== auto script 2021-07-14 08:50:09 am END ========= */
+
+ /* =========== auto script START 2021-07-14 08:50:14 am  ==================== */
+ /* ==== backup insert `searches` =========== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,`created_at`,`updated_at`) VALUES(
+    'เมื่อไหร่จะรัก','songs','25',
+    'เมื่อไหร่จะรัก',
+    '2021-07-14 08:50:14','2021-07-14 08:50:14');
+ 
+ /* ======== auto script 2021-07-14 08:50:14 am END ========= */
+
+ /* =========== auto script START 2021-07-14 08:50:44 am  ==================== */
+ /* ==== backup insert `searches` =========== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,`created_at`,`updated_at`) VALUES(
+    'หัวใจมักง่าย','songs','46',
+    'หัวใจมักง่าย',
+    '2021-07-14 08:50:44','2021-07-14 08:50:44');
+ 
+ /* ======== auto script 2021-07-14 08:50:44 am END ========= */
+
+ /* =========== auto script START 2021-07-14 09:13:48 am  ==================== */
+ /* ==== backup insert `searches` =========== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,`created_at`,`updated_at`) VALUES(
+    'อาการแบบนี้','songs','5',
+    'อาการแบบนี้',
+    '2021-07-14 09:13:48','2021-07-14 09:13:48');
+ 
+ /* ======== auto script 2021-07-14 09:13:48 am END ========= */
+
+ /* =========== auto script START 2021-07-14 09:14:14 am  ==================== */
+ /* ==== backup insert `searches` =========== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,`created_at`,`updated_at`) VALUES(
+    'ปากดี','songs','163',
+    'ปากดี',
+    '2021-07-14 09:14:14','2021-07-14 09:14:14');
+ 
+ /* ======== auto script 2021-07-14 09:14:14 am END ========= */
+
+ /* =========== auto script START 2021-07-14 09:14:57 am  ==================== */
+ /* ==== backup insert `searches` =========== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,`created_at`,`updated_at`) VALUES(
+    'Unwell','songs','99',
+    'Unwell',
+    '2021-07-14 09:14:57','2021-07-14 09:14:57');
+ 
+ /* ======== auto script 2021-07-14 09:14:57 am END ========= */
+
+ /* =========== auto script START 2021-07-14 09:18:05 am  ==================== */
+ /* ==== backup insert `searches` =========== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,`created_at`,`updated_at`) VALUES(
+    'I Swear','songs','120',
+    'I Swear',
+    '2021-07-14 09:18:05','2021-07-14 09:18:05');
+ 
+ /* ======== auto script 2021-07-14 09:18:05 am END ========= */
+
+ /* =========== auto script START 2021-07-14 09:50:51 am  ==================== */
+ /* ==== backup insert `searches` =========== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,`created_at`,`updated_at`) VALUES(
+    'ตายในหน้าที่','songs','70',
+    'ตายในหน้าที่',
+    '2021-07-14 09:50:51','2021-07-14 09:50:51');
+ 
+ /* ======== auto script 2021-07-14 09:50:51 am END ========= */
+
+ /* =========== auto script START 2021-07-14 09:51:27 am  ==================== */
+ /* ==== backup insert `searches` =========== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,`created_at`,`updated_at`) VALUES(
+    'Stay The Same','songs','116',
+    'Stay The Same',
+    '2021-07-14 09:51:27','2021-07-14 09:51:27');
+ 
+ /* ======== auto script 2021-07-14 09:51:27 am END ========= */
+
+ /* =========== auto script START 2021-07-14 09:53:42 am  ==================== */
+ /* ==== backup insert `searches` =========== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,`created_at`,`updated_at`) VALUES(
+    'Word','songs','17',
+    'Word',
+    '2021-07-14 09:53:42','2021-07-14 09:53:42');
+ 
+ /* ======== auto script 2021-07-14 09:53:42 am END ========= */
+
+ /* =========== auto script START 2021-07-14 09:56:22 am  ==================== */
+ /* ==== backup insert `searches` =========== */
+INSERT INTO `searches`(`target_title`,`method`,`target_id`,
+`keywords`,`created_at`,`updated_at`) VALUES(
+    'ทุกคืนได้ไหม','songs','13',
+    'ทุกคืนได้ไหม',
+    '2021-07-14 09:56:22','2021-07-14 09:56:22');
+ 
+ /* ======== auto script 2021-07-14 09:56:22 am END ========= */

@@ -251,10 +251,15 @@ class SongController extends Controller
         $content .= "
 INSERT INTO `{$this->song_table}`(`artist_id`,`album_id`,`user_id`,
 `name`,`posted_at`,`cover`,`url`,`created_at`,`updated_at`) VALUES(
-    '{$song->artist_id}','{$song->album_id}','{$song->user_id}','{$song->name}',
-    '{$song->posted_at}','{$song->cover}','{$song->url}','{$song->created_at}',
-    '{$song->updated_at}'
-);
+    '{$song->artist_id}',
+    '{$song->album_id}',
+    '{$song->user_id}',
+    '{$song->name}',
+    '{$song->posted_at}',
+    '{$song->cover}',
+    '{$song->url}',
+    '{$song->created_at}',
+    '{$song->updated_at}');
 
 ";
     write2text($file,$content);

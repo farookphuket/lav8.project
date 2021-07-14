@@ -130,6 +130,8 @@ class SongController extends Controller
             // make indexing page for search 
             $this->makeSearchIndexInsert($song->id);            
         endif;
+
+
     }
     /**
      * Show the form for editing the specified resource.

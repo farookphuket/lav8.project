@@ -245,10 +245,15 @@ class SongController extends Controller
         $content .= "
 INSERT INTO `{$this->song_table}`(`artist_id`,`album_id`,`user_id`,
 `name`,`posted_at`,`cover`,`url`,`created_at`,`updated_at`) VALUES(
-    '{$song->artist_id}','{$song->album_id}','{$song->user_id}','{$song->name}',
-    '{$song->posted_at}','{$song->cover}','{$song->url}','{$song->created_at}',
-    '{$song->updated_at}'
-);
+    '{$song->artist_id}',
+    '{$song->album_id}',
+    '{$song->user_id}',
+    '{$song->name}',
+    '{$song->posted_at}',
+    '{$song->cover}',
+    '{$song->url}',
+    '{$song->created_at}',
+    '{$song->updated_at}');
 
 ";
     write2text($file,$content);
@@ -263,8 +268,9 @@ INSERT INTO `{$this->song_table}`(`artist_id`,`album_id`,`user_id`,
         $con1 .= "
 INSERT INTO `{$this->artist_table}`(`name`,`created_at`,`updated_at`) 
 VALUES(
-'{$ar->name}','{$ar->created_at}','{$ar->updated_at}'
-);
+    '{$ar->name}',
+    '{$ar->created_at}',
+    '{$ar->updated_at}');
 ";
         write2text($file,$con1);
     }
@@ -279,8 +285,9 @@ VALUES(
         $con2 .= "
 INSERT INTO `{$this->album_table}`(`name`,`created_at`,`updated_at`) 
 VALUES(
-'{$ab->name}','{$ab->created_at}','{$ab->updated_at}'
-);
+    '{$ab->name}',
+    '{$ab->created_at}',
+    '{$ab->updated_at}');
 ";
         write2text($file,$con2);
     }
