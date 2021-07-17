@@ -1446,3 +1446,48 @@ INSERT INTO `whatnews`(`user_id`,`whatnews_title`,`whatnews_body`,`is_public`,
     '2021-07-08 19:01:56','2021-07-08 19:01:56');
  
  /* ======== auto script 2021-07-08 19:01:56 pm END ========= */
+
+ /* =========== auto script START 2021-07-16 20:34:11 pm  ==================== */
+ /* =============== auto backup `whatnews`  =====*/
+INSERT INTO `whatnews`(`user_id`,`whatnews_title`,`whatnews_body`,`is_public`,
+`created_at`,`updated_at`) VALUES(
+    '1',
+    'this is the test embed',
+    '<div class="row">
+    <div class="col-lg-12">
+        <p>this is the test embed the tv from guuchil</p>
+
+        <div class="video-container">
+            <iframe width="560" height="315" src="http://tv.guchill.com/playerdtv4.php?n=Mono29&amp;l=" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""><br></iframe>
+        </div>
+        <p class="text-center pt-2">
+            ดูหนังนะจ๊ะ
+        </p>
+    </div>
+</div>',
+    '1',
+    '2021-07-16 20:34:11','2021-07-16 20:34:11');
+ 
+ /* ======== auto script 2021-07-16 20:34:11 pm END ========= */
+
+ /* =========== auto script START 2021-07-16 21:51:14 pm  ==================== */
+ /* ======== update script `whatnews` ==========*/
+UPDATE `whatnews` SET whatnews_title='this is the test embed',
+whatnews_body='<div class="row">
+    <div class="col-lg-12">
+        <p>this is the test embed the tv from guuchil</p>
+
+        <div class="video-container">
+            <iframe width="600" height="400" src="http://tv.guchill.com/playerdtv4.php?n=Mono29&amp;l=9" scrolling="no" frameborder="0" allowfullscreen=""></iframe>
+        </div>
+        <p class="text-center pt-2">
+            ดูหนังนะจ๊ะ
+        </p>
+    </div>
+</div>',
+is_public='1',
+updated_at='2021-07-16 21:51:14' 
+WHERE id='33';
+
+/* ==== auto update script2021-07-16 21:51:14 =====*/ 
+ /* ======== auto script 2021-07-16 21:51:14 pm END ========= */
