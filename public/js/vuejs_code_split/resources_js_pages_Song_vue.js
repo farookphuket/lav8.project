@@ -286,7 +286,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       if (keySearch.length > 2) {
         var url = "/searchSong?search=".concat(this.search);
         axios.get(url).then(function (res) {
-          // console.log(res.data)
+          //   console.log(res.data)
           _this.song = res.data.song;
         });
       } else {
@@ -296,9 +296,9 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
     getSong: function getSong(id) {
       var _this2 = this;
 
-      var url = "/readCount/".concat(id);
+      var url = "/song/".concat(id);
       axios.get(url).then(function (res) {
-        //console.log(res.data)
+        //   console.log(res.data)
         window.open(res.data.url, "_blank");
         setTimeout(function () {
           _this2.$emit("getSongList");

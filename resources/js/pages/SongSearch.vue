@@ -75,7 +75,7 @@ export default {
             if (keySearch.length > 2) {
                 let url = `/searchSong?search=${this.search}`;
                 axios.get(url).then((res) => {
-                    // console.log(res.data)
+                 //   console.log(res.data)
                     this.song = res.data.song;
                 });
             } else {
@@ -83,9 +83,9 @@ export default {
             }
         },
         getSong(id) {
-            let url = `/readCount/${id}`;
+            let url = `/song/${id}`;
             axios.get(url).then((res) => {
-                //console.log(res.data)
+             //   console.log(res.data)
                 window.open(res.data.url, "_blank");
                 setTimeout(() => {
                     this.$emit("getSongList");
