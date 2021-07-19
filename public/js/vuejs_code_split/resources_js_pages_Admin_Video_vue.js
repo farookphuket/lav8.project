@@ -375,6 +375,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -960,7 +962,7 @@ var render = function() {
                       _c(
                         "a",
                         {
-                          attrs: { href: "" },
+                          attrs: { href: "", title: vi.title },
                           on: {
                             click: function($event) {
                               $event.preventDefault()

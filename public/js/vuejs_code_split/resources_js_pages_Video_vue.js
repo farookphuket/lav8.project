@@ -192,6 +192,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -654,11 +657,14 @@ var render = function() {
                         },
                         [
                           _c("b-icon", { attrs: { icon: "film" } }),
-                          _vm._v(
-                            " \n                            " +
-                              _vm._s(_vm.smartTitle(vi.title, 9)) +
-                              "\n                        "
-                          )
+                          _vm._v(" "),
+                          _c("a", { attrs: { href: "", title: vi.title } }, [
+                            _vm._v(
+                              "\n                                " +
+                                _vm._s(_vm.smartTitle(vi.title, 9)) +
+                                "\n                            "
+                            )
+                          ])
                         ],
                         1
                       ),

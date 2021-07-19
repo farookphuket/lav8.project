@@ -1452,16 +1452,16 @@ INSERT INTO `whatnews`(`user_id`,`whatnews_title`,`whatnews_body`,`is_public`,
 INSERT INTO `whatnews`(`user_id`,`whatnews_title`,`whatnews_body`,`is_public`,
 `created_at`,`updated_at`) VALUES(
     '1',
-    'this is the test embed',
+    'test embed code from tv online',
     '<div class="row">
     <div class="col-lg-12">
         <p>this is the test embed the tv from guuchil</p>
 
         <div class="video-container">
-            <iframe width="560" height="315" src="http://tv.guchill.com/playerdtv4.php?n=Mono29&amp;l=" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""><br></iframe>
+            <iframe width="600" height="400" src="http://tv.guchill.com/playerdtv4.php?n=Mono29&amp;l=9" scrolling="no" frameborder="0" allowfullscreen=""></iframe>
         </div>
         <p class="text-center pt-2">
-            ดูหนังนะจ๊ะ
+            ดูหนังฃ่อง โมโน นะจ๊ะ
         </p>
     </div>
 </div>',
@@ -1470,24 +1470,28 @@ INSERT INTO `whatnews`(`user_id`,`whatnews_title`,`whatnews_body`,`is_public`,
  
  /* ======== auto script 2021-07-16 20:34:11 pm END ========= */
 
- /* =========== auto script START 2021-07-16 21:51:14 pm  ==================== */
- /* ======== update script `whatnews` ==========*/
-UPDATE `whatnews` SET whatnews_title='this is the test embed',
-whatnews_body='<div class="row">
-    <div class="col-lg-12">
-        <p>this is the test embed the tv from guuchil</p>
 
-        <div class="video-container">
-            <iframe width="600" height="400" src="http://tv.guchill.com/playerdtv4.php?n=Mono29&amp;l=9" scrolling="no" frameborder="0" allowfullscreen=""></iframe>
-        </div>
-        <p class="text-center pt-2">
-            ดูหนังนะจ๊ะ
-        </p>
-    </div>
-</div>',
-is_public='1',
-updated_at='2021-07-16 21:51:14' 
-WHERE id='33';
+ /* =========== auto script START 2021-07-20 05:10:34 am  ==================== */
+ /* =============== auto backup `whatnews`  =====*/
+INSERT INTO `whatnews`(`user_id`,`whatnews_title`,`whatnews_body`,`is_public`,
+`created_at`,`updated_at`) VALUES(
+    '1',
+    'ข่าวสถานการณ์โควิด 19 วันที่ 19 กรกฎาคม 2564 ก็ยังไม่มีทีท่าว่าจะดีขึ้น',
+    '<p class="pt-2 mb-4">
+    #อัปเดต ศูนย์บริหารสถานการณ์การแพร่ระบาดของโรคติดเชื้อไวรัสโคโรนา 2019 (โควิด-19) (ศบค.) แถลงข่าวความคืบหน้าสถานการณ์ไวรัสโคโรนาสายพันธุ์ใหม่ 2019 (COVID-19) ในประเทศไทย
+</p>
+<div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/PPMBf08oWNw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+    
+</div>
+<p class="pt-2 text-center">
+    ข่าวสถานการณ์โควิดวันที่ 19 กรกฎาคม 2564
+</p>
 
-/* ==== auto update script2021-07-16 21:51:14 =====*/ 
- /* ======== auto script 2021-07-16 21:51:14 pm END ========= */
+<p class="pt-4">
+    ประกาศจาก ศบค. และดูเหมือนว่าการ ล๊อคดาวน์ อาจจะมีการเปลี่ยนแปลงหากจำนวนผู้ติดเชื้อรายวันยังไม่ลดจำนวนลง 
+</p>',
+    '1',
+    '2021-07-20 05:10:34','2021-07-20 05:10:34');
+ 
+ /* ======== auto script 2021-07-20 05:10:34 am END ========= */

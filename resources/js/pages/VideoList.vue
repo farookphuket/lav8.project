@@ -17,7 +17,10 @@
                         <p class="pt-2 mb-2">
                             <a href="" @click.prevent="showVideo(vi.id)">
                                 <b-icon icon="film"></b-icon> 
-                                {{ smartTitle(vi.title, 9) }}
+                                <a href="" :title="vi.title">
+                                    {{ smartTitle(vi.title, 9) }}
+                                </a>
+
                             </a>
                             -
                             <span class="badge badge-info">

@@ -13,7 +13,9 @@
                         <div class="float-left">
                             <span>
                                 <b-icon icon="film"></b-icon>
-                                <a href="" @click.prevent="$emit('openVideo',vi.id)">
+                                <a href="" 
+                                   :title="vi.title"
+                                    @click.prevent="$emit('openVideo',vi.id)">
                                     {{smartTitle(vi.title,16)}}
                                 </a>
                             </span> &middot;

@@ -10,6 +10,13 @@ use Auth;
 
 class VideoController extends Controller
 {
+
+
+    protected $video_table;
+
+    public function __construct(){
+        $this->video_table = "videos";
+    }
     /**
      * Display a listing of the resource.
      *
@@ -59,6 +66,13 @@ class VideoController extends Controller
             "title" => $title,
             "embed" => $embed
         ]);
+
+        // get the last insert record 
+        $vi = Video::latest()->first();
+
+        // make backup to file 
+        $this->backupInsertVideo($vi->id);
+
         $msg = "<span class=\"badge badge-success p-2\">
             Success : video link has been added </span>";
         return response()->json([
@@ -109,6 +123,9 @@ class VideoController extends Controller
                 "title" => $title,
                 "embed" => $embed
             ]);
+
+        // make backup to file 
+        $this->backupUpdateVideo($id);
         
         $msg = "<span class=\"badge badge-warning p-2\">
             Success : video link has been Updated! </span>";
@@ -131,4 +148,51 @@ class VideoController extends Controller
             remove</span>";
         return response()->json(["msg" => $msg]);
     }
+
+
+
+    /* ==================== backup video 20 July 2021 START =================*/ 
+    public function backupInsertVideo($id){
+        $vi = Video::find($id);
+        $file = base_path("DB/video_list.sqlite");
+        $cont = "
+\n
+/* ========================================================================= */
+/* === auto insert script to `{$this->video_table}` ".date("Y-m-d H:i:s")."  */
+INSERT INTO `{$this->video_table}`(`user_id`,`title`,`embed`,`created_at`,
+`updated_at`) VALUES(
+    '{$vi->user_id}',
+    '{$vi->title}',
+    '{$vi->embed}',
+    '{$vi->created_at}',
+    '{$vi->updated_at}');
+\n
+";
+
+        write2text($file,$cont);
+    }
+
+    
+    /* ==================== backup video 20 July 2021 END ===================*/ 
+
+    /* =================== backup update video 20 July 2021 ================ */
+    public function backupUpdateVideo($id){
+        $vi = Video::find($id);
+        $file = base_path("DB/video_list.sqlite");
+        $cont = "
+\n 
+/* ==== script created ".date("Y-m-d H:i:s")." ============================= */
+/* auto update script table `{$this->video_table}` ========================= */
+\n
+UPDATE `{$this->video_table}` SET title='{$vi->title}',
+embed='{$vi->embed}',
+updated_at='{$vi->updated_at}'
+WHERE id='{$vi->id}';
+";
+        write2text($file,$cont);
+    }
+
+    /* =================== backup update video 20 July 2021 ================ */
+
+
 }
