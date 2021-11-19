@@ -1,0 +1,70 @@
+/* ============================================================================
+*   DEFAULT DATA DO NOT DELETE  
+*   4 Aug 2021
+*   START
+* =============================================================================
+*/ 
+
+
+ /* ================= backup `comments`  2021-06-28 15:29:41 =============== */
+INSERT INTO `comments`(`user_id`,`ip`,`comment_title`,
+`comment_body`,`created_at`,`updated_at`) VALUES(
+    '3','127.0.0.21','ไทยศูนย์กลางผลิตยานยนต์ไฟฟ้าในอาเซียน I EEC Focus',
+    '<p>
+    ไทยศูนย์กลางผลิตยานยนต์ไฟฟ้าในอาเซียน I EEC Focus
+ไทย เตรียมก้าวเป็นศูนย์กลางผลิตยานยนต์ไฟฟ้าในอาเซียน 
+เช็คความพร้อมผลิตรถยนต์EV เพื่อการส่งออกของไทย 
+และเป้าหมายที่วางไว้ คนไทยจะใช้รถยนต์ไฟฟ้า100% ภายในปี 2578 จะทำได้อย่างไร
+ติดตามได้ทุกวันศุกร์ กับ EEC Focus เวลา 10.30-11.00 น. ทาง TNN ช่อง 16
+“รู้อย่างเข้าใจ ฟังแล้วเข้าถึง สู่ไทยแลนด์ 4.0 ไปกับ EEC Focus”
+    
+</p>
+<div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/pEaEIHX0Zzg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>','2021-06-28 15:29:41',
+    '2021-06-28 15:29:41');
+
+
+
+INSERT INTO `comments`(`user_id`,`ip`,`comment_title`,`comment_body`,
+        `created_at`,`updated_at`) VALUES(
+        '3',
+        '127.0.0.12',
+        'The default comment on the post just for testing',
+        '
+        <div class="row">
+            <div class="col-lg-4">
+                <img src="https://i.ibb.co/gFcVSbS/2021-07-25-comment-sqlite.png" alt="test photo from the net">
+                <p class="pt-2 text-center">
+                 this is the photo from the internet
+                </p>
+            </div>
+            <div class="col-lg-8">
+                <p>
+                    this is the test text comment 
+                </p>
+                <p>
+                    to edit this file "DB/comment_list.sqlite"
+                </p>
+                <p>you can delete this if you want to but please DO NOT delete 
+                the whole file at least must be one record will left behind 
+                just to prevent from an error! 
+                </p>
+            </div>
+        </div>
+        ',
+        '2021-08-04 21:40:44',
+        '2021-08-04 21:40:44');
+
+
+
+
+
+/* ============================================================================
+*   DEFAULT DATA DO NOT DELETE  
+*   4 Aug 2021
+*   END
+* =============================================================================
+*/ 
+
+

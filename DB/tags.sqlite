@@ -1,0 +1,95 @@
+/* Tag 1 */
+INSERT INTO 'tags' ('tag_name','created_at','updated_at') 
+VALUES ('Public Post',
+datetime('now' ,'localtime'),
+datetime('now','localtime')
+);
+
+
+
+/* Tag 2  */
+
+INSERT INTO 'tags' ('tag_name','created_at','updated_at') 
+VALUES (
+'farook said',
+datetime('now' ,'localtime'),
+datetime('now','localtime')
+);
+
+/* Tag 3 Tag bug report */
+INSERT INTO 'tags' ('tag_name','created_at','updated_at') 
+VALUES (
+'Bug Report',
+datetime('now','localtime'),
+datetime('now','localtime')
+);
+
+
+/* Tag 4 Tag How to  1 Feb 2021*/
+INSERT INTO 'tags' ('tag_name','created_at','updated_at') 
+VALUES (
+'How to',
+datetime('now','localtime'),
+datetime('now','localtime')
+);
+
+
+/* Tag 5 Tag Manjaro  1 Feb 2021*/
+INSERT INTO 'tags' ('tag_name','created_at','updated_at') 
+VALUES (
+'Manjaro',
+datetime('now','localtime'),
+datetime('now','localtime')
+);
+
+
+
+/* Tag 6 Tag Open Software  1 Feb 2021*/
+INSERT INTO 'tags' ('tag_name','created_at','updated_at') 
+VALUES (
+'Free Software',
+datetime('now','localtime'),
+datetime('now','localtime')
+);
+
+
+
+
+/* Tag 7 Tag หนังสือนิยาย  8 Feb 2021 */
+INSERT INTO 'tags' ('tag_name','created_at','updated_at') 
+VALUES (
+'หนังสือนิยาย',
+datetime('now','localtime'),
+datetime('now','localtime')
+);
+
+
+/* Tag 8 Tag ข่าวโควิด 23 Feb 2021 */
+INSERT INTO 'tags' ('tag_name','created_at','updated_at') 
+VALUES (
+'ข่าวโควิด',
+datetime('now','localtime'),
+datetime('now','localtime')
+ );
+
+
+
+
+/* Tag 9 Tag รอมฎอน 10 Apr 2021 */
+INSERT INTO 'tags' ('tag_name','created_at','updated_at') 
+VALUES (
+'รอมฎอน',
+datetime('now','localtime'),
+datetime('now','localtime')
+ );
+
+/* Tag 10 Tag รอมฎอน 8 Oct 2021 */
+ INSERT INTO 'tags' ('tag_name','created_at','updated_at') 
+ VALUES (
+ 'มือถือ แอนดรอยน์',
+ '2021-10-08 04:52:20',
+ '2021-10-08 04:52:20'
+  );
+
+/* ======================== Auto script ==================================== */
+

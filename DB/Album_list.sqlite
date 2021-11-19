@@ -1,0 +1,187 @@
+/*
+========================= Default Data 22-Oct 2021 START ======================
+*/
+
+INSERT INTO `albums`(`album_name`,`album_cover`,`created_at`,
+        `updated_at`) VALUES(
+        'เบบี้ บูล',
+        'https://i.scdn.co/image/ab67616d0000b27348e07c18a063923165d86f4b',
+        '2003-02-09 10:55:46',
+        '2003-02-09 10:55:46');
+
+
+
+
+/*
+========================= Default Data 22-Oct 2021 END ========================
+*/
+
+
+ /* =========== auto script START 2021-10-24 11:57:18 am  ==================== */
+ 
+/* =========================== Insert Command to table albums ===============
+ * on 2021-10-24 11:57:18
+ * */
+INSERT INTO `albums`(`album_name`,`album_cover`,`created_at`,`updated_at`) 
+VALUES(
+    'Ed Sheeran',
+    'https://images-na.ssl-images-amazon.com/images/I/61beeD3c0mL._RI_.jpg',
+    '2021-10-24 11:57:18',
+    '2021-10-24 11:57:18');
+ 
+ /* ======== auto script 2021-10-24 11:57:18 am END ========= */
+
+ /* =========== auto script START 2021-10-24 12:08:54 pm  ==================== */
+ 
+/* =========================== Insert Command to table albums ===============
+ * on 2021-10-24 12:08:54
+ * */
+INSERT INTO `albums`(`album_name`,`album_cover`,`created_at`,`updated_at`) 
+VALUES(
+    'เสือ ธนพล อินทฤทธิ์',
+    'https://s.mxmcdn.net/images-storage/albums/8/1/6/3/0/9/26903618_350_350.jpg',
+    '2021-10-24 12:08:54',
+    '2021-10-24 12:08:54');
+ 
+ /* ======== auto script 2021-10-24 12:08:54 pm END ========= */
+
+ /* =========== auto script START 2021-10-24 12:12:00 pm  ==================== */
+ 
+/* =========================== Insert Command to table albums ===============
+ * on 2021-10-24 12:12:00
+ * */
+INSERT INTO `albums`(`album_name`,`album_cover`,`created_at`,`updated_at`) 
+VALUES(
+    'บอย พีชเมกเกอร์',
+    'https://upload.wikimedia.org/wikipedia/th/thumb/4/4f/Peacemaker.jpg/220px-Peacemaker.jpg',
+    '2021-10-24 12:12:00',
+    '2021-10-24 12:12:00');
+ 
+ /* ======== auto script 2021-10-24 12:12:00 pm END ========= */
+
+ /* =========== auto script START 2021-10-24 12:34:43 pm  ==================== */
+ 
+/* =========================== Insert Command to table albums ===============
+ * on 2021-10-24 12:34:43
+ * */
+INSERT INTO `albums`(`album_name`,`album_cover`,`created_at`,`updated_at`) 
+VALUES(
+    'เบล สุพล พัวศิริรักษ์',
+    'https://www.matichon.co.th/wp-content/uploads/2019/05/%E0%B9%80%E0%B8%9A%E0%B8%A5-%E0%B8%AA%E0%B8%B8%E0%B8%9E%E0%B8%A5.jpg',
+    '2021-10-24 12:34:43',
+    '2021-10-24 12:34:43');
+ 
+ /* ======== auto script 2021-10-24 12:34:43 pm END ========= */
+
+ /* =========== auto script START 2021-10-24 12:45:26 pm  ==================== */
+ 
+/* =========================== Insert Command to table albums ===============
+ * on 2021-10-24 12:45:26
+ * */
+INSERT INTO `albums`(`album_name`,`album_cover`,`created_at`,`updated_at`) 
+VALUES(
+    'Ronan Keating',
+    'https://i.lnwfile.com/d0z9ra.jpg',
+    '2021-10-24 12:45:26',
+    '2021-10-24 12:45:26');
+ 
+ /* ======== auto script 2021-10-24 12:45:26 pm END ========= */
+
+ /* =========== auto script START 2021-10-24 12:53:32 pm  ==================== */
+ 
+/* =========================== Insert Command to table albums ===============
+ * on 2021-10-24 12:53:32
+ * */
+INSERT INTO `albums`(`album_name`,`album_cover`,`created_at`,`updated_at`) 
+VALUES(
+    'เท่ห์ อุเทน พรหมมินทร์',
+    'https://1.bp.blogspot.com/-48fCxMF_Kbc/Xp7C_JvpqbI/AAAAAAAAIZs/hqsy2LULfqQ49aD8EOXRGhRuDYLcEjbTgCLcBGAsYHQ/s1600/Cover.jpg',
+    '2021-10-24 12:53:32',
+    '2021-10-24 12:53:32');
+ 
+ /* ======== auto script 2021-10-24 12:53:32 pm END ========= */
+
+ /* =========== auto script START 2021-10-24 13:01:51 pm  ==================== */
+ 
+/* =========================== Insert Command to table albums ===============
+ * on 2021-10-24 13:01:51
+ * */
+INSERT INTO `albums`(`album_name`,`album_cover`,`created_at`,`updated_at`) 
+VALUES(
+    'เบิร์ด ธงไชย แมคอินไตย์',
+    'https://e.lnwfile.com/owtf6y.jpg',
+    '2021-10-24 13:01:51',
+    '2021-10-24 13:01:51');
+ 
+ /* ======== auto script 2021-10-24 13:01:51 pm END ========= */
+
+ /* =========== auto script START 2021-10-24 13:10:22 pm  ==================== */
+ 
+/* =========================== Insert Command to table albums ===============
+ * on 2021-10-24 13:10:22
+ * */
+INSERT INTO `albums`(`album_name`,`album_cover`,`created_at`,`updated_at`) 
+VALUES(
+    'โบวี่ ยอมจำนนฟ้าดิน',
+    'https://s.isanook.com/jo/0/rp/r/w700/ya0xa0m1w0/aHR0cDovL2ltYWdlLmpvb3guY29tL0pPT1hjb3Zlci8wLzIzNGUxMGMwNjdiYmQ0ZmYvMTAwMC5qcGc=.jpg',
+    '2021-10-24 13:10:22',
+    '2021-10-24 13:10:22');
+ 
+ /* ======== auto script 2021-10-24 13:10:22 pm END ========= */
+
+ /* =========== auto script START 2021-10-24 13:22:23 pm  ==================== */
+ 
+/* =========================== Insert Command to table albums ===============
+ * on 2021-10-24 13:22:23
+ * */
+INSERT INTO `albums`(`album_name`,`album_cover`,`created_at`,`updated_at`) 
+VALUES(
+    'วิด ไฮเปอร์ อาร์ สยาม',
+    'https://i.scdn.co/image/ab67616d0000b2736d9819720dabfcc95274cf53',
+    '2021-10-24 13:22:23',
+    '2021-10-24 13:22:23');
+ 
+ /* ======== auto script 2021-10-24 13:22:23 pm END ========= */
+
+ /* =========== auto script START 2021-10-24 13:58:26 pm  ==================== */
+ 
+/* =========================== Insert Command to table albums ===============
+ * on 2021-10-24 13:58:26
+ * */
+INSERT INTO `albums`(`album_name`,`album_cover`,`created_at`,`updated_at`) 
+VALUES(
+    'วง กะลา',
+    'https://i.ytimg.com/vi/zkWgdPT9JEo/hqdefault.jpg',
+    '2021-10-24 13:58:26',
+    '2021-10-24 13:58:26');
+ 
+ /* ======== auto script 2021-10-24 13:58:26 pm END ========= */
+
+ /* =========== auto script START 2021-10-24 15:03:20 pm  ==================== */
+ 
+/* =========================== Insert Command to table albums ===============
+ * on 2021-10-24 15:03:20
+ * */
+INSERT INTO `albums`(`album_name`,`album_cover`,`created_at`,`updated_at`) 
+VALUES(
+    'วง โซคูล',
+    'http://f.ptcdn.info/963/016/000/1395402142-5869112978-o.jpg',
+    '2021-10-24 15:03:20',
+    '2021-10-24 15:03:20');
+ 
+ /* ======== auto script 2021-10-24 15:03:20 pm END ========= */
+
+ /* =========== auto script START 2021-10-24 17:48:00 pm  ==================== */
+ 
+/* =========================== Insert Command to table albums ===============
+ * on 2021-10-24 17:48:00
+ * */
+INSERT INTO `albums`(`album_name`,`album_cover`,`created_at`,`updated_at`) 
+VALUES(
+    'เพียว คณิน',
+    'https://i.ytimg.com/vi/3QJpgCGX8f4/maxresdefault.jpg',
+    '2021-10-24 17:48:00',
+    '2021-10-24 17:48:00');
+ 
+ /* ======== auto script 2021-10-24 17:48:00 pm END ========= */
+

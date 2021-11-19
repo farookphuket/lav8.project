@@ -1,0 +1,1711 @@
+
+/* How much change of you?*/
+INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
+`is_public`,`created_at`,`updated_at`) VALUES (NULL,
+'1',                            
+'
+คุณเปลี่ยนไปแค่ไหน? ผมเหรอ อืม.....เยอะมาก
+
+',                             
+'
+<div class="row">
+    <div class="col-lg-12">
+        <p>
+            how much change that happen to you from the pass up until now
+            ปีๆ หนึ่งไหงมันช่างไวไปเสียนี่ รู้ตัวอีกทีก็ เห้อ 40 กว่าแล้วนะ ยังไม่มีอะไรเลย 💔
+        </p>
+    </div>
+    <div class="col-md-4">
+        <img src="https://i.ibb.co/HBptJC3/farook-year2006.jpg" class="responsive">
+        <p class="text-center pt-2">year 2006</p>
+    </div>
+
+    <div class="col-md-4">
+        <img src="https://i.ibb.co/PcS56LN/farook-year2007.jpg" class="responsive">
+        <p class="text-center pt-2">year 2007</p>
+    </div>
+
+    <div class="col-md-4">
+        <img src="https://i.ibb.co/BzZ5HNL/farook-year2007-2.jpg" class="responsive">
+        <p class="text-center pt-2">year 2007_2</p>
+    </div>
+
+    <div class="col-md-4">
+        <img src="https://i.ibb.co/18xQmdJ/farook-year2009.jpg" class="responsive">
+        <p class="text-center pt-2">year 2009</p>
+    </div>
+
+    <div class="col-md-4">
+        <img src="https://i.ibb.co/zxBw2yY/farook-year2011.jpg" class="responsive">
+        <p class="text-center pt-2">year 2011</p>
+    </div>
+
+
+
+    <div class="col-md-4">
+        <img src="https://i.ibb.co/GVgKNzX/farook-year2021.jpg" class="responsive">
+        <p class="text-center pt-2">
+            2021 ปีนี้ โครตแก่
+        </p>
+    </div>
+
+    <div class="col-lg-12">
+        <p>
+            this is what I took with friends
+        </p>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="https://i.ibb.co/YbP2X8M/farook-and-friends2006.jpg" class="responsive">
+                <p class="text-center pt-2">
+                    ถ่ายกับพี่บิลลี่ พี่ชอร์ ตอนไปแข่งพายเรือ
+                </p>
+            </div>
+            <div class="col-lg-3">
+
+                <img src="https://i.ibb.co/rGq2jxF/farook-and-friends2006-2.jpg" class="responsive">
+                <p class="text-center pt-2">
+                    ถ่ายกับพี่บิลลี่ พี่ชอร์ ตอนไปแข่งพายเรือ
+                </p>
+            </div>
+
+        </div>
+        <p class="pt-6 mb-4">
+            อันนี้ถ่ายกับ อิบรอน ลูกชายคนโต</p>
+        <div class="col-md-6">
+            <img src="https://i.ibb.co/tqSR0zM/20150508-farook-and-son.jpg" class="responsive">
+            <p class="pt-2 text-center">
+                ลูกชายโตเป็นหนุ่ม ส่วนพ่อ....เห้อ....
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+',                                          
+'1',                        
+'2021-06-08 21:20:05',                
+'2021-06-08 21:20:10'                 
+);                                          
+
+
+
+
+INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
+`is_public`,`created_at`,`updated_at`) VALUES (NULL,
+'1',                            
+'
+Pattalung with Tom 24 Nov 2020
+
+',                             
+'
+<div class="container">
+    <p>keep it for a memories.</p>
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/MhVd8be8dyA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+
+',                                          
+'1',                        
+'2020-11-24 20:52:05',                
+'2020-11-24 20:52:10'                 
+);                                          
+
+
+
+
+
+
+INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
+`is_public`,`created_at`,`updated_at`) VALUES (NULL,
+'3',                            
+'
+ทดลองใช้ อุบุนตู 21.04 ในโปรแกรม virtualbox กันเถอะ
+
+',                             
+'
+<div class="container">
+    <p class="mb-4">
+        ปรกติผมจะทำวิดิโอแล้วโพสใน <a 
+        href="https://www.youtube.com/channel/UCnApixzVAeTN0xLXuERn89g" 
+        class="btn btn-outline-primary" target="_blank">
+        youtube</a> ของผมซึ่งก็เหมือนๆ กับเวปไซต์นั่นแหละ คือ "ไม่มีคนดู" ฮ่าๆ อ้ะ ทำเองก็ดูเอง 
+        นักเลงพอ สำหรับใครก็ตามที่สนใจจะใช้งาน Ubuntu 21.04 อยากจะทดลองดูในโปรแกรม 
+        Virtualbox ลองดูวิดิโอนี้นะครับ 
+    </p>
+
+    <div class="video-container pt-2">
+        <iframe src="https://archive.org/embed/ubuntu-21-04_like_small-kid" 
+        width="640" height="480" frameborder="0" webkitallowfullscreen="true" 
+        mozallowfullscreen="true" allowfullscreen></iframe>
+    </div>
+
+</div>
+
+',                                          
+'1',                        
+'2021-05-19 17:45:05',                
+'2021-05-19 17:45:10'                 
+);                                          
+
+
+
+
+
+
+
+
+/* Conf Vue3 by Even You 19 May 2021*/
+INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
+`is_public`,`created_at`,`updated_at`) VALUES (NULL,
+'2',                            
+'
+Is there any one learn vue on 2021
+
+',                             
+'
+<div class="row">
+    <div class="col-lg-12">
+        <p class="pt-2 mb-2">
+        to learn "laravel" and "vue" is quite easy to picking up even you came 
+        from another framework like codeigniter as myself do from last year 
+        Oct 2020 up until now (19 May 2021) I am with laravel 8 and still using 
+        vue 2 by the way but this will be move to vue 3 soon.
+        </p>
+        <div class="video-container">
+            <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/WLpLYhnGqPA" 
+            title="Design Principles of Vue 3.0 by Evan You" 
+            frameborder="0" allow="accelerometer; autoplay; 
+            clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
+        </div>
+        <p class="pt-2 mb-2 text-center">
+            Design Principles of Vue 3.0 by Evan You
+        </p>
+        <p class="pt-2 mb-2">
+            but up until now I no nothing about Vue3 still! 💔
+        </p>
+    </div>
+</div>
+
+
+',                                          
+'1',                        
+'2021-05-19 12:12:05',                
+'2021-05-19 12:12:10'                 
+);                                          
+
+
+
+
+/* รถไฟความเร็วสูงของจีน 19 May 2021*/
+INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
+`is_public`,`created_at`,`updated_at`) VALUES (NULL,
+'3',                            
+'จีนเค้ามีรถไฟความเร็วสูง(จริง ๆ) แล้วนะ รู้ยัง',                             
+'
+
+<div class="row">
+    <div class="container">
+        <h2 class="text-center">
+            เห็นข่าวแบบนี้แล้วมันชื่นหัวจิต
+        </h2>
+        <p class="pt-2 mb-2">
+        จริงๆ จีนเค้ามีรถไฟความเร็วสูงใช้กันมาพักใหญ่ๆ แล้วล่ะ จะว่าได้เหรอประเทศใหญ่ขนาดนั้น 
+        แถมคนเป็นพันล้าน แต่ถึงยังงั้นก็ยังอดอิจฉาไม่ได้ แม๊....มึงจะล้ำไปไหนเมื่อไหร่จะมาบ้านกู?
+
+        </p>
+        <div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-UjtYq3wcco" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p class="pt-2 mb-4 text-center">
+            มาเที่ยวเมืองไทยบ้างเถิด เทคโนโลยีจ๋า 
+        </p>
+    </div>
+</div>
+
+',                                          
+'1',                        
+'2021-05-19 08:35:05',                
+'2021-05-19 08:35:10'                 
+);                                          
+
+
+
+
+/* หมอพร้อม พร้อมสิ้นเดือน*/
+INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
+`is_public`,`created_at`,`updated_at`) VALUES (NULL,
+'3',                            
+'หมอพร้อม เค้าเปิดให้ประชาชนทั่วไปลงทะเบียนตั้งแต่สิ้นเดือน พฤษภาคม ปี 2564 เว้ย',                             
+'
+<div class="row">
+    <div class="col-lg-12">
+        <p class="mb">
+            เมื่อวานนี้(17-05-2564) ก็โง่ไปด่าโปรแกรมเมอร์ หมอพร้อม ซะเสียหายเลยทั้งที่จริงๆ 
+            ตัวเอง(ผมเองนี่แหละ)ที่โง่ไม่ดูข่าว วันนี้(18-05-2564) ไปเปิดดูถึงรู้ อ้อ! อย่างนี้นี่เอง 
+            ไอ้เวรเสือกไม่อ่านข่าวเอาแต่ไปโทษคนอื่น ไม่รู้ว่าใครเป็นอย่างผมบ้าง อะไรๆ ก็โทษคนอื่น
+            ไว้ก่อน แม๊.....อย่างนี้เค้าเรียก นิสัยเสีย
+
+        </p>
+        <a href="https://www.bangkokbiznews.com/news/detail/938260" 
+        target="_blank">
+            <img class="responsive" 
+            src="https://i.ibb.co/6gKPnqG/2021-05-18-vacine-normal.png" 
+            alt="หมอจะพร้อมตอนสิ้นเดือนโน่น">
+        </a>
+        <p class="pt-4 mb-4">
+            <span class="alert alert-warning">
+                ประชาชนทั่วไป จองคิว "ฉีดวัคซีน" ผ่านหมอพร้อมได้เมื่อไร
+            </span>
+        </p>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <b-icon icon="book-half"></b-icon>
+                ประชาชนทั่วไปที่มีอายุ 18-59 ปี จองคิวผ่านหมอพร้อมได้วันที่ 
+                31 พ.ค. 64 เป็นต้นไป
+            </li>
+        </ul>
+        <p class="pt-4 mb-4">
+            เออ......กูผิดเอง!
+        </p>
+
+    </div>
+</div>
+
+
+
+',                                          
+'1',                        
+'2021-05-18 11:39:05',                
+'2021-05-18 11:42:01'                 
+);                                          
+
+
+
+
+/* หมอยังไม่พร้อม*/
+INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
+`is_public`,`created_at`,`updated_at`) VALUES (NULL,
+'1',                            
+'ลองลงทะเบียนฉีดวัคซีนโควิดวันที่ 17-05-2564 กับ App หมอพร้อม',                             
+'
+<div class="row">
+    <div class="col-lg-12">
+        <p class="pt-4 mb-2">
+            วันนี้ (17-05-2564) ทดลองลงทะเบียนฉีดวัคซีนผ่าน app หมอพร้อมในมือถือ 
+            วีโว่ราคา 5 พันบาท ได้ความว่าไม่สามารถลงทะเบียนขอรับวัคซีนได้ 
+            แอพมันเด้งว่าไม่พบวันว่าง กดไปจนถึงปีหน้าแล้วก็ยังไม่พบวันว่าง 
+            ไม่รู้ว่ามันจะรอแล้วค่อยหาเจอตอนที่เค้าหายติดโควิดกันหมดทั้งโลกหรือเปล่า 
+            ผมไม่เข้าใจอยู่เรื่องเดียว ทำไมวะ ไอ้เวปไซต์ หรือระบบต่างๆ ของทางราชการ
+            ตั้งแต่ของประกันสังคมมา จนถึงหมอพร้อม มันถึงห่วยแตกกับผมจริงๆ คนอื่นเป็นกันมั้ย 
+            แต่ผมเป็นนะ  
+        </p>
+        <div class="row">
+            <div class="col-lg-6">
+               <img class="responsive pt-4" 
+               src="https://i.ibb.co/vYt7cn2/IMG-20210517-085223.jpg" 
+               alt="หมอยังไม่พร้อมปีนี้">
+            </div>
+            <div class="col-lg-6">
+               <img class="responsive pt-4" 
+               src="https://i.ibb.co/TgVgwc1/IMG-20210517-085356.jpg" 
+               alt="ปีหน้าหมอยังไม่พร้อม">
+            </div>
+        </div>
+        <p class="pt-2 mb-2">
+            หรือว่ามือถือผมมันเป็นมือถือจีนกระจอกๆ ราคา 5 พัน แอพมันรังเกียจ 
+            ต้องใช้ไอโฟนเท่านั้น ก็ถ้ามันเป็นแบบนั้น ผมก็ต้องขอโทษครับ ผมไม่ใช้ไอโฟนครับ 
+            ต่อให้แจกฟรีผมก็ไม่เอา คือผมมันพวกกระจอกที่ไม่ถูกกับของแพง เพราะไม่มีปัญญาซื้อ
+        </p>
+    </div>
+</div>
+',                                          
+'1',                        
+'2021-05-17 10:22:05',                
+'2021-05-17 10:23:01'                 
+);                                          
+
+
+
+/* วิธีกำจัดแมงหวี่จากเวปที่ไร้ผล 17 May 2021 */
+INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
+`is_public`,`created_at`,`updated_at`) VALUES (NULL,
+'1',                            
+'วิธีไล่ หรือกำจัดแมงหวี่ จากเวปต่างๆ ที่ไม่ได้เรื่อง',                             
+'
+<!-- ========== วิธีไล่แมลงจากเวปที่ไร้ผล START ===== -->
+<div class="row">
+
+    <div class="col-lg-12">
+        <p class="pt-2 mb-4">
+            หน้าร้อนทีไรมันต้องมากันเป็นขบวนทุกวันเลยสิไอ้แมลงน่ารำคาญพวกนี้ "แมงหวี่" 
+            รำคาญชิบหายจะนอนก็ไม่ได้ มันตอมตา มันเข้าหน้า เข้าหู ทำยังไงล่ะทีนี้ ลองไปค้นๆ 
+            จากเวปไซต์ต่างๆ ดู (แค่พิมพ์ว่า วิธีกำจัดแมงหวี่ขึ้นมาเยอะแยะ) ลองเปิดขึ้นมาดูวิธีที่เค้า 
+            แนะนำลองดูสักสองสามเวปไซต์ หรือลองเปิดขึ้นมาดูทุกๆ เวปไซต์ 
+            จะเห็นได้ว่ามันเขียนแบบเดียวกันแทบทั้งหมดเลย (สงสัยคงจะก๊อปมาจากที่เดียวกัน ก็ไม่ได้
+            ว่าอะไรรู้ๆ กัน) แต่ที่คาใจก็คือ ที่เอามาโพสๆ กันน่ะเคยได้ลองทำกันบ้างหรือเปล่า? 
+            หรือแค่นั่งก๊อปบทความไร้คุณภาพเอามาโพสไปวันๆ เห็นแล้วสมเพช 
+            ทำผมหมดตังไปเป็น 100 บาทเพราะทดลองวิธีการพวกนี้  
+        </p>
+    </div>
+    <div class="col-lg-12">
+        <img src="https://i.ibb.co/VQ1hNR6/2021-05-17-insect-non-sence.png" 
+        title="วิธีการกำจัดแมงหวี่ที่ไร้ผล " alt="วิธีกำจัดแมงหวี่ที่ไร้ผล" class="responsive">
+        <p class="pt-2 text-center">
+            วิธีการกำจัดแมงหวี่ที่ไร้ผล
+        </p>
+    </div>
+    <div class="col-lg-12">
+        <p class="pt-4 mb-4">
+            วิธีกำจัดแมงหวี่ของเค้า ตามเวป ไม่บอกว่าเวปไหน ไปเปิดดูเอง :
+        </p>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <th>วิธีการ</th>
+                    <th>ทดลองแล้ว </th>
+                    <th>ได้ผล? </th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            เทียนสมุนไพร
+                        </td>
+                        <td>
+                            <span class="alert alert-warning">
+                                ลองแล้ว
+                            </span>
+                        </td>
+                        <td>
+                            <span class="alert alert-danger">
+                                ไม่ได้ผล
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            ดอกดาวเรือง
+                        </td>
+                        <td>
+                            <span class="alert alert-warning">
+                                ลองแล้ว
+                            </span>
+                        </td>
+                        <td>
+                            <span class="alert alert-danger">
+                                ไม่ได้ผล
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            เชือกชุบน้ำมัน
+                        </td>
+                        <td>
+                            <span class="alert alert-warning">
+                                ลองแล้ว
+                            </span>
+                        </td>
+                        <td>
+                            <span class="alert alert-danger">
+                                ไม่ได้ผล
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            สเปรย์ตะไคร้
+                        </td>
+                        <td>
+                            <span class="alert alert-warning">
+                                ลองแล้ว
+                            </span>
+                        </td>
+                        <td>
+                            <span class="alert alert-danger">
+                                ไม่ได้ผล
+                            </span>
+                        </td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+        <p class="pt-4 mb-4">
+            วิธีเดียวที่ผมทำแล้วมันได้ผลคือ เอาน้ำสบู่ใส่กระป๋องเสปรย์(กระป๋องน้ำยารีดผ้า 
+            หรือกระป๋องน้ำยาเช็ดกระจก) แล้วสละเวลาวันละ 3-5 ชั่วโมงถ้ามันเยอะมากๆ 
+            เหมือนกรณีของผม ผมทำแบบนี้ติดต่อกันสี่วัน โดยการออกไปนั่งฉีด 
+            ฉีดให้โดนตัวแมงหวี่ (เพราะว่าไม่มีปัญญาหารังของมันจริงๆ) น้ำสบู่หรือน้ำผสมน้ำยาล้างจาน 
+            ถ้าไปโดนปีกมัน มันก็จะบินไม่ได้ตกลงไปตายเกลื่อน จะเห็นได้ว่าจากที่นั่งข้างนอกไม่ได้ 
+            แมงหวี่มันยกโขยงมากันเป็นพายุ มาตอมตา ตอมหู จนไม่สามารถจะทำอะไรได้เลย(
+            เพราะว่ามันรำคาญ) ตอนนี้มาทีไม่เกินสิบตัว และล่าสุดวันนี้ (17-05-2564) ออกมานั่ง
+            เป็นเวลา 10 นาที ไม่โผล่มาให้ฉีดเลยสักตัว แปลกดีนะ
+        </p>
+        <img class="responsive" 
+        src="https://i.ibb.co/dBsQtxz/IMG-20210517-075915.jpg" 
+        alt="วิธีของผมมันได้ผลแบบ 100%">
+    </div>
+</div>
+<!-- ========== วิธีไล่แมลงจากเวปที่ไร้ผล END ===== -->
+',                                          
+'1',                        
+'2021-05-17 07:22:05',                
+'2021-05-17 07:22:01'                 
+);                                          
+
+/* ============================================ */
+
+/* update composer */
+INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
+`is_public`,`created_at`,`updated_at`) VALUES (NULL,
+'1',                            
+'I just update my composer on ubuntu box',                             
+'
+<div class="row">
+    <div class="col-lg-4">
+
+    </div>
+    <div class="col-lg-12">
+        <p>
+            <b>Hi there</b> I just update composer on my Ubuntu box today(23 
+            Apr 2021) after I never boot up for a long long time.
+        </p>
+
+        <p class="pt-4 mb-2">
+before update composer will be look like this when you run ''composer -v''
+        </p>
+        <img src="https://i.ibb.co/nkZmFHt/2021-04-23-composer-need-update.png" 
+        alt="the photo text if you have" class="responsive mb-4">
+        <p class="pt-2">to actully update composer from version x1 to version 
+        x2 is quite simple as just one single command</p>
+        <textarea class="form-control">sudo composer self-update</textarea>
+
+        <p class="pt-4">after run the above command now when you run 
+        ''composer -v'' you should see your composer version has changed!</p>
+        <img src="https://i.ibb.co/0czpxYX/2021-04-23-composer-has-update.png" 
+        class="responsive">
+
+    </div>
+</div>
+',                                          
+'1',                        
+'2021-04-23 13:22:45',                
+'2021-04-23 13:23:45'                 
+);                                          
+
+
+
+
+/* review nissn kick e-power 06-04-2021 */
+INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
+`is_public`,`created_at`,`updated_at`) VALUES (NULL,
+'1',                            
+'ลองขับ Nissan Kicks e-Power ไม่ประหยัดนะ แต่ขับโคตรมัน One Pedal ดีงาม 
+ออปชั่นพอใช้ ค่าตัว 1.049 ล้าน',                             
+'
+<p>I love the ev car this is the review (in Thai) of nissan kick ev year 2021</p>
+
+<div class="video-container">
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/JMd42sfh_kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p class="text-center pt-2 mb-4">ลองขับ Nissan Kicks e-Power ไม่ประหยัดนะ 
+แต่ขับโคตรมัน One Pedal ดีงาม ออปชั่นพอใช้ ค่าตัว 1.049 ล้าน</p>
+<p class="pt-2 mb-4 text-center">
+รีวิว นิสสัน คิก อีพาวเวอร์ ขึ้นเขาเมืองระนอง
+</p>
+<div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EjnqZtPyQks" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p class="pt-2 ">
+autolifethailand.tv พาแฟนๆ มาลองขับ Nissan Kicks รถSUV เทคโนโลยี e-Power จาก Nissan ที่ขับเคลื่อนด้วยพลังงานไฟฟ้า ซึ่งถูกผลิตขึ้นมาจากเครื่องยนต์เบนซินขนาด 1.2 ลิตร ส่งผลให้ Nissan Kicks มีพละกำลัง 129 แรงม้า และแรงบิดสูงสุด 260 นิวตันเมตร
+</p>
+<p>
+จุดเด่นของ Nissan Kicks คือเรื่องของเทคโนโลยี e-Power ที่ทำให้รถคันนี้มีลักษณะนิสัยในการขับเหมือนกับนถยนต์ไฟฟ้า (EV) โดยเฉพาะในเรื่องของอัตราเร่ง ที่คุณไม่สามารถหาได้ในรถที่ใช้เทคโนโลยีเครื่องยนต์ปกติ 
+</p>
+',                                          
+'1',                        
+'2021-04-06 09:19:45',                
+'2021-04-06 09:19:45'                 
+);                                          
+
+
+
+
+
+
+
+
+
+/* ข่าวโควิด ในเมืองไทย on 2021-04-08 */
+INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
+`is_public`,`created_at`,`updated_at`) VALUES (NULL,
+'1',                            
+'ข่าวโควิดในเมืองไทย on 2021-04-08',                             
+'
+<p>
+<b>โควิด19 </b> ในเมืองไทยแม้ว่าไม่ได้มากมายหากเทียบกับประเทศอื่นๆ ในโลก แต่ก็ยังเป็นเรื่องที่น่า 
+กังวลอยู่มากหากดูจากข่าวในทีวีทุกๆ วัน วันนี้(08-04-2021) ก่อนวันสงกรานต์ ซึ่งแน่นอนแล้วว่าวันสงกรานต์ 
+ในปีนี้(2564) ก็คงต้องหยุดกิจกรรมเสี่ยงทั้งหลายเพื่อคนไทยทุกๆ คน หากว่าทุกๆ คนร่วมมือกัน เราจะสามารถ
+ข้ามพ้นวิกฤตินี้ไปด้วยกันได้ในเร็ววันนี้ ภาวนาให้คนไทยและผู้คนทุกๆ ในโลกนี้
+</p>
+<div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DaS-JgrcGUU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p class="pt-2 mb-4 text-center">
+วิดิโอของวันที่ 7-04-64 นะครับผมยังหาวิดิโอของวันที่ 8 ไม่ได้เค้ายังไม่ประกาศ
+</p>
+<p class="pt-4 mb-2">
+ข่าวจากรายการ อรุณสวัสดิ์ ฟ้าวันใหม่ ก๊อปปี้มาจากยูทูป 
+</p>
+<div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1RY1TRgncrA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p class="pt-2 mb-4 text-center">
+จากรายการ อรุณสวัสดิ์ ฟ้าวันใหม่  08-04-64 ทาง youtube 
+</p>
+',                                          
+'1',                        
+'2021-04-08 11:56:45',                
+'2021-04-08 11:56:45'                 
+);                                          
+
+
+
+
+
+
+
+
+
+/* my bash script setup i3wm for manjaro */
+INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
+`is_public`,`created_at`,`updated_at`) VALUES (NULL,
+'1',                            
+
+'my bash script for setup i3wm in manjaro',                             
+'
+<p class="mb-4">
+    <b>I''ve</b> been using Manjaro for a 1 year and I really love this distro 
+just because how simplicity is it and manjaro KDE is my belove favour after 
+a while when I got use to the KDE I also learn to use another window manager 
+like i3wm as it is a very easy one for the beginner like me
+</p>
+
+<p>but to setup i3wm in the way that I want to use and to set the key binding 
+is still something that I have to do over and over again in every single time 
+that I have to re-install my system in case I have done any thing stupid to 
+my system and the whole system has totally crashed </p>
+
+
+<p>so to prevent from all of the reparative step to get all the way throught 
+I just learn how to make an auto script to do thing for me and put all of 
+those script and the config file to github so this way I can re-use them 
+and I can share in between my computer ,laptop also to share with another 
+people too </p>
+<p class="pt-2 mb-2">
+please feel free to have a look or download my dot file 
+<a href="https://github.com/farookphuket/desktop-i3.git" 
+class="btn btn-outline-primary btn-sm" target="_blank">here</a>
+</p>
+<div class="form-group">
+<textarea 
+class="form-control mb-4" >https://github.com/farookphuket/desktop-i3.git</textarea>
+</div>
+
+<div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/q3Sanjl93dQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+',                                          
+'1',                        
+'2021-04-02 08:05:45',                
+'2021-04-02 08:06:45'                 
+);                                          
+
+
+
+
+
+/* fix the volume icon not appear after logout 02-Apr-2021 */
+INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
+`is_public`,`created_at`,`updated_at`) VALUES (NULL,
+'1',                            
+'fix the volume icon not appear after first install',                             
+'
+<p class="mb-4">
+<b>today (02-04-2021)</b> I just realize that the volume icon doesn''t show up 
+after I the script has done the process and logout so today I this problem has 
+been solved if you ever got this problem so take a look at the below video
+</p>
+<div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WHTF6WsgylI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+',                                          
+'1',                        
+'2021-04-02 11:44:45',                
+'2021-04-02 11:44:55'                 
+);                                          
+
+
+
+
+
+
+
+INSERT INTO `whatnews` (`id`,`user_id`,`whatnews_title`,`whatnews_body`,
+`is_public`,`created_at`,`updated_at`) VALUES (NULL,
+'1',                            
+'How to clear pacman cache to save the storage',                             
+'
+<p class="mb-2">this video is to clear error if there is something wrong in 
+during the update or install program using pamac </p>
+<div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Glmh2G-q7Vs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p class="text-center pt-2 mb-4">this video has nothing to do with the below 
+code </p>
+
+<p class="pt-4">
+<b>Today (28 Mar 2021)</b> I just update Manjaro and try to find the way to 
+clean pacman cache as it''s seem to take too much of the space on my SSD 
+(I only have 240 GB of ssd on my cheap computer) the command that I show here 
+I have copy from <a 
+href="https://ostechnix.com/recommended-way-clean-package-cache-arch-linux/" 
+class="btn btn-outline-primary" target="_blank">ostechnix.com</a> 
+</p>
+
+<p class="pt-2 mb-4">As I have install manjaro and all of the package that I 
+have to use in my daily use this make the space on my small ssd become lower 
+so I have to delete something if it possible let check the size of pkg folder 
+by run this command </p>
+
+<textarea class="form-control">sudo ls /var/cache/pacman/pkg/ | wc -l</textarea> 
+
+<p class="pt-4 mb-4">
+to check the disk space run this command 
+</p>
+
+<textarea class="form-control">du -sh /var/cache/pacman/pkg/</textarea> 
+
+
+<p class="pt-4 mb-4">
+ to remove the download package and keep the most recent install run :
+</p>
+
+
+<textarea class="form-control mb-4">sudo paccache -rk 1</textarea> 
+
+<img class="responsive pt-4" 
+src="https://i.ibb.co/gP01hgz/2021-03-28-clear-pacman-cache.png" alt="">
+
+<p class="pt-4 mb-4">
+Thank you for stop by
+</p>
+',                                          
+'1',                        
+'2021-03-28 10:05:45',                
+'2021-03-28 20:49:45'                 
+);                                          
+
+
+
+
+
+
+/* 24 Mar 2021 added video link */
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
+'1',                            
+'Video is mean video link from the internet',                             
+'
+<p>
+    <b>Video on the web</b> is the video link that mostly I copy from youtube 
+    just to make it easy for me to watch it later
+</p>
+<img src="https://i.ibb.co/M2Fgw1B/2021-03-24-video-link.png" 
+class="responsive"> 
+<p class="text-center mb-2">video link from youtube</p>
+
+',                                          
+'1',                        
+'2021-03-24 06:25:45',                
+'2021-03-24 06:27:45'                 
+);                                          
+
+
+
+
+
+
+/*
+Error: Cannot find module ''semver''
+*/
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
+'1',                            
+'Error cannot find  module semver 09-03-2021',                             
+'
+<p>
+    <b>today 09-03-2021</b> I just ran the command to update my system 
+    "sudo pacman -Syu " and once it almost done it has say something about 
+    nodejs so to solved this I just remove the dir "/usr/lib/node_modules/" 
+    when the update has done so I reboot then back to my project and I run 
+    "npm run watch" so the error has now show "Error cannot find module 
+    semver" and cannot run the command I got this problem fixed from 
+    <a href="https://stackoverflow.com/questions/48229026/npm-cannot-find-module-node-gyp-bin-node-gyp" class="btn btn-outline-info" 
+    target="_blank">stackoverflow</a> the command to run is 
+</p>
+<textarea  class="form-control">sudo pacman -Sy node-gyp 
+npm update
+</textarea>
+<p>
+this is what work for me 
+</p>
+',                                          
+'1',                        
+'2021-03-09 22:15:45',                
+'2021-03-09 22:15:45'                 
+);                                          
+
+
+
+
+
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
+'1',                            
+'Why I don''t do Window - Joe Collins',                             
+'
+<p>
+<b>I''ve copy</b> Joe Collins''s video from youtube 
+</p>
+<p class="pt-2 mb-4">
+    <b>October 1998</b> is the first time in my life that I''ve ever touch 
+    the computer it was <a href="https://en.wikipedia.org/wiki/Windows_98" 
+    class="btn btn-outline-info btn-sm" target="_blank">window 98 (wiki)</a>
+    I still remember deep in my mind
+    <em>how was the feeling like</em>?
+
+</p>
+<p>
+    There are so many people do not like Window 98 because it''s crash very 
+    often but to me at that time I know nothing about computer (even
+    now I still knowing nothing yeah not much) so I just get a chance to learn 
+    thing about computer since then and soon enough I am in the group
+    of people who''ve said "yes ,window 98 is crash very often" moving on to 
+    two years later
+
+</p>
+<div class="video-container">
+    <iframe width="560" height="315" 
+    src="https://www.youtube.com/embed/CrvKyR9DGUY" frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+    gyroscope; picture-in-picture" allowfullscreen=""><br></iframe>
+    <br>
+</div>
+
+<p class="pt-2 text-center">
+    Why I don''t do window - by Joe Collin
+</p>
+<p>
+Thanks to window ,Thanks to all of the programmer or creator in the world to 
+make thing for another people to use.
+</p>
+
+',                                          
+'1',                        
+'2021-03-06 15:15:45',                
+'2021-03-06 15:18:45'                 
+);                                          
+
+
+
+
+
+
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
+'1',                            
+'Stop Hating On Linux Mint! - Joe Collins',                             
+'
+<p class="mb-4">
+ <b>All</b> linux (Linux mint included) are greate and I will never say or 
+ do any thing to make another people to hate any thing that any other has 
+created for another to use doesn''t matter if it free (Like linux) or paid 
+(like Mac and Window) 
+</p>
+<p>
+    <b>Me</b> personally I am using Manjaro 20.02 now(2021-Feb-21) (I''m 
+start using manjaro since year 2020 and fall in love with this distro) but 
+I am get to know linux by using Ubuntu ,Ubuntu mate, Linux mint,Mx linux 
+,Debian ,Pop os ...and so on I can''t remember but the ony thing I know was 
+I like all of them , none of them is useless no no.
+</p>
+<p class="pt-2 mb-4">
+I like what''s Joe Collins has said in his video to reply to the other people 
+who maybe do not like or using Linux mint.
+</p>
+
+<div class="video-container">
+<iframe width="560" height="315" 
+src="https://www.youtube.com/embed/szDHAeaqJD8" frameborder="0" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+picture-in-picture" allowfullscreen></iframe>
+</div>
+<p class="pt-4 mb-4">
+    well, to me I am a linux user since year 2007 start with Ubuntu 7.04 
+and since I start using linux I am never return back to use window again 
+but it''s not because I hate window no no I hate nothing form any other people
+has create for the other people to use whether it''s paid or free 
+you have your like or not like it but you cannot point your finger to force 
+any other people to like what you''re like that''s my opinion
+</p>
+',                                          
+'1',                        
+'2021-02-21 10:05:45',                
+'2021-02-21 10:06:45'                 
+);                                          
+
+
+
+/*  Beginner''s Guide to the Bash Terminal 19 Feb 2021 */
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
+'1',                            
+'Beginner''s Guide to the Bash Terminal',                             
+'
+<p class="mb-4">
+    <b>Hi there</b> today (19-Feb-2021) I just copy the video from 
+    "Joe Collins" about how to use terminal.
+
+</p>
+<p class="pt-2 mb-4">
+    this video is basiclly post on the Mar 3 2017 but if you just start to using 
+    linux this is the good video to start with when it''s come to using the 
+    command line
+    
+</p>
+<div class="video-container">
+    <iframe width="560" height="315" 
+    src="https://www.youtube.com/embed/oxuRxtrO2Ag" frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+    gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+',                                          
+'1',                        
+'2021-02-19 20:33:45',                
+'2021-02-19 20:34:45'                 
+);                                          
+
+
+/* just install neovim on laptop 19 Feb 2021 */
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
+'1',                            
+'Wow! I just fall in love with neovim already', /* title */                            
+'
+<div class="row">
+    <div class="col-lg-4">
+        <img class="responsive" 
+        src="https://i.ibb.co/3mh6Qmv/2021-02-19-neovim-wiki.png" 
+        alt="neovim from wiki pedia">
+        <p class="text-center">
+            neovim from wiki pedia
+        </p>
+
+    </div>
+    <div class="col-lg-8">
+        <p>
+            <b>
+            <a href="https://en.wikipedia.org/wiki/Vim_(text_editor)" 
+            class="btn btn-outline-info" target="_blank">
+            Neovim </a></b> 
+            Yeah! ,I know it was there for a long time (since 2014) but to me 
+            Hmm....I just have tried today baby so yes it''s definitely new  
+            for me so to say.
+        </p>
+        <p class="pt-2 mb-2">
+            I''ve just copy the config from 
+            <a href="https://www.chrisatmachine.com/Neovim/02-vim-general-settings/" target="_blank" class="btn btn-outline-info">Chris@Machine</a> on the 
+            18-Feb-2021 and I just edit something in my own way so there will 
+            be some different key binding in my config just to make it suit my 
+            need. 
+        </p>
+        <p class="pt-2 mb-2">
+            to copy my config fire-up terminal then copy the code or go to 
+            <a href="https://github.com/farookphuket/far_vimrc" 
+            class="btn btn-outline-info" target="_blank">far_vimrc</a> just 
+            to read the "README" first 
+        </p>
+        <div class="form-group">
+            <label for="">Copy the below code</label>
+            <input class="form-control" type="text" 
+            value="git clone https://github.com/farookphuket/far_vimrc.git">
+        </div>
+        <p class="pt-2 mb-2">
+            you will get the folder name "far_vimrc" then just copy the folder 
+            "neovim" to paste into "~/.config" folder now you will have my 
+            neovim config 
+        </p>
+
+    </div>
+</div>
+',  /*  Body (well it''s an excerpt ) */
+'1',   /* publish = 1 not publish = 0 */ 
+'2021-02-19 04:05:45',                
+'2021-02-19 04:06:45'                 
+);                                          
+
+
+
+
+
+/* ทดสอบใส่ภาษาไทย on 18-Feb-2021 */
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
+'3',                            
+'ฟังนิยาย เพชรพระอุมา ตอน ดงมรณะ',                             
+'
+<div class="row">
+    <div class="col-lg-4">
+    <img class="responsive" 
+    src="https://lh3.googleusercontent.com/tsOd3oGP_IwJvUS9aPouBiie_GL3ChLTgzvlqkg-DFSydcKYiRGf3hzShqFx4c_WtT6xTiTmGDXvJZ9VRkk7Ds0VEeSZMefpjWk4FuoKEDDtgcdGk4JvEZHres4c5fWcmVcYvtaTiGo=w2400" alt="รูปปกหนังสือนิยาย เพชรพระอุมา ตอน ดงมรณะ">
+        <p class="text-center">
+ฟังนิยาย ตอน ดงมรณะ
+        </p>
+    </div>
+    <div class="col-lg-8">
+<p>
+เป็นข้อมูลตัวอย่าง เก็บรักษาไว้สำหรับฟัง เพื่อความบันเทิงส่วนตัวเท่านั้น ไม่ได้แจก จ่าย 
+ไม่ได้หาผลกำไร หรือ เจตนาละเมิดลิขสิทธิ์ แต่อย่างใด .
+</p>
+        <div class="sound-container">
+        <iframe src="https://archive.org/embed/clip_30_to_36" 
+        width="500" height="140" frameborder="0" webkitallowfullscreen="true" 
+        mozallowfullscreen="true" allowfullscreen></iframe>
+        </div>
+
+
+    <p class="pt-4 mb-4">
+ต้องการฟังเพิ่ม <a 
+class="btn btn-outline-primary"
+href="/posts/หนังสือนิยาย-เพชรพระอุมา-ตอน-ดงมรณะ"> Click here</a>
+    </p>
+    </div>
+</div>
+
+',                                          
+'1',                        
+'2021-02-18 16:04:45',                
+'2021-02-18 16:05:45'                
+);                                          
+
+
+
+
+
+
+/* React course from Traversy Media on 17-Feb-2021 */
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
+'3',                            
+'React JS Crash Course 2021 by Traversy Media',                             
+'
+<p>
+<b>Hi there</b> today (17-Feb-2021) I just watch the video from youtube 
+about React course from Traversy Media I always watch the video from him 
+he make the best tutorial as always
+
+</p>
+
+    <p class="pt-2 mb-2 text-center">
+        React JS Crash Course 2021 by Traversy Media
+    </p>
+<div class="video-container">
+    <iframe width="560" height="315" 
+    src="https://www.youtube.com/embed/w7ejDZ8SWv8" 
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+</div>
+<p class="pt-4">
+ Thanks to Traversy Media for the best tutorial of all time
+</p>
+
+',                                          
+'1',                        
+'2021-02-01 07:14:45',                
+'2021-02-01 07:15:55'                
+);                                          
+
+
+
+
+
+
+/* ข่าวเกี่ยวกับ โควิด from youtube */
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
+'1',
+'The covid 19 news from youtube 15 Feb 2021',
+'
+<p>
+<b>Covid 19</b> is still the most problem in the world by now 
+ไปก๊อปข่าวนี้มาจาก ยูทูป เช้านี้เอง เรื่องเศรฐกิจว่าจะดีขึ้นเหรอ อืม ตอนนี้คงยาก ไอ้เรื่องธุรกิจท่องเที่ยว
+ที่ต้องพึ่งชาวต่างชาติ ตอนนี้ก็ตายทุกราย หาอย่างอื่นทำให้ได้ ถ้าหาไม่ได้ก็อดตายนี่คือกฎของธรรมชาติ
+
+</p>
+
+<div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gL5Ban8ee_g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p class="text-center mb-4 pt-2">
+ข่าวโควิดในเมืองไทย 15-Feb-2021
+</p>
+
+',
+'1','2021-02-15 11:02:22','2021-02-15 11:03:10');
+
+
+
+
+
+/* ข่าวกัญชาจากทาง youtube 12 Feb 2021 */
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
+'1',
+'เอกชนสู้ศึกชิงตลาด "กัญชง-กัญชา" I BUSINESS WATCH I 11-02-2021',
+'
+<p class="mb-4">
+<b>เหล้า เบียร์ </b> กินแล้วเมา สร้างปัญหา(คนที่ไม่ได้สร้างปัญหาก็อย่าเดือดร้อนนะ)
+ยกพวกตีกัน ทะเลาะกัน ขับรถชน ข่มขืน เพราะว่าคนเมาเหล้ามันขาดสติ (จริงๆ ไม่น่าจะโทษเหล้านะ
+คนมันเหี้ย ไม่ต้องแดกอะไรเข้าไป ก็เหี้ย) แต่ปัญหาเหล่านั้นส่วนมากก็จะมาจาก เมาแล้วขาดสติก่อนทั้งนั้น
+
+</p>
+<p>
+คนเสพ
+<b>
+ กัญชา
+</b> จะต่างจากคนกินเหล้า เพราะคนเมากัญชาจะขี้กลัว ไอ้เรื่องยกพวกตีใครคงหมดสิทธิ์ ถ้าคนเมากัญชา
+ขับรถชนคนเมากัญชา เคลียร์กันได้ด้วยของหวานถ้วยเดียว จากนั้นก็ต่างคนต่างไป หัวเราะร่าเริง
+ไม่มีการยิงกันแน่นอน ได้เห็นข่าวนี้แล้วชอบ ก็ได้แต่หวังว่ามันจะถูกกฎหมาย ทำไมกัญชาผิดกฎหมาย
+เพราะกัญชา ไม่มีฉลากว่า "เสียภาษีแล้ว" ยังไงล่ะ
+
+</p>
+<p class="pt-2 mb-4">
+จะให้กัญชาสามารถปลูกได้ทุกๆ บ้าน ในตอนนี้น่าจะยังคงเป็นเรื่องที่ห่างไกล เพราะว่ามันจะทำให้ "นายทุน"
+เสียผลประโยชน์ เรื่องนี้เป็นเรื่องที่ยอมไม่ได้ ประชาชนต้อง "รอไปก่อน" ถ้านายทุนยังไม่ได้ประโยชน์
+ประชาชนก็ตีหม้อประท้วงไปเหอะ แต่ใครจะเหลียวแล
+</p>
+<div class="video-container">
+    <iframe width="560" height="315"
+    src="https://www.youtube.com/embed/BWwm2wk1Kc8"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+    encrypted-media;
+    gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<p class="pt-4">
+    ไม่ได้จะเอาไว้เสพหรอกนะ แต่จะปลูกขาย
+</p>
+',
+'1','2021-02-12 10:43:45','2021-02-12 10:44:45');
+
+
+/*  number 6 on date 9 Feb 2021 upgrade system to using php 8 */
+
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
+'1',
+'last upgrade system from php 7 to php8 on 9 Feb 2021',
+'
+<p>
+<b>Hi there</b> today 9 Feb 2021 I just update the system the size of update
+is 1.8 GB but after update my website project is not working the problem is
+apache not start because it''s cannot find php 7(as it''s has upgrade to php8
+now) so the httpd.conf file has to be edit
+<span class="badge badge-info">
+"sudo vim /etc/httpd/conf/httpd.conf "
+</span>
+the full article is will be found
+<a class="btn btn-outline-primary"
+href="https://wiki.archlinux.org/index.php/Apache_HTTP_Server" target="_blank">here</a>
+</p>
+<p class="pt-2 mb-2">
+the image below is my recently use system before update
+</p>
+<p>
+    <img src="https://i.ibb.co/vV9qPLR/2021-02-09-php7-4.png" class="responsive">
+
+</p>
+<p>
+    <img src="https://i.ibb.co/JdpGfp7/2021-02-09-update-system.png" class="responsive">
+</p>
+<p>
+    <img src="https://i.ibb.co/3pgZ7jw/2021-02-09-httpd-conf.png" class="responsive">
+</p>
+<p class="pt-4 mb-4">this is the edit file /etc/httpd/conf/httpd.conf</p>
+<div class="line-numbers">
+    <pre>
+        <div class="code">
+
+          <span>  LoadModule php_module modules/libphp.so</span>
+          <span>  AddHandler php-script .php</span>
+          <span>  Include conf/extra/php_module.conf</span>
+
+        </div>
+    </pre>
+</div>
+<p>
+and now thing is back to work again
+</p>
+
+
+',
+'1','2021-02-09 20:45:07','2021-02-09 20:47:08');
+
+
+
+
+/* remove node_modules folder due to the file size matter */
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
+'1',
+'I just delete the node_modules folder',
+'
+<p>due to the file size matter and the fact that we have nothing to do with
+node_modules folder and it''s content so I just delete and set the .gitignore
+for nodee_modules to just ignore it from looking and sync with the project
+code base on github now for new git pull please go to the root of your project
+foder then run "npm install" the node_modules folder will be back for you to
+start develop with any of the new vue components</p>
+
+',
+'1','2021-01-31 16:45:15','2021-01-31 16:45:15' );
+
+
+/* how can I add datetime to .sqlite */
+
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
+'1',
+'How can I add datetime to .sqlite for auto data',
+'
+
+Hi there today is 25 Jan 2021 I don''t know how can I add automatic datetime
+to .sqlite file so I got it from
+<a href="https://www.sqlitetutorial.net/sqlite-date/"
+class="btn btn-outline-primary" target="_blank">
+here
+</a>
+and now I want to escaping the single quote which is not accept by sql what
+I do is I put two single quote('') to replace and it is working as I expected
+I got it from
+<a href="https://stackoverflow.com/questions/603572/escape-single-quote-character-for-use-in-an-sqlite-query" target="_blank" class="btn btn-outline-primary">
+here
+</a> now what else trick I learn today in (25-Jan-2021)
+
+',
+'1',
+'2021-02-08 10:42:45',
+'2021-02-08 10:45:55');
+
+
+
+/* how do I install puddletag-snap on 26 Jan 2021 */
+
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
+'1',
+'How do I install puddletag on manjaro 20.2.2 26-Jan-2021',
+'
+<p>
+<b>Puddletag</b> is the program to edit the tag file I use it mosly
+
+when I want to edit the mp3 file info such as to Add picture of the artist
+to that song Puddletag is not in pamac or pacman repo so to install it
+I found it from here : "<a 
+class="btn btn-outline-primary"
+href="https://snapcraft.io/install/puddletag-snap/manjaro" target="blank"
+>https://snapcraft.io/install/puddletag-snap/manjaro</a>"
+</p>
+<img
+src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_819,h_512/https://dashboard.snapcraft.io/site_media/appmedia/2020/12/Bildschirmfoto_von_2020-12-06_17-02-23.png" class="responsive">
+<p class="mb-4 pt-4">
+to install run the command :sudo snap install puddletag-snap make sure
+you have snap install mostly if you use manjaro it is already installed so
+that you ready to go (you can copy code to run in your terminal).
+</p>
+<div class="form-group pt-4">
+<textarea class="form-control" >sudo snap install puddletag-snap</textarea>
+</div>
+
+',
+'1',
+'2021-02-09 07:45:20',
+'2021-02-09 07:45:20'
+);
+
+
+/* cmus is the best music player ever
+
+https://i.ibb.co/dQHLJR3/2021-01-27-cmus-best-music-player.png
+*/
+
+
+
+/* Make thai slug javascript */
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
+'1',
+'make thai slug using javascript ',
+'
+<p>
+ I''ve finally found  "how to make thai slug by using javascript"
+  from
+  <a href="https://gist.github.com/silkyland/004e9c74ed9ed8b76d613bc2e4e48f52"
+  target="_blank" class="btn btn-outline-primary">here</a> so from now at least I will use this code
+
+</p>
+<div class="line-numbers">
+ <pre>
+    
+    <div class="code">
+      <span>  makeSlug(){</span>
+       <span>     let make_slug = this.title.replace(/\s+/g,"-") </span>
+       <span>     .replace(/[^\u0E00-\u0E7F\w\-]+/g,"")</span>
+       <span>     .replace(/\-\-+/g,"-")</span>
+       <span>     .replace(/^-+/,"")</span>
+       <span>     .toLowerCase()</span>
+       <span>    return this.slug = make_slug</span>
+       <span> },</span>
+    </div>
+ </pre>
+</div>
+ <img src="https://i.ibb.co/CVjyBVm/2021-02-08-thai-slug.png"
+ class="responsive">
+<p>
+    so now it seem to be working in the way that I want it''s to be.
+</p>
+
+
+',
+'1','2021-02-08 19:22:45','2021-02-08 19:23:15');
+
+
+
+
+
+
+
+
+
+/* cmus 27 jan 2021 */
+
+
+INSERT INTO "whatnews" ("id","user_id","whatnews_title","whatnews_body",
+"is_public","created_at","updated_at") VALUES (NULL,
+'1',
+'cmus is my best music player from now on ',
+'
+<p>
+today (25 jan 2021) I just re-install manjaro on my computer just right after
+the manjaro xfce which I try to config to use i3wm and it is end up with
+the system is crash all the time I don''t know what I did wrong with it the
+cpu fan spin like crazy so I have to re-install the new one this time I use
+manjaro-i3 20.2.2 so thing is come out of the box and it is working very
+very well like I ever expected it to be
+
+</p>
+
+<p>
+once the install and update has complete I just try to find which music player
+is can be replace my ''rhythmbox'' my belove music player from all time but I
+cannot use it now with th current version of rhythmbox I just don''t like the
+lack of the interface when I change the song it is appear as it is
+crash(but it wasn''t) so that how the story come why I have to leave
+rhythmbox as I stil love it for me there is none music player out there
+can replace rhythmbox I did try many many of them but no no
+</p>
+
+<p>
+<b>so cmus</b> I know nothing about it just see the first time from bmenu
+it has "M" as a music player so I just enter to it at the very first 15 minute
+was a big big confuse to me "how to I add music?" ,"how do I do?..."
+and I even have the problem that cmus only run once and it throw error said
+"error opening false internal error" so what I do to solved the problem was
+one command "rm -rf .config/cmus/autosave" just after I read from
+<a href="https://bbs.archlinux.org/viewtopic.php?id=223095" target="_blank"
+class="btn btn-outline-primary">Here</a> now thing was completely working good I
+love you manjaro-i3+cmus
+</p>
+
+
+<img src="https://i.ibb.co/dQHLJR3/2021-01-27-cmus-best-music-player.png"
+class="responsive">
+
+
+
+',
+'1',
+'2021-02-06 07:45:20',
+'2021-02-06 07:45:20'
+);
+
+
+
+ /* =========== auto script START 2021-07-02 20:40:26 pm  ==================== */
+ /* =============== auto backup `whatnews`  =====*/
+INSERT INTO `whatnews`(`user_id`,`whatnews_title`,`whatnews_body`,`is_public`,
+`created_at`,`updated_at`) VALUES(
+    '1',
+    'ลงทะเบียนฉีดวัคซีนโควิด 19 ออนไลน์ ผ่านทางหมอพร้อม และ/หรือ เป๋าตัง 1 กรกฎาคม 64','<div class="row">
+    <div class="col-lg-12">
+        <p>
+            วันนี้ผมลองลงทะเบียนฉีดวัคซีนโควิดอีกครั้ง(ก็พยายามมาตลอดแหละ) และก็อีกครั้งนึงครับที่ "หมอยังไม่พร้อม"
+
+        </p>
+    </div>
+    <div class="col-lg-6">
+        <img src="https://i.ibb.co/f27pKtK/IMG-20210702-193055.jpg" class="responsive">
+    </div>
+    <div class="col-lg-6">
+        <img src="https://i.ibb.co/xfKTmCw/IMG-20210702-194525.jpg" class="responsive">
+    </div>
+    <div class="col-lg-12">
+        <p class="pt-2">
+            ผมไม่ได้จะ "ตีโพย ตีพาย" นะครับแค่บอกว่า ผมพร้อมฉีดแต่ยังลงทะเบียนไม่ได้ ส่วนเรื่องฉีดวัคซีนผมฉีดแน่นอนครับ
+        </p>
+    </div>
+</div>',
+    '1',
+    '2021-07-02 20:40:26','2021-07-02 20:40:26');
+ 
+ /* ======== auto script 2021-07-02 20:40:26 pm END ========= */
+
+ /* =========== auto script START 2021-07-08 19:01:56 pm  ==================== */
+ /* =============== auto backup `whatnews`  =====*/
+INSERT INTO `whatnews`(`user_id`,`whatnews_title`,`whatnews_body`,`is_public`,
+`created_at`,`updated_at`) VALUES(
+    '1',
+    'ข่าวสถานการ์ณโควิดวันนี้ (8 มิย 64) ชักไม่สู้ดีแฮะ',
+    '<div class="row">
+    <div class="col-lg-12">
+        <p>
+            ผู้ติดเชื้อรายวันก็ยังดิ่งๆ อยู่นะดูท่าว่าจะไม่น่าภิรมย์เท่าไหร่เลยเห็นข่าวแล้ว อืม....
+        </p>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/HmL0EGVc6G0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="560" height="315" frameborder="0"><br></iframe>
+        </div>
+        <p class="text-center pt-2">
+            วิดิโอจากข่าวสดวันที่ 8 มิย. 2564
+        </p>
+        <p class="pt-2">
+            จะให้ทำยังไงกันดีล่ะครับ ก็เลือกเอาแล้วกันว่าจะเลือกหาวิธีปฏิบัติยังไงให้ปลอดภัย จะระวังยังไงจะเอาตัวเองไปเสี่ยงในที่คนเยอะๆ ให้ติดโควิดเล่นๆ กันมั้ย
+            มันไม่น่าจะคุ้มกันนะ รู้ได้ไงว่าเกิดอีกทีจะได้เกิดเป็นคน
+        </p>
+    </div>
+</div>',
+    '1',
+    '2021-07-08 19:01:56','2021-07-08 19:01:56');
+ 
+ /* ======== auto script 2021-07-08 19:01:56 pm END ========= */
+
+ /* =========== auto script START 2021-07-16 20:34:11 pm  ==================== */
+ /* =============== auto backup `whatnews`  =====*/
+INSERT INTO `whatnews`(`user_id`,`whatnews_title`,`whatnews_body`,`is_public`,
+`created_at`,`updated_at`) VALUES(
+    '1',
+    'ดูหนังช่อง โมโน(ก๊อปปี้มาจาก เวป guuchil)',
+    '<div class="row">
+    <div class="col-lg-12">
+        <p>
+            ก๊อปปี้ลิ้งมาจากเวป guuchil อยากลองดูว่าสามารถใช้ดูทีวีออนไลน์ผ่านทางเว๊ปนี้ได้หรือไม่ 
+            ผลคือ มันสามารถดูได้ ก็ดีไป
+
+        </p>
+
+        <div class="video-container">
+            <iframe width="600" height="400" src="http://tv.guchill.com/playerdtv4.php?n=Mono29&amp;l=9" scrolling="no" frameborder="0" allowfullscreen=""></iframe>
+        </div>
+        <p class="text-center pt-2">
+            ดูหนังฃ่อง โมโน นะจ๊ะ
+        </p>
+    </div>
+</div>',
+    '1',
+    '2021-07-16 20:34:11','2021-07-16 20:34:11');
+ 
+ /* ======== auto script 2021-07-16 20:34:11 pm END ========= */
+
+
+ /* =========== auto script START 2021-07-20 05:10:34 am  ==================== */
+ /* =============== auto backup `whatnews`  =====*/
+INSERT INTO `whatnews`(`user_id`,`whatnews_title`,`whatnews_body`,`is_public`,
+`created_at`,`updated_at`) VALUES(
+    '1',
+    'ข่าวสถานการณ์โควิด 19 วันที่ 19 กรกฎาคม 2564 ก็ยังไม่มีทีท่าว่าจะดีขึ้น',
+    '<p class="pt-2 mb-4">
+    #อัปเดต ศูนย์บริหารสถานการณ์การแพร่ระบาดของโรคติดเชื้อไวรัสโคโรนา 2019 (โควิด-19) (ศบค.) แถลงข่าวความคืบหน้าสถานการณ์ไวรัสโคโรนาสายพันธุ์ใหม่ 2019 (COVID-19) ในประเทศไทย
+</p>
+<div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/PPMBf08oWNw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+    
+</div>
+<p class="pt-2 text-center">
+    ข่าวสถานการณ์โควิดวันที่ 19 กรกฎาคม 2564
+</p>
+
+<p class="pt-4">
+    ประกาศจาก ศบค. และดูเหมือนว่าการ ล๊อคดาวน์ อาจจะมีการเปลี่ยนแปลงหากจำนวนผู้ติดเชื้อรายวันยังไม่ลดจำนวนลง 
+</p>',
+    '1',
+    '2021-07-20 05:10:34','2021-07-20 05:10:34');
+ 
+ /* ======== auto script 2021-07-20 05:10:34 am END ========= */
+
+
+
+ /* =========== auto script START 2021-07-31 05:34:55 am  ==================== */
+ 
+
+/* ===========================================================================
+ * backup INSERT script on 2021-07-31 05:34:55
+ * ===========================================================================
+ * */
+INSERT INTO `whatnews`(`user_id`,`whatnews_title`,`whatnews_body`,`is_public`,
+`created_at`,`updated_at`) VALUES(
+    '1',
+    'สถานการณ์โควิด 19 วันที่  30 Jul 2021 ยังน่าห่วงนะ อย่านิ่งนอนใจเชียว',
+    '<p class="pt-2 mb-4">
+    สถานการณ์โควิดบ้านเราก็ยังเรียกได้ว่า ทรงๆ ตัวอยู่ ตัวเลขหลักหมื่นของผู้ติดเชื้อรายใหม่ต่อวันยังสูงอยู่ ทุกๆ ฝ่ายก็พยายามทำงานกันอย่างหนัก ไม่เฉพาะแต่ภาครัฐ แต่ทางชาวบ้านก็ต่างช่วยเหลือกัน นี่คือน้ำใจอันยิ่งใหญ่ของคนไทย
+
+
+</p>
+<div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ro-VusN1faY?start=45" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
+<p class="text-center pt-2">
+    Live! แถลงจากศูนย์บริหารสถานการณ์โควิด-19 (30 ก.ค.64)
+</p>
+
+<p class="pt-2">
+    วัคซีนที่ดีที่สุด คือวัคซีนที่คุณได้ฉีดก่อน ไม่ใช่วัคซีนเทพที่ไม่รู้ว่าเมื่อไหร่จะได้ฉีด ผมก็อยากฉีดนะ แต่มันยังไม่มีไง มันยังจองคิวไม่ได้ ก็เลยต้องรอไปก่อน
+</p>
+
+<p class="pt-4">
+   ถ้าเลือกได้ ใครล่ะอยากจะสูญเสียคนในครอบครัวไป ขอให้ปลอดภัยจากโควิดทุกๆ คนนะครับ
+</p>',
+    '1',
+    '2021-07-30 19:34:55',
+    '2021-07-30 19:34:55');
+ 
+ /* ======== auto script 2021-07-31 05:34:55 am END ========= */
+
+ /* =========== auto script START 2021-08-05 19:11:07 pm  ==================== */
+ 
+
+/* ===========================================================================
+ * backup INSERT script on 2021-08-05 19:11:07
+ * ===========================================================================
+ * */
+INSERT INTO `whatnews`(`user_id`,`whatnews_title`,`whatnews_body`,`is_public`,
+`created_at`,`updated_at`) VALUES(
+    '1',
+    'แถลงจากศูนย์บริหารสถานการณ์โควิด-19 (5 ส.ค.64)',
+    '<p class="mb-4">
+    🚩 สถานการณ์ Covid-19 ในประเทศไทย ประจำวันที่ 5 ส.ค.64 
+</p>
+<p>
+ 💪   ผู้ป่วยติดเชื้อเพิ่ม 20,920 ราย    
+
+</p>
+<p class="pt-2 mb-4">
+   😀  หายป่วยเพิ่ม 17,926 ราย รวมหายป่วยสะสม 473,732 ราย 
+</p>
+<div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/4BmVNEY-SUs?start=18" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
+
+<p class="pt-2 text-center">
+  🔊  แถลงจากศูนย์บริหารสถานการณ์โควิด-19 (5 ส.ค.64)
+</p>
+<p class="pt-2">
+    👉  **วันนี้มีผู้เสียชีวิตเพิ่ม 160 ราย**  รวมเสียชีวิตสะสม 5,569 ราย 
+</p>
+<p class="pt-2">
+   🤘 สู้ๆ ครับ ประเทศไทยต้องรอด คนไทยต้องปลอดภัย
+</p>',
+    '1',
+    '2021-08-05 19:11:07',
+    '2021-08-05 19:11:07');
+ 
+ /* ======== auto script 2021-08-05 19:11:07 pm END ========= */
+
+ /* =========== auto script START 2021-08-08 18:44:54 am  ==================== */
+ 
+
+/* ===========================================================================
+ * backup INSERT script on 2021-08-08 18:44:54
+ * ===========================================================================
+ * */
+INSERT INTO `whatnews`(`user_id`,`whatnews_title`,`whatnews_body`,`is_public`,
+`created_at`,`updated_at`) VALUES(
+    '1',
+    'รายงานตัวเลขผู้ติดเชื้อโควิด-19 สะสมของประเทศไทย ประจำวันที่ 8 สิงหาคม 2564',
+    '<div class="row">
+    <div class="col-lg-4">
+        <img src="https://mpics.mgronline.com/pics/Images/564000007933201.JPEG" class="responsive">
+        <p class="text-center pt-2">
+            รายงานประจำวันที่ 8 สิงหาคม 2564 โดย: ผู้จัดการออนไลน์
+        </p>
+    </div>
+    <div class="col-lg-8">
+        <p class="mb-2">
+            ศูนย์ข้อมูลโควิด-19 รายงานจำนวนผู้ติดเชื้อในรอบ 24 ชั่วโมง ที่ผ่านมา เพิ่มขึ้น 19,983 ราย คลัสเตอร์เรือนจำ 350 ราย เสียชีวิตเพิ่ม 138 คน ผู้ป่วยยืนยันสะสมระลอกเมษายน 727,642 ราย ยอดสะสมตั้งแต่เริ่มระบาด 756,505 ราย เสียชีวิตรวม 6,204 คน
+        </p>
+        <p>
+            วันนี้ (8 ส.ค.) เมื่อเวลา 07.30 น. ศูนย์ข้อมูลโควิด-19 รายงานตัวเลขผู้ติดเชื้อโควิด-19 สะสมของประเทศไทย ประจำวันที่ 8 สิงหาคม 2564 ดังนี้
+        </p>
+        <p class="mt-2 mb-2">
+            <span class="badge badge-success p-2">
+                ผู้ที่รักษาหายป่วย กลับบ้านได้แล้ว
+            </span>
+            👏 18,503 คน อันนี้ผมเติมเองนะ ผู้จัดการเค้าไม่ได้บอกไว้ในรายละเอียด แต่มันอยู่ในรูป
+            ที่เค้าแนบมา ซึ่งผมก็คัดลอกของเค้ามาทั้งดุ้น
+        </p>
+        <p>
+            <span class="badge badge-warning p-2">
+                พบจํานวนผู้ติดเชื้อโควิด-19 รายใหม่
+            </span>
+            เพิ่มขึ้น 19,983 ราย แบ่งออกเป็นติดเชื้อใหม่ในประเทศ 19,633 ราย ติดเชื้อในเรือนจำ-ที่ต้องขัง 350 ราย มีผู้เสียชีวิตเพิ่ม 138 คน ทำให้จำนวนผู้ติดเชื้อสะสมในช่วงการระบาดระลอกใหม่ตั้งแต่เดือนเมษายน 2564 ตั้งแต่ 1 เมษายน - 8 สิงหาคม 2564 มีจำนวน 727,642 ราย เสียชีวิตสะสม 6,110 คน
+        </p>
+        <p>
+            ส่วนผู้ติดเชื้อสะสมนับตั้งแต่เริ่มมีการระบาดเมื่อต้นปี 2563 มีจำนวน 756,505 ราย ยอดผู้เสียชีวิตสะสม 6,204 คน ทำให้ประเทศไทยมีจำนวนผู้ติดเชื้อยืนยันสะสมอยู่ในอันดับที่ 37 ของโลก
+        </p>
+        <p>
+            ศูนย์ข้อมูลโควิด-19 รายงานเพิ่มเติมว่า ยอดผู้หายป่วยจากโควิด-19 ในประเทศ ผู้หายป่วยรายใหม่วันนี้ 18,503 ราย ผู้หายป่วยสะสม 508,089 ราย (ตั้งแต่ 1 เมษายน - 8 สิงหาคม 2564) หายป่วยสะสมนับตั้งแต่เริ่มมีการระบาดเมื่อต้นปี 2563 มีจำนวน 535,734 ราย
+        </p>
+        <p class="pt-2 text-right">
+            คัดลอกมาจากเวป <span class="badge badge-info p-2">
+                <a href="https://mgronline.com/qol/detail/9640000077599" target="_blank" class="text-white">
+                    https://mgronline.com/qol/detail/9640000077599
+                </a>
+
+            </span>
+        </p>
+    </div>
+    <div class="col-lg-12">
+        <p>
+            คัดลอกวิดิโอจาก youtube
+            <span class="badge badge-info p-2">
+                <a href="https://www.youtube.com/channel/UCrFDdD-EE05N7gjwZho2wqw" class="text-white" target="_blank">
+                    Thairath Online ไทยรัฐนิวส์โชว์
+                </a>
+
+            </span>
+        </p>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/3W2UdgHqwDM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+        </div>
+        <p class="text-center pt-2">
+            โควิดวันนี้ 8/8/64 พบผู้ติดเชื้อรายใหม่ 19,983 ราย เสียชีวิต 138 ศพ | 08-08-64 | ไทยรัฐนิวส์โชว์
+        </p>
+
+        <p class="mt-2 mb-4">
+            ดูวิดิโอจาก ThaiPBS ที่เค้าโพสไว้ใน youtube ผมเองก็ยังไม่ได้ดูนะ 2 ชั่วโมง
+            มันยาวไปหน่อย
+        </p>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/u1ljPp6LxHk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+        </div>
+        <p class="pt-2 text-center">
+            <span class="badge badge-info p-2 mr-2">
+                <a href="https://www.youtube.com/channel/UC5TOFhyb_LxL2VG_Zenhpzw" target="_blank" class="text-white">
+                    ไทยพีบีเอส
+                </a>
+            </span>
+
+            สู้โควิด19 Home Isolation #กักตัวปลอดภัยกับไทยพีบีเอส (8 ส.ค. 64)
+        </p>
+    </div>
+</div>',
+    '1',
+    '2021-08-08 18:44:54',
+    '2021-08-08 18:44:54');
+ 
+ /* ======== auto script 2021-08-08 18:44:54 am END ========= */
+
+
+
+ /* =========== auto script START 2021-10-29 08:48:30 am  ==================== */
+ 
+
+/* ===========================================================================
+ * backup INSERT script on 2021-10-29 08:48:30
+ * ===========================================================================
+ * */
+INSERT INTO `whatnews`(`user_id`,`whatnews_title`,`whatnews_body`,`is_public`,
+`created_at`,`updated_at`) VALUES(
+    '1',
+    'update song section to make it more easy to use.',
+    '<div class="row">
+    <div class="col-lg-4">
+        <img src="https://i.ibb.co/B6zJBff/new-song-form4-20211029.png" alt="update song section 29 Oct 2021" class="responsive">
+        <p class="text-center">
+            update song section 29 Oct 2021
+        </p>
+    </div>
+    <div class="col-lg-8">
+        <p>
+            just a small change to the "user interface" on "song section 
+
+        </p>
+    </div>
+    <div class="col-lg-12">
+        <h3>
+            ## member section
+        </h3>
+        <ul>
+            <li>
+                <div>
+                    <p class="mb-2">user post new song the form will need some 
+                    validation user can upload song cover (if the file is less 
+                    than 1 MB.).
+
+                    </p>
+                    <img class="responsive" src="https://i.ibb.co/B6zJBff/new-song-form4-20211029.png" 
+                    alt="post new song">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <p>
+                        user can search song the result will show after type 2 
+                        or more letters.
+                    </p>
+                    <img class="responsive" src="https://i.ibb.co/SmG3NQC/new-song-form5-20211029.png" 
+                    alt="search form">
+                </div>
+            </li>
+        </ul>
+        <p class="mt-4">and so on....please login to see the update</p>
+        <p class="mt-2 mb-2 text-success">
+            code is on 
+            <a href="https://github.com/farookphuket/lav8.project"
+             class="btn btn-outline-primary" target="_blank">github.com</a>
+        </p>
+    </div>
+</div>',
+    '1',
+    '2021-10-29 08:48:30',
+    '2021-10-29 08:48:30');
+ 
+ /* ======== auto script 2021-10-29 08:48:30 am END ========= */

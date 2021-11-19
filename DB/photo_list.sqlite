@@ -1,0 +1,247 @@
+
+/* ==== dear user you must keep at least one row left here =================*/
+
+/*
+    INSERT INTO "photos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    '',
+    '',
+    '2021-03-27 06:09:44',
+    '2021-03-27 06:11:28');                                          
+*/
+
+
+
+
+/* ==== dear user you must keep at least one row left here =================*/
+    INSERT INTO "photos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'run laravel in debian 28 Sep 2020',
+    'https://i.ibb.co/SVXgtSx/run-laravel-in-debian.png',
+    '2021-03-27 06:09:44',
+    '2021-03-27 06:11:28');                                          
+
+    INSERT INTO "photos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'edit dot-zsh file on pop_os 28 Sep 2020',
+    'https://i.ibb.co/wRD3kFN/zsh-config-for-laravel.png',
+    '2021-03-27 06:09:44',
+    '2021-03-27 06:11:28');                                          
+
+    INSERT INTO "photos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'edit dot-profile file on pop_os 28 Sep 2020',
+    'https://i.ibb.co/ZSLpTmT/edit-profile-file-debian.png',
+    '2021-03-27 06:09:44',
+    '2021-03-27 06:11:28');                                          
+
+
+
+    INSERT INTO "photos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'phpmyadmin copy config sample 28 Sep 2020',
+    'https://i.ibb.co/wcsQjb5/cp-config-inc.png',
+    '2021-03-27 05:53:44',
+    '2021-03-27 05:55:28');                                          
+
+
+    INSERT INTO "photos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'fix error message phpmyadmin 28 Sep 2020_1',
+    'https://i.ibb.co/q9wzKcN/fig-1.png',
+    '2021-03-27 05:53:44',
+    '2021-03-27 05:55:28');                                          
+
+
+    INSERT INTO "photos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'fix error message phpmyadmin 28 Sep 2020_2',
+    'https://i.ibb.co/MVbKJ81/pmadb-conf.png',
+    '2021-03-27 05:53:44',
+    '2021-03-27 05:55:28');                                          
+
+
+    INSERT INTO "photos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'fix error message phpmyadmin 28 Sep 2020',
+    'https://i.ibb.co/cw4K4xn/config-inc.png',
+    '2021-03-27 05:53:44',
+    '2021-03-27 05:55:28');                                          
+    
+    INSERT INTO "photos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'login page phpmyadmin 28 Sep 2020',
+    'https://i.ibb.co/2Sd9K74/login-page-phpmyadmin.png',
+    '2021-03-27 05:53:44',
+    '2021-03-27 05:55:28');                                          
+
+
+
+
+
+    INSERT INTO "photos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'edit hosts file 28 Sep 2020',
+    'https://i.ibb.co/M7KMsb3/edit-hosts-file.png',
+    '2021-03-27 05:53:44',
+    '2021-03-27 05:55:28');                                          
+    
+    INSERT INTO "photos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'vhost for phpmyadmin 28 Sep 2020',
+    'https://i.ibb.co/xLYFBjP/create-phpmyadmin-vhost.png',
+    '2021-03-27 05:53:44',
+    '2021-03-27 05:55:28');                                          
+   
+   INSERT INTO "photos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'edit port apache conf 28 Sep 2020',
+    'https://i.ibb.co/kXtHp11/edit-port.png',
+    '2021-03-27 05:54:44',
+    '2021-03-27 05:55:28');                                          
+
+
+
+
+
+    INSERT INTO "photos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'phpmyadmin on 28 Sep 2020',
+    'https://i.ibb.co/4dFF6hY/php-Myadmin.png',
+    '2021-03-27 05:55:44',
+    '2021-03-27 05:55:28');                                          
+
+    INSERT INTO "photos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'scroll in tmux',
+    'https://i.ibb.co/Wkdz8Fj/scroll-in-tmux.png',
+    '2021-03-26 19:43:44',
+    '2021-03-26 20:45:28');                                          
+    
+    INSERT INTO "photos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'dot env file of lav8.lap',
+    'https://i.ibb.co/dtgT8zN/env-file.png',
+    '2021-03-26 19:43:44',
+    '2021-03-26 20:45:28');                                          
+    
+
+    INSERT INTO "photos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'php ini on 16 Sep 2020',
+    'https://i.ibb.co/3zqb8zD/php-ini.png',
+    '2021-03-26 19:43:44',
+    '2021-03-26 20:45:28');                                          
+    
+
+    INSERT INTO "photos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'fix python ubuntu20',
+    'https://i.ibb.co/3p8Bd7J/FIX-python-ubuntu20.png',
+    '2021-03-26 19:43:44',
+    '2021-03-26 20:45:28');                                          
+    
+
+    INSERT INTO "photos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'work space 43',
+    'https://i.ibb.co/3fzqdWr/Workspace-1-043.png',
+    '2021-03-26 19:43:44',
+    '2021-03-26 20:45:28');                                          
+
+    INSERT INTO "photos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'config powerline2',
+    'https://i.ibb.co/JjqwYF7/config-powerline2.png',
+    '2021-03-26 19:43:44',
+    '2021-03-26 20:45:28');                                          
+    
+    INSERT INTO "photos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'powerline config 1',
+    'https://i.ibb.co/BwBwG6s/config-powerline1.png',
+    '2021-03-26 19:43:44',
+    '2021-03-26 20:45:28');                                          
+    
+    INSERT INTO "photos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'viedo editing program kdenlive',
+    'https://i.ibb.co/bW5780b/he-is-the-legend.png',
+    '2021-03-26 19:43:44',
+    '2021-03-26 20:45:28');                                          
+
+
+
+    INSERT INTO "photos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'web see southern dot com',
+    'https://i.ibb.co/DwrHSXW/see-southern.png',
+    '2021-03-26 18:43:44',
+    '2021-03-26 20:45:28');                                          
+
+    INSERT INTO "photos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'show work space web error',
+    'https://i.ibb.co/LnKL0Hd/Workspace-1-038.png',
+    '2021-03-26 18:43:44',
+    '2021-03-26 20:45:28');                                          
+
+
+    INSERT INTO "photos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'show work space',
+    'https://i.ibb.co/72KgYYr/Workspace-1-036.png',
+    '2021-03-26 18:43:44',
+    '2021-03-26 20:45:28');                                          
+
+
+
+    INSERT INTO "photos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'about us page ',
+    'https://i.ibb.co/K0cmxmy/1232x373-fill-aboutus-01.jpg',
+    '2021-03-26 18:43:44',
+    '2021-03-26 20:45:28');                                          
+    
+
+    INSERT INTO "photos" ("id","user_id","title","embed","created_at",
+    "updated_at") VALUES 
+    (NULL,'1',
+    'update web on 19 Aug 2020',
+    'https://i.ibb.co/LS4PbZ9/web-update-19-aug-2020.png',
+    '2021-03-26 20:45:44',
+    '2021-03-26 20:45:28');                                          
+
+ /* =========== auto script START 2021-06-27 15:25:15 pm  ==================== */
+ /* ================= backup `photos`  ======  2021-06-27 15:25:15 =============== */
+INSERT INTO `photos`(`user_id`,`title`,`embed`,
+`created_at`,`updated_at`) VALUES(
+    '3','my red car ha ha','https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i9.J367E0UR4/v0/1200x800.jpg',
+    '2021-06-27 15:25:15','2021-06-27 15:25:15');
+ 
+ /* ======== auto script 2021-06-27 15:25:15 pm END ========= */

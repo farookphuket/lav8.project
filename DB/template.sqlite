@@ -1,0 +1,498 @@
+/* =================== Default template DO NOT DELETE THIS ==================*/
+
+
+/*  whatnews with photo on left 15-Feb-2021 */
+    INSERT INTO 'templates' ('user_id','section','title','excerpt','body',
+    'created_at','updated_at') VALUES (
+    '1',
+    'whatnews',
+    'Photo on left',
+    '
+<div class="row">
+    <div class="col-lg-4">
+        <img src="https://preview.redd.it/73ujvyglhsk31.png?width=960&crop=smart&auto=webp&s=ed4a06328f0815e3117ae3c2a9b529fd744ba5b7" 
+        alt="the photo text if you have" class="responsive">
+        <p class="text-center">
+The text under photo
+        </p>
+    </div>
+    <div class="col-lg-8">
+<p>this template will create photo on the left of the content</p>
+    </div>
+</div>
+    ',
+    '
+    <div class="container">
+        <div class="alert alert-warning">
+            <h1 class="text-center">
+No need content here
+            </h1>
+            <p>
+as it''s the whatnews template so no need the content
+            </p>
+        </div>
+    </div>
+    ',
+'2021-02-02 18:16:20',
+'2021-02-02 18:16:20'); 
+/* End of new item */
+
+
+
+/* Template 2 for whatnews 1  */
+INSERT INTO 'templates' ('user_id','section','title','excerpt','body',
+'created_at','updated_at') VALUES (
+'1',
+'whatnews',
+'short post with video ',
+'
+<p class="mb-4">
+<b>เหล้า เบียร์ </b> กินแล้วเมา สร้างปัญหา(คนที่ไม่ได้สร้างปัญหาก็อย่าเดือดร้อนนะ)
+ยกพวกตีกัน ทะเลาะกัน ขับรถชน ข่มขืน เพราะว่าคนเมาเหล้ามันขาดสติ (จริงๆ ไม่น่าจะโทษเหล้านะ
+คนมันเหี้ย ไม่ต้องแดกอะไรเข้าไป ก็เหี้ย) แต่ปัญหาเหล่านั้นส่วนมากก็จะมาจาก เมาแล้วขาดสติก่อนทั้งนั้น
+
+</p>
+<div class="video-container">
+    <iframe width="560" height="315"
+    src="https://www.youtube.com/embed/BWwm2wk1Kc8"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+    encrypted-media;
+    gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<p class="pt-2 text-center">
+    ไม่ได้จะเอาไว้เสพหรอกนะ แต่จะปลูกขาย
+</p>
+
+',
+'
+<div class="container">
+<div class="alert alert-warning">
+    <h1 class="text-center">
+There is no need for the body container since whatnews only need to 
+be a short post 
+    </h1>
+</div>
+</div>
+
+',
+'2020-10-12 10:45:43',
+'2020-10-12 10:46:02');
+
+
+
+
+/*      Post section  */
+
+
+/* Template 1 for post */
+INSERT INTO 'templates' ('user_id','section','title','excerpt','body',
+'created_at','updated_at') VALUES (
+'1',    /* user id */
+
+'post',     /* template section */
+
+'หนังสือนิยาย เพชรพระอุมา template', /* template title */
+
+/* excerpt start */
+'
+<div class="row">
+    <div class="col-lg-4">
+        <img src="https://lh3.googleusercontent.com/s2RNr270Kv4qx3ZsnLQcsl184NmadqcjGmSO8G5JVJyj_uZuLeHF8OD8O13RG8hnhs-QdbbnSZPEdFAjK3PYYzXB4FzV0_XP7iyHdb6b4GBMB9nbAQTzCnywcVQJdVRxzFLziBBJb7w=w2400" class="responsive">
+        <p class="pt-2 text-center">
+            ตอน ไพรมหากาฬ
+        </p>
+    </div>
+    <div class="col-lg-8">
+    <p>
+        ฟังนิยายเพชรพระอุมา ตอน ไพรมหากาฬ 
+    </p>
+    <p>
+    "เพชรพระอุมา"   เป็นบทประพันธ์ของ "พนมเทียน"   มีความยาวทั้งสิ้น 48 เล่ม
+    แบ่งออกเป็นสองภาค คือภาคแรกและภาคสมบูรณ์ ภาคละ 24 เล่ม เล่มละ 200 บาท
+    สั่งซื้อได้ตามร้านหนังสือทั่วไป
+    </p>
+    <p>
+        ห้องสมุดคอลฟิลด์เพื่อคนตาบอด  ของมูลนิธิช่วยคนตาบอดแห่งประเทศไทย
+        ในพระบรมราชินูปถัมภ์   ได้นำมาจัดทำเป็นหนังสือเสียงทั้งสองภาค
+    </p>
+    <p>
+        ภาคแรกมีอาสาสมัครช่วยกันอ่านสองท่าน  คือ คุณศศวรรณ   อรรถจรรยากุล
+        เริ่มอ่านจากตอนต้น ..ไพรมหากาฬ  ต่อด้วย..ดงมรณะไปถึงช่วงกลางๆ
+        จากนั้นคุณดวงวิภา  ยุทธสุริยพันธุ์ อ่านต่อในส่วนที่เหลือจนจบทั้งสองภาค
+    </p>
+
+    </div>
+</div>
+',
+/* end of excerpt */
+
+
+/* body path */
+'
+<div><!-- no need class -->
+    <h1 class="text-center">
+        ตอน ไพรมหากาฬ
+    </h1>
+    <p style="text-align:right;color:green;font-weight:bold;">
+        last edit 17 Sep 2020
+    </p>
+
+    <!-- copyright START -->
+    <div style="width:100%;background-color:#e7e7e7;
+        border:1px dashed #ffe3f4;text-align:center;">
+            <h2 style="text-align:center;padding:2px;
+            margin-top:1em;color:red;">
+                ใช้เพื่อฟังส่วนตัวเท่านั้น
+            </h2>
+            <p style="padding:2px;
+
+            background-color:#ffffff;
+            border:2px dotted #ff0000;">
+                ไฟล์เสียงเหล่านี้ได้ถูกจัดทำขึ้นด้วยจุดประสงค์เพื่อใช้ในการรับฟังเพื่อความบันเทิง
+                ส่วนตัวเท่านั้น ผู้นำเข้าได้มีการ อุดหนุนผลงานของผู้ประพันธ์ ที่ใช้นามปากกาว่า 
+                "พนมเทียน" ครบทุกเล่มแล้ว ผู้นำเข้ามิได้มีเจตนาละเมิดลิขสิทธิ์แต่อย่างใด 
+                ผู้นำเข้าไม่ได้มีผลประโยชน์ใดๆ ในด้านการค้า หรือกำไรจากการนำเข้า
+                ไฟล์เสียงเหล่านี้
+                มากไปกว่าการใช้งานเพื่อความบันเทิงโดยส่วนตัวและอยากเก็บผลงานเหล่านี้ไว้ 
+                เพื่อเปิดฟังส่วนตัวเท่านั้นไม่ได้มีเจตนา แจก จ่าย แต่อย่างใด 
+                ทั้งนี้เจ้าของสิขสิทธิ์สามารถเรียกร้องให้ลบไฟล์เสียงเหล่านี้ออกได้ หากผู้ที่อ้าง
+                ว่าเป็นเจ้าของลิขสิทธิ์ สามารถพิสูจน์ได้ว่าเป็นเจ้าของลิขสิทธิ์ตัวจริงตามกฎหมาย 
+            </p>
+            <p style="padding:2px;background-color:#ffffff;
+            border:2px dotted #ff0000;">
+                หากเจ้าของสิขสิทธิ์(ที่สามารถยืนยันตัวจริงได้) ต้องการให้ลบไฟล์เหล่านี้ที่ท่านมองว่า
+                มันเป็นการละเมิดลิขสิทธิ์ ผู้นำเข้ายินยอมที่จะลบไฟล์เสียงเหล่านี้ทันที 
+                <br /> กรุณาติดต่อทาง<strong>e-mail :</strong> <i>
+                <u>admin@farookphuket.com</u></i>  หรือ 
+                <i><u>admin@see-southern.com</u></i>
+        </div>
+        <!-- Copyright END -->
+
+        <!-- list of item START -->
+            <div class="mb-2 pt-4">
+                    <h1 class="text-center">Clip 001 to 011</h1>
+                    <div class="sound-container">
+                    <iframe src="https://archive.org/embed/clip_001_to_011" 
+                    width="500" height="140" frameborder="0" 
+                    webkitallowfullscreen="true" mozallowfullscreen="true" 
+                    allowfullscreen></iframe> 
+                    </div>
+                    <p class="pt-2 mb-4 text-center">
+                        Last update from Desktop 8 Feb 2021 12:20 a.m.
+                    </p>
+
+            </div>
+
+
+            <div class="mb-2 pt-4">
+
+                    <h1 class="text-center">
+                    Clip 012 to 018
+                    </h1>
+                    <div class="sound-container">
+                    <iframe src="https://archive.org/embed/clip_12_to_18" 
+                    width="500" height="30" frameborder="0" 
+                    webkitallowfullscreen="true" mozallowfullscreen="true" 
+                    allowfullscreen></iframe>
+                    </div>
+                    <p class="pt-2 mb-4 text-center">
+                        Last update from Desktop 8 Feb 2021 12:20 a.m.
+                    </p>
+
+            </div>
+
+            <div class="pt-4 mb-2">
+
+                    <h1 class="text-center">
+                     Clip 019 to 024
+                    </h1>
+                    <div class="sound-container">
+                        <iframe src="https://archive.org/embed/clip_019_to_024" 
+                        width="500" height="30" frameborder="0" 
+                        webkitallowfullscreen="true" 
+                        mozallowfullscreen="true" allowfullscreen></iframe>
+                    </div>
+                    <p class="pt-2 mb-4 text-center">
+                        Last update from Desktop 17 Sep 2020 10:30 p.m.
+                    </p>
+
+            </div>
+
+
+            <div class="pt-4 mb-2">
+                    <h1 class="text-center">
+                        Clip 025 to 029
+                    </h1>
+                    <div class="sound-container">
+                        <iframe src="https://archive.org/embed/clip_025_to_029" 
+                        width="500" height="30" frameborder="0" 
+                        webkitallowfullscreen="true" 
+                        mozallowfullscreen="true" 
+                        allowfullscreen></iframe>
+                    </div>
+                <p class="pt-2 mb-4 text-center">
+                จบตอน "ไพรมหากาฬ" แล้วครับ ตอนต่อไป "ดงมรณะ"
+                </p>
+            </div>
+        <!-- list item END -->
+
+        <p class="pt-2 mb-2">
+            เป็นการอัพเดทอีกครั้งเพื่อรวมคลิปเสียงไว้เป็นแค่ 4 คลิปเพื่อความสะดวกในการฟัง 
+            ท่านสามารถปิดหน้าจอมือถือได้โดยที่คลิปจะยังเล่นอยู่ หากต้องการหยุดให้กดปุ่มหยุดเอาไว้
+            แต่อย่าปิดหน้าเวปเพราะว่าหากเปิดขึ้นมาใหม่จะเป็นการเริ่มเล่นใหม่ทั้งหมด
+        </p>
+
+        <div style="border:2px dashed #ff0000;
+        background-color:black;padding:5px;">
+        <h1 class="text-center" style="color:red;">คำเตือน!</h1>
+        <p style="color:white;font-weight:bold;
+        margin-top:1em;margin-bottom:1em;text-align:center;">
+            นี่อาจจะเป็นครั้งสุดท้ายของท่านที่จะได้ฟังนิยายจากเวปนี้ "รู้อะไรไม่สู้ รู้แบบนี้" 
+            เราเตือนคุณแล้ว เพราะฉะนั้นจัดการตัวเองซะ จงทำในสิ่งที่ต้องทำ 
+            มันมีลิ้งค์อยู่ข้างล่างกดสิ "ฟาย"!
+        </p>
+        </div>
+
+        <div class="clearfix">
+            <div class="float-right">
+                <a 
+                href="https://archive.org/compress/clip_001_to_011/formats=VBR%20MP3&file=/clip_001_to_011.zip" class="btn btn-primary">ดาวน์โหลดคลิป 1 - 11</a>
+
+                <a href="https://archive.org/compress/clip_12_to_18/formats=VBR%20MP3&file=/clip_12_to_18.zip" class="btn btn-primary">ดาวน์โหลดคลิป 22 - 18</a>
+                
+                <a href="https://archive.org/compress/clip_019_to_024" class="btn btn-primary">ดาวน์โหลดคลิป 19 - 24</a>
+
+                <a href="https://archive.org/compress/clip_025_to_029/formats=VBR%20MP3&file=/clip_025_to_029.zip" class="btn btn-primary">ดาวน์โหลดคลิป 25 - 29</a>
+            </div>
+        </div>
+</div>
+
+
+
+', /*   End of template body */ 
+
+/*  Time will be auto add */
+'2019-04-08 16:55:55',
+'2019-04-08 17:05:55'
+);
+
+
+/* =================== Default template DO NOT DELETE THIS ==================*/
+/* ========================================================================= */
+/* ========================================================================= */
+/* =================== Auto script ========================================= */
+
+
+ /* =========== auto script START 2021-06-30 10:12:13 am  ==================== */
+ /* ======= backup template post ================*/
+/* ======= date 2021-06-30 10:12:13 ==================*/
+INSERT INTO `templates`(`user_id`,`section`,`title`,`excerpt`,
+`body`,`created_at`,`updated_at`) VALUES(
+    '1',
+    'post',
+    'post template show code',
+    '<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <img src="https://www.ionos.co.uk/digitalguide/fileadmin/DigitalGuide/Teaser/code-editoren-t.jpg" class="responsive">
+            <p class="text-center pt-2">show code</p>
+        </div>
+        <div class="col-lg-8">
+            <p>
+                this template is to code on page when you make a new post
+            </p>
+        </div>
+    </div>
+</div>',
+    '<div class="container">
+    <h2 class="text-center">you title</h2>
+    <p>your 1 paragraph</p>
+    <div class="line-numbers">
+    <pre>    <div class="code">
+        <span>your code each line will need to be in the &lt;span&gt; between span tag like this &lt;/span&gt; </span>
+        <span>your code line number 2</span>
+        
+    </div>
+    <div class="comment">
+        <span>the comment line 1</span>
+        <span>The comment line 2</span>
+    </div>
+    </pre>
+    </div>
+    <p>to show code in the nice format you may need to open "code" mode this editor like the picture show below</p>
+    <div>
+     <img src="https://i.ibb.co/Z1wC2SM/2021-06-30-jodit-show-code.png" class="responsive">
+    <p class="text-center">show your code</p>  
+    </div>
+    
+</div>',
+    '2019-06-30 10:12:13',
+    '2019-06-30 10:12:13');
+
+
+ 
+ /* ======== auto script 2021-06-30 10:12:13 am END ========= */
+
+ /* =========== auto script START 2021-07-01 08:11:05 am  ==================== */
+ /* ======= backup template about ================*/
+/* ======= date 2021-07-01 08:11:05 ==================*/
+INSERT INTO `templates`(`user_id`,`section`,`title`,`excerpt`,
+`body`,`created_at`,`updated_at`) VALUES(
+    '1',
+    'about',
+    'About template',
+    '<div class="container">
+                   <div class="row">
+                       <div class="col-lg-4">
+                        <img class="responsive mb-2" src="https://lh3.googleusercontent.com/cfOid3sYJtcVhxh6pXTQ9l2LfCTIDnPXGIY2TidhJRi2bkwzmtlZItSFINgzyFyG2FDXgfFS7bX1AQuzK03HOwJ-67Blc9oHtPD6QdrNpP_avEAYUhYyX6DLwuXKe5P_te8rbr0Ny4w=w1920-h1080" alt="your profile picture">
+                        <p class="text-center pt-2">
+                            your profile picture here
+                        </p>
+                       </div>
+                       <div class="col-lg-8">
+                            <h2 class="text-center">you are using default about page</h2>
+                            <div>
+                                <p>
+                                    dear friends if you want to change this page just 
+                                    edit it from the above form.
+                                </p>
+                                <div class="alert alert-warning">
+                                    <h3 class="text-center">
+                                        this will not show anywhere
+                                    </h3>
+                                    <p class="pt-2 mb-2">
+                                    this is the template and will not be shown 
+                                    in anywhere unless you press the Save 
+                                    button 
+                                    </p>
+                                </div>
+                            </div>
+                       </div>
+                   </div>
+                </div>',
+    '<div class="container">
+                    <h2 class="text-center pt-2 mb-2">
+                        your teams
+                    </h2>
+                    <p class="pt-2">
+                    your company is very cool we work great in all season just 
+                    for nothing.
+                    </p>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img class="responsive" src="https://i.ibb.co/gvMphpd/IMG-20210420-201440.jpg" alt="วันหลังลาย">
+                        </div>
+                        <div class="col-lg-4">
+                            <p>
+                                this can be text or you can just delete it
+                            </p>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="video-container">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/q3Sanjl93dQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                            </div>
+                            <p class="pt-2 mb-2">
+                                how do I setup i3wm for manjaro(gnome)
+                            </p>
+                        </div>
+                    </div>
+                    <p class="pt-4">
+                    down here you can put your location map or your contact 
+                    information
+                    </p>
+                    <div class="video-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d987.0441399287837!2d98.64460403139967!3d8.28522037543822!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3051af415929c3d9%3A0x8bcd11357ef06a03!2zTGFlbSBTYWsgUGllciDguJfguYjguLLguYDguJfguLXguKLguJrguYDguKPguLfguK3guYHguKvguKXguKHguKrguLHguIE!5e0!3m2!1sen!2sth!4v1625101819605!5m2!1sen!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <p style="margin-top:2em;margin-bottom:2em;">&nbsp;</p>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <b-icon icon="phone"></b-icon>
+                            Tel : +66 95 954-3920
+                        </li>
+                        <li class="list-group-item">
+                            <b-icon icon="envelope"></b-icon>
+                            e-mail : firefrook@gmail.com
+                        </li>
+                        <li class="list-group-item">
+                            <b-icon icon="book-half"></b-icon>
+                            56 m.3 t.lam-suk a.ao-luk Krabi Thailand 81110
+                        </li>
+                    </ul>
+                </div>',
+    '2007-07-01 08:11:05',
+    '2007-07-01 08:11:05');
+
+
+ 
+ /* ======== auto script 2021-07-01 08:11:05 am END ========= */
+
+ /* =========== auto script START 2021-07-09 07:42:21 am  ==================== */
+ /* ======= backup template whatnews ================*/
+/* ======= date 2021-07-09 07:42:21 ==================*/
+INSERT INTO `templates`(`user_id`,`section`,`title`,`excerpt`,
+`body`,`created_at`,`updated_at`) VALUES(
+    '1',
+    'whatnews',
+    'show paragraph code video',
+    '<div class="row">
+    <div class="col-lg-12">
+        <h2 class="text-center">
+            this is your title
+        </h2>
+        <p>
+            this is the paragraph you can post write the paragraph 1 formatt here
+        </p>
+        <p>
+            this is the paragraph you can post write the paragraph 2 formatt here
+        </p>
+
+        <p>
+            this is the paragraph you can post write the paragraph 3 formatt here
+        </p>
+        <!-- start div.code -->
+        <div class="line-numbers">
+            <pre>            <div class="comment">
+                <span>this is comment of your code </span>
+            </div>             
+            <div class="code">
+             <span>your code line number 1</span>
+             <span>your code line number 2</span>
+             <span>your code line number 3</span>
+             <span>your code line number 4</span>
+             <span>your code line number 5</span>
+             <span>your code line number 6</span>
+         </div>  
+         </pre>
+        </div>
+        <!-- end of div.code -->
+        <p class="pt-2">
+            your video here
+        </p>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/wsh64rjnRas" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""><br></iframe>
+        </div>
+        <p class="text-center pt-2">
+            title for your video here
+        </p>
+        <p class="pt-2">
+            more paragraph goes here
+        </p>
+    </div>
+</div>',
+    '<div class="container">
+    <h2 class="text-center">
+        no content needed
+    </h2>
+    <div class="alert alert-warning">
+        <p>
+            there is no need for the content shown here.
+        </p>
+    </div>
+</div>',
+    '2007-10-29 07:42:21',
+    '2007-10-29 07:42:21');
+
+
+ 
+ /* ======== auto script 2021-07-09 07:42:21 am END ========= */

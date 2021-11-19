@@ -1,0 +1,53 @@
+/* ================= Edit this to your own code but DO NOT DELETE THIS ====*/
+
+/* ================ role table =================== */
+INSERT INTO `roles`(`role_name`,`created_at`,`updated_at`) VALUES(
+'admin','2007-10-29 21:28:17','2007-10-29 21:28:17'
+        );
+
+
+INSERT INTO `roles`(`role_name`,`created_at`,`updated_at`) VALUES(
+'member','2007-10-29 21:28:17','2007-10-29 21:28:17'
+        );
+
+
+
+/* ============ create user ======================================*/
+INSERT INTO `users`(`name`,`email`,`password`,`is_admin`,`email_verified_at`,
+`created_at`,`updated_at`) VALUES(
+    'farook','farook@me.me','$2y$10$eNCkQQeVGXrs2hLpo1bcbOyq8hOCKHQyJeNXWzMCTGHJq4vC3/wnK',
+    '1',
+    '2007-10-29 21:28:17','2007-10-29 21:27:18','2007-10-29 21:28:17');
+
+/* =========== attach the user farook to role admin  ======== */ 
+ INSERT INTO `role_user`(`user_id`,`role_id`,`created_at`,
+     `updated_at`)VALUES(
+         '1','1','2007-10-29 21:27:18','2007-10-29 21:28:17');
+ 
+
+
+INSERT INTO `users`(`name`,`email`,`password`,`is_admin`,`email_verified_at`,
+`created_at`,`updated_at`) VALUES(
+    'admin','admin@mylap.me','$2y$10$eNCkQQeVGXrs2hLpo1bcbOyq8hOCKHQyJeNXWzMCTGHJq4vC3/wnK',
+    '1',
+    '2007-10-29 21:28:17','2007-10-29 21:27:18','2007-10-29 21:28:17');
+
+/* =========== attach the user admin to role admin ======== */ 
+ INSERT INTO `role_user`(`user_id`,`role_id`,`created_at`,
+     `updated_at`)VALUES(
+         '2','1','2007-10-29 21:27:18','2007-10-29 21:28:17');
+
+INSERT INTO `users`(`name`,`email`,`password`,`email_verified_at`,
+`created_at`,`updated_at`) VALUES(
+    'test','test@mylap.me','$2y$10$eNCkQQeVGXrs2hLpo1bcbOyq8hOCKHQyJeNXWzMCTGHJq4vC3/wnK',
+    '2007-10-29 21:28:17','2007-10-29 21:27:18','2007-10-29 21:28:17');
+
+/* =========== attach the user testx to role member ======== */ 
+ INSERT INTO `role_user`(`user_id`,`role_id`,`created_at`,
+     `updated_at`)VALUES(
+         '3','2','2007-10-29 21:27:18','2007-10-29 21:28:17');
+
+/* ================== Edit this to your own code but DO NOT DELETE THIS ====*/
+/* ======================================================================== */
+/* =========================================================================*/
+/* ================= Things below this line you can delete =================*/

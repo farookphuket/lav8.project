@@ -1,0 +1,291 @@
+/*
+   =========================== Default Data 22 Oct 2021 START ================= 
+*/
+
+INSERT INTO `artists`(`artist_name`,`artist_cover`,`artist_bio`,`created_at`,
+        `updated_at`) VALUES(
+        'เบบี้ บูล',
+        'https://i.scdn.co/image/ab67616d0000b27348e07c18a063923165d86f4b',
+        '
+        <div>
+            <p>
+                ศิลปินวงร็อกน้องใหม่ในนาม เบบี้ บูล พร้อมแล้วที่จะให้ทุกคนสัมผัสผลงานที่มีชื่อเดียวกับชื่อวง 
+                ซึ่งสมาชิก 5 กระทิงหนุ่ม ประกอบไปด้วย อั้ม - นรินธร สุนทรเกตุ (ร้องนำ) 
+                เอ - สุรชัย จึงศรีจันทร์ (กีต้าร์) สิด - สิทธิพร สิงห์ไทยสงค์ (กีตาร์) 
+                เต้ - คุณาพจน์ แซ่เล้า (เบส) และ ไก่ - อาทิตย์ แซ่โง้ว (กลอง)
+
+            </p>
+            <span class="text-center">
+                <img src="https://www.siamzone.com/music/news/2003/01133.jpg" 
+                class="responsive d-block mx-auto"
+                alt="เบบี้ บูล">
+            </span>
+            <p>
+                ...อ้างอิง https://www.siamzone.com/music/news/1133
+            </p>
+        </div>
+        ',
+        '2021-10-22 17:52:34',
+        '2021-10-22 17:52:34');
+
+
+
+
+/*
+   =========================== Default Data 22 Oct 2021 END =================== 
+*/
+
+
+ /* =========== auto script START 2021-10-24 11:59:07 am  ==================== */
+ 
+/* =============================== Insert command =============================
+ * on 2021-10-24 11:59:07 insert artist id '2' to 'artists'
+ * */
+INSERT INTO `artists`(`artist_name`,`artist_cover`,`artist_bio`,`created_at`,
+`updated_at`) VALUES(
+    'Ed Sheeran',
+    'https://images-na.ssl-images-amazon.com/images/I/61beeD3c0mL._RI_.jpg',
+    '<p>
+    Ed Sheeran went from homeless, to being in the homes of millions - from busking on the streets of London to being the most streamed artists of the last decade. Ed has found success from being, just simply, a man + his guitar.
+</p>',
+    '2021-10-24 11:59:07',
+    '2021-10-24 11:59:07');
+ 
+ /* ======== auto script 2021-10-24 11:59:07 am END ========= */
+
+ /* =========== auto script START 2021-10-24 12:03:16 pm  ==================== */
+ 
+/* =============================== Insert command =============================
+ * on 2021-10-24 12:03:16 insert artist id '3' to 'artists'
+ * */
+INSERT INTO `artists`(`artist_name`,`artist_cover`,`artist_bio`,`created_at`,
+`updated_at`) VALUES(
+    'บอย พีชเมกเกอร์',
+    'https://i.ytimg.com/vi/3NHIK0dZsLs/maxresdefault.jpg',
+    '<p>
+    อนุวัฒน์ สงวนศักดิ์ภักดี หรือ บอย พีซเมคเกอร์ (1 สิงหาคม พ.ศ. 2523) เป็นนักร้องชาวไทย
+</p>',
+    '2021-10-24 12:03:16',
+    '2021-10-24 12:03:16');
+ 
+ /* ======== auto script 2021-10-24 12:03:16 pm END ========= */
+
+ /* =========== auto script START 2021-10-24 12:06:41 pm  ==================== */
+ 
+/* =============================== Insert command =============================
+ * on 2021-10-24 12:06:41 insert artist id '4' to 'artists'
+ * */
+INSERT INTO `artists`(`artist_name`,`artist_cover`,`artist_bio`,`created_at`,
+`updated_at`) VALUES(
+    'เสือ ธนพล อินทฤทธิ์',
+    'https://s.mxmcdn.net/images-storage/albums/8/1/6/3/0/9/26903618_350_350.jpg',
+    '<p>
+    ธนพล อินทฤทธิ์ ชื่อเล่น เสือ เกิดเมื่อวันที่ 18 พฤศจิกายน พ.ศ. 2507 ที่จังหวัดกาฬสินธุ์ เป็นนักร้อง, นักดนตรี, โปรดิวเซอร์, นักแต่งเพลงชาวไทย และทำงานเบื้องหลังให้แก่ศิลปิน อาทิ อิทธิ พลางกูร ไฮ-ร็อก พิสุทธิ์ ทรัพย์วิจิตร
+</p>',
+    '2021-10-24 12:06:41',
+    '2021-10-24 12:06:41');
+ 
+ /* ======== auto script 2021-10-24 12:06:41 pm END ========= */
+
+ /* =========== auto script START 2021-10-24 12:35:30 pm  ==================== */
+ 
+/* =============================== Insert command =============================
+ * on 2021-10-24 12:35:30 insert artist id '5' to 'artists'
+ * */
+INSERT INTO `artists`(`artist_name`,`artist_cover`,`artist_bio`,`created_at`,
+`updated_at`) VALUES(
+    'เบล สุพล พัวศิริรักษ์',
+    'https://www.matichon.co.th/wp-content/uploads/2019/05/%E0%B9%80%E0%B8%9A%E0%B8%A5-%E0%B8%AA%E0%B8%B8%E0%B8%9E%E0%B8%A5.jpg',
+    '<p>
+    สุพล พัวศิริรักษ์ ชื่อเล่น เบล เกิดเมื่อวันที่ 15 ธันวาคม พ.ศ. 2524 อดีตนักร้องนำวง พาย นักจัดรายการ และพิธีกรชาวไทย จบชั้นมัธยมจากโรงเรียนอัสสัมชัญ จบปริญญาตรีจากมหาวิทยาลัยอัสสัมชัญ คณะนิเทศศาสตร์
+</p>',
+    '2021-10-24 12:35:30',
+    '2021-10-24 12:35:30');
+ 
+ /* ======== auto script 2021-10-24 12:35:30 pm END ========= */
+
+ /* =========== auto script START 2021-10-24 12:45:28 pm  ==================== */
+ 
+/* =============================== Insert command =============================
+ * on 2021-10-24 12:45:28 insert artist id '6' to 'artists'
+ * */
+INSERT INTO `artists`(`artist_name`,`artist_cover`,`artist_bio`,`created_at`,
+`updated_at`) VALUES(
+    'Ronan Keating',
+    'https://i.lnwfile.com/d0z9ra.jpg',
+    '<p>
+    Ronan Patrick John Keating[1] (born 3 March 1977) is an Irish singer, songwriter, and television &amp; radio presenter who currently hosts a breakfast show on Magic Radio. He debuted in 1994 alongside Keith Duffy, Michael Graham, Shane Lynch, and Stephen Gately, as the co-lead singer (with Gately) of Irish group Boyzone. His solo career started in 1999 and he has recorded eleven albums. He gained worldwide attention when his single "When You Say Nothing at All" was featured in the film Notting Hill and reached number one in several countries.
+</p>
+<p>
+    As a solo artist, Keating has sold over 20 million records worldwide alongside the 25 million records with Boyzone,[2][3][4] and in Australia, he is best known as a judge on All Together Now and The X Factor[5] from 2010 until 2014 and a coach on The Voice in 2016. Keating is active in charity work and has been a charity campaigner for the Marie Keating Foundation, which raises awareness for breast cancer and is named after his mother, who died from the disease in 1998.
+</p>',
+    '2021-10-24 12:45:28',
+    '2021-10-24 12:45:28');
+ 
+ /* ======== auto script 2021-10-24 12:45:28 pm END ========= */
+
+ /* =========== auto script START 2021-10-24 12:53:40 pm  ==================== */
+ 
+/* =============================== Insert command =============================
+ * on 2021-10-24 12:53:40 insert artist id '7' to 'artists'
+ * */
+INSERT INTO `artists`(`artist_name`,`artist_cover`,`artist_bio`,`created_at`,
+`updated_at`) VALUES(
+    'เท่ห์ อุเทน พรหมมินทร์',
+    'https://1.bp.blogspot.com/-48fCxMF_Kbc/Xp7C_JvpqbI/AAAAAAAAIZs/hqsy2LULfqQ49aD8EOXRGhRuDYLcEjbTgCLcBGAsYHQ/s1600/Cover.jpg',
+    '<p>
+    อุเทน พรหมมินทร์ ชื่อเล่นว่า เท่ห์ เป็นนักร้องแนวป็อปและเพลงไทยสากลร่วมสมัย เจ้าของเพลงดัง โกหกหน้าตาย, วิชามาร, ไม่ไว้วางใจ
+</p>',
+    '2021-10-24 12:53:40',
+    '2021-10-24 12:53:40');
+ 
+ /* ======== auto script 2021-10-24 12:53:40 pm END ========= */
+
+ /* =========== auto script START 2021-10-24 13:01:44 pm  ==================== */
+ 
+/* =============================== Insert command =============================
+ * on 2021-10-24 13:01:44 insert artist id '8' to 'artists'
+ * */
+INSERT INTO `artists`(`artist_name`,`artist_cover`,`artist_bio`,`created_at`,
+`updated_at`) VALUES(
+    'เบิร์ด ธงไชย แมคอินไตย์',
+    'https://e.lnwfile.com/owtf6y.jpg',
+    '<p>
+    ธงไชย แมคอินไตย์ ชื่อเล่น เบิร์ด (เกิด 8 ธันวาคม พ.ศ. 2501) เป็นนักร้อง นักแสดงชาวไทย ได้รับขนานนามว่าเป็น "ซูเปอร์สตาร์เมืองไทย"[1][2] แรกเข้าวงการบันเทิงเป็นนักแสดงสมทบ ต่อมาได้รับบทพระเอก โดยภาพยนตร์ที่สร้างชื่อเสียงให้กับเขาที่สุดเรื่อง ด้วยรักคือรัก (พ.ศ. 2528)[3] ส่วนละครที่สร้างชื่อเสียงที่สุดของเขาคือบทโกโบริในละคร คู่กรรม (พ.ศ. 2533)[4] ด้านวงการเพลงซึ่งเป็นอาชีพหลักเขาเริ่มต้นจากการประกวดร้องเพลงของสยามกลการ ต่อมาเป็นนักร้องในสังกัดจีเอ็มเอ็ม แกรมมี่ ซึ่งประสบความสำเร็จสูงสุดของประเทศไทย[5] มียอดจำหน่ายอยู่ในระดับแนวหน้าของทวีปเอเชียยอดรวมกว่า 25 ล้านชุด[6]
+</p>
+<p>
+    ธงไชยมีผลงานที่สร้างชื่อเสียงยาวนานไม่ต่ำกว่า 30 ปีในวงการบันเทิง[7] มีสตูดิโออัลบั้มเดี่ยวที่มียอดจำหน่ายเกินล้านตลับมากที่สุด 7 ชุด[8] โดยอัลบั้มชุดรับแขก มียอดจำหน่ายมากกว่า 5 ล้านชุด สูงที่สุดในประเทศไทย[9][10] และการแสดงคอนเสิร์ตของเขามียอดผู้ชมรวมจากการจำหน่ายบัตรของต้นสังกัดสูงที่สุด[11] จากชื่อเสียงที่ยาวนานทำให้สมาคมภาพยนตร์แห่งชาติ และสมาคมนักข่าวบันเทิงแห่งประเทศไทยได้ให้ฉายาธงไชยว่า "ดาวค้างกรุ" (พ.ศ. 2548)[12] และ "ป๋าพันปี" (พ.ศ. 2550)[13] และส่วนหนึ่งจากการสำรวจความนิยมพบว่าเขามีภาพลักษณ์สำคัญคือ ความกตัญญู ความสามารถในการร้องเพลง การพัฒนาตนเอง ความสามารถในการให้ความบันเทิงแก่ผู้ชม และการเป็นแบบอย่างที่ดี เป็นต้น[14]
+</p>',
+    '2021-10-24 13:01:44',
+    '2021-10-24 13:01:44');
+ 
+ /* ======== auto script 2021-10-24 13:01:44 pm END ========= */
+
+ /* =========== auto script START 2021-10-24 13:10:20 pm  ==================== */
+ 
+/* =============================== Insert command =============================
+ * on 2021-10-24 13:10:20 insert artist id '9' to 'artists'
+ * */
+INSERT INTO `artists`(`artist_name`,`artist_cover`,`artist_bio`,`created_at`,
+`updated_at`) VALUES(
+    'โบวี่',
+    'https://s.isanook.com/jo/0/rp/r/w700/ya0xa0m1w0/aHR0cDovL2ltYWdlLmpvb3guY29tL0pPT1hjb3Zlci8wLzIzNGUxMGMwNjdiYmQ0ZmYvMTAwMC5qcGc=.jpg',
+    '<p>
+    ศิลปินหน้าใหม่ หนุ่มลูกครึ่งไทย-อเมริกัน วัย 20 ปี ที่มีชื่อว่า โบวี่ (สโรชา เย็นใส) กับอัลบั้มเดี่ยวครั้งแรกในชีวิต ซึ่งใช้ชื่ออัลบั้มว่า โบวี่ ด้วยแนวดนตรีแบบป๊อปร็อก ที่มีกลิ่นของกีต้าร์ในยุค 80 และเครื่องดนตรีอื่นๆ อย่าง เม้าท์ออร์แกน และ เปียโน กับภาพลักษณ์เรียบง่าย ติดดิน แต่โดดเด่นเป็นตัวของตัวเอง ซึ่ง โบวี่ เผยถึงงานเพลงชุดแรกให้ฟังว่า
+</p>
+<p>
+    การทำงานต่างๆ ผมค่อนข้างมีส่วนร่วมเยอะ เพราะพี่เจี๊ยบ - พิสุทธิ์ ทรัพย์วิจิตร (เอ็กเซ็กคิวทีฟ โปรดิวเซอร์) กับ พี่กอล์ฟ - อนุกูล บูรณะคุปต์ (โปรดิวเซอร์) จะให้โอกาสและฟังความคิดเห็น เนื้อร้องคำไหนติดขัด ผมกับพี่ๆ ก็ช่วยปรับกันสดๆ เดี๋ยวนั้น ส่วนของเสียงร้องผมก็จะดีไซน์เอง โดยพี่กอล์ฟจะให้ผมร้องก่อนแล้วมาเปิดฟังว่าชอบหรือเปล่า ถ้าไม่ชอบก็แก้ไขกันใหม่
+    ...อ้างอิง https://www.siamzone.com/music/news/1377
+</p>',
+    '2021-10-24 13:10:20',
+    '2021-10-24 13:10:20');
+ 
+ /* ======== auto script 2021-10-24 13:10:20 pm END ========= */
+
+ /* =========== auto script START 2021-10-24 13:22:27 pm  ==================== */
+ 
+/* =============================== Insert command =============================
+ * on 2021-10-24 13:22:27 insert artist id '10' to 'artists'
+ * */
+INSERT INTO `artists`(`artist_name`,`artist_cover`,`artist_bio`,`created_at`,
+`updated_at`) VALUES(
+    'วิด ไฮเปอร์ อาร์ สยาม',
+    'https://i.scdn.co/image/ab67616d0000b2736d9819720dabfcc95274cf53',
+    '<p>
+    อดีตนักร้องวง ไฮเปอร์ วงอัลเทอร์เนทีฟ ระดับตำนานของเมืองไทย ปัจจุบันออกมาเป็นศิลปินเดี่ยว สังกัดค่าย อาร์ สยาม
+</p>',
+    '2021-10-24 13:22:27',
+    '2021-10-24 13:22:27');
+ 
+ /* ======== auto script 2021-10-24 13:22:27 pm END ========= */
+
+ /* =========== auto script START 2021-10-24 13:58:27 pm  ==================== */
+ 
+/* =============================== Insert command =============================
+ * on 2021-10-24 13:58:27 insert artist id '11' to 'artists'
+ * */
+INSERT INTO `artists`(`artist_name`,`artist_cover`,`artist_bio`,`created_at`,
+`updated_at`) VALUES(
+    'วง กะลา',
+    'https://i.ytimg.com/vi/zkWgdPT9JEo/hqdefault.jpg',
+    '<p>
+    กะลา เป็นวงดนตรีแนวซอฟต์ร็อก จากโรงเรียนวัดทรงธรรม จังหวัดสมุทรปราการ โดยวงเป็นที่รู้จักจากการเข้าประกวดวงดนตรีมัธยม ฮอตเวฟมิวสิกอวอร์ดส์ ครั้งที่ 2 ประจำปี พ.ศ. 2540 แต่ตกรอบ 30 วงสุดท้ายจากวงเข้าประกวดทั่วประเทศกว่า200วง ต่อมากะลาได้กลับมาประกวดอีกครั้งกับฮอตเวฟมิวสิคอวอร์ดส์ครั้งที่ 3 พ.ศ.2541 โดยครั้งนี้ได้เปลี่ยนสมาชิกสองตำแหน่งคือกลองกับเบส และเข้ารอบ 10 วงสุดท้าย จนได้รับการชักชวนจากทางแกรมมี่ค่ายจีนี่เร็คคอร์ด
+</p>',
+    '2021-10-24 13:58:27',
+    '2021-10-24 13:58:27');
+ 
+ /* ======== auto script 2021-10-24 13:58:27 pm END ========= */
+
+ /* =========== auto script START 2021-10-24 15:03:23 pm  ==================== */
+ 
+/* =============================== Insert command =============================
+ * on 2021-10-24 15:03:23 insert artist id '12' to 'artists'
+ * */
+INSERT INTO `artists`(`artist_name`,`artist_cover`,`artist_bio`,`created_at`,
+`updated_at`) VALUES(
+    'วง โซคูล',
+    'http://f.ptcdn.info/963/016/000/1395402142-5869112978-o.jpg',
+    '<p>
+    วงโซคูล (อังกฤษ: So Cool) เป็นวงร็อกรุ่นใหม่ที่ยึดเอาความเป็นไทยมาเป็นเอกลักษณ์ ในเครือ GMM Grammy สังกัด อัพจี มีเพลงที่ปล่อยทางวิทยุมากมาย เช่น คนเจียมตัว อกหักจากมือถือ เลี้ยงส่ง คนถัดไป ซากอ้อย ย้อมใจ ฟ้าสาป Message ผิดเบอร์ Out ใจ คนขำๆ ไผ่ลู่ลม บาดตา สวรรค์ไม่มีตา เบอร์สำรอง ถาม และฝันดี โดยเพลงล่าสุดที่จะปล่อยออกมาคือเพลง เหตุผลที่ไม่อยากเป็นเพื่อนเธอ
+</p>
+<p>
+    สมาชิกในวงโซคูลทุกคนเป็นคนจังหวัดพิษณุโลก โจ๊กกับมาร์ช เป็นพี่น้องกัน ส่วนแจนกับเจมส์ก็เป็นพี่น้องกัน ทั้งสี่คนนี้จะอยู่บ้านใกล้กัน เมื่อวงโซคูลว่างงานก็มักจะกลับบ้านเกิด บางครั้งก่อนจะมีคอนเสิร์ตก็จะมีการซ้อมดนตรีก่อนเล่นจริง
+
+ก่อนที่พวกเขาจะได้มาเป็นนักร้อง เขาได้ไปประกวดวงดนตรียามาฮ่า และตามจังหวัดบ้านเกิดอยู่หลายครั้ง จนได้รางวัลชนะเลิศมาหลายครั้ง จึงได้มีโอกาสได้มาเป็นนักร้องค่ายแกรมมี่
+</p>
+<p>
+    โซคูลเคยมีสมาชิกด้วยกัน 4 คน ซึ่งทั้งหมดเป็นญาติพี่น้องกัน แต่ในปี พ.ศ. 2551 ได้มีสมาชิกใหม่เพิ่มขึ้นมาอีก 1 คนคือ กอล์ฟ ชาวจังหวัดสุโขทัย รวมเป็น 5 คน เป็นนักร้องนำคู่กับโจ๊ก ซึ่งเป็นนักร้องคนเดิม โดยโจ๊กได้เห็นฝีมือของกอล์ฟจากการร้องเพลงเปิดตัวให้วงโซคูลก่อนขึ้นเล่นในคอนเสิร์ตของโซคูลแห่งหนึ่ง ในจังหวัดพะเยา จึงตั้งใจจะให้กอล์ฟออกอัลบั้มเดี่ยว แต่ด้วยความสนิทสนมกันจึงได้ตัดสินใจพาเข้าร่วมวงจนถึงปัจจุบัน
+</p>',
+    '2021-10-24 15:03:23',
+    '2021-10-24 15:03:23');
+ 
+ /* ======== auto script 2021-10-24 15:03:23 pm END ========= */
+
+ /* =========== auto script START 2021-10-24 17:47:58 pm  ==================== */
+ 
+/* =============================== Insert command =============================
+ * on 2021-10-24 17:47:58 insert artist id '13' to 'artists'
+ * */
+INSERT INTO `artists`(`artist_name`,`artist_cover`,`artist_bio`,`created_at`,
+`updated_at`) VALUES(
+    'เพียว คณิน วัฒนภาเกษม (Pure)',
+    'https://i.ytimg.com/vi/3QJpgCGX8f4/maxresdefault.jpg',
+    '<p>
+    มาทำความรู้จักกับวง PURE ศิลปินใหม่ของ BH BrickHouse เจ้าของเพลง "ทางผ่าน" ที่ติด Top Chart บนสื่อทุกสถานีอยู่ ณ ขณะนี้
+</p>
+<ul>
+    <li>
+        <p>
+            คนซ้าย
+            ชื่อ: คณิน วัฒนภาเกษม (Pure)
+            อายุ: 21 ปี
+
+        </p>
+    </li>
+    <li>
+        <p>
+            คนขวา
+            ชื่อ: ณัฐิวุฒิ ทวยเดช (Benz)
+            อายุ: 21 ปี
+        </p>
+    </li>
+</ul>
+<div class="row">
+    <div class="col-lg-6">
+        <img src="https://scontent.fbkk22-6.fna.fbcdn.net/v/t1.6435-9/69114519_654724955012548_2696821836448006144_n.jpg?_nc_cat=104&amp;ccb=1-5&amp;_nc_sid=730e14&amp;_nc_ohc=DrP23vteuYAAX84Sts0&amp;_nc_ht=scontent.fbkk22-6.fna&amp;oh=5636e076b5eeb918807a60630f1e97af&amp;oe=619C250B" class="responsive">
+        <p class="text-center pt-2">
+            ชื่อ: คณิน วัฒนภาเกษม (Pure)
+        </p>
+    </div>
+    <div class="col-lg-6">
+        <img src="https://scontent.fbkk22-3.fna.fbcdn.net/v/t1.6435-9/69156208_654724931679217_4914188429169786880_n.jpg?_nc_cat=103&amp;ccb=1-5&amp;_nc_sid=730e14&amp;_nc_ohc=rfgasGshin4AX_Kp-tz&amp;_nc_ht=scontent.fbkk22-3.fna&amp;oh=4be4778c4ec5332e90d4b32e2522a1c6&amp;oe=619C913A" class="responsive">
+        <p class="text-center pt-2">
+            ณัฐิวุฒิ ทวยเดช (Benz)
+        </p>
+    </div>
+</div>',
+    '2021-10-24 17:47:58',
+    '2021-10-24 17:47:58');
+ 
+ /* ======== auto script 2021-10-24 17:47:58 pm END ========= */
+

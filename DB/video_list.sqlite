@@ -1,0 +1,350 @@
+
+
+
+/*
+
+    INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+    `updated_at`) VALUES
+    (NULL,'1',
+    '',
+    '',
+    '2021-05-18 14:54:44',
+    '2021-05-18 14:58:28');                                          
+*/
+
+
+
+
+
+
+
+
+
+
+
+/* รถไฟความเร็วสูงของจีน 19 May 2021*/
+    INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+    `updated_at`) VALUES
+    (NULL,'1',
+    'จีน โชว์ต้นแบบรถไฟความเร็วสูง วิ่งเร็ว 620 กม./ชม. : ย่อโลกเศรษฐกิจ 20 ม.ค. 64',
+    '<iframe width="560" height="315" src="https://www.youtube.com/embed/-UjtYq3wcco" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    '2021-05-19 08:28:14',
+    '2021-05-19 08:28:15');                                          
+
+
+
+
+/* Video  Mitsubishi Outlander PHEV 2021-04-06 09:10:44 */
+    INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+    `updated_at`) VALUES 
+    (NULL,'1',
+    'ลอง Mitsubishi Outlander PHEV ขับโคตรดี แรง นุ่ม-หนึบ เหมาะครอบครัว ไม่มี WallCharge ก็มีไฟวิ่งได้',
+    '
+<iframe width="560" height="315" src="https://www.youtube.com/embed/z7TmZWdhZkw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    ',
+    '2021-04-06 10:10:44',
+    '2021-04-06 10:10:48');                                          
+
+/* Video  Nissan Kicks e-Power 2021-04-06 09:10:44 */
+    INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+    `updated_at`) VALUES 
+    (NULL,'1',
+    'ลองขับ Nissan Kicks e-Power ไม่ประหยัดนะ แต่ขับโคตรมัน 
+    One Pedal ดีงาม ออปชั่นพอใช้ ค่าตัว 1.049ล้าน',
+    '
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JMd42sfh_kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    ',
+    '2021-04-06 09:10:44',
+    '2021-04-06 09:11:28');                                          
+
+
+
+
+/* Video MG Car EV 2021-04-06 08:56:44 */
+    INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+    `updated_at`) VALUES 
+    (NULL,'1',
+    'ลองรถไฟฟ้า MG ZS EV!! ราคาดี อัตราเร่งเฉียบ แต่ช่วงล่าง-การทรงตัว ไม่ผ่าน!!',
+    '
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ywjBGZyPU6E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    ',
+    '2021-04-06 08:56:44',
+    '2021-04-06 08:57:28');                                          
+
+
+
+/*  รายการ ฟ้าวันใหม่ นิวส์ (ภาคเที่ยง) วันพฤหัสบดีที่ 08 เมษายน 2564  on 08-04-2021 */
+    INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+    `updated_at`) VALUES
+    (NULL,'1',
+    'รายการ ฟ้าวันใหม่ นิวส์ (ภาคเที่ยง) วันพฤหัสบดีที่ 08 เมษายน 2564',
+    '
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zu7QmPCZrpQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    ',
+    '2021-04-08 13:08:44',
+    '2021-04-08 13:09:28');
+
+
+
+
+
+/*  อรุณสวัสดิ์ ฟ้าวันใหม่  08-04-64 on 08-04-2021 */
+    INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+    `updated_at`) VALUES
+    (NULL,'1',
+    'อรุณสวัสดิ์ ฟ้าวันใหม่  08-04-64',
+    '<iframe width="560" height="315" src="https://www.youtube.com/embed/1RY1TRgncrA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    '2021-04-08 12:22:44',
+    '2021-04-08 12:23:28');
+
+
+
+/* แถลงสถานการณ์ COVID-19 โดย ศบค. (7 เม.ย. 64) on 08-04-2021 */
+    INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+    `updated_at`) VALUES
+    (NULL,'1',
+    'แถลงสถานการณ์ COVID-19 โดย ศบค. (7 เม.ย. 64)',
+    '<iframe width="560" height="315" src="https://www.youtube.com/embed/DaS-JgrcGUU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    '2021-04-08 12:13:44',
+    '2021-04-08 12:14:28');
+
+
+
+
+
+/* Beginner''s Guide to the Bash Terminal on 2021-04-08 */
+    INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+    `updated_at`) VALUES
+    (NULL,'1',
+    'Beginner''s Guide to the Bash Terminal',
+    '<iframe width="560" height="315" src="https://www.youtube.com/embed/oxuRxtrO2Ag" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    '2021-04-08 11:52:04',
+    '2021-04-08 11:52:28');
+
+
+
+
+
+/*  Beginner''s Guide To Installing Ubuntu 18.04 LTS on 2021-04-08 */
+    INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+    `updated_at`) VALUES
+    (NULL,'1',
+    'Beginner''s Guide To Installing Ubuntu 18.04 LTS',
+    '<iframe width="560" height="315" src="https://www.youtube.com/embed/opBKvGi77cU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    '2021-04-08 11:47:04',
+    '2021-04-08 11:47:28');
+
+
+
+    INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+    `updated_at`) VALUES
+    (NULL,'1',
+    'Error fail to update core (unable to lock databases) -
+    Error on Manjaro update fixed',
+    '<iframe width="560" height="315"
+    src="https://www.youtube.com/embed/Glmh2G-q7Vs"
+    title="YouTube video player" frameborder="0" allow="accelerometer;
+    autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>',
+    '2021-03-30 15:22:44',
+    '2021-03-30 15:25:28');
+
+
+
+
+/* SETUP I3WM for Manjaro(KDE) 24 Mar 2021 */
+    INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+    `updated_at`) VALUES
+    (NULL,'1',
+    'SETUP I3WM for Manjaro(KDE)',
+    '<iframe width="560" height="315" src="https://www.youtube.com/embed/1qgfkFF-Pkk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    '2021-03-24 15:42:44',
+    '2021-03-24 15:43:28');
+
+
+
+/* if iPhone commercials were honest 2 24 Mar 2021*/
+    INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+    `updated_at`) VALUES
+    (NULL,'1',
+    'if iPhone commercials were honest 2 ',
+    '<iframe width="560" height="315" src="https://www.youtube.com/embed/Iy-zs_iq6iE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    '2021-03-24 14:52:44',
+    '2021-03-24 14:53:28');
+
+
+
+/*  if iPhone commercials were honest 24 Mar 2021 */
+    INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+    `updated_at`) VALUES
+    (NULL,'1',
+    'if iPhone commercials were honest',
+    '<iframe width="560" height="315" src="https://www.youtube.com/embed/aseb08zXLeg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    '2021-03-24 14:51:24',
+    '2021-03-24 14:52:28');
+
+
+/* copy from youtube 23 Mar 2021 */
+INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+`updated_at`) VALUES
+(NULL,'2',
+'รีวิว Redmi Note 10 ราคานี้ตายทั้งจักรวาลลามไปยันมัลติเวิร์ส',
+'<iframe width="560" height="315" src="https://www.youtube.com/embed/qzyDR1NjZuk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+'2021-03-23 18:35:24',
+'2021-03-23 18:35:28');
+
+
+/* copy from youtube 23 Mar 2021 */
+INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+`updated_at`) VALUES
+(NULL,'1',
+'GMC Hummer EV (2022) Full Details – Performance, Technology, Design',
+'<iframe width="560" height="315" src="https://www.youtube.com/embed/Ad3GGancjyc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+'2021-03-23 17:24:24',
+'2021-03-23 17:25:28');
+
+
+
+
+
+/* copy from youtube 23 Mar 2021 */
+INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+`updated_at`) VALUES
+(NULL,'1',
+'All Electric HUMMER EV?! - Everything you need to know!',
+'<iframe width="560" height="315" src="https://www.youtube.com/embed/9FrnNTyOAes" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+'2021-03-23 17:09:24',
+'2021-03-23 17:15:28');
+
+
+/* copy from youtube 23 Mar 2021 */
+INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+`updated_at`) VALUES
+(NULL,'1',
+'GMC Hummer EV vs. Tesla Cybertruck: SHOCKING PERFORMANCE',
+'<iframe width="560" height="315" src="https://www.youtube.com/embed/kOY6KGv7P2w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+'2021-03-23 17:01:24',
+'2021-03-23 16:55:28');
+
+
+
+/* copy from youtube 23 Mar 2021 */
+INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,`created_at`,
+`updated_at`) VALUES
+(NULL,'1',
+'Tesla Cybertruck 2021 | Why You SHOULD buy it for sure! (Updates,
+Release Date, Changes +More)',
+'<iframe width="560" height="315"
+src="https://www.youtube.com/embed/Uw6BjkhL_b4"
+title="YouTube video player" frameborder="0" allow="accelerometer;
+autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>',
+'2021-03-23 16:43:24',
+'2021-03-23 16:45:28');
+
+
+
+
+
+/* Last added 23 Mar 2021 */
+INSERT INTO `videos` (`id`,`user_id`,`title`,`embed`,
+`created_at`,`updated_at`) VALUES
+(NULL,'1',
+
+'เปิดตัวขายจริงแล้ว ในยุโรป ใช้ชื่อ MG Marvel R ลุ้นเข้ามาทำตลาดในไทย',
+
+'<iframe width="560" height="315"
+src="https://www.youtube.com/embed/BSxqcg7N-NA" title="YouTube video player"
+frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+
+'2021-03-23 09:09:24',
+'2021-03-23 09:09:28');
+
+ /* =========== auto script START 2021-06-27 15:43:49 pm  ==================== */
+ /* ================= backup `videos`  ======  2021-06-27 15:43:49 =============== */
+INSERT INTO `videos`(`user_id`,`title`,`embed`,
+`created_at`,`updated_at`) VALUES(
+    '3','สารคดี สำรวจโลก','<iframe width="560" height="315" src="https://www.youtube.com/embed/Uvh31kHDtSc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    '2021-06-27 15:43:49','2021-06-27 15:43:49');
+ 
+ /* ======== auto script 2021-06-27 15:43:49 pm END ========= */
+
+
+
+
+
+ /* =========== auto script START 2021-07-20 06:24:07 am  ==================== */
+ 
+
+
+/* ========================================================================= */
+/* === auto insert script to `videos` 2021-07-20 06:24:07  */
+INSERT INTO `videos`(`user_id`,`title`,`embed`,`created_at`,
+`updated_at`) VALUES(
+    '1',
+    'สารคดี สำรวจโลก ตอน ผจญภัยในจักรวาล',
+    '<iframe width="560" height="315" src="https://www.youtube.com/embed/fKQlsx38y-8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    '2021-07-20 06:24:07',
+    '2021-07-20 06:24:07');
+
+
+ 
+ /* ======== auto script 2021-07-20 06:24:07 am END ========= */
+
+
+ /* =========== auto script START 2021-08-07 17:53:41 pm  ==================== */
+ 
+
+
+/* ========================================================================= */
+/* === auto insert script to `videos` 2021-08-07 17:53:41  */
+INSERT INTO `videos`(`user_id`,`title`,`embed`,`created_at`,
+`updated_at`) VALUES(
+    '1',
+    'if Apple was honest',
+    '<iframe width="560" height="315" src="https://www.youtube.com/embed/4aUXrxXM4B4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    '2021-08-07 17:53:41',
+    '2021-08-07 17:53:41');
+
+
+ 
+ /* ======== auto script 2021-08-07 17:53:41 pm END ========= */
+
+ /* =========== auto script START 2021-08-07 18:00:34 pm  ==================== */
+ 
+
+
+/* ========================================================================= */
+/* === auto insert script to `videos` 2021-08-07 18:00:34  */
+INSERT INTO `videos`(`user_id`,`title`,`embed`,`created_at`,
+`updated_at`) VALUES(
+    '1',
+    'if Apple Watch commercials were honest',
+    '<iframe width="560" height="315" src="https://www.youtube.com/embed/zbVLKCBmP4s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    '2021-08-07 18:00:34',
+    '2021-08-07 18:00:34');
+
+
+ 
+ /* ======== auto script 2021-08-07 18:00:34 pm END ========= */
+
+ /* =========== auto script START 2021-08-07 18:08:18 pm  ==================== */
+ 
+
+
+/* ========================================================================= */
+/* === auto insert script to `videos` 2021-08-07 18:08:18  */
+INSERT INTO `videos`(`user_id`,`title`,`embed`,`created_at`,
+`updated_at`) VALUES(
+    '1',
+    'if AirPod commercials were honest',
+    '<iframe width="560" height="315" src="https://www.youtube.com/embed/pzjnJjsjSIo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    '2021-08-07 18:08:18',
+    '2021-08-07 18:08:18');
+
+
+ 
+ /* ======== auto script 2021-08-07 18:08:18 pm END ========= */

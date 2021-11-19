@@ -1,0 +1,25 @@
+ /* ================= DO NOT DLETE THIS  =================================== */
+
+/* ================ link table ============================ */
+INSERT INTO `comment_post`(`user_id`,`comment_id`,`post_id`,
+`created_at`,`updated_at`) VALUES(
+    '3','1','1',
+    '2021-06-28 15:29:41','2021-06-28 15:29:41');
+ 
+
+INSERT INTO `comment_post`(`user_id`,`comment_id`,`post_id`,
+`created_at`,`updated_at`) VALUES(
+    '3','2','1',
+    '2021-06-28 15:29:41','2021-06-28 15:29:41');
+
+ /* =================== DO NOT DLETE THIS  ================================= */
+/*
+*| the above script is the DEFAULT to make the auto script run.
+*| you can edit the information but DO NOT DELETE 
+*| Created 1 July 2021
+*/
+/* ========================================================================= */
+/* =============== Anything below here is generate by auto script ===========*/
+
+
+
