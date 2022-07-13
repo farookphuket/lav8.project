@@ -1730,7 +1730,6 @@ INSERT INTO "posts" ("user_id","post_title","slug","post_excerpt",
             <iframe src="https://archive.org/embed/13213626sep2019" width="500" height="30" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""><br></iframe>
         </div>
         <p class="pt-4 mb-4 text-center">
-
             ความยาว 6 ชั่วโมง 34 นาที 19 วินาที
         </p>
 
@@ -1801,7 +1800,19 @@ INSERT INTO "posts" ("user_id","post_title","slug","post_excerpt",
 
             <a href="https://archive.org/download/13213626sep2019/132-136_26-sep-2019%20%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AD%E0%B8%B8%E0%B8%A1%E0%B8%B2%20%E0%B8%A0%E0%B8%B2%E0%B8%84%E0%B9%81%E0%B8%A3%E0%B8%81%20%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%9B%E0%B9%88%E0%B8%B2%E0%B9%82%E0%B8%A5%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%9B%E0%B8%B5.mp3" class="btn btn-primary">ดาวน์โหลดคลิป 132 - 136</a>
 
-            <a href="https://archive.org/download/146146160shortclip/%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AD%E0%B8%B8%E0%B8%A1%E0%B8%B2%20%E0%B8%A0%E0%B8%B2%E0%B8%84%E0%B9%81%E0%B8%A3%E0%B8%81%20%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%20146%28146-160_short-clip%29.mp3" class="btn btn-primary">ดาวน์โหลดคลิป 137 - 145</a>
+            <a 
+            target="_blank"
+            href="https://archive.org/download/137to145/%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AD%E0%B8%B8%E0%B8%A1%E0%B8%B2%20%E0%B8%A0%E0%B8%B2%E0%B8%84%E0%B9%81%E0%B8%A3%E0%B8%81%20%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%20137to145%20%E0%B8%9B%E0%B9%88%E0%B8%B2%E0%B9%82%E0%B8%A5%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%9B%E0%B8%B5.mp3" 
+            class="btn btn-primary">
+            ดาวน์โหลดคลิป 137 - 145
+            </a>
+
+
+            <a href="https://archive.org/download/146146160shortclip/%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AD%E0%B8%B8%E0%B8%A1%E0%B8%B2%20%E0%B8%A0%E0%B8%B2%E0%B8%84%E0%B9%81%E0%B8%A3%E0%B8%81%20%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%20146%28146-160_short-clip%29.mp3" 
+            target="_blank"
+            class="btn btn-primary">ดาวน์โหลดคลิป 146 - 160</a>
+
+
 
             <a href="https://archive.org/download/1611777hrs48min/%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AD%E0%B8%B8%E0%B8%A1%E0%B8%B2%20%E0%B8%A0%E0%B8%B2%E0%B8%84%E0%B9%81%E0%B8%A3%E0%B8%81%20%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%20161-177%287hrs48min%29%E0%B8%9B%E0%B9%88%E0%B8%B2%E0%B9%82%E0%B8%A5%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%9B%E0%B8%B5.mp3" class="btn btn-primary">ดาวน์โหลดคลิป 161 - 177</a>
         </div>

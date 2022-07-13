@@ -6052,3 +6052,63 @@ INSERT INTO `visitors`(`client_ip`,`client_os`,`client_browser`,`visited_month`,
     '2021-11-19 12:52:29');
  
  /* ======== auto script 2021-11-19 12:52:29 pm END ========= */
+
+ /* =========== auto script START 2022-01-14 12:03:20 pm  ==================== */
+ 
+
+/* ============================================================================
+ * backup visitor ip '127.0.0.1' to file on 2022-01-14 12:03:20
+ * ============================================================================
+ * */
+INSERT INTO `visitors`(`client_ip`,`client_os`,`client_browser`,`visited_month`,
+`visited_year`,`last_visited_date`,`created_at`,`updated_at`) VALUES(
+    '127.0.0.1',
+    'Linux ',
+    'Firefox 96.0',
+    '1',
+    '2022',
+    '2022-01-14',
+    '2022-01-14 12:03:20',
+    '2022-01-14 12:03:20');
+ 
+ /* ======== auto script 2022-01-14 12:03:20 pm END ========= */
+
+ /* =========== auto script START 2022-01-20 06:51:26 am  ==================== */
+ 
+
+/* ============================================================================
+ * backup visitor ip '127.0.0.1' to file on 2022-01-20 06:51:26
+ * ============================================================================
+ * */
+INSERT INTO `visitors`(`client_ip`,`client_os`,`client_browser`,`visited_month`,
+`visited_year`,`last_visited_date`,`created_at`,`updated_at`) VALUES(
+    '127.0.0.1',
+    'Linux ',
+    'Chrome 97.0.4692.71',
+    '1',
+    '2022',
+    '2022-01-20',
+    '2022-01-20 06:51:26',
+    '2022-01-20 06:51:26');
+ 
+ /* ======== auto script 2022-01-20 06:51:26 am END ========= */
+
+ /* =========== auto script START 2022-07-13 07:37:30 am  ==================== */
+ 
+
+/* ============================================================================
+ * backup visitor ip '127.0.0.1' to file on 2022-07-13 07:37:30
+ * ============================================================================
+ * */
+INSERT INTO `visitors`(`client_ip`,`client_os`,`client_browser`,`visited_month`,
+`visited_year`,`last_visited_date`,`created_at`,`updated_at`) VALUES(
+    '127.0.0.1',
+    'Linux ',
+    'Firefox 102.0',
+    '7',
+    '2022',
+    '2022-07-13',
+    '2022-07-13 07:37:30',
+    '2022-07-13 07:37:30');
+ 
+ /* ======== auto script 2022-07-13 07:37:30 am END ========= */
